@@ -9,7 +9,7 @@ If you have a detection, please submit it in a pull request!
 
 ```bash
 -------------------------------------              ---------------------------------
-|        Secuirty Testing           |              |          QeeqBox APF          |
+|        Secuirty Testing           |              |        Social-Analyzer        |
 -------------------------------------              ---------------------------------
 |   Passive Information Gathering   |     <-->     |   Find Social Media Profiles  |
 |                                   |              |                               |
