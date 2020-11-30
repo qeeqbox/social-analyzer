@@ -17,6 +17,13 @@ If you have a detection, please submit it in a pull request!
 -------------------------------------              ---------------------------------
 ```
 
+## Find Profile (Fast)
+<img src="https://raw.githubusercontent.com/qeeqbox/social-analyzer/main/readme/intro_fast.gif" style="max-width:768px"/>
+
+## Find Profile (Slow)
+<img src="https://raw.githubusercontent.com/qeeqbox/social-analyzer/main/readme/intro_slow.gif" style="max-width:768px"/>
+
+
 ## Features
 - String Analysis
 - Search Engine Lookup
