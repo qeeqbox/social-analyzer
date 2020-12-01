@@ -20,7 +20,7 @@ If you have a detection, please submit it in a pull request!
 ## Find Profile (Fast - FindUserProflesNormal)
 <img src="https://raw.githubusercontent.com/qeeqbox/social-analyzer/main/readme/intro_fast.gif" style="max-width:768px"/>
 
-## Find Profile (Slow - FindUserProflesAdvanced & ShowUserProflesAdvanced)
+## Find Profile (Slow - FindUserProflesAdvanced)
 <img src="https://raw.githubusercontent.com/qeeqbox/social-analyzer/main/readme/intro_slow.gif" style="max-width:768px"/>
 
 
