@@ -387,17 +387,60 @@
     },
     {
         "url": "https://bandcamp.com/{username}",
-        "detections": [],
-        "selected": "false"
-    },
-    {
-        "url": "https://bazar.cz/{username}",
-        "detections": [],
+        "detections": [
+            {
+                "return": "false",
+                "string": "Sorry, that something isn’t here",
+                "type": "ocr"
+            },
+            {
+                "return": "false",
+                "string": "Sorry, that something isn’t here",
+                "type": "normal"
+            },
+            {
+                "return": "true",
+                "string": "og:title",
+                "type": "normal"
+            },
+            {
+                "return": "true",
+                "string": "com/{username}",
+                "type": "normal"
+            }
+        ],
         "selected": "false"
     },
     {
         "url": "https://behance.net/{username}",
-        "detections": [],
+        "detections": [
+            {
+                "return": "false",
+                "string": "Oops! We can’t find that page",
+                "type": "ocr"
+            },
+            {
+                "return": "false",
+                "string": "Oops! We can’t find that page",
+                "type": "normal"
+            },
+            {
+                "return": "true",
+                "string": "og:title",
+                "type": "normal"
+            },
+            {
+                "return": "true",
+                "string": "net/{username}",
+                "type": "normal"
+            },
+            {
+                "return": "true",
+                "string": "\"name\":\"",
+                "type": "normal"
+            }
+            
+        ],
         "selected": "false"
     },
     {
@@ -412,27 +455,104 @@
     },
     {
         "url": "https://bitbucket.org/{username}",
-        "detections": [],
+        "detections": [
+            {
+                "return": "false",
+                "string": "That link has no power here",
+                "type": "ocr"
+            },
+            {
+                "return": "false",
+                "string": "That link has no power here",
+                "type": "normal"
+            },
+            {
+                "return": "true",
+                "string": "\"uuid\"",
+                "type": "normal"
+            }
+            
+        ],
         "selected": "false"
     },
     {
         "url": "https://bitcoinforum.com/profile/{username}",
-        "detections": [],
+        "detections": [
+            {
+                "return": "false",
+                "string": "An Error Has Occurred!",
+                "type": "ocr"
+            },
+            {
+                "return": "false",
+                "string": "An Error Has Occurred!",
+                "type": "normal"
+            },
+            {
+                "return": "true",
+                "string": "profile/{username}",
+                "type": "normal"
+            }
+            
+        ],
         "selected": "false"
     },
     {
         "url": "https://blip.fm/{username}",
-        "detections": [],
+        "detections": [
+            {
+                "return": "false",
+                "string": "Page Not Found",
+                "type": "ocr"
+            },
+            {
+                "return": "false",
+                "string": "Page Not Found",
+                "type": "normal"
+            },
+            {
+                "return": "true",
+                "string": "urlName",
+                "type": "normal"
+            },
+            {
+                "return": "true",
+                "string": "profilePic",
+                "type": "normal"
+            }
+        ],
         "selected": "false"
     },
     {
         "url": "https://blog.naver.com/{username}",
-        "detections": [],
+        "detections": [
+            {
+                "return": "false",
+                "string": "error_content",
+                "type": "normal"
+            },
+            {
+                "return": "true",
+                "string": "com/{username}.xml",
+                "type": "normal"
+            }
+        ],
         "selected": "false"
     },
     {
         "url": "https://bodyspace.bodybuilding.com/{username}",
-        "detections": [],
+        "detections": [
+            {
+                "return": "true",
+                "string": "com/{username}",
+                "type": "normal"
+            },
+            {
+                "return": "true",
+                "string": "userName",
+                "type": "normal"
+            }
+        ],
         "selected": "false"
     },
     {
@@ -447,7 +567,28 @@
     },
     {
         "url": "https://buzzfeed.com/{username}",
-        "detections": [],
+        "detections": [
+            {
+                "return": "false",
+                "string": "We can't find the page you're looking for",
+                "type": "ocr"
+            },
+            {
+                "return": "false",
+                "string": "We can't find the page you're looking for",
+                "type": "normal"
+            },
+            {
+                "return": "true",
+                "string": "\"username\"",
+                "type": "normal"
+            },
+            {
+                "return": "true",
+                "string": "og:title",
+                "type": "normal"
+            }
+        ],
         "selected": "false"
     },
     {
