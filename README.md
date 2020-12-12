@@ -35,8 +35,11 @@ If you have a detection, please submit it in a pull request!
 - Profile Screenshot
 - And more!
 
-## Install and run (Nodejs + NPM)
+## Install and run (Nodejs + NPM + Firefox)
 ```bash
+add-apt-repository ppa:mozillateam/ppa
+apt-get update
+apt-get install -y firefox-esr tesseract-ocr
 git clone https://github.com/qeeqbox/social-analyzer.git
 cd social-analyzer
 npm install
