@@ -643,9 +643,9 @@
                         <option value="ConvertNumbers">ConvertNumbers</option>
                         <option value="FindNumbers">FindNumbers</option>
                         <option value="FindSymbols">FindSymbols</option>
-                        <option value="FindUserProflesNormal">FindUserProflesNormal</option>
-                        <option value="FindUserProflesAdvanced">FindUserProflesAdvanced</option>
-                        <option value="ShowUserProflesAdvanced">ShowUserProflesAdvanced</option>
+                        <option value="FindUserProflesFast">FindUserProflesFast</option>
+                        <option value="FindUserProflesSlow">FindUserProflesSlow</option>
+                        <option value="ShowUserProflesSlow">ShowUserProflesSlow</option>
                     </select>
                     <div class="cell-separator"></div>
                     <input type="button" id="analyze-normal" value="Analyze" />
@@ -816,7 +816,7 @@
             });
 
             await $.ajax({
-                type: "GET",
+                type: "POST",
                 url: "/url",
                 data: { 'string': $('#string-to-analyze').val(), 'option': list_of_options.join(",") },
             }).done(function (data) {
@@ -947,7 +947,7 @@
                 });
                 google = [$("#google-api-key").val(), $("#google-api-cs").val()]
                 await $.ajax({
-                    type: "GET",
+                    type: "POST",
                     url: "/save_settings",
                     data: { 'detections': temp_checked, 'google': google }
                 }).done(function (data) {
