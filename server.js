@@ -28,6 +28,8 @@ var parsed_sites = JSON.parse(fs.readFileSync("sites.json"));
 var app = express();
 
 var WordsNinja = new WordsNinjaPack();
+app.use(express.urlencoded({extended: true})); 
+app.use(express.json()); 
 
 app.use(express.static("public"));
 
@@ -77,10 +79,10 @@ async function find_username_site_new(username, options, site) {
             var title = await driver.getTitle();
             text_only = await driver.findElement(By.tagName("body")).getText();
             await driver.quit()
-            if (options.includes("ShowUserProflesAdvanced")) {
+            if (options.includes("ShowUserProflesSlow")) {
                 temp_profile["image"] = "data:image/png;base64,{image}".replace("{image}", data);
             }
-            if (site.selected == "true" && site.detections.length > 0 && options.includes("FindUserProflesAdvanced")) {
+            if (site.selected == "true" && site.detections.length > 0 && options.includes("FindUserProflesSlow")) {
                 await Promise.all(site.detections.map(async detection => {
                     try{
                         if ("status" in detection) {
@@ -167,7 +169,7 @@ async function find_username_normal(username, options) {
             var temp_profile = { "found": 0, "image": "", "link": "", rate: "", title: "", text: "" };
             await Promise.all(site.detections.map(async detection => {
                 var temp_found = "false";
-                if (detection.type == "normal" && options.includes("FindUserProflesNormal") && source != "" && detection.return == "true") {
+                if (detection.type == "normal" && options.includes("FindUserProflesFast") && source != "" && detection.return == "true") {
                     detections_count += 1
                     if (source.toLowerCase().includes(detection.string.replace("{username}", username).toLowerCase())) {
                         temp_found = "true";
@@ -244,7 +246,7 @@ async function find_username_advanced_2(username, options) {
                     return Promise.resolve();
                 }
             }
-            if (site.selected == "true" && site.detections.length > 0 || site.selected == "true" && options.includes("ShowUserProflesAdvanced")) {
+            if (site.selected == "true" && site.detections.length > 0 || site.selected == "true" && options.includes("ShowUserProflesSlow")) {
                 var source = "";
                 var data = "";
                 var text_only = "unavailable";
@@ -256,10 +258,10 @@ async function find_username_advanced_2(username, options) {
                 data = await driver.takeScreenshot();
                 title = await driver.getTitle();
                 text_only = await driver.findElement(By.tagName("body")).getText();
-                if (options.includes("ShowUserProflesAdvanced")) {
+                if (options.includes("ShowUserProflesSlow")) {
                     temp_profile["image"] = "data:image/png;base64,{image}".replace("{image}", data);
                 }
-                if (site.selected == "true" && site.detections.length > 0 && options.includes("FindUserProflesAdvanced")) {
+                if (site.selected == "true" && site.detections.length > 0 && options.includes("FindUserProflesSlow")) {
                     await Promise.all(site.detections.map(async detection => {
                         if ("status" in detection) {
                             if (detection.status == "bad") {
@@ -380,23 +382,23 @@ app.get("/get_settings", async function (req, res, next) {
     res.json({ google: [google_api_key.substring(0, 10) + "******", google_api_cs.substring(0, 10) + "******"], detections: temp_list });
 });
 
-app.get("/save_settings", async function (req, res, next) {
+app.post("/save_settings", async function (req, res, next) {
     try {
         await parsed_sites.forEach(function (value, i) {
             parsed_sites[i].selected = "false"
         });
-        if ("detections" in req.query) {
-            if (req.query.detections.length > 0) {
-                await req.query.detections.forEach(item => {
+        if ("detections" in req.body) {
+            if (req.body.detections.length > 0) {
+                await req.body.detections.forEach(item => {
                     parsed_sites[Number(item)].selected = "true";
                 });
             }
         }
-        if (req.query.google[0] != google_api_key.substring(0, 10) + "******") {
-            google_api_key = req.query.google[0];
+        if (req.body.google[0] != google_api_key.substring(0, 10) + "******") {
+            google_api_key = req.body.google[0];
         }
-        if (req.query.google[1] != google_api_cs.substring(0, 10) + "******") {
-            google_api_cs = req.query.google[1];
+        if (req.body.google[1] != google_api_cs.substring(0, 10) + "******") {
+            google_api_cs = req.body.google[1];
         }
     }
     catch (error) {
@@ -409,9 +411,9 @@ app.get("/save_settings", async function (req, res, next) {
 app.get("/generate", async function (req, res, next) {
     var list_of_combinations = []
     try {
-        if (req.query.option == "Generate") {
-            if (req.query.words != undefined && req.query.words.length > 1 && req.query.words.length < 8) {
-                for (var perm of generatorics.permutationCombination(req.query.words)) {
+        if (req.body.option == "Generate") {
+            if (req.body.words != undefined && req.body.words.length > 1 && req.body.words.length < 8) {
+                for (var perm of generatorics.permutationCombination(req.body.words)) {
                     if (perm.join("") !== "") {
                         list_of_combinations.push(perm.join(""));
                     }
@@ -483,7 +485,7 @@ async function check_engines(req, info) {
         {
             return
         }
-        var url = "https://www.googleapis.com/customsearch/v1?key={0}&cx={1}&q={2}".replace("{0}", google_api_key).replace("{1}", google_api_cs).replace("{2}", req.query.string);
+        var url = "https://www.googleapis.com/customsearch/v1?key={0}&cx={1}&q={2}".replace("{0}", google_api_key).replace("{1}", google_api_cs).replace("{2}", req.body.string);
         var response = await axios.get(url);
         if (response.status === 200) {
             try { info.original = response.data.queries.request[0].searchTerms } catch (e) { }
@@ -550,7 +552,7 @@ async function most_common(all_words, temp_words) {
 }
 
 function find_other(all_words) {
-    var words = WordsNinja.splitSentence(req.query.string);
+    var words = WordsNinja.splitSentence(req.body.string);
 
     words.forEach(function (word) {
         var value = false
@@ -575,7 +577,7 @@ function remove_word(str, sub_string) {
 
 async function analyze_name(req, all_words) {
     temp_rr_names = []
-    string_to_check = req.query.string
+    string_to_check = req.body.string
     parsed_json.prefix.forEach(function (item, index) {
         if (string_to_check.indexOf(item) == 0 && !all_words.prefix.includes(item)) {
             all_words.prefix.push(item);
@@ -635,38 +637,38 @@ async function analyze_name(req, all_words) {
     all_words.unknown = temp_r_concat
 }
 
-app.get("/url", async function (req, res, next) {
+app.post("/url", async function (req, res, next) {
     await WordsNinja.loadDictionary();
-    var info = { "items": [], "original": "", "corrected": "", "total": 0, "checking": "Using " + req.query.string + " with no lookups" }
+    var info = { "items": [], "original": "", "corrected": "", "total": 0, "checking": "Using " + req.body.string + " with no lookups" }
     var user_info_normal = {data:{},type:"all"}
     var user_info_advanced = {data:{},type:"all"}
     var all_words = { "prefix": [], "name": [], "number": [], "symbol": [], "unknown": [], "maybe": [] }
     var words_info = []
     var temp_words = []
     try {
-        if (req.query.string == null || req.query.string == "") {
+        if (req.body.string == null || req.body.string == "") {
             res.json("Error");
         }
         else {
-            if (req.query.option.includes("FindUserProflesNormal")) {
-                user_info_advanced.data = await find_username_normal(req.query.string, req.query.option);
+            if (req.body.option.includes("FindUserProflesFast")) {
+                user_info_advanced.data = await find_username_normal(req.body.string, req.body.option);
             }
-            if (req.query.option.includes("FindUserProflesAdvanced") || req.query.option.includes("ShowUserProflesAdvanced")) {
-                if (!req.query.option.includes("FindUserProflesAdvanced"))
+            if (req.body.option.includes("FindUserProflesSlow") || req.body.option.includes("ShowUserProflesSlow")) {
+                if (!req.body.option.includes("FindUserProflesSlow"))
                 {
                     user_info_normal.type = "show"
                 }
-                else if (!req.query.option.includes("ShowUserProflesAdvanced")){
+                else if (!req.body.option.includes("ShowUserProflesSlow")){
                     user_info_normal.type = "noshow"
                 }
-                user_info_normal.data = await find_username_advanced(req.query.string, req.query.option);
+                user_info_normal.data = await find_username_advanced(req.body.string, req.body.option);
             }
-            if (req.query.option.includes("LookUps")) {
+            if (req.body.option.includes("LookUps")) {
                 await check_engines(req, info);
             }
-            if (req.query.option.includes("SplitWordsByUpperCase")) {
+            if (req.body.option.includes("SplitWordsByUpperCase")) {
                 try {
-                    req.query.string.match(/[A-Z][a-z]+/g).forEach((item) => {
+                    req.body.string.match(/[A-Z][a-z]+/g).forEach((item) => {
                         if (item.length > 1 && !all_words.unknown.includes(item) && !all_words.maybe.includes(item)) {
                             all_words.unknown.push(item.toLowerCase());
                         }
@@ -675,9 +677,9 @@ app.get("/url", async function (req, res, next) {
                 catch (err) { }
             }
 
-            if (req.query.option.includes("SplitWordsByAlphabet")) {
+            if (req.body.option.includes("SplitWordsByAlphabet")) {
                 try {
-                    req.query.string.match(/[A-Za-z]+/g).forEach((item) => {
+                    req.body.string.match(/[A-Za-z]+/g).forEach((item) => {
                         if (item.length > 1 && !all_words.unknown.includes(item) && !all_words.maybe.includes(item)) {
                             all_words.unknown.push(item.toLowerCase());
                         }
@@ -686,9 +688,9 @@ app.get("/url", async function (req, res, next) {
                 catch (err) { }
             }
 
-            req.query.string = req.query.string.toLowerCase();
+            req.body.string = req.body.string.toLowerCase();
 
-            if (req.query.option.includes("ConvertNumbers")) {
+            if (req.body.option.includes("ConvertNumbers")) {
                 numbers_to_letters = {
                     "4": "a",
                     "8": "b",
@@ -701,29 +703,29 @@ app.get("/url", async function (req, res, next) {
                 }
 
                 temp_value = ""
-                for (i = 0; i < req.query.string.length; i++) {
-                    _temp = numbers_to_letters[req.query.string.charAt(i)]
+                for (i = 0; i < req.body.string.length; i++) {
+                    _temp = numbers_to_letters[req.body.string.charAt(i)]
                     if (_temp != undefined) {
-                        temp_value += numbers_to_letters[req.query.string.charAt(i)];
+                        temp_value += numbers_to_letters[req.body.string.charAt(i)];
                     }
                     else {
-                        temp_value += req.query.string.charAt(i);
+                        temp_value += req.body.string.charAt(i);
                     }
                 }
-                req.query.string = temp_value
+                req.body.string = temp_value
             }
 
-            if (req.query.option.includes("LookUps") ||
-                req.query.option.includes("WordInfo") ||
-                req.query.option.includes("MostCommon") ||
-                req.query.option.includes("SplitWordsByUpperCase") ||
-                req.query.option.includes("SplitWordsByAlphabet") ||
-                req.query.option.includes("FindSymbols") ||
-                req.query.option.includes("FindNumbers") ||
-                req.query.option.includes("ConvertNumbers")) {
-                if (req.query.option.includes("FindNumbers")) {
+            if (req.body.option.includes("LookUps") ||
+                req.body.option.includes("WordInfo") ||
+                req.body.option.includes("MostCommon") ||
+                req.body.option.includes("SplitWordsByUpperCase") ||
+                req.body.option.includes("SplitWordsByAlphabet") ||
+                req.body.option.includes("FindSymbols") ||
+                req.body.option.includes("FindNumbers") ||
+                req.body.option.includes("ConvertNumbers")) {
+                if (req.body.option.includes("FindNumbers")) {
                     try {
-                        req.query.string.match(/(\d+)/g).forEach((item) => {
+                        req.body.string.match(/(\d+)/g).forEach((item) => {
                             if (!all_words.number.includes(item)) {
                                 all_words.number.push(item);
                             }
@@ -732,9 +734,9 @@ app.get("/url", async function (req, res, next) {
                     catch (err) { }
                 }
 
-                if (req.query.option.includes("FindSymbols")) {
+                if (req.body.option.includes("FindSymbols")) {
                     try {
-                        req.query.string.match(/[ \[\]:"\\|,.<>\/?~`!@#$%^&*()_+\-={};']/gi).forEach((item) => {
+                        req.body.string.match(/[ \[\]:"\\|,.<>\/?~`!@#$%^&*()_+\-={};']/gi).forEach((item) => {
                             if (item !== " " && !all_words.symbol.includes(item)) {
                                 all_words.symbol.push(item);
                             }
@@ -743,28 +745,28 @@ app.get("/url", async function (req, res, next) {
                     catch (err) { }
                 }
 
-                if (req.query.option.includes("SplitUpperCase")) {
-                    req.query.string = req.query.string.replace(/([A-Z]+)/g, " $1");
-                    if (req.query.string.startsWith(" ")) {
-                        req.query.string = req.query.string.substring(1);
+                if (req.body.option.includes("SplitUpperCase")) {
+                    req.body.string = req.body.string.replace(/([A-Z]+)/g, " $1");
+                    if (req.body.string.startsWith(" ")) {
+                        req.body.string = req.body.string.substring(1);
                     }
                 }
-                all_words.maybe = WordsNinja.splitSentence(req.query.string).filter(function (elem, index, self) { return index === self.indexOf(elem); }).filter(word => word.length > 1);
+                all_words.maybe = WordsNinja.splitSentence(req.body.string).filter(function (elem, index, self) { return index === self.indexOf(elem); }).filter(word => word.length > 1);
                 await analyze_name(req, all_words);
                 //find_other(all_words)
                 Object.keys(all_words).forEach((key) => (all_words[key].length == 0) && delete all_words[key]);
 
-                if (req.query.option.includes("MostCommon")) {
+                if (req.body.option.includes("MostCommon")) {
                     await most_common(all_words, temp_words);
                 }
-                if (req.query.option.includes("WordInfo")) {
+                if (req.body.option.includes("WordInfo")) {
                     await get_words_info(all_words, words_info);
                 }
             }
-            else if (req.query.option.includes("NormalAnalysis@@")) {
-                var maybe_words = WordsNinja.splitSentence(req.query.string);
+            else if (req.body.option.includes("NormalAnalysis@@")) {
+                var maybe_words = WordsNinja.splitSentence(req.body.string);
                 all_words.maybe = maybe_words.filter(function (elem, index, self) { return index === self.indexOf(elem); });
-                list_of_tokens = _tokenizer.tokenize(req.query.string);
+                list_of_tokens = _tokenizer.tokenize(req.body.string);
                 list_of_tokens.forEach(function (item, index) {
                     if (item.tag in all_words) {
                         all_words[item.tag].push(item.token);
