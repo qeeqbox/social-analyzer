@@ -33,6 +33,85 @@ app.use(express.json());
 
 app.use(express.static("public"));
 
+async function find_username_special(username, options) {
+    const time = new Date();
+    const functions = [];
+    parsed_sites.forEach((site) => {
+        if ("status" in site) {
+            if (site.status == "bad") {
+                return Promise.resolve();
+            }
+        }
+        if ("name" in site) {
+            if (site.name == "facebook") {
+                if (site.selected == "true") {
+                    functions.push(find_username_site_special_facebook_1.bind(null, username,site));
+                }
+            }
+        }
+    });
+    const results = await async.parallelLimit(functions, 5);
+    console.log(`Total time ${new Date() - time}`);
+    return results.filter(item => item !== undefined)
+}
+
+async function find_username_site_special_facebook_1(username,site) {
+    return new Promise( async (resolve, reject) => {
+
+        let driver = new Builder()
+        .forBrowser("firefox")
+        .setFirefoxOptions(new firefox.Options().headless().windowSize({ width: 640, height: 480 }))
+        .build();
+
+        try{
+            var timeouts = {
+                implicit: 0,
+                pageLoad: 10000,
+                script: 10000
+            };
+            
+            var source = "";
+            var data = "";
+            var text_only = "unavailable";
+            var title = "unavailable";
+            var temp_profile = { "found": 0, "image": "", "link": "", rate: "", title: "", text: ""};
+            var link = "https://mbasic.facebook.com/login/identify/?ctx=recoveqr";
+            await driver.manage().setTimeouts(timeouts);
+            await driver.get(link);;
+            await driver.findElement(By.id('identify_search_text_input')).sendKeys(username); 
+            await driver.findElement(By.id('did_submit')).click();
+            var source = await driver.getPageSource();
+            text_only = await driver.findElement(By.tagName("body")).getText();
+            await driver.quit()
+            if (source.includes("Try Entering Your Password")) {
+                temp_found = "true";
+                temp_profile.found += 1
+            }
+            if (temp_profile.found > 0) {
+                temp_profile.text = "unavailable";
+                temp_profile.title = "unavailable";
+                temp_profile.rate = "%" + ((temp_profile.found / 1) * 100).toFixed(2);
+                temp_profile.link = site.url.replace("{username}", username);
+                resolve(temp_profile);
+            }
+            else{
+                resolve(undefined)
+            }
+        }   
+        catch(err){
+            if (driver !== undefined){
+                try{
+                    await driver.quit()
+                }
+                catch(err){
+                    console.log("Driver Session Issue")
+                }
+            }
+            resolve(undefined)
+        }
+    });
+}
+
 async function find_username_advanced(username, options) {
     const time = new Date();
     const functions = [];
@@ -650,6 +729,9 @@ app.post("/url", async function (req, res, next) {
             res.json("Error");
         }
         else {
+            if (req.body.option.includes("FindUserProflesSpecial")) {
+                user_info_advanced.data = await find_username_special(req.body.string, req.body.option);
+            }
             if (req.body.option.includes("FindUserProflesFast")) {
                 user_info_advanced.data = await find_username_normal(req.body.string, req.body.option);
             }

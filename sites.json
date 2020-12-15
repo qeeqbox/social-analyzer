@@ -598,12 +598,29 @@
     },
     {
         "url": "https://capfriendly.com/users/{username}",
-        "detections": [],
+        "detections": [
+            {
+                "return": "false",
+                "string": "No results found",
+                "type": "normal"
+            }
+        ],
         "selected": "false"
     },
     {
         "url": "https://career.habr.com/{username}",
-        "detections": [],
+        "detections": [
+            {
+                "return": "false",
+                "string": "404 error",
+                "type": "normal"
+            },
+            {
+                "return": "true",
+                "string": "og:title",
+                "type": "normal"
+            }
+        ],
         "selected": "false"
     },
     {
@@ -889,6 +906,7 @@
         "selected": "false"
     },
     {
+        "name":"facebook",
         "url": "https://facebook.com/{username}",
         "detections": [
             {
