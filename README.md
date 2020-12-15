@@ -58,3 +58,4 @@ sudo docker build -t social-analyzer . && sudo docker run -p 9005:9005 -it socia
 
 ## Disclaimer\Notes
 - This tool meant to be used localy (It does not have any type of Access Control)
+- If you want your website to be excluded from this project, please reach out to me!
