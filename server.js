@@ -721,6 +721,7 @@ app.post("/url", async function (req, res, next) {
     var info = { "items": [], "original": "", "corrected": "", "total": 0, "checking": "Using " + req.body.string + " with no lookups" }
     var user_info_normal = {data:{},type:"all"}
     var user_info_advanced = {data:{},type:"all"}
+    var user_info_special = {data:{},type:"all"}
     var all_words = { "prefix": [], "name": [], "number": [], "symbol": [], "unknown": [], "maybe": [] }
     var words_info = []
     var temp_words = []
@@ -730,7 +731,7 @@ app.post("/url", async function (req, res, next) {
         }
         else {
             if (req.body.option.includes("FindUserProflesSpecial")) {
-                user_info_advanced.data = await find_username_special(req.body.string, req.body.option);
+                user_info_special.data = await find_username_special(req.body.string, req.body.option);
             }
             if (req.body.option.includes("FindUserProflesFast")) {
                 user_info_advanced.data = await find_username_normal(req.body.string, req.body.option);
@@ -861,7 +862,7 @@ app.post("/url", async function (req, res, next) {
 
                 Object.keys(all_words).forEach((key) => (all_words[key].length == 0) && delete all_words[key]);
             }
-            res.json({ info, table: all_words, common: temp_words, words_info: words_info, user_info_normal: user_info_normal,user_info_advanced: user_info_advanced });
+            res.json({ info, table: all_words, common: temp_words, words_info: words_info, user_info_normal: user_info_normal,user_info_advanced: user_info_advanced,user_info_special: user_info_special});
         }
     }
     catch (e) {

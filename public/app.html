@@ -215,6 +215,7 @@
     #output-section-1,
     #output-section-2,
     #output-section-3,
+    #output-section-4,
     #most-common-words-section,
     #words-info-section {
         display: none;
@@ -723,6 +724,13 @@
                 </div>
                 <div id="output-table-3"></div>
             </div>
+            <div class="box-border-style" id="output-section-4">
+                <div class="div-header">
+                    <div class="div-left">Detected Profiles (Special)</div>
+                    <div class="div-right"></div>
+                </div>
+                <div id="output-table-4"></div>
+            </div>
         </div>
     </div>
     <script>
@@ -761,6 +769,8 @@
             $('#output-table-2').html("");
             $('#output-section-3').hide();
             $('#output-table-3').html("");
+            $('#output-section-4').hide();
+            $('#output-table-4').html("");
         }
 
         function setup_selectable(tag) {
@@ -907,6 +917,20 @@
 
                         $("#output-table-3").html(temp_tr)
                         $('#output-section-3').show();
+                    }
+
+                    if (data.user_info_special.data.length > 0) {
+                        var temp_tr = ""
+                        data.user_info_special.data.forEach(function (site) {
+                            if (site.found > 0) {
+                                temp_image = ""
+                                temp_tr += '<div class="user-info-container"><div class="user-info-container-left"><div>Link: <a href="' + site.link + '">' + site.link + '</a></div><div>Rate: ' + site.rate + '</div><div>Title: ' + site.title + '</div><div>Text: ' + site.text + '</div></div><div class="user-info-container-right">' + temp_image + '</div></div>'
+                                console.log(temp_tr)
+                            }
+                        });
+
+                        $("#output-table-4").html(temp_tr)
+                        $('#output-section-4').show();
                     }
 
                 }
