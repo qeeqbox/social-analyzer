@@ -32,6 +32,7 @@ If you have a detection, please submit it in a pull request!
 - Convert Numbers to Letters
 - Find Profles Normal (Fast)
 - Find Profles Advacned (Slow)
+- Find Profles Special (Slow)
 - Profile Screenshot
 - And more!
 
