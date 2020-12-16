@@ -16,6 +16,9 @@ var firefox = require("selenium-webdriver/firefox");
 var { Builder, By } = require("selenium-webdriver");
 var https = require("follow-redirects").https;
 var async = require("async");
+var PrettyError = require('pretty-error');
+var pe = new PrettyError();
+require('express-async-errors');
 //var jsdom = require('jsdom');
 //var dom = new jsdom.JSDOM();
 //var window = dom.window;
@@ -28,9 +31,8 @@ var parsed_sites = JSON.parse(fs.readFileSync("sites.json"));
 var app = express();
 
 var WordsNinja = new WordsNinjaPack();
-app.use(express.urlencoded({extended: true})); 
-app.use(express.json()); 
-
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
 app.use(express.static("public"));
 
 async function find_username_special(username, options) {
@@ -45,7 +47,7 @@ async function find_username_special(username, options) {
         if ("name" in site) {
             if (site.name == "facebook") {
                 if (site.selected == "true") {
-                    functions.push(find_username_site_special_facebook_1.bind(null, username,site));
+                    functions.push(find_username_site_special_facebook_1.bind(null, username, site));
                 }
             }
         }
@@ -55,32 +57,32 @@ async function find_username_special(username, options) {
     return results.filter(item => item !== undefined)
 }
 
-async function find_username_site_special_facebook_1(username,site) {
-    return new Promise( async (resolve, reject) => {
+async function find_username_site_special_facebook_1(username, site) {
+    return new Promise(async (resolve, reject) => {
 
         let driver = new Builder()
-        .forBrowser("firefox")
-        .setFirefoxOptions(new firefox.Options().headless().windowSize({ width: 640, height: 480 }))
-        .build();
+            .forBrowser("firefox")
+            .setFirefoxOptions(new firefox.Options().headless().windowSize({ width: 640, height: 480 }))
+            .build();
 
-        try{
+        try {
             var timeouts = {
                 implicit: 0,
                 pageLoad: 10000,
                 script: 10000
             };
-            
+
             var source = "";
             var data = "";
             var text_only = "unavailable";
             var title = "unavailable";
-            var temp_profile = { "found": 0, "image": "", "link": "", rate: "", title: "", text: ""};
+            var temp_profile = { "found": 0, "image": "", "link": "", rate: "", title: "", text: "" };
             var link = "https://mbasic.facebook.com/login/identify/?ctx=recoveqr";
             await driver.manage().setTimeouts(timeouts);
             await driver.get(link);;
-            await driver.findElement(By.id('identify_search_text_input')).sendKeys(username); 
+            await driver.findElement(By.id('identify_search_text_input')).sendKeys(username);
             await driver.findElement(By.id('did_submit')).click();
-            var source = await driver.getPageSource();
+            source = await driver.getPageSource();
             text_only = await driver.findElement(By.tagName("body")).getText();
             await driver.quit()
             if (source.includes("Try Entering Your Password")) {
@@ -94,16 +96,16 @@ async function find_username_site_special_facebook_1(username,site) {
                 temp_profile.link = site.url.replace("{username}", username);
                 resolve(temp_profile);
             }
-            else{
+            else {
                 resolve(undefined)
             }
-        }   
-        catch(err){
-            if (driver !== undefined){
-                try{
+        }
+        catch (err) {
+            if (driver !== undefined) {
+                try {
                     await driver.quit()
                 }
-                catch(err){
+                catch (err) {
                     console.log("Driver Session Issue")
                 }
             }
@@ -131,31 +133,31 @@ async function find_username_advanced(username, options) {
 }
 
 async function find_username_site_new(username, options, site) {
-    return new Promise( async (resolve, reject) => {
+    return new Promise(async (resolve, reject) => {
 
         let driver = new Builder()
-        .forBrowser("firefox")
-        .setFirefoxOptions(new firefox.Options().headless().windowSize({ width: 640, height: 480 }))
-        .build();
+            .forBrowser("firefox")
+            .setFirefoxOptions(new firefox.Options().headless().windowSize({ width: 640, height: 480 }))
+            .build();
 
-        try{
+        try {
             var timeouts = {
                 implicit: 0,
                 pageLoad: 10000,
                 script: 10000
             };
-    
+
             var source = "";
             var data = "";
             var text_only = "unavailable";
             var title = "unavailable";
-            var temp_profile = { "found": 0, "image": "", "link": "", rate: "", title: "", text: ""};
+            var temp_profile = { "found": 0, "image": "", "link": "", rate: "", title: "", text: "" };
             var link = site.url.replace("{username}", username);
             await driver.manage().setTimeouts(timeouts);
             await driver.get(link);;
-            var source = await driver.getPageSource();
-            var data = await driver.takeScreenshot();
-            var title = await driver.getTitle();
+            source = await driver.getPageSource();
+            data = await driver.takeScreenshot();
+            title = await driver.getTitle();
             text_only = await driver.findElement(By.tagName("body")).getText();
             await driver.quit()
             if (options.includes("ShowUserProflesSlow")) {
@@ -163,7 +165,7 @@ async function find_username_site_new(username, options, site) {
             }
             if (site.selected == "true" && site.detections.length > 0 && options.includes("FindUserProflesSlow")) {
                 await Promise.all(site.detections.map(async detection => {
-                    try{
+                    try {
                         if ("status" in detection) {
                             if (detection.status == "bad") {
                                 return;
@@ -202,9 +204,9 @@ async function find_username_site_new(username, options, site) {
                                 temp_profile.found += 1
                             }
                         }
-    
+
                     }
-                    catch(err){
+                    catch (err) {
 
                     }
                 }));
@@ -216,16 +218,16 @@ async function find_username_site_new(username, options, site) {
                 temp_profile.link = site.url.replace("{username}", username);
                 resolve(temp_profile);
             }
-            else{
+            else {
                 resolve(undefined)
             }
-        }   
-        catch(err){
-            if (driver !== undefined){
-                try{
+        }
+        catch (err) {
+            if (driver !== undefined) {
+                try {
                     await driver.quit()
                 }
-                catch(err){
+                catch (err) {
                     console.log("Driver Session Issue")
                 }
             }
@@ -266,7 +268,7 @@ async function find_username_normal(username, options) {
                     ignoreHref: true,
                     ignoreImage: true
                 });
-                if(temp_profile.text == ""){
+                if (temp_profile.text == "") {
                     temp_profile.text = "unavailable"
                 }
                 temp_profile.title = sanitizeHtml(title);
@@ -330,7 +332,7 @@ async function find_username_advanced_2(username, options) {
                 var data = "";
                 var text_only = "unavailable";
                 var title = "unavailable";
-                var temp_profile = { "found": 0, "image": "", "link": "", rate: "", title: "", text: ""};
+                var temp_profile = { "found": 0, "image": "", "link": "", rate: "", title: "", text: "" };
                 var link = site.url.replace("{username}", username);
                 await driver.get(link);;
                 source = await driver.getPageSource();
@@ -462,26 +464,21 @@ app.get("/get_settings", async function (req, res, next) {
 });
 
 app.post("/save_settings", async function (req, res, next) {
-    try {
-        await parsed_sites.forEach(function (value, i) {
-            parsed_sites[i].selected = "false"
-        });
-        if ("detections" in req.body) {
-            if (req.body.detections.length > 0) {
-                await req.body.detections.forEach(item => {
-                    parsed_sites[Number(item)].selected = "true";
-                });
-            }
-        }
-        if (req.body.google[0] != google_api_key.substring(0, 10) + "******") {
-            google_api_key = req.body.google[0];
-        }
-        if (req.body.google[1] != google_api_cs.substring(0, 10) + "******") {
-            google_api_cs = req.body.google[1];
+    await parsed_sites.forEach(function (value, i) {
+        parsed_sites[i].selected = "false"
+    });
+    if ("detections" in req.body) {
+        if (req.body.detections.length > 0) {
+            await req.body.detections.forEach(item => {
+                parsed_sites[Number(item)].selected = "true";
+            });
         }
     }
-    catch (error) {
-        console.log(error);
+    if (req.body.google[0] != google_api_key.substring(0, 10) + "******") {
+        google_api_key = req.body.google[0];
+    }
+    if (req.body.google[1] != google_api_cs.substring(0, 10) + "******") {
+        google_api_cs = req.body.google[1];
     }
 
     res.json("Done");
@@ -489,21 +486,17 @@ app.post("/save_settings", async function (req, res, next) {
 
 app.get("/generate", async function (req, res, next) {
     var list_of_combinations = []
-    try {
-        if (req.body.option == "Generate") {
-            if (req.body.words != undefined && req.body.words.length > 1 && req.body.words.length < 8) {
-                for (var perm of generatorics.permutationCombination(req.body.words)) {
-                    if (perm.join("") !== "") {
-                        list_of_combinations.push(perm.join(""));
-                    }
+    if (req.body.option == "Generate") {
+        if (req.body.words != undefined && req.body.words.length > 1 && req.body.words.length < 8) {
+            for (var perm of generatorics.permutationCombination(req.body.words)) {
+                if (perm.join("") !== "") {
+                    list_of_combinations.push(perm.join(""));
                 }
             }
         }
-        res.json({ combinations: list_of_combinations });
     }
-    catch (error) {
-        console.log(error);;
-    }
+    res.json({ combinations: list_of_combinations });
+
 });
 
 async function get_words_info(all_words, words_info) {
@@ -560,8 +553,7 @@ async function get_words_info(all_words, words_info) {
 
 async function check_engines(req, info) {
     try {
-        if (google_api_key == "" || google_api_cs == "")
-        {
+        if (google_api_key == "" || google_api_cs == "") {
             return
         }
         var url = "https://www.googleapis.com/customsearch/v1?key={0}&cx={1}&q={2}".replace("{0}", google_api_key).replace("{1}", google_api_cs).replace("{2}", req.body.string);
@@ -719,165 +711,169 @@ async function analyze_name(req, all_words) {
 app.post("/url", async function (req, res, next) {
     await WordsNinja.loadDictionary();
     var info = { "items": [], "original": "", "corrected": "", "total": 0, "checking": "Using " + req.body.string + " with no lookups" }
-    var user_info_normal = {data:{},type:"all"}
-    var user_info_advanced = {data:{},type:"all"}
-    var user_info_special = {data:{},type:"all"}
+    var user_info_normal = { data: {}, type: "all" }
+    var user_info_advanced = { data: {}, type: "all" }
+    var user_info_special = { data: {}, type: "all" }
     var all_words = { "prefix": [], "name": [], "number": [], "symbol": [], "unknown": [], "maybe": [] }
     var words_info = []
     var temp_words = []
-    try {
-        if (req.body.string == null || req.body.string == "") {
-            res.json("Error");
+    if (req.body.string == null || req.body.string == "") {
+        res.json("Error");
+    }
+    else {
+        if (req.body.option.includes("FindUserProflesSpecial")) {
+            user_info_special.data = await find_username_special(req.body.string, req.body.option);
         }
-        else {
-            if (req.body.option.includes("FindUserProflesSpecial")) {
-                user_info_special.data = await find_username_special(req.body.string, req.body.option);
+        if (req.body.option.includes("FindUserProflesFast")) {
+            user_info_advanced.data = await find_username_normal(req.body.string, req.body.option);
+        }
+        if (req.body.option.includes("FindUserProflesSlow") || req.body.option.includes("ShowUserProflesSlow")) {
+            if (!req.body.option.includes("FindUserProflesSlow")) {
+                user_info_normal.type = "show"
             }
-            if (req.body.option.includes("FindUserProflesFast")) {
-                user_info_advanced.data = await find_username_normal(req.body.string, req.body.option);
+            else if (!req.body.option.includes("ShowUserProflesSlow")) {
+                user_info_normal.type = "noshow"
             }
-            if (req.body.option.includes("FindUserProflesSlow") || req.body.option.includes("ShowUserProflesSlow")) {
-                if (!req.body.option.includes("FindUserProflesSlow"))
-                {
-                    user_info_normal.type = "show"
-                }
-                else if (!req.body.option.includes("ShowUserProflesSlow")){
-                    user_info_normal.type = "noshow"
-                }
-                user_info_normal.data = await find_username_advanced(req.body.string, req.body.option);
-            }
-            if (req.body.option.includes("LookUps")) {
-                await check_engines(req, info);
-            }
-            if (req.body.option.includes("SplitWordsByUpperCase")) {
-                try {
-                    req.body.string.match(/[A-Z][a-z]+/g).forEach((item) => {
-                        if (item.length > 1 && !all_words.unknown.includes(item) && !all_words.maybe.includes(item)) {
-                            all_words.unknown.push(item.toLowerCase());
-                        }
-                    });
-                }
-                catch (err) { }
-            }
-
-            if (req.body.option.includes("SplitWordsByAlphabet")) {
-                try {
-                    req.body.string.match(/[A-Za-z]+/g).forEach((item) => {
-                        if (item.length > 1 && !all_words.unknown.includes(item) && !all_words.maybe.includes(item)) {
-                            all_words.unknown.push(item.toLowerCase());
-                        }
-                    });
-                }
-                catch (err) { }
-            }
-
-            req.body.string = req.body.string.toLowerCase();
-
-            if (req.body.option.includes("ConvertNumbers")) {
-                numbers_to_letters = {
-                    "4": "a",
-                    "8": "b",
-                    "3": "e",
-                    "1": "l",
-                    "0": "o",
-                    "5": "s",
-                    "7": "t",
-                    "2": "z"
-                }
-
-                temp_value = ""
-                for (i = 0; i < req.body.string.length; i++) {
-                    _temp = numbers_to_letters[req.body.string.charAt(i)]
-                    if (_temp != undefined) {
-                        temp_value += numbers_to_letters[req.body.string.charAt(i)];
-                    }
-                    else {
-                        temp_value += req.body.string.charAt(i);
-                    }
-                }
-                req.body.string = temp_value
-            }
-
-            if (req.body.option.includes("LookUps") ||
-                req.body.option.includes("WordInfo") ||
-                req.body.option.includes("MostCommon") ||
-                req.body.option.includes("SplitWordsByUpperCase") ||
-                req.body.option.includes("SplitWordsByAlphabet") ||
-                req.body.option.includes("FindSymbols") ||
-                req.body.option.includes("FindNumbers") ||
-                req.body.option.includes("ConvertNumbers")) {
-                if (req.body.option.includes("FindNumbers")) {
-                    try {
-                        req.body.string.match(/(\d+)/g).forEach((item) => {
-                            if (!all_words.number.includes(item)) {
-                                all_words.number.push(item);
-                            }
-                        });
-                    }
-                    catch (err) { }
-                }
-
-                if (req.body.option.includes("FindSymbols")) {
-                    try {
-                        req.body.string.match(/[ \[\]:"\\|,.<>\/?~`!@#$%^&*()_+\-={};']/gi).forEach((item) => {
-                            if (item !== " " && !all_words.symbol.includes(item)) {
-                                all_words.symbol.push(item);
-                            }
-                        });
-                    }
-                    catch (err) { }
-                }
-
-                if (req.body.option.includes("SplitUpperCase")) {
-                    req.body.string = req.body.string.replace(/([A-Z]+)/g, " $1");
-                    if (req.body.string.startsWith(" ")) {
-                        req.body.string = req.body.string.substring(1);
-                    }
-                }
-                all_words.maybe = WordsNinja.splitSentence(req.body.string).filter(function (elem, index, self) { return index === self.indexOf(elem); }).filter(word => word.length > 1);
-                await analyze_name(req, all_words);
-                //find_other(all_words)
-                Object.keys(all_words).forEach((key) => (all_words[key].length == 0) && delete all_words[key]);
-
-                if (req.body.option.includes("MostCommon")) {
-                    await most_common(all_words, temp_words);
-                }
-                if (req.body.option.includes("WordInfo")) {
-                    await get_words_info(all_words, words_info);
-                }
-            }
-            else if (req.body.option.includes("NormalAnalysis@@")) {
-                var maybe_words = WordsNinja.splitSentence(req.body.string);
-                all_words.maybe = maybe_words.filter(function (elem, index, self) { return index === self.indexOf(elem); });
-                list_of_tokens = _tokenizer.tokenize(req.body.string);
-                list_of_tokens.forEach(function (item, index) {
-                    if (item.tag in all_words) {
-                        all_words[item.tag].push(item.token);
-                    }
-                    else {
-                        all_words[item.tag] = []
-                        all_words[item.tag].push(item.token);
+            user_info_normal.data = await find_username_advanced(req.body.string, req.body.option);
+        }
+        if (req.body.option.includes("LookUps")) {
+            await check_engines(req, info);
+        }
+        if (req.body.option.includes("SplitWordsByUpperCase")) {
+            try {
+                req.body.string.match(/[A-Z][a-z]+/g).forEach((item) => {
+                    if (item.length > 1 && !all_words.unknown.includes(item) && !all_words.maybe.includes(item)) {
+                        all_words.unknown.push(item.toLowerCase());
                     }
                 });
-
-                Object.keys(all_words).forEach((key) => (all_words[key].length == 0) && delete all_words[key]);
             }
-            res.json({ info, table: all_words, common: temp_words, words_info: words_info, user_info_normal: user_info_normal,user_info_advanced: user_info_advanced,user_info_special: user_info_special});
+            catch (err) { }
         }
-    }
-    catch (e) {
-        console.log(e);
-        res.json("Error");
+
+        if (req.body.option.includes("SplitWordsByAlphabet")) {
+            try {
+                req.body.string.match(/[A-Za-z]+/g).forEach((item) => {
+                    if (item.length > 1 && !all_words.unknown.includes(item) && !all_words.maybe.includes(item)) {
+                        all_words.unknown.push(item.toLowerCase());
+                    }
+                });
+            }
+            catch (err) { }
+        }
+
+        req.body.string = req.body.string.toLowerCase();
+
+        if (req.body.option.includes("ConvertNumbers")) {
+            numbers_to_letters = {
+                "4": "a",
+                "8": "b",
+                "3": "e",
+                "1": "l",
+                "0": "o",
+                "5": "s",
+                "7": "t",
+                "2": "z"
+            }
+
+            temp_value = ""
+            for (i = 0; i < req.body.string.length; i++) {
+                _temp = numbers_to_letters[req.body.string.charAt(i)]
+                if (_temp != undefined) {
+                    temp_value += numbers_to_letters[req.body.string.charAt(i)];
+                }
+                else {
+                    temp_value += req.body.string.charAt(i);
+                }
+            }
+            req.body.string = temp_value
+        }
+
+        if (req.body.option.includes("LookUps") ||
+            req.body.option.includes("WordInfo") ||
+            req.body.option.includes("MostCommon") ||
+            req.body.option.includes("SplitWordsByUpperCase") ||
+            req.body.option.includes("SplitWordsByAlphabet") ||
+            req.body.option.includes("FindSymbols") ||
+            req.body.option.includes("FindNumbers") ||
+            req.body.option.includes("ConvertNumbers")) {
+            if (req.body.option.includes("FindNumbers")) {
+                try {
+                    req.body.string.match(/(\d+)/g).forEach((item) => {
+                        if (!all_words.number.includes(item)) {
+                            all_words.number.push(item);
+                        }
+                    });
+                }
+                catch (err) { }
+            }
+
+            if (req.body.option.includes("FindSymbols")) {
+                try {
+                    req.body.string.match(/[ \[\]:"\\|,.<>\/?~`!@#$%^&*()_+\-={};']/gi).forEach((item) => {
+                        if (item !== " " && !all_words.symbol.includes(item)) {
+                            all_words.symbol.push(item);
+                        }
+                    });
+                }
+                catch (err) { }
+            }
+
+            if (req.body.option.includes("SplitUpperCase")) {
+                req.body.string = req.body.string.replace(/([A-Z]+)/g, " $1");
+                if (req.body.string.startsWith(" ")) {
+                    req.body.string = req.body.string.substring(1);
+                }
+            }
+            all_words.maybe = WordsNinja.splitSentence(req.body.string).filter(function (elem, index, self) { return index === self.indexOf(elem); }).filter(word => word.length > 1);
+            await analyze_name(req, all_words);
+            //find_other(all_words)
+            Object.keys(all_words).forEach((key) => (all_words[key].length == 0) && delete all_words[key]);
+
+            if (req.body.option.includes("MostCommon")) {
+                await most_common(all_words, temp_words);
+            }
+            if (req.body.option.includes("WordInfo")) {
+                await get_words_info(all_words, words_info);
+            }
+        }
+        else if (req.body.option.includes("NormalAnalysis@@")) {
+            var maybe_words = WordsNinja.splitSentence(req.body.string);
+            all_words.maybe = maybe_words.filter(function (elem, index, self) { return index === self.indexOf(elem); });
+            list_of_tokens = _tokenizer.tokenize(req.body.string);
+            list_of_tokens.forEach(function (item, index) {
+                if (item.tag in all_words) {
+                    all_words[item.tag].push(item.token);
+                }
+                else {
+                    all_words[item.tag] = []
+                    all_words[item.tag].push(item.token);
+                }
+            });
+
+            Object.keys(all_words).forEach((key) => (all_words[key].length == 0) && delete all_words[key]);
+        }
+        res.json({ info, table: all_words, common: temp_words, words_info: words_info, user_info_normal: user_info_normal, user_info_advanced: user_info_advanced, user_info_special: user_info_special });
     }
 });
 
 app.use((err, req, res, next) => {
+    console.log(" --- Global Error ---")
+    console.log(pe.render(err));
     res.json("Error");
 });
+
+process.on('uncaughtException', function(err) {
+    console.log(" --- Uncaught Error ---")
+    console.log(pe.render(err));
+})
+
+
+process.on('unhandledRejection', function(err) {
+    console.log(" --- Uncaught Rejection ---")
+    console.log(pe.render(err));
+})
 
 var server = app.listen(9005, function () {
     var port = server.address().port;
     console.log("Server started at http://localhost:%s/app.html", port);
 });
-
-//server.setTimeout(60000);
