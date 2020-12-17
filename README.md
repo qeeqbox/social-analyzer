@@ -23,7 +23,6 @@ If you have a detection, please submit it in a pull request!
 ## Find Profile (Slow - FindUserProflesAdvanced)
 <img src="https://raw.githubusercontent.com/qeeqbox/social-analyzer/main/readme/intro_slow.gif" style="max-width:768px"/>
 
-
 ## Features
 - String Analysis
 - Search Engine Lookup
@@ -35,6 +34,9 @@ If you have a detection, please submit it in a pull request!
 - Find Profles Special (Slow)
 - Profile Screenshot
 - And more!
+
+## Special Detections
+- facebook
 
 ## Install and run (Nodejs + NPM + Firefox)
 ```bash
