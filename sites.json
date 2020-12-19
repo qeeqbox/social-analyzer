@@ -760,17 +760,70 @@
     },
     {
         "url": "https://codementor.io/{username}",
-        "detections": [],
+        "detections": [
+            {
+                "return": "false",
+                "string": "/404/",
+                "type": "ocr"
+            },
+            {
+                "return": "true",
+                "string": "box-sizing",
+                "type": "normal"
+            },
+            {
+                "return": "true",
+                "string": "username",
+                "type": "normal"
+            }
+        ],
         "selected": "false"
     },
     {
         "url": "https://codepen.io/{username}",
-        "detections": [],
+        "detections": [
+            {
+                "return": "false",
+                "string": "I'm afraid you've found",
+                "type": "ocr"
+            },
+            {
+                "return": "false",
+                "string": "I'm afraid you've found",
+                "type": "normal"
+            },
+            {
+                "return": "true",
+                "string": "username",
+                "type": "normal"
+            },
+            {
+                "return": "true",
+                "string": "og:title",
+                "type": "normal"
+            }
+        ],
         "selected": "false"
     },
     {
         "url": "https://codewars.com/users/{username}",
-        "detections": [],
+        "detections": [
+            {
+                "return": "false",
+                "string": "The page you were looking",
+                "type": "ocr"
+            },
+            {
+                "return": "false",
+                "string": "The page you were looking",
+                "type": "normal"
+            },
+            {
+                "return": "true",
+                "string": "username",
+                "type": "normal"
+            }
+        ],
         "selected": "false"
     },
     {
@@ -790,7 +843,18 @@
     },
     {
         "url": "https://community.eintracht.de/fans/{username}",
-        "detections": [],
+        "detections": [
+            {
+                "return": "false",
+                "string": "Seite nicht gefunden",
+                "type": "normal"
+            },
+            {
+                "return": "true",
+                "string": "username",
+                "type": "normal"
+            }
+        ],
         "selected": "false"
     },
     {
@@ -800,12 +864,54 @@
     },
     {
         "url": "https://community.signalusers.org/u/{username}",
-        "detections": [],
+        "detections": [
+            {
+                "return": "false",
+                "string": "That page doesn’t exist",
+                "type": "ocr"
+            },
+            {
+                "return": "false",
+                "string": "That page doesn’t exist",
+                "type": "normal"
+            },
+            {
+                "return": "true",
+                "string": "\"/u/{username}\"",
+                "type": "normal"
+            },
+            {
+                "return": "true",
+                "string": "og:title",
+                "type": "normal"
+            }
+        ],
         "selected": "false"
     },
     {
         "url": "https://community.windy.com/user/{username}",
-        "detections": [],
+        "detections": [
+            {
+                "return": "false",
+                "string": "You seem to have stumbled",
+                "type": "ocr"
+            },
+            {
+                "return": "false",
+                "string": "You seem to have stumbled",
+                "type": "normal"
+            },
+            {
+                "return": "false",
+                "string": "\"404\"",
+                "type": "normal"
+            },
+            {
+                "return": "true",
+                "string": "account-stats",
+                "type": "normal"
+            }
+        ],
         "selected": "false"
     },
     {
@@ -815,7 +921,23 @@
     },
     {
         "url": "https://coroflot.com/{username}",
-        "detections": [],
+        "detections": [
+            {
+                "return": "false",
+                "string": "Looking for something",
+                "type": "ocr"
+            },
+            {
+                "return": "false",
+                "string": "Looking for something",
+                "type": "normal"
+            },
+            {
+                "return": "true",
+                "string": "com/{username}",
+                "type": "normal"
+            }
+        ],
         "selected": "false"
     },
     {
