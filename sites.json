@@ -625,7 +625,28 @@
     },
     {
         "url": "https://cash.me/{username}",
-        "detections": [],
+        "detections": [
+            {
+                "return": "false",
+                "string": "The page you are looking for can't be found.",
+                "type": "ocr"
+            },
+            {
+                "return": "false",
+                "string": "The page you are looking for can't be found.",
+                "type": "normal"
+            },
+            {
+                "return": "true",
+                "string": "display_name",
+                "type": "normal"
+            },
+            {
+                "return": "true",
+                "string": "og:title",
+                "type": "normal"
+            }
+        ],
         "selected": "false"
     },
     {
@@ -635,12 +656,49 @@
     },
     {
         "url": "https://chaos.social/@{username}",
-        "detections": [],
+        "detections": [
+            {
+                "return": "false",
+                "string": "The page you are looking",
+                "type": "normal"
+            },
+            {
+                "return": "true",
+                "string": "/@{username}",
+                "type": "normal"
+            },
+            {
+                "return": "true",
+                "string": "og:title",
+                "type": "normal"
+            }
+        ],
         "selected": "false"
     },
     {
         "url": "https://chess.com/member/{username}",
-        "detections": [],
+        "detections": [
+            {
+                "return": "false",
+                "string": "somebody made a wrong move",
+                "type": "ocr"
+            },
+            {
+                "return": "false",
+                "string": "somebody made a wrong move",
+                "type": "normal"
+            },
+            {
+                "return": "true",
+                "string": "username",
+                "type": "normal"
+            },
+            {
+                "return": "true",
+                "string": "og:title",
+                "type": "normal"
+            }
+        ],
         "selected": "false"
     },
     {
@@ -655,7 +713,28 @@
     },
     {
         "url": "https://cnet.com/profiles/{username}",
-        "detections": [],
+        "detections": [
+            {
+                "return": "false",
+                "string": "You are here in error",
+                "type": "ocr"
+            },
+            {
+                "return": "false",
+                "string": "You are here in error",
+                "type": "normal"
+            },
+            {
+                "return": "false",
+                "string": "Page Not Found",
+                "type": "normal"
+            },
+            {
+                "return": "true",
+                "string": "recipientName",
+                "type": "normal"
+            }
+        ],
         "selected": "false"
     },
     {
@@ -665,7 +744,18 @@
     },
     {
         "url": "https://codechef.com/users/{username}",
-        "detections": [],
+        "detections": [
+            {
+                "return": "true",
+                "string": "users/{username}",
+                "type": "normal"
+            },
+            {
+                "return": "true",
+                "string": "user-profile",
+                "type": "normal"
+            }
+        ],
         "selected": "false"
     },
     {
