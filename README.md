@@ -46,6 +46,7 @@ apt-get install -y firefox-esr tesseract-ocr
 git clone https://github.com/qeeqbox/social-analyzer.git
 cd social-analyzer
 rm -rf package-lock.json node_modules
+npm install lodash
 npm install
 npm start
 ```
