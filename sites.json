@@ -947,32 +947,113 @@
     },
     {
         "url": "https://countable.us/{username}",
-        "detections": [],
+        "detections": [
+            {
+                "return": "false",
+                "string": "The page you were looking for",
+                "type": "ocr"
+            },
+            {
+                "return": "false",
+                "string": "The page you were looking for",
+                "type": "normal"
+            },
+            {
+                "return": "true",
+                "string": "_TITLE",
+                "type": "normal"
+            }
+        ],
         "selected": "false"
     },
     {
         "url": "https://cracked.com/members/{username}",
-        "detections": [],
+        "detections": [
+            {
+                "return": "true",
+                "string": "data-username={username}",
+                "type": "normal"
+            }
+        ],
         "selected": "false"
     },
     {
         "url": "https://creativemarket.com/{username}",
-        "detections": [],
+        "detections": [
+            {
+                "return": "false",
+                "string": "Whoomp, there it isn",
+                "type": "ocr"
+            },
+            {
+                "return": "false",
+                "string": "Whoomp, there it isn",
+                "type": "normal"
+            },
+            {
+                "return": "true",
+                "string": "\"username\":\"{username}\"",
+                "type": "normal"
+            }
+        ],
         "selected": "false"
     },
     {
         "url": "https://d3.ru/user/{username}/posts",
-        "detections": [],
+        "detections": [
+            {
+                "return": "true",
+                "string": "/user/{username}",
+                "type": "normal"
+            }
+        ],
         "selected": "false"
     },
     {
         "url": "https://dailykos.com/user/{username}",
-        "detections": [],
+        "detections": [
+            {
+                "return": "false",
+                "string": "Sorry, that blog could not be found",
+                "type": "ocr"
+            },
+            {
+                "return": "false",
+                "string": "Sorry, that blog could not be found",
+                "type": "normal"
+            },
+            {
+                "return": "true",
+                "string": "/user/{username}",
+                "type": "normal"
+            },
+            {
+                "return": "true",
+                "string": "group_info",
+                "type": "normal"
+            }
+        ],
         "selected": "false"
     },
     {
         "url": "https://dailymotion.com/{username}",
-        "detections": [],
+        "detections": [
+            {
+                "return": "false",
+                "string": "Page not found",
+                "type": "ocr"
+            },
+            {
+                "return": "false",
+                "string": "Page not found",
+                "type": "normal"
+            },
+            {
+                "return": "false",
+                "string": "error404",
+                "type": "normal"
+            }
+        ],
         "selected": "false"
     },
     {
