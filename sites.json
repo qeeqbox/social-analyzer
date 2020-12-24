@@ -1058,7 +1058,28 @@
     },
     {
         "url": "https://data.typeracer.com/pit/profile?user={username}",
-        "detections": [],
+        "detections": [
+            {
+                "return": "false",
+                "string": "Profile Not Found",
+                "type": "ocr"
+            },
+            {
+                "return": "false",
+                "string": "Profile Not Found",
+                "type": "normal"
+            },
+            {
+                "return": "true",
+                "string": "profile:first_name",
+                "type": "normal"
+            },
+            {
+                "return": "true",
+                "string": "og:title",
+                "type": "normal"
+            }
+        ],
         "selected": "false"
     },
     {
@@ -1079,27 +1100,117 @@
     },
     {
         "url": "https://designspiration.net/{username}",
-        "detections": [],
+        "detections": [
+            {
+                "return": "false",
+                "string": "Content Not Found",
+                "type": "ocr"
+            },
+            {
+                "return": "false",
+                "string": "Content Not Found",
+                "type": "normal"
+            },
+            {
+                "return": "true",
+                "string": "\"profile",
+                "type": "normal"
+            },
+            {
+                "return": "true",
+                "string": "username",
+                "type": "normal"
+            }
+        ],
         "selected": "false"
     },
     {
         "url": "https://dev.to/{username}",
-        "detections": [],
+        "detections": [
+            {
+                "return": "false",
+                "string": "This page does not exist ",
+                "type": "ocr"
+            },
+            {
+                "return": "false",
+                "string": "This page does not exist ",
+                "type": "normal"
+            },
+            {
+                "return": "true",
+                "string": "data-username=\"{username}\"",
+                "type": "normal"
+            },
+            {
+                "return": "true",
+                "string": "to/{username}",
+                "type": "normal"
+            }
+        ],
         "selected": "false"
     },
     {
         "url": "https://devrant.com/users/{username}",
-        "detections": [],
+        "detections": [
+            {
+                "return": "true",
+                "string": "/users/{username}",
+                "type": "normal"
+            },
+            {
+                "return": "true",
+                "string": "profile-username",
+                "type": "normal"
+            }
+        ],
         "selected": "false"
     },
     {
         "url": "https://discogs.com/user/{username}",
-        "detections": [],
+        "detections": [
+            {
+                "return": "false",
+                "string": "We couldn't find that page",
+                "type": "ocr"
+            },
+            {
+                "return": "false",
+                "string": "We couldn't find that page",
+                "type": "normal"
+            },
+            {
+                "return": "true",
+                "string": "data-username",
+                "type": "normal"
+            }
+        ],
         "selected": "false"
     },
     {
         "url": "https://discuss.atom.io/u/{username}/summary",
-        "detections": [],
+        "detections": [
+            {
+                "return": "false",
+                "string": "Oops! That page doesn’t exist",
+                "type": "ocr"
+            },
+            {
+                "return": "false",
+                "string": "Oops! That page doesn’t exist",
+                "type": "normal"
+            },
+            {
+                "return": "true",
+                "string": "u/{username}",
+                "type": "normal"
+            },
+            {
+                "return": "true",
+                "string": "og:title",
+                "type": "normal"
+            }
+        ],
         "selected": "false"
     },
     {
