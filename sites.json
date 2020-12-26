@@ -1527,12 +1527,48 @@
   },
   {
     "url": "https://facenama.com/{username}",
-    "detections": [],
+    "detections": [
+      {
+        "return": "false",
+        "string": "404 Error",
+        "type": "normal"
+      },
+      {
+        "return": "true",
+        "string": "profile",
+        "type": "normal"
+      },
+      {
+        "return": "true",
+        "string": "og:title",
+        "type": "normal"
+      }
+    ],
     "selected": "false"
   },
   {
     "url": "https://fandom.com/u/{username}",
-    "detections": [],
+    "detections": [{
+        "return": "false",
+        "string": "t always catch",
+        "type": "ocr"
+      },
+      {
+        "return": "false",
+        "string": "t always catch",
+        "type": "normal"
+      },
+      {
+        "return": "true",
+        "string": "username",
+        "type": "normal"
+      },
+      {
+        "return": "true",
+        "string": "u/{username}",
+        "type": "normal"
+      }
+    ],
     "selected": "false"
   },
   {
@@ -1541,18 +1577,69 @@
     "selected": "false"
   },
   {
-    "url": "https://fl.ru/users/{username}",
-    "detections": [],
+    "url": "https://www.fl.ru/users/{username}/portfolio",
+    "detections": [
+      {
+        "return": "false",
+        "string": "404 Not Found",
+        "type": "normal"
+      },
+      {
+        "return": "true",
+        "string": "users/{username}",
+        "type": "normal"
+      }
+    ],
     "selected": "false"
   },
   {
     "url": "https://flickr.com/people/{username}",
-    "detections": [],
+    "detections": [{
+        "return": "false",
+        "string": "This is not the page you’re looking for",
+        "type": "ocr"
+      },
+      {
+        "return": "false",
+        "string": "This is not the page you’re looking for",
+        "type": "normal"
+      },
+      {
+        "return": "true",
+        "string": "og:title",
+        "type": "normal"
+      },
+      {
+        "return": "true",
+        "string": "people/{username}",
+        "type": "normal"
+      }
+    ],
     "selected": "false"
   },
   {
     "url": "https://flipboard.com/@{username}",
-    "detections": [],
+    "detections": [{
+        "return": "false",
+        "string": "This page does not exist",
+        "type": "ocr"
+      },
+      {
+        "return": "false",
+        "string": "This page does not exist",
+        "type": "normal"
+      },
+      {
+        "return": "true",
+        "string": "username/{username}",
+        "type": "normal"
+      },
+      {
+        "return": "true",
+        "string": "profile-header",
+        "type": "normal"
+      }
+    ],
     "selected": "false"
   },
   {
@@ -2816,12 +2903,37 @@
   },
   {
     "url": "https://{username}.wix.com",
-    "detections": [],
+    "detections": [{
+        "return": "false",
+        "string": "We Looked Everywhere",
+        "type": "ocr"
+      }
+    ],
     "selected": "false"
   },
   {
     "url": "https://{username}.wordpress.com",
-    "detections": [],
+    "detections": [{
+        "return": "false",
+        "string": "Do you want to register",
+        "type": "ocr"
+      },
+      {
+        "return": "false",
+        "string": "Do you want to register",
+        "type": "normal"
+      },
+      {
+        "return": "true",
+        "string": "//{username}.wordpress",
+        "type": "normal"
+      },
+      {
+        "return": "true",
+        "string": "og:title",
+        "type": "normal"
+      }
+    ],
     "selected": "false"
   },
   {
