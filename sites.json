@@ -1419,22 +1419,88 @@
   },
   {
     "url": "https://etsy.com/shop/{username}",
-    "detections": [],
+    "detections": [{
+        "return": "false",
+        "string": "the page you were looking for was not found",
+        "type": "ocr"
+      },
+      {
+        "return": "false",
+        "string": "the page you were looking for was not found",
+        "type": "normal"
+      },
+      {
+        "return": "true",
+        "string": "shop/{username}",
+        "type": "normal"
+      },
+      {
+        "return": "true",
+        "string": "username",
+        "type": "normal"
+      },
+      {
+        "return": "true",
+        "string": "user_id",
+        "type": "normal"
+      }
+    ],
     "selected": "false"
   },
   {
     "url": "https://euw.op.gg/summoner/userName={username}",
-    "detections": [],
+    "detections": [{
+        "return": "false",
+        "string": "This summoner is not registered at",
+        "type": "ocr"
+      },
+      {
+        "return": "false",
+        "string": "This summoner is not registered at",
+        "type": "normal"
+      },
+      {
+        "return": "true",
+        "string": "\"Profile\"",
+        "type": "normal"
+      },
+      {
+        "return": "true",
+        "string": "ProfileImage",
+        "type": "normal"
+      }
+    ],
     "selected": "false"
   },
   {
     "url": "https://eyeem.com/u/{username}",
-    "detections": [],
+    "detections": [{
+        "return": "false",
+        "string": "We can't find the user you're looking",
+        "type": "ocr"
+      },
+      {
+        "return": "false",
+        "string": "We can't find the user you're looking",
+        "type": "normal"
+      },
+      {
+        "return": "true",
+        "string": "username",
+        "type": "normal"
+      }
+    ],
     "selected": "false"
   },
   {
     "url": "https://f3.cool/{username}",
-    "detections": [],
+    "detections": [
+      {
+        "return": "true",
+        "string": "og:title",
+        "type": "normal"
+      }
+    ],
     "selected": "false"
   },
   {
