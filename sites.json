@@ -439,7 +439,7 @@
                 "string": "\"name\":\"",
                 "type": "normal"
             }
-            
+
         ],
         "selected": "false"
     },
@@ -471,7 +471,7 @@
                 "string": "\"uuid\"",
                 "type": "normal"
             }
-            
+
         ],
         "selected": "false"
     },
@@ -493,7 +493,7 @@
                 "string": "profile/{username}",
                 "type": "normal"
             }
-            
+
         ],
         "selected": "false"
     },
@@ -1202,7 +1202,7 @@
             },
             {
                 "return": "true",
-                "string": "u/{username}",
+                "string": "username",
                 "type": "normal"
             },
             {
@@ -1215,27 +1215,132 @@
     },
     {
         "url": "https://discuss.elastic.co/u/{username}",
-        "detections": [],
+        "detections": [
+            {
+                "return": "false",
+                "string": "That page doesn’t exist",
+                "type": "ocr"
+            },
+            {
+                "return": "false",
+                "string": "That page doesn’t exist",
+                "type": "normal"
+            },
+            {
+                "return": "true",
+                "string": "username",
+                "type": "normal"
+            },
+            {
+                "return": "true",
+                "string": "og:title",
+                "type": "normal"
+            }
+        ],
         "selected": "false"
     },
     {
         "url": "https://discussions.apple.com/profile/{username}",
-        "detections": [],
+        "detections": [
+            {
+                "return": "false",
+                "string": "Looking for something in",
+                "type": "ocr"
+            },
+            {
+                "return": "false",
+                "string": "Looking for something in",
+                "type": "normal"
+            },
+            {
+                "return": "true",
+                "string": "/profile/{username}",
+                "type": "normal"
+            },
+            {
+                "return": "true",
+                "string": "user-profile",
+                "type": "normal"
+            }
+        ],
         "selected": "false"
     },
     {
         "url": "https://disqus.com/{username}",
-        "detections": [],
+        "detections": [
+            {
+                "return": "false",
+                "string": "Something didn't work",
+                "type": "ocr"
+            },
+            {
+                "return": "false",
+                "string": "Something didn't work",
+                "type": "normal"
+            },
+            {
+                "return": "true",
+                "string": "by/{username}",
+                "type": "normal"
+            },
+            {
+                "return": "true",
+                "string": "og:title",
+                "type": "normal"
+            }
+        ],
         "selected": "false"
     },
     {
         "url": "https://dribbble.com/{username}",
-        "detections": [],
+        "detections": [
+            {
+                "return": "false",
+                "string": "Whoops, that page is gone",
+                "type": "ocr"
+            },
+            {
+                "return": "false",
+                "string": "Whoops, that page is gone",
+                "type": "normal"
+            },
+            {
+                "return": "true",
+                "string": "com/{username}",
+                "type": "normal"
+            },
+            {
+                "return": "true",
+                "string": "og:title",
+                "type": "normal"
+            }
+        ],
         "selected": "false"
     },
     {
         "url": "https://drive2.ru/users/{username}",
-        "detections": [],
+        "detections": [
+            {
+                "return": "false",
+                "string": ">404",
+                "type": "ocr"
+            },
+            {
+                "return": "false",
+                "string": ">404",
+                "type": "normal"
+            },
+            {
+                "return": "true",
+                "string": "/users/{username}",
+                "type": "normal"
+            },
+            {
+                "return": "true",
+                "string": "username",
+                "type": "normal"
+            }
+        ],
         "selected": "false"
     },
     {
