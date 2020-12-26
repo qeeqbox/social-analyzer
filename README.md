@@ -40,9 +40,9 @@ If you have a detection, please submit it in a pull request!
 
 ## Install and run (Nodejs + NPM + Firefox)
 ```bash
-add-apt-repository ppa:mozillateam/ppa
-apt-get update
-apt-get install -y firefox-esr tesseract-ocr
+sudo add-apt-repository ppa:mozillateam/ppa
+sudo apt-get update
+sudo apt-get install -y firefox-esr tesseract-ocr git
 git clone https://github.com/qeeqbox/social-analyzer.git
 cd social-analyzer
 rm -rf package-lock.json node_modules
