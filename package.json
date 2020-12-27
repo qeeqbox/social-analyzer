@@ -29,7 +29,7 @@
   "author": "QeeqBox",
   "license": "AGPL 3.0",
   "engines": {
-    "node": ">=15.0.0 || 10",
+    "node": ">=14.0.0 || 10",
     "npm": ">=6.0.0"
   }
 }
