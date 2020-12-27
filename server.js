@@ -1,6 +1,15 @@
 var google_api_key = "";
 var google_api_cs = "";
 
+var semver = require('semver');
+if (semver.satisfies(process.version, '>13 || <13')) {
+  console.log('[Good] NodeJS Version Check');
+}
+else{
+  console.log('[Error] NodeJS Version Check');
+  process.exit(1);
+}
+
 var tmp = require("tmp");
 var express = require("express");
 var fs = require("fs");
