@@ -58,6 +58,11 @@ cd social-analyzer
 sudo docker build -t social-analyzer . && sudo docker run -p 9005:9005 -it social-analyzer
 ```
 
+## Running Issues
+```
+Please make sure to update to the latest nodejs and npm
+```
+
 ## Resources
 - api.duckduckgo, google api, nodejs, bootstrap, selectize, jquery and font-awesome
 
