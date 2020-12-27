@@ -24,12 +24,9 @@
     "follow-redirects": "1.13.0",
     "html-to-text": "6.0.0",
     "express-async-errors": "3.1.1",
-    "pretty-error": "2.1.2"
+    "pretty-error": "2.1.2",
+    "semver":"7.3.4"
   },
   "author": "QeeqBox",
-  "license": "AGPL 3.0",
-  "engines": {
-    "node": ">=14.0.0 || 10",
-    "npm": ">=6.0.0"
-  }
+  "license": "AGPL 3.0"
 }
