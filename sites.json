@@ -1494,13 +1494,11 @@
   },
   {
     "url": "https://f3.cool/{username}",
-    "detections": [
-      {
-        "return": "true",
-        "string": "og:title",
-        "type": "normal"
-      }
-    ],
+    "detections": [{
+      "return": "true",
+      "string": "og:title",
+      "type": "normal"
+    }],
     "selected": "false"
   },
   {
@@ -1527,8 +1525,7 @@
   },
   {
     "url": "https://facenama.com/{username}",
-    "detections": [
-      {
+    "detections": [{
         "return": "false",
         "string": "404 Error",
         "type": "normal"
@@ -1578,8 +1575,7 @@
   },
   {
     "url": "https://www.fl.ru/users/{username}/portfolio",
-    "detections": [
-      {
+    "detections": [{
         "return": "false",
         "string": "404 Not Found",
         "type": "normal"
@@ -1644,7 +1640,27 @@
   },
   {
     "url": "https://fortnitetracker.com/profile/all/{username}",
-    "detections": [],
+    "detections": [{
+        "return": "false",
+        "string": "We are unable to find your profile",
+        "type": "ocr"
+      },
+      {
+        "return": "false",
+        "string": "We are unable to find your profile",
+        "type": "normal"
+      },
+      {
+        "return": "true",
+        "string": "profile/{username}",
+        "type": "normal"
+      },
+      {
+        "return": "true",
+        "string": "profile-header",
+        "type": "normal"
+      }
+    ],
     "selected": "false"
   },
   {
@@ -1659,7 +1675,27 @@
   },
   {
     "url": "https://forum.hackthebox.eu/profile/{username}",
-    "detections": [],
+    "detections": [{
+        "return": "false",
+        "string": "User not found",
+        "type": "ocr"
+      },
+      {
+        "return": "false",
+        "string": "User not found",
+        "type": "normal"
+      },
+      {
+        "return": "true",
+        "string": "profile/{username}",
+        "type": "normal"
+      },
+      {
+        "return": "true",
+        "string": "og:title",
+        "type": "normal"
+      }
+    ],
     "selected": "false"
   },
   {
@@ -1669,17 +1705,67 @@
   },
   {
     "url": "https://forum.leasehackr.com/u/{username}/summary",
-    "detections": [],
+    "detections": [{
+        "return": "false",
+        "string": "That page doesn’t exist or is private",
+        "type": "ocr"
+      },
+      {
+        "return": "false",
+        "string": "That page doesn’t exist or is private",
+        "type": "normal"
+      },
+      {
+        "return": "true",
+        "string": "\"/u/{username}\"",
+        "type": "normal"
+      },
+      {
+        "return": "true",
+        "string": "og:title",
+        "type": "normal"
+      }
+    ],
     "selected": "false"
   },
   {
     "url": "https://forum.sublimetext.com/u/{username}",
-    "detections": [],
+    "detections": [{
+        "return": "false",
+        "string": "That page doesn’t exist or is private",
+        "type": "ocr"
+      },
+      {
+        "return": "false",
+        "string": "That page doesn’t exist or is private",
+        "type": "normal"
+      },
+      {
+        "return": "true",
+        "string": "\"/u/{username}\"",
+        "type": "normal"
+      },
+      {
+        "return": "true",
+        "string": "og:title",
+        "type": "normal"
+      }
+    ],
     "selected": "false"
   },
   {
     "url": "https://forum.velomania.ru/member.php?username={username}",
-    "detections": [],
+    "detections": [{
+        "return": "false",
+        "string": "standard_error",
+        "type": "normal"
+      },
+      {
+        "return": "true",
+        "string": "member_username",
+        "type": "normal"
+      }
+    ],
     "selected": "false"
   },
   {
@@ -1689,47 +1775,208 @@
   },
   {
     "url": "https://forums.gunsandammo.com/profile/{username}",
-    "detections": [],
+    "detections": [{
+        "return": "false",
+        "string": "User Not Found",
+        "type": "ocr"
+      },
+      {
+        "return": "false",
+        "string": "User Not Found",
+        "type": "normal"
+      },
+      {
+        "return": "true",
+        "string": "profile/{username}",
+        "type": "normal"
+      },
+      {
+        "return": "true",
+        "string": "og:title",
+        "type": "normal"
+      }
+    ],
     "selected": "false"
   },
   {
     "url": "https://forums.kali.org/member.php?username={username}",
-    "detections": [],
+    "detections": [{
+        "return": "false",
+        "string": "This user has not registered and therefore does",
+        "type": "ocr"
+      },
+      {
+        "return": "false",
+        "string": "This user has not registered and therefore does",
+        "type": "normal"
+      },
+      {
+        "return": "true",
+        "string": "member_username",
+        "type": "normal"
+      }
+    ],
     "selected": "false"
   },
   {
     "url": "https://forums.pcgamer.com/members/?username={username}",
-    "detections": [],
+    "detections": [{
+        "return": "false",
+        "string": "The specified member cannot be found",
+        "type": "ocr"
+      },
+      {
+        "return": "false",
+        "string": "The specified member cannot be found",
+        "type": "normal"
+      },
+      {
+        "return": "true",
+        "string": "members/{username}",
+        "type": "normal"
+      }
+    ],
     "selected": "false"
   },
   {
     "url": "https://forums.whonix.org/u/{username}",
-    "detections": [],
+    "detections": [{
+        "return": "false",
+        "string": "That page doesn’t exist or is private",
+        "type": "ocr"
+      },
+      {
+        "return": "false",
+        "string": "That page doesn’t exist or is private",
+        "type": "normal"
+      },
+      {
+        "return": "true",
+        "string": "\"/u/{username}\"",
+        "type": "normal"
+      },
+      {
+        "return": "true",
+        "string": "og:title",
+        "type": "normal"
+      }
+    ],
     "selected": "false"
   },
   {
-    "url": "https://fotolog.com/{username}",
-    "detections": [],
+    "url": "https://www.fotolog.com/author/{username}",
+    "detections": [{
+        "return": "false",
+        "string": "That page doesn’t exist or is private",
+        "type": "ocr"
+      },
+      {
+        "return": "false",
+        "string": "That page doesn’t exist or is private",
+        "type": "normal"
+      },
+      {
+        "return": "true",
+        "string": "author/{username}/feed/",
+        "type": "normal"
+      },
+      {
+        "return": "true",
+        "string": "page-header",
+        "type": "normal"
+      }
+    ],
     "selected": "false"
   },
   {
     "url": "https://freelance.habr.com/freelancers/{username}",
-    "detections": [],
+    "detections": [
+      {
+        "return": "false",
+        "string": "404<",
+        "type": "normal"
+      },
+      {
+        "return": "true",
+        "string": "freelancers/{username}",
+        "type": "normal"
+      }
+    ],
     "selected": "false"
   },
   {
-    "url": "https://freelancer.com/api/users/0.1/users?usernames%5B%5D={username}&compact=true",
-    "detections": [],
+    "url": "https://www.freelancer.com/u/{username}",
+    "detections": [{
+        "return": "false",
+        "string": "Looks like the page you are looking",
+        "type": "ocr"
+      },
+      {
+        "return": "false",
+        "string": "Looks like the page you are looking",
+        "type": "normal"
+      },
+      {
+        "return": "true",
+        "string": "userId",
+        "type": "normal"
+      },
+      {
+        "return": "true",
+        "string": "og:title",
+        "type": "normal"
+      }
+    ],
     "selected": "false"
   },
   {
     "url": "https://freesound.org/people/{username}",
-    "detections": [],
+    "detections": [{
+        "return": "false",
+        "string": "Page not found",
+        "type": "ocr"
+      },
+      {
+        "return": "false",
+        "string": "Page not found",
+        "type": "normal"
+      },
+      {
+        "return": "true",
+        "string": "account_info",
+        "type": "normal"
+      },
+      {
+        "return": "true",
+        "string": "follow_user",
+        "type": "normal"
+      }
+    ],
     "selected": "false"
   },
   {
     "url": "https://gamespot.com/profile/{username}",
-    "detections": [],
+    "detections": [{
+        "return": "false",
+        "string": "you seem to be lost",
+        "type": "ocr"
+      },
+      {
+        "return": "false",
+        "string": "you seem to be lost",
+        "type": "normal"
+      },
+      {
+        "return": "true",
+        "string": "profile/{username}",
+        "type": "normal"
+      },
+      {
+        "return": "true",
+        "string": "username",
+        "type": "normal"
+      }
+    ],
     "selected": "false"
   },
   {
@@ -2904,11 +3151,10 @@
   {
     "url": "https://{username}.wix.com",
     "detections": [{
-        "return": "false",
-        "string": "We Looked Everywhere",
-        "type": "ocr"
-      }
-    ],
+      "return": "false",
+      "string": "We Looked Everywhere",
+      "type": "ocr"
+    }],
     "selected": "false"
   },
   {
