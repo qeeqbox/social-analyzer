@@ -27,5 +27,9 @@
     "pretty-error": "2.1.2"
   },
   "author": "QeeqBox",
-  "license": "AGPL 3.0"
+  "license": "AGPL 3.0",
+  "engines": {
+    "node": ">=15.0.0 || 10",
+    "npm": ">=6.0.0"
+  }
 }
