@@ -1890,8 +1890,7 @@
   },
   {
     "url": "https://freelance.habr.com/freelancers/{username}",
-    "detections": [
-      {
+    "detections": [{
         "return": "false",
         "string": "404<",
         "type": "normal"
@@ -1996,22 +1995,92 @@
   },
   {
     "url": "https://gfycat.com/@{username}",
-    "detections": [],
+    "detections": [{
+        "return": "false",
+        "string": "Page not found",
+        "type": "ocr"
+      },
+      {
+        "return": "false",
+        "string": "Page not found",
+        "type": "normal"
+      },
+      {
+        "return": "true",
+        "string": "username",
+        "type": "normal"
+      },
+      {
+        "return": "true",
+        "string": "userid",
+        "type": "normal"
+      }
+    ],
     "selected": "false"
   },
   {
     "url": "https://giphy.com/{username}",
-    "detections": [],
+    "detections": [{
+        "return": "false",
+        "string": "There’s nothing here. Looking for GIFs",
+        "type": "ocr"
+      },
+      {
+        "return": "false",
+        "string": "404 Not Found",
+        "type": "normal"
+      },
+      {
+        "return": "false",
+        "string": "status_code",
+        "type": "normal"
+      },
+      {
+        "return": "true",
+        "string": "username",
+        "type": "normal"
+      }
+    ],
     "selected": "false"
   },
   {
     "url": "https://gitee.com/{username}",
-    "detections": [],
+    "detections": [{
+        "return": "false",
+        "string": "(404)<",
+        "type": "normal"
+      },
+      {
+        "return": "true",
+        "string": "com/{username}",
+        "type": "normal"
+      },
+      {
+        "return": "true",
+        "string": "profile",
+        "type": "normal"
+      }
+    ],
     "selected": "false"
   },
   {
     "url": "https://github.com/{username}",
-    "detections": [],
+    "detections": [{
+        "return": "false",
+        "string": "This is not the web page you",
+        "type": "ocr"
+      },
+      {
+        "return": "false",
+        "string": "This is not the web page you",
+        "type": "normal"
+      },
+      {
+        "return": "true",
+        "string": "profile:username",
+        "type": "normal"
+      }
+    ],
     "selected": "false"
   },
   {
