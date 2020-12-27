@@ -1,7 +1,7 @@
 {"version":"2020.V.01.09",
  "build":"pass",
  "test":"pass",
- "websites":"96",
- "detections":"318",
+ "websites":"100",
+ "detections":"332",
  "special":"1",
  "auto_testing":"8ae4a567-8482-4eff-a1aa-fe341d4e2e2f"}
