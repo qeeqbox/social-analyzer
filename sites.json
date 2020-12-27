@@ -2085,12 +2085,32 @@
   },
   {
     "url": "https://gitlab.com/{username}",
-    "detections": [],
+    "detections": [{
+        "return": "false",
+        "string": "have an account yet",
+        "type": "normal"
+      },
+      {
+        "return": "true",
+        "string": "user-profile",
+        "type": "normal"
+      }
+    ],
     "selected": "false"
   },
   {
     "url": "https://goodreads.com/{username}",
-    "detections": [],
+    "detections": [{
+        "return": "false",
+        "string": "Page not found",
+        "type": "normal"
+      },
+      {
+        "return": "true",
+        "string": "profile:",
+        "type": "normal"
+      }
+    ],
     "selected": "false"
   },
   {
