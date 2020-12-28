@@ -2681,22 +2681,71 @@
   },
   {
     "url": "https://kwork.ru/user/{username}",
-    "detections": [],
+    "detections": [{
+        "return": "false",
+        "string": "page-404",
+        "type": "normal"
+      },
+      {
+        "return": "true",
+        "string": "page-profile",
+        "type": "normal"
+      },
+      {
+        "return": "true",
+        "string": "user-username",
+        "type": "normal"
+      }
+    ],
     "selected": "false"
   },
   {
     "url": "https://lab.pentestit.ru/profile/{username}",
-    "detections": [],
+    "detections": [{
+      "return": "true",
+      "string": "profile/{username}",
+      "type": "normal"
+    }],
     "selected": "false"
   },
   {
     "url": "https://last.fm/user/{username}",
-    "detections": [],
+    "detections": [{
+        "return": "false",
+        "string": "Page Not Found",
+        "type": "ocr"
+      },
+      {
+        "return": "false",
+        "string": "Page Not Found",
+        "type": "normal"
+      },
+      {
+        "return": "true",
+        "string": "header-info",
+        "type": "normal"
+      }
+    ],
     "selected": "false"
   },
   {
     "url": "https://launchpad.net/~{username}",
-    "detections": [],
+    "detections": [{
+        "return": "false",
+        "string": "Lost something",
+        "type": "ocr"
+      },
+      {
+        "return": "false",
+        "string": "Lost something",
+        "type": "normal"
+      },
+      {
+        "return": "true",
+        "string": "og:title",
+        "type": "normal"
+      }
+    ],
     "selected": "false"
   },
   {
