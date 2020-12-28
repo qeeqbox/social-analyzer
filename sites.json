@@ -1985,7 +1985,22 @@
   },
   {
     "url": "https://geocaching.com/p/default.aspx?u={username}",
-    "detections": [],
+    "detections": [{
+        "return": "false",
+        "string": "Sorry about that",
+        "type": "ocr"
+      },
+      {
+        "return": "false",
+        "string": "Sorry about that",
+        "type": "normal"
+      },
+      {
+        "return": "true",
+        "string": "u={username}",
+        "type": "normal"
+      }
+    ],
     "selected": "false"
   },
   {
@@ -2115,12 +2130,36 @@
   },
   {
     "url": "https://gotinder.com/@{username}",
-    "detections": [],
+    "detections": [{
+      "return": "true",
+      "string": "\"_id\"",
+      "type": "normal"
+    }],
     "selected": "false"
   },
   {
     "url": "https://gumroad.com/{username}",
-    "detections": [],
+    "detections": [{
+        "return": "false",
+        "string": "Page not found",
+        "type": "ocr"
+      },
+      {
+        "return": "false",
+        "string": "Page not found",
+        "type": "normal"
+      },
+      {
+        "return": "true",
+        "string": "og:title",
+        "type": "normal"
+      },
+      {
+        "return": "true",
+        "string": "data-username",
+        "type": "normal"
+      }
+    ],
     "selected": "false"
   },
   {
@@ -2130,37 +2169,141 @@
   },
   {
     "url": "https://habr.com/ru/users/{username}",
-    "detections": [],
+    "detections": [{
+      "return": "true",
+      "string": "user-profile",
+      "type": "normal"
+    }],
     "selected": "false"
   },
   {
     "url": "https://hackaday.io/{username}",
-    "detections": [],
+    "detections": [{
+        "return": "false",
+        "string": "Page Not Found",
+        "type": "ocr"
+      },
+      {
+        "return": "false",
+        "string": "Page Not Found",
+        "type": "normal"
+      },
+      {
+        "return": "true",
+        "string": "username",
+        "type": "normal"
+      },
+      {
+        "return": "true",
+        "string": "\"id\"",
+        "type": "normal"
+      }
+    ],
     "selected": "false"
   },
   {
     "url": "https://hackerone.com/{username}",
-    "detections": [],
+    "detections": [{
+        "return": "false",
+        "string": "Page not found",
+        "type": "ocr"
+      },
+      {
+        "return": "false",
+        "string": "Page not found",
+        "type": "normal"
+      },
+      {
+        "return": "true",
+        "string": "profile:username",
+        "type": "normal"
+      }
+    ],
     "selected": "false"
   },
   {
     "url": "https://hackerrank.com/{username}",
-    "detections": [],
+    "detections": [{
+        "return": "false",
+        "string": "Something went wrong",
+        "type": "normal"
+      },
+      {
+        "return": "true",
+        "string": "profile-username-heading",
+        "type": "normal"
+      }
+    ],
     "selected": "false"
   },
   {
     "url": "https://hackster.io/{username}",
-    "detections": [],
+    "detections": [{
+        "return": "false",
+        "string": "we couldn't find that page",
+        "type": "ocr"
+      },
+      {
+        "return": "false",
+        "string": "we couldn't find that page",
+        "type": "normal"
+      },
+      {
+        "return": "true",
+        "string": "UserProfile",
+        "type": "normal"
+      },
+      {
+        "return": "true",
+        "string": "user_",
+        "type": "normal"
+      }
+    ],
     "selected": "false"
   },
   {
     "url": "https://house-mixes.com/profile/{username}",
-    "detections": [],
+    "detections": [{
+        "return": "false",
+        "string": "Profile Not Found",
+        "type": "ocr"
+      },
+      {
+        "return": "false",
+        "string": "Profile Not Found",
+        "type": "normal"
+      },
+      {
+        "return": "true",
+        "string": "profile/{username}",
+        "type": "normal"
+      },
+      {
+        "return": "true",
+        "string": "og:title",
+        "type": "normal"
+      }
+    ],
     "selected": "false"
   },
   {
     "url": "https://houzz.com/user/{username}",
-    "detections": [],
+    "detections": [{
+        "return": "false",
+        "string": "The page you requested",
+        "type": "ocr"
+      },
+      {
+        "return": "false",
+        "string": "The page you requested",
+        "type": "normal"
+      },
+      {
+        "return": "true",
+        "string": "userProfile",
+        "type": "normal"
+      }
+    ],
     "selected": "false"
   },
   {
@@ -2170,7 +2313,22 @@
   },
   {
     "url": "https://hubpages.com/@{username}",
-    "detections": [],
+    "detections": [{
+        "return": "false",
+        "string": "Page does not exist",
+        "type": "ocr"
+      },
+      {
+        "return": "false",
+        "string": "Page does not exist",
+        "type": "normal"
+      },
+      {
+        "return": "true",
+        "string": "\"profile\"",
+        "type": "normal"
+      }
+    ],
     "selected": "false"
   },
   {
