@@ -7,6 +7,11 @@ API and Web App for analyzing & finding a person profile across +300 social medi
 
 **If you have a detection or any sort of contribution, please submit it in a pull request!**
 
+## Updates
+- ~~Added logs (user request)~~
+
+## Security Testing
+
 ```bash
 -------------------------------------              ---------------------------------
 |        Security Testing           |              |        Social-Analyzer        |
