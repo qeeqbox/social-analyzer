@@ -1,12 +1,14 @@
 var google_api_key = "";
 var google_api_cs = "";
 
+console.log('[!] Detections are updated every often, make sure to get the most updated ones');
+
 var semver = require('semver');
 if (semver.satisfies(process.version, '>13 || <13')) {
-  console.log('[Good] NodeJS Version Check');
+  console.log('[Good] NodeJS Version Check\n');
 }
 else{
-  console.log('[Error] NodeJS Version Check');
+  console.log('[Error] NodeJS Version Check\n');
   process.exit(1);
 }
 
