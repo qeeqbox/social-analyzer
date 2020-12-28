@@ -2333,22 +2333,81 @@
   },
   {
     "url": "https://hubski.com/user/{username}",
-    "detections": [],
+    "detections": [{
+        "return": "false",
+        "string": "No such user",
+        "type": "ocr"
+      },
+      {
+        "return": "false",
+        "string": "No such user",
+        "type": "normal"
+      },
+      {
+        "return": "true",
+        "string": "profile",
+        "type": "normal"
+      },
+      {
+        "return": "true",
+        "string": "\"username\"",
+        "type": "normal"
+      }
+    ],
     "selected": "false"
   },
   {
     "url": "https://hunting.ru/forum/members/?username={username}",
-    "detections": [],
+    "detections": [{
+      "return": "true",
+      "string": "\"profile\"",
+      "type": "normal"
+    }],
     "selected": "false"
   },
   {
     "url": "https://icq.im/{username}",
-    "detections": [],
+    "detections": [{
+        "return": "false",
+        "string": "Profile not found",
+        "type": "ocr"
+      },
+      {
+        "return": "false",
+        "string": "Profile not found",
+        "type": "normal"
+      },
+      {
+        "return": "true",
+        "string": "og:title",
+        "type": "normal"
+      }
+    ],
     "selected": "false"
   },
   {
     "url": "https://ifttt.com/p/{username}",
-    "detections": [],
+    "detections": [{
+        "return": "false",
+        "string": "The requested page or file",
+        "type": "ocr"
+      },
+      {
+        "return": "false",
+        "string": "The requested page or file",
+        "type": "normal"
+      },
+      {
+        "return": "true",
+        "string": "user_id",
+        "type": "normal"
+      },
+      {
+        "return": "true",
+        "string": "Profile",
+        "type": "normal"
+      }
+    ],
     "selected": "false"
   },
   {
@@ -2358,7 +2417,27 @@
   },
   {
     "url": "https://imgup.cz/{username}",
-    "detections": [],
+    "detections": [{
+        "return": "false",
+        "string": "That page doesn",
+        "type": "ocr"
+      },
+      {
+        "return": "false",
+        "string": "That page doesn",
+        "type": "normal"
+      },
+      {
+        "return": "true",
+        "string": "\"profile\"",
+        "type": "normal"
+      },
+      {
+        "return": "true",
+        "string": "username:",
+        "type": "normal"
+      }
+    ],
     "selected": "false"
   },
   {
@@ -2368,7 +2447,27 @@
   },
   {
     "url": "https://independent.academia.edu/{username}",
-    "detections": [],
+    "detections": [{
+        "return": "false",
+        "string": "It looks like you",
+        "type": "ocr"
+      },
+      {
+        "return": "false",
+        "string": "It looks like you",
+        "type": "normal"
+      },
+      {
+        "return": "true",
+        "string": "profile-info",
+        "type": "normal"
+      },
+      {
+        "return": "true",
+        "string": "user_",
+        "type": "normal"
+      }
+    ],
     "selected": "false"
   },
   {
@@ -2399,22 +2498,81 @@
   },
   {
     "url": "https://instructables.com/member/{username}",
-    "detections": [],
+    "detections": [{
+        "return": "false",
+        "string": "things break sometimes",
+        "type": "ocr"
+      },
+      {
+        "return": "false",
+        "string": "things break sometimes",
+        "type": "normal"
+      },
+      {
+        "return": "true",
+        "string": "\"profile\"",
+        "type": "normal"
+      },
+      {
+        "return": "true",
+        "string": "profile-",
+        "type": "normal"
+      }
+    ],
     "selected": "false"
   },
   {
     "url": "https://interpals.net/{username}",
-    "detections": [],
+    "detections": [{
+        "return": "false",
+        "string": "The requested user does not",
+        "type": "ocr"
+      },
+      {
+        "return": "false",
+        "string": "The requested user does not",
+        "type": "normal"
+      },
+      {
+        "return": "true",
+        "string": "\"profile\"",
+        "type": "normal"
+      }
+    ],
     "selected": "false"
   },
   {
     "url": "https://irecommend.ru/users/{username}",
-    "detections": [],
+    "detections": [{
+      "return": "true",
+      "string": "profile",
+      "type": "normal"
+    }],
     "selected": "false"
   },
   {
     "url": "https://issuu.com/{username}",
-    "detections": [],
+    "detections": [{
+        "return": "false",
+        "string": "seem to find",
+        "type": "ocr"
+      },
+      {
+        "return": "false",
+        "string": "seem to find",
+        "type": "normal"
+      },
+      {
+        "return": "true",
+        "string": "og:title",
+        "type": "normal"
+      },
+      {
+        "return": "true",
+        "string": "username",
+        "type": "normal"
+      }
+    ],
     "selected": "false"
   },
   {
