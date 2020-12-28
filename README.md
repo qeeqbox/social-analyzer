@@ -9,7 +9,7 @@ API and Web App for analyzing & finding a person profile across +300 social medi
 
 ```bash
 -------------------------------------              ---------------------------------
-|        Secuirty Testing           |              |        Social-Analyzer        |
+|        Security Testing           |              |        Social-Analyzer        |
 -------------------------------------              ---------------------------------
 |   Passive Information Gathering   |     <-->     |   Find Social Media Profiles  |
 |                                   |              |                               |
