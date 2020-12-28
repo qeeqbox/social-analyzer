@@ -2577,8 +2577,7 @@
   },
   {
     "url": "https://jbzd.com.pl/uzytkownik/{username}",
-    "detections": [
-      {
+    "detections": [{
         "return": "false",
         "string": "404<",
         "type": "normal"
@@ -2653,13 +2652,11 @@
   },
   {
     "url": "https://ko-fi.com/{username}",
-    "detections": [
-      {
-        "return": "true",
-        "string": "\"profile\"",
-        "type": "normal"
-      }
-    ],
+    "detections": [{
+      "return": "true",
+      "string": "\"profile\"",
+      "type": "normal"
+    }],
     "selected": "false"
   },
   {
@@ -3536,8 +3533,7 @@
   },
   {
     "url": "https://zhihu.com/people/{username}",
-    "detections": [
-      {
+    "detections": [{
         "return": "false",
         "string": ">404",
         "type": "normal"
@@ -3627,8 +3623,7 @@
   },
   {
     "url": "https://{username}.rajce.idnes.cz",
-    "detections": [
-      {
+    "detections": [{
         "return": "false",
         "string": "err-site",
         "type": "normal"
