@@ -2577,7 +2577,18 @@
   },
   {
     "url": "https://jbzd.com.pl/uzytkownik/{username}",
-    "detections": [],
+    "detections": [
+      {
+        "return": "false",
+        "string": "404<",
+        "type": "normal"
+      },
+      {
+        "return": "true",
+        "string": "user-profile",
+        "type": "normal"
+      }
+    ],
     "selected": "false"
   },
   {
@@ -2587,12 +2598,52 @@
   },
   {
     "url": "https://kaggle.com/{username}",
-    "detections": [],
+    "detections": [{
+        "return": "false",
+        "string": "find that page",
+        "type": "ocr"
+      },
+      {
+        "return": "false",
+        "string": "404.png",
+        "type": "normal"
+      },
+      {
+        "return": "true",
+        "string": "userId",
+        "type": "normal"
+      },
+      {
+        "return": "true",
+        "string": "\"username\"",
+        "type": "normal"
+      }
+    ],
     "selected": "false"
   },
   {
     "url": "https://keybase.io/{username}",
-    "detections": [],
+    "detections": [{
+        "return": "false",
+        "string": "what you are looking for",
+        "type": "ocr"
+      },
+      {
+        "return": "false",
+        "string": "what you are looking for",
+        "type": "normal"
+      },
+      {
+        "return": "true",
+        "string": "profile-",
+        "type": "normal"
+      },
+      {
+        "return": "true",
+        "string": "data-username",
+        "type": "normal"
+      }
+    ],
     "selected": "false"
   },
   {
@@ -2602,12 +2653,33 @@
   },
   {
     "url": "https://ko-fi.com/{username}",
-    "detections": [],
+    "detections": [
+      {
+        "return": "true",
+        "string": "\"profile\"",
+        "type": "normal"
+      }
+    ],
     "selected": "false"
   },
   {
     "url": "https://kongregate.com/accounts/{username}",
-    "detections": [],
+    "detections": [{
+        "return": "false",
+        "string": "no account with that name was found",
+        "type": "ocr"
+      },
+      {
+        "return": "false",
+        "string": "no account with that name was found",
+        "type": "normal"
+      },
+      {
+        "return": "true",
+        "string": "profile_heading",
+        "type": "normal"
+      }
+    ],
     "selected": "false"
   },
   {
@@ -3418,7 +3490,22 @@
   },
   {
     "url": "https://youpic.com/photographer/{username}",
-    "detections": [],
+    "detections": [{
+        "return": "false",
+        "string": "404 page",
+        "type": "normal"
+      },
+      {
+        "return": "true",
+        "string": "profile-",
+        "type": "normal"
+      },
+      {
+        "return": "true",
+        "string": "\"username\"",
+        "type": "normal"
+      }
+    ],
     "selected": "false"
   },
   {
@@ -3449,7 +3536,18 @@
   },
   {
     "url": "https://zhihu.com/people/{username}",
-    "detections": [],
+    "detections": [
+      {
+        "return": "false",
+        "string": ">404",
+        "type": "normal"
+      },
+      {
+        "return": "true",
+        "string": "\"users\":{\"",
+        "type": "normal"
+      }
+    ],
     "selected": "false"
   },
   {
@@ -3509,12 +3607,38 @@
   },
   {
     "url": "https://{username}.newgrounds.com",
-    "detections": [],
+    "detections": [{
+        "return": "false",
+        "string": "exists in our system",
+        "type": "ocr"
+      },
+      {
+        "return": "false",
+        "string": "exists in our system",
+        "type": "normal"
+      },
+      {
+        "return": "true",
+        "string": "userbody",
+        "type": "normal"
+      }
+    ],
     "selected": "false"
   },
   {
     "url": "https://{username}.rajce.idnes.cz",
-    "detections": [],
+    "detections": [
+      {
+        "return": "false",
+        "string": "err-site",
+        "type": "normal"
+      },
+      {
+        "return": "true",
+        "string": "og:title",
+        "type": "normal"
+      }
+    ],
     "selected": "false"
   },
   {
@@ -3550,7 +3674,22 @@
   },
   {
     "url": "https://{username}.webnode.cz",
-    "detections": [],
+    "detections": [{
+        "return": "false",
+        "string": "We are sorry",
+        "type": "ocr"
+      },
+      {
+        "return": "false",
+        "string": "We are sorry",
+        "type": "normal"
+      },
+      {
+        "return": "true",
+        "string": "\"name\":",
+        "type": "normal"
+      }
+    ],
     "selected": "false"
   },
   {
