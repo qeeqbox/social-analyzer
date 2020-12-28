@@ -3134,37 +3134,142 @@
   },
   {
     "url": "https://moikrug.ru/{username}",
-    "detections": [],
+    "detections": [{
+        "return": "false",
+        "string": "404<",
+        "type": "normal"
+      },
+      {
+        "return": "true",
+        "string": "username:",
+        "type": "normal"
+      }
+    ],
     "selected": "false"
   },
   {
     "url": "https://mstdn.io/@{username}",
-    "detections": [],
+    "detections": [{
+        "return": "false",
+        "string": "The page you are looking for",
+        "type": "ocr"
+      },
+      {
+        "return": "false",
+        "string": "The page you are looking for",
+        "type": "normal"
+      },
+      {
+        "return": "true",
+        "string": "og:title",
+        "type": "normal"
+      },
+      {
+        "return": "true",
+        "string": "profile:username",
+        "type": "normal"
+      }
+    ],
     "selected": "false"
   },
   {
     "url": "https://munzee.com/m/{username}",
-    "detections": [],
+    "detections": [{
+        "return": "false",
+        "string": "looks like the page is not found",
+        "type": "ocr"
+      },
+      {
+        "return": "false",
+        "string": "looks like the page is not found",
+        "type": "normal"
+      },
+      {
+        "return": "true",
+        "string": "username",
+        "type": "normal"
+      }
+    ],
     "selected": "false"
   },
   {
     "url": "https://my.flightradar24.com/{username}",
-    "detections": [],
+    "detections": [{
+        "return": "false",
+        "string": "this page could not be found",
+        "type": "ocr"
+      },
+      {
+        "return": "false",
+        "string": "this page could not be found",
+        "type": "normal"
+      },
+      {
+        "return": "true",
+        "string": "profile-",
+        "type": "normal"
+      }
+    ],
     "selected": "false"
   },
   {
     "url": "https://myanimelist.net/profile/{username}",
-    "detections": [],
+    "detections": [{
+        "return": "false",
+        "string": "This page doesn",
+        "type": "ocr"
+      },
+      {
+        "return": "false",
+        "string": "This page doesn",
+        "type": "normal"
+      },
+      {
+        "return": "true",
+        "string": "user-profile",
+        "type": "normal"
+      }
+    ],
     "selected": "false"
   },
   {
     "url": "https://myminifactory.com/users/{username}",
-    "detections": [],
+    "detections": [{
+        "return": "false",
+        "string": "Something has gone wrong",
+        "type": "ocr"
+      },
+      {
+        "return": "false",
+        "string": "Something has gone wrong",
+        "type": "normal"
+      },
+      {
+        "return": "true",
+        "string": "\"username\"",
+        "type": "normal"
+      },
+      {
+        "return": "true",
+        "string": "profilename",
+        "type": "normal"
+      }
+    ],
     "selected": "false"
   },
   {
     "url": "https://myspace.com/{username}",
-    "detections": [],
+    "detections": [{
+        "return": "false",
+        "string": "Page Not Found",
+        "type": "ocr"
+      },
+      {
+        "return": "false",
+        "string": "Page Not Found",
+        "type": "normal"
+      }
+    ],
     "selected": "false"
   },
   {
