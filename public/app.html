@@ -552,6 +552,11 @@
         max-height: 210px;
         padding: 10px;
     }
+
+    .logs{
+        padding-top: 20px
+    }
+
 </style>
 
 <body>
@@ -562,6 +567,7 @@
                 <polygon stroke-width="7" stroke="#aa6400" fill-opacity="0" id="hex"
                     points="50 1 95 25 95 75 50 99 5 75 5 25" />
             </svg>
+            <div class="logs" id="logs">logsfsddsfsdf</div>
         </div>
     </div>
 
@@ -734,6 +740,8 @@
         </div>
     </div>
     <script>
+        var interval_logs;
+
         $('#analyzed-options').selectize({
             plugins: ['remove_button'],
         });
@@ -742,13 +750,28 @@
 
         function spinner_on_off(on_off) {
             if (on_off) {
+                $('#logs').text("")
                 $('.waiting').show();
                 $('.waiting-box').show();
             }
             else {
+                $('#logs').text("")
                 $('.waiting').hide();
                 $('.waiting-box').hide();
             }
+        }
+
+        function get_logs(uuid) {
+                $.ajax({
+                type: "POST",
+                url: "/get_logs",
+                data: { 'last_line': $('#logs').text(),'uuid':uuid },
+                }).done(function (data) {
+                    if (data != "nothinghere" && data != "")
+                    {
+                        $('#logs').text(data)
+                    }
+                })
         }
 
         function reset_everything() {
@@ -771,6 +794,8 @@
             $('#output-table-3').html("");
             $('#output-section-4').hide();
             $('#output-table-4').html("");
+            $('#logs').html("");
+            clearInterval(interval_logs);
         }
 
         function setup_selectable(tag) {
@@ -814,12 +839,13 @@
                 $('#possible-words-section').show();
             }
 
-
         }
 
         async function analyze_string() {
-            spinner_on_off(true)
             reset_everything()
+            spinner_on_off(true)
+            random_string = Math.random().toString(36).substring(2);
+            interval_logs = setInterval(get_logs.bind(null,random_string),1000);
             list_of_options = []
             $('.selectize-input .item').each(function () {
                 list_of_options.push($(this).attr('data-value'))
@@ -828,7 +854,7 @@
             await $.ajax({
                 type: "POST",
                 url: "/url",
-                data: { 'string': $('#string-to-analyze').val(), 'option': list_of_options.join(",") },
+                data: { 'string': $('#string-to-analyze').val(), 'option': list_of_options.join(","),'uuid':random_string },
             }).done(function (data) {
                 if (data != "Error") {
                     if (data.common.length > 0) {
@@ -935,7 +961,8 @@
 
                 }
             });
-
+            
+            clearInterval(interval_logs);
             spinner_on_off(false)
         }
 
@@ -979,6 +1006,7 @@
                     }
                 });
             }
+
             spinner_on_off(false)
         }
 
