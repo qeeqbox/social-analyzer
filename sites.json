@@ -3553,7 +3553,27 @@
   },
   {
     "url": "https://{username}.blogspot.com",
-    "detections": [],
+    "detections": [{
+        "return": "false",
+        "string": "the blog you were looking",
+        "type": "ocr"
+      },
+      {
+        "return": "false",
+        "string": "the blog you were looking",
+        "type": "normal"
+      },
+      {
+        "return": "true",
+        "string": "itemprop='name'",
+        "type": "normal"
+      },
+      {
+        "return": "true",
+        "string": "profile-",
+        "type": "normal"
+      }
+    ],
     "selected": "false"
   },
   {
@@ -3563,7 +3583,22 @@
   },
   {
     "url": "https://{username}.carbonmade.com",
-    "detections": [],
+    "detections": [{
+        "return": "false",
+        "string": "site not found",
+        "type": "ocr"
+      },
+      {
+        "return": "false",
+        "string": "site not found",
+        "type": "normal"
+      },
+      {
+        "return": "true",
+        "string": "og:description",
+        "type": "normal"
+      }
+    ],
     "selected": "false"
   },
   {
@@ -3573,22 +3608,87 @@
   },
   {
     "url": "https://{username}.crevado.com",
-    "detections": [],
+    "detections": [{
+        "return": "false",
+        "string": "Site not found",
+        "type": "ocr"
+      },
+      {
+        "return": "false",
+        "string": "Site not found",
+        "type": "normal"
+      },
+      {
+        "return": "true",
+        "string": "og:title",
+        "type": "normal"
+      }
+    ],
     "selected": "false"
   },
   {
     "url": "https://{username}.deviantart.com",
-    "detections": [],
+    "detections": [{
+        "return": "false",
+        "string": "Page Not Found",
+        "type": "ocr"
+      },
+      {
+        "return": "false",
+        "string": "Page Not Found",
+        "type": "normal"
+      },
+      {
+        "return": "true",
+        "string": "data-username",
+        "type": "normal"
+      },
+      {
+        "return": "true",
+        "string": "profile-",
+        "type": "normal"
+      }
+    ],
     "selected": "false"
   },
   {
     "url": "https://{username}.hubpages.com",
-    "detections": [],
+    "detections": [{
+        "return": "false",
+        "string": "Page does not exist",
+        "type": "ocr"
+      },
+      {
+        "return": "false",
+        "string": "Page does not exist",
+        "type": "normal"
+      },
+      {
+        "return": "true",
+        "string": "\"profile\"",
+        "type": "normal"
+      }
+    ],
     "selected": "false"
   },
   {
     "url": "https://{username}.itch.io",
-    "detections": [],
+    "detections": [{
+        "return": "false",
+        "string": "t find your page",
+        "type": "ocr"
+      },
+      {
+        "return": "false",
+        "string": "t find your page",
+        "type": "normal"
+      },
+      {
+        "return": "true",
+        "string": "\"name\":\"",
+        "type": "normal"
+      }
+    ],
     "selected": "false"
   },
   {
@@ -3598,7 +3698,27 @@
   },
   {
     "url": "https://{username}.livejournal.com",
-    "detections": [],
+    "detections": [{
+        "return": "false",
+        "string": "Use the links to access more options",
+        "type": "ocr"
+      },
+      {
+        "return": "false",
+        "string": "Use the links to access more options",
+        "type": "normal"
+      },
+      {
+        "return": "true",
+        "string": "user-profile",
+        "type": "normal"
+      },
+      {
+        "return": "true",
+        "string": "\"username\"",
+        "type": "normal"
+      }
+    ],
     "selected": "false"
   },
   {
