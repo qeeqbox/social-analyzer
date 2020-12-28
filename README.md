@@ -5,7 +5,7 @@
 
 An API for analyzing & finding a person profile across +300 social media websites. It includes different string analysis and detection modules, you can choose which combination of modules to use during the investigation. The detection modules utilize a rating mechanism based on different detection techniques, which produces a rate value that starts from 0 to 100 (No-Maybe-Yes)
 
-If you have a detection, please submit it in a pull request!
+**If you have a detection or any sort of contribution, please submit it in a pull request!**
 
 ```bash
 -------------------------------------              ---------------------------------
