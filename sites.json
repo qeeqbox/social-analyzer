@@ -3274,12 +3274,31 @@
   },
   {
     "url": "https://nairaland.com/{username}",
-    "detections": [],
+    "detections": [{
+        "return": "false",
+        "string": "Page Not Found",
+        "type": "ocr"
+      },
+      {
+        "return": "false",
+        "string": "Page Not Found",
+        "type": "normal"
+      },
+      {
+        "return": "true",
+        "string": "profile",
+        "type": "normal"
+      }
+    ],
     "selected": "false"
   },
   {
     "url": "https://namemc.com/profile/{username}",
-    "detections": [],
+    "detections": [{
+      "return": "true",
+      "string": "Minecraft Profile",
+      "type": "normal"
+    }],
     "selected": "false"
   },
   {
@@ -3294,12 +3313,42 @@
   },
   {
     "url": "https://native-instruments.com/forum/members?username={username}",
-    "detections": [],
+    "detections": [{
+        "return": "false",
+        "string": "- Error",
+        "type": "ocr"
+      },
+      {
+        "return": "false",
+        "string": "- Error",
+        "type": "normal"
+      },
+      {
+        "return": "true",
+        "string": "profile:username",
+        "type": "normal"
+      }
+    ],
     "selected": "false"
   },
   {
     "url": "https://news.ycombinator.com/user?id={username}",
-    "detections": [],
+    "detections": [{
+        "return": "false",
+        "string": "No such user",
+        "type": "ocr"
+      },
+      {
+        "return": "false",
+        "string": "No such user",
+        "type": "normal"
+      },
+      {
+        "return": "true",
+        "string": "Profile",
+        "type": "normal"
+      }
+    ],
     "selected": "false"
   },
   {
@@ -3309,52 +3358,191 @@
   },
   {
     "url": "https://notabug.org/{username}",
-    "detections": [],
+    "detections": [{
+        "return": "false",
+        "string": "If you think this is an error",
+        "type": "ocr"
+      },
+      {
+        "return": "false",
+        "string": "If you think this is an error",
+        "type": "normal"
+      },
+      {
+        "return": "true",
+        "string": "username",
+        "type": "normal"
+      },
+      {
+        "return": "true",
+        "string": "profile",
+        "type": "normal"
+      }
+    ],
     "selected": "false"
   },
   {
     "url": "https://note.com/{username}",
-    "detections": [],
+    "detections": [{
+        "return": "true",
+        "string": "username",
+        "type": "normal"
+      },
+      {
+        "return": "true",
+        "string": "og:title",
+        "type": "normal"
+      }
+    ],
     "selected": "false"
   },
   {
     "url": "https://npmjs.com/~{username}",
-    "detections": [],
+    "detections": [{
+        "return": "false",
+        "string": "Scope not found",
+        "type": "ocr"
+      },
+      {
+        "return": "false",
+        "string": "Scope not found",
+        "type": "normal"
+      },
+      {
+        "return": "true",
+        "string": "scope/{username}",
+        "type": "normal"
+      }
+    ],
     "selected": "false"
   },
   {
     "url": "https://ok.ru/{username}",
-    "detections": [],
+    "detections": [{
+        "return": "false",
+        "string": "This page does not",
+        "type": "ocr"
+      },
+      {
+        "return": "false",
+        "string": "This page does not",
+        "type": "normal"
+      },
+      {
+        "return": "true",
+        "string": "og:title",
+        "type": "normal"
+      }
+    ],
     "selected": "false"
   },
   {
     "url": "https://open.spotify.com/user/{username}",
-    "detections": [],
+    "detections": [{
+        "return": "false",
+        "string": "Search for something else",
+        "type": "ocr"
+      },
+      {
+        "return": "false",
+        "string": "Search for something else",
+        "type": "normal"
+      }
+    ],
     "selected": "false"
   },
   {
     "url": "https://openhub.net/accounts/{username}",
-    "detections": [],
+    "detections": [{
+        "return": "false",
+        "string": "Something seems wrong",
+        "type": "ocr"
+      },
+      {
+        "return": "false",
+        "string": "Something seems wrong",
+        "type": "normal"
+      },
+      {
+        "return": "true",
+        "string": "account_header",
+        "type": "normal"
+      }
+    ],
     "selected": "false"
   },
   {
     "url": "https://opennet.ru/~{username}",
-    "detections": [],
+    "detections": [{
+      "return": "true",
+      "string": "show_user",
+      "type": "normal"
+    }],
     "selected": "false"
   },
   {
     "url": "https://opensource.com/users/{username}",
-    "detections": [],
+    "detections": [{
+        "return": "false",
+        "string": "Unfortunately the page you",
+        "type": "ocr"
+      },
+      {
+        "return": "false",
+        "string": "Unfortunately the page you",
+        "type": "normal"
+      },
+      {
+        "return": "true",
+        "string": "user-info",
+        "type": "normal"
+      }
+    ],
     "selected": "false"
   },
   {
     "url": "https://openstreetmap.org/user/{username}",
-    "detections": [],
+    "detections": [{
+        "return": "false",
+        "string": "does not exist",
+        "type": "ocr"
+      },
+      {
+        "return": "false",
+        "string": "does not exist",
+        "type": "normal"
+      },
+      {
+        "return": "true",
+        "string": "profile",
+        "type": "normal"
+      },
+      {
+        "return": "true",
+        "string": "user_",
+        "type": "normal"
+      }
+    ],
     "selected": "false"
   },
   {
     "url": "https://osu.ppy.sh/users/{username}",
-    "detections": [],
+    "detections": [{
+        "return": "false",
+        "string": "User not found",
+        "type": "ocr"
+      },
+      {
+        "return": "false",
+        "string": "User not found",
+        "type": "normal"
+      },
+      {
+        "return": "true",
+        "string": "profile-",
+        "type": "normal"
+      }
+    ],
     "selected": "false"
   },
   {
@@ -3364,12 +3552,37 @@
   },
   {
     "url": "https://ourdjtalk.com/members?username={username}",
-    "detections": [],
+    "detections": [{
+        "return": "false",
+        "string": "The specified member cannot be found",
+        "type": "ocr"
+      },
+      {
+        "return": "false",
+        "string": "The specified member cannot be found",
+        "type": "normal"
+      },
+      {
+        "return": "true",
+        "string": "memberHeader",
+        "type": "normal"
+      }
+    ],
     "selected": "false"
   },
   {
     "url": "https://packagist.org/packages/{username}",
-    "detections": [],
+    "detections": [{
+        "return": "false",
+        "string": "No packages found",
+        "type": "ocr"
+      },
+      {
+        "return": "true",
+        "string": "package-item",
+        "type": "normal"
+      }
+    ],
     "selected": "false"
   },
   {
