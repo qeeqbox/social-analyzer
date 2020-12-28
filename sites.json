@@ -2750,42 +2750,151 @@
   },
   {
     "url": "https://leetcode.com/{username}",
-    "detections": [],
+    "detections": [{
+        "return": "false",
+        "string": "Page Not Found",
+        "type": "ocr"
+      },
+      {
+        "return": "false",
+        "string": "Page Not Found",
+        "type": "normal"
+      },
+      {
+        "return": "true",
+        "string": "profile-root",
+        "type": "normal"
+      }
+    ],
     "selected": "false"
   },
   {
     "url": "https://letterboxd.com/{username}",
-    "detections": [],
+    "detections": [{
+        "return": "false",
+        "string": "find the page you’ve requested",
+        "type": "ocr"
+      },
+      {
+        "return": "false",
+        "string": "find the page you’ve requested",
+        "type": "normal"
+      },
+      {
+        "return": "true",
+        "string": "\"profile\"",
+        "type": "normal"
+      },
+      {
+        "return": "true",
+        "string": "data-user",
+        "type": "normal"
+      }
+    ],
     "selected": "false"
   },
   {
     "url": "https://lichess.org/@/{username}",
-    "detections": [],
+    "detections": [{
+        "return": "false",
+        "string": "Page not found",
+        "type": "ocr"
+      },
+      {
+        "return": "false",
+        "string": "Page not found",
+        "type": "normal"
+      },
+      {
+        "return": "true",
+        "string": "username",
+        "type": "normal"
+      }
+    ],
     "selected": "false"
   },
   {
     "url": "https://linux.org.ru/people/{username}/profile",
-    "detections": [],
+    "detections": [{
+      "return": "true",
+      "string": "userpic",
+      "type": "normal"
+    }],
     "selected": "false"
   },
   {
     "url": "https://liveleak.com/c/{username}",
-    "detections": [],
+    "detections": [{
+        "return": "false",
+        "string": "channel not found",
+        "type": "ocr"
+      },
+      {
+        "return": "false",
+        "string": "channel not found",
+        "type": "normal"
+      },
+      {
+        "return": "true",
+        "string": "content_main_right",
+        "type": "normal"
+      }
+    ],
     "selected": "false"
   },
   {
     "url": "https://livelib.ru/reader/{username}",
-    "detections": [],
+    "detections": [{
+        "return": "false",
+        "string": "logo-404",
+        "type": "normal"
+      },
+      {
+        "return": "true",
+        "string": "user-profile",
+        "type": "normal"
+      }
+    ],
     "selected": "false"
   },
   {
     "url": "https://lobste.rs/u/{username}",
-    "detections": [],
+    "detections": [{
+        "return": "false",
+        "string": "they changed their username",
+        "type": "ocr"
+      },
+      {
+        "return": "false",
+        "string": "they changed their username",
+        "type": "normal"
+      },
+      {
+        "return": "true",
+        "string": "/u#{username}",
+        "type": "normal"
+      }
+    ],
     "selected": "false"
   },
   {
     "url": "https://lolchess.gg/profile/na/{username}",
-    "detections": [],
+    "detections": [{
+        "return": "false",
+        "string": "No search results",
+        "type": "ocr"
+      },
+      {
+        "return": "false",
+        "string": "No search results",
+        "type": "normal"
+      },
+      {
+        "return": "true",
+        "string": "\"profile\"",
+        "type": "normal"
+      }
+    ],
     "selected": "false"
   },
   {
