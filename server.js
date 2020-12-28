@@ -884,7 +884,9 @@ process.on('unhandledRejection', function(err) {
     console.log(pe.render(err));
 })
 
-var server = app.listen(9005, function () {
-    var port = server.address().port;
-    console.log("Server started at http://localhost:%s/app.html", port);
+const server_host = '0.0.0.0';
+const server_port = process.env.PORT || 9005;
+
+var server = app.listen(server_port, server_host, function() {
+    console.log("Server started at http://%s:%s/app.html", server_host, server_port);
 });
