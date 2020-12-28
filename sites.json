@@ -2899,52 +2899,216 @@
   },
   {
     "url": "https://mastodon.cloud/@{username}",
-    "detections": [],
+    "detections": [{
+        "return": "false",
+        "string": "The page you are looking for isn",
+        "type": "ocr"
+      },
+      {
+        "return": "false",
+        "string": "The page you are looking for isn",
+        "type": "normal"
+      },
+      {
+        "return": "true",
+        "string": "profile:username",
+        "type": "normal"
+      },
+      {
+        "return": "true",
+        "string": "/@{username}",
+        "type": "normal"
+      }
+    ],
     "selected": "false"
   },
   {
     "url": "https://mastodon.social/@{username}",
-    "detections": [],
+    "detections": [{
+        "return": "false",
+        "string": "The page you are looking for isn",
+        "type": "ocr"
+      },
+      {
+        "return": "false",
+        "string": "The page you are looking for isn",
+        "type": "normal"
+      },
+      {
+        "return": "true",
+        "string": "profile:username",
+        "type": "normal"
+      },
+      {
+        "return": "true",
+        "string": "/@{username}",
+        "type": "normal"
+      }
+    ],
     "selected": "false"
   },
   {
     "url": "https://mastodon.technology/@{username}",
-    "detections": [],
+    "detections": [{
+        "return": "false",
+        "string": "The page you are looking for isn",
+        "type": "ocr"
+      },
+      {
+        "return": "false",
+        "string": "The page you are looking for isn",
+        "type": "normal"
+      },
+      {
+        "return": "true",
+        "string": "profile:username",
+        "type": "normal"
+      },
+      {
+        "return": "true",
+        "string": "/@{username}",
+        "type": "normal"
+      }
+    ],
     "selected": "false"
   },
   {
     "url": "https://mastodon.xyz/@{username}",
-    "detections": [],
+    "detections": [{
+        "return": "false",
+        "string": "The page you are looking for isn",
+        "type": "ocr"
+      },
+      {
+        "return": "false",
+        "string": "The page you are looking for isn",
+        "type": "normal"
+      },
+      {
+        "return": "true",
+        "string": "profile:username",
+        "type": "normal"
+      },
+      {
+        "return": "true",
+        "string": "/@{username}",
+        "type": "normal"
+      }
+    ],
     "selected": "false"
   },
   {
     "url": "https://medium.com/@{username}",
-    "detections": [],
+    "detections": [{
+        "return": "false",
+        "string": "Out of nothing",
+        "type": "ocr"
+      },
+      {
+        "return": "false",
+        "string": "Out of nothing",
+        "type": "normal"
+      },
+      {
+        "return": "true",
+        "string": "profile:username",
+        "type": "normal"
+      }
+    ],
     "selected": "false"
   },
   {
     "url": "https://memrise.com/user/{username}",
-    "detections": [],
+    "detections": [{
+        "return": "false",
+        "string": "The page you are trying",
+        "type": "ocr"
+      },
+      {
+        "return": "false",
+        "string": "The page you are trying",
+        "type": "normal"
+      },
+      {
+        "return": "true",
+        "string": "user-details",
+        "type": "normal"
+      },
+      {
+        "return": "true",
+        "string": "profile-stats",
+        "type": "normal"
+      }
+    ],
     "selected": "false"
   },
   {
     "url": "https://mercadolivre.com.br/perfil/{username}",
-    "detections": [],
+    "detections": [{
+        "return": "false",
+        "string": "\"error\"",
+        "type": "normal"
+      },
+      {
+        "return": "true",
+        "string": "username",
+        "type": "normal"
+      }
+    ],
     "selected": "false"
   },
   {
     "url": "https://meta.wikimedia.org/wiki/Special:CentralAuth/{username}",
-    "detections": [],
+    "detections": [{
+        "return": "false",
+        "string": "There is no global account",
+        "type": "ocr"
+      },
+      {
+        "return": "false",
+        "string": "There is no global account",
+        "type": "normal"
+      },
+      {
+        "return": "true",
+        "string": "Registered",
+        "type": "normal"
+      },
+      {
+        "return": "true",
+        "string": "Total edit count",
+        "type": "normal"
+      }
+    ],
     "selected": "false"
   },
   {
     "url": "https://metacritic.com/user/{username}",
-    "detections": [],
+    "detections": [{
+        "return": "false",
+        "string": "User not found",
+        "type": "ocr"
+      },
+      {
+        "return": "false",
+        "string": "User not found",
+        "type": "normal"
+      },
+      {
+        "return": "true",
+        "string": "userName:",
+        "type": "normal"
+      }
+    ],
     "selected": "false"
   },
   {
     "url": "https://mixcloud.com/{username}",
-    "detections": [],
+    "detections": [{
+      "return": "false",
+      "string": "User not found",
+      "type": "ocr"
+    }],
     "selected": "false"
   },
   {
