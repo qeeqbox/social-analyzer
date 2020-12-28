@@ -46,7 +46,42 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(express.static("public"));
 
-async function find_username_special(username, options) {
+if (!fs.existsSync('logs')){
+    fs.mkdirSync('logs');
+}
+
+var logs_queue = Promise.resolve();
+
+function log_to_file_queue(uuid,msg){
+  logs_queue = logs_queue.then(function(){
+    return new Promise(function(resolve){
+      fs.appendFile("logs/"+uuid+"_log.txt", msg + "\n", function(err, data){
+        console.log(msg)
+        resolve();
+      });
+    });
+  });
+}
+
+app.post("/get_logs", async function (req, res, next) {
+    var last_line = "nothinghere" 
+    if (req.body.uuid != ""){
+    req.body.uuid = req.body.uuid.replace(/[^a-zA-Z0-9\-]+/g, '');
+    var data = fs.readFileSync("logs/"+req.body.uuid+"_log.txt").toString();
+    if ( typeof data !== 'undefined' && data ){
+        last_line = data.split('\n').slice(-2)[0];
+    }  
+    res.send(last_line)
+}
+})
+
+function get_site_from_url(_url)
+{
+    temp = url.parse(_url.replace("{username}", "nothinghere")).hostname
+    return temp.replace("nothinghere.", "")
+}
+
+async function find_username_special(req) {
     const time = new Date();
     const functions = [];
     parsed_sites.forEach((site) => {
@@ -58,7 +93,7 @@ async function find_username_special(username, options) {
         if ("name" in site) {
             if (site.name == "facebook") {
                 if (site.selected == "true") {
-                    functions.push(find_username_site_special_facebook_1.bind(null, username, site));
+                    functions.push(find_username_site_special_facebook_1.bind(null, req.body.uuid, req.body.string, site));
                 }
             }
         }
@@ -68,9 +103,9 @@ async function find_username_special(username, options) {
     return results.filter(item => item !== undefined)
 }
 
-async function find_username_site_special_facebook_1(username, site) {
+async function find_username_site_special_facebook_1(uuid, username, site) {
     return new Promise(async (resolve, reject) => {
-
+        log_to_file_queue(uuid, "[Checking] " + get_site_from_url(site.url))
         let driver = new Builder()
             .forBrowser("firefox")
             .setFirefoxOptions(new firefox.Options().headless().windowSize({ width: 640, height: 480 }))
@@ -125,7 +160,7 @@ async function find_username_site_special_facebook_1(username, site) {
     });
 }
 
-async function find_username_advanced(username, options) {
+async function find_username_advanced(req) {
     const time = new Date();
     const functions = [];
     parsed_sites.forEach((site) => {
@@ -135,7 +170,7 @@ async function find_username_advanced(username, options) {
             }
         }
         if (site.selected == "true" && site.detections.length > 0) {
-            functions.push(find_username_site_new.bind(null, username, options, site));
+            functions.push(find_username_site_new.bind(null, req.body.uuid, req.body.string, req.body.option, site));
         }
     });
     const results = await async.parallelLimit(functions, 5);
@@ -143,9 +178,9 @@ async function find_username_advanced(username, options) {
     return results.filter(item => item !== undefined)
 }
 
-async function find_username_site_new(username, options, site) {
+async function find_username_site_new(uuid, username, options, site) {
     return new Promise(async (resolve, reject) => {
-
+        log_to_file_queue(uuid, "[Checking] " + get_site_from_url(site.url))
         let driver = new Builder()
             .forBrowser("firefox")
             .setFirefoxOptions(new firefox.Options().headless().windowSize({ width: 640, height: 480 }))
@@ -223,7 +258,7 @@ async function find_username_site_new(username, options, site) {
                 }));
             }
             if (temp_profile.found > 0 || temp_profile.image != "") {
-                temp_profile.text = text_only;
+                temp_profile.text = sanitizeHtml(text_only);
                 temp_profile.title = sanitizeHtml(title);
                 temp_profile.rate = "%" + ((temp_profile.found / site.detections.length) * 100).toFixed(2);
                 temp_profile.link = site.url.replace("{username}", username);
@@ -247,13 +282,14 @@ async function find_username_site_new(username, options, site) {
     });
 }
 
-async function find_username_normal(username, options) {
+async function find_username_normal(req) {
 
     var functions = [];
     var detections_result = [];
 
-    async function find_username_site(username, options, site, body) {
+    async function find_username_site(uuid,username, options, site, body) {
         try {
+            log_to_file_queue(uuid, "[Checking] " + get_site_from_url(site.url))
             var detections_count = 0;
             var source = body;
             var text_only = "unavailable";
@@ -294,7 +330,7 @@ async function find_username_normal(username, options) {
         }
     }
 
-    async function find_username_sites(username, options, parsed_sites) {
+    async function find_username_sites(uuid, username, options, parsed_sites) {
 
         await parsed_sites.forEach(site => {
             if ("status" in site) {
@@ -310,7 +346,7 @@ async function find_username_normal(username, options) {
                             body += chunk;
                         });
                         res.on("end", async function () {
-                            var results = await find_username_site(username, options, site, body);
+                            var results = await find_username_site(uuid,username, options, site, body);
                             detections_result.push(results);
                             callback(null, "Done!");
                         });
@@ -322,7 +358,7 @@ async function find_username_normal(username, options) {
         });
     }
 
-    await find_username_sites(username, options, parsed_sites);
+    await find_username_sites(req.body.uuid, req.body.string, req.body.option, parsed_sites);
     await async.parallelLimit(functions, 100);
     return detections_result.filter(item => item !== undefined);
 }
@@ -396,7 +432,7 @@ async function find_username_advanced_2(username, options) {
                     }));
                 }
                 if (temp_profile.found > 0 || temp_profile.image != "") {
-                    temp_profile.text = text_only;
+                    temp_profile.text = sanitizeHtml(text_only);
                     temp_profile.title = sanitizeHtml(title);
                     temp_profile.rate = "%" + ((temp_profile.found / site.detections.length) * 100).toFixed(2);
                     temp_profile.link = site.url.replace("{username}", username);
@@ -658,6 +694,7 @@ function remove_word(str, sub_string) {
 }
 
 async function analyze_name(req, all_words) {
+    log_to_file_queue(req.body.uuid, "[Starting] String analysis")
     temp_rr_names = []
     string_to_check = req.body.string
     parsed_json.prefix.forEach(function (item, index) {
@@ -717,6 +754,7 @@ async function analyze_name(req, all_words) {
 
     var temp_r_concat = all_words.unknown.concat(temp_rr_names.filter((item) => all_words.unknown.indexOf(item) < 0));
     all_words.unknown = temp_r_concat
+    log_to_file_queue(req.body.uuid, "[Done] String analysis")
 }
 
 app.post("/url", async function (req, res, next) {
@@ -732,11 +770,16 @@ app.post("/url", async function (req, res, next) {
         res.json("Error");
     }
     else {
+        req.body.uuid = req.body.uuid.replace(/[^a-zA-Z0-9\-]+/g, '');
         if (req.body.option.includes("FindUserProflesSpecial")) {
-            user_info_special.data = await find_username_special(req.body.string, req.body.option);
+            log_to_file_queue(req.body.uuid, "[Starting] Checking user profiles special")
+            user_info_special.data = await find_username_special(req);
+            log_to_file_queue(req.body.uuid, "[Done] Checking user profiles special")
         }
         if (req.body.option.includes("FindUserProflesFast")) {
-            user_info_advanced.data = await find_username_normal(req.body.string, req.body.option);
+            log_to_file_queue(req.body.uuid, "[Starting] Checking user profiles normal")
+            user_info_advanced.data = await find_username_normal(req);
+            log_to_file_queue(req.body.uuid, "[Done] Checking user profiles normal")
         }
         if (req.body.option.includes("FindUserProflesSlow") || req.body.option.includes("ShowUserProflesSlow")) {
             if (!req.body.option.includes("FindUserProflesSlow")) {
@@ -745,10 +788,14 @@ app.post("/url", async function (req, res, next) {
             else if (!req.body.option.includes("ShowUserProflesSlow")) {
                 user_info_normal.type = "noshow"
             }
-            user_info_normal.data = await find_username_advanced(req.body.string, req.body.option);
+            log_to_file_queue(req.body.uuid, "[Starting] Checking user profiles advanced")
+            user_info_normal.data = await find_username_advanced(req);
+            log_to_file_queue(req.body.uuid, "[Done] Checking user profiles advanced")
         }
         if (req.body.option.includes("LookUps")) {
+            log_to_file_queue(req.body.uuid, "[Starting] Lookup")
             await check_engines(req, info);
+            log_to_file_queue(req.body.uuid, "[Done] Lookup")
         }
         if (req.body.option.includes("SplitWordsByUpperCase")) {
             try {
@@ -757,6 +804,7 @@ app.post("/url", async function (req, res, next) {
                         all_words.unknown.push(item.toLowerCase());
                     }
                 });
+                log_to_file_queue(req.body.uuid, "[Done] Split by UpperCase")
             }
             catch (err) { }
         }
@@ -768,6 +816,7 @@ app.post("/url", async function (req, res, next) {
                         all_words.unknown.push(item.toLowerCase());
                     }
                 });
+                log_to_file_queue(req.body.uuid, "[Done] Split by Alphabet")
             }
             catch (err) { }
         }
@@ -797,6 +846,7 @@ app.post("/url", async function (req, res, next) {
                 }
             }
             req.body.string = temp_value
+            log_to_file_queue(req.body.uuid, "[Done] Convert numbers to letters")
         }
 
         if (req.body.option.includes("LookUps") ||
