@@ -80,7 +80,18 @@ Make sure to update to the latest nodejs and npm
 sudo kill -9 $(sudo lsof -t -i:9005)
 ```
 
-## Analyzing String Process
+## Goals
+- Adding the generic websites detections (These need some reviewing, but I will try to add them in 2021)
+
+## Resources
+- api.duckduckgo, google api, nodejs, bootstrap, selectize, jquery and font-awesome
+- Let me know if i missed a reference or resource!
+
+## Disclaimer\Notes
+- This tool meant to be used locally (It does not have any type of Access Control)
+- If you want your website to be excluded from this project, please reach out to me!
+
+## Examples
 WordInfo - Interacts with duckduckgo api
 <img src="https://raw.githubusercontent.com/qeeqbox/social-analyzer/main/readme/wordinfo.png" style="max-width:768px"/>
 
@@ -99,7 +110,6 @@ ConvertNumbers - Finds numbers in words and convert them into letters
 FindNumbers - Finds all numbers in a string
 <img src="https://raw.githubusercontent.com/qeeqbox/social-analyzer/main/readme/findnumbers.png" style="max-width:768px"/>
 
-## Finding Profile Process
 FindUserProflesFast - finds profiles with GET requests based on detection table (fast)
 <img src="https://raw.githubusercontent.com/qeeqbox/social-analyzer/main/readme/finduserproflesfast.png" style="max-width:768px"/>
 
@@ -108,14 +118,3 @@ FindUserProflesSlow - finds profiles with a webdriver based on detection table (
 
 ShowUserProflesSlow - finds profiles with a webdriver based on detection table (slow)
 <img src="https://raw.githubusercontent.com/qeeqbox/social-analyzer/main/readme/showuserproflesslow.png" style="max-width:768px"/>
-
-## Goals
-- Adding the generic websites detections (These need some reviewing, but I will try to add them in 2021)
-
-## Resources
-- api.duckduckgo, google api, nodejs, bootstrap, selectize, jquery and font-awesome
-- Let me know if i missed a reference or resource!
-
-## Disclaimer\Notes
-- This tool meant to be used locally (It does not have any type of Access Control)
-- If you want your website to be excluded from this project, please reach out to me!
