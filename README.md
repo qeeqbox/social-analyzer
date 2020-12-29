@@ -13,7 +13,7 @@ Because some websites have a delay logic implemented in the backend, I added an 
 - Added an optional timeout and implicit wait for each detection
 - Added logs (user request)
 - Added 5 seconds timeout to https.get (user request)
-- Added the API documentation (draft)
+- Added the API documentation ![Wiki](https://github.com/qeeqbox/social-analyzer/wiki)
 
 ## Security Testing
 
