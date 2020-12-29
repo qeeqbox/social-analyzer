@@ -9,7 +9,7 @@ API and Web App for analyzing & finding a person profile across +300 social medi
 
 ## Updates
 - ~~Added logs (user request)~~
-- ~~Added timeout to https.get (user request)~~
+- ~~Added 5 seconds timeout to https.get (user request)~~
 
 ## Security Testing
 
