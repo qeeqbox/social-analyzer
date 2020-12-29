@@ -27,34 +27,11 @@ Because some websites have a delay logic implemented in the backend, I added an 
 -------------------------------------              ---------------------------------
 ```
 
-## Analyzing String Process
-WordInfo - Interacts with duckduckgo api
-<img src="https://raw.githubusercontent.com/qeeqbox/social-analyzer/main/readme/wordinfo.png" style="max-width:768px"/>
+## Find Profile (Fast)
+<img src="https://raw.githubusercontent.com/qeeqbox/social-analyzer/main/readme/intro_fast.gif" style="max-width:768px"/>
 
-MostCommon - Finds all common words in a string, sort them by language
-<img src="https://raw.githubusercontent.com/qeeqbox/social-analyzer/main/readme/mostcommon.png" style="max-width:768px"/>
-
-SplitWordsByUpperCase - Finds upper case words in a string and splits them
-<img src="https://raw.githubusercontent.com/qeeqbox/social-analyzer/main/readme/splitwordsbyuppercase.png" style="max-width:768px"/>
-
-SplitWordsByUpperCase - Finds words start with Alphabet letters in a string and splits them
-<img src="https://raw.githubusercontent.com/qeeqbox/social-analyzer/main/readme/splitwordsbyalphabet.png" style="max-width:768px"/>
-
-ConvertNumbers - Finds numbers in words and convert them into letters
-<img src="https://raw.githubusercontent.com/qeeqbox/social-analyzer/main/readme/convertnumbers.png" style="max-width:768px"/>
-
-FindNumbers - Finds all numbers in a string
-<img src="https://raw.githubusercontent.com/qeeqbox/social-analyzer/main/readme/findnumbers.png" style="max-width:768px"/>
-
-## Finding Profile Process
-FindUserProflesFast - finds profiles with GET requests based on detection table (fast)
-<img src="https://raw.githubusercontent.com/qeeqbox/social-analyzer/main/readme/finduserproflesfast.png" style="max-width:768px"/>
-
-FindUserProflesSlow - finds profiles with a webdriver based on detection table (slow)
-<img src="https://raw.githubusercontent.com/qeeqbox/social-analyzer/main/readme/finduserproflesslow.png" style="max-width:768px"/>
-
-ShowUserProflesSlow - finds profiles with a webdriver based on detection table (slow)
-<img src="https://raw.githubusercontent.com/qeeqbox/social-analyzer/main/readme/showuserproflesslow.png" style="max-width:768px"/>
+## Find Profile (Slow)
+<img src="https://raw.githubusercontent.com/qeeqbox/social-analyzer/main/readme/intro_slow.gif" style="max-width:768px"/>
 
 Profile images **will not** be blurred. If you want them to be blurred, turn that option on
 
@@ -93,22 +70,6 @@ cd social-analyzer
 sudo docker build -t social-analyzer . && sudo docker run -p 9005:9005 -it social-analyzer
 ```
 
-## Options
-```bash
-LookUps                <- Interacts with google api (Needs an API key & CV)
-WordInfo               <- Interacts with duckduckgo api
-MostCommon             <- Finds all common words in a string, sort them by language
-SplitWordsByUpperCase  <- Finds upper case words in a string and splits them
-SplitWordsByAlphabet   <- Finds words start with Alphabet letters in a string and splits them
-ConvertNumbers         <- Finds numbers in words and convert them into letters
-FindNumbers            <- Finds all numbers in a string
-FindSymbols            <- Finds all symbols in a string
-FindUserProflesFast    <- Finds profiles with get requests based on detection table (fast)
-FindUserProflesSlow    <- Finds profiles with webdriver based on detection table (slow)
-ShowUserProflesSlow    <- Screenshot profiles with webdriver (slow)
-FindUserProflesSpecial <- Finds profiles based on special detection table (slow & limited)
-```
-
 ## Running Issues
 ```
 Make sure to update to the latest nodejs and npm
@@ -118,6 +79,35 @@ Make sure to update to the latest nodejs and npm
 ```
 sudo kill -9 $(sudo lsof -t -i:9005)
 ```
+
+## Analyzing String Process
+WordInfo - Interacts with duckduckgo api
+<img src="https://raw.githubusercontent.com/qeeqbox/social-analyzer/main/readme/wordinfo.png" style="max-width:768px"/>
+
+MostCommon - Finds all common words in a string, sort them by language
+<img src="https://raw.githubusercontent.com/qeeqbox/social-analyzer/main/readme/mostcommon.png" style="max-width:768px"/>
+
+SplitWordsByUpperCase - Finds upper case words in a string and splits them
+<img src="https://raw.githubusercontent.com/qeeqbox/social-analyzer/main/readme/splitwordsbyuppercase.png" style="max-width:768px"/>
+
+SplitWordsByUpperCase - Finds words start with Alphabet letters in a string and splits them
+<img src="https://raw.githubusercontent.com/qeeqbox/social-analyzer/main/readme/splitwordsbyalphabet.png" style="max-width:768px"/>
+
+ConvertNumbers - Finds numbers in words and convert them into letters
+<img src="https://raw.githubusercontent.com/qeeqbox/social-analyzer/main/readme/convertnumbers.png" style="max-width:768px"/>
+
+FindNumbers - Finds all numbers in a string
+<img src="https://raw.githubusercontent.com/qeeqbox/social-analyzer/main/readme/findnumbers.png" style="max-width:768px"/>
+
+## Finding Profile Process
+FindUserProflesFast - finds profiles with GET requests based on detection table (fast)
+<img src="https://raw.githubusercontent.com/qeeqbox/social-analyzer/main/readme/finduserproflesfast.png" style="max-width:768px"/>
+
+FindUserProflesSlow - finds profiles with a webdriver based on detection table (slow)
+<img src="https://raw.githubusercontent.com/qeeqbox/social-analyzer/main/readme/finduserproflesslow.png" style="max-width:768px"/>
+
+ShowUserProflesSlow - finds profiles with a webdriver based on detection table (slow)
+<img src="https://raw.githubusercontent.com/qeeqbox/social-analyzer/main/readme/showuserproflesslow.png" style="max-width:768px"/>
 
 ## Goals
 - Adding the generic websites detections (These need some reviewing, but I will try to add them in 2021)
