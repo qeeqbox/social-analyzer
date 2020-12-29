@@ -27,11 +27,22 @@ Because some websites have a delay logic implemented in the backend, I added an 
 -------------------------------------              ---------------------------------
 ```
 
+## Analyzing String Process
+Your string gets broken into smaller words
+<img src="https://raw.githubusercontent.com/qeeqbox/social-analyzer/main/readme/possible.png" style="max-width:768px"/>
+
+### (WordInfo - Interacts with duckduckgo api)
+<img src="https://raw.githubusercontent.com/qeeqbox/social-analyzer/main/readme/wordinfo.png" style="max-width:768px"/>
+
+### (MostCommon - Finds all common words in a string, sort them by language)
+<img src="https://raw.githubusercontent.com/qeeqbox/social-analyzer/main/readme/mostcommon.png" style="max-width:768px"/>
+
 ## Find Profile (Fast - FindUserProflesNormal)
 <img src="https://raw.githubusercontent.com/qeeqbox/social-analyzer/main/readme/intro_fast.gif" style="max-width:768px"/>
 
 ## Find Profile (Slow - FindUserProflesAdvanced)
 <img src="https://raw.githubusercontent.com/qeeqbox/social-analyzer/main/readme/intro_slow.gif" style="max-width:768px"/>
+
 
 Profile images **will not** be blurred. If you want them to be blurred, turn that option on
 
