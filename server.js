@@ -64,13 +64,13 @@ function log_to_file_queue(uuid,msg){
 }
 
 app.post("/get_logs", async function (req, res, next) {
-    var last_line = "nothinghere" 
+    var last_line = "nothinghere"
     if (req.body.uuid != ""){
     req.body.uuid = req.body.uuid.replace(/[^a-zA-Z0-9\-]+/g, '');
     var data = fs.readFileSync("logs/"+req.body.uuid+"_log.txt").toString();
     if ( typeof data !== 'undefined' && data ){
         last_line = data.split('\n').slice(-2)[0];
-    }  
+    }
     res.send(last_line)
 }
 })
@@ -340,7 +340,7 @@ async function find_username_normal(req) {
             }
             if (site.selected == "true" && site.detections.length > 0) {
                 functions.push(function (callback) {
-                    https.get(site.url.replace("{username}", username), function (res) {
+                    var request = https.get(site.url.replace("{username}", username), function (res) {
                         var body = ""
                         res.on("data", function (chunk) {
                             body += chunk;
@@ -350,9 +350,15 @@ async function find_username_normal(req) {
                             detections_result.push(results);
                             callback(null, "Done!");
                         });
-                    }).on("error", function (err) {
-                        console.error(err);
-                    }).end();
+                    });
+                    request.on('error', function(e) {
+                      callback(null, "Done!");
+                    });
+                    request.on('socket', function(socket) {
+                      socket.setTimeout(5000, function() {
+                        request.abort();
+                      });
+                    });
                 });
             }
         });
