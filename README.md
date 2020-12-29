@@ -5,12 +5,15 @@
 
 API and Web App for analyzing & finding a person profile across +300 social media websites. It includes different string analysis and detection modules, you can choose which combination of modules to use during the investigation. The detection modules utilize a rating mechanism based on different detection techniques, which produces a rate value that starts from 0 to 100 (No-Maybe-Yes)
 
+Because some websites have a delay logic implemented in the backend, I added an optional timeout and implicit wait for each detection
+
 **Please submit your contribution in a Pull Request!**
 
 ## Updates
-- ~~Added logs (user request)~~
-- ~~Added 5 seconds timeout to https.get (user request)~~
-- ~~Add the API documentation (draft)~~
+- Added an optional timeout and implicit wait for each detection
+- Added logs (user request)
+- Added 5 seconds timeout to https.get (user request)
+- Added the API documentation (draft)
 
 ## Security Testing
 
