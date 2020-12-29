@@ -637,7 +637,7 @@
                     <div class="div-right"><i id="open-settings" class="fa fa-cog"></i></div>
                 </div>
                 <div class="div-100">
-                    <input type="text" id="string-to-analyze" placeholder="Mary" />
+                    <input type="text" id="string-to-analyze" placeholder="Joe" />
                     <div class="cell-separator"></div>
                     <select name="analyzed-options" placeholder="Choose some options..." id="analyzed-options"
                         multiple="multiple">
@@ -996,11 +996,10 @@
                 $("#detection-options-list :checked").each(function () {
                     temp_checked.push(Number(this.name.substring('url_'.length)))
                 });
-                google = [$("#google-api-key").val(), $("#google-api-cs").val()]
                 await $.ajax({
                     type: "POST",
                     url: "/save_settings",
-                    data: { 'detections': temp_checked, 'google': google }
+                    data: { 'detections': temp_checked.join(","), 'google_key': $("#google-api-key").val(), 'google_cv':$("#google-api-cs").val()}
                 }).done(function (data) {
                     if (data != "Error") {
                     }
