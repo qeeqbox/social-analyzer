@@ -101,5 +101,5 @@ sudo kill -9 $(sudo lsof -t -i:9005)
 - Let me know if i missed a reference or resource!
 
 ## Disclaimer\Notes
-- This tool meant to be used localy (It does not have any type of Access Control)
+- This tool meant to be used locally (It does not have any type of Access Control)
 - If you want your website to be excluded from this project, please reach out to me!
