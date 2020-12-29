@@ -28,9 +28,6 @@ Because some websites have a delay logic implemented in the backend, I added an 
 ```
 
 ## Analyzing String Process
-Your string gets broken into smaller words
-<img src="https://raw.githubusercontent.com/qeeqbox/social-analyzer/main/readme/possible.png" style="max-width:768px"/>
-
 WordInfo - Interacts with duckduckgo api
 <img src="https://raw.githubusercontent.com/qeeqbox/social-analyzer/main/readme/wordinfo.png" style="max-width:768px"/>
 
