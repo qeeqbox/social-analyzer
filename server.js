@@ -189,8 +189,8 @@ async function find_username_site_new(uuid, username, options, site) {
         try {
             var timeouts = {
                 implicit: 0,
-                pageLoad: 10000,
-                script: 10000
+                pageLoad: 5000,
+                script: 5000
             };
 
             var source = "";
