@@ -10,6 +10,7 @@ API and Web App for analyzing & finding a person profile across +300 social medi
 ## Updates
 - ~~Added logs (user request)~~
 - ~~Added 5 seconds timeout to https.get (user request)~~
+- Add the API documentation
 
 ## Security Testing
 
@@ -84,6 +85,9 @@ sudo docker build -t social-analyzer . && sudo docker run -p 9005:9005 -it socia
 ```
 Make sure to update to the latest nodejs and npm
 ```
+
+## Goals
+- Adding the generic websites detections (These need some reviewing but I will try to add them in 2021)
 
 ## Resources
 - api.duckduckgo, google api, nodejs, bootstrap, selectize, jquery and font-awesome
