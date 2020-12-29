@@ -49,11 +49,12 @@ Because some websites have a delay logic implemented in the backend, I added an 
 #### (FindNumbers - Finds all numbers in a string)
 <img src="https://raw.githubusercontent.com/qeeqbox/social-analyzer/main/readme/findnumbers.png" style="max-width:768px"/>
 
-#### Find Profile (Fast - FindUserProflesNormal)
-<img src="https://raw.githubusercontent.com/qeeqbox/social-analyzer/main/readme/intro_fast.gif" style="max-width:768px"/>
+## Finding Profile Process
+#### FindUserProflesFast - finds profiles with GET requests based on detection table (fast)
+<img src="https://raw.githubusercontent.com/qeeqbox/social-analyzer/main/readme/finduserproflesfast.png" style="max-width:768px"/>
 
-#### Find Profile (Slow - FindUserProflesAdvanced)
-<img src="https://raw.githubusercontent.com/qeeqbox/social-analyzer/main/readme/intro_slow.gif" style="max-width:768px"/>
+#### FindUserProflesSlow - finds profiles with a webdriver based on detection table (slow)
+<img src="https://raw.githubusercontent.com/qeeqbox/social-analyzer/main/readme/finduserproflesslow.png" style="max-width:768px"/>
 
 
 Profile images **will not** be blurred. If you want them to be blurred, turn that option on
