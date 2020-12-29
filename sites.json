@@ -3587,37 +3587,120 @@
   },
   {
     "url": "https://pastebin.com/u/{username}",
-    "detections": [],
+    "detections": [{
+        "return": "false",
+        "string": "The requested page does not exist",
+        "type": "ocr"
+      },
+      {
+        "return": "false",
+        "string": "The requested page does not exist",
+        "type": "normal"
+      },
+      {
+        "return": "true",
+        "string": "user-view",
+        "type": "normal"
+      }
+    ],
     "selected": "false"
   },
   {
     "url": "https://patreon.com/{username}",
-    "detections": [],
+    "detections": [{
+        "return": "false",
+        "string": "Looks like you got lost",
+        "type": "ocr"
+      },
+      {
+        "return": "false",
+        "string": "error.",
+        "type": "normal"
+      },
+      {
+        "return": "true",
+        "string": "profile.",
+        "type": "normal"
+      }
+    ],
     "selected": "false"
   },
   {
     "url": "https://pcpartpicker.com/user/{username}",
-    "detections": [],
+    "detections": [{
+        "return": "false",
+        "string": "The page you requested",
+        "type": "ocr"
+      },
+      {
+        "return": "false",
+        "string": "The page you requested",
+        "type": "normal"
+      },
+      {
+        "return": "true",
+        "string": "\"Profile\"",
+        "type": "normal"
+      }
+    ],
     "selected": "false"
   },
   {
     "url": "https://periscope.tv/{username}",
-    "detections": [],
+    "detections": [{
+        "return": "false",
+        "string": "Sorry, this page",
+        "type": "ocr"
+      },
+      {
+        "return": "false",
+        "string": "Sorry, this page",
+        "type": "normal"
+      },
+      {
+        "return": "true",
+        "string": "ProfileName",
+        "type": "normal"
+      }
+    ],
     "selected": "false"
   },
   {
     "url": "https://php.ru/forum/members/?username={username}",
-    "detections": [],
+    "detections": [{
+      "return": "true",
+      "string": "\"profile\"",
+      "type": "normal"
+    }],
     "selected": "false"
   },
   {
     "url": "https://pikabu.ru/@{username}",
-    "detections": [],
+    "detections": [{
+      "return": "true",
+      "string": "data-profile",
+      "type": "normal"
+    }],
     "selected": "false"
   },
   {
     "url": "https://pinkbike.com/u/{username}",
-    "detections": [],
+    "detections": [{
+        "return": "false",
+        "string": "Could Not Find This Page",
+        "type": "ocr"
+      },
+      {
+        "return": "false",
+        "string": "Could Not Find This Page",
+        "type": "normal"
+      },
+      {
+        "return": "true",
+        "string": "user-details",
+        "type": "normal"
+      }
+    ],
     "selected": "false"
   },
   {
@@ -3648,22 +3731,58 @@
   },
   {
     "url": "https://pling.com/u/{username}",
-    "detections": [],
+    "detections": [{
+      "return": "true",
+      "string": "about-title",
+      "type": "normal"
+    }],
     "selected": "false"
   },
   {
     "url": "https://plug.dj/@/{username}",
-    "detections": [],
+    "detections": [{
+        "return": "false",
+        "string": "s the party",
+        "type": "ocr"
+      },
+      {
+        "return": "false",
+        "string": "s the party",
+        "type": "normal"
+      },
+      {
+        "return": "false",
+        "string": "error-404",
+        "type": "normal"
+      },
+      {
+        "return": "true",
+        "string": "\"profile\"",
+        "type": "normal"
+      }
+    ],
     "selected": "false"
   },
   {
     "url": "https://pokemonshowdown.com/users/{username}",
-    "detections": [],
+    "detections": [{
+      "return": "true",
+      "string": "Joined:",
+      "type": "normal"
+    }, {
+      "return": "true",
+      "string": "Account disabled",
+      "type": "normal"
+    }],
     "selected": "false"
   },
   {
     "url": "https://polarsteps.com/{username}",
-    "detections": [],
+    "detections": [{
+      "return": "true",
+      "string": "user-info",
+      "type": "normal"
+    }],
     "selected": "false"
   },
   {
@@ -3678,22 +3797,69 @@
   },
   {
     "url": "https://producthunt.com/@{username}",
-    "detections": [],
+    "detections": [{
+        "return": "false",
+        "string": "Page Not Found",
+        "type": "ocr"
+      },
+      {
+        "return": "false",
+        "string": "Page Not Found",
+        "type": "normal"
+      },
+      {
+        "return": "true",
+        "string": "\"creator\":\"@",
+        "type": "normal"
+      }
+    ],
     "selected": "false"
   },
   {
     "url": "https://profil.chatujme.cz/{username}",
-    "detections": [],
+    "detections": [{
+      "return": "true",
+      "string": "profilu",
+      "type": "normal"
+    }, {
+      "return": "true",
+      "string": "profilview",
+      "type": "normal"
+    }],
     "selected": "false"
   },
   {
     "url": "https://profiles.wordpress.org/{username}",
-    "detections": [],
+    "detections": [{
+        "return": "false",
+        "string": "User not found",
+        "type": "ocr"
+      },
+      {
+        "return": "false",
+        "string": "Page Not Found",
+        "type": "normal"
+      },
+      {
+        "return": "true",
+        "string": "username",
+        "type": "normal"
+      },
+      {
+        "return": "true",
+        "string": "user-",
+        "type": "normal"
+      }
+    ],
     "selected": "false"
   },
   {
     "url": "https://prog.hu/azonosito/info/{username}",
-    "detections": [],
+    "detections": [{
+      "return": "true",
+      "string": "userprofile",
+      "type": "normal"
+    }],
     "selected": "false"
   },
   {
