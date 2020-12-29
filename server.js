@@ -522,16 +522,16 @@ app.post("/save_settings", async function (req, res, next) {
     });
     if ("detections" in req.body) {
         if (req.body.detections.length > 0) {
-            await req.body.detections.forEach(item => {
+            await req.body.detections.split(',').forEach(item => {
                 parsed_sites[Number(item)].selected = "true";
             });
         }
     }
-    if (req.body.google[0] != google_api_key.substring(0, 10) + "******") {
-        google_api_key = req.body.google[0];
+    if (req.body.google_key != google_api_key.substring(0, 10) + "******") {
+        google_api_key = req.body.google_key;
     }
-    if (req.body.google[1] != google_api_cs.substring(0, 10) + "******") {
-        google_api_cs = req.body.google[1];
+    if (req.body.google_cv != google_api_cs.substring(0, 10) + "******") {
+        google_api_cs = req.body.google_cv;
     }
 
     res.json("Done");
