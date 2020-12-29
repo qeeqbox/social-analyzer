@@ -85,6 +85,7 @@ Please make sure to update to the latest nodejs and npm
 
 ## Resources
 - api.duckduckgo, google api, nodejs, bootstrap, selectize, jquery and font-awesome
+- Please let me know if i missed a reference or resource!
 
 ## Disclaimer\Notes
 - This tool meant to be used localy (It does not have any type of Access Control)
