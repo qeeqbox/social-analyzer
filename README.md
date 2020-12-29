@@ -28,19 +28,31 @@ Because some websites have a delay logic implemented in the backend, I added an 
 ```
 
 ## Analyzing String Process
-Your string gets broken into smaller words
+#### Your string gets broken into smaller words
 <img src="https://raw.githubusercontent.com/qeeqbox/social-analyzer/main/readme/possible.png" style="max-width:768px"/>
 
-### (WordInfo - Interacts with duckduckgo api)
+#### (WordInfo - Interacts with duckduckgo api)
 <img src="https://raw.githubusercontent.com/qeeqbox/social-analyzer/main/readme/wordinfo.png" style="max-width:768px"/>
 
-### (MostCommon - Finds all common words in a string, sort them by language)
+#### (MostCommon - Finds all common words in a string, sort them by language)
 <img src="https://raw.githubusercontent.com/qeeqbox/social-analyzer/main/readme/mostcommon.png" style="max-width:768px"/>
 
-## Find Profile (Fast - FindUserProflesNormal)
+#### (SplitWordsByUpperCase - Finds upper case words in a string and splits them)
+<img src="https://raw.githubusercontent.com/qeeqbox/social-analyzer/main/readme/splitwordsbyuppercase.png" style="max-width:768px"/>
+
+#### (SplitWordsByUpperCase - Finds words start with Alphabet letters in a string and splits them)
+<img src="https://raw.githubusercontent.com/qeeqbox/social-analyzer/main/readme/splitwordsbyalphabet.png" style="max-width:768px"/>
+
+#### (ConvertNumbers - Finds numbers in words and convert them into letters)
+<img src="https://raw.githubusercontent.com/qeeqbox/social-analyzer/main/readme/convertnumbers.png" style="max-width:768px"/>
+
+#### (FindNumbers - Finds all numbers in a string)
+<img src="https://raw.githubusercontent.com/qeeqbox/social-analyzer/main/readme/findnumbers.png" style="max-width:768px"/>
+
+#### Find Profile (Fast - FindUserProflesNormal)
 <img src="https://raw.githubusercontent.com/qeeqbox/social-analyzer/main/readme/intro_fast.gif" style="max-width:768px"/>
 
-## Find Profile (Slow - FindUserProflesAdvanced)
+#### Find Profile (Slow - FindUserProflesAdvanced)
 <img src="https://raw.githubusercontent.com/qeeqbox/social-analyzer/main/readme/intro_slow.gif" style="max-width:768px"/>
 
 
