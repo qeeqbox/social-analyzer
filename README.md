@@ -10,7 +10,7 @@ API and Web App for analyzing & finding a person profile across +300 social medi
 ## Updates
 - ~~Added logs (user request)~~
 - ~~Added 5 seconds timeout to https.get (user request)~~
-- Add the API documentation
+- ~~Add the API documentation (draft)~~
 
 ## Security Testing
 
@@ -94,7 +94,7 @@ sudo kill -9 $(sudo lsof -t -i:9005)
 ```
 
 ## Goals
-- Adding the generic websites detections (These need some reviewing but I will try to add them in 2021)
+- Adding the generic websites detections (These need some reviewing, but I will try to add them in 2021)
 
 ## Resources
 - api.duckduckgo, google api, nodejs, bootstrap, selectize, jquery and font-awesome
