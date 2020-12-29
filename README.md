@@ -88,6 +88,11 @@ FindUserProflesSpecial <- Finds profiles based on special detection table (slow 
 Make sure to update to the latest nodejs and npm
 ```
 
+## Closing the app by port number
+```
+sudo kill -9 $(sudo lsof -t -i:9005)
+```
+
 ## Goals
 - Adding the generic websites detections (These need some reviewing but I will try to add them in 2021)
 
