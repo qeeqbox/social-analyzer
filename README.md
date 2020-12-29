@@ -68,18 +68,20 @@ sudo docker build -t social-analyzer . && sudo docker run -p 9005:9005 -it socia
 ```
 
 ## Options
-- LookUps -> Interacts with google api (Needs an API key & CV)
-- WordInfo -> Interacts with duckduckgo api
-- MostCommon -> Finds all common words in a string, sort them by language
-- SplitWordsByUpperCase -> Finds upper case words in a string and splits them
-- SplitWordsByAlphabet -> Finds words start with Alphabet letters in a string and splits them
-- ConvertNumbers -> Finds numbers in words and convert them into letters
-- FindNumbers -> Finds all numbers in a string
-- FindSymbols -> Finds all symbols in a string
-- FindUserProflesFast -> Finds profiles with get requests based on detection table (fast)
-- FindUserProflesSlow -> Finds profiles with webdriver based on detection table (slow)
-- ShowUserProflesSlow -> Screenshot profiles with webdriver (slow)
-- FindUserProflesSpecial -> Finds profiles based on special detection table (slow & limited)
+```bash
+LookUps                <- Interacts with google api (Needs an API key & CV)
+WordInfo               <- Interacts with duckduckgo api
+MostCommon             <- Finds all common words in a string, sort them by language
+SplitWordsByUpperCase  <- Finds upper case words in a string and splits them
+SplitWordsByAlphabet   <- Finds words start with Alphabet letters in a string and splits them
+ConvertNumbers         <- Finds numbers in words and convert them into letters
+FindNumbers            <- Finds all numbers in a string
+FindSymbols            <- Finds all symbols in a string
+FindUserProflesFast    <- Finds profiles with get requests based on detection table (fast)
+FindUserProflesSlow    <- Finds profiles with webdriver based on detection table (slow)
+ShowUserProflesSlow    <- Screenshot profiles with webdriver (slow)
+FindUserProflesSpecial <- Finds profiles based on special detection table (slow & limited)
+```
 
 ## Running Issues
 ```
