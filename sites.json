@@ -4801,14 +4801,33 @@
   },
   {
     "url": "https://vimeo.com/{username}",
-    "detections": [],
+    "detections": [{
+        "return": "false",
+        "string": "Make sure you’ve typed the URL correctly",
+        "type": "normal"
+      },
+      {
+        "return": "false",
+        "string": "Make sure you’ve typed the URL correctly",
+        "type": "normal"
+      },
+      {
+        "return": "true",
+        "string": "og:title",
+        "type": "normal"
+      }
+    ],
     "selected": "false",
     "timeout": 0,
-    "implicit": 0
+    "implicit": 10
   },
   {
     "url": "https://virgool.io/@{username}",
-    "detections": [],
+    "detections": [{
+      "return": "true",
+      "string": "profile-",
+      "type": "normal"
+    }],
     "selected": "false",
     "timeout": 0,
     "implicit": 0
@@ -4822,42 +4841,137 @@
   },
   {
     "url": "https://vk.com/{username}",
-    "detections": [],
+    "detections": [{
+        "return": "false",
+        "string": "404 Not Found",
+        "type": "normal"
+      },
+      {
+        "return": "false",
+        "string": "Error 400",
+        "type": "normal"
+      },
+      {
+        "return": "true",
+        "string": "profile_",
+        "type": "normal"
+      }
+    ],
     "selected": "false",
     "timeout": 0,
     "implicit": 0
   },
   {
     "url": "https://vsco.co/{username}",
-    "detections": [],
+    "detections": [{
+        "return": "false",
+        "string": "This page does not exist",
+        "type": "ocr"
+      },
+      {
+        "return": "true",
+        "string": "co/{username}",
+        "type": "normal"
+      }
+    ],
     "selected": "false",
     "timeout": 0,
     "implicit": 0
   },
   {
     "url": "https://warriorforum.com/members/{username}.html",
-    "detections": [],
+    "detections": [{
+        "return": "false",
+        "string": "This user has not registered",
+        "type": "normal"
+      },
+      {
+        "return": "false",
+        "string": "This user has not registered",
+        "type": "normal"
+      },
+      {
+        "return": "false",
+        "string": "Error 400",
+        "type": "normal"
+      },
+      {
+        "return": "true",
+        "string": "\"username",
+        "type": "normal"
+      }
+    ],
     "selected": "false",
     "timeout": 0,
     "implicit": 0
   },
   {
     "url": "https://wattpad.com/user/{username}",
-    "detections": [],
+    "detections": [{
+        "return": "false",
+        "string": "User not found",
+        "type": "normal"
+      },
+      {
+        "return": "false",
+        "string": "error404",
+        "type": "normal"
+      },
+      {
+        "return": "true",
+        "string": "data-username",
+        "type": "normal"
+      }
+    ],
     "selected": "false",
     "timeout": 0,
     "implicit": 0
   },
   {
     "url": "https://weheartit.com/{username}",
-    "detections": [],
+    "detections": [{
+        "return": "false",
+        "string": "landed on a moving target",
+        "type": "normal"
+      },
+      {
+        "return": "false",
+        "string": "landed on a moving target",
+        "type": "normal"
+      },
+      {
+        "return": "false",
+        "string": "error_",
+        "type": "normal"
+      },
+      {
+        "return": "true",
+        "string": "data-username",
+        "type": "normal"
+      }
+    ],
     "selected": "false",
     "timeout": 0,
     "implicit": 0
   },
   {
     "url": "https://wikidot.com/user:info/{username}",
-    "detections": [],
+    "detections": [{
+        "return": "false",
+        "string": "User Information",
+        "type": "normal"
+      },
+      {
+        "return": "false",
+        "string": "User Information",
+        "type": "normal"
+      },
+      {
+        "return": "true",
+        "string": "user-info",
+        "type": "normal"
+      }
+    ],
     "selected": "false",
     "timeout": 0,
     "implicit": 0
