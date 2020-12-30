@@ -4523,7 +4523,17 @@
   },
   {
     "url": "https://repl.it/@{username}",
-    "detections": [],
+    "detections": [{
+        "return": "false",
+        "string": "Not found",
+        "type": "ocr"
+      },
+      {
+        "return": "true",
+        "string": " profile-",
+        "type": "normal"
+      }
+    ],
     "selected": "false",
     "timeout": 0,
     "implicit": 0
@@ -4537,14 +4547,44 @@
   },
   {
     "url": "https://reverbnation.com/{username}",
-    "detections": [],
+    "detections": [{
+        "return": "false",
+        "string": "we couldn't find that page",
+        "type": "ocr"
+      },
+      {
+        "return": "false",
+        "string": "we couldn't find that page",
+        "type": "normal"
+      },
+      {
+        "return": "true",
+        "string": "profile-header",
+        "type": "normal"
+      }
+    ],
     "selected": "false",
     "timeout": 0,
     "implicit": 0
   },
   {
     "url": "https://robertsspaceindustries.com/citizens/{username}",
-    "detections": [],
+    "detections": [{
+        "return": "false",
+        "string": "No results for",
+        "type": "ocr"
+      },
+      {
+        "return": "false",
+        "string": "No results for",
+        "type": "normal"
+      },
+      {
+        "return": "true",
+        "string": "-profile",
+        "type": "normal"
+      }
+    ],
     "selected": "false",
     "timeout": 0,
     "implicit": 0
@@ -4558,7 +4598,27 @@
   },
   {
     "url": "https://rubygems.org/profiles/{username}",
-    "detections": [],
+    "detections": [{
+        "return": "false",
+        "string": "Page not found",
+        "type": "ocr"
+      },
+      {
+        "return": "false",
+        "string": "Page not found",
+        "type": "normal"
+      },
+      {
+        "return": "true",
+        "string": "profile_",
+        "type": "normal"
+      },
+      {
+        "return": "true",
+        "string": "profile-",
+        "type": "normal"
+      }
+    ],
     "selected": "false",
     "timeout": 0,
     "implicit": 0
@@ -4572,28 +4632,71 @@
   },
   {
     "url": "https://satsis.info/user/{username}",
-    "detections": [],
+    "detections": [{
+      "return": "false",
+      "string": "berrors",
+      "type": "normal"
+    }, {
+      "return": "true",
+      "string": "\"userinfo\"",
+      "type": "normal"
+    }],
     "selected": "false",
     "timeout": 0,
     "implicit": 0
   },
   {
     "url": "https://sbazar.cz/{username}",
-    "detections": [],
+    "detections": [{
+        "return": "false",
+        "string": "error-box",
+        "type": "normal"
+      },
+      {
+        "return": "true",
+        "string": "-info",
+        "type": "normal"
+      }
+    ],
     "selected": "false",
     "timeout": 0,
     "implicit": 0
   },
   {
     "url": "https://scratch.mit.edu/users/{username}",
-    "detections": [],
+    "detections": [{
+        "return": "false",
+        "string": "Our server is Scratch",
+        "type": "ocr"
+      },
+      {
+        "return": "false",
+        "string": "Our server is Scratch",
+        "type": "normal"
+      },
+      {
+        "return": "true",
+        "string": "username:",
+        "type": "normal"
+      }
+    ],
     "selected": "false",
     "timeout": 0,
     "implicit": 0
   },
   {
     "url": "https://scribd.com/{username}",
-    "detections": [],
+    "detections": [{
+        "return": "false",
+        "string": "Page not found",
+        "type": "ocr"
+      },
+      {
+        "return": "false",
+        "string": "Page not found",
+        "type": "normal"
+      }
+    ],
     "selected": "false",
     "timeout": 0,
     "implicit": 0
@@ -4607,14 +4710,44 @@
   },
   {
     "url": "https://slashdot.org/~{username}",
-    "detections": [],
+    "detections": [{
+        "return": "false",
+        "string": "The user you requested does not exist",
+        "type": "ocr"
+      },
+      {
+        "return": "false",
+        "string": "The user you requested does not exist",
+        "type": "normal"
+      },
+      {
+        "return": "true",
+        "string": "user_bio",
+        "type": "normal"
+      }
+    ],
     "selected": "false",
     "timeout": 0,
     "implicit": 0
   },
   {
     "url": "https://slideshare.net/{username}",
-    "detections": [],
+    "detections": [{
+        "return": "false",
+        "string": "This username",
+        "type": "ocr"
+      },
+      {
+        "return": "false",
+        "string": "This username",
+        "type": "normal"
+      },
+      {
+        "return": "true",
+        "string": "profileHeader",
+        "type": "normal"
+      }
+    ],
     "selected": "false",
     "timeout": 0,
     "implicit": 0
@@ -4719,17 +4852,27 @@
   },
   {
     "url": "https://strava.com/athletes/{username}",
-    "detections": [],
-    "selected": "false",
+    "detections": [{
+      "return": "true",
+      "string": "media-body main",
+      "type": "normal"
+    }],
+    "selected": "true",
     "timeout": 0,
-    "implicit": 0
+    "implicit": 0,
+    "top10": "true"
   },
   {
     "url": "https://svidbook.ru/user/{username}",
-    "detections": [],
-    "selected": "false",
-    "timeout": 0,
-    "implicit": 0
+    "detections": [{
+      "return": "true",
+      "string": "user_profile",
+      "type": "normal"
+    }],
+    "top10": "true",
+    "selected": "true",
+    "timeout": 10,
+    "implicit": 10
   },
   {
     "url": "https://t.me/{username}",
