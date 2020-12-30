@@ -4335,56 +4335,165 @@
   },
   {
     "url": "https://psnprofiles.com/{username}",
-    "detections": [],
+    "detections": [{
+      "return": "true",
+      "string": "profile-",
+      "type": "normal"
+    }],
     "selected": "false",
     "timeout": 0,
     "implicit": 0
   },
   {
     "url": "https://pypi.org/user/{username}",
-    "detections": [],
+    "detections": [{
+        "return": "false",
+        "string": "We looked everywhere",
+        "type": "ocr"
+      },
+      {
+        "return": "false",
+        "string": "We looked everywhere",
+        "type": "normal"
+      },
+      {
+        "return": "true",
+        "string": "author-profile",
+        "type": "normal"
+      }
+    ],
     "selected": "false",
     "timeout": 0,
     "implicit": 0
   },
   {
     "url": "https://quizlet.com/{username}",
-    "detections": [],
+    "detections": [{
+        "return": "false",
+        "string": "We have no idea what to put here",
+        "type": "ocr"
+      },
+      {
+        "return": "false",
+        "string": "We have no idea what to put here",
+        "type": "normal"
+      },
+      {
+        "return": "true",
+        "string": "\"username\":\"",
+        "type": "normal"
+      }
+    ],
     "selected": "false",
     "timeout": 0,
     "implicit": 0
   },
   {
-    "url": "https://quora.com/profile/{username}",
-    "detections": [],
+    "url": "https://www.quora.com/profile/{username}",
+    "detections": [{
+        "return": "false",
+        "string": "Page Not Found",
+        "type": "ocr"
+      },
+      {
+        "return": "false",
+        "string": "Page Not Found",
+        "type": "normal"
+      },
+      {
+        "return": "true",
+        "string": "username",
+        "type": "normal"
+      }
+    ],
     "selected": "false",
     "timeout": 0,
     "implicit": 0
   },
   {
     "url": "https://raidforums.com/User-{username}",
-    "detections": [],
+    "detections": [{
+        "return": "false",
+        "string": "The member you specified is",
+        "type": "ocr"
+      },
+      {
+        "return": "false",
+        "string": "The member you specified is",
+        "type": "normal"
+      },
+      {
+        "return": "true",
+        "string": "profile__user",
+        "type": "normal"
+      }
+    ],
     "selected": "false",
     "timeout": 0,
     "implicit": 0
   },
   {
     "url": "https://rateyourmusic.com/~{username}",
-    "detections": [],
+    "detections": [{
+        "return": "false",
+        "string": "File not found",
+        "type": "ocr"
+      },
+      {
+        "return": "false",
+        "string": "File not found",
+        "type": "normal"
+      },
+      {
+        "return": "true",
+        "string": "profilename",
+        "type": "normal"
+      }
+    ],
     "selected": "false",
     "timeout": 0,
     "implicit": 0
   },
   {
     "url": "https://realmeye.com/player/{username}",
-    "detections": [],
+    "detections": [{
+        "return": "false",
+        "string": "but we either",
+        "type": "ocr"
+      },
+      {
+        "return": "false",
+        "string": "but we either",
+        "type": "normal"
+      },
+      {
+        "return": "true",
+        "string": "entity-name",
+        "type": "normal"
+      }
+    ],
     "selected": "false",
     "timeout": 0,
     "implicit": 0
   },
   {
     "url": "https://redbubble.com/people/{username}",
-    "detections": [],
+    "detections": [{
+        "return": "false",
+        "string": "This is a lost cause",
+        "type": "ocr"
+      },
+      {
+        "return": "false",
+        "string": "This is a lost cause",
+        "type": "normal"
+      },
+      {
+        "return": "true",
+        "string": "artistName",
+        "type": "normal"
+      }
+    ],
     "selected": "false",
     "timeout": 0,
     "implicit": 0
@@ -4696,35 +4805,86 @@
   },
   {
     "url": "https://tradingview.com/u/{username}",
-    "detections": [],
+    "detections": [{
+        "return": "false",
+        "string": "that page doesn",
+        "type": "ocr"
+      }, {
+        "return": "false",
+        "string": "that page doesn",
+        "type": "normal"
+      },
+      {
+        "return": "true",
+        "string": "data-username",
+        "type": "normal"
+      }
+    ],
     "selected": "false",
     "timeout": 0,
     "implicit": 0
   },
   {
     "url": "https://trakt.tv/users/{username}",
-    "detections": [],
+    "detections": [{
+        "return": "false",
+        "string": "(404)",
+        "type": "normal"
+      },
+      {
+        "return": "true",
+        "string": "meta-username",
+        "type": "normal"
+      }
+    ],
     "selected": "false",
     "timeout": 0,
     "implicit": 0
   },
   {
     "url": "https://trashbox.ru/users/{username}",
-    "detections": [],
+    "detections": [{
+      "return": "true",
+      "string": "frm_profile",
+      "type": "normal"
+    }],
     "selected": "false",
     "timeout": 0,
     "implicit": 0
   },
   {
     "url": "https://travellerspoint.com/users/{username}",
-    "detections": [],
+    "detections": [{
+        "return": "false",
+        "string": "404 Not Found",
+        "type": "ocr"
+      }, {
+        "return": "false",
+        "string": "404 Not Found",
+        "type": "normal"
+      },
+      {
+        "return": "true",
+        "string": "og:title",
+        "type": "normal"
+      },
+      {
+        "return": "true",
+        "string": "nickname",
+        "type": "normal"
+      }
+    ],
     "selected": "false",
     "timeout": 0,
     "implicit": 0
   },
   {
     "url": "https://trello.com/{username}",
-    "detections": [],
+    "detections": [{
+      "return": "false",
+      "string": "Page not found",
+      "type": "ocr"
+    }],
     "selected": "false",
     "timeout": 0,
     "implicit": 0
