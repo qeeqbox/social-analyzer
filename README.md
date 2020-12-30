@@ -28,9 +28,6 @@ I have been getting requests from all over the place asking me to add a python C
 -------------------------------------              ---------------------------------
 ```
 
-## Find Profile CLI (Fast)
-<img src="https://raw.githubusercontent.com/qeeqbox/social-analyzer/main/readme/cli.gif" style="max-width:768px"/>
-
 ## Find Profile WEB APP (Fast)
 <img src="https://raw.githubusercontent.com/qeeqbox/social-analyzer/main/readme/intro_fast.gif" style="max-width:768px"/>
 
@@ -38,6 +35,9 @@ I have been getting requests from all over the place asking me to add a python C
 <img src="https://raw.githubusercontent.com/qeeqbox/social-analyzer/main/readme/intro_slow.gif" style="max-width:768px"/>
 
 Profile images **will not** be blurred. If you want them to be blurred, turn that option on
+
+## (New) Find Profile CLI (Fast)
+<img src="https://raw.githubusercontent.com/qeeqbox/social-analyzer/main/readme/cli.gif" style="max-width:768px"/>
 
 ## Features
 - String Analysis
