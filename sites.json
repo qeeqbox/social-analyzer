@@ -4761,63 +4761,203 @@
   },
   {
     "url": "https://smule.com/{username}",
-    "detections": [],
+    "detections": [{
+        "return": "false",
+        "string": "The page you are looking",
+        "type": "ocr"
+      },
+      {
+        "return": "false",
+        "string": "The page you are looking",
+        "type": "normal"
+      },
+      {
+        "return": "true",
+        "string": "\"profile\"",
+        "type": "normal"
+      },
+      {
+        "return": "true",
+        "string": "username:",
+        "type": "normal"
+      }
+    ],
     "selected": "false",
     "timeout": 0,
     "implicit": 0
   },
   {
     "url": "https://social.tchncs.de/@{username}",
-    "detections": [],
+    "detections": [{
+        "return": "false",
+        "string": "The page you are looking",
+        "type": "ocr"
+      },
+      {
+        "return": "false",
+        "string": "The page you are looking",
+        "type": "normal"
+      },
+      {
+        "return": "true",
+        "string": "og:title",
+        "type": "normal"
+      },
+      {
+        "return": "true",
+        "string": "profile:username",
+        "type": "normal"
+      }
+    ],
     "selected": "false",
     "timeout": 0,
     "implicit": 0
   },
   {
     "url": "https://soundcloud.com/{username}",
-    "detections": [],
+    "detections": [{
+        "return": "false",
+        "string": "We can’t find that user",
+        "type": "ocr"
+      },
+      {
+        "return": "true",
+        "string": "com/{username}",
+        "type": "normal"
+      }
+    ],
     "selected": "false",
     "timeout": 0,
     "implicit": 0
   },
   {
     "url": "https://sourceforge.net/u/{username}",
-    "detections": [],
+    "detections": [{
+        "return": "false",
+        "string": "t find that page",
+        "type": "ocr"
+      },
+      {
+        "return": "false",
+        "string": "t find that page",
+        "type": "normal"
+      },
+      {
+        "return": "true",
+        "string": "project-icon",
+        "type": "normal"
+      },
+      {
+        "return": "true",
+        "string": "Username:",
+        "type": "normal"
+      }
+    ],
     "selected": "false",
     "timeout": 0,
     "implicit": 0
   },
   {
     "url": "https://soylentnews.org/~{username}",
-    "detections": [],
+    "detections": [{
+        "return": "false",
+        "string": "The user you requested does not exist",
+        "type": "ocr"
+      },
+      {
+        "return": "false",
+        "string": "The user you requested does not exist",
+        "type": "normal"
+      },
+      {
+        "return": "true",
+        "string": "users-",
+        "type": "normal"
+      }
+    ],
     "selected": "false",
     "timeout": 0,
     "implicit": 0
   },
   {
     "url": "https://sparkpeople.com/mypage.asp?id={username}",
-    "detections": [],
+    "detections": [{
+        "return": "false",
+        "string": "We couldn't find that user",
+        "type": "ocr"
+      },
+      {
+        "return": "false",
+        "string": "We couldn't find that user",
+        "type": "normal"
+      },
+      {
+        "return": "true",
+        "string": "member_",
+        "type": "normal"
+      }
+    ],
     "selected": "false",
     "timeout": 0,
     "implicit": 0
   },
   {
     "url": "https://speedrun.com/user/{username}",
-    "detections": [],
+    "detections": [{
+        "return": "false",
+        "string": "not found.",
+        "type": "ocr"
+      },
+      {
+        "return": "false",
+        "string": "not found.",
+        "type": "normal"
+      },
+      {
+        "return": "true",
+        "string": "username-",
+        "type": "normal"
+      }
+    ],
     "selected": "false",
     "timeout": 0,
     "implicit": 0
   },
   {
     "url": "https://spletnik.ru/user/{username}",
-    "detections": [],
+    "detections": [{
+        "return": "false",
+        "string": "error-page",
+        "type": "normal"
+      },
+      {
+        "return": "true",
+        "string": "user-profile",
+        "type": "normal"
+      }
+    ],
     "selected": "false",
     "timeout": 0,
     "implicit": 0
   },
   {
     "url": "https://splits.io/users/{username}",
-    "detections": [],
+    "detections": [{
+        "return": "false",
+        "string": "This page doesn't exist",
+        "type": "ocr"
+      },
+      {
+        "return": "false",
+        "string": "This page doesn't exist",
+        "type": "normal"
+      },
+      {
+        "return": "true",
+        "string": "users/{username}",
+        "type": "normal"
+      }
+    ],
     "selected": "false",
     "timeout": 0,
     "implicit": 0
