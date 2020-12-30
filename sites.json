@@ -4964,28 +4964,72 @@
   },
   {
     "url": "https://sporcle.com/user/{username}/people",
-    "detections": [],
+    "detections": [{
+        "return": "false",
+        "string": "This Sporcle user cannot",
+        "type": "ocr"
+      },
+      {
+        "return": "false",
+        "string": "This Sporcle user cannot",
+        "type": "normal"
+      },
+      {
+        "return": "true",
+        "string": "profile-",
+        "type": "normal"
+      }
+    ],
     "selected": "false",
     "timeout": 0,
     "implicit": 0
   },
   {
     "url": "https://sports.ru/profile/{username}",
-    "detections": [],
+    "detections": [{
+      "return": "true",
+      "string": "info-block",
+      "type": "normal"
+    }],
     "selected": "false",
     "timeout": 0,
     "implicit": 0
   },
   {
     "url": "https://steamcommunity.com/id/{username}",
-    "detections": [],
+    "detections": [{
+        "return": "false",
+        "string": "An error was encountered",
+        "type": "ocr"
+      },
+      {
+        "return": "false",
+        "string": "An error was encountered",
+        "type": "normal"
+      },
+      {
+        "return": "true",
+        "string": "profile_",
+        "type": "normal"
+      }
+    ],
     "selected": "false",
     "timeout": 0,
     "implicit": 0
   },
   {
     "url": "https://steamid.uk/profile/{username}",
-    "detections": [],
+    "detections": [{
+        "return": "false",
+        "string": "Profile not found",
+        "type": "normal"
+      },
+      {
+        "return": "true",
+        "string": "nickname",
+        "type": "normal"
+      }
+    ],
     "selected": "false",
     "timeout": 0,
     "implicit": 0
@@ -5965,6 +6009,29 @@
   {
     "url": "https://{username}.www.nn.ru",
     "detections": [],
+    "selected": "false",
+    "timeout": 0,
+    "implicit": 0
+  },
+  {
+    "url": "https://hackthissite.org/user/view/{username}",
+    "detections": [{
+        "return": "false",
+        "string": "Cannot Retrieve Information",
+        "type": "ocr"
+      },
+      {
+        "return": "false",
+        "string": "Cannot Retrieve Information",
+        "type": "normal"
+      },
+      {
+        "return": "true",
+        "string": "id={username}",
+        "type": "normal"
+      }
+    ],
+    "type": "hacking",
     "selected": "false",
     "timeout": 0,
     "implicit": 0
