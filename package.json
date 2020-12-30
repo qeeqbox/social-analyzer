@@ -5,7 +5,7 @@
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+    "start": "node app.js"
   },
   "dependencies": {
     "async": "3.2.0",
@@ -26,7 +26,8 @@
     "semver": "7.3.4",
     "tmp": "0.2.1",
     "wink-tokenizer": "1.1.0",
-    "wordsninja": "1.0.0"
+    "wordsninja": "1.0.0",
+    "yargs": "16.2.0"
   },
   "author": "QeeqBox",
   "license": "AGPL 3.0"

@@ -1760,7 +1760,7 @@
     "implicit": 0
   },
   {
-    "url": "https://www.fl.ru/users/{username}/portfolio",
+    "url": "https://fl.ru/users/{username}/portfolio",
     "detections": [{
         "return": "false",
         "string": "404 Not Found",
@@ -2082,7 +2082,7 @@
     "implicit": 0
   },
   {
-    "url": "https://www.fotolog.com/author/{username}",
+    "url": "https://fotolog.com/author/{username}",
     "detections": [{
         "return": "false",
         "string": "That page doesn’t exist or is private",
@@ -2126,7 +2126,7 @@
     "implicit": 0
   },
   {
-    "url": "https://www.freelancer.com/u/{username}",
+    "url": "https://freelancer.com/u/{username}",
     "detections": [{
         "return": "false",
         "string": "Looks like the page you are looking",
@@ -4389,7 +4389,7 @@
     "implicit": 0
   },
   {
-    "url": "https://www.quora.com/profile/{username}",
+    "url": "https://quora.com/profile/{username}",
     "detections": [{
         "return": "false",
         "string": "Page Not Found",

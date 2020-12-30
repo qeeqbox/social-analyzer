@@ -10,6 +10,7 @@ I have been getting requests from all over the place asking me to add a python C
 **Please submit your contribution in a Pull Request!**
 
 ## Updates
+- (New) Added a small CLI (You can use this project from Command Line) 👏
 - Added an optional timeout and implicit wait for each detection (Some websites have a delay logic implemented in the backend)
 - Added logs (user request)
 - Added 5 seconds timeout to https.get (user request)
@@ -50,7 +51,7 @@ Profile images **will not** be blurred. If you want them to be blurred, turn tha
 ## Special Detections
 - facebook
 
-## Install and run (Nodejs + NPM + Firefox)
+## Install and run as web app (Nodejs + NPM + Firefox)
 ```bash
 sudo add-apt-repository ppa:mozillateam/ppa
 sudo apt-get update
@@ -63,7 +64,21 @@ npm install
 npm start
 ```
 
-## Install and run (docker)
+## Install and run as cli (Nodejs + NPM + Firefox)
+```bash
+sudo add-apt-repository ppa:mozillateam/ppa
+sudo apt-get update
+sudo apt-get install -y firefox-esr tesseract-ocr git
+git clone https://github.com/qeeqbox/social-analyzer.git
+cd social-analyzer
+rm -rf package-lock.json node_modules
+npm install lodash
+npm install
+# if you want to list all websites use node app.js -c -l
+node app.js -c -u "username" -w "youtube pinterest tumblr"
+```
+
+## Install and run as web app (docker)
 ```bash
 git clone https://github.com/qeeqbox/social-analyzer.git
 cd social-analyzer
