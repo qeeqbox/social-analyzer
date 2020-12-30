@@ -13,7 +13,7 @@ I have been getting requests from all over the place asking me to add a python C
 - Added an optional timeout and implicit wait for each detection (Some websites have a delay logic implemented in the backend)
 - Added logs (user request)
 - Added 5 seconds timeout to https.get (user request)
-- Added the API documentation ![Wiki](https://github.com/qeeqbox/social-analyzer/wiki)
+- Added the API documentation [WiKi](https://github.com/qeeqbox/social-analyzer/wiki)
 
 ## Security Testing
 
@@ -90,31 +90,3 @@ sudo kill -9 $(sudo lsof -t -i:9005)
 ## Disclaimer\Notes
 - This tool meant to be used locally (It does not have any type of Access Control)
 - If you want your website to be excluded from this project, please reach out to me!
-
-## Examples
-WordInfo - Interacts with duckduckgo api
-<img src="https://raw.githubusercontent.com/qeeqbox/social-analyzer/main/readme/wordinfo.png" style="max-width:768px"/>
-
-MostCommon - Finds all common words in a string, sort them by language
-<img src="https://raw.githubusercontent.com/qeeqbox/social-analyzer/main/readme/mostcommon.png" style="max-width:768px"/>
-
-SplitWordsByUpperCase - Finds upper case words in a string and splits them
-<img src="https://raw.githubusercontent.com/qeeqbox/social-analyzer/main/readme/splitwordsbyuppercase.png" style="max-width:768px"/>
-
-SplitWordsByUpperCase - Finds words start with Alphabet letters in a string and splits them
-<img src="https://raw.githubusercontent.com/qeeqbox/social-analyzer/main/readme/splitwordsbyalphabet.png" style="max-width:768px"/>
-
-ConvertNumbers - Finds numbers in words and convert them into letters
-<img src="https://raw.githubusercontent.com/qeeqbox/social-analyzer/main/readme/convertnumbers.png" style="max-width:768px"/>
-
-FindNumbers - Finds all numbers in a string
-<img src="https://raw.githubusercontent.com/qeeqbox/social-analyzer/main/readme/findnumbers.png" style="max-width:768px"/>
-
-FindUserProflesFast - finds profiles with GET requests based on detection table (fast)
-<img src="https://raw.githubusercontent.com/qeeqbox/social-analyzer/main/readme/finduserproflesfast.png" style="max-width:768px"/>
-
-FindUserProflesSlow - finds profiles with a webdriver based on detection table (slow)
-<img src="https://raw.githubusercontent.com/qeeqbox/social-analyzer/main/readme/finduserproflesslow.png" style="max-width:768px"/>
-
-ShowUserProflesSlow - finds profiles with a webdriver based on detection table (slow)
-<img src="https://raw.githubusercontent.com/qeeqbox/social-analyzer/main/readme/showuserproflesslow.png" style="max-width:768px"/>
