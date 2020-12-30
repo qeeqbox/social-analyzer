@@ -10,7 +10,7 @@ I have been getting requests from all over the place asking me to add a python C
 **Please submit your contribution in a Pull Request!**
 
 ## Updates
-- (New) Added a small CLI (You can use this project from Command Line) 👏
+- (New) Added a small CLI (You can use this project from Command Line, but it's limited to FindUserProflesFast for now) 👏
 - Added an optional timeout and implicit wait for each detection (Some websites have a delay logic implemented in the backend)
 - Added logs (user request)
 - Added 5 seconds timeout to https.get (user request)
@@ -74,7 +74,8 @@ cd social-analyzer
 rm -rf package-lock.json node_modules
 npm install lodash
 npm install
-# if you want to list all websites use node app.js -c -l
+# If you want to list all websites use node app.js -c -l
+# Remember the following runs as FindUserProflesFast
 node app.js -c -u "username" -w "youtube pinterest tumblr"
 ```
 
