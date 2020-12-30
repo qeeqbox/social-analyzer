@@ -5181,7 +5181,22 @@
   },
   {
     "url": "https://tripadvisor.com/members/{username}",
-    "detections": [],
+    "detections": [{
+        "return": "false",
+        "string": "This page is on vacation",
+        "type": "ocr"
+      },
+      {
+        "return": "false",
+        "string": "error404",
+        "type": "normal"
+      },
+      {
+        "return": "true",
+        "string": "ui_card",
+        "type": "normal"
+      }
+    ],
     "selected": "false",
     "timeout": 0,
     "implicit": 0
@@ -5195,49 +5210,158 @@
   },
   {
     "url": "https://tryhackme.com/p/{username}",
-    "detections": [],
+    "detections": [{
+        "return": "false",
+        "string": "An error occured",
+        "type": "ocr"
+      },
+      {
+        "return": "false",
+        "string": "An error occured",
+        "type": "normal"
+      },
+      {
+        "return": "true",
+        "string": "profile-social",
+        "type": "normal"
+      }
+    ],
     "selected": "false",
     "timeout": 0,
     "implicit": 0
   },
   {
     "url": "https://twitch.tv/{username}",
-    "detections": [],
+    "detections": [{
+      "return": "false",
+      "string": "that content is unavailable",
+      "type": "ocr"
+    }],
     "selected": "false",
     "timeout": 0,
     "implicit": 0
   },
   {
     "url": "https://uid.me/{username}",
-    "detections": [],
+    "detections": [{
+        "return": "false",
+        "string": "Page not found",
+        "type": "ocr"
+      },
+      {
+        "return": "false",
+        "string": "Page not found",
+        "type": "normal"
+      },
+      {
+        "return": "true",
+        "string": "profile_name",
+        "type": "normal"
+      }
+    ],
     "selected": "false",
     "timeout": 0,
     "implicit": 0
   },
   {
     "url": "https://ultimate-guitar.com/u/{username}",
-    "detections": [],
+    "detections": [{
+        "return": "false",
+        "string": "We couldn't find that page",
+        "type": "ocr"
+      },
+      {
+        "return": "false",
+        "string": "We couldn't find that page",
+        "type": "normal"
+      },
+      {
+        "return": "true",
+        "string": "_profile",
+        "type": "normal"
+      },
+      {
+        "return": "true",
+        "string": "username",
+        "type": "normal"
+      }
+    ],
     "selected": "false",
     "timeout": 0,
     "implicit": 0
   },
   {
     "url": "https://unsplash.com/@{username}",
-    "detections": [],
+    "detections": [{
+        "return": "false",
+        "string": "the page you were looking",
+        "type": "ocr"
+      },
+      {
+        "return": "false",
+        "string": "the page you were looking",
+        "type": "normal"
+      },
+      {
+        "return": "true",
+        "string": "profile_",
+        "type": "normal"
+      },
+      {
+        "return": "true",
+        "string": "username",
+        "type": "normal"
+      }
+    ],
     "selected": "false",
     "timeout": 0,
     "implicit": 0
   },
   {
     "url": "https://venmo.com/{username}",
-    "detections": [],
+    "detections": [{
+        "return": "false",
+        "string": "the page you requested does",
+        "type": "ocr"
+      },
+      {
+        "return": "false",
+        "string": "the page you requested does",
+        "type": "normal"
+      },
+      {
+        "return": "true",
+        "string": "profile-",
+        "type": "normal"
+      },
+      {
+        "return": "true",
+        "string": "username\":",
+        "type": "normal"
+      }
+    ],
     "selected": "false",
     "timeout": 0,
     "implicit": 0
   },
   {
     "url": "https://vero.co/{username}",
-    "detections": [],
+    "detections": [{
+        "return": "false",
+        "string": "The page you are looking",
+        "type": "ocr"
+      },
+      {
+        "return": "false",
+        "string": "The page you are looking",
+        "type": "normal"
+      },
+      {
+        "return": "true",
+        "string": "user-details",
+        "type": "normal"
+      }
+    ],
     "selected": "false",
     "timeout": 0,
     "implicit": 0
