@@ -6282,5 +6282,16 @@
     "selected": "false",
     "timeout": 0,
     "implicit": 0
+  },
+  {
+    "url": "https://sharechat.com/profile/{username}",
+    "detections": [{
+      "return": "true",
+      "string": "profile/{username}/info",
+      "type": "normal"
+    }],
+    "selected": "false",
+    "timeout": 0,
+    "implicit": 0
   }
 ]
