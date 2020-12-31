@@ -1,31 +1,4 @@
 [{
-    "url": "https://rive.app/a/{username}",
-    "detections": [{
-        "return": "false",
-        "string": "Not Found",
-        "type": "ocr"
-      },
-      {
-        "return": "false",
-        "string": "The page you were looking for",
-        "type": "normal"
-      },
-      {
-        "return": "true",
-        "string": "\"username\":\"",
-        "type": "normal"
-      },
-      {
-        "return": "true",
-        "string": "Profile",
-        "type": "normal"
-      }
-    ],
-    "selected": "false",
-    "timeout": 0,
-    "implicit": 0
-  },
-  {
     "url": "https://500px.com/p/{username}",
     "detections": [{
       "return": "false",
@@ -502,7 +475,6 @@
         "string": "\"name\":\"",
         "type": "normal"
       }
-
     ],
     "selected": "false",
     "timeout": 0,
@@ -543,7 +515,6 @@
         "string": "\"uuid\"",
         "type": "normal"
       }
-
     ],
     "selected": "false",
     "timeout": 0,
@@ -566,7 +537,6 @@
         "string": "profile/{username}",
         "type": "normal"
       }
-
     ],
     "selected": "false",
     "timeout": 0,
@@ -2655,6 +2625,29 @@
     "implicit": 0
   },
   {
+    "url": "https://hackthissite.org/user/view/{username}",
+    "detections": [{
+        "return": "false",
+        "string": "Cannot Retrieve Information",
+        "type": "ocr"
+      },
+      {
+        "return": "false",
+        "string": "Cannot Retrieve Information",
+        "type": "normal"
+      },
+      {
+        "return": "true",
+        "string": "id={username}",
+        "type": "normal"
+      }
+    ],
+    "type": "ethical-hacking",
+    "selected": "false",
+    "timeout": 0,
+    "implicit": 0
+  },
+  {
     "url": "https://house-mixes.com/profile/{username}",
     "detections": [{
         "return": "false",
@@ -4359,14 +4352,16 @@
   {
     "url": "https://pokemonshowdown.com/users/{username}",
     "detections": [{
-      "return": "true",
-      "string": "Joined:",
-      "type": "normal"
-    }, {
-      "return": "true",
-      "string": "Account disabled",
-      "type": "normal"
-    }],
+        "return": "true",
+        "string": "Joined:",
+        "type": "normal"
+      },
+      {
+        "return": "true",
+        "string": "Account disabled",
+        "type": "normal"
+      }
+    ],
     "selected": "false",
     "timeout": 0,
     "implicit": 0
@@ -4436,14 +4431,33 @@
   {
     "url": "https://profil.chatujme.cz/{username}",
     "detections": [{
-      "return": "true",
-      "string": "profilu",
-      "type": "normal"
-    }, {
-      "return": "true",
-      "string": "profilview",
-      "type": "normal"
-    }],
+        "return": "true",
+        "string": "profilu",
+        "type": "normal"
+      },
+      {
+        "return": "true",
+        "string": "profilview",
+        "type": "normal"
+      }
+    ],
+    "selected": "false",
+    "timeout": 0,
+    "implicit": 0
+  },
+  {
+    "url": "https://profile.ameba.jp/ameba/{username}/",
+    "detections": [{
+        "return": "false",
+        "string": "\"info_",
+        "type": "normal"
+      },
+      {
+        "return": "true",
+        "string": "profile-",
+        "type": "normal"
+      }
+    ],
     "selected": "false",
     "timeout": 0,
     "implicit": 0
@@ -4744,6 +4758,33 @@
     "implicit": 0
   },
   {
+    "url": "https://rive.app/a/{username}",
+    "detections": [{
+        "return": "false",
+        "string": "Not Found",
+        "type": "ocr"
+      },
+      {
+        "return": "false",
+        "string": "The page you were looking for",
+        "type": "normal"
+      },
+      {
+        "return": "true",
+        "string": "\"username\":\"",
+        "type": "normal"
+      },
+      {
+        "return": "true",
+        "string": "Profile",
+        "type": "normal"
+      }
+    ],
+    "selected": "false",
+    "timeout": 0,
+    "implicit": 0
+  },
+  {
     "url": "https://robertsspaceindustries.com/citizens/{username}",
     "detections": [{
         "return": "false",
@@ -4809,14 +4850,16 @@
   {
     "url": "https://satsis.info/user/{username}",
     "detections": [{
-      "return": "false",
-      "string": "berrors",
-      "type": "normal"
-    }, {
-      "return": "true",
-      "string": "\"userinfo\"",
-      "type": "normal"
-    }],
+        "return": "false",
+        "string": "berrors",
+        "type": "normal"
+      },
+      {
+        "return": "true",
+        "string": "\"userinfo\"",
+        "type": "normal"
+      }
+    ],
     "selected": "false",
     "timeout": 0,
     "implicit": 0
@@ -4873,6 +4916,17 @@
         "type": "normal"
       }
     ],
+    "selected": "false",
+    "timeout": 0,
+    "implicit": 0
+  },
+  {
+    "url": "https://sharechat.com/profile/{username}",
+    "detections": [{
+      "return": "true",
+      "string": "profile/{username}/info",
+      "type": "normal"
+    }],
     "selected": "false",
     "timeout": 0,
     "implicit": 0
@@ -5312,7 +5366,8 @@
         "return": "false",
         "string": "that page doesn",
         "type": "ocr"
-      }, {
+      },
+      {
         "return": "false",
         "string": "that page doesn",
         "type": "normal"
@@ -5361,7 +5416,8 @@
         "return": "false",
         "string": "404 Not Found",
         "type": "ocr"
-      }, {
+      },
+      {
         "return": "false",
         "string": "404 Not Found",
         "type": "normal"
@@ -5771,6 +5827,24 @@
     "implicit": 0
   },
   {
+    "url": "https://www.hellboundhackers.org/user/{username}.html",
+    "detections": [{
+        "return": "true",
+        "string": "Email Address:",
+        "type": "normal"
+      },
+      {
+        "return": "true",
+        "string": "General Information",
+        "type": "normal"
+      }
+    ],
+    "type": "ethical-hacking",
+    "selected": "false",
+    "timeout": 0,
+    "implicit": 0
+  },
+  {
     "url": "https://xboxgamertag.com/search/{username}",
     "detections": [],
     "selected": "false",
@@ -5958,6 +6032,28 @@
       {
         "return": "true",
         "string": "data-username",
+        "type": "normal"
+      },
+      {
+        "return": "true",
+        "string": "profile-",
+        "type": "normal"
+      }
+    ],
+    "selected": "false",
+    "timeout": 0,
+    "implicit": 0
+  },
+  {
+    "url": "https://{username}.hatenablog.com/about",
+    "detections": [{
+        "return": "false",
+        "string": "Blog is not found",
+        "type": "ocr"
+      },
+      {
+        "return": "false",
+        "string": "Blog is not found",
         "type": "normal"
       },
       {
@@ -6200,96 +6296,6 @@
         "type": "normal"
       }
     ],
-    "selected": "false",
-    "timeout": 0,
-    "implicit": 0
-  },
-  {
-    "url": "https://hackthissite.org/user/view/{username}",
-    "detections": [{
-        "return": "false",
-        "string": "Cannot Retrieve Information",
-        "type": "ocr"
-      },
-      {
-        "return": "false",
-        "string": "Cannot Retrieve Information",
-        "type": "normal"
-      },
-      {
-        "return": "true",
-        "string": "id={username}",
-        "type": "normal"
-      }
-    ],
-    "type": "ethical-hacking",
-    "selected": "false",
-    "timeout": 0,
-    "implicit": 0
-  },
-  {
-    "url": "https://www.hellboundhackers.org/user/{username}.html",
-    "detections": [{
-        "return": "true",
-        "string": "Email Address:",
-        "type": "normal"
-      },
-      {
-        "return": "true",
-        "string": "General Information",
-        "type": "normal"
-      }
-    ],
-    "type": "ethical-hacking",
-    "selected": "false",
-    "timeout": 0,
-    "implicit": 0
-  },
-  {
-    "url": "https://profile.ameba.jp/ameba/{username}/",
-    "detections": [{
-        "return": "false",
-        "string": "\"info_",
-        "type": "normal"
-      },
-      {
-        "return": "true",
-        "string": "profile-",
-        "type": "normal"
-      }
-    ],
-    "selected": "false",
-    "timeout": 0,
-    "implicit": 0
-  },
-  {
-    "url": "https://{username}.hatenablog.com/about",
-    "detections": [{
-        "return": "false",
-        "string": "Blog is not found",
-        "type": "ocr"
-      }, {
-        "return": "false",
-        "string": "Blog is not found",
-        "type": "normal"
-      },
-      {
-        "return": "true",
-        "string": "profile-",
-        "type": "normal"
-      }
-    ],
-    "selected": "false",
-    "timeout": 0,
-    "implicit": 0
-  },
-  {
-    "url": "https://sharechat.com/profile/{username}",
-    "detections": [{
-      "return": "true",
-      "string": "profile/{username}/info",
-      "type": "normal"
-    }],
     "selected": "false",
     "timeout": 0,
     "implicit": 0
