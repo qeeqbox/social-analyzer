@@ -127,7 +127,11 @@
   },
   {
     "url": "https://alik.cz/u/{username}",
-    "detections": [],
+    "detections": [{
+      "return": "true",
+      "string": "user-",
+      "type": "normal"
+    }],
     "selected": "false",
     "timeout": 0,
     "implicit": 0
@@ -237,7 +241,22 @@
   },
   {
     "url": "https://anobii.com/{username}/profile",
-    "detections": [],
+    "detections": [{
+        "return": "false",
+        "string": "No route found for",
+        "type": "ocr"
+      },
+      {
+        "return": "false",
+        "string": "No route found for",
+        "type": "normal"
+      },
+      {
+        "return": "true",
+        "string": "profile-",
+        "type": "normal"
+      }
+    ],
     "selected": "false",
     "timeout": 0,
     "implicit": 0
@@ -430,20 +449,6 @@
     "implicit": 0
   },
   {
-    "url": "https://badoo.com/en/{username}",
-    "detections": [],
-    "selected": "false",
-    "timeout": 0,
-    "implicit": 0
-  },
-  {
-    "url": "https://badoo.com/profile/{username}",
-    "detections": [],
-    "selected": "false",
-    "timeout": 0,
-    "implicit": 0
-  },
-  {
     "url": "https://bandcamp.com/{username}",
     "detections": [{
         "return": "false",
@@ -626,14 +631,44 @@
   },
   {
     "url": "https://bookcrossing.com/mybookshelf/{username}",
-    "detections": [],
+    "detections": [{
+        "return": "false",
+        "string": "Sorry, we were unable",
+        "type": "ocr"
+      },
+      {
+        "return": "false",
+        "string": "Sorry, we were unable",
+        "type": "normal"
+      },
+      {
+        "return": "true",
+        "string": "-profile",
+        "type": "normal"
+      }
+    ],
     "selected": "false",
     "timeout": 0,
     "implicit": 0
   },
   {
-    "url": "https://buymeacoff.ee/{username}",
-    "detections": [],
+    "url": "https://buymeacoffee.com/{username}",
+    "detections": [{
+        "return": "false",
+        "string": "seem to find the page",
+        "type": "ocr"
+      },
+      {
+        "return": "false",
+        "string": "seem to find the page",
+        "type": "normal"
+      },
+      {
+        "return": "true",
+        "string": "creator-csrf",
+        "type": "normal"
+      }
+    ],
     "selected": "false",
     "timeout": 0,
     "implicit": 0
@@ -4325,7 +4360,22 @@
   },
   {
     "url": "https://polygon.com/users/{username}",
-    "detections": [],
+    "detections": [{
+        "return": "false",
+        "string": "404 Not found",
+        "type": "ocr"
+      },
+      {
+        "return": "false",
+        "string": "404 Not found",
+        "type": "normal"
+      },
+      {
+        "return": "true",
+        "string": "_profile",
+        "type": "normal"
+      }
+    ],
     "selected": "false",
     "timeout": 0,
     "implicit": 0
@@ -6110,7 +6160,22 @@
   },
   {
     "url": "https://{username}.www.nn.ru",
-    "detections": [],
+    "detections": [{
+        "return": "false",
+        "string": "404<",
+        "type": "normal"
+      },
+      {
+        "return": "true",
+        "string": "aboutme",
+        "type": "normal"
+      },
+      {
+        "return": "true",
+        "string": "/profile",
+        "type": "normal"
+      }
+    ],
     "selected": "false",
     "timeout": 0,
     "implicit": 0
