@@ -6261,5 +6261,26 @@
     "selected": "false",
     "timeout": 0,
     "implicit": 0
+  },
+  {
+    "url": "https://{username}.hatenablog.com/about",
+    "detections": [{
+        "return": "false",
+        "string": "Blog is not found",
+        "type": "ocr"
+      }, {
+        "return": "false",
+        "string": "Blog is not found",
+        "type": "normal"
+      },
+      {
+        "return": "true",
+        "string": "profile-",
+        "type": "normal"
+      }
+    ],
+    "selected": "false",
+    "timeout": 0,
+    "implicit": 0
   }
 ]
