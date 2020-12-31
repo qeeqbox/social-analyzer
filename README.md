@@ -79,7 +79,7 @@ npm install lodash
 npm install
 # If you want to list all websites use node app.js -c -l
 # Remember the following runs as FindUserProflesFast
-node app.js -c -u "username" -w "youtube pinterest tumblr"
+node app.js -c -m "fast" -u "username" -w "youtube pinterest tumblr"
 ```
 
 ## Install and run as web app (docker)
