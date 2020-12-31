@@ -420,7 +420,11 @@
   },
   {
     "url": "https://babyblog.ru/user/info/{username}",
-    "detections": [],
+    "detections": [{
+      "return": "true",
+      "string": "diary-header",
+      "type": "normal"
+    }],
     "selected": "false",
     "timeout": 0,
     "implicit": 0
@@ -781,7 +785,17 @@
   },
   {
     "url": "https://cloob.com/name/{username}",
-    "detections": [],
+    "detections": [{
+        "return": "false",
+        "string": "notFound",
+        "type": "normal"
+      },
+      {
+        "return": "true",
+        "string": "userHeader",
+        "type": "normal"
+      }
+    ],
     "selected": "false",
     "timeout": 0,
     "implicit": 0
@@ -916,22 +930,45 @@
     "implicit": 0
   },
   {
-    "url": "https://colourlovers.com/love/{username}",
-    "detections": [],
-    "selected": "false",
-    "timeout": 0,
-    "implicit": 0
-  },
-  {
     "url": "https://colourlovers.com/lover/{username}",
-    "detections": [],
+    "detections": [{
+        "return": "false",
+        "string": "Are you looking for someone",
+        "type": "ocr"
+      },
+      {
+        "return": "false",
+        "string": "Are you looking for someone",
+        "type": "normal"
+      },
+      {
+        "return": "true",
+        "string": "feature-detail",
+        "type": "normal"
+      }
+    ],
     "selected": "false",
     "timeout": 0,
     "implicit": 0
   },
   {
     "url": "https://community.cloudflare.com/u/{username}",
-    "detections": [],
+    "detections": [{
+        "return": "false",
+        "string": "That page doesn",
+        "type": "ocr"
+      },
+      {
+        "return": "false",
+        "string": "That page doesn",
+        "type": "normal"
+      },
+      {
+        "return": "true",
+        "string": "data-user",
+        "type": "normal"
+      }
+    ],
     "selected": "false",
     "timeout": 0,
     "implicit": 0
