@@ -517,7 +517,11 @@
   },
   {
     "url": "https://binarysearch.io/@/{username}",
-    "detections": [],
+    "detections": [{
+      "return": "false",
+      "string": "Profile not found",
+      "type": "ocr"
+    }],
     "selected": "false",
     "timeout": 0,
     "implicit": 0
@@ -764,7 +768,17 @@
   },
   {
     "url": "https://championat.com/user/{username}",
-    "detections": [],
+    "detections": [{
+        "return": "false",
+        "string": "error404",
+        "type": "normal"
+      },
+      {
+        "return": "true",
+        "string": "profile_",
+        "type": "normal"
+      }
+    ],
     "selected": "false",
     "timeout": 0,
     "implicit": 0
@@ -1027,7 +1041,17 @@
   },
   {
     "url": "https://community.oracle.com/people/{username}",
-    "detections": [],
+    "detections": [{
+        "return": "false",
+        "string": "User Not Found",
+        "type": "ocr"
+      },
+      {
+        "return": "false",
+        "string": "User Not Found",
+        "type": "normal"
+      }
+    ],
     "selected": "false",
     "timeout": 0,
     "implicit": 0
@@ -6198,7 +6222,25 @@
         "type": "normal"
       }
     ],
-    "type": "hacking",
+    "type": "ethical-hacking",
+    "selected": "false",
+    "timeout": 0,
+    "implicit": 0
+  },
+  {
+    "url": "https://www.hellboundhackers.org/user/{username}.html",
+    "detections": [{
+        "return": "true",
+        "string": "Email Address:",
+        "type": "normal"
+      },
+      {
+        "return": "true",
+        "string": "General Information",
+        "type": "normal"
+      }
+    ],
+    "type": "ethical-hacking",
     "selected": "false",
     "timeout": 0,
     "implicit": 0
