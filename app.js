@@ -1,6 +1,12 @@
 var google_api_key = "";
 var google_api_cs = "";
 
+var header_options = {
+    headers: {
+        'User-Agent': 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:84.0) Gecko/20100101 Firefox/84.0',
+    }
+};
+
 console.log('[!] Detections are updated every often, make sure to get the most updated ones');
 
 var semver = require('semver');
@@ -401,7 +407,7 @@ async function find_username_normal(req) {
       }
       if (site.selected == "true" && site.detections.length > 0) {
         functions.push(function(callback) {
-          var request = https.get(site.url.replace("{username}", username), function(res) {
+          var request = https.get(site.url.replace("{username}", username), header_options, function(res) {
             var body = ""
             res.on("data", function(chunk) {
               body += chunk;
@@ -592,6 +598,7 @@ app.get("/get_settings", async function(req, res, next) {
     return 0;
   });
   res.json({
+    user_agent:header_options['headers']['User-Agent'],
     google: [google_api_key.substring(0, 10) + "******", google_api_cs.substring(0, 10) + "******"],
     detections: temp_list
   });
@@ -613,6 +620,9 @@ app.post("/save_settings", async function(req, res, next) {
   }
   if (req.body.google_cv != google_api_cs.substring(0, 10) + "******") {
     google_api_cs = req.body.google_cv;
+  }
+  if (req.body.user_agent != header_options['headers']['User-Agent']){
+    header_options['headers']['User-Agent'] = req.body.user_agent;
   }
 
   res.json("Done");
