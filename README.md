@@ -10,7 +10,7 @@ I have been getting requests from all over the place asking me to add a python C
 **Please submit your contribution in a Pull Request!**
 
 ## Updates
-- (Testing) Custom user-agent
+- (New) Added Custom user-agent option
 - (New) Added a small CLI (You can use this project from Command Line, but it's limited to FindUserProflesFast option) 👏
 - Added an optional timeout and implicit wait for each detection (Some websites have a delay logic implemented in the backend)
 - Added logs (user request)
