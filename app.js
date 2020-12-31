@@ -17,13 +17,15 @@ var argv = require('yargs')
   .alias('w', 'website')
   .alias('o', 'output')
   .alias('l', 'list')
-  .usage('Usage: $0 -s "user" -w "website" -o "output"')
-  .example('$0 -s "joe" -w "facebook"', 'check user joe in facebook website')
-  .example('$0 -s "natalie" -w "facebook wordpress"', 'check if user natalie in facebook & wordpress website')
+  .alias('m','mode')
+  .usage('Usage: $0 -c -m "mode" -u "user" -w "website[s]" -o "output"')
+  .example('$0 -c -m "fast" -u "joe" -w "facebook"')
+  .example('$0 -c -m "fast" -u "natalie" -w "facebook wordpress"')
   .describe('u', 'a user or stirng')
   .describe('w', 'a website or websites sparated with space')
   .describe('o', 'option output file')
   .describe('l', 'list all available websites')
+  .describe('m', 'fast -> FindUserProflesFast\nslow -> FindUserProflesSlow\nspecial -> FindUserProflesSpecial')
   .help('h')
   .alias('h', 'help')
   .argv;
@@ -1077,10 +1079,16 @@ const server_host = '0.0.0.0';
 const server_port = process.env.PORT || 9005;
 
 
-async function check_user_cli(username,websites) {
+async function check_user_cli(username, websites) {
   var ret = []
   var random_string = Math.random().toString(36).substring(2);
-  var req = {'body':{'uuid':random_string, 'string':username, 'option':'FindUserProflesFast'}}
+  var req = {
+    'body': {
+      'uuid': random_string,
+      'string': username,
+      'option': 'FindUserProflesFast'
+    }
+  }
   await parsed_sites.forEach(async function(value, i) {
     parsed_sites[i].selected = "false"
     if (websites.length > 0) {
@@ -1092,16 +1100,15 @@ async function check_user_cli(username,websites) {
     }
   });
   ret = await find_username_normal(req)
-  if (typeof ret === 'undefined' || ret === undefined || ret.length == 0){
-    log_to_file_queue(req.body.uuid,'User does not exist (try FindUserProflesSlow or FindUserProflesSpecial)');
-  }
-  else{
+  if (typeof ret === 'undefined' || ret === undefined || ret.length == 0) {
+    log_to_file_queue(req.body.uuid, 'User does not exist (try FindUserProflesSlow or FindUserProflesSpecial)');
+  } else {
     await ret.forEach(item => {
       delete item['title']
       delete item['image']
       delete item['text']
       item['link'] = get_site_from_url(item['link'])
-      log_to_file_queue(req.body.uuid,item);
+      log_to_file_queue(req.body.uuid, item);
     });
   }
   //console.log(util.inspect(ret, { colors: true }));
@@ -1116,15 +1123,17 @@ async function list_all_websites() {
 }
 
 if ('cli' in argv) {
-  if ('list' in argv)
-  {
+  if ('list' in argv) {
     list_all_websites();
-  }
-  else if ('user' in argv && 'website' in argv) {
-    if (argv.user != "" && argv.website != "") {
-      check_user_cli(argv.user,argv.website)
-    } else {
-      console.log("user or website is empty, use -h for help")
+  } else if ('mode' in argv) {
+    if (argv.mode == 'fast'){
+      if ('user' in argv && 'website' in argv) {
+        if (argv.user != "" && argv.website != "") {
+          check_user_cli(argv.user, argv.website)
+        } else {
+          console.log("user or website is empty, use -h for help")
+        }
+      }
     }
   }
 } else {
