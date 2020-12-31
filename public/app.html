@@ -334,7 +334,8 @@
     }
 
     #detection-options,
-    #google-api {
+    #google-api,
+    #user-agent-api {
         margin-top: 10px;
         width: 100%;
         margin-bottom: 10px;
@@ -388,7 +389,8 @@
         border-top: 1px solid #3c3c3c;
     }
 
-    #google-api input {
+    #google-api input,
+    #user-agent-api input {
         width: 100%;
         margin-bottom: 10px !important;
     }
@@ -598,6 +600,13 @@
                             <div class="div-right"></div>
                         </div>
                         <div class="modal-body">
+                          <div id="user-agent-api">
+                              <div class="div-header">
+                                  <div class="div-left">User-Agent (Optional)</div>
+                                  <div class="div-right"></div>
+                              </div>
+                              <input type="text" id="user-agent-string" placeholder="Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:84.0) Gecko/20100101 Firefox/84.0" />
+                          </div>
                             <div id="google-api">
                                 <div class="div-header">
                                     <div class="div-left">Google API (Optional)</div>
@@ -961,7 +970,7 @@
 
                 }
             });
-            
+
             clearInterval(interval_logs);
             spinner_on_off(false)
         }
@@ -986,6 +995,7 @@
 
                             $("#detection-options-list").html(temp_tr)
                         }
+                        $("#user-agent-string").val(data.user_agent)
                         $("#google-api-key").val(data.google[0])
                         $("#google-api-cs").val(data.google[1])
                     }
@@ -999,7 +1009,7 @@
                 await $.ajax({
                     type: "POST",
                     url: "/save_settings",
-                    data: { 'detections': temp_checked.join(","), 'google_key': $("#google-api-key").val(), 'google_cv':$("#google-api-cs").val()}
+                    data: { 'detections': temp_checked.join(","), 'user_agent':$("#user-agent-string").val(), 'google_key': $("#google-api-key").val(), 'google_cv':$("#google-api-cs").val()}
                 }).done(function (data) {
                     if (data != "Error") {
                     }
