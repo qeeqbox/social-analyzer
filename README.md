@@ -10,13 +10,14 @@ I have been getting requests from all over the place asking me to add a python C
 **Please submit your contribution in a Pull Request!**
 
 ## Updates
-- (Testing) Post Analysis modules
+- (New) Added a slack [channel](https://qeeqbox.slack.com/messages/social-analyzer)
 - (New) Added Custom user-agent option
 - (New) Added a small CLI (You can use this project from Command Line, but it's limited to FindUserProflesFast option) 👏
 - Added an optional timeout and implicit wait for each detection (Some websites have a delay logic implemented in the backend)
 - Added logs (user request)
 - Added 5 seconds timeout to https.get (user request)
 - Added the API documentation [WiKi](https://github.com/qeeqbox/social-analyzer/wiki)
+- (Testing) Post Analysis modules
 
 ## Security Testing
 
@@ -110,4 +111,7 @@ sudo kill -9 $(sudo lsof -t -i:9005)
 
 ## Disclaimer\Notes
 - This tool meant to be used locally (It does not have any type of Access Control)
-- If you want your website to be excluded from this project, please reach out to me!
+- If you want your website to be excluded from this project, please reach out
+
+## Contact
+[![Generic badge](https://img.shields.io/badge/slack-@qeeqbox-yellow.svg?logo=slack&style=flat-square)](https://qeeqbox.slack.com/messages/social-analyzer) 
