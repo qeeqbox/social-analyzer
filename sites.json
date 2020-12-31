@@ -6244,5 +6244,44 @@
     "selected": "false",
     "timeout": 0,
     "implicit": 0
+  },
+  {
+    "url": "https://profile.ameba.jp/ameba/{username}/",
+    "detections": [{
+        "return": "false",
+        "string": "\"info_",
+        "type": "normal"
+      },
+      {
+        "return": "true",
+        "string": "id={username}",
+        "type": "normal"
+      },
+      {
+        "return": "true",
+        "string": "profile-",
+        "type": "normal"
+      }
+    ],
+    "selected": "false",
+    "timeout": 0,
+    "implicit": 0
+  },
+  {
+    "url": "https://profile.ameba.jp/ameba/{username}/",
+    "detections": [{
+        "return": "false",
+        "string": "\"info_",
+        "type": "normal"
+      },
+      {
+        "return": "true",
+        "string": "profile-",
+        "type": "normal"
+      }
+    ],
+    "selected": "false",
+    "timeout": 0,
+    "implicit": 0
   }
 ]
