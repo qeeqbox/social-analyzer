@@ -374,7 +374,22 @@
   },
   {
     "url": "https://authorstream.com/{username}",
-    "detections": [],
+    "detections": [{
+        "return": "false",
+        "string": "We apologize for this inconvenience",
+        "type": "ocr"
+      },
+      {
+        "return": "false",
+        "string": "We apologize for this inconvenience",
+        "type": "normal"
+      },
+      {
+        "return": "true",
+        "string": "subheading",
+        "type": "normal"
+      }
+    ],
     "selected": "false",
     "timeout": 0,
     "implicit": 0
@@ -388,7 +403,17 @@
   },
   {
     "url": "https://baby.ru/u/{username}",
-    "detections": [],
+    "detections": [{
+        "return": "false",
+        "string": "error404",
+        "type": "normal"
+      },
+      {
+        "return": "true",
+        "string": "user-header",
+        "type": "normal"
+      }
+    ],
     "selected": "false",
     "timeout": 0,
     "implicit": 0
@@ -1978,7 +2003,17 @@
   },
   {
     "url": "https://forumhouse.ru/members/?username={username}",
-    "detections": [],
+    "detections": [{
+        "return": "false",
+        "string": "\"error\"",
+        "type": "normal"
+      },
+      {
+        "return": "true",
+        "string": "profilePage",
+        "type": "normal"
+      }
+    ],
     "selected": "false",
     "timeout": 0,
     "implicit": 0
@@ -3677,14 +3712,44 @@
   },
   {
     "url": "https://nationstates.net/nation={username}",
-    "detections": [],
+    "detections": [{
+        "return": "false",
+        "string": "does not exist",
+        "type": "ocr"
+      },
+      {
+        "return": "false",
+        "string": "does not exist",
+        "type": "normal"
+      },
+      {
+        "return": "true",
+        "string": "nationsummary",
+        "type": "normal"
+      }
+    ],
     "selected": "false",
     "timeout": 0,
     "implicit": 0
   },
   {
-    "url": "https://nationstates.net/region={username}",
-    "detections": [],
+    "url": "https://nationstates.net/{username}",
+    "detections": [{
+        "return": "false",
+        "string": "does not exist",
+        "type": "ocr"
+      },
+      {
+        "return": "false",
+        "string": "does not exist",
+        "type": "normal"
+      },
+      {
+        "return": "true",
+        "string": "viewprofile",
+        "type": "normal"
+      }
+    ],
     "selected": "false",
     "timeout": 0,
     "implicit": 0
