@@ -1,3 +1,8 @@
+//
+//	__G__ = "(G)bd249ce4"
+//	app.js (API, CLI & WEBAPP)
+//
+
 var google_api_key = "";
 var google_api_cs = "";
 
@@ -31,7 +36,7 @@ var argv = require('yargs')
   .describe('w', 'a website or websites sparated with space')
   .describe('o', 'option output file')
   .describe('l', 'list all available websites')
-  .describe('m', 'fast -> FindUserProflesFast\nslow -> FindUserProflesSlow\nspecial -> FindUserProflesSpecial')
+  .describe('m', 'fast -> FindUserProfilesFast\nslow -> FindUserProfilesSlow\nspecial -> FindUserProfilesSpecial')
   .help('h')
   .alias('h', 'help')
   .argv;
@@ -268,10 +273,10 @@ async function find_username_site_new(uuid, username, options, site) {
       title = await driver.getTitle();
       text_only = await driver.findElement(By.tagName("body")).getText();
       await driver.quit()
-      if (options.includes("ShowUserProflesSlow")) {
+      if (options.includes("ShowUserProfilesSlow")) {
         temp_profile["image"] = "data:image/png;base64,{image}".replace("{image}", data);
       }
-      if (site.selected == "true" && site.detections.length > 0 && options.includes("FindUserProflesSlow")) {
+      if (site.selected == "true" && site.detections.length > 0 && options.includes("FindUserProfilesSlow")) {
         await Promise.all(site.detections.map(async detection => {
           try {
             if ("status" in detection) {
@@ -365,7 +370,7 @@ async function find_username_normal(req) {
       };
       await Promise.all(site.detections.map(async detection => {
         var temp_found = "false";
-        if (detection.type == "normal" && options.includes("FindUserProflesFast") && source != "" && detection.return == "true") {
+        if (detection.type == "normal" && options.includes("FindUserProfilesFast") && source != "" && detection.return == "true") {
           detections_count += 1
           if (source.toLowerCase().includes(detection.string.replace("{username}", username).toLowerCase())) {
             temp_found = "true";
@@ -448,7 +453,7 @@ async function find_username_advanced_2(username, options) {
           return Promise.resolve();
         }
       }
-      if (site.selected == "true" && site.detections.length > 0 || site.selected == "true" && options.includes("ShowUserProflesSlow")) {
+      if (site.selected == "true" && site.detections.length > 0 || site.selected == "true" && options.includes("ShowUserProfilesSlow")) {
         var source = "";
         var data = "";
         var text_only = "unavailable";
@@ -467,10 +472,10 @@ async function find_username_advanced_2(username, options) {
         data = await driver.takeScreenshot();
         title = await driver.getTitle();
         text_only = await driver.findElement(By.tagName("body")).getText();
-        if (options.includes("ShowUserProflesSlow")) {
+        if (options.includes("ShowUserProfilesSlow")) {
           temp_profile["image"] = "data:image/png;base64,{image}".replace("{image}", data);
         }
-        if (site.selected == "true" && site.detections.length > 0 && options.includes("FindUserProflesSlow")) {
+        if (site.selected == "true" && site.detections.length > 0 && options.includes("FindUserProfilesSlow")) {
           await Promise.all(site.detections.map(async detection => {
             if ("status" in detection) {
               if (detection.status == "bad") {
@@ -918,20 +923,20 @@ app.post("/url", async function(req, res, next) {
     res.json("Error");
   } else {
     req.body.uuid = req.body.uuid.replace(/[^a-zA-Z0-9\-]+/g, '');
-    if (req.body.option.includes("FindUserProflesSpecial")) {
+    if (req.body.option.includes("FindUserProfilesSpecial")) {
       log_to_file_queue(req.body.uuid, "[Starting] Checking user profiles special")
       user_info_special.data = await find_username_special(req);
       log_to_file_queue(req.body.uuid, "[Done] Checking user profiles special")
     }
-    if (req.body.option.includes("FindUserProflesFast")) {
+    if (req.body.option.includes("FindUserProfilesFast")) {
       log_to_file_queue(req.body.uuid, "[Starting] Checking user profiles normal")
       user_info_advanced.data = await find_username_normal(req);
       log_to_file_queue(req.body.uuid, "[Done] Checking user profiles normal")
     }
-    if (req.body.option.includes("FindUserProflesSlow") || req.body.option.includes("ShowUserProflesSlow")) {
-      if (!req.body.option.includes("FindUserProflesSlow")) {
+    if (req.body.option.includes("FindUserProfilesSlow") || req.body.option.includes("ShowUserProfilesSlow")) {
+      if (!req.body.option.includes("FindUserProfilesSlow")) {
         user_info_normal.type = "show"
-      } else if (!req.body.option.includes("ShowUserProflesSlow")) {
+      } else if (!req.body.option.includes("ShowUserProfilesSlow")) {
         user_info_normal.type = "noshow"
       }
       log_to_file_queue(req.body.uuid, "[Starting] Checking user profiles advanced")
@@ -1096,7 +1101,7 @@ async function check_user_cli(username, websites) {
     'body': {
       'uuid': random_string,
       'string': username,
-      'option': 'FindUserProflesFast'
+      'option': 'FindUserProfilesFast'
     }
   }
   await parsed_sites.forEach(async function(value, i) {
@@ -1111,7 +1116,7 @@ async function check_user_cli(username, websites) {
   });
   ret = await find_username_normal(req)
   if (typeof ret === 'undefined' || ret === undefined || ret.length == 0) {
-    log_to_file_queue(req.body.uuid, 'User does not exist (try FindUserProflesSlow or FindUserProflesSpecial)');
+    log_to_file_queue(req.body.uuid, 'User does not exist (try FindUserProfilesSlow or FindUserProfilesSpecial)');
   } else {
     await ret.forEach(item => {
       delete item['title']
