@@ -6301,7 +6301,7 @@
     "implicit": 0
   },
   {
-    "url": "https://www.neogaf.com/members/{username}/",
+    "url": "https://neogaf.com/members/{username}/",
     "detections": [{
       "return": "false",
       "string": "content=\"Oops! We ran",
@@ -6333,6 +6333,85 @@
         "type": "normal"
       }
     ],
+    "selected": "false",
+    "timeout": 0,
+    "implicit": 0
+  },
+  {
+    "url": "https://forums.mmorpg.com/profile/{username}",
+    "detections": [{
+        "return": "false",
+        "string": "404 Not Found",
+        "type": "normal"
+      }, {
+        "return": "false",
+        "string": "404 Not Found",
+        "type": "normal"
+      },
+      {
+        "return": "true",
+        "string": "ProfileOptions",
+        "type": "normal"
+      },
+      {
+        "return": "true",
+        "string": "profile/{username}",
+        "type": "normal"
+      }
+    ],
+    "selected": "false",
+    "timeout": 0,
+    "implicit": 0
+  },
+  {
+    "url": "https://theverge.com/users/{username}",
+    "detections": [{
+        "return": "false",
+        "string": "404 Not found",
+        "type": "normal"
+      }, {
+        "return": "false",
+        "string": "404 Not found",
+        "type": "normal"
+      },
+      {
+        "return": "true",
+        "string": "-user-",
+        "type": "normal"
+      }
+    ],
+    "selected": "false",
+    "timeout": 0,
+    "implicit": 0
+  },
+  {
+    "url": "https://vgr.com/forum/profile/{username}",
+    "detections": [{
+        "return": "false",
+        "string": "The page you requested",
+        "type": "normal"
+      }, {
+        "return": "false",
+        "string": "The page you requested",
+        "type": "normal"
+      },
+      {
+        "return": "true",
+        "string": "ProfileStats",
+        "type": "normal"
+      }
+    ],
+    "selected": "false",
+    "timeout": 0,
+    "implicit": 0
+  },
+  {
+    "url": "https://avforums.com/members/{username}",
+    "detections": [{
+      "return": "true",
+      "string": "logged-in to do that",
+      "type": "normal"
+    }],
     "selected": "false",
     "timeout": 0,
     "implicit": 0
