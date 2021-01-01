@@ -8,10 +8,10 @@ API and Web App for analyzing & finding a person profile across +300 social medi
 **Please submit your contribution in a Pull Request!**
 
 ## Updates
-- (Done! v2) Added a standalone python script (limited to FindUserProfilesFast option) 👏
+- (Done! v2) Added pyhton CLI (limited to FindUserProfilesFast option) 👏
 - (New) Added a slack [channel](https://qeeqbox.slack.com/messages/social-analyzer)
 - (New) Added Custom user-agent option
-- (New) Added a small CLI (You can use this project from Command Line, but it's limited to FindUserProfilesFast option) 👏
+- (New) Added nodejs CLI (You can use this project from Command Line, but it's limited to FindUserProfilesFast option) 👏
 - Added an optional timeout and implicit wait for each detection (Some websites have a delay logic implemented in the backend)
 - Added logs (user request)
 - Added 5 seconds timeout to https.get (user request)
@@ -39,7 +39,7 @@ API and Web App for analyzing & finding a person profile across +300 social medi
 Profile images **will not** be blurred. If you want them to be blurred, turn that option on
 
 ## (New) Find Profile CLI (Fast)
-<img src="https://raw.githubusercontent.com/qeeqbox/social-analyzer/main/readme/CLI.gif" style="max-width:768px"/>
+<img src="https://raw.githubusercontent.com/qeeqbox/social-analyzer/main/readme/cli.gif" style="max-width:768px"/>
 
 ## Features
 - String Analysis
