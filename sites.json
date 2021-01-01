@@ -2898,10 +2898,14 @@
   },
   {
     "url": "https://hub.docker.com/u/{username}",
-    "detections": [],
+    "detections": [{
+      "return": "false",
+      "string": "The page you requested",
+      "type": "ocr"
+    }],
     "selected": "false",
     "timeout": 0,
-    "implicit": 0
+    "implicit": 10
   },
   {
     "url": "https://hubpages.com/@{username}",
@@ -4941,7 +4945,11 @@
   },
   {
     "url": "https://researchgate.net/profile/{username}",
-    "detections": [],
+    "detections": [{
+      "return": "true",
+      "string": "profile:username",
+      "type": "normal"
+    }],
     "selected": "false",
     "timeout": 0,
     "implicit": 0
@@ -6109,13 +6117,28 @@
   },
   {
     "url": "https://wikipedia.org/wiki/User:{username}",
-    "detections": [],
+    "detections": [{
+        "return": "false",
+        "string": "is not registered on this wiki",
+        "type": "ocr"
+      },
+      {
+        "return": "false",
+        "string": "is not registered on this wiki",
+        "type": "normal"
+      },
+      {
+        "return": "true",
+        "string": "read<",
+        "type": "normal"
+      }
+    ],
     "selected": "false",
     "timeout": 0,
     "implicit": 0
   },
   {
-    "url": "https://www.hellboundhackers.org/user/{username}.html",
+    "url": "https://hellboundhackers.org/user/{username}.html",
     "detections": [{
         "return": "true",
         "string": "Email Address:",
