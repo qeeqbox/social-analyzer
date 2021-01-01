@@ -92,7 +92,7 @@ sudo apt-get install -y firefox-esr tesseract-ocr git
 git clone https://github.com/qeeqbox/social-analyzer.git
 cd social-analyzer
 pip3 install lxml BeautifulSoup4 tld
-# If you want to list all websites use node app.js -c -l
+# If you want to list all websites use python3 app.py -c -l
 # Remember the following runs as FindUserProfilesFast
 python3 app.py -c -m "fast" -u "username" -w "youtube pinterest tumblr"
 ```
