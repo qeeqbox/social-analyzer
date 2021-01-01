@@ -6299,5 +6299,42 @@
     "selected": "false",
     "timeout": 0,
     "implicit": 0
+  },
+  {
+    "url": "https://www.neogaf.com/members/{username}/",
+    "detections": [{
+      "return": "false",
+      "string": "content=\"Oops! We ran",
+      "type": "normal"
+    }],
+    "selected": "false",
+    "timeout": 0,
+    "implicit": 0
+  },
+  {
+    "url": "https://gamefaqs.gamespot.com/community/{username}",
+    "detections": [{
+        "return": "false",
+        "string": "Page Not Found",
+        "type": "normal"
+      }, {
+        "return": "false",
+        "string": "Page Not Found",
+        "type": "normal"
+      },
+      {
+        "return": "true",
+        "string": "sub_info",
+        "type": "normal"
+      },
+      {
+        "return": "true",
+        "string": "profile_user",
+        "type": "normal"
+      }
+    ],
+    "selected": "false",
+    "timeout": 0,
+    "implicit": 0
   }
 ]
