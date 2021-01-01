@@ -1093,7 +1093,22 @@
   },
   {
     "url": "https://connect.opensuse.org/pg/profile/{username}",
-    "detections": [],
+    "detections": [{
+        "return": "false",
+        "string": "we could not find the",
+        "type": "ocr"
+      },
+      {
+        "return": "false",
+        "string": "we could not find the",
+        "type": "normal"
+      },
+      {
+        "return": "true",
+        "string": "profile_info",
+        "type": "normal"
+      }
+    ],
     "selected": "false",
     "timeout": 0,
     "implicit": 0
@@ -1122,7 +1137,17 @@
   },
   {
     "url": "https://couchsurfing.com/people/{username}",
-    "detections": [],
+    "detections": [{
+        "return": "false",
+        "string": "not found",
+        "type": "normal"
+      },
+      {
+        "return": "true",
+        "string": "profile-",
+        "type": "normal"
+      }
+    ],
     "selected": "false",
     "timeout": 0,
     "implicit": 0
@@ -2012,7 +2037,11 @@
   },
   {
     "url": "https://forum.guns.ru/forummisc/blog/{username}",
-    "detections": [],
+    "detections": [{
+      "return": "true",
+      "string": "username=",
+      "type": "normal"
+    }],
     "selected": "false",
     "timeout": 0,
     "implicit": 0
@@ -2135,6 +2164,29 @@
         "type": "normal"
       }
     ],
+    "selected": "false",
+    "timeout": 0,
+    "implicit": 0
+  },
+  {
+    "url": "https://forumophilia.com/profile.php?mode=viewprofile&u={username}",
+    "detections": [{
+        "return": "false",
+        "string": "but that user does not exist",
+        "type": "ocr"
+      },
+      {
+        "return": "false",
+        "string": "but that user does not exist",
+        "type": "normal"
+      },
+      {
+        "return": "true",
+        "string": "user-profile",
+        "type": "normal"
+      }
+    ],
+    "type": "+18",
     "selected": "false",
     "timeout": 0,
     "implicit": 0
