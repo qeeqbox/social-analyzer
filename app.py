@@ -44,16 +44,17 @@ def msg(name=None):
 	return '''app.py -c -m "fast" -u "johndoe" -w "youtube tiktok'''
 
 @check_errors(True)
-def setup_logger(uuid):
+def setup_logger(uuid=None,file=False):
 	if not path.exists("logs"):
 		makedirs("logs")
 	LOG.setLevel(DEBUG)
 	st = StreamHandler(stdout)
 	st.setFormatter(Formatter("%(message)s"))
 	LOG.addHandler(st)
-	fh = RotatingFileHandler("logs/{}".format(uuid))
-	fh.setFormatter(Formatter("%(asctime)s - %(name)s - %(levelname)s - %(message)s"))
-	LOG.addHandler(fh)
+	if file and uuid:
+		fh = RotatingFileHandler("logs/{}".format(uuid))
+		fh.setFormatter(Formatter("%(asctime)s - %(name)s - %(levelname)s - %(message)s"))
+		LOG.addHandler(fh)
 
 @check_errors(True)
 def init_websites():
@@ -64,11 +65,12 @@ def init_websites():
 			temp_list.append(item)
 	return temp_list
 
-@check_errors(True)
 def list_all_websites():
 	if len(PARSED_SITES) > 0:
-		for item in PARSED_SITES:
-			LOG.info(get_fld(item["url"], fix_protocol=True))
+		for site in PARSED_SITES:
+			x = get_fld(site["url"], fix_protocol=True)
+			x = x.replace(".{username}","").replace("{username}.","")
+			LOG.info(x)
 
 @check_errors(True)
 def find_username_normal(req):
@@ -114,7 +116,7 @@ def find_username_normal(req):
 def check_user_cli(username, websites):
 	temp_found = []
 	req = {"body": {"uuid": str(uuid4()),"string": username,"option": "FindUserProfilesFast"}}
-	setup_logger(req["body"]["uuid"])
+	setup_logger(req["body"]["uuid"],True)
 	for site in PARSED_SITES:
 		for temp in websites.split(" "):
 			if temp in site["url"]:
@@ -137,14 +139,17 @@ def check_user_cli(username, websites):
 
 PARSED_SITES = init_websites()
 parser = ArgumentParser(description="Qeeqbox/social-analyzer - API and Web App for analyzing & finding a person profile across 300+ social media websites (Detections are updated regularly)",usage=msg())
-parser.add_argument("-c","-cli",action="store_true", help="Turn this CLI on", required=True)
-parser.add_argument("-u","-username", help="E.g. johndoe, john_doe or johndoe9999", required=True, metavar="")
-parser.add_argument("-w","-website", help="Website or websites separated by space E.g. youtube, tiktok or tumblr", required=True, metavar="")
-parser.add_argument("-l","-list", help="List all available websites", required=False, metavar="")
-parser.add_argument("-o","-output", help="This option will be implemented..", required=False, metavar="")
-parser.add_argument("-m","-mode", help="Analysis mode E.g.fast -> FindUserProfilesFast\nslow -> FindUserProfilesSlow\nspecial -> FindUserProfilesSpecial", required=True, metavar="")
+parser.add_argument("-c","-cli",action="store_true", help="Turn this CLI on")
+parser.add_argument("-u","-username", help="E.g. johndoe, john_doe or johndoe9999", metavar="")
+parser.add_argument("-w","-website", help="Website or websites separated by space E.g. youtube, tiktok or tumblr", metavar="")
+parser.add_argument("-l","-list", action="store_true",  help="List all available websites")
+parser.add_argument("-o","-output", help="This option will be implemented..", metavar="")
+parser.add_argument("-m","-mode", help="Analysis mode E.g.fast -> FindUserProfilesFast\nslow -> FindUserProfilesSlow\nspecial -> FindUserProfilesSpecial", metavar="")
 parsed = parser.parse_args()
 if parsed.c:
-	if parsed.m == "fast":
+	if parsed.l:
+		setup_logger()
+		list_all_websites()
+	elif parsed.m == "fast":
 		if parsed.u != "" and parsed.w != "":
 			check_user_cli(parsed.u,parsed.w)
