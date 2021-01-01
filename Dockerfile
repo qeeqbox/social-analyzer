@@ -5,4 +5,6 @@ COPY package*.json ./
 RUN npm install lodash
 RUN npm install
 COPY . .
+
+EXPOSE 9005
 CMD [ "npm", "start" ]
