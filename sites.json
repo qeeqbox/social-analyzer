@@ -387,6 +387,17 @@
     "implicit": 0
   },
   {
+    "url": "https://avforums.com/members/{username}",
+    "detections": [{
+      "return": "true",
+      "string": "logged-in to do that",
+      "type": "normal"
+    }],
+    "selected": "false",
+    "timeout": 0,
+    "implicit": 0
+  },
+  {
     "url": "https://avizo.cz/{username}",
     "detections": [],
     "selected": "false",
@@ -1679,6 +1690,28 @@
     "implicit": 0
   },
   {
+    "url": "https://escapistmagazine.com/profiles/view/{username}",
+    "detections": [{
+        "return": "false",
+        "string": "Please log in to search for users",
+        "type": "normal"
+      },
+      {
+        "return": "false",
+        "string": "Please log in to search for users",
+        "type": "normal"
+      },
+      {
+        "return": "true",
+        "string": "profiles_personal",
+        "type": "normal"
+      }
+    ],
+    "selected": "false",
+    "timeout": 0,
+    "implicit": 0
+  },
+  {
     "url": "https://etsy.com/shop/{username}",
     "detections": [{
         "return": "false",
@@ -1703,6 +1736,28 @@
       {
         "return": "true",
         "string": "user_id",
+        "type": "normal"
+      }
+    ],
+    "selected": "false",
+    "timeout": 0,
+    "implicit": 0
+  },
+  {
+    "url": "https://eurogamer.net/profiles/{username}",
+    "detections": [{
+        "return": "false",
+        "string": "404 Page not found",
+        "type": "normal"
+      },
+      {
+        "return": "false",
+        "string": "404 Page not found",
+        "type": "normal"
+      },
+      {
+        "return": "true",
+        "string": "\"profile\"",
         "type": "normal"
       }
     ],
@@ -2134,6 +2189,33 @@
     "implicit": 0
   },
   {
+    "url": "https://forums.mmorpg.com/profile/{username}",
+    "detections": [{
+        "return": "false",
+        "string": "404 Not Found",
+        "type": "normal"
+      },
+      {
+        "return": "false",
+        "string": "404 Not Found",
+        "type": "normal"
+      },
+      {
+        "return": "true",
+        "string": "ProfileOptions",
+        "type": "normal"
+      },
+      {
+        "return": "true",
+        "string": "profile/{username}",
+        "type": "normal"
+      }
+    ],
+    "selected": "false",
+    "timeout": 0,
+    "implicit": 0
+  },
+  {
     "url": "https://forums.pcgamer.com/members/?username={username}",
     "detections": [{
         "return": "false",
@@ -2281,6 +2363,33 @@
     "implicit": 0
   },
   {
+    "url": "https://gamefaqs.gamespot.com/community/{username}",
+    "detections": [{
+        "return": "false",
+        "string": "Page Not Found",
+        "type": "normal"
+      },
+      {
+        "return": "false",
+        "string": "Page Not Found",
+        "type": "normal"
+      },
+      {
+        "return": "true",
+        "string": "sub_info",
+        "type": "normal"
+      },
+      {
+        "return": "true",
+        "string": "profile_user",
+        "type": "normal"
+      }
+    ],
+    "selected": "false",
+    "timeout": 0,
+    "implicit": 0
+  },
+  {
     "url": "https://gamespot.com/profile/{username}",
     "detections": [{
         "return": "false",
@@ -2300,6 +2409,23 @@
       {
         "return": "true",
         "string": "username",
+        "type": "normal"
+      }
+    ],
+    "selected": "false",
+    "timeout": 0,
+    "implicit": 0
+  },
+  {
+    "url": "https://gaminglatest.com/members/{username}",
+    "detections": [{
+        "return": "false",
+        "string": "We ran into some problems",
+        "type": "normal"
+      },
+      {
+        "return": "true",
+        "string": "memberHeader",
         "type": "normal"
       }
     ],
@@ -2363,6 +2489,28 @@
       {
         "return": "true",
         "string": "userid",
+        "type": "normal"
+      }
+    ],
+    "selected": "false",
+    "timeout": 0,
+    "implicit": 0
+  },
+  {
+    "url": "https://giantbomb.com/profile/{username}",
+    "detections": [{
+        "return": "false",
+        "string": "Not Found",
+        "type": "normal"
+      },
+      {
+        "return": "false",
+        "string": "Not Found",
+        "type": "normal"
+      },
+      {
+        "return": "true",
+        "string": "profile-header",
         "type": "normal"
       }
     ],
@@ -3866,6 +4014,17 @@
     "implicit": 0
   },
   {
+    "url": "https://neogaf.com/members/{username}/",
+    "detections": [{
+      "return": "false",
+      "string": "content=\"Oops! We ran",
+      "type": "normal"
+    }],
+    "selected": "false",
+    "timeout": 0,
+    "implicit": 0
+  },
+  {
     "url": "https://news.ycombinator.com/user?id={username}",
     "detections": [{
         "return": "false",
@@ -5324,6 +5483,28 @@
     "implicit": 0
   },
   {
+    "url": "https://theverge.com/users/{username}",
+    "detections": [{
+        "return": "false",
+        "string": "404 Not found",
+        "type": "normal"
+      },
+      {
+        "return": "false",
+        "string": "404 Not found",
+        "type": "normal"
+      },
+      {
+        "return": "true",
+        "string": "-user-",
+        "type": "normal"
+      }
+    ],
+    "selected": "false",
+    "timeout": 0,
+    "implicit": 0
+  },
+  {
     "url": "https://tiktok.com/@{username}",
     "detections": [{
         "return": "false",
@@ -5594,6 +5775,28 @@
     "implicit": 0
   },
   {
+    "url": "https://us.forums.blizzard.com/en/blizzard/u/{username}",
+    "detections": [{
+        "return": "false",
+        "string": "Page Not Found",
+        "type": "normal"
+      },
+      {
+        "return": "false",
+        "string": "Page Not Found",
+        "type": "normal"
+      },
+      {
+        "return": "true",
+        "string": "user-profile",
+        "type": "normal"
+      }
+    ],
+    "selected": "false",
+    "timeout": 0,
+    "implicit": 0
+  },
+  {
     "url": "https://venmo.com/{username}",
     "detections": [{
         "return": "false",
@@ -5638,6 +5841,39 @@
         "type": "normal"
       }
     ],
+    "selected": "false",
+    "timeout": 0,
+    "implicit": 0
+  },
+  {
+    "url": "https://vgr.com/forum/profile/{username}",
+    "detections": [{
+        "return": "false",
+        "string": "The page you requested",
+        "type": "normal"
+      },
+      {
+        "return": "false",
+        "string": "The page you requested",
+        "type": "normal"
+      },
+      {
+        "return": "true",
+        "string": "ProfileStats",
+        "type": "normal"
+      }
+    ],
+    "selected": "false",
+    "timeout": 0,
+    "implicit": 0
+  },
+  {
+    "url": "https://videogamer.com/forums/index.php?/profile/{username}/",
+    "detections": [{
+      "return": "true",
+      "string": "ProfilePhoto",
+      "type": "normal"
+    }],
     "selected": "false",
     "timeout": 0,
     "implicit": 0
@@ -6296,122 +6532,6 @@
         "type": "normal"
       }
     ],
-    "selected": "false",
-    "timeout": 0,
-    "implicit": 0
-  },
-  {
-    "url": "https://neogaf.com/members/{username}/",
-    "detections": [{
-      "return": "false",
-      "string": "content=\"Oops! We ran",
-      "type": "normal"
-    }],
-    "selected": "false",
-    "timeout": 0,
-    "implicit": 0
-  },
-  {
-    "url": "https://gamefaqs.gamespot.com/community/{username}",
-    "detections": [{
-        "return": "false",
-        "string": "Page Not Found",
-        "type": "normal"
-      }, {
-        "return": "false",
-        "string": "Page Not Found",
-        "type": "normal"
-      },
-      {
-        "return": "true",
-        "string": "sub_info",
-        "type": "normal"
-      },
-      {
-        "return": "true",
-        "string": "profile_user",
-        "type": "normal"
-      }
-    ],
-    "selected": "false",
-    "timeout": 0,
-    "implicit": 0
-  },
-  {
-    "url": "https://forums.mmorpg.com/profile/{username}",
-    "detections": [{
-        "return": "false",
-        "string": "404 Not Found",
-        "type": "normal"
-      }, {
-        "return": "false",
-        "string": "404 Not Found",
-        "type": "normal"
-      },
-      {
-        "return": "true",
-        "string": "ProfileOptions",
-        "type": "normal"
-      },
-      {
-        "return": "true",
-        "string": "profile/{username}",
-        "type": "normal"
-      }
-    ],
-    "selected": "false",
-    "timeout": 0,
-    "implicit": 0
-  },
-  {
-    "url": "https://theverge.com/users/{username}",
-    "detections": [{
-        "return": "false",
-        "string": "404 Not found",
-        "type": "normal"
-      }, {
-        "return": "false",
-        "string": "404 Not found",
-        "type": "normal"
-      },
-      {
-        "return": "true",
-        "string": "-user-",
-        "type": "normal"
-      }
-    ],
-    "selected": "false",
-    "timeout": 0,
-    "implicit": 0
-  },
-  {
-    "url": "https://vgr.com/forum/profile/{username}",
-    "detections": [{
-        "return": "false",
-        "string": "The page you requested",
-        "type": "normal"
-      }, {
-        "return": "false",
-        "string": "The page you requested",
-        "type": "normal"
-      },
-      {
-        "return": "true",
-        "string": "ProfileStats",
-        "type": "normal"
-      }
-    ],
-    "selected": "false",
-    "timeout": 0,
-    "implicit": 0
-  },
-  {
-    "url": "https://avforums.com/members/{username}",
-    "detections": [{
-      "return": "true",
-      "string": "logged-in to do that",
-      "type": "normal"
-    }],
     "selected": "false",
     "timeout": 0,
     "implicit": 0
