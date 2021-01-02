@@ -8,7 +8,7 @@ API and Web App for analyzing & finding a person profile across +300 social medi
 **Please submit your contribution in a Pull Request!**
 
 ## Updates
-- (New) Adding description logic to websites (still in progress) 👏
+- (New) Adding descriptions to websites (In progress) 👏
 - Added pyhton CLI (limited to FindUserProfilesFast option) 👏
 - Added a slack [channel](https://qeeqbox.slack.com/messages/social-analyzer)
 - Added Custom user-agent option
