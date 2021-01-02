@@ -6632,5 +6632,22 @@
     "selected": "false",
     "timeout": 0,
     "implicit": 0
+  },
+  {
+    "url": "https://douban.com/people/{username}/",
+    "detections": [{
+        "return": "true",
+        "string": "error.",
+        "type": "normal"
+      },
+      {
+        "return": "true",
+        "string": "-profile-",
+        "type": "normal"
+      }
+    ],
+    "selected": "false",
+    "timeout": 0,
+    "implicit": 0
   }
 ]
