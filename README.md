@@ -8,10 +8,11 @@ API and Web App for analyzing & finding a person profile across +300 social medi
 **Please submit your contribution in a Pull Request!**
 
 ## Updates
-- (Done! v2) Added pyhton CLI (limited to FindUserProfilesFast option) 👏
-- (New) Added a slack [channel](https://qeeqbox.slack.com/messages/social-analyzer)
-- (New) Added Custom user-agent option
-- (New) Added nodejs CLI (You can use this project from Command Line, but it's limited to FindUserProfilesFast option) 👏
+- (New) Adding sort description to websites (still in progress) 👏
+- Added pyhton CLI (limited to FindUserProfilesFast option) 👏
+- Added a slack [channel](https://qeeqbox.slack.com/messages/social-analyzer)
+- Added Custom user-agent option
+- Added nodejs CLI (You can use this project from Command Line, but it's limited to FindUserProfilesFast option) 👏
 - Added an optional timeout and implicit wait for each detection (Some websites have a delay logic implemented in the backend)
 - Added logs (user request)
 - Added 5 seconds timeout to https.get (user request)
@@ -118,7 +119,7 @@ sudo kill -9 $(sudo lsof -t -i:9005)
 - Adding the generic websites detections (These need some reviewing, but I will try to add them in 2021)
 
 ## Resources
-- api.duckduckgo, google api, nodejs, bootstrap, selectize, jquery and font-awesome
+- api.duckduckgo, google api, nodejs, bootstrap, selectize, jquery, wikipedia and font-awesome
 - Let me know if i missed a reference or resource!
 
 ## Disclaimer\Notes
