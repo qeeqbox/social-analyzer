@@ -101,7 +101,7 @@
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
-    "type": "unknown"
+    "type": "unavailable"
   },
   {
     "url": "https://alik.cz/u/{username}",
@@ -113,7 +113,7 @@
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
-    "type": "unknown"
+    "type": "unavailable"
   },
   {
     "url": "https://allmylinks.com/{username}",
@@ -141,7 +141,7 @@
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
-    "type": "unknown"
+    "type": "unavailable"
   },
   {
     "url": "https://alltrails.com/members/{username}",
@@ -169,7 +169,7 @@
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
-    "type": "unknown"
+    "type": "unavailable"
   },
   {
     "url": "https://aminoapps.com/u/{username}",
@@ -192,7 +192,7 @@
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
-    "type": "unknown"
+    "type": "unavailable"
   },
   {
     "url": "https://angel.co/{username}",
@@ -220,7 +220,7 @@
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
-    "type": "unknown"
+    "type": "unavailable"
   },
   {
     "url": "https://anobii.com/{username}/profile",
@@ -271,7 +271,7 @@
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
-    "type": "unknown"
+    "type": "unavailable"
   },
   {
     "url": "https://asciinema.org/~{username}",
@@ -294,7 +294,7 @@
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
-    "type": "unknown"
+    "type": "unavailable"
   },
   {
     "url": "https://ask.fedoraproject.org/u/{username}",
@@ -322,7 +322,7 @@
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
-    "type": "unknown"
+    "type": "unavailable"
   },
   {
     "url": "https://ask.fm/{username}",
@@ -378,7 +378,7 @@
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
-    "type": "unknown"
+    "type": "unavailable"
   },
   {
     "url": "https://authorstream.com/{username}",
@@ -401,7 +401,7 @@
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
-    "type": "unknown"
+    "type": "unavailable"
   },
   {
     "url": "https://avforums.com/members/{username}",
@@ -413,7 +413,7 @@
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
-    "type": "unknown"
+    "type": "unavailable"
   },
   {
     "url": "https://avizo.cz/{username}",
@@ -421,7 +421,7 @@
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
-    "type": "unknown"
+    "type": "unavailable"
   },
   {
     "url": "https://baby.ru/u/{username}",
@@ -439,7 +439,7 @@
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
-    "type": "unknown"
+    "type": "unavailable"
   },
   {
     "url": "https://babyblog.ru/user/info/{username}",
@@ -451,7 +451,7 @@
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
-    "type": "unknown"
+    "type": "unavailable"
   },
   {
     "url": "https://bandcamp.com/{username}",
@@ -512,7 +512,7 @@
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
-    "type": "unknown"
+    "type": "unavailable"
   },
   {
     "url": "https://beta.cent.co/@{username}",
@@ -520,7 +520,7 @@
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
-    "type": "unknown"
+    "type": "unavailable"
   },
   {
     "url": "https://binarysearch.io/@/{username}",
@@ -532,7 +532,7 @@
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
-    "type": "unknown"
+    "type": "unavailable"
   },
   {
     "url": "https://bitbucket.org/{username}",
@@ -578,7 +578,7 @@
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
-    "type": "unknown"
+    "type": "unavailable"
   },
   {
     "url": "https://blip.fm/{username}",
@@ -642,7 +642,7 @@
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
-    "type": "unknown"
+    "type": "unavailable"
   },
   {
     "url": "https://bookcrossing.com/mybookshelf/{username}",
@@ -665,7 +665,7 @@
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
-    "type": "unknown"
+    "type": "unavailable"
   },
   {
     "url": "https://buymeacoffee.com/{username}",
@@ -688,7 +688,7 @@
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
-    "type": "unknown"
+    "type": "unavailable"
   },
   {
     "url": "https://buzzfeed.com/{username}",
@@ -724,7 +724,7 @@
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
-    "type": "unknown"
+    "type": "unavailable"
   },
   {
     "url": "https://capfriendly.com/users/{username}",
@@ -736,7 +736,7 @@
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
-    "type": "unknown"
+    "type": "unavailable"
   },
   {
     "url": "https://career.habr.com/{username}",
@@ -782,7 +782,7 @@
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
-    "type": "unknown"
+    "type": "unavailable"
   },
   {
     "url": "https://championat.com/user/{username}",
@@ -800,7 +800,7 @@
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
-    "type": "unknown"
+    "type": "unavailable"
   },
   {
     "url": "https://chaos.social/@{username}",
@@ -823,7 +823,7 @@
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
-    "type": "unknown"
+    "type": "unavailable"
   },
   {
     "url": "https://chess.com/member/{username}",
@@ -877,7 +877,7 @@
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
-    "type": "unknown"
+    "type": "unavailable"
   },
   {
     "url": "https://cnet.com/profiles/{username}",
@@ -913,7 +913,7 @@
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
-    "type": "unknown"
+    "type": "unavailable"
   },
   {
     "url": "https://codechef.com/users/{username}",
@@ -931,7 +931,7 @@
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
-    "type": "unknown"
+    "type": "unavailable"
   },
   {
     "url": "https://codementor.io/{username}",
@@ -954,7 +954,7 @@
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
-    "type": "unknown"
+    "type": "unavailable"
   },
   {
     "url": "https://codepen.io/{username}",
@@ -982,7 +982,7 @@
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
-    "type": "unknown"
+    "type": "unavailable"
   },
   {
     "url": "https://codewars.com/users/{username}",
@@ -1028,7 +1028,7 @@
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
-    "type": "unknown"
+    "type": "unavailable"
   },
   {
     "url": "https://community.cloudflare.com/u/{username}",
@@ -1051,7 +1051,7 @@
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
-    "type": "unknown"
+    "type": "unavailable"
   },
   {
     "url": "https://community.eintracht.de/fans/{username}",
@@ -1069,7 +1069,7 @@
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
-    "type": "unknown"
+    "type": "unavailable"
   },
   {
     "url": "https://community.oracle.com/people/{username}",
@@ -1087,7 +1087,7 @@
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
-    "type": "unknown"
+    "type": "unavailable"
   },
   {
     "url": "https://community.signalusers.org/u/{username}",
@@ -1115,7 +1115,7 @@
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
-    "type": "unknown"
+    "type": "unavailable"
   },
   {
     "url": "https://community.windy.com/user/{username}",
@@ -1143,7 +1143,7 @@
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
-    "type": "unknown"
+    "type": "unavailable"
   },
   {
     "url": "https://connect.opensuse.org/pg/profile/{username}",
@@ -1166,7 +1166,7 @@
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
-    "type": "unknown"
+    "type": "unavailable"
   },
   {
     "url": "https://coroflot.com/{username}",
@@ -1189,7 +1189,7 @@
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
-    "type": "unknown"
+    "type": "unavailable"
   },
   {
     "url": "https://couchsurfing.com/people/{username}",
@@ -1207,7 +1207,7 @@
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
-    "type": "unknown"
+    "type": "unavailable"
   },
   {
     "url": "https://countable.us/{username}",
@@ -1230,7 +1230,7 @@
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
-    "type": "unknown"
+    "type": "unavailable"
   },
   {
     "url": "https://cracked.com/members/{username}",
@@ -1265,7 +1265,7 @@
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
-    "type": "unknown"
+    "type": "unavailable"
   },
   {
     "url": "https://d3.ru/user/{username}/posts",
@@ -1374,7 +1374,7 @@
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
-    "type": "unknown"
+    "type": "unavailable"
   },
   {
     "url": "https://designspiration.net/{username}",
@@ -1402,7 +1402,7 @@
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
-    "type": "unknown"
+    "type": "unavailable"
   },
   {
     "url": "https://dev.to/{username}",
@@ -1430,7 +1430,7 @@
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
-    "type": "unknown"
+    "type": "unavailable"
   },
   {
     "url": "https://devrant.com/users/{username}",
@@ -1448,7 +1448,7 @@
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
-    "type": "unknown"
+    "type": "unavailable"
   },
   {
     "url": "https://discogs.com/user/{username}",
@@ -1499,7 +1499,7 @@
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
-    "type": "unknown"
+    "type": "unavailable"
   },
   {
     "url": "https://discuss.elastic.co/u/{username}",
@@ -1527,7 +1527,7 @@
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
-    "type": "unknown"
+    "type": "unavailable"
   },
   {
     "url": "https://discussions.apple.com/profile/{username}",
@@ -1555,7 +1555,7 @@
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
-    "type": "unknown"
+    "type": "unavailable"
   },
   {
     "url": "https://disqus.com/{username}",
@@ -1583,7 +1583,7 @@
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
-    "type": "unknown"
+    "type": "unavailable"
   },
   {
     "url": "https://douban.com/people/{username}/",
@@ -1629,7 +1629,7 @@
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
-    "type": "unknown"
+    "type": "unavailable"
   },
   {
     "url": "https://drive2.ru/users/{username}",
@@ -1652,7 +1652,7 @@
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
-    "type": "unknown"
+    "type": "unavailable"
   },
   {
     "url": "https://duolingo.com/profile/{username}",
@@ -1680,7 +1680,7 @@
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
-    "type": "unknown"
+    "type": "unavailable"
   },
   {
     "url": "https://ebay.com/usr/{username}",
@@ -1713,7 +1713,7 @@
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
-    "type": "unknown"
+    "type": "unavailable"
   },
   {
     "url": "https://echo.msk.ru/users/{username}",
@@ -1725,7 +1725,7 @@
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
-    "type": "unknown"
+    "type": "unavailable"
   },
   {
     "url": "https://egpu.io/forums/profile/{username}",
@@ -1748,7 +1748,7 @@
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
-    "type": "unknown"
+    "type": "unavailable"
   },
   {
     "url": "https://ello.co/{username}",
@@ -1812,7 +1812,7 @@
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
-    "type": "unknown"
+    "type": "unavailable"
   },
   {
     "url": "https://escapistmagazine.com/profiles/view/{username}",
@@ -1868,7 +1868,7 @@
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
-    "type": "unknown"
+    "type": "unavailable"
   },
   {
     "url": "https://eurogamer.net/profiles/{username}",
@@ -1919,7 +1919,7 @@
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
-    "type": "unknown"
+    "type": "unavailable"
   },
   {
     "url": "https://eyeem.com/u/{username}",
@@ -1954,7 +1954,7 @@
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
-    "type": "unknown"
+    "type": "unavailable"
   },
   {
     "name": "facebook",
@@ -2002,7 +2002,7 @@
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
-    "type": "unknown"
+    "type": "unavailable"
   },
   {
     "url": "https://fandom.com/u/{username}",
@@ -2038,7 +2038,7 @@
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
-    "type": "unknown"
+    "type": "unavailable"
   },
   {
     "url": "https://fl.ru/users/{username}/portfolio",
@@ -2056,7 +2056,7 @@
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
-    "type": "unknown"
+    "type": "unavailable"
   },
   {
     "url": "https://flickr.com/people/{username}",
@@ -2112,7 +2112,7 @@
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
-    "type": "unknown"
+    "type": "unavailable"
   },
   {
     "url": "https://fortnitetracker.com/profile/all/{username}",
@@ -2140,7 +2140,7 @@
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
-    "type": "unknown"
+    "type": "unavailable"
   },
   {
     "url": "https://forum.3dnews.ru/member.php?username={username}",
@@ -2160,7 +2160,7 @@
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
-    "type": "unknown"
+    "type": "unavailable"
   },
   {
     "url": "https://forum.hackthebox.eu/profile/{username}",
@@ -2188,7 +2188,7 @@
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
-    "type": "unknown"
+    "type": "unavailable"
   },
   {
     "url": "https://forum.igromania.ru/member.php?username={username}",
@@ -2196,7 +2196,7 @@
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
-    "type": "unknown"
+    "type": "unavailable"
   },
   {
     "url": "https://forum.leasehackr.com/u/{username}/summary",
@@ -2224,7 +2224,7 @@
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
-    "type": "unknown"
+    "type": "unavailable"
   },
   {
     "url": "https://forum.sublimetext.com/u/{username}",
@@ -2252,7 +2252,7 @@
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
-    "type": "unknown"
+    "type": "unavailable"
   },
   {
     "url": "https://forum.velomania.ru/member.php?username={username}",
@@ -2270,7 +2270,7 @@
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
-    "type": "unknown"
+    "type": "unavailable"
   },
   {
     "url": "https://forumhouse.ru/members/?username={username}",
@@ -2288,7 +2288,7 @@
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
-    "type": "unknown"
+    "type": "unavailable"
   },
   {
     "url": "https://forumophilia.com/profile.php?mode=viewprofile&u={username}",
@@ -2339,7 +2339,7 @@
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
-    "type": "unknown"
+    "type": "unavailable"
   },
   {
     "url": "https://forums.kali.org/member.php?username={username}",
@@ -2362,7 +2362,7 @@
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
-    "type": "unknown"
+    "type": "unavailable"
   },
   {
     "url": "https://forums.mmorpg.com/profile/{username}",
@@ -2390,7 +2390,7 @@
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
-    "type": "unknown"
+    "type": "unavailable"
   },
   {
     "url": "https://forums.pcgamer.com/members/?username={username}",
@@ -2413,7 +2413,7 @@
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
-    "type": "unknown"
+    "type": "unavailable"
   },
   {
     "url": "https://forums.whonix.org/u/{username}",
@@ -2441,7 +2441,7 @@
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
-    "type": "unknown"
+    "type": "unavailable"
   },
   {
     "url": "https://fotolog.com/author/{username}",
@@ -2617,7 +2617,7 @@
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
-    "type": "unknown"
+    "type": "unavailable"
   },
   {
     "url": "https://gdprofiles.com/{username}",
@@ -2625,7 +2625,7 @@
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
-    "type": "unknown"
+    "type": "unavailable"
   },
   {
     "url": "https://geocaching.com/p/default.aspx?u={username}",
@@ -2648,7 +2648,7 @@
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
-    "type": "unknown"
+    "type": "unavailable"
   },
   {
     "url": "https://getmyuni.com/user/{username}",
@@ -2656,7 +2656,7 @@
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
-    "type": "unknown"
+    "type": "unavailable"
   },
   {
     "url": "https://gfycat.com/@{username}",
@@ -2684,7 +2684,7 @@
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
-    "type": "unknown"
+    "type": "unavailable"
   },
   {
     "url": "https://giantbomb.com/profile/{username}",
@@ -2758,7 +2758,7 @@
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
-    "type": "unknown"
+    "type": "unavailable"
   },
   {
     "url": "https://github.com/{username}",
@@ -2829,7 +2829,7 @@
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
-    "type": "unknown"
+    "type": "unavailable"
   },
   {
     "url": "https://gumroad.com/{username}",
@@ -2857,7 +2857,7 @@
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
-    "type": "unknown"
+    "type": "unavailable"
   },
   {
     "url": "https://gurushots.com/{username}/photos",
@@ -2865,7 +2865,7 @@
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
-    "type": "unknown"
+    "type": "unavailable"
   },
   {
     "url": "https://habr.com/ru/users/{username}",
@@ -2928,7 +2928,7 @@
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
-    "type": "unknown"
+    "type": "unavailable"
   },
   {
     "url": "https://hackerrank.com/{username}",
@@ -2946,7 +2946,7 @@
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
-    "type": "unknown"
+    "type": "unavailable"
   },
   {
     "url": "https://hackster.io/{username}",
@@ -2974,7 +2974,7 @@
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
-    "type": "unknown"
+    "type": "unavailable"
   },
   {
     "url": "https://hackthissite.org/user/view/{username}",
@@ -3043,7 +3043,7 @@
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
-    "type": "unknown"
+    "type": "unavailable"
   },
   {
     "url": "https://houzz.com/user/{username}",
@@ -3066,7 +3066,7 @@
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
-    "type": "unknown"
+    "type": "unavailable"
   },
   {
     "url": "https://hub.docker.com/u/{username}",
@@ -3078,7 +3078,7 @@
     "selected": "false",
     "timeout": 0,
     "implicit": 10,
-    "type": "unknown"
+    "type": "unavailable"
   },
   {
     "url": "https://hubpages.com/@{username}",
@@ -3101,7 +3101,7 @@
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
-    "type": "unknown"
+    "type": "unavailable"
   },
   {
     "url": "https://hubski.com/user/{username}",
@@ -3141,7 +3141,7 @@
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
-    "type": "unknown"
+    "type": "unavailable"
   },
   {
     "url": "https://icq.im/{username}",
@@ -3164,7 +3164,7 @@
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
-    "type": "unknown"
+    "type": "unavailable"
   },
   {
     "url": "https://ifttt.com/p/{username}",
@@ -3192,7 +3192,7 @@
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
-    "type": "unknown"
+    "type": "unavailable"
   },
   {
     "url": "https://imgsrc.ru/main/user.php?user={username}",
@@ -3200,7 +3200,7 @@
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
-    "type": "unknown"
+    "type": "unavailable"
   },
   {
     "url": "https://imgup.cz/{username}",
@@ -3228,7 +3228,7 @@
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
-    "type": "unknown"
+    "type": "unavailable"
   },
   {
     "url": "https://imgur.com/user/{username}",
@@ -3287,7 +3287,7 @@
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
-    "type": "unknown"
+    "type": "unavailable"
   },
   {
     "url": "https://instagram.com/{username}",
@@ -3316,7 +3316,7 @@
     "selected": "true",
     "timeout": 0,
     "implicit": 0,
-    "type": "unknown"
+    "type": "unavailable"
   },
   {
     "url": "https://instructables.com/member/{username}",
@@ -3367,7 +3367,7 @@
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
-    "type": "unknown"
+    "type": "unavailable"
   },
   {
     "url": "https://irecommend.ru/users/{username}",
@@ -3379,7 +3379,7 @@
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
-    "type": "unknown"
+    "type": "unavailable"
   },
   {
     "url": "https://issuu.com/{username}",
@@ -3425,7 +3425,7 @@
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
-    "type": "unknown"
+    "type": "unavailable"
   },
   {
     "url": "https://jeuxvideo.com/profil/{username}?mode=infos",
@@ -3461,7 +3461,7 @@
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
-    "type": "unknown"
+    "type": "unavailable"
   },
   {
     "url": "https://keybase.io/{username}",
@@ -3497,7 +3497,7 @@
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
-    "type": "unknown"
+    "type": "unavailable"
   },
   {
     "url": "https://ko-fi.com/{username}",
@@ -3509,7 +3509,7 @@
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
-    "type": "unknown"
+    "type": "unavailable"
   },
   {
     "url": "https://kongregate.com/accounts/{username}",
@@ -3555,7 +3555,7 @@
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
-    "type": "unknown"
+    "type": "unavailable"
   },
   {
     "url": "https://lab.pentestit.ru/profile/{username}",
@@ -3567,7 +3567,7 @@
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
-    "type": "unknown"
+    "type": "unavailable"
   },
   {
     "url": "https://last.fm/user/{username}",
@@ -3699,7 +3699,7 @@
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
-    "type": "unknown"
+    "type": "unavailable"
   },
   {
     "url": "https://liveleak.com/c/{username}",
@@ -3740,7 +3740,7 @@
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
-    "type": "unknown"
+    "type": "unavailable"
   },
   {
     "url": "https://lobste.rs/u/{username}",
@@ -3763,7 +3763,7 @@
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
-    "type": "unknown"
+    "type": "unavailable"
   },
   {
     "url": "https://lolchess.gg/profile/na/{username}",
@@ -3786,7 +3786,7 @@
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
-    "type": "unknown"
+    "type": "unavailable"
   },
   {
     "url": "https://mastodon.cloud/@{username}",
@@ -3814,7 +3814,7 @@
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
-    "type": "unknown"
+    "type": "unavailable"
   },
   {
     "url": "https://mastodon.social/@{username}",
@@ -3842,7 +3842,7 @@
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
-    "type": "unknown"
+    "type": "unavailable"
   },
   {
     "url": "https://mastodon.technology/@{username}",
@@ -3870,7 +3870,7 @@
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
-    "type": "unknown"
+    "type": "unavailable"
   },
   {
     "url": "https://mastodon.xyz/@{username}",
@@ -3898,7 +3898,7 @@
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
-    "type": "unknown"
+    "type": "unavailable"
   },
   {
     "url": "https://medium.com/@{username}",
@@ -3921,7 +3921,7 @@
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
-    "type": "unknown"
+    "type": "unavailable"
   },
   {
     "url": "https://memrise.com/user/{username}",
@@ -3967,7 +3967,7 @@
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
-    "type": "unknown"
+    "type": "unavailable"
   },
   {
     "url": "https://meta.wikimedia.org/wiki/Special:CentralAuth/{username}",
@@ -3995,7 +3995,7 @@
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
-    "type": "unknown"
+    "type": "unavailable"
   },
   {
     "url": "https://metacritic.com/user/{username}",
@@ -4072,7 +4072,7 @@
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
-    "type": "unknown"
+    "type": "unavailable"
   },
   {
     "url": "https://mstdn.io/@{username}",
@@ -4100,7 +4100,7 @@
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
-    "type": "unknown"
+    "type": "unavailable"
   },
   {
     "url": "https://munzee.com/m/{username}",
@@ -4123,7 +4123,7 @@
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
-    "type": "unknown"
+    "type": "unavailable"
   },
   {
     "url": "https://my.flightradar24.com/{username}",
@@ -4250,7 +4250,7 @@
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
-    "type": "unknown"
+    "type": "unavailable"
   },
   {
     "url": "https://nationstates.net/nation={username}",
@@ -4319,7 +4319,7 @@
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
-    "type": "unknown"
+    "type": "unavailable"
   },
   {
     "url": "https://neogaf.com/members/{username}/",
@@ -4354,7 +4354,7 @@
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
-    "type": "unknown"
+    "type": "unavailable"
   },
   {
     "url": "https://nightbot.tv/t/{username}/commands",
@@ -4362,7 +4362,7 @@
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
-    "type": "unknown"
+    "type": "unavailable"
   },
   {
     "url": "https://notabug.org/{username}",
@@ -4390,7 +4390,7 @@
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
-    "type": "unknown"
+    "type": "unavailable"
   },
   {
     "url": "https://note.com/{username}",
@@ -4431,7 +4431,7 @@
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
-    "type": "unknown"
+    "type": "unavailable"
   },
   {
     "url": "https://ok.ru/{username}",
@@ -4454,7 +4454,7 @@
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
-    "type": "unknown"
+    "type": "unavailable"
   },
   {
     "url": "https://open.spotify.com/user/{username}",
@@ -4530,7 +4530,7 @@
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
-    "type": "unknown"
+    "type": "unavailable"
   },
   {
     "url": "https://openstreetmap.org/user/{username}",
@@ -4581,7 +4581,7 @@
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
-    "type": "unknown"
+    "type": "unavailable"
   },
   {
     "url": "https://otzovik.com/profile/{username}",
@@ -4589,7 +4589,7 @@
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
-    "type": "unknown"
+    "type": "unavailable"
   },
   {
     "url": "https://ourdjtalk.com/members?username={username}",
@@ -4612,7 +4612,7 @@
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
-    "type": "unknown"
+    "type": "unavailable"
   },
   {
     "url": "https://packagist.org/packages/{username}",
@@ -4630,7 +4630,7 @@
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
-    "type": "unknown"
+    "type": "unavailable"
   },
   {
     "url": "https://pastebin.com/u/{username}",
@@ -4722,7 +4722,7 @@
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
-    "type": "unknown"
+    "type": "unavailable"
   },
   {
     "url": "https://php.ru/forum/members/?username={username}",
@@ -4734,7 +4734,7 @@
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
-    "type": "unknown"
+    "type": "unavailable"
   },
   {
     "url": "https://pikabu.ru/@{username}",
@@ -4746,7 +4746,7 @@
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
-    "type": "unknown"
+    "type": "unavailable"
   },
   {
     "url": "https://pinkbike.com/u/{username}",
@@ -4769,7 +4769,7 @@
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
-    "type": "unknown"
+    "type": "unavailable"
   },
   {
     "url": "https://pinterest.com/{username}",
@@ -4841,7 +4841,7 @@
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
-    "type": "unknown"
+    "type": "unavailable"
   },
   {
     "url": "https://pokemonshowdown.com/users/{username}",
@@ -4859,7 +4859,7 @@
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
-    "type": "unknown"
+    "type": "unavailable"
   },
   {
     "url": "https://polarsteps.com/{username}",
@@ -4871,7 +4871,7 @@
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
-    "type": "unknown"
+    "type": "unavailable"
   },
   {
     "url": "https://polygon.com/users/{username}",
@@ -4902,7 +4902,7 @@
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
-    "type": "unknown"
+    "type": "unavailable"
   },
   {
     "url": "https://producthunt.com/@{username}",
@@ -4925,7 +4925,7 @@
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
-    "type": "unknown"
+    "type": "unavailable"
   },
   {
     "url": "https://profil.chatujme.cz/{username}",
@@ -4943,7 +4943,7 @@
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
-    "type": "unknown"
+    "type": "unavailable"
   },
   {
     "url": "https://profile.ameba.jp/ameba/{username}/",
@@ -4989,7 +4989,7 @@
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
-    "type": "unknown"
+    "type": "unavailable"
   },
   {
     "url": "https://prog.hu/azonosito/info/{username}",
@@ -5001,7 +5001,7 @@
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
-    "type": "unknown"
+    "type": "unavailable"
   },
   {
     "status": "bad",
@@ -5025,7 +5025,7 @@
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
-    "type": "unknown"
+    "type": "unavailable"
   },
   {
     "url": "https://psnprofiles.com/{username}",
@@ -5037,7 +5037,7 @@
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
-    "type": "unknown"
+    "type": "unavailable"
   },
   {
     "url": "https://pypi.org/user/{username}",
@@ -5060,7 +5060,7 @@
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
-    "type": "unknown"
+    "type": "unavailable"
   },
   {
     "url": "https://quizlet.com/{username}",
@@ -5129,7 +5129,7 @@
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
-    "type": "unknown"
+    "type": "unavailable"
   },
   {
     "url": "https://rateyourmusic.com/~{username}",
@@ -5175,7 +5175,7 @@
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
-    "type": "unknown"
+    "type": "unavailable"
   },
   {
     "url": "https://redbubble.com/people/{username}",
@@ -5198,7 +5198,7 @@
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
-    "type": "unknown"
+    "type": "unavailable"
   },
   {
     "url": "https://reddit.com/user/{username}",
@@ -5240,7 +5240,7 @@
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
-    "type": "unknown"
+    "type": "unavailable"
   },
   {
     "url": "https://researchgate.net/profile/{username}",
@@ -5303,7 +5303,7 @@
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
-    "type": "unknown"
+    "type": "unavailable"
   },
   {
     "url": "https://robertsspaceindustries.com/citizens/{username}",
@@ -5326,7 +5326,7 @@
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
-    "type": "unknown"
+    "type": "unavailable"
   },
   {
     "url": "https://roblox.com/user.aspx?username={username}",
@@ -5334,7 +5334,7 @@
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
-    "type": "unknown"
+    "type": "unavailable"
   },
   {
     "url": "https://rubygems.org/profiles/{username}",
@@ -5362,7 +5362,7 @@
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
-    "type": "unknown"
+    "type": "unavailable"
   },
   {
     "url": "https://rusfootball.info/user/{username}",
@@ -5370,7 +5370,7 @@
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
-    "type": "unknown"
+    "type": "unavailable"
   },
   {
     "url": "https://satsis.info/user/{username}",
@@ -5388,7 +5388,7 @@
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
-    "type": "unknown"
+    "type": "unavailable"
   },
   {
     "url": "https://sbazar.cz/{username}",
@@ -5429,7 +5429,7 @@
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
-    "type": "unknown"
+    "type": "unavailable"
   },
   {
     "url": "https://scribd.com/{username}",
@@ -5447,7 +5447,7 @@
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
-    "type": "unknown"
+    "type": "unavailable"
   },
   {
     "url": "https://sharechat.com/profile/{username}",
@@ -5459,7 +5459,7 @@
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
-    "type": "unknown"
+    "type": "unavailable"
   },
   {
     "url": "https://shitpostbot.com/user/{username}",
@@ -5467,7 +5467,7 @@
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
-    "type": "unknown"
+    "type": "unavailable"
   },
   {
     "url": "https://slashdot.org/~{username}",
@@ -5549,7 +5549,7 @@
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
-    "type": "unknown"
+    "type": "unavailable"
   },
   {
     "url": "https://social.tchncs.de/@{username}",
@@ -5577,7 +5577,7 @@
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
-    "type": "unknown"
+    "type": "unavailable"
   },
   {
     "url": "https://soundcloud.com/{username}",
@@ -5646,7 +5646,7 @@
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
-    "type": "unknown"
+    "type": "unavailable"
   },
   {
     "url": "https://sparkpeople.com/mypage.asp?id={username}",
@@ -5669,7 +5669,7 @@
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
-    "type": "unknown"
+    "type": "unavailable"
   },
   {
     "url": "https://speedrun.com/user/{username}",
@@ -5692,7 +5692,7 @@
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
-    "type": "unknown"
+    "type": "unavailable"
   },
   {
     "url": "https://spletnik.ru/user/{username}",
@@ -5710,7 +5710,7 @@
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
-    "type": "unknown"
+    "type": "unavailable"
   },
   {
     "url": "https://splits.io/users/{username}",
@@ -5733,7 +5733,7 @@
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
-    "type": "unknown"
+    "type": "unavailable"
   },
   {
     "url": "https://sporcle.com/user/{username}/people",
@@ -5768,7 +5768,7 @@
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
-    "type": "unknown"
+    "type": "unavailable"
   },
   {
     "url": "https://steamcommunity.com/id/{username}",
@@ -5791,7 +5791,7 @@
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
-    "type": "unknown"
+    "type": "unavailable"
   },
   {
     "url": "https://steamid.uk/profile/{username}",
@@ -5809,7 +5809,7 @@
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
-    "type": "unknown"
+    "type": "unavailable"
   },
   {
     "url": "https://strava.com/athletes/{username}",
@@ -5822,7 +5822,7 @@
     "timeout": 0,
     "implicit": 0,
     "top10": "true",
-    "type": "unknown"
+    "type": "unavailable"
   },
   {
     "url": "https://svidbook.ru/user/{username}",
@@ -5835,7 +5835,7 @@
     "selected": "true",
     "timeout": 10,
     "implicit": 10,
-    "type": "unknown"
+    "type": "unavailable"
   },
   {
     "url": "https://t.me/{username}",
@@ -5864,7 +5864,7 @@
     "selected": "true",
     "timeout": 0,
     "implicit": 0,
-    "type": "unknown"
+    "type": "unavailable"
   },
   {
     "url": "https://tellonym.me/{username}",
@@ -5872,7 +5872,7 @@
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
-    "type": "unknown"
+    "type": "unavailable"
   },
   {
     "url": "https://theverge.com/users/{username}",
@@ -5919,7 +5919,7 @@
     "selected": "true",
     "timeout": 0,
     "implicit": 0,
-    "type": "unknown"
+    "type": "unavailable"
   },
   {
     "url": "https://toster.ru/user/{username}/answers",
@@ -5935,7 +5935,7 @@
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
-    "type": "unknown"
+    "type": "unavailable"
   },
   {
     "url": "https://tradingview.com/u/{username}",
@@ -5958,7 +5958,7 @@
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
-    "type": "unknown"
+    "type": "unavailable"
   },
   {
     "url": "https://trakt.tv/users/{username}",
@@ -5976,7 +5976,7 @@
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
-    "type": "unknown"
+    "type": "unavailable"
   },
   {
     "url": "https://trashbox.ru/users/{username}",
@@ -5988,7 +5988,7 @@
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
-    "type": "unknown"
+    "type": "unavailable"
   },
   {
     "url": "https://travellerspoint.com/users/{username}",
@@ -6028,7 +6028,7 @@
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
-    "type": "unknown"
+    "type": "unavailable"
   },
   {
     "url": "https://trip.skyscanner.com/user/{username}",
@@ -6059,7 +6059,7 @@
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
-    "type": "unknown"
+    "type": "unavailable"
   },
   {
     "url": "https://tripit.com/people/{username}#/profile/basic-info",
@@ -6067,7 +6067,7 @@
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
-    "type": "unknown"
+    "type": "unavailable"
   },
   {
     "url": "https://tryhackme.com/p/{username}",
@@ -6090,7 +6090,7 @@
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
-    "type": "unknown"
+    "type": "unavailable"
   },
   {
     "url": "https://twitch.tv/{username}",
@@ -6125,7 +6125,7 @@
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
-    "type": "unknown"
+    "type": "unavailable"
   },
   {
     "url": "https://ultimate-guitar.com/u/{username}",
@@ -6204,7 +6204,7 @@
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
-    "type": "unknown"
+    "type": "unavailable"
   },
   {
     "url": "https://venmo.com/{username}",
@@ -6232,7 +6232,7 @@
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
-    "type": "unknown"
+    "type": "unavailable"
   },
   {
     "url": "https://vero.co/{username}",
@@ -6255,7 +6255,7 @@
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
-    "type": "unknown"
+    "type": "unavailable"
   },
   {
     "url": "https://vgr.com/forum/profile/{username}",
@@ -6278,7 +6278,7 @@
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
-    "type": "unknown"
+    "type": "unavailable"
   },
   {
     "url": "https://videogamer.com/forums/index.php?/profile/{username}/",
@@ -6290,7 +6290,7 @@
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
-    "type": "unknown"
+    "type": "unavailable"
   },
   {
     "url": "https://vimeo.com/{username}",
@@ -6325,7 +6325,7 @@
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
-    "type": "unknown"
+    "type": "unavailable"
   },
   {
     "url": "https://virustotal.com/ui/users/{username}/trusted_users",
@@ -6374,7 +6374,7 @@
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
-    "type": "unknown"
+    "type": "unavailable"
   },
   {
     "url": "https://warriorforum.com/members/{username}.html",
@@ -6402,7 +6402,7 @@
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
-    "type": "unknown"
+    "type": "unavailable"
   },
   {
     "url": "https://wattpad.com/user/{username}",
@@ -6453,7 +6453,7 @@
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
-    "type": "unknown"
+    "type": "unavailable"
   },
   {
     "url": "https://wikidot.com/user:info/{username}",
@@ -6507,7 +6507,7 @@
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
-    "type": "unknown"
+    "type": "unavailable"
   },
   {
     "url": "https://younow.com/{username}",
@@ -6538,7 +6538,7 @@
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
-    "type": "unknown"
+    "type": "unavailable"
   },
   {
     "url": "https://youtube.com/{username}",
@@ -6593,7 +6593,7 @@
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
-    "type": "unknown"
+    "type": "unavailable"
   },
   {
     "url": "https://{username}.blogspot.com",
@@ -6629,7 +6629,7 @@
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
-    "type": "unknown"
+    "type": "unavailable"
   },
   {
     "url": "https://{username}.carbonmade.com",
@@ -6652,7 +6652,7 @@
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
-    "type": "unknown"
+    "type": "unavailable"
   },
   {
     "url": "https://{username}.contently.com",
@@ -6660,7 +6660,7 @@
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
-    "type": "unknown"
+    "type": "unavailable"
   },
   {
     "url": "https://{username}.crevado.com",
@@ -6683,7 +6683,7 @@
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
-    "type": "unknown"
+    "type": "unavailable"
   },
   {
     "url": "https://{username}.deviantart.com",
@@ -6734,7 +6734,7 @@
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
-    "type": "unknown"
+    "type": "unavailable"
   },
   {
     "url": "https://{username}.hubpages.com",
@@ -6757,7 +6757,7 @@
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
-    "type": "unknown"
+    "type": "unavailable"
   },
   {
     "url": "https://{username}.itch.io",
@@ -6780,7 +6780,7 @@
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
-    "type": "unknown"
+    "type": "unavailable"
   },
   {
     "url": "https://{username}.jimdosite.com",
@@ -6788,7 +6788,7 @@
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
-    "type": "unknown"
+    "type": "unavailable"
   },
   {
     "url": "https://{username}.livejournal.com",
@@ -6857,7 +6857,7 @@
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
-    "type": "unknown"
+    "type": "unavailable"
   },
   {
     "url": "https://{username}.slack.com",
@@ -6865,7 +6865,7 @@
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
-    "type": "unknown"
+    "type": "unavailable"
   },
   {
     "url": "https://{username}.tumblr.com",
@@ -6894,7 +6894,7 @@
     "selected": "true",
     "timeout": 0,
     "implicit": 0,
-    "type": "unknown"
+    "type": "unavailable"
   },
   {
     "url": "https://{username}.webnode.cz",
@@ -6917,7 +6917,7 @@
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
-    "type": "unknown"
+    "type": "unavailable"
   },
   {
     "url": "https://{username}.wix.com",
@@ -6929,7 +6929,7 @@
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
-    "type": "unknown"
+    "type": "unavailable"
   },
   {
     "url": "https://{username}.wordpress.com",
@@ -6957,7 +6957,7 @@
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
-    "type": "unknown"
+    "type": "unavailable"
   },
   {
     "url": "https://{username}.www.nn.ru",
@@ -6980,6 +6980,6 @@
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
-    "type": "unknown"
+    "type": "unavailable"
   }
 ]
