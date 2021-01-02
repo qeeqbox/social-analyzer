@@ -6981,5 +6981,56 @@
     "timeout": 0,
     "implicit": 0,
     "type": "unavailable"
+  },
+  {
+    "url": "https://crunchbase.com/person/{username}",
+    "detections": [{
+        "return": "false",
+        "string": "find this page for you.",
+        "type": "normal"
+      },
+      {
+        "return": "true",
+        "string": "find this page for you.",
+        "type": "normal"
+      },
+      {
+        "return": "true",
+        "string": "\"section-title\"",
+        "type": "normal"
+      },
+      {
+        "return": "true",
+        "string": "\"profile\"",
+        "type": "normal"
+      }
+    ],
+    "selected": "false",
+    "timeout": 0,
+    "implicit": 0,
+    "type": "unavailable"
+  },
+  {
+    "url": "https://depop.com/{username}/",
+    "detections": [{
+        "return": "false",
+        "string": "that page doesn",
+        "type": "normal"
+      },
+      {
+        "return": "false",
+        "string": "404 Page not found<",
+        "type": "normal"
+      },
+      {
+        "return": "true",
+        "string": "UserName-",
+        "type": "normal"
+      }
+    ],
+    "selected": "false",
+    "timeout": 0,
+    "implicit": 0,
+    "type": "unavailable"
   }
 ]
