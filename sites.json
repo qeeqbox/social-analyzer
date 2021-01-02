@@ -7,7 +7,8 @@
     }],
     "selected": "false",
     "timeout": 0,
-    "implicit": 0
+    "implicit": 0,
+    "type": "Social Networking"
   },
   {
     "url": "https://7cups.com/@{username}",
@@ -34,7 +35,8 @@
     ],
     "selected": "false",
     "timeout": 0,
-    "implicit": 0
+    "implicit": 0,
+    "type": "Emotional support website"
   },
   {
     "url": "https://9gag.com/u/{username}",
@@ -56,7 +58,8 @@
     ],
     "selected": "false",
     "timeout": 0,
-    "implicit": 0
+    "implicit": 0,
+    "type": "Entertainment"
   },
   {
     "url": "https://about.me/{username}",
@@ -78,7 +81,8 @@
     ],
     "selected": "false",
     "timeout": 0,
-    "implicit": 0
+    "implicit": 0,
+    "type": "Social directory"
   },
   {
     "status": "bad",
@@ -96,7 +100,8 @@
     ],
     "selected": "false",
     "timeout": 0,
-    "implicit": 0
+    "implicit": 0,
+    "type": "unknown"
   },
   {
     "url": "https://alik.cz/u/{username}",
@@ -107,7 +112,8 @@
     }],
     "selected": "false",
     "timeout": 0,
-    "implicit": 0
+    "implicit": 0,
+    "type": "unknown"
   },
   {
     "url": "https://allmylinks.com/{username}",
@@ -134,7 +140,8 @@
     ],
     "selected": "false",
     "timeout": 0,
-    "implicit": 0
+    "implicit": 0,
+    "type": "unknown"
   },
   {
     "url": "https://alltrails.com/members/{username}",
@@ -161,7 +168,8 @@
     ],
     "selected": "false",
     "timeout": 0,
-    "implicit": 0
+    "implicit": 0,
+    "type": "unknown"
   },
   {
     "url": "https://aminoapps.com/u/{username}",
@@ -183,7 +191,8 @@
     ],
     "selected": "false",
     "timeout": 0,
-    "implicit": 0
+    "implicit": 0,
+    "type": "unknown"
   },
   {
     "url": "https://angel.co/{username}",
@@ -210,7 +219,8 @@
     ],
     "selected": "false",
     "timeout": 0,
-    "implicit": 0
+    "implicit": 0,
+    "type": "unknown"
   },
   {
     "url": "https://anobii.com/{username}/profile",
@@ -232,7 +242,8 @@
     ],
     "selected": "false",
     "timeout": 0,
-    "implicit": 0
+    "implicit": 0,
+    "type": "Catalog and community"
   },
   {
     "url": "https://archive.org/details/@{username}",
@@ -259,7 +270,8 @@
     ],
     "selected": "false",
     "timeout": 0,
-    "implicit": 0
+    "implicit": 0,
+    "type": "unknown"
   },
   {
     "url": "https://asciinema.org/~{username}",
@@ -281,7 +293,8 @@
     ],
     "selected": "false",
     "timeout": 0,
-    "implicit": 0
+    "implicit": 0,
+    "type": "unknown"
   },
   {
     "url": "https://ask.fedoraproject.org/u/{username}",
@@ -308,7 +321,8 @@
     ],
     "selected": "false",
     "timeout": 0,
-    "implicit": 0
+    "implicit": 0,
+    "type": "unknown"
   },
   {
     "url": "https://ask.fm/{username}",
@@ -335,7 +349,8 @@
     ],
     "selected": "false",
     "timeout": 0,
-    "implicit": 0
+    "implicit": 0,
+    "type": "Social Q&A website"
   },
   {
     "url": "https://audiojungle.net/user/{username}",
@@ -362,7 +377,8 @@
     ],
     "selected": "false",
     "timeout": 0,
-    "implicit": 0
+    "implicit": 0,
+    "type": "unknown"
   },
   {
     "url": "https://authorstream.com/{username}",
@@ -384,7 +400,8 @@
     ],
     "selected": "false",
     "timeout": 0,
-    "implicit": 0
+    "implicit": 0,
+    "type": "unknown"
   },
   {
     "url": "https://avforums.com/members/{username}",
@@ -395,14 +412,16 @@
     }],
     "selected": "false",
     "timeout": 0,
-    "implicit": 0
+    "implicit": 0,
+    "type": "unknown"
   },
   {
     "url": "https://avizo.cz/{username}",
     "detections": [],
     "selected": "false",
     "timeout": 0,
-    "implicit": 0
+    "implicit": 0,
+    "type": "unknown"
   },
   {
     "url": "https://baby.ru/u/{username}",
@@ -419,7 +438,8 @@
     ],
     "selected": "false",
     "timeout": 0,
-    "implicit": 0
+    "implicit": 0,
+    "type": "unknown"
   },
   {
     "url": "https://babyblog.ru/user/info/{username}",
@@ -430,7 +450,8 @@
     }],
     "selected": "false",
     "timeout": 0,
-    "implicit": 0
+    "implicit": 0,
+    "type": "unknown"
   },
   {
     "url": "https://bandcamp.com/{username}",
@@ -457,7 +478,8 @@
     ],
     "selected": "false",
     "timeout": 0,
-    "implicit": 0
+    "implicit": 0,
+    "type": "Privately held company"
   },
   {
     "url": "https://behance.net/{username}",
@@ -489,14 +511,16 @@
     ],
     "selected": "false",
     "timeout": 0,
-    "implicit": 0
+    "implicit": 0,
+    "type": "unknown"
   },
   {
     "url": "https://beta.cent.co/@{username}",
     "detections": [],
     "selected": "false",
     "timeout": 0,
-    "implicit": 0
+    "implicit": 0,
+    "type": "unknown"
   },
   {
     "url": "https://binarysearch.io/@/{username}",
@@ -507,7 +531,8 @@
     }],
     "selected": "false",
     "timeout": 0,
-    "implicit": 0
+    "implicit": 0,
+    "type": "unknown"
   },
   {
     "url": "https://bitbucket.org/{username}",
@@ -529,7 +554,8 @@
     ],
     "selected": "false",
     "timeout": 0,
-    "implicit": 0
+    "implicit": 0,
+    "type": "Collaborative version control"
   },
   {
     "url": "https://bitcoinforum.com/profile/{username}",
@@ -551,7 +577,8 @@
     ],
     "selected": "false",
     "timeout": 0,
-    "implicit": 0
+    "implicit": 0,
+    "type": "unknown"
   },
   {
     "url": "https://blip.fm/{username}",
@@ -578,7 +605,8 @@
     ],
     "selected": "false",
     "timeout": 0,
-    "implicit": 0
+    "implicit": 0,
+    "type": "Online music database"
   },
   {
     "url": "https://blog.naver.com/{username}",
@@ -595,7 +623,8 @@
     ],
     "selected": "false",
     "timeout": 0,
-    "implicit": 0
+    "implicit": 0,
+    "type": "Search Engine"
   },
   {
     "url": "https://bodyspace.bodybuilding.com/{username}",
@@ -612,7 +641,8 @@
     ],
     "selected": "false",
     "timeout": 0,
-    "implicit": 0
+    "implicit": 0,
+    "type": "unknown"
   },
   {
     "url": "https://bookcrossing.com/mybookshelf/{username}",
@@ -634,7 +664,8 @@
     ],
     "selected": "false",
     "timeout": 0,
-    "implicit": 0
+    "implicit": 0,
+    "type": "unknown"
   },
   {
     "url": "https://buymeacoffee.com/{username}",
@@ -656,7 +687,8 @@
     ],
     "selected": "false",
     "timeout": 0,
-    "implicit": 0
+    "implicit": 0,
+    "type": "unknown"
   },
   {
     "url": "https://buzzfeed.com/{username}",
@@ -683,14 +715,16 @@
     ],
     "selected": "false",
     "timeout": 0,
-    "implicit": 0
+    "implicit": 0,
+    "type": "EntertainmentNews"
   },
   {
     "url": "https://canva.com/{username}",
     "detections": [],
     "selected": "false",
     "timeout": 0,
-    "implicit": 0
+    "implicit": 0,
+    "type": "unknown"
   },
   {
     "url": "https://capfriendly.com/users/{username}",
@@ -701,7 +735,8 @@
     }],
     "selected": "false",
     "timeout": 0,
-    "implicit": 0
+    "implicit": 0,
+    "type": "unknown"
   },
   {
     "url": "https://career.habr.com/{username}",
@@ -718,7 +753,8 @@
     ],
     "selected": "false",
     "timeout": 0,
-    "implicit": 0
+    "implicit": 0,
+    "type": "Web search engine"
   },
   {
     "url": "https://cash.me/{username}",
@@ -745,7 +781,8 @@
     ],
     "selected": "false",
     "timeout": 0,
-    "implicit": 0
+    "implicit": 0,
+    "type": "unknown"
   },
   {
     "url": "https://championat.com/user/{username}",
@@ -762,7 +799,8 @@
     ],
     "selected": "false",
     "timeout": 0,
-    "implicit": 0
+    "implicit": 0,
+    "type": "unknown"
   },
   {
     "url": "https://chaos.social/@{username}",
@@ -784,7 +822,8 @@
     ],
     "selected": "false",
     "timeout": 0,
-    "implicit": 0
+    "implicit": 0,
+    "type": "unknown"
   },
   {
     "url": "https://chess.com/member/{username}",
@@ -811,7 +850,8 @@
     ],
     "selected": "false",
     "timeout": 0,
-    "implicit": 0
+    "implicit": 0,
+    "type": "Social networking service"
   },
   {
     "url": "https://cloob.com/name/{username}",
@@ -828,14 +868,16 @@
     ],
     "selected": "false",
     "timeout": 0,
-    "implicit": 0
+    "implicit": 0,
+    "type": "Social network service"
   },
   {
     "url": "https://clozemaster.com/players/{username}",
     "detections": [],
     "selected": "false",
     "timeout": 0,
-    "implicit": 0
+    "implicit": 0,
+    "type": "unknown"
   },
   {
     "url": "https://cnet.com/profiles/{username}",
@@ -862,14 +904,16 @@
     ],
     "selected": "false",
     "timeout": 0,
-    "implicit": 0
+    "implicit": 0,
+    "type": "Technology"
   },
   {
     "url": "https://codecademy.com/{username}",
     "detections": [],
     "selected": "false",
     "timeout": 0,
-    "implicit": 0
+    "implicit": 0,
+    "type": "unknown"
   },
   {
     "url": "https://codechef.com/users/{username}",
@@ -886,7 +930,8 @@
     ],
     "selected": "false",
     "timeout": 0,
-    "implicit": 0
+    "implicit": 0,
+    "type": "unknown"
   },
   {
     "url": "https://codementor.io/{username}",
@@ -908,7 +953,8 @@
     ],
     "selected": "false",
     "timeout": 0,
-    "implicit": 0
+    "implicit": 0,
+    "type": "unknown"
   },
   {
     "url": "https://codepen.io/{username}",
@@ -935,7 +981,8 @@
     ],
     "selected": "false",
     "timeout": 0,
-    "implicit": 0
+    "implicit": 0,
+    "type": "unknown"
   },
   {
     "url": "https://codewars.com/users/{username}",
@@ -957,7 +1004,8 @@
     ],
     "selected": "false",
     "timeout": 0,
-    "implicit": 0
+    "implicit": 0,
+    "type": "Technology"
   },
   {
     "url": "https://colourlovers.com/lover/{username}",
@@ -979,7 +1027,8 @@
     ],
     "selected": "false",
     "timeout": 0,
-    "implicit": 0
+    "implicit": 0,
+    "type": "unknown"
   },
   {
     "url": "https://community.cloudflare.com/u/{username}",
@@ -1001,7 +1050,8 @@
     ],
     "selected": "false",
     "timeout": 0,
-    "implicit": 0
+    "implicit": 0,
+    "type": "unknown"
   },
   {
     "url": "https://community.eintracht.de/fans/{username}",
@@ -1018,7 +1068,8 @@
     ],
     "selected": "false",
     "timeout": 0,
-    "implicit": 0
+    "implicit": 0,
+    "type": "unknown"
   },
   {
     "url": "https://community.oracle.com/people/{username}",
@@ -1035,7 +1086,8 @@
     ],
     "selected": "false",
     "timeout": 0,
-    "implicit": 0
+    "implicit": 0,
+    "type": "unknown"
   },
   {
     "url": "https://community.signalusers.org/u/{username}",
@@ -1062,7 +1114,8 @@
     ],
     "selected": "false",
     "timeout": 0,
-    "implicit": 0
+    "implicit": 0,
+    "type": "unknown"
   },
   {
     "url": "https://community.windy.com/user/{username}",
@@ -1089,7 +1142,8 @@
     ],
     "selected": "false",
     "timeout": 0,
-    "implicit": 0
+    "implicit": 0,
+    "type": "unknown"
   },
   {
     "url": "https://connect.opensuse.org/pg/profile/{username}",
@@ -1111,7 +1165,8 @@
     ],
     "selected": "false",
     "timeout": 0,
-    "implicit": 0
+    "implicit": 0,
+    "type": "unknown"
   },
   {
     "url": "https://coroflot.com/{username}",
@@ -1133,7 +1188,8 @@
     ],
     "selected": "false",
     "timeout": 0,
-    "implicit": 0
+    "implicit": 0,
+    "type": "unknown"
   },
   {
     "url": "https://couchsurfing.com/people/{username}",
@@ -1150,7 +1206,8 @@
     ],
     "selected": "false",
     "timeout": 0,
-    "implicit": 0
+    "implicit": 0,
+    "type": "unknown"
   },
   {
     "url": "https://countable.us/{username}",
@@ -1172,7 +1229,8 @@
     ],
     "selected": "false",
     "timeout": 0,
-    "implicit": 0
+    "implicit": 0,
+    "type": "unknown"
   },
   {
     "url": "https://cracked.com/members/{username}",
@@ -1183,7 +1241,8 @@
     }],
     "selected": "false",
     "timeout": 0,
-    "implicit": 0
+    "implicit": 0,
+    "type": "Entertainment"
   },
   {
     "url": "https://creativemarket.com/{username}",
@@ -1205,7 +1264,8 @@
     ],
     "selected": "false",
     "timeout": 0,
-    "implicit": 0
+    "implicit": 0,
+    "type": "unknown"
   },
   {
     "url": "https://d3.ru/user/{username}/posts",
@@ -1216,7 +1276,8 @@
     }],
     "selected": "false",
     "timeout": 0,
-    "implicit": 0
+    "implicit": 0,
+    "type": "Communities Platform"
   },
   {
     "url": "https://dailykos.com/user/{username}",
@@ -1243,7 +1304,8 @@
     ],
     "selected": "false",
     "timeout": 0,
-    "implicit": 0
+    "implicit": 0,
+    "type": "Political blog"
   },
   {
     "url": "https://dailymotion.com/{username}",
@@ -1265,7 +1327,8 @@
     ],
     "selected": "false",
     "timeout": 0,
-    "implicit": 0
+    "implicit": 0,
+    "type": "Video hosting service"
   },
   {
     "url": "https://data.typeracer.com/pit/profile?user={username}",
@@ -1292,7 +1355,8 @@
     ],
     "selected": "false",
     "timeout": 0,
-    "implicit": 0
+    "implicit": 0,
+    "type": "Multiplayer online game"
   },
   {
     "url": "https://dating.ru/{username}",
@@ -1309,7 +1373,8 @@
     ],
     "selected": "false",
     "timeout": 0,
-    "implicit": 0
+    "implicit": 0,
+    "type": "unknown"
   },
   {
     "url": "https://designspiration.net/{username}",
@@ -1336,7 +1401,8 @@
     ],
     "selected": "false",
     "timeout": 0,
-    "implicit": 0
+    "implicit": 0,
+    "type": "unknown"
   },
   {
     "url": "https://dev.to/{username}",
@@ -1363,7 +1429,8 @@
     ],
     "selected": "false",
     "timeout": 0,
-    "implicit": 0
+    "implicit": 0,
+    "type": "unknown"
   },
   {
     "url": "https://devrant.com/users/{username}",
@@ -1380,7 +1447,8 @@
     ],
     "selected": "false",
     "timeout": 0,
-    "implicit": 0
+    "implicit": 0,
+    "type": "unknown"
   },
   {
     "url": "https://discogs.com/user/{username}",
@@ -1402,7 +1470,8 @@
     ],
     "selected": "false",
     "timeout": 0,
-    "implicit": 0
+    "implicit": 0,
+    "type": "Music"
   },
   {
     "url": "https://discuss.atom.io/u/{username}/summary",
@@ -1429,7 +1498,8 @@
     ],
     "selected": "false",
     "timeout": 0,
-    "implicit": 0
+    "implicit": 0,
+    "type": "unknown"
   },
   {
     "url": "https://discuss.elastic.co/u/{username}",
@@ -1456,7 +1526,8 @@
     ],
     "selected": "false",
     "timeout": 0,
-    "implicit": 0
+    "implicit": 0,
+    "type": "unknown"
   },
   {
     "url": "https://discussions.apple.com/profile/{username}",
@@ -1483,7 +1554,8 @@
     ],
     "selected": "false",
     "timeout": 0,
-    "implicit": 0
+    "implicit": 0,
+    "type": "unknown"
   },
   {
     "url": "https://disqus.com/{username}",
@@ -1510,7 +1582,26 @@
     ],
     "selected": "false",
     "timeout": 0,
-    "implicit": 0
+    "implicit": 0,
+    "type": "unknown"
+  },
+  {
+    "url": "https://douban.com/people/{username}/",
+    "detections": [{
+        "return": "true",
+        "string": "error.",
+        "type": "normal"
+      },
+      {
+        "return": "true",
+        "string": "-profile-",
+        "type": "normal"
+      }
+    ],
+    "selected": "false",
+    "timeout": 0,
+    "implicit": 0,
+    "type": "movie and book database"
   },
   {
     "url": "https://dribbble.com/{username}",
@@ -1537,7 +1628,8 @@
     ],
     "selected": "false",
     "timeout": 0,
-    "implicit": 0
+    "implicit": 0,
+    "type": "unknown"
   },
   {
     "url": "https://drive2.ru/users/{username}",
@@ -1559,7 +1651,8 @@
     ],
     "selected": "false",
     "timeout": 0,
-    "implicit": 0
+    "implicit": 0,
+    "type": "unknown"
   },
   {
     "url": "https://duolingo.com/profile/{username}",
@@ -1586,7 +1679,8 @@
     ],
     "selected": "false",
     "timeout": 0,
-    "implicit": 0
+    "implicit": 0,
+    "type": "unknown"
   },
   {
     "url": "https://ebay.com/usr/{username}",
@@ -1618,7 +1712,8 @@
     ],
     "selected": "false",
     "timeout": 0,
-    "implicit": 0
+    "implicit": 0,
+    "type": "unknown"
   },
   {
     "url": "https://echo.msk.ru/users/{username}",
@@ -1629,7 +1724,8 @@
     }],
     "selected": "false",
     "timeout": 0,
-    "implicit": 0
+    "implicit": 0,
+    "type": "unknown"
   },
   {
     "url": "https://egpu.io/forums/profile/{username}",
@@ -1651,7 +1747,8 @@
     ],
     "selected": "false",
     "timeout": 0,
-    "implicit": 0
+    "implicit": 0,
+    "type": "unknown"
   },
   {
     "url": "https://ello.co/{username}",
@@ -1683,7 +1780,8 @@
     ],
     "selected": "false",
     "timeout": 0,
-    "implicit": 0
+    "implicit": 0,
+    "type": "Social network"
   },
   {
     "url": "https://en.gravatar.com/{username}",
@@ -1705,14 +1803,16 @@
     ],
     "selected": "false",
     "timeout": 0,
-    "implicit": 0
+    "implicit": 0,
+    "type": "Avatar hosting"
   },
   {
     "url": "https://en.tm-ladder.com/{username}_rech.php",
     "detections": [],
     "selected": "false",
     "timeout": 0,
-    "implicit": 0
+    "implicit": 0,
+    "type": "unknown"
   },
   {
     "url": "https://escapistmagazine.com/profiles/view/{username}",
@@ -1734,7 +1834,8 @@
     ],
     "selected": "false",
     "timeout": 0,
-    "implicit": 0
+    "implicit": 0,
+    "type": "Video game website"
   },
   {
     "url": "https://etsy.com/shop/{username}",
@@ -1766,7 +1867,8 @@
     ],
     "selected": "false",
     "timeout": 0,
-    "implicit": 0
+    "implicit": 0,
+    "type": "unknown"
   },
   {
     "url": "https://eurogamer.net/profiles/{username}",
@@ -1788,7 +1890,8 @@
     ],
     "selected": "false",
     "timeout": 0,
-    "implicit": 0
+    "implicit": 0,
+    "type": "Video game journalism"
   },
   {
     "url": "https://euw.op.gg/summoner/userName={username}",
@@ -1815,7 +1918,8 @@
     ],
     "selected": "false",
     "timeout": 0,
-    "implicit": 0
+    "implicit": 0,
+    "type": "unknown"
   },
   {
     "url": "https://eyeem.com/u/{username}",
@@ -1837,7 +1941,8 @@
     ],
     "selected": "false",
     "timeout": 0,
-    "implicit": 0
+    "implicit": 0,
+    "type": "Photo sharing / Social Networking"
   },
   {
     "url": "https://f3.cool/{username}",
@@ -1848,7 +1953,8 @@
     }],
     "selected": "false",
     "timeout": 0,
-    "implicit": 0
+    "implicit": 0,
+    "type": "unknown"
   },
   {
     "name": "facebook",
@@ -1872,7 +1978,8 @@
     "selected": "true",
     "timeout": 0,
     "implicit": 0,
-    "top10": "true"
+    "top10": "true",
+    "type": "Social networking service"
   },
   {
     "url": "https://facenama.com/{username}",
@@ -1894,7 +2001,8 @@
     ],
     "selected": "false",
     "timeout": 0,
-    "implicit": 0
+    "implicit": 0,
+    "type": "unknown"
   },
   {
     "url": "https://fandom.com/u/{username}",
@@ -1921,14 +2029,16 @@
     ],
     "selected": "false",
     "timeout": 0,
-    "implicit": 0
+    "implicit": 0,
+    "type": "Wiki hosting service"
   },
   {
     "url": "https://fixya.com/users/{username}",
     "detections": [],
     "selected": "false",
     "timeout": 0,
-    "implicit": 0
+    "implicit": 0,
+    "type": "unknown"
   },
   {
     "url": "https://fl.ru/users/{username}/portfolio",
@@ -1945,7 +2055,8 @@
     ],
     "selected": "false",
     "timeout": 0,
-    "implicit": 0
+    "implicit": 0,
+    "type": "unknown"
   },
   {
     "url": "https://flickr.com/people/{username}",
@@ -1972,7 +2083,8 @@
     ],
     "selected": "false",
     "timeout": 0,
-    "implicit": 0
+    "implicit": 0,
+    "type": "Image/Video hosting service"
   },
   {
     "url": "https://flipboard.com/@{username}",
@@ -1999,7 +2111,8 @@
     ],
     "selected": "false",
     "timeout": 0,
-    "implicit": 0
+    "implicit": 0,
+    "type": "unknown"
   },
   {
     "url": "https://fortnitetracker.com/profile/all/{username}",
@@ -2026,14 +2139,16 @@
     ],
     "selected": "false",
     "timeout": 0,
-    "implicit": 0
+    "implicit": 0,
+    "type": "unknown"
   },
   {
     "url": "https://forum.3dnews.ru/member.php?username={username}",
     "detections": [],
     "selected": "false",
     "timeout": 0,
-    "implicit": 0
+    "implicit": 0,
+    "type": "Torrent index"
   },
   {
     "url": "https://forum.guns.ru/forummisc/blog/{username}",
@@ -2044,7 +2159,8 @@
     }],
     "selected": "false",
     "timeout": 0,
-    "implicit": 0
+    "implicit": 0,
+    "type": "unknown"
   },
   {
     "url": "https://forum.hackthebox.eu/profile/{username}",
@@ -2071,14 +2187,16 @@
     ],
     "selected": "false",
     "timeout": 0,
-    "implicit": 0
+    "implicit": 0,
+    "type": "unknown"
   },
   {
     "url": "https://forum.igromania.ru/member.php?username={username}",
     "detections": [],
     "selected": "false",
     "timeout": 0,
-    "implicit": 0
+    "implicit": 0,
+    "type": "unknown"
   },
   {
     "url": "https://forum.leasehackr.com/u/{username}/summary",
@@ -2105,7 +2223,8 @@
     ],
     "selected": "false",
     "timeout": 0,
-    "implicit": 0
+    "implicit": 0,
+    "type": "unknown"
   },
   {
     "url": "https://forum.sublimetext.com/u/{username}",
@@ -2132,7 +2251,8 @@
     ],
     "selected": "false",
     "timeout": 0,
-    "implicit": 0
+    "implicit": 0,
+    "type": "unknown"
   },
   {
     "url": "https://forum.velomania.ru/member.php?username={username}",
@@ -2149,7 +2269,8 @@
     ],
     "selected": "false",
     "timeout": 0,
-    "implicit": 0
+    "implicit": 0,
+    "type": "unknown"
   },
   {
     "url": "https://forumhouse.ru/members/?username={username}",
@@ -2166,7 +2287,8 @@
     ],
     "selected": "false",
     "timeout": 0,
-    "implicit": 0
+    "implicit": 0,
+    "type": "unknown"
   },
   {
     "url": "https://forumophilia.com/profile.php?mode=viewprofile&u={username}",
@@ -2186,7 +2308,7 @@
         "type": "normal"
       }
     ],
-    "type": "+18",
+    "type": "adult",
     "selected": "false",
     "timeout": 0,
     "implicit": 0
@@ -2216,7 +2338,8 @@
     ],
     "selected": "false",
     "timeout": 0,
-    "implicit": 0
+    "implicit": 0,
+    "type": "unknown"
   },
   {
     "url": "https://forums.kali.org/member.php?username={username}",
@@ -2238,7 +2361,8 @@
     ],
     "selected": "false",
     "timeout": 0,
-    "implicit": 0
+    "implicit": 0,
+    "type": "unknown"
   },
   {
     "url": "https://forums.mmorpg.com/profile/{username}",
@@ -2265,7 +2389,8 @@
     ],
     "selected": "false",
     "timeout": 0,
-    "implicit": 0
+    "implicit": 0,
+    "type": "unknown"
   },
   {
     "url": "https://forums.pcgamer.com/members/?username={username}",
@@ -2287,7 +2412,8 @@
     ],
     "selected": "false",
     "timeout": 0,
-    "implicit": 0
+    "implicit": 0,
+    "type": "unknown"
   },
   {
     "url": "https://forums.whonix.org/u/{username}",
@@ -2314,7 +2440,8 @@
     ],
     "selected": "false",
     "timeout": 0,
-    "implicit": 0
+    "implicit": 0,
+    "type": "unknown"
   },
   {
     "url": "https://fotolog.com/author/{username}",
@@ -2341,7 +2468,8 @@
     ],
     "selected": "false",
     "timeout": 0,
-    "implicit": 0
+    "implicit": 0,
+    "type": "social network"
   },
   {
     "url": "https://freelance.habr.com/freelancers/{username}",
@@ -2358,7 +2486,8 @@
     ],
     "selected": "false",
     "timeout": 0,
-    "implicit": 0
+    "implicit": 0,
+    "type": "Web search engine"
   },
   {
     "url": "https://freelancer.com/u/{username}",
@@ -2385,7 +2514,8 @@
     ],
     "selected": "false",
     "timeout": 0,
-    "implicit": 0
+    "implicit": 0,
+    "type": "Freelance marketplace"
   },
   {
     "url": "https://freesound.org/people/{username}",
@@ -2412,7 +2542,8 @@
     ],
     "selected": "false",
     "timeout": 0,
-    "implicit": 0
+    "implicit": 0,
+    "type": "Audio clip sharing"
   },
   {
     "url": "https://gamefaqs.gamespot.com/community/{username}",
@@ -2439,7 +2570,8 @@
     ],
     "selected": "false",
     "timeout": 0,
-    "implicit": 0
+    "implicit": 0,
+    "type": "Video game journalism"
   },
   {
     "url": "https://gamespot.com/profile/{username}",
@@ -2466,7 +2598,8 @@
     ],
     "selected": "false",
     "timeout": 0,
-    "implicit": 0
+    "implicit": 0,
+    "type": "Video game journalism"
   },
   {
     "url": "https://gaminglatest.com/members/{username}",
@@ -2483,14 +2616,16 @@
     ],
     "selected": "false",
     "timeout": 0,
-    "implicit": 0
+    "implicit": 0,
+    "type": "unknown"
   },
   {
     "url": "https://gdprofiles.com/{username}",
     "detections": [],
     "selected": "false",
     "timeout": 0,
-    "implicit": 0
+    "implicit": 0,
+    "type": "unknown"
   },
   {
     "url": "https://geocaching.com/p/default.aspx?u={username}",
@@ -2512,14 +2647,16 @@
     ],
     "selected": "false",
     "timeout": 0,
-    "implicit": 0
+    "implicit": 0,
+    "type": "unknown"
   },
   {
     "url": "https://getmyuni.com/user/{username}",
     "detections": [],
     "selected": "false",
     "timeout": 0,
-    "implicit": 0
+    "implicit": 0,
+    "type": "unknown"
   },
   {
     "url": "https://gfycat.com/@{username}",
@@ -2546,7 +2683,8 @@
     ],
     "selected": "false",
     "timeout": 0,
-    "implicit": 0
+    "implicit": 0,
+    "type": "unknown"
   },
   {
     "url": "https://giantbomb.com/profile/{username}",
@@ -2568,7 +2706,8 @@
     ],
     "selected": "false",
     "timeout": 0,
-    "implicit": 0
+    "implicit": 0,
+    "type": "Gaming wiki"
   },
   {
     "url": "https://giphy.com/{username}",
@@ -2595,7 +2734,8 @@
     ],
     "selected": "false",
     "timeout": 0,
-    "implicit": 0
+    "implicit": 0,
+    "type": "Subsidiary"
   },
   {
     "url": "https://gitee.com/{username}",
@@ -2617,7 +2757,8 @@
     ],
     "selected": "false",
     "timeout": 0,
-    "implicit": 0
+    "implicit": 0,
+    "type": "unknown"
   },
   {
     "url": "https://github.com/{username}",
@@ -2639,7 +2780,8 @@
     ],
     "selected": "false",
     "timeout": 0,
-    "implicit": 0
+    "implicit": 0,
+    "type": "Collaborative version control"
   },
   {
     "url": "https://gitlab.com/{username}",
@@ -2656,7 +2798,8 @@
     ],
     "selected": "false",
     "timeout": 0,
-    "implicit": 0
+    "implicit": 0,
+    "type": "Git-repository hosting service"
   },
   {
     "url": "https://goodreads.com/{username}",
@@ -2673,7 +2816,8 @@
     ],
     "selected": "false",
     "timeout": 0,
-    "implicit": 0
+    "implicit": 0,
+    "type": "Book"
   },
   {
     "url": "https://gotinder.com/@{username}",
@@ -2684,7 +2828,8 @@
     }],
     "selected": "false",
     "timeout": 0,
-    "implicit": 0
+    "implicit": 0,
+    "type": "unknown"
   },
   {
     "url": "https://gumroad.com/{username}",
@@ -2711,14 +2856,16 @@
     ],
     "selected": "false",
     "timeout": 0,
-    "implicit": 0
+    "implicit": 0,
+    "type": "unknown"
   },
   {
     "url": "https://gurushots.com/{username}/photos",
     "detections": [],
     "selected": "false",
     "timeout": 0,
-    "implicit": 0
+    "implicit": 0,
+    "type": "unknown"
   },
   {
     "url": "https://habr.com/ru/users/{username}",
@@ -2729,7 +2876,8 @@
     }],
     "selected": "false",
     "timeout": 0,
-    "implicit": 0
+    "implicit": 0,
+    "type": "Web search engine"
   },
   {
     "url": "https://hackaday.io/{username}",
@@ -2756,7 +2904,8 @@
     ],
     "selected": "false",
     "timeout": 0,
-    "implicit": 0
+    "implicit": 0,
+    "type": "Weblog"
   },
   {
     "url": "https://hackerone.com/{username}",
@@ -2778,7 +2927,8 @@
     ],
     "selected": "false",
     "timeout": 0,
-    "implicit": 0
+    "implicit": 0,
+    "type": "unknown"
   },
   {
     "url": "https://hackerrank.com/{username}",
@@ -2795,7 +2945,8 @@
     ],
     "selected": "false",
     "timeout": 0,
-    "implicit": 0
+    "implicit": 0,
+    "type": "unknown"
   },
   {
     "url": "https://hackster.io/{username}",
@@ -2822,7 +2973,8 @@
     ],
     "selected": "false",
     "timeout": 0,
-    "implicit": 0
+    "implicit": 0,
+    "type": "unknown"
   },
   {
     "url": "https://hackthissite.org/user/view/{username}",
@@ -2842,7 +2994,25 @@
         "type": "normal"
       }
     ],
-    "type": "ethical-hacking",
+    "type": "ethical hacking",
+    "selected": "false",
+    "timeout": 0,
+    "implicit": 0
+  },
+  {
+    "url": "https://hellboundhackers.org/user/{username}.html",
+    "detections": [{
+        "return": "true",
+        "string": "Email Address:",
+        "type": "normal"
+      },
+      {
+        "return": "true",
+        "string": "General Information",
+        "type": "normal"
+      }
+    ],
+    "type": "ethical hacking",
     "selected": "false",
     "timeout": 0,
     "implicit": 0
@@ -2872,7 +3042,8 @@
     ],
     "selected": "false",
     "timeout": 0,
-    "implicit": 0
+    "implicit": 0,
+    "type": "unknown"
   },
   {
     "url": "https://houzz.com/user/{username}",
@@ -2894,7 +3065,8 @@
     ],
     "selected": "false",
     "timeout": 0,
-    "implicit": 0
+    "implicit": 0,
+    "type": "unknown"
   },
   {
     "url": "https://hub.docker.com/u/{username}",
@@ -2905,7 +3077,8 @@
     }],
     "selected": "false",
     "timeout": 0,
-    "implicit": 10
+    "implicit": 10,
+    "type": "unknown"
   },
   {
     "url": "https://hubpages.com/@{username}",
@@ -2927,7 +3100,8 @@
     ],
     "selected": "false",
     "timeout": 0,
-    "implicit": 0
+    "implicit": 0,
+    "type": "unknown"
   },
   {
     "url": "https://hubski.com/user/{username}",
@@ -2954,7 +3128,8 @@
     ],
     "selected": "false",
     "timeout": 0,
-    "implicit": 0
+    "implicit": 0,
+    "type": "Social news"
   },
   {
     "url": "https://hunting.ru/forum/members/?username={username}",
@@ -2965,7 +3140,8 @@
     }],
     "selected": "false",
     "timeout": 0,
-    "implicit": 0
+    "implicit": 0,
+    "type": "unknown"
   },
   {
     "url": "https://icq.im/{username}",
@@ -2987,7 +3163,8 @@
     ],
     "selected": "false",
     "timeout": 0,
-    "implicit": 0
+    "implicit": 0,
+    "type": "unknown"
   },
   {
     "url": "https://ifttt.com/p/{username}",
@@ -3014,14 +3191,16 @@
     ],
     "selected": "false",
     "timeout": 0,
-    "implicit": 0
+    "implicit": 0,
+    "type": "unknown"
   },
   {
     "url": "https://imgsrc.ru/main/user.php?user={username}",
     "detections": [],
     "selected": "false",
     "timeout": 0,
-    "implicit": 0
+    "implicit": 0,
+    "type": "unknown"
   },
   {
     "url": "https://imgup.cz/{username}",
@@ -3048,14 +3227,16 @@
     ],
     "selected": "false",
     "timeout": 0,
-    "implicit": 0
+    "implicit": 0,
+    "type": "unknown"
   },
   {
     "url": "https://imgur.com/user/{username}",
     "detections": [],
     "selected": "false",
     "timeout": 0,
-    "implicit": 0
+    "implicit": 0,
+    "type": "Image hosting service"
   },
   {
     "url": "https://independent.academia.edu/{username}",
@@ -3082,7 +3263,31 @@
     ],
     "selected": "false",
     "timeout": 0,
-    "implicit": 0
+    "implicit": 0,
+    "type": "Platform for sharing research papers"
+  },
+  {
+    "url": "https://indiblogger.in/{username}",
+    "detections": [{
+        "return": "false",
+        "string": "page not found",
+        "type": "normal"
+      },
+      {
+        "return": "true",
+        "string": "page not found",
+        "type": "normal"
+      },
+      {
+        "return": "true",
+        "string": "profile",
+        "type": "normal"
+      }
+    ],
+    "selected": "false",
+    "timeout": 0,
+    "implicit": 0,
+    "type": "unknown"
   },
   {
     "url": "https://instagram.com/{username}",
@@ -3110,7 +3315,8 @@
     "top10": "true",
     "selected": "true",
     "timeout": 0,
-    "implicit": 0
+    "implicit": 0,
+    "type": "unknown"
   },
   {
     "url": "https://instructables.com/member/{username}",
@@ -3137,7 +3343,8 @@
     ],
     "selected": "false",
     "timeout": 0,
-    "implicit": 0
+    "implicit": 0,
+    "type": "Informational"
   },
   {
     "url": "https://interpals.net/{username}",
@@ -3159,7 +3366,8 @@
     ],
     "selected": "false",
     "timeout": 0,
-    "implicit": 0
+    "implicit": 0,
+    "type": "unknown"
   },
   {
     "url": "https://irecommend.ru/users/{username}",
@@ -3170,7 +3378,8 @@
     }],
     "selected": "false",
     "timeout": 0,
-    "implicit": 0
+    "implicit": 0,
+    "type": "unknown"
   },
   {
     "url": "https://issuu.com/{username}",
@@ -3197,7 +3406,8 @@
     ],
     "selected": "false",
     "timeout": 0,
-    "implicit": 0
+    "implicit": 0,
+    "type": "Electronic publishing"
   },
   {
     "url": "https://jbzd.com.pl/uzytkownik/{username}",
@@ -3214,14 +3424,16 @@
     ],
     "selected": "false",
     "timeout": 0,
-    "implicit": 0
+    "implicit": 0,
+    "type": "unknown"
   },
   {
     "url": "https://jeuxvideo.com/profil/{username}?mode=infos",
     "detections": [],
     "selected": "false",
     "timeout": 0,
-    "implicit": 0
+    "implicit": 0,
+    "type": "Video game journalism"
   },
   {
     "url": "https://kaggle.com/{username}",
@@ -3248,7 +3460,8 @@
     ],
     "selected": "false",
     "timeout": 0,
-    "implicit": 0
+    "implicit": 0,
+    "type": "unknown"
   },
   {
     "url": "https://keybase.io/{username}",
@@ -3275,14 +3488,16 @@
     ],
     "selected": "false",
     "timeout": 0,
-    "implicit": 0
+    "implicit": 0,
+    "type": "Encrypted social networking service"
   },
   {
     "url": "https://kik.me/{username}",
     "detections": [],
     "selected": "false",
     "timeout": 0,
-    "implicit": 0
+    "implicit": 0,
+    "type": "unknown"
   },
   {
     "url": "https://ko-fi.com/{username}",
@@ -3293,7 +3508,8 @@
     }],
     "selected": "false",
     "timeout": 0,
-    "implicit": 0
+    "implicit": 0,
+    "type": "unknown"
   },
   {
     "url": "https://kongregate.com/accounts/{username}",
@@ -3315,7 +3531,8 @@
     ],
     "selected": "false",
     "timeout": 0,
-    "implicit": 0
+    "implicit": 0,
+    "type": "Online gaming website and/or social network"
   },
   {
     "url": "https://kwork.ru/user/{username}",
@@ -3337,7 +3554,8 @@
     ],
     "selected": "false",
     "timeout": 0,
-    "implicit": 0
+    "implicit": 0,
+    "type": "unknown"
   },
   {
     "url": "https://lab.pentestit.ru/profile/{username}",
@@ -3348,7 +3566,8 @@
     }],
     "selected": "false",
     "timeout": 0,
-    "implicit": 0
+    "implicit": 0,
+    "type": "unknown"
   },
   {
     "url": "https://last.fm/user/{username}",
@@ -3370,7 +3589,8 @@
     ],
     "selected": "false",
     "timeout": 0,
-    "implicit": 0
+    "implicit": 0,
+    "type": "Online music database"
   },
   {
     "url": "https://launchpad.net/~{username}",
@@ -3392,7 +3612,8 @@
     ],
     "selected": "false",
     "timeout": 0,
-    "implicit": 0
+    "implicit": 0,
+    "type": "Project Hosting Server"
   },
   {
     "url": "https://leetcode.com/{username}",
@@ -3414,7 +3635,8 @@
     ],
     "selected": "false",
     "timeout": 0,
-    "implicit": 0
+    "implicit": 0,
+    "type": "Competitive programming"
   },
   {
     "url": "https://letterboxd.com/{username}",
@@ -3441,7 +3663,8 @@
     ],
     "selected": "false",
     "timeout": 0,
-    "implicit": 0
+    "implicit": 0,
+    "type": "Social networking service for films"
   },
   {
     "url": "https://lichess.org/@/{username}",
@@ -3463,7 +3686,8 @@
     ],
     "selected": "false",
     "timeout": 0,
-    "implicit": 0
+    "implicit": 0,
+    "type": "Internet chess server"
   },
   {
     "url": "https://linux.org.ru/people/{username}/profile",
@@ -3474,7 +3698,8 @@
     }],
     "selected": "false",
     "timeout": 0,
-    "implicit": 0
+    "implicit": 0,
+    "type": "unknown"
   },
   {
     "url": "https://liveleak.com/c/{username}",
@@ -3496,7 +3721,8 @@
     ],
     "selected": "false",
     "timeout": 0,
-    "implicit": 0
+    "implicit": 0,
+    "type": "Video sharing"
   },
   {
     "url": "https://livelib.ru/reader/{username}",
@@ -3513,7 +3739,8 @@
     ],
     "selected": "false",
     "timeout": 0,
-    "implicit": 0
+    "implicit": 0,
+    "type": "unknown"
   },
   {
     "url": "https://lobste.rs/u/{username}",
@@ -3535,7 +3762,8 @@
     ],
     "selected": "false",
     "timeout": 0,
-    "implicit": 0
+    "implicit": 0,
+    "type": "unknown"
   },
   {
     "url": "https://lolchess.gg/profile/na/{username}",
@@ -3557,7 +3785,8 @@
     ],
     "selected": "false",
     "timeout": 0,
-    "implicit": 0
+    "implicit": 0,
+    "type": "unknown"
   },
   {
     "url": "https://mastodon.cloud/@{username}",
@@ -3584,7 +3813,8 @@
     ],
     "selected": "false",
     "timeout": 0,
-    "implicit": 0
+    "implicit": 0,
+    "type": "unknown"
   },
   {
     "url": "https://mastodon.social/@{username}",
@@ -3611,7 +3841,8 @@
     ],
     "selected": "false",
     "timeout": 0,
-    "implicit": 0
+    "implicit": 0,
+    "type": "unknown"
   },
   {
     "url": "https://mastodon.technology/@{username}",
@@ -3638,7 +3869,8 @@
     ],
     "selected": "false",
     "timeout": 0,
-    "implicit": 0
+    "implicit": 0,
+    "type": "unknown"
   },
   {
     "url": "https://mastodon.xyz/@{username}",
@@ -3665,7 +3897,8 @@
     ],
     "selected": "false",
     "timeout": 0,
-    "implicit": 0
+    "implicit": 0,
+    "type": "unknown"
   },
   {
     "url": "https://medium.com/@{username}",
@@ -3687,7 +3920,8 @@
     ],
     "selected": "false",
     "timeout": 0,
-    "implicit": 0
+    "implicit": 0,
+    "type": "unknown"
   },
   {
     "url": "https://memrise.com/user/{username}",
@@ -3714,7 +3948,8 @@
     ],
     "selected": "false",
     "timeout": 0,
-    "implicit": 0
+    "implicit": 0,
+    "type": "Privately held company"
   },
   {
     "url": "https://mercadolivre.com.br/perfil/{username}",
@@ -3731,7 +3966,8 @@
     ],
     "selected": "false",
     "timeout": 0,
-    "implicit": 0
+    "implicit": 0,
+    "type": "unknown"
   },
   {
     "url": "https://meta.wikimedia.org/wiki/Special:CentralAuth/{username}",
@@ -3758,7 +3994,8 @@
     ],
     "selected": "false",
     "timeout": 0,
-    "implicit": 0
+    "implicit": 0,
+    "type": "unknown"
   },
   {
     "url": "https://metacritic.com/user/{username}",
@@ -3780,7 +4017,8 @@
     ],
     "selected": "false",
     "timeout": 0,
-    "implicit": 0
+    "implicit": 0,
+    "type": "Review aggregator"
   },
   {
     "url": "https://mixcloud.com/{username}",
@@ -3791,7 +4029,8 @@
     }],
     "selected": "false",
     "timeout": 0,
-    "implicit": 0
+    "implicit": 0,
+    "type": "Audio Streaming"
   },
   {
     "url": "https://mobile.twitter.com/{username}",
@@ -3814,7 +4053,8 @@
     "selected": "true",
     "timeout": 0,
     "implicit": 0,
-    "top10": "true"
+    "top10": "true",
+    "type": "social networking service"
   },
   {
     "url": "https://moikrug.ru/{username}",
@@ -3831,7 +4071,8 @@
     ],
     "selected": "false",
     "timeout": 0,
-    "implicit": 0
+    "implicit": 0,
+    "type": "unknown"
   },
   {
     "url": "https://mstdn.io/@{username}",
@@ -3858,7 +4099,8 @@
     ],
     "selected": "false",
     "timeout": 0,
-    "implicit": 0
+    "implicit": 0,
+    "type": "unknown"
   },
   {
     "url": "https://munzee.com/m/{username}",
@@ -3880,7 +4122,8 @@
     ],
     "selected": "false",
     "timeout": 0,
-    "implicit": 0
+    "implicit": 0,
+    "type": "unknown"
   },
   {
     "url": "https://my.flightradar24.com/{username}",
@@ -3902,7 +4145,8 @@
     ],
     "selected": "false",
     "timeout": 0,
-    "implicit": 0
+    "implicit": 0,
+    "type": "Aircraft tracking"
   },
   {
     "url": "https://myanimelist.net/profile/{username}",
@@ -3924,7 +4168,8 @@
     ],
     "selected": "false",
     "timeout": 0,
-    "implicit": 0
+    "implicit": 0,
+    "type": "Anime and manga social networking and cataloging"
   },
   {
     "url": "https://myminifactory.com/users/{username}",
@@ -3951,7 +4196,8 @@
     ],
     "selected": "false",
     "timeout": 0,
-    "implicit": 0
+    "implicit": 0,
+    "type": "3D Design sharing platform"
   },
   {
     "url": "https://myspace.com/{username}",
@@ -3968,7 +4214,8 @@
     ],
     "selected": "false",
     "timeout": 0,
-    "implicit": 0
+    "implicit": 0,
+    "type": "Social media"
   },
   {
     "url": "https://nairaland.com/{username}",
@@ -3990,7 +4237,8 @@
     ],
     "selected": "false",
     "timeout": 0,
-    "implicit": 0
+    "implicit": 0,
+    "type": "Internet forum"
   },
   {
     "url": "https://namemc.com/profile/{username}",
@@ -4001,7 +4249,8 @@
     }],
     "selected": "false",
     "timeout": 0,
-    "implicit": 0
+    "implicit": 0,
+    "type": "unknown"
   },
   {
     "url": "https://nationstates.net/nation={username}",
@@ -4023,7 +4272,8 @@
     ],
     "selected": "false",
     "timeout": 0,
-    "implicit": 0
+    "implicit": 0,
+    "type": "Government simulation game"
   },
   {
     "url": "https://nationstates.net/{username}",
@@ -4045,7 +4295,8 @@
     ],
     "selected": "false",
     "timeout": 0,
-    "implicit": 0
+    "implicit": 0,
+    "type": "Government simulation game"
   },
   {
     "url": "https://native-instruments.com/forum/members?username={username}",
@@ -4067,7 +4318,8 @@
     ],
     "selected": "false",
     "timeout": 0,
-    "implicit": 0
+    "implicit": 0,
+    "type": "unknown"
   },
   {
     "url": "https://neogaf.com/members/{username}/",
@@ -4078,7 +4330,8 @@
     }],
     "selected": "false",
     "timeout": 0,
-    "implicit": 0
+    "implicit": 0,
+    "type": "Internet forum"
   },
   {
     "url": "https://news.ycombinator.com/user?id={username}",
@@ -4100,14 +4353,16 @@
     ],
     "selected": "false",
     "timeout": 0,
-    "implicit": 0
+    "implicit": 0,
+    "type": "unknown"
   },
   {
     "url": "https://nightbot.tv/t/{username}/commands",
     "detections": [],
     "selected": "false",
     "timeout": 0,
-    "implicit": 0
+    "implicit": 0,
+    "type": "unknown"
   },
   {
     "url": "https://notabug.org/{username}",
@@ -4134,7 +4389,8 @@
     ],
     "selected": "false",
     "timeout": 0,
-    "implicit": 0
+    "implicit": 0,
+    "type": "unknown"
   },
   {
     "url": "https://note.com/{username}",
@@ -4151,7 +4407,8 @@
     ],
     "selected": "false",
     "timeout": 0,
-    "implicit": 0
+    "implicit": 0,
+    "type": "Study guide"
   },
   {
     "url": "https://npmjs.com/~{username}",
@@ -4173,7 +4430,8 @@
     ],
     "selected": "false",
     "timeout": 0,
-    "implicit": 0
+    "implicit": 0,
+    "type": "unknown"
   },
   {
     "url": "https://ok.ru/{username}",
@@ -4195,7 +4453,8 @@
     ],
     "selected": "false",
     "timeout": 0,
-    "implicit": 0
+    "implicit": 0,
+    "type": "unknown"
   },
   {
     "url": "https://open.spotify.com/user/{username}",
@@ -4212,7 +4471,8 @@
     ],
     "selected": "false",
     "timeout": 0,
-    "implicit": 0
+    "implicit": 0,
+    "type": "Music streaming service"
   },
   {
     "url": "https://openhub.net/accounts/{username}",
@@ -4234,7 +4494,8 @@
     ],
     "selected": "false",
     "timeout": 0,
-    "implicit": 0
+    "implicit": 0,
+    "type": "Public directory of free and open-source software (FOSS)"
   },
   {
     "url": "https://opennet.ru/~{username}",
@@ -4245,7 +4506,8 @@
     }],
     "selected": "false",
     "timeout": 0,
-    "implicit": 0
+    "implicit": 0,
+    "type": "News and forum"
   },
   {
     "url": "https://opensource.com/users/{username}",
@@ -4267,7 +4529,8 @@
     ],
     "selected": "false",
     "timeout": 0,
-    "implicit": 0
+    "implicit": 0,
+    "type": "unknown"
   },
   {
     "url": "https://openstreetmap.org/user/{username}",
@@ -4294,7 +4557,8 @@
     ],
     "selected": "false",
     "timeout": 0,
-    "implicit": 0
+    "implicit": 0,
+    "type": "Collaborative mapping"
   },
   {
     "url": "https://osu.ppy.sh/users/{username}",
@@ -4316,14 +4580,16 @@
     ],
     "selected": "false",
     "timeout": 0,
-    "implicit": 0
+    "implicit": 0,
+    "type": "unknown"
   },
   {
     "url": "https://otzovik.com/profile/{username}",
     "detections": [],
     "selected": "false",
     "timeout": 0,
-    "implicit": 0
+    "implicit": 0,
+    "type": "unknown"
   },
   {
     "url": "https://ourdjtalk.com/members?username={username}",
@@ -4345,7 +4611,8 @@
     ],
     "selected": "false",
     "timeout": 0,
-    "implicit": 0
+    "implicit": 0,
+    "type": "unknown"
   },
   {
     "url": "https://packagist.org/packages/{username}",
@@ -4362,7 +4629,8 @@
     ],
     "selected": "false",
     "timeout": 0,
-    "implicit": 0
+    "implicit": 0,
+    "type": "unknown"
   },
   {
     "url": "https://pastebin.com/u/{username}",
@@ -4384,7 +4652,8 @@
     ],
     "selected": "false",
     "timeout": 0,
-    "implicit": 0
+    "implicit": 0,
+    "type": "Web application"
   },
   {
     "url": "https://patreon.com/{username}",
@@ -4406,7 +4675,8 @@
     ],
     "selected": "false",
     "timeout": 0,
-    "implicit": 0
+    "implicit": 0,
+    "type": "Membership platform"
   },
   {
     "url": "https://pcpartpicker.com/user/{username}",
@@ -4428,7 +4698,8 @@
     ],
     "selected": "false",
     "timeout": 0,
-    "implicit": 0
+    "implicit": 0,
+    "type": "Comparison shopping"
   },
   {
     "url": "https://periscope.tv/{username}",
@@ -4450,7 +4721,8 @@
     ],
     "selected": "false",
     "timeout": 0,
-    "implicit": 0
+    "implicit": 0,
+    "type": "unknown"
   },
   {
     "url": "https://php.ru/forum/members/?username={username}",
@@ -4461,7 +4733,8 @@
     }],
     "selected": "false",
     "timeout": 0,
-    "implicit": 0
+    "implicit": 0,
+    "type": "unknown"
   },
   {
     "url": "https://pikabu.ru/@{username}",
@@ -4472,7 +4745,8 @@
     }],
     "selected": "false",
     "timeout": 0,
-    "implicit": 0
+    "implicit": 0,
+    "type": "unknown"
   },
   {
     "url": "https://pinkbike.com/u/{username}",
@@ -4494,7 +4768,8 @@
     ],
     "selected": "false",
     "timeout": 0,
-    "implicit": 0
+    "implicit": 0,
+    "type": "unknown"
   },
   {
     "url": "https://pinterest.com/{username}",
@@ -4517,14 +4792,16 @@
     "top10": "true",
     "selected": "true",
     "timeout": 0,
-    "implicit": 0
+    "implicit": 0,
+    "type": "Social media service"
   },
   {
     "url": "https://play.google.com/store/apps/developer?id={username}",
     "detections": [],
     "selected": "false",
     "timeout": 0,
-    "implicit": 0
+    "implicit": 0,
+    "type": "Web search engine"
   },
   {
     "url": "https://pling.com/u/{username}",
@@ -4535,7 +4812,8 @@
     }],
     "selected": "false",
     "timeout": 0,
-    "implicit": 0
+    "implicit": 0,
+    "type": "Libre services and content sharing"
   },
   {
     "url": "https://plug.dj/@/{username}",
@@ -4562,7 +4840,8 @@
     ],
     "selected": "false",
     "timeout": 0,
-    "implicit": 0
+    "implicit": 0,
+    "type": "unknown"
   },
   {
     "url": "https://pokemonshowdown.com/users/{username}",
@@ -4579,7 +4858,8 @@
     ],
     "selected": "false",
     "timeout": 0,
-    "implicit": 0
+    "implicit": 0,
+    "type": "unknown"
   },
   {
     "url": "https://polarsteps.com/{username}",
@@ -4590,7 +4870,8 @@
     }],
     "selected": "false",
     "timeout": 0,
-    "implicit": 0
+    "implicit": 0,
+    "type": "unknown"
   },
   {
     "url": "https://polygon.com/users/{username}",
@@ -4612,14 +4893,16 @@
     ],
     "selected": "false",
     "timeout": 0,
-    "implicit": 0
+    "implicit": 0,
+    "type": "Gaming website"
   },
   {
     "url": "https://pr0gramm.com/user/{username}",
     "detections": [],
     "selected": "false",
     "timeout": 0,
-    "implicit": 0
+    "implicit": 0,
+    "type": "unknown"
   },
   {
     "url": "https://producthunt.com/@{username}",
@@ -4641,7 +4924,8 @@
     ],
     "selected": "false",
     "timeout": 0,
-    "implicit": 0
+    "implicit": 0,
+    "type": "unknown"
   },
   {
     "url": "https://profil.chatujme.cz/{username}",
@@ -4658,7 +4942,8 @@
     ],
     "selected": "false",
     "timeout": 0,
-    "implicit": 0
+    "implicit": 0,
+    "type": "unknown"
   },
   {
     "url": "https://profile.ameba.jp/ameba/{username}/",
@@ -4675,7 +4960,8 @@
     ],
     "selected": "false",
     "timeout": 0,
-    "implicit": 0
+    "implicit": 0,
+    "type": "Social network service"
   },
   {
     "url": "https://profiles.wordpress.org/{username}",
@@ -4702,7 +4988,8 @@
     ],
     "selected": "false",
     "timeout": 0,
-    "implicit": 0
+    "implicit": 0,
+    "type": "unknown"
   },
   {
     "url": "https://prog.hu/azonosito/info/{username}",
@@ -4713,7 +5000,8 @@
     }],
     "selected": "false",
     "timeout": 0,
-    "implicit": 0
+    "implicit": 0,
+    "type": "unknown"
   },
   {
     "status": "bad",
@@ -4736,7 +5024,8 @@
     ],
     "selected": "false",
     "timeout": 0,
-    "implicit": 0
+    "implicit": 0,
+    "type": "unknown"
   },
   {
     "url": "https://psnprofiles.com/{username}",
@@ -4747,7 +5036,8 @@
     }],
     "selected": "false",
     "timeout": 0,
-    "implicit": 0
+    "implicit": 0,
+    "type": "unknown"
   },
   {
     "url": "https://pypi.org/user/{username}",
@@ -4769,7 +5059,8 @@
     ],
     "selected": "false",
     "timeout": 0,
-    "implicit": 0
+    "implicit": 0,
+    "type": "unknown"
   },
   {
     "url": "https://quizlet.com/{username}",
@@ -4791,7 +5082,8 @@
     ],
     "selected": "false",
     "timeout": 0,
-    "implicit": 0
+    "implicit": 0,
+    "type": "Education"
   },
   {
     "url": "https://quora.com/profile/{username}",
@@ -4813,7 +5105,8 @@
     ],
     "selected": "false",
     "timeout": 0,
-    "implicit": 0
+    "implicit": 0,
+    "type": "Question and answer"
   },
   {
     "url": "https://raidforums.com/User-{username}",
@@ -4835,7 +5128,8 @@
     ],
     "selected": "false",
     "timeout": 0,
-    "implicit": 0
+    "implicit": 0,
+    "type": "unknown"
   },
   {
     "url": "https://rateyourmusic.com/~{username}",
@@ -4857,7 +5151,8 @@
     ],
     "selected": "false",
     "timeout": 0,
-    "implicit": 0
+    "implicit": 0,
+    "type": "Database and community"
   },
   {
     "url": "https://realmeye.com/player/{username}",
@@ -4879,7 +5174,8 @@
     ],
     "selected": "false",
     "timeout": 0,
-    "implicit": 0
+    "implicit": 0,
+    "type": "unknown"
   },
   {
     "url": "https://redbubble.com/people/{username}",
@@ -4901,7 +5197,8 @@
     ],
     "selected": "false",
     "timeout": 0,
-    "implicit": 0
+    "implicit": 0,
+    "type": "unknown"
   },
   {
     "url": "https://reddit.com/user/{username}",
@@ -4924,7 +5221,8 @@
     "selected": "true",
     "timeout": 0,
     "implicit": 0,
-    "top10": "true"
+    "top10": "true",
+    "type": "Social news"
   },
   {
     "url": "https://repl.it/@{username}",
@@ -4941,7 +5239,8 @@
     ],
     "selected": "false",
     "timeout": 0,
-    "implicit": 0
+    "implicit": 0,
+    "type": "unknown"
   },
   {
     "url": "https://researchgate.net/profile/{username}",
@@ -4952,7 +5251,8 @@
     }],
     "selected": "false",
     "timeout": 0,
-    "implicit": 0
+    "implicit": 0,
+    "type": "Social network service for scientists"
   },
   {
     "url": "https://reverbnation.com/{username}",
@@ -4974,7 +5274,8 @@
     ],
     "selected": "false",
     "timeout": 0,
-    "implicit": 0
+    "implicit": 0,
+    "type": "Music and Social Networking"
   },
   {
     "url": "https://rive.app/a/{username}",
@@ -5001,7 +5302,8 @@
     ],
     "selected": "false",
     "timeout": 0,
-    "implicit": 0
+    "implicit": 0,
+    "type": "unknown"
   },
   {
     "url": "https://robertsspaceindustries.com/citizens/{username}",
@@ -5023,14 +5325,16 @@
     ],
     "selected": "false",
     "timeout": 0,
-    "implicit": 0
+    "implicit": 0,
+    "type": "unknown"
   },
   {
     "url": "https://roblox.com/user.aspx?username={username}",
     "detections": [],
     "selected": "false",
     "timeout": 0,
-    "implicit": 0
+    "implicit": 0,
+    "type": "unknown"
   },
   {
     "url": "https://rubygems.org/profiles/{username}",
@@ -5057,14 +5361,16 @@
     ],
     "selected": "false",
     "timeout": 0,
-    "implicit": 0
+    "implicit": 0,
+    "type": "unknown"
   },
   {
     "url": "https://rusfootball.info/user/{username}",
     "detections": [],
     "selected": "false",
     "timeout": 0,
-    "implicit": 0
+    "implicit": 0,
+    "type": "unknown"
   },
   {
     "url": "https://satsis.info/user/{username}",
@@ -5081,7 +5387,8 @@
     ],
     "selected": "false",
     "timeout": 0,
-    "implicit": 0
+    "implicit": 0,
+    "type": "unknown"
   },
   {
     "url": "https://sbazar.cz/{username}",
@@ -5098,7 +5405,8 @@
     ],
     "selected": "false",
     "timeout": 0,
-    "implicit": 0
+    "implicit": 0,
+    "type": "Joint stock company"
   },
   {
     "url": "https://scratch.mit.edu/users/{username}",
@@ -5120,7 +5428,8 @@
     ],
     "selected": "false",
     "timeout": 0,
-    "implicit": 0
+    "implicit": 0,
+    "type": "unknown"
   },
   {
     "url": "https://scribd.com/{username}",
@@ -5137,7 +5446,8 @@
     ],
     "selected": "false",
     "timeout": 0,
-    "implicit": 0
+    "implicit": 0,
+    "type": "unknown"
   },
   {
     "url": "https://sharechat.com/profile/{username}",
@@ -5148,14 +5458,16 @@
     }],
     "selected": "false",
     "timeout": 0,
-    "implicit": 0
+    "implicit": 0,
+    "type": "unknown"
   },
   {
     "url": "https://shitpostbot.com/user/{username}",
     "detections": [],
     "selected": "false",
     "timeout": 0,
-    "implicit": 0
+    "implicit": 0,
+    "type": "unknown"
   },
   {
     "url": "https://slashdot.org/~{username}",
@@ -5177,7 +5489,8 @@
     ],
     "selected": "false",
     "timeout": 0,
-    "implicit": 0
+    "implicit": 0,
+    "type": "Online newspapersocial news"
   },
   {
     "url": "https://slideshare.net/{username}",
@@ -5199,14 +5512,16 @@
     ],
     "selected": "false",
     "timeout": 0,
-    "implicit": 0
+    "implicit": 0,
+    "type": "Slide hosting service"
   },
   {
     "url": "https://smashcast.tv/api/media/live/{username}",
     "detections": [],
     "selected": "false",
     "timeout": 0,
-    "implicit": 0
+    "implicit": 0,
+    "type": "Live streaming"
   },
   {
     "url": "https://smule.com/{username}",
@@ -5233,7 +5548,8 @@
     ],
     "selected": "false",
     "timeout": 0,
-    "implicit": 0
+    "implicit": 0,
+    "type": "unknown"
   },
   {
     "url": "https://social.tchncs.de/@{username}",
@@ -5260,7 +5576,8 @@
     ],
     "selected": "false",
     "timeout": 0,
-    "implicit": 0
+    "implicit": 0,
+    "type": "unknown"
   },
   {
     "url": "https://soundcloud.com/{username}",
@@ -5277,7 +5594,8 @@
     ],
     "selected": "false",
     "timeout": 0,
-    "implicit": 0
+    "implicit": 0,
+    "type": "Music streaming"
   },
   {
     "url": "https://sourceforge.net/u/{username}",
@@ -5304,7 +5622,8 @@
     ],
     "selected": "false",
     "timeout": 0,
-    "implicit": 0
+    "implicit": 0,
+    "type": "Collaborative revision control"
   },
   {
     "url": "https://soylentnews.org/~{username}",
@@ -5326,7 +5645,8 @@
     ],
     "selected": "false",
     "timeout": 0,
-    "implicit": 0
+    "implicit": 0,
+    "type": "unknown"
   },
   {
     "url": "https://sparkpeople.com/mypage.asp?id={username}",
@@ -5348,7 +5668,8 @@
     ],
     "selected": "false",
     "timeout": 0,
-    "implicit": 0
+    "implicit": 0,
+    "type": "unknown"
   },
   {
     "url": "https://speedrun.com/user/{username}",
@@ -5370,7 +5691,8 @@
     ],
     "selected": "false",
     "timeout": 0,
-    "implicit": 0
+    "implicit": 0,
+    "type": "unknown"
   },
   {
     "url": "https://spletnik.ru/user/{username}",
@@ -5387,7 +5709,8 @@
     ],
     "selected": "false",
     "timeout": 0,
-    "implicit": 0
+    "implicit": 0,
+    "type": "unknown"
   },
   {
     "url": "https://splits.io/users/{username}",
@@ -5409,7 +5732,8 @@
     ],
     "selected": "false",
     "timeout": 0,
-    "implicit": 0
+    "implicit": 0,
+    "type": "unknown"
   },
   {
     "url": "https://sporcle.com/user/{username}/people",
@@ -5431,7 +5755,8 @@
     ],
     "selected": "false",
     "timeout": 0,
-    "implicit": 0
+    "implicit": 0,
+    "type": "Quizzes"
   },
   {
     "url": "https://sports.ru/profile/{username}",
@@ -5442,7 +5767,8 @@
     }],
     "selected": "false",
     "timeout": 0,
-    "implicit": 0
+    "implicit": 0,
+    "type": "unknown"
   },
   {
     "url": "https://steamcommunity.com/id/{username}",
@@ -5464,7 +5790,8 @@
     ],
     "selected": "false",
     "timeout": 0,
-    "implicit": 0
+    "implicit": 0,
+    "type": "unknown"
   },
   {
     "url": "https://steamid.uk/profile/{username}",
@@ -5481,7 +5808,8 @@
     ],
     "selected": "false",
     "timeout": 0,
-    "implicit": 0
+    "implicit": 0,
+    "type": "unknown"
   },
   {
     "url": "https://strava.com/athletes/{username}",
@@ -5493,7 +5821,8 @@
     "selected": "true",
     "timeout": 0,
     "implicit": 0,
-    "top10": "true"
+    "top10": "true",
+    "type": "unknown"
   },
   {
     "url": "https://svidbook.ru/user/{username}",
@@ -5505,7 +5834,8 @@
     "top10": "true",
     "selected": "true",
     "timeout": 10,
-    "implicit": 10
+    "implicit": 10,
+    "type": "unknown"
   },
   {
     "url": "https://t.me/{username}",
@@ -5533,14 +5863,16 @@
     "top10": "true",
     "selected": "true",
     "timeout": 0,
-    "implicit": 0
+    "implicit": 0,
+    "type": "unknown"
   },
   {
     "url": "https://tellonym.me/{username}",
     "detections": [],
     "selected": "false",
     "timeout": 0,
-    "implicit": 0
+    "implicit": 0,
+    "type": "unknown"
   },
   {
     "url": "https://theverge.com/users/{username}",
@@ -5562,7 +5894,8 @@
     ],
     "selected": "false",
     "timeout": 0,
-    "implicit": 0
+    "implicit": 0,
+    "type": "Technology news"
   },
   {
     "url": "https://tiktok.com/@{username}",
@@ -5585,21 +5918,24 @@
     "top10": "true",
     "selected": "true",
     "timeout": 0,
-    "implicit": 0
+    "implicit": 0,
+    "type": "unknown"
   },
   {
     "url": "https://toster.ru/user/{username}/answers",
     "detections": [],
     "selected": "false",
     "timeout": 0,
-    "implicit": 0
+    "implicit": 0,
+    "type": "collaborative blog"
   },
   {
     "url": "https://tracky.com/~{username}",
     "detections": [],
     "selected": "false",
     "timeout": 0,
-    "implicit": 0
+    "implicit": 0,
+    "type": "unknown"
   },
   {
     "url": "https://tradingview.com/u/{username}",
@@ -5621,7 +5957,8 @@
     ],
     "selected": "false",
     "timeout": 0,
-    "implicit": 0
+    "implicit": 0,
+    "type": "unknown"
   },
   {
     "url": "https://trakt.tv/users/{username}",
@@ -5638,7 +5975,8 @@
     ],
     "selected": "false",
     "timeout": 0,
-    "implicit": 0
+    "implicit": 0,
+    "type": "unknown"
   },
   {
     "url": "https://trashbox.ru/users/{username}",
@@ -5649,7 +5987,8 @@
     }],
     "selected": "false",
     "timeout": 0,
-    "implicit": 0
+    "implicit": 0,
+    "type": "unknown"
   },
   {
     "url": "https://travellerspoint.com/users/{username}",
@@ -5676,7 +6015,8 @@
     ],
     "selected": "false",
     "timeout": 0,
-    "implicit": 0
+    "implicit": 0,
+    "type": "Social network service"
   },
   {
     "url": "https://trello.com/{username}",
@@ -5687,14 +6027,16 @@
     }],
     "selected": "false",
     "timeout": 0,
-    "implicit": 0
+    "implicit": 0,
+    "type": "unknown"
   },
   {
     "url": "https://trip.skyscanner.com/user/{username}",
     "detections": [],
     "selected": "false",
     "timeout": 0,
-    "implicit": 0
+    "implicit": 0,
+    "type": "Metasearch engine"
   },
   {
     "url": "https://tripadvisor.com/members/{username}",
@@ -5716,14 +6058,16 @@
     ],
     "selected": "false",
     "timeout": 0,
-    "implicit": 0
+    "implicit": 0,
+    "type": "unknown"
   },
   {
     "url": "https://tripit.com/people/{username}#/profile/basic-info",
     "detections": [],
     "selected": "false",
     "timeout": 0,
-    "implicit": 0
+    "implicit": 0,
+    "type": "unknown"
   },
   {
     "url": "https://tryhackme.com/p/{username}",
@@ -5745,7 +6089,8 @@
     ],
     "selected": "false",
     "timeout": 0,
-    "implicit": 0
+    "implicit": 0,
+    "type": "unknown"
   },
   {
     "url": "https://twitch.tv/{username}",
@@ -5756,7 +6101,8 @@
     }],
     "selected": "false",
     "timeout": 0,
-    "implicit": 0
+    "implicit": 0,
+    "type": "Live streaming"
   },
   {
     "url": "https://uid.me/{username}",
@@ -5778,7 +6124,8 @@
     ],
     "selected": "false",
     "timeout": 0,
-    "implicit": 0
+    "implicit": 0,
+    "type": "unknown"
   },
   {
     "url": "https://ultimate-guitar.com/u/{username}",
@@ -5805,7 +6152,8 @@
     ],
     "selected": "false",
     "timeout": 0,
-    "implicit": 0
+    "implicit": 0,
+    "type": "Tablature archive"
   },
   {
     "url": "https://unsplash.com/@{username}",
@@ -5832,7 +6180,8 @@
     ],
     "selected": "false",
     "timeout": 0,
-    "implicit": 0
+    "implicit": 0,
+    "type": "Stock photography"
   },
   {
     "url": "https://us.forums.blizzard.com/en/blizzard/u/{username}",
@@ -5854,7 +6203,8 @@
     ],
     "selected": "false",
     "timeout": 0,
-    "implicit": 0
+    "implicit": 0,
+    "type": "unknown"
   },
   {
     "url": "https://venmo.com/{username}",
@@ -5881,7 +6231,8 @@
     ],
     "selected": "false",
     "timeout": 0,
-    "implicit": 0
+    "implicit": 0,
+    "type": "unknown"
   },
   {
     "url": "https://vero.co/{username}",
@@ -5903,7 +6254,8 @@
     ],
     "selected": "false",
     "timeout": 0,
-    "implicit": 0
+    "implicit": 0,
+    "type": "unknown"
   },
   {
     "url": "https://vgr.com/forum/profile/{username}",
@@ -5925,7 +6277,8 @@
     ],
     "selected": "false",
     "timeout": 0,
-    "implicit": 0
+    "implicit": 0,
+    "type": "unknown"
   },
   {
     "url": "https://videogamer.com/forums/index.php?/profile/{username}/",
@@ -5936,7 +6289,8 @@
     }],
     "selected": "false",
     "timeout": 0,
-    "implicit": 0
+    "implicit": 0,
+    "type": "unknown"
   },
   {
     "url": "https://vimeo.com/{username}",
@@ -5958,7 +6312,8 @@
     ],
     "selected": "false",
     "timeout": 0,
-    "implicit": 10
+    "implicit": 10,
+    "type": "Video hosting service"
   },
   {
     "url": "https://virgool.io/@{username}",
@@ -5969,14 +6324,16 @@
     }],
     "selected": "false",
     "timeout": 0,
-    "implicit": 0
+    "implicit": 0,
+    "type": "unknown"
   },
   {
     "url": "https://virustotal.com/ui/users/{username}/trusted_users",
     "detections": [],
     "selected": "false",
     "timeout": 0,
-    "implicit": 0
+    "implicit": 0,
+    "type": "Internet security"
   },
   {
     "url": "https://vk.com/{username}",
@@ -5998,7 +6355,8 @@
     ],
     "selected": "false",
     "timeout": 0,
-    "implicit": 0
+    "implicit": 0,
+    "type": "Social networking service"
   },
   {
     "url": "https://vsco.co/{username}",
@@ -6015,7 +6373,8 @@
     ],
     "selected": "false",
     "timeout": 0,
-    "implicit": 0
+    "implicit": 0,
+    "type": "unknown"
   },
   {
     "url": "https://warriorforum.com/members/{username}.html",
@@ -6042,7 +6401,8 @@
     ],
     "selected": "false",
     "timeout": 0,
-    "implicit": 0
+    "implicit": 0,
+    "type": "unknown"
   },
   {
     "url": "https://wattpad.com/user/{username}",
@@ -6064,7 +6424,8 @@
     ],
     "selected": "false",
     "timeout": 0,
-    "implicit": 0
+    "implicit": 0,
+    "type": "Reading app"
   },
   {
     "url": "https://weheartit.com/{username}",
@@ -6091,7 +6452,8 @@
     ],
     "selected": "false",
     "timeout": 0,
-    "implicit": 0
+    "implicit": 0,
+    "type": "unknown"
   },
   {
     "url": "https://wikidot.com/user:info/{username}",
@@ -6113,7 +6475,8 @@
     ],
     "selected": "false",
     "timeout": 0,
-    "implicit": 0
+    "implicit": 0,
+    "type": "Online website builder"
   },
   {
     "url": "https://wikipedia.org/wiki/User:{username}",
@@ -6135,39 +6498,24 @@
     ],
     "selected": "false",
     "timeout": 0,
-    "implicit": 0
-  },
-  {
-    "url": "https://hellboundhackers.org/user/{username}.html",
-    "detections": [{
-        "return": "true",
-        "string": "Email Address:",
-        "type": "normal"
-      },
-      {
-        "return": "true",
-        "string": "General Information",
-        "type": "normal"
-      }
-    ],
-    "type": "ethical-hacking",
-    "selected": "false",
-    "timeout": 0,
-    "implicit": 0
+    "implicit": 0,
+    "type": "Online encyclopedia"
   },
   {
     "url": "https://xboxgamertag.com/search/{username}",
     "detections": [],
     "selected": "false",
     "timeout": 0,
-    "implicit": 0
+    "implicit": 0,
+    "type": "unknown"
   },
   {
     "url": "https://younow.com/{username}",
     "detections": [],
     "selected": "false",
     "timeout": 0,
-    "implicit": 0
+    "implicit": 0,
+    "type": "Video chat"
   },
   {
     "url": "https://youpic.com/photographer/{username}",
@@ -6189,7 +6537,8 @@
     ],
     "selected": "false",
     "timeout": 0,
-    "implicit": 0
+    "implicit": 0,
+    "type": "unknown"
   },
   {
     "url": "https://youtube.com/{username}",
@@ -6217,7 +6566,8 @@
     "top10": "true",
     "selected": "true",
     "timeout": 0,
-    "implicit": 0
+    "implicit": 0,
+    "type": "Video hosting service"
   },
   {
     "url": "https://zhihu.com/people/{username}",
@@ -6234,14 +6584,16 @@
     ],
     "selected": "false",
     "timeout": 0,
-    "implicit": 0
+    "implicit": 0,
+    "type": "Knowledge markets"
   },
   {
     "url": "https://{username}.basecamphq.com/login",
     "detections": [],
     "selected": "false",
     "timeout": 0,
-    "implicit": 0
+    "implicit": 0,
+    "type": "unknown"
   },
   {
     "url": "https://{username}.blogspot.com",
@@ -6268,14 +6620,16 @@
     ],
     "selected": "false",
     "timeout": 0,
-    "implicit": 0
+    "implicit": 0,
+    "type": "Blog host"
   },
   {
     "url": "https://{username}.booth.pm",
     "detections": [],
     "selected": "false",
     "timeout": 0,
-    "implicit": 0
+    "implicit": 0,
+    "type": "unknown"
   },
   {
     "url": "https://{username}.carbonmade.com",
@@ -6297,14 +6651,16 @@
     ],
     "selected": "false",
     "timeout": 0,
-    "implicit": 0
+    "implicit": 0,
+    "type": "unknown"
   },
   {
     "url": "https://{username}.contently.com",
     "detections": [],
     "selected": "false",
     "timeout": 0,
-    "implicit": 0
+    "implicit": 0,
+    "type": "unknown"
   },
   {
     "url": "https://{username}.crevado.com",
@@ -6326,7 +6682,8 @@
     ],
     "selected": "false",
     "timeout": 0,
-    "implicit": 0
+    "implicit": 0,
+    "type": "unknown"
   },
   {
     "url": "https://{username}.deviantart.com",
@@ -6353,7 +6710,8 @@
     ],
     "selected": "false",
     "timeout": 0,
-    "implicit": 0
+    "implicit": 0,
+    "type": "Art display/Social networking service"
   },
   {
     "url": "https://{username}.hatenablog.com/about",
@@ -6375,7 +6733,8 @@
     ],
     "selected": "false",
     "timeout": 0,
-    "implicit": 0
+    "implicit": 0,
+    "type": "unknown"
   },
   {
     "url": "https://{username}.hubpages.com",
@@ -6397,7 +6756,8 @@
     ],
     "selected": "false",
     "timeout": 0,
-    "implicit": 0
+    "implicit": 0,
+    "type": "unknown"
   },
   {
     "url": "https://{username}.itch.io",
@@ -6419,14 +6779,16 @@
     ],
     "selected": "false",
     "timeout": 0,
-    "implicit": 0
+    "implicit": 0,
+    "type": "unknown"
   },
   {
     "url": "https://{username}.jimdosite.com",
     "detections": [],
     "selected": "false",
     "timeout": 0,
-    "implicit": 0
+    "implicit": 0,
+    "type": "unknown"
   },
   {
     "url": "https://{username}.livejournal.com",
@@ -6453,7 +6815,8 @@
     ],
     "selected": "false",
     "timeout": 0,
-    "implicit": 0
+    "implicit": 0,
+    "type": "Blog hosting"
   },
   {
     "url": "https://{username}.newgrounds.com",
@@ -6475,7 +6838,8 @@
     ],
     "selected": "false",
     "timeout": 0,
-    "implicit": 0
+    "implicit": 0,
+    "type": "Entertainment"
   },
   {
     "url": "https://{username}.rajce.idnes.cz",
@@ -6492,14 +6856,16 @@
     ],
     "selected": "false",
     "timeout": 0,
-    "implicit": 0
+    "implicit": 0,
+    "type": "unknown"
   },
   {
     "url": "https://{username}.slack.com",
     "detections": [],
     "selected": "false",
     "timeout": 0,
-    "implicit": 0
+    "implicit": 0,
+    "type": "unknown"
   },
   {
     "url": "https://{username}.tumblr.com",
@@ -6527,7 +6893,8 @@
     "top10": "true",
     "selected": "true",
     "timeout": 0,
-    "implicit": 0
+    "implicit": 0,
+    "type": "unknown"
   },
   {
     "url": "https://{username}.webnode.cz",
@@ -6549,7 +6916,8 @@
     ],
     "selected": "false",
     "timeout": 0,
-    "implicit": 0
+    "implicit": 0,
+    "type": "unknown"
   },
   {
     "url": "https://{username}.wix.com",
@@ -6560,7 +6928,8 @@
     }],
     "selected": "false",
     "timeout": 0,
-    "implicit": 0
+    "implicit": 0,
+    "type": "unknown"
   },
   {
     "url": "https://{username}.wordpress.com",
@@ -6587,7 +6956,8 @@
     ],
     "selected": "false",
     "timeout": 0,
-    "implicit": 0
+    "implicit": 0,
+    "type": "unknown"
   },
   {
     "url": "https://{username}.www.nn.ru",
@@ -6609,45 +6979,7 @@
     ],
     "selected": "false",
     "timeout": 0,
-    "implicit": 0
-  },
-  {
-    "url": "https://indiblogger.in/{username}",
-    "detections": [{
-        "return": "false",
-        "string": "page not found",
-        "type": "normal"
-      },
-      {
-        "return": "true",
-        "string": "page not found",
-        "type": "normal"
-      },
-      {
-        "return": "true",
-        "string": "profile",
-        "type": "normal"
-      }
-    ],
-    "selected": "false",
-    "timeout": 0,
-    "implicit": 0
-  },
-  {
-    "url": "https://douban.com/people/{username}/",
-    "detections": [{
-        "return": "true",
-        "string": "error.",
-        "type": "normal"
-      },
-      {
-        "return": "true",
-        "string": "-profile-",
-        "type": "normal"
-      }
-    ],
-    "selected": "false",
-    "timeout": 0,
-    "implicit": 0
+    "implicit": 0,
+    "type": "unknown"
   }
 ]

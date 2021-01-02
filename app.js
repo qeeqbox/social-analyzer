@@ -167,9 +167,10 @@ async function find_username_site_special_facebook_1(uuid, username, site) {
         "found": 0,
         "image": "",
         "link": "",
-        rate: "",
-        title: "",
-        text: ""
+        "rate": "",
+        "title": "",
+        "text": "",
+        "type":""
       };
       var link = "https://mbasic.facebook.com/login/identify/?ctx=recoveqr";
       await driver.manage().setTimeouts(timeouts);
@@ -188,6 +189,7 @@ async function find_username_site_special_facebook_1(uuid, username, site) {
         temp_profile.title = "unavailable";
         temp_profile.rate = "%" + ((temp_profile.found / 1) * 100).toFixed(2);
         temp_profile.link = site.url.replace("{username}", username);
+        temp_profile.type = site.type
         resolve(temp_profile);
       } else {
         resolve(undefined)
@@ -261,9 +263,10 @@ async function find_username_site_new(uuid, username, options, site) {
         "found": 0,
         "image": "",
         "link": "",
-        rate: "",
-        title: "",
-        text: ""
+        "rate": "",
+        "title": "",
+        "text": "",
+        "type":""
       };
       var link = site.url.replace("{username}", username);
       await driver.manage().setTimeouts(timeouts);
@@ -331,6 +334,7 @@ async function find_username_site_new(uuid, username, options, site) {
         temp_profile.title = sanitizeHtml(title);
         temp_profile.rate = "%" + ((temp_profile.found / site.detections.length) * 100).toFixed(2);
         temp_profile.link = site.url.replace("{username}", username);
+        temp_profile.type = site.type
         resolve(temp_profile);
       } else {
         resolve(undefined)
@@ -364,9 +368,10 @@ async function find_username_normal(req) {
         "found": 0,
         "image": "",
         "link": "",
-        rate: "",
-        title: "",
-        text: ""
+        "rate": "",
+        "title": "",
+        "text": "",
+        "type":""
       };
       await Promise.all(site.detections.map(async detection => {
         var temp_found = "false";
@@ -382,18 +387,19 @@ async function find_username_normal(req) {
         }
       }));
       if (temp_profile.found > 0 && detections_count != 0) {
-        temp_profile.text = htmlToText(body, {
+        temp_profile.text = sanitizeHtml(htmlToText(body, {
           wordwrap: false,
           hideLinkHrefIfSameAsText: true,
           ignoreHref: true,
           ignoreImage: true
-        });
+        }));
         if (temp_profile.text == "") {
           temp_profile.text = "unavailable"
         }
         temp_profile.title = sanitizeHtml(title);
         temp_profile.rate = "%" + ((temp_profile["found"] / detections_count) * 100).toFixed(2);
         temp_profile.link = site.url.replace("{username}", username);
+        temp_profile.type = site.type
         return Promise.resolve(temp_profile);
       }
       return Promise.resolve();
