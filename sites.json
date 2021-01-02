@@ -6610,5 +6610,27 @@
     "selected": "false",
     "timeout": 0,
     "implicit": 0
+  },
+  {
+    "url": "https://indiblogger.in/{username}",
+    "detections": [{
+        "return": "false",
+        "string": "page not found",
+        "type": "normal"
+      },
+      {
+        "return": "true",
+        "string": "page not found",
+        "type": "normal"
+      },
+      {
+        "return": "true",
+        "string": "profile",
+        "type": "normal"
+      }
+    ],
+    "selected": "false",
+    "timeout": 0,
+    "implicit": 0
   }
 ]
