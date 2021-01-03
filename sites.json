@@ -1048,7 +1048,7 @@
     "detections": [{
       "return": "false",
       "string": "Whoops, the thing you were looking for isn't here",
-      "type": "normal"
+      "type": "ocr"
     }],
     "selected": "false",
     "timeout": 0,
@@ -4709,7 +4709,7 @@
     "url": "https://opencollective.com/{username}",
     "detections": [{
       "return": "false",
-      "string": "Not found",
+      "string": "Not found<",
       "type": "normal"
     }],
     "selected": "false",
@@ -6744,18 +6744,6 @@
     "type": "unavailable"
   },
   {
-    "url": "https://wiki.vg/User:{username}",
-    "detections": [{
-      "return": "false",
-      "string": "is not registered",
-      "type": "normal"
-    }],
-    "selected": "false",
-    "timeout": 0,
-    "implicit": 0,
-    "type": "unavailable"
-  },
-  {
     "url": "https://wikidot.com/user:info/{username}",
     "detections": [{
         "return": "false",
@@ -6824,18 +6812,6 @@
     "timeout": 0,
     "implicit": 0,
     "type": "Anime streaming"
-  },
-  {
-    "url": "https://ebay.co.uk/usr/{username}",
-    "detections": [{
-      "return": "false",
-      "string": "The user ID you entered wasn't found. Please check the user ID and try again.",
-      "type": "normal"
-    }],
-    "selected": "false",
-    "timeout": 0,
-    "implicit": 0,
-    "type": "unavailable"
   },
   {
     "url": "https://fiverr.com/{username}",
