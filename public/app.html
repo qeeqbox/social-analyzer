@@ -217,7 +217,8 @@
     #output-section-3,
     #output-section-4,
     #most-common-words-section,
-    #words-info-section {
+    #words-info-section,
+    #names-origins-section {
         display: none;
     }
 
@@ -662,6 +663,7 @@
                         <option value="FindUserProfilesSlow">FindUserProfilesSlow</option>
                         <option value="ShowUserProfilesSlow">ShowUserProfilesSlow</option>
                         <option value="FindUserProfilesSpecial">FindUserProfilesSpecial</option>
+                        <option value="FindingOrigins">FindingOrigins</option>
                     </select>
                     <div class="cell-separator"></div>
                     <input type="button" id="analyze-normal" value="Analyze" />
@@ -688,6 +690,14 @@
                     <div class="div-right"></div>
                 </div>
                 <div id="most-common-words-table">
+                </div>
+            </div>
+            <div class="box-border-style" id="names-origins-section">
+                <div class="div-header">
+                    <div class="div-left">Extracted names with orginis</div>
+                    <div class="div-right"></div>
+                </div>
+                <div id="names-origins-table">
                 </div>
             </div>
             <div class="box-border-style" id="words-info-section">
@@ -803,6 +813,8 @@
             $('#output-table-3').html("");
             $('#output-section-4').hide();
             $('#output-table-4').html("");
+            $('#names-origins-section').hide();
+            $('#names-origins-table').html("");
             $('#logs').html("");
             clearInterval(interval_logs);
         }
@@ -967,7 +979,14 @@
                         $("#output-table-4").html(temp_tr)
                         $('#output-section-4').show();
                     }
-
+                    if (data.names_origins.length > 0) {
+                        var temp_tr = ""
+                        Object.keys(data.names_origins).forEach(function (item) {
+                            temp_tr += '<tr><td>' + data.names_origins[item].origin + '</td><td>' + data.names_origins[item].name + '</td><td>' + data.names_origins[item].gender + '</td></tr>'
+                        });
+                        $("#names-origins-table").last().append('<table><tr><th>origin</th><th>name</th><th>gender</th></tr>' + temp_tr + '</table>')
+                        $('#names-origins-section').show();
+                    }
                 }
             });
 

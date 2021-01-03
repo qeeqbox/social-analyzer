@@ -7,9 +7,9 @@ var google_api_key = "";
 var google_api_cs = "";
 
 var header_options = {
-    headers: {
-        'User-Agent': 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:84.0) Gecko/20100101 Firefox/84.0',
-    }
+  headers: {
+    'User-Agent': 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:84.0) Gecko/20100101 Firefox/84.0',
+  }
 };
 
 console.log('[!] Detections are updated every often, make sure to get the most updated ones');
@@ -28,7 +28,7 @@ var argv = require('yargs')
   .alias('w', 'website')
   .alias('o', 'output')
   .alias('l', 'list')
-  .alias('m','mode')
+  .alias('m', 'mode')
   .usage('Usage: $0 -c -m "mode" -u "user" -w "website[s]" -o "output"')
   .example('$0 -c -m "fast" -u "joe" -w "facebook"')
   .example('$0 -c -m "fast" -u "natalie" -w "facebook wordpress"')
@@ -76,6 +76,8 @@ const {
 var _tokenizer = tokenizer();
 var parsed_json = JSON.parse(fs.readFileSync("dict.json"));
 var parsed_sites = JSON.parse(fs.readFileSync("sites.json"));
+var parsed_names_origins = JSON.parse(fs.readFileSync("names.json"));
+
 var app = express();
 
 var WordsNinja = new WordsNinjaPack();
@@ -170,7 +172,7 @@ async function find_username_site_special_facebook_1(uuid, username, site) {
         "rate": "",
         "title": "",
         "text": "",
-        "type":""
+        "type": ""
       };
       var link = "https://mbasic.facebook.com/login/identify/?ctx=recoveqr";
       await driver.manage().setTimeouts(timeouts);
@@ -266,7 +268,7 @@ async function find_username_site_new(uuid, username, options, site) {
         "rate": "",
         "title": "",
         "text": "",
-        "type":""
+        "type": ""
       };
       var link = site.url.replace("{username}", username);
       await driver.manage().setTimeouts(timeouts);
@@ -371,7 +373,7 @@ async function find_username_normal(req) {
         "rate": "",
         "title": "",
         "text": "",
-        "type":""
+        "type": ""
       };
       await Promise.all(site.detections.map(async detection => {
         var temp_found = "false";
@@ -609,7 +611,7 @@ app.get("/get_settings", async function(req, res, next) {
     return 0;
   });
   res.json({
-    user_agent:header_options['headers']['User-Agent'],
+    user_agent: header_options['headers']['User-Agent'],
     google: [google_api_key.substring(0, 10) + "******", google_api_cs.substring(0, 10) + "******"],
     detections: temp_list
   });
@@ -632,7 +634,7 @@ app.post("/save_settings", async function(req, res, next) {
   if (req.body.google_cv != google_api_cs.substring(0, 10) + "******") {
     google_api_cs = req.body.google_cv;
   }
-  if (req.body.user_agent != header_options['headers']['User-Agent']){
+  if (req.body.user_agent != header_options['headers']['User-Agent']) {
     header_options['headers']['User-Agent'] = req.body.user_agent;
   }
 
@@ -655,6 +657,41 @@ app.get("/generate", async function(req, res, next) {
   });
 
 });
+
+async function find_origins(req) {
+  var found = []
+  for (key in parsed_names_origins) {
+    for (name in parsed_names_origins[key]['boy']) {
+      if (req.body.string.includes(parsed_names_origins[key]['boy'][name])) {
+        found.push({
+          "name": parsed_names_origins[key]['boy'][name],
+          "origin": key,
+          "gender": "boy"
+        })
+      }
+    }
+    for (name in parsed_names_origins[key]['girl']) {
+      if (req.body.string.includes(parsed_names_origins[key]['girl'][name])) {
+        found.push({
+          "name": parsed_names_origins[key]['girl'][name],
+          "origin": key,
+          "gender": "girl"
+        })
+      }
+    }
+    for (name in parsed_names_origins[key]['uni']) {
+      if (req.body.string.includes(parsed_names_origins[key]['uni'][name])) {
+        found.push({
+          "name": parsed_names_origins[key]['uni'][name],
+          "origin": key,
+          "gender": "uni"
+        })
+      }
+    }
+  }
+
+  return found
+}
 
 async function get_words_info(all_words, words_info) {
   var temp_added = []
@@ -923,6 +960,7 @@ app.post("/url", async function(req, res, next) {
     "unknown": [],
     "maybe": []
   }
+  var names_origins = []
   var words_info = []
   var temp_words = []
   if (req.body.string == null || req.body.string == "") {
@@ -974,6 +1012,12 @@ app.post("/url", async function(req, res, next) {
         });
         log_to_file_queue(req.body.uuid, "[Done] Split by Alphabet")
       } catch (err) {}
+    }
+
+    if (req.body.option.includes("FindingOrigins")) {
+      log_to_file_queue(req.body.uuid, "[Starting] Finding Origins")
+      names_origins = await find_origins(req);
+      log_to_file_queue(req.body.uuid, "[Done] Finding Origins")
     }
 
     req.body.string = req.body.string.toLowerCase();
@@ -1074,7 +1118,8 @@ app.post("/url", async function(req, res, next) {
       words_info: words_info,
       user_info_normal: user_info_normal,
       user_info_advanced: user_info_advanced,
-      user_info_special: user_info_special
+      user_info_special: user_info_special,
+      names_origins: names_origins
     });
   }
 });
@@ -1147,7 +1192,7 @@ if ('cli' in argv) {
   if ('list' in argv) {
     list_all_websites();
   } else if ('mode' in argv) {
-    if (argv.mode == 'fast'){
+    if (argv.mode == 'fast') {
       if ('user' in argv && 'website' in argv) {
         if (argv.user != "" && argv.website != "") {
           check_user_cli(argv.user, argv.website)
