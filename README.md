@@ -8,6 +8,7 @@ API and Web App for analyzing & finding a person profile across +300 social medi
 **Please submit your contribution in a Pull Request!**
 
 ## Updates
+- (Testing Grid Passed 🎉🎉🎉) This will make FindUserProfilesSlow & ShowUserProfilesSlow a lot faster because it will distribute checking between instance of Firefox in a grid - Comming next update
 - (New) Added FindOrigins (This extracts well-known names with their origins from the username) 👏
 - (New) Added descriptions logic to websites (will be adding the categories later on) 👏
 - Added pyhton CLI (limited to FindUserProfilesFast option)
