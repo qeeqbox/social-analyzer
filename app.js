@@ -1014,7 +1014,7 @@ app.post("/url", async function(req, res, next) {
       } catch (err) {}
     }
 
-    if (req.body.option.includes("FindingOrigins")) {
+    if (req.body.option.includes("FindOrigins")) {
       log_to_file_queue(req.body.uuid, "[Starting] Finding Origins")
       names_origins = await find_origins(req);
       log_to_file_queue(req.body.uuid, "[Done] Finding Origins")
