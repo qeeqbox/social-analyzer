@@ -224,7 +224,12 @@
   },
   {
     "url": "https://anilist.co/user/{username}/",
-    "detections": [],
+    "detections": [{
+        "return": "false",
+        "string": "404 Page Not Found-Chan",
+        "type": "ocr"
+      }
+    ],
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
@@ -255,7 +260,12 @@
   },
   {
     "url": "https://apps.runescape.com/runemetrics/app/overview/player/{username}",
-    "detections": [],
+    "detections": [{
+        "return": "false",
+        "string": "Sorry, that player could not be found",
+        "type": "normal"
+      }
+    ],
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
@@ -291,7 +301,12 @@
   },
   {
     "url": "https://www.artstation.com/{username}",
-    "detections": [],
+    "detections": [{
+        "return": "false",
+        "string": "Page not found",
+        "type": "normal"
+      }
+    ],
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
@@ -560,7 +575,12 @@
   },
   {
     "url": "https://bintray.com/{username}",
-    "detections": [],
+    "detections": [{
+        "return": "false",
+        "string": "Page not found",
+        "type": "normal"
+      }
+    ],
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
@@ -941,7 +961,12 @@
   },
   {
     "url": "https://crowdin.com/profile/{username}",
-    "detections": [],
+    "detections": [{
+        "return": "false",
+        "string": "This is not the place you're looking for",
+        "type": "normal"
+      }
+    ],
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
@@ -1049,7 +1074,12 @@
   },
   {
     "url": "https://coil.com/u/{username}",
-    "detections": [],
+    "detections": [{
+        "return": "false",
+        "string": "Whoops, the thing you were looking for isn't here",
+        "type": "normal"
+      }
+    ],
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
@@ -1302,7 +1332,12 @@
   },
   {
     "url": "https://create.arduino.cc/projecthub/{username}",
-    "detections": [],
+    "detections": [{
+        "return": "false",
+        "string": "Bummer, we couldn't find that page",
+        "type": "normal"
+      }
+    ],
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
@@ -1333,7 +1368,12 @@
   },
   {
     "url": "https://www.crunchyroll.com/user/{username}",
-    "detections": [],
+    "detections": [{
+        "return": "false",
+        "string": "but we were unable to find the page you were looking for",
+        "type": "normal"
+      }
+    ],
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
@@ -1547,7 +1587,12 @@
   },
   {
     "url": "https://discourse.wicg.io/u/{username}/summary",
-    "detections": [],
+    "detections": [{
+        "return": "false",
+        "string": "Oops! That page doesn’t exist or is private",
+        "type": "normal"
+      }
+    ],
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
@@ -1639,7 +1684,12 @@
   },
   {
     "url": "https://displate.com/{username}/profile",
-    "detections": [],
+    "detections": [{
+        "return": "false",
+        "string": "Oops!",
+        "type": "normal"
+      }
+    ],
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
@@ -1805,7 +1855,12 @@
   },
   {
     "url": "https://www.ebay.co.uk/usr/{username}",
-    "detections": [],
+    "detections": [{
+        "return": "false",
+        "string": "The user ID you entered wasn't found. Please check the user ID and try again.",
+        "type": "normal"
+      }
+    ],
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
@@ -2130,7 +2185,12 @@
   },
   {
     "url": "https://www.fiverr.com/{username}",
-    "detections": [],
+    "detections": [{
+        "return": "false",
+        "string": "The user account you are looking for is no longer available.",
+        "type": "normal"
+      }
+    ],
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
@@ -2549,7 +2609,12 @@
   },
   {
     "url": "https://fosstodon.org/web/accounts/{username}",
-    "detections": [],
+    "detections": [{
+        "return": "false",
+        "string": "This resource could not be found",
+        "type": "normal"
+      }
+    ],
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
@@ -2915,7 +2980,12 @@
   },
   {
     "url": "https://gitlab.gnome.org/{username}",
-    "detections": [],
+    "detections": [{
+        "return": "false",
+        "string": "You need to sign in or sign up before continuing.",
+        "type": "normal"
+      }
+    ],
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
@@ -2953,7 +3023,12 @@
   },
   {
     "url": "https://plugins.gradle.org/u/{username}",
-    "detections": [],
+    "detections": [{
+        "return": "false",
+        "string": "User not found",
+        "type": "normal"
+      }
+    ],
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
@@ -3155,7 +3230,12 @@
   },
   {
     "url": "https://www.hexrpg.com/userinfo/{username}",
-    "detections": [],
+    "detections": [{
+        "return": "false",
+        "string": "not found",
+        "type": "normal"
+      }
+    ],
     "type": "unavailable",
     "selected": "false",
     "timeout": 0,
@@ -3163,7 +3243,12 @@
   },
   {
     "url": "https://hosted.weblate.org/user/{username}/",
-    "detections": [],
+    "detections": [{
+        "return": "false",
+        "string": "Page Not Found",
+        "type": "normal"
+      }
+    ],
     "type": "Cloud crowd translation platform",
     "selected": "false",
     "timeout": 0,
@@ -3297,7 +3382,12 @@
   },
   {
     "url": "https://i18n.elypia.org/user/{username}/",
-    "detections": [],
+    "detections": [{
+        "return": "false",
+        "string": "Page Not Found",
+        "type": "normal"
+      }
+    ],
     "type": "Weblate instance",
     "selected": "false",
     "timeout": 0,
@@ -3851,7 +3941,12 @@
   },
   {
     "url": "https://www.linkedin.com/in/{username}/",
-    "detections": [],
+    "detections": [{
+        "return": "false",
+        "string": "This profile is not available",
+        "type": "normal"
+      }
+    ],
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
@@ -4611,7 +4706,12 @@
   },
   {
     "url": "https://nyaa.si/user/{username}",
-    "detections": [],
+    "detections": [{
+        "return": "false",
+        "string": "The path you requested does not exist on this server",
+        "type": "normal"
+      }
+    ],
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
@@ -4642,7 +4742,12 @@
   },
   {
     "url": "https://opencollective.com/{username}",
-    "detections": [],
+    "detections": [{
+        "return": "false",
+        "string": "Not found",
+        "type": "normal"
+      }
+    ],
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
@@ -5663,7 +5768,12 @@
   },
   {
     "url": "https://www.slant.co/users/{username}",
-    "detections": [],
+    "detections": [{
+        "return": "false",
+        "string": "404 Page Not Found",
+        "type": "normal"
+      }
+    ],
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
@@ -6131,7 +6241,12 @@
   },
   {
     "url": "https://tldrlegal.com/users/{username}/",
-    "detections": [],
+    "detections": [{
+        "return": "false",
+        "string": "404 Not Found",
+        "type": "normal"
+      }
+    ],
     "top10": "true",
     "selected": "true",
     "timeout": 0,
@@ -6197,7 +6312,12 @@
   },
   {
     "url": "https://translate.jellyfin.org/user/{username}/",
-    "detections": [],
+    "detections": [{
+        "return": "false",
+        "string": "No User matches the given query",
+        "type": "normal"
+      }
+    ],
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
@@ -6705,7 +6825,12 @@
   },
   {
     "url": "https://wiki.vg/User:{username}",
-    "detections": [],
+    "detections": [{
+        "return": "false",
+        "string": "is not registered",
+        "type": "normal"
+      }
+    ],
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
@@ -7166,7 +7291,12 @@
   },
   {
     "url": "https://www.wordnik.com/users/{username}",
-    "detections": [],
+    "detections": [{
+        "return": "false",
+        "string": "You've found our 404 page. This is the page we show you when we can't show you the page you wanted, either because it doesn't exist, or because of some other error.",
+        "type": "normal"
+      }
+    ],
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
