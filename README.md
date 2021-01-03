@@ -102,7 +102,7 @@ python3 app.py -c -m "fast" -u "username" -w "youtube pinterest tumblr"
 ```bash
 git clone https://github.com/qeeqbox/social-analyzer.git
 cd social-analyzer
-sudo docker build -t social-analyzer . && sudo docker run -p 9005:9005 -it social-analyzer
+docker build -t social-analyzer . && docker run -p 9005:9005 -it social-analyzer
 ```
 
 ## Running Issues
