@@ -8,16 +8,16 @@ API and Web App for analyzing & finding a person profile across +300 social medi
 **Please submit your contribution in a Pull Request!**
 
 ## Updates
-- (New) Adding descriptions to websites (In progress) 👏
-- Added pyhton CLI (limited to FindUserProfilesFast option) 👏
+- (New) Added FindOrigins (This extracts well-known names with their origins from the username) 👏
+- (New) Added descriptions logic to websites (will be adding the categories later on) 👏
+- Added pyhton CLI (limited to FindUserProfilesFast option)
 - Added a slack [channel](https://qeeqbox.slack.com/messages/social-analyzer)
 - Added Custom user-agent option
-- Added nodejs CLI (You can use this project from Command Line, but it's limited to FindUserProfilesFast option) 👏
+- Added nodejs CLI (You can use this project from Command Line, but it's limited to FindUserProfilesFast option)
 - Added an optional timeout and implicit wait for each detection (Some websites have a delay logic implemented in the backend)
 - Added logs (user request)
 - Added 5 seconds timeout to https.get (user request)
 - Added the API documentation [WiKi](https://github.com/qeeqbox/social-analyzer/wiki)
-- (Testing) Post Analysis modules
 
 ## Security Testing
 
