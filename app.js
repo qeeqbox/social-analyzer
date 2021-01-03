@@ -377,7 +377,7 @@ async function find_username_normal(req) {
       };
       await Promise.all(site.detections.map(async detection => {
         var temp_found = "false";
-        if (detection.type == "normal" && options.includes("FindUserProfilesFast") && source != "" && detection.return == "true") {
+        if (detection.type == "normal" && options.includes("FindUserProfilesFast") && source != "") {
           detections_count += 1
           if (source.toLowerCase().includes(detection.string.replace("{username}", username).toLowerCase())) {
             temp_found = "true";
