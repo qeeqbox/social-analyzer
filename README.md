@@ -8,7 +8,7 @@ API and Web App for analyzing & finding a person profile across +300 social medi
 **Please submit your contribution in a Pull Request!**
 
 ## Updates
-- (Testing Grid Passed 🎉🎉🎉) This will make FindUserProfilesSlow & ShowUserProfilesSlow a lot faster because it will distribute checking profiles between instances of Firefox in a grid - Comming next update
+- (New) Added logic that enhance FindUserProfilesSlow & ShowUserProfilesSlow checking speed (Limited to docker-compose)👏
 - (New) Added FindOrigins (This extracts well-known names with their origins from the username) 👏
 - (New) Added descriptions logic to websites (will be adding the categories later on) 👏
 - Added pyhton CLI (limited to FindUserProfilesFast option)
@@ -97,6 +97,13 @@ pip3 install lxml BeautifulSoup4 tld
 # If you want to list all websites use python3 app.py -c -l
 # Remember the following runs as FindUserProfilesFast
 python3 app.py -c -m "fast" -u "username" -w "youtube pinterest tumblr"
+```
+
+## Install and run as web app with a grid (docker-compose)
+```bash
+git clone https://github.com/qeeqbox/social-analyzer.git
+cd social-analyzer
+docker-compose -f docker-compose.yml up --build
 ```
 
 ## Install and run as web app (docker)
