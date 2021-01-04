@@ -1,10 +1,16 @@
-//
-//	__G__ = "(G)bd249ce4"
-//	app.js (API, CLI & WEBAPP)
-//
+//  -------------------------------------------------------------
+//  author        Giga
+//  project       qeeqbox/social-analyzer 
+//  email         gigaqeeq@gmail.com
+//  description   app.py (CLI)
+//  licensee      AGPL-3.0
+//  -------------------------------------------------------------
+//  contributors list qeeqbox/social-analyzer/graphs/contributors
+//  -------------------------------------------------------------
 
 var google_api_key = "";
 var google_api_cs = "";
+var grid_url = ""; 
 
 var header_options = {
   headers: {
@@ -230,13 +236,27 @@ async function find_username_advanced(req) {
 async function find_username_site_new(uuid, username, options, site) {
   return new Promise(async (resolve, reject) => {
     log_to_file_queue(uuid, "[Checking] " + get_site_from_url(site.url))
-    let driver = new Builder()
+    let driver = undefined
+    if (grid_url == "") {
+    driver = new Builder()
       .forBrowser("firefox")
       .setFirefoxOptions(new firefox.Options().headless().windowSize({
         width: 640,
         height: 480
       }))
       .build();
+    }
+    else{
+      driver = new Builder()
+      .forBrowser("firefox")
+      .setFirefoxOptions(new firefox.Options().headless().windowSize({
+        width: 640,
+        height: 480
+      }))
+      .usingServer(grid_url)
+      .build();    
+    }
+
 
     try {
 
@@ -1177,7 +1197,6 @@ async function check_user_cli(username, websites) {
       log_to_file_queue(req.body.uuid, item);
     });
   }
-  //console.log(util.inspect(ret, { colors: true }));
 };
 
 async function list_all_websites() {
@@ -1186,6 +1205,10 @@ async function list_all_websites() {
     temp_arr.push(get_site_from_url(item.url))
   });
   console.log('[Listing] Available websites\n' + temp_arr.join('\n'))
+}
+
+if ('grid' in argv){
+  grid_url = argv.grid
 }
 
 if ('cli' in argv) {

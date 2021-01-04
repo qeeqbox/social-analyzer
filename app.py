@@ -1,6 +1,13 @@
 """
-	__G__ = "(G)bd249ce4"
-	app.py (CLI)
+//  -------------------------------------------------------------
+//  author        Giga
+//  project       qeeqbox/social-analyzer 
+//  email         gigaqeeq@gmail.com
+//  description   app.py (CLI)
+//  licensee      AGPL-3.0
+//  -------------------------------------------------------------
+//  contributors list qeeqbox/social-analyzer/graphs/contributors
+//  -------------------------------------------------------------
 """
 
 print("[!] Detections are updated every often, make sure to get the most updated ones")
