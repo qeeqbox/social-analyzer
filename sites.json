@@ -298,6 +298,18 @@
     "type": "unavailable"
   },
   {
+    "url": "https://artstation.com/{username}",
+    "detections": [{
+      "return": "false",
+      "string": "Page not found",
+      "type": "normal"
+    }],
+    "selected": "false",
+    "timeout": 0,
+    "implicit": 0,
+    "type": "Professional hub for artists to share or license work"
+  },
+  {
     "url": "https://asciinema.org/~{username}",
     "detections": [{
         "return": "false",
@@ -900,14 +912,6 @@
     "type": "Social network service"
   },
   {
-    "url": "https://clozemaster.com/players/{username}",
-    "detections": [],
-    "selected": "false",
-    "timeout": 0,
-    "implicit": 0,
-    "type": "unavailable"
-  },
-  {
     "url": "https://cnet.com/profiles/{username}",
     "detections": [{
         "return": "false",
@@ -934,14 +938,6 @@
     "timeout": 0,
     "implicit": 0,
     "type": "Technology"
-  },
-  {
-    "url": "https://codecademy.com/{username}",
-    "detections": [],
-    "selected": "false",
-    "timeout": 0,
-    "implicit": 0,
-    "type": "unavailable"
   },
   {
     "url": "https://codechef.com/users/{username}",
@@ -1072,7 +1068,22 @@
   },
   {
     "url": "https://community.bitwarden.com/u/{username}/summary",
-    "detections": [],
+    "detections": [{
+        "return": "false",
+        "string": "That page doesn",
+        "type": "ocr"
+      },
+      {
+        "return": "false",
+        "string": "That page doesn",
+        "type": "normal"
+      },
+      {
+        "return": "true",
+        "string": "\"/u/{username}/summary\"",
+        "type": "normal"
+      }
+    ],
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
@@ -1366,6 +1377,18 @@
     "timeout": 0,
     "implicit": 0,
     "type": "unavailable"
+  },
+  {
+    "url": "https://crunchyroll.com/user/{username}",
+    "detections": [{
+      "return": "false",
+      "string": "but we were unable to find the page you were looking for",
+      "type": "normal"
+    }],
+    "selected": "false",
+    "timeout": 0,
+    "implicit": 0,
+    "type": "Anime streaming"
   },
   {
     "url": "https://d3.ru/user/{username}/posts",
@@ -2178,6 +2201,18 @@
     "timeout": 0,
     "implicit": 0,
     "type": "Wiki hosting service"
+  },
+  {
+    "url": "https://fiverr.com/{username}",
+    "detections": [{
+      "return": "false",
+      "string": "The user account you are looking for is no longer available.",
+      "type": "normal"
+    }],
+    "selected": "false",
+    "timeout": 0,
+    "implicit": 0,
+    "type": "Sales of services"
   },
   {
     "url": "https://fixya.com/users/{username}",
@@ -3189,6 +3224,18 @@
     "implicit": 0
   },
   {
+    "url": "https://hexrpg.com/userinfo/{username}",
+    "detections": [{
+      "return": "false",
+      "string": "not found",
+      "type": "normal"
+    }],
+    "type": "unavailable",
+    "selected": "false",
+    "timeout": 0,
+    "implicit": 0
+  },
+  {
     "url": "https://hosted.weblate.org/user/{username}/",
     "detections": [{
       "return": "false",
@@ -3612,7 +3659,17 @@
   },
   {
     "url": "https://jeuxvideo.com/profil/{username}?mode=infos",
-    "detections": [],
+    "detections": [{
+        "return": "false",
+        "string": "erreurs",
+        "type": "normal"
+      },
+      {
+        "return": "true",
+        "string": "infos-pseudo",
+        "type": "normal"
+      }
+    ],
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
@@ -3871,6 +3928,18 @@
     "timeout": 0,
     "implicit": 0,
     "type": "Internet chess server"
+  },
+  {
+    "url": "https://linkedin.com/in/{username}/",
+    "detections": [{
+      "return": "false",
+      "string": "This profile is not available",
+      "type": "normal"
+    }],
+    "selected": "false",
+    "timeout": 0,
+    "implicit": 0,
+    "type": "Social media platform"
   },
   {
     "url": "https://linux.org.ru/people/{username}/profile",
@@ -4549,7 +4618,11 @@
   },
   {
     "url": "https://ninjakiwi.com/profile/{username}",
-    "detections": [],
+    "detections": [{
+      "return": "true",
+      "string": "\"profile\"",
+      "type": "normal"
+    }],
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
@@ -4793,14 +4866,6 @@
         "type": "normal"
       }
     ],
-    "selected": "false",
-    "timeout": 0,
-    "implicit": 0,
-    "type": "unavailable"
-  },
-  {
-    "url": "https://otzovik.com/profile/{username}",
-    "detections": [],
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
@@ -5697,6 +5762,18 @@
     "type": "unavailable"
   },
   {
+    "url": "https://slant.co/users/{username}",
+    "detections": [{
+      "return": "false",
+      "string": "404 Page Not Found",
+      "type": "normal"
+    }],
+    "selected": "false",
+    "timeout": 0,
+    "implicit": 0,
+    "type": "Product comparison"
+  },
+  {
     "url": "https://slashdot.org/~{username}",
     "detections": [{
         "return": "false",
@@ -5741,14 +5818,6 @@
     "timeout": 0,
     "implicit": 0,
     "type": "Slide hosting service"
-  },
-  {
-    "url": "https://smashcast.tv/api/media/live/{username}",
-    "detections": [],
-    "selected": "false",
-    "timeout": 0,
-    "implicit": 0,
-    "type": "Live streaming"
   },
   {
     "url": "https://smule.com/{username}",
@@ -6048,7 +6117,6 @@
     "selected": "true",
     "timeout": 0,
     "implicit": 0,
-    "top10": "true",
     "type": "unavailable"
   },
   {
@@ -6058,7 +6126,6 @@
       "string": "user_profile",
       "type": "normal"
     }],
-    "top10": "true",
     "selected": "true",
     "timeout": 10,
     "implicit": 10,
@@ -6095,26 +6162,45 @@
   },
   {
     "url": "https://tellonym.me/{username}",
-    "detections": [],
-    "selected": "false",
+    "detections": [{
+      "return": "true",
+      "string": "me/{username}",
+      "type": "normal"
+    }],
+    "selected": "true",
     "timeout": 0,
     "implicit": 0,
     "type": "unavailable"
   },
   {
     "url": "https://tenor.com/users/{username}",
-    "detections": [],
+    "detections": [{
+        "return": "false",
+        "string": "We could not find the page",
+        "type": "ocr"
+      },
+      {
+        "return": "false",
+        "string": "We could not find the page",
+        "type": "normal"
+      },
+      {
+        "return": "true",
+        "string": "name-info",
+        "type": "normal"
+      }
+    ],
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
-    "type": "Media sharing"
+    "type": "unavailable"
   },
   {
     "url": "https://theverge.com/users/{username}",
     "detections": [{
         "return": "false",
         "string": "404 Not found",
-        "type": "normal"
+        "type": "ocr"
       },
       {
         "return": "false",
@@ -6163,24 +6249,7 @@
       "string": "404 Not Found",
       "type": "normal"
     }],
-    "top10": "true",
     "selected": "true",
-    "timeout": 0,
-    "implicit": 0,
-    "type": "unavailable"
-  },
-  {
-    "url": "https://toster.ru/user/{username}/answers",
-    "detections": [],
-    "selected": "false",
-    "timeout": 0,
-    "implicit": 0,
-    "type": "collaborative blog"
-  },
-  {
-    "url": "https://tracky.com/~{username}",
-    "detections": [],
-    "selected": "false",
     "timeout": 0,
     "implicit": 0,
     "type": "unavailable"
@@ -6279,14 +6348,6 @@
     "type": "unavailable"
   },
   {
-    "url": "https://trip.skyscanner.com/user/{username}",
-    "detections": [],
-    "selected": "false",
-    "timeout": 0,
-    "implicit": 0,
-    "type": "Metasearch engine"
-  },
-  {
     "url": "https://tripadvisor.com/members/{username}",
     "detections": [{
         "return": "false",
@@ -6304,14 +6365,6 @@
         "type": "normal"
       }
     ],
-    "selected": "false",
-    "timeout": 0,
-    "implicit": 0,
-    "type": "unavailable"
-  },
-  {
-    "url": "https://tripit.com/people/{username}#/profile/basic-info",
-    "detections": [],
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
@@ -6750,78 +6803,6 @@
     "type": "Online encyclopedia"
   },
   {
-    "url": "https://artstation.com/{username}",
-    "detections": [{
-      "return": "false",
-      "string": "Page not found",
-      "type": "normal"
-    }],
-    "selected": "false",
-    "timeout": 0,
-    "implicit": 0,
-    "type": "Professional hub for artists to share or license work"
-  },
-  {
-    "url": "https://crunchyroll.com/user/{username}",
-    "detections": [{
-      "return": "false",
-      "string": "but we were unable to find the page you were looking for",
-      "type": "normal"
-    }],
-    "selected": "false",
-    "timeout": 0,
-    "implicit": 0,
-    "type": "Anime streaming"
-  },
-  {
-    "url": "https://fiverr.com/{username}",
-    "detections": [{
-      "return": "false",
-      "string": "The user account you are looking for is no longer available.",
-      "type": "normal"
-    }],
-    "selected": "false",
-    "timeout": 0,
-    "implicit": 0,
-    "type": "Sales of services"
-  },
-  {
-    "url": "https://hexrpg.com/userinfo/{username}",
-    "detections": [{
-      "return": "false",
-      "string": "not found",
-      "type": "normal"
-    }],
-    "type": "unavailable",
-    "selected": "false",
-    "timeout": 0,
-    "implicit": 0
-  },
-  {
-    "url": "https://linkedin.com/in/{username}/",
-    "detections": [{
-      "return": "false",
-      "string": "This profile is not available",
-      "type": "normal"
-    }],
-    "selected": "false",
-    "timeout": 0,
-    "implicit": 0,
-    "type": "Social media platform"
-  },
-  {
-    "url": "https://slant.co/users/{username}",
-    "detections": [{
-      "return": "false",
-      "string": "404 Page Not Found",
-      "type": "normal"
-    }],
-    "selected": "false",
-    "timeout": 0,
-    "implicit": 0,
-    "type": "Product comparison"
-  },
-  {
     "url": "https://wordnik.com/users/{username}",
     "detections": [{
       "return": "false",
@@ -6835,7 +6816,17 @@
   },
   {
     "url": "https://xboxgamertag.com/search/{username}",
-    "detections": [],
+    "detections": [{
+        "return": "false",
+        "string": "Gamertag doesn",
+        "type": "normal"
+      },
+      {
+        "return": "true",
+        "string": "profile-detail",
+        "type": "normal"
+      }
+    ],
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
@@ -6887,7 +6878,6 @@
         "type": "normal"
       }
     ],
-    "top10": "true",
     "selected": "true",
     "timeout": 0,
     "implicit": 0,
