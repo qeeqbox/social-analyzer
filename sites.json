@@ -440,14 +440,6 @@
     "type": "unavailable"
   },
   {
-    "url": "https://avizo.cz/{username}",
-    "detections": [],
-    "selected": "false",
-    "timeout": 0,
-    "implicit": 0,
-    "type": "unavailable"
-  },
-  {
     "url": "https://baby.ru/u/{username}",
     "detections": [{
         "return": "false",
@@ -3197,14 +3189,6 @@
     "implicit": 0
   },
   {
-    "url": "https://help.nextcloud.com/u/{username}/summary",
-    "detections": [],
-    "type": "Discourse forum",
-    "selected": "false",
-    "timeout": 0,
-    "implicit": 0
-  },
-  {
     "url": "https://hosted.weblate.org/user/{username}/",
     "detections": [{
       "return": "false",
@@ -3341,18 +3325,6 @@
     "timeout": 0,
     "implicit": 0,
     "type": "unavailable"
-  },
-  {
-    "url": "https://i18n.elypia.org/user/{username}/",
-    "detections": [{
-      "return": "false",
-      "string": "Page Not Found",
-      "type": "normal"
-    }],
-    "type": "Weblate instance",
-    "selected": "false",
-    "timeout": 0,
-    "implicit": 0
   },
   {
     "url": "https://icq.im/{username}",
