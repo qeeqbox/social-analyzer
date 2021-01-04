@@ -1,12 +1,12 @@
-<!-- 
+<!--
 //  -------------------------------------------------------------
 //  author        Giga
-//  project       qeeqbox/social-analyzer 
+//  project       qeeqbox/social-analyzer
 //  email         gigaqeeq@gmail.com
 //  description   app.py (CLI)
 //  licensee      AGPL-3.0
 //  -------------------------------------------------------------
-//  contributors list qeeqbox/social-analyzer/graphs/contributors
+//  contributors list qeeqbox/social-analyzer/graphs/contributors 
 //  -------------------------------------------------------------
 -->
 
@@ -22,1066 +22,1073 @@
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <style>
-    html,
-    body {
-        width: 100%;
-        height: 100%;
-        margin: 0 !important;
-        padding: 0 !important;
-        overflow: hidden !important;
-        background-color: #212222;
-    }
-
-    header {
-        background-color: #2b2c2c;
-        position: fixed;
-        top: 0;
-        width: 100%;
-        overflow: hide;
-        box-shadow: 0 8px 5px rgba(0, 0, 0, .08);
-    }
-
-    a {
-        color: #d0d0d0 !important;
-    }
-
-    .navbar {
-        height: 50px;
-        color: #d0d0d0 !important;
-    }
-
-    body {
-        display: flex;
-        flex-direction: column;
-    }
-
-    body>* {
-        font-family: monospace !important;
-        font-size: 12px !important;
-        line-height: normal;
-        cursor: default !important;
-        color: #d0d0d0 !important;
-    }
-
-    #selectable {
-        vertical-align: top;
-    }
-
-    th {
-        text-align: left;
-        font-weight: normal !important;
-        background-color: #383939 !important;
-    }
-
-    table {
-        color: #d0d0d0 !important;
-        font-size: 12px !important;
-        margin-bottom: 20px;
-        border: 0;
-        box-shadow: none;
-        -webkit-border-radius: 2px !important;
-        border-radius: 2px !important;
-        width: 100%;
-    }
-
-    tr {
-        border-bottom: 1px solid #3c3c3c;
-    }
-
-    tr:first-child {
-        border-top: none;
-    }
-
-    tr:last-child {
-        border-bottom: none;
-    }
-
-    #selectable .ui-selecting {
-        background: #feca40;
-    }
-
-    #selectable .ui-selected {
-        background: #aa6400;
-        color: white;
-    }
-
-    #selectable ul {
-        margin: 0 0 0 0;
-        padding: 0 0 0 0;
-        list-style-type: none;
-    }
-
-    #selectable ul li {
-        border: none;
-        margin: 2px 2px 2px 2px;
-    }
-
-    .ui-selectable-helper {
-        position: absolute;
-        z-index: 100;
-        border: 1px dotted black;
-    }
-
-    #analyzed {
-        display: none;
-    }
-
-    .center-dev {
-        display: flex;
-        margin-left: auto;
-        margin-top: 50px;
-        padding-top: 20px;
-        overflow-y: auto !important;
-        overflow-x: hidden;
-        scrollbar-width: thin;
-        scrollbar-color: #aa6400 #272c2e;
-        justify-content: center;
-        width: 100%;
-    }
-
-    .string-analyzer-app {
-        width: 95%;
-    }
-
-    .cell-separator {
-        width: 15px;
-    }
-
-    .separator {
-        height: 1px;
-        margin-bottom: 20px;
-        background-color: #3c3c3c;
-        margin-top: 20px;
-    }
-
-    input[type="text"] {
-        background-color: #383939 !important;
-        -webkit-border-radius: 2px !important;
-        border-radius: 2px !important;
-        border: none;
-        height: 26px;
-        padding: 3px 6px 3px 6px !important;
-        color: #d0d0d0 !important;
-        font-size: 12px;
-    }
-
-    input[type="button"] {
-        border: 0;
-        background-color: #383939 !important;
-        box-shadow: none;
-        -webkit-border-radius: 2px !important;
-        border-radius: 2px !important;
-        color: #d0d0d0 !important;
-        height: 26px;
-        border: none;
-        font-size: 12px;
-    }
-
-    .div-right1 {
-        flex: 1;
-        -webkit-box-shadow: inset 0px -1px 0px #3c3c3c inset;
-        -moz-box-shadow: inset 0px -1px 0px #3c3c3c inset;
-        box-shadow: 0px -1px 0px #3c3c3c inset;
-        margin-left: 10px !important;
-    }
-
-    .div-right {
-        flex: 1;
-        margin-left: 10px !important;
-    }
-
-    .div-left {
-        font-size: 16px;
-        line-height: 16px;
-    }
-
-
-    .div-header {
-        display: flex;
-        height: 15px;
-        color: #d0d0d0 !important;
-        margin-bottom: 20px;
-    }
-
-    .div-100 {
-        width: 100%;
-        display: flex;
-        margin-bottom: 20px;
-        align-items: center;
-    }
-
-    #analyzed-options li {
-        display: inline-block;
-        color: #d0d0d0 !important;
-        height: 26px;
-        line-height: 26px;
-        padding-left: 2px;
-        padding-right: 2px;
-    }
-
-    #lookups-section,
-    #possible-words-section,
-    #combinations-section,
-    #output-section-1,
-    #output-section-2,
-    #output-section-3,
-    #output-section-4,
-    #most-common-words-section,
-    #words-info-section,
-    #names-origins-section {
-        display: none;
-    }
-
-    #lookups-checking-info {
-        text-align: left;
-    }
-
-
-    .navbar-nav {
-        flex-direction: inherit !important;
-    }
-
-    .nav-item {
-        font-size: 14px;
-        padding-left: 15px;
-    }
-
-    #most-common-words-section table tr th:first-child,
-    #most-common-words-section table tr td:first-child,
-    #words-info-section table tr th:first-child,
-    #words-info-section table tr td:first-child {
-        width: 150px;
-        min-width: 150px;
-        max-width: 150px;
-        word-break: break-word;
-    }
-
-    #words-info-section table tr th:nth-child(2),
-    #words-info-section table tr td:nth-child(2) {
-        width: 150px;
-        min-width: 150px;
-        max-width: 150px;
-        word-break: break-word;
-    }
-
-    .box-border-style {
-        background-color: #2b2c2c !important;
-        -webkit-border-radius: 2px !important;
-        border-radius: 2px !important;
-        border: none;
-        padding: 10px 10px 10px 10px;
-        margin-bottom: 20px;
-    }
-
-    .hex-spinner {
-        width: 140px;
-        height: 140px;
-        animation: spinner 2s linear infinite;
-    }
-
-    @keyframes spinner {
-        0% {
-            stroke-dasharray: 0 0 80 300;
-        }
-
-        50% {
-            stroke-dasharray: 0 80 160 300;
-        }
-
-        75% {
-            stroke-dasharray: 0 160 220 300;
-        }
-
-        100% {
-            stroke-dasharray: 80 220 300 300;
-        }
-    }
-
-    .waiting {
-        position: fixed;
-        z-index: 99999;
-        width: 100%;
-        height: 100%;
-        background: #212222;
-        opacity: .9;
-        display: none;
-    }
-
-    .waiting-box {
-        position: fixed;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        text-align: center;
-        display: none;
-    }
-
-    input[type='checkbox'] {
-        -webkit-appearance: none;
-        -webkit-box-shadow: none;
-        -moz-box-shadow: none;
-        box-shadow: none;
-        padding: 5px;
-        height: 5px;
-        color: #c0c0c0;
-        border: 1px solid #b4b4b4;
-        border-radius: 2px !important;
-        outline: none;
-    }
-
-    input[type='checkbox']:checked {
-        position: relative;
-    }
-
-    input[type='checkbox']:checked:before {
-        position: absolute;
-        display: block;
-        background: none #b4b4b4;
-        content: '';
-        height: 8px;
-        width: 8px;
-        left: 1px;
-        top: 1px;
-    }
-
-    #detection-options,
-    #google-api,
-    #user-agent-api {
-        margin-top: 10px;
-        width: 100%;
-        margin-bottom: 10px;
-    }
-
-    #detection-options-list {
-        list-style-type: none;
-        max-height: 200px;
-        text-align: left;
-        margin: 0;
-        padding: 0;
-        overflow: auto;
-        overflow-y: auto;
-    }
-
-    #detection-options li {
-        height: 20px;
-        line-height: 20px;
-    }
-
-    #detection-options label {
-        margin: 0;
-        padding-left: 5px;
-    }
-
-    #detection-options-buttons {
-        display: inline-flex;
-        margin-top: 10px;
-    }
-
-    .search-result {
-        list-style-type: none;
-        font-size: 17px;
-        padding: 5px;
-    }
-
-    .modal-header {
-        border-bottom: 1px solid #3c3c3c;
-    }
-
-    .modal-content {
-        background-color: #2b2c2c !important;
-        -webkit-border-radius: 2px !important;
-        border-radius: 2px !important;
-        border: none;
-        padding: 10px 10px 10px 10px;
-        margin-bottom: 20px;
-    }
-
-    .modal-footer {
-        border-top: 1px solid #3c3c3c;
-    }
-
-    #google-api input,
-    #user-agent-api input {
-        width: 100%;
-        margin-bottom: 10px !important;
-    }
-
-    .modal-body .div-right {
-        flex: 1;
-    }
-
-    .modal-body .div-left {
-        font-size: 14px;
-        line-height: 14px;
-    }
-
-    .modal-body .div-header {
-        display: flex;
-        height: 15px;
-        color: #d0d0d0 !important;
-        margin-bottom: 10px;
-    }
-
-    .modal-dialog {
-        height: calc(100vh - 100px) !important;
-        display: flex;
-    }
-
-    .modal-content {
-        margin: auto !important;
-        height: fit-content !important;
-    }
-
-    .user-info-container {
-        display: flex;
-        max-height: 250px;
-    }
-
-    .user-info-container-right {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-
-    .user-info-container-right img {
-        max-height: 210px;
-        padding: 10px;
-    }
-
-    .user-info-container-right_temp img {
-        filter: blur(5px);
-    }
-
-    .user-info-container-left {
-        flex-direction: column;
-        justify-content: center;
-        flex: 1 1 0;
-        overflow-y: auto !important;
-        overflow-x: hidden;
-        -ms-overflow-style: none;
-        scrollbar-width: none;
-        scrollbar-color: #aa6400 #272c2e;
-    }
-
-    .user-info-container-left::-webkit-scrollbar {
-        display: none;
-    }
-
-    .user-info-container {
-        padding-top: 10px;
-        padding-bottom: 10px;
-        border-bottom: 1px solid #3c3c3c;
-    }
-
-    .user-info-container:last-child {
-        border-bottom: none;
-    }
-
-    .box-border-style-settings {
-        background-color: transparent;
-        -webkit-border-radius: 2px !important;
-        border-radius: 2px !important;
-        border: none;
-        text-align: right;
-        margin-bottom: 10px;
-        font-size: 14px;
-    }
-
-    #string-section .div-right {
-        text-align: right;
-        font-size: 16px;
-    }
-
-    .selectize-control {
-        position: static !important;
-        background-color: #383939 !important;
-        min-width: 300px;
-    }
-
-    .selectize-input {
-        color: #d0d0d0 !important;
-        padding: 0px;
-        background-color: #383939 !important;
-        border: none !important;
-    }
-
-    .selectize-dropdown {
-        color: #d0d0d0 !important;
-        background-color: #383939 !important;
-        border: none !important;
-    }
-
-    .selectize-input .item {
-        background-color: #aa6400;
-    }
-
-    .item {
-        background: #aa6400 !important;
-        color: #ffffff !important;
-    }
-
-    .selectize-input [data-value] {
-        background-color: #111111;
-        background-image: none !important;
-        background-repeat: none !important;
-        -webkit-box-shadow: none !important;
-        box-shadow: none !important
-    }
-
-    .selectize-control.multi .selectize-input>div {
-        border: none !important;
-    }
-
-    .selectize-dropdown-content .active {
-        background: #2196f3 !important;
-        color: #ffffff !important;
-    }
-
-    .selectize-control.plugin-remove_button [data-value] .remove {
-        border-left: none !important;
-    }
-
-    #output-table-1 {
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-    }
-
-    .profile-card {
-        max-width: 320;
-        float: left;
-        padding: 10px;
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
-    }
-
-    .profile-card-text {
-        padding: 10px;
-        text-overflow: ellipsis;
-    }
-
-    .profile-card img {
-        max-height: 210px;
-        padding: 10px;
-    }
-
-    .logs{
-        padding-top: 20px
-    }
-
+  html,
+  body {
+    width: 100%;
+    height: 100%;
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow: hidden !important;
+    background-color: #212222;
+  }
+
+  header {
+    background-color: #2b2c2c;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    overflow: hide;
+    box-shadow: 0 8px 5px rgba(0, 0, 0, .08);
+  }
+
+  a {
+    color: #d0d0d0 !important;
+  }
+
+  .navbar {
+    height: 50px;
+    color: #d0d0d0 !important;
+  }
+
+  body {
+    display: flex;
+    flex-direction: column;
+  }
+
+  body>* {
+    font-family: monospace !important;
+    font-size: 12px !important;
+    line-height: normal;
+    cursor: default !important;
+    color: #d0d0d0 !important;
+  }
+
+  #selectable {
+    vertical-align: top;
+  }
+
+  th {
+    text-align: left;
+    font-weight: normal !important;
+    background-color: #383939 !important;
+  }
+
+  table {
+    color: #d0d0d0 !important;
+    font-size: 12px !important;
+    margin-bottom: 20px;
+    border: 0;
+    box-shadow: none;
+    -webkit-border-radius: 2px !important;
+    border-radius: 2px !important;
+    width: 100%;
+  }
+
+  tr {
+    border-bottom: 1px solid #3c3c3c;
+  }
+
+  tr:first-child {
+    border-top: none;
+  }
+
+  tr:last-child {
+    border-bottom: none;
+  }
+
+  #selectable .ui-selecting {
+    background: #feca40;
+  }
+
+  #selectable .ui-selected {
+    background: #aa6400;
+    color: white;
+  }
+
+  #selectable ul {
+    margin: 0 0 0 0;
+    padding: 0 0 0 0;
+    list-style-type: none;
+  }
+
+  #selectable ul li {
+    border: none;
+    margin: 2px 2px 2px 2px;
+  }
+
+  .ui-selectable-helper {
+    position: absolute;
+    z-index: 100;
+    border: 1px dotted black;
+  }
+
+  #analyzed {
+    display: none;
+  }
+
+  .center-dev {
+    display: flex;
+    margin-left: auto;
+    margin-top: 50px;
+    padding-top: 20px;
+    overflow-y: auto !important;
+    overflow-x: hidden;
+    scrollbar-width: thin;
+    scrollbar-color: #aa6400 #272c2e;
+    justify-content: center;
+    width: 100%;
+  }
+
+  .string-analyzer-app {
+    width: 95%;
+  }
+
+  .cell-separator {
+    width: 15px;
+  }
+
+  .separator {
+    height: 1px;
+    margin-bottom: 20px;
+    background-color: #3c3c3c;
+    margin-top: 20px;
+  }
+
+  input[type="text"] {
+    background-color: #383939 !important;
+    -webkit-border-radius: 2px !important;
+    border-radius: 2px !important;
+    border: none;
+    height: 26px;
+    padding: 3px 6px 3px 6px !important;
+    color: #d0d0d0 !important;
+    font-size: 12px;
+  }
+
+  input[type="button"] {
+    border: 0;
+    background-color: #383939 !important;
+    box-shadow: none;
+    -webkit-border-radius: 2px !important;
+    border-radius: 2px !important;
+    color: #d0d0d0 !important;
+    height: 26px;
+    border: none;
+    font-size: 12px;
+  }
+
+  .div-right1 {
+    flex: 1;
+    -webkit-box-shadow: inset 0px -1px 0px #3c3c3c inset;
+    -moz-box-shadow: inset 0px -1px 0px #3c3c3c inset;
+    box-shadow: 0px -1px 0px #3c3c3c inset;
+    margin-left: 10px !important;
+  }
+
+  .div-right {
+    flex: 1;
+    margin-left: 10px !important;
+  }
+
+  .div-left {
+    font-size: 16px;
+    line-height: 16px;
+  }
+
+
+  .div-header {
+    display: flex;
+    height: 15px;
+    color: #d0d0d0 !important;
+    margin-bottom: 20px;
+  }
+
+  .div-100 {
+    width: 100%;
+    display: flex;
+    margin-bottom: 20px;
+    align-items: center;
+  }
+
+  #analyzed-options li {
+    display: inline-block;
+    color: #d0d0d0 !important;
+    height: 26px;
+    line-height: 26px;
+    padding-left: 2px;
+    padding-right: 2px;
+  }
+
+  #lookups-section,
+  #possible-words-section,
+  #combinations-section,
+  #output-section-1,
+  #output-section-2,
+  #output-section-3,
+  #output-section-4,
+  #most-common-words-section,
+  #words-info-section,
+  #names-origins-section {
+    display: none;
+  }
+
+  #lookups-checking-info {
+    text-align: left;
+  }
+
+
+  .navbar-nav {
+    flex-direction: inherit !important;
+  }
+
+  .nav-item {
+    font-size: 14px;
+    padding-left: 15px;
+  }
+
+  #most-common-words-section table tr th:first-child,
+  #most-common-words-section table tr td:first-child,
+  #words-info-section table tr th:first-child,
+  #words-info-section table tr td:first-child {
+    width: 150px;
+    min-width: 150px;
+    max-width: 150px;
+    word-break: break-word;
+  }
+
+  #words-info-section table tr th:nth-child(2),
+  #words-info-section table tr td:nth-child(2) {
+    width: 150px;
+    min-width: 150px;
+    max-width: 150px;
+    word-break: break-word;
+  }
+
+  .box-border-style {
+    background-color: #2b2c2c !important;
+    -webkit-border-radius: 2px !important;
+    border-radius: 2px !important;
+    border: none;
+    padding: 10px 10px 10px 10px;
+    margin-bottom: 20px;
+  }
+
+  .hex-spinner {
+    width: 140px;
+    height: 140px;
+    animation: spinner 2s linear infinite;
+  }
+
+  @keyframes spinner {
+    0% {
+      stroke-dasharray: 0 0 80 300;
+    }
+
+    50% {
+      stroke-dasharray: 0 80 160 300;
+    }
+
+    75% {
+      stroke-dasharray: 0 160 220 300;
+    }
+
+    100% {
+      stroke-dasharray: 80 220 300 300;
+    }
+  }
+
+  .waiting {
+    position: fixed;
+    z-index: 99999;
+    width: 100%;
+    height: 100%;
+    background: #212222;
+    opacity: .9;
+    display: none;
+  }
+
+  .waiting-box {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    display: none;
+  }
+
+  input[type='checkbox'] {
+    -webkit-appearance: none;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+    padding: 5px;
+    height: 5px;
+    color: #c0c0c0;
+    border: 1px solid #b4b4b4;
+    border-radius: 2px !important;
+    outline: none;
+  }
+
+  input[type='checkbox']:checked {
+    position: relative;
+  }
+
+  input[type='checkbox']:checked:before {
+    position: absolute;
+    display: block;
+    background: none #b4b4b4;
+    content: '';
+    height: 8px;
+    width: 8px;
+    left: 1px;
+    top: 1px;
+  }
+
+  #detection-options,
+  #google-api,
+  #user-agent-api {
+    margin-top: 10px;
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  #detection-options-list {
+    list-style-type: none;
+    max-height: 200px;
+    text-align: left;
+    margin: 0;
+    padding: 0;
+    overflow: auto;
+    overflow-y: auto;
+  }
+
+  #detection-options li {
+    height: 20px;
+    line-height: 20px;
+  }
+
+  #detection-options label {
+    margin: 0;
+    padding-left: 5px;
+  }
+
+  #detection-options-buttons {
+    display: inline-flex;
+    margin-top: 10px;
+  }
+
+  .search-result {
+    list-style-type: none;
+    font-size: 17px;
+    padding: 5px;
+  }
+
+  .modal-header {
+    border-bottom: 1px solid #3c3c3c;
+  }
+
+  .modal-content {
+    background-color: #2b2c2c !important;
+    -webkit-border-radius: 2px !important;
+    border-radius: 2px !important;
+    border: none;
+    padding: 10px 10px 10px 10px;
+    margin-bottom: 20px;
+  }
+
+  .modal-footer {
+    border-top: 1px solid #3c3c3c;
+  }
+
+  #google-api input,
+  #user-agent-api input {
+    width: 100%;
+    margin-bottom: 10px !important;
+  }
+
+  .modal-body .div-right {
+    flex: 1;
+  }
+
+  .modal-body .div-left {
+    font-size: 14px;
+    line-height: 14px;
+  }
+
+  .modal-body .div-header {
+    display: flex;
+    height: 15px;
+    color: #d0d0d0 !important;
+    margin-bottom: 10px;
+  }
+
+  .modal-dialog {
+    height: calc(100vh - 100px) !important;
+    display: flex;
+  }
+
+  .modal-content {
+    margin: auto !important;
+    height: fit-content !important;
+  }
+
+  .user-info-container {
+    display: flex;
+    max-height: 250px;
+  }
+
+  .user-info-container-right {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .user-info-container-right img {
+    max-height: 210px;
+    padding: 10px;
+  }
+
+  .user-info-container-right_temp img {
+    filter: blur(5px);
+  }
+
+  .user-info-container-left {
+    flex-direction: column;
+    justify-content: center;
+    flex: 1 1 0;
+    overflow-y: auto !important;
+    overflow-x: hidden;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    scrollbar-color: #aa6400 #272c2e;
+  }
+
+  .user-info-container-left::-webkit-scrollbar {
+    display: none;
+  }
+
+  .user-info-container {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #3c3c3c;
+  }
+
+  .user-info-container:last-child {
+    border-bottom: none;
+  }
+
+  .box-border-style-settings {
+    background-color: transparent;
+    -webkit-border-radius: 2px !important;
+    border-radius: 2px !important;
+    border: none;
+    text-align: right;
+    margin-bottom: 10px;
+    font-size: 14px;
+  }
+
+  #string-section .div-right {
+    text-align: right;
+    font-size: 16px;
+  }
+
+  .selectize-control {
+    position: static !important;
+    background-color: #383939 !important;
+    min-width: 300px;
+  }
+
+  .selectize-input {
+    color: #d0d0d0 !important;
+    padding: 0px;
+    background-color: #383939 !important;
+    border: none !important;
+  }
+
+  .selectize-dropdown {
+    color: #d0d0d0 !important;
+    background-color: #383939 !important;
+    border: none !important;
+  }
+
+  .selectize-input .item {
+    background-color: #aa6400;
+  }
+
+  .item {
+    background: #aa6400 !important;
+    color: #ffffff !important;
+  }
+
+  .selectize-input [data-value] {
+    background-color: #111111;
+    background-image: none !important;
+    background-repeat: none !important;
+    -webkit-box-shadow: none !important;
+    box-shadow: none !important
+  }
+
+  .selectize-control.multi .selectize-input>div {
+    border: none !important;
+  }
+
+  .selectize-dropdown-content .active {
+    background: #2196f3 !important;
+    color: #ffffff !important;
+  }
+
+  .selectize-control.plugin-remove_button [data-value] .remove {
+    border-left: none !important;
+  }
+
+  #output-table-1 {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .profile-card {
+    max-width: 320;
+    float: left;
+    padding: 10px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .profile-card-text {
+    padding: 10px;
+    text-overflow: ellipsis;
+  }
+
+  .profile-card img {
+    max-height: 210px;
+    padding: 10px;
+  }
+
+  .logs {
+    padding-top: 20px
+  }
 </style>
 
 <body>
 
-    <div class="waiting">
-        <div class="waiting-box">
-            <svg class="hex-spinner" viewBox="0 -5 100 110">
-                <polygon stroke-width="7" stroke="#aa6400" fill-opacity="0" id="hex"
-                    points="50 1 95 25 95 75 50 99 5 75 5 25" />
-            </svg>
-            <div class="logs" id="logs">logsfsddsfsdf</div>
-        </div>
+  <div class="waiting">
+    <div class="waiting-box">
+      <svg class="hex-spinner" viewBox="0 -5 100 110">
+        <polygon stroke-width="7" stroke="#aa6400" fill-opacity="0" id="hex" points="50 1 95 25 95 75 50 99 5 75 5 25" />
+      </svg>
+      <div class="logs" id="logs">logsfsddsfsdf</div>
     </div>
+  </div>
 
-    <header>
-        <nav class="navbar navbar-expand-lg navbar-dark">
-            <a class="navbar-brand" href="#">Social Analyzer</a>
-            <ul class="navbar-nav ml-auto">
-                <li class="nav-item">
-                    <a href="https://github.com/qeeqbox/social-analyzer/stargazers"> <i class="fa fa-star"></i></a>
-                </li>
-                <li class="nav-item">
-                    <a href="https://github.com/qeeqbox/social-analyzer/archive/main.zip"> <i class="fa fa-download"></i></a>
-                </li>
-                <li class="nav-item">
-                    <a href="https://github.com/qeeqbox/social-analyzer/watchers"> <i class="fa fa-eye"></i></a>
-                </li>
-            </ul>
-        </nav>
-    </header>
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-dark">
+      <a class="navbar-brand" href="#">Social Analyzer</a>
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a href="https://github.com/qeeqbox/social-analyzer/stargazers"> <i class="fa fa-star"></i></a>
+        </li>
+        <li class="nav-item">
+          <a href="https://github.com/qeeqbox/social-analyzer/archive/main.zip"> <i class="fa fa-download"></i></a>
+        </li>
+        <li class="nav-item">
+          <a href="https://github.com/qeeqbox/social-analyzer/watchers"> <i class="fa fa-eye"></i></a>
+        </li>
+      </ul>
+    </nav>
+  </header>
 
-    <div class="center-dev">
-        <div class="string-analyzer-app">
-            <div class="modal fade" id="settings-modal" role="dialog">
-                <div class="modal-dialog">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <div class="div-left">Settings</div>
-                            <div class="div-right"></div>
-                        </div>
-                        <div class="modal-body">
-                          <div id="user-agent-api">
-                              <div class="div-header">
-                                  <div class="div-left">User-Agent (Optional)</div>
-                                  <div class="div-right"></div>
-                              </div>
-                              <input type="text" id="user-agent-string" placeholder="Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:84.0) Gecko/20100101 Firefox/84.0" />
-                          </div>
-                            <div id="google-api">
-                                <div class="div-header">
-                                    <div class="div-left">Google API (Optional)</div>
-                                    <div class="div-right"></div>
-                                </div>
-                                <input type="text" id="google-api-key" placeholder="Google API Key" />
-                                <input type="text" id="google-api-cs" placeholder="Google API CS" />
-                            </div>
-                            <div id="detection-options">
-                                <div class="div-header">
-                                    <div class="div-left">Available Detections</div>
-                                    <div class="div-right"></div>
-                                </div>
-                                <ul id="detection-options-list">
-                                    None
-                                </ul>
-                                <div id="detection-options-buttons">
-                                    <input type="button" value="Top 10" />
-                                    <div class="cell-separator"></div>
-                                    <input type="button" id="settings-select-all" value="Select All" />
-                                    <div class="cell-separator"></div>
-                                    <input type="button" id='de-settings-select-all' value="De-Select All" />
-                                </div>
-                            </div>
-                        </div>
-                        <div class="modal-footer">
-                            <input type="button" id="save-settings" value="Save" />
-                            <input type="button" value="Dismiss" data-dismiss="modal" />
-                        </div>
-                    </div>
+  <div class="center-dev">
+    <div class="string-analyzer-app">
+      <div class="modal fade" id="settings-modal" role="dialog">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <div class="div-left">Settings</div>
+              <div class="div-right"></div>
+            </div>
+            <div class="modal-body">
+              <div id="user-agent-api">
+                <div class="div-header">
+                  <div class="div-left">User-Agent (Optional)</div>
+                  <div class="div-right"></div>
+                </div>
+                <input type="text" id="user-agent-string" placeholder="Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:84.0) Gecko/20100101 Firefox/84.0" />
+              </div>
+              <div id="google-api">
+                <div class="div-header">
+                  <div class="div-left">Google API (Optional)</div>
+                  <div class="div-right"></div>
+                </div>
+                <input type="text" id="google-api-key" placeholder="Google API Key" />
+                <input type="text" id="google-api-cs" placeholder="Google API CS" />
+              </div>
+              <div id="detection-options">
+                <div class="div-header">
+                  <div class="div-left">Available Detections</div>
+                  <div class="div-right"></div>
+                </div>
+                <ul id="detection-options-list">
+                  None
+                </ul>
+                <div id="detection-options-buttons">
+                  <input type="button" value="Top 10" />
+                  <div class="cell-separator"></div>
+                  <input type="button" id="settings-select-all" value="Select All" />
+                  <div class="cell-separator"></div>
+                  <input type="button" id='de-settings-select-all' value="De-Select All" />
+                </div>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <input type="button" id="save-settings" value="Save" />
+              <input type="button" value="Dismiss" data-dismiss="modal" />
+            </div>
+          </div>
 
-                </div>
-            </div>
-            <div class="box-border-style" id="string-section">
-                <div class="div-header">
-                    <div class="div-left">Enter Profile Name</div>
-                    <div class="div-right"><i id="open-settings" class="fa fa-cog"></i></div>
-                </div>
-                <div class="div-100">
-                    <input type="text" id="string-to-analyze" placeholder="Joe" />
-                    <div class="cell-separator"></div>
-                    <select name="analyzed-options" placeholder="Choose some options..." id="analyzed-options"
-                        multiple="multiple">
-                        <option value="LookUps">LookUps</option>
-                        <option value="WordInfo">WordInfo</option>
-                        <option value="MostCommon">MostCommon</option>
-                        <option value="SplitWordsByUpperCase">SplitWordsByUpperCase</option>
-                        <option value="SplitWordsByAlphabet">SplitWordsByAlphabet</option>
-                        <option value="ConvertNumbers">ConvertNumbers</option>
-                        <option value="FindNumbers">FindNumbers</option>
-                        <option value="FindSymbols">FindSymbols</option>
-                        <option value="FindUserProfilesFast">FindUserProfilesFast</option>
-                        <option value="FindUserProfilesSlow">FindUserProfilesSlow</option>
-                        <option value="ShowUserProfilesSlow">ShowUserProfilesSlow</option>
-                        <option value="FindUserProfilesSpecial">FindUserProfilesSpecial</option>
-                        <option value="FindOrigins">FindOrigins</option>
-                    </select>
-                    <div class="cell-separator"></div>
-                    <input type="button" id="analyze-normal" value="Analyze" />
-                    <div class="cell-separator"></div>
-                    <input type="button" id="clear-options" value="Clear" />
-                    <div class="cell-separator"></div>
-                    <input type="button" id="reset-everything" value="Reset" />
-                </div>
-            </div>
-            <div class="box-border-style" id="lookups-section">
-                <div class="div-header">
-                    <div class="div-left">String LookUps</div>
-                    <div class="div-right"></div>
-                </div>
-                <div class="div-100">
-                    <div id="lookups-checking-info"></div>
-                </div>
-                <div id="lookups-table">
-                </div>
-            </div>
-            <div class="box-border-style" id="most-common-words-section">
-                <div class="div-header">
-                    <div class="div-left">Most common words by languages</div>
-                    <div class="div-right"></div>
-                </div>
-                <div id="most-common-words-table">
-                </div>
-            </div>
-            <div class="box-border-style" id="names-origins-section">
-                <div class="div-header">
-                    <div class="div-left">Extracted names with orginis</div>
-                    <div class="div-right"></div>
-                </div>
-                <div id="names-origins-table">
-                </div>
-            </div>
-            <div class="box-border-style" id="words-info-section">
-                <div class="div-header">
-                    <div class="div-left">Extracted words information </div>
-                    <div class="div-right"></div>
-                </div>
-                <div id="words-info-tables">
-                </div>
-            </div>
-            <div class="box-border-style" id="possible-words-section">
-                <div class="div-header">
-                    <div class="div-left">Possible words for combinations</div>
-                    <div class="div-right"></div>
-                </div>
-                <div id="possible-words-section-table"></div>
-            </div>
-            <div class="box-border-style" id="combinations-section">
-                <div class="div-header">
-                    <div class="div-left">Save Report</div>
-                    <div class="div-right"></div>
-                </div>
-                <div class="div-100">
-                    <input type="button" class="save-text" value="Save as (Text)" />
-                    <div class="cell-separator"></div>
-                    <input type="button" class="save-json" value="Save as (Json)" />
-                    <div class="cell-separator"></div>
-                    <input type="button" class="save-xml" value="Save as (XML)" />
-                </div>
-            </div>
-            <div class="box-border-style" id="output-section-1">
-                <div class="div-header">
-                    <div class="div-left">Profiles</div>
-                    <div class="div-right"></div>
-                </div>
-                <div id="output-table-1"></div>
-            </div>
-            <div class="box-border-style" id="output-section-2">
-                <div class="div-header">
-                    <div class="div-left">Detected Profiles (Advanced)</div>
-                    <div class="div-right"></div>
-                </div>
-                <div id="output-table-2"></div>
-            </div>
-            <div class="box-border-style" id="output-section-3">
-                <div class="div-header">
-                    <div class="div-left">Detected Profiles (Normal)</div>
-                    <div class="div-right"></div>
-                </div>
-                <div id="output-table-3"></div>
-            </div>
-            <div class="box-border-style" id="output-section-4">
-                <div class="div-header">
-                    <div class="div-left">Detected Profiles (Special)</div>
-                    <div class="div-right"></div>
-                </div>
-                <div id="output-table-4"></div>
-            </div>
         </div>
+      </div>
+      <div class="box-border-style" id="string-section">
+        <div class="div-header">
+          <div class="div-left">Enter Profile Name</div>
+          <div class="div-right"><i id="open-settings" class="fa fa-cog"></i></div>
+        </div>
+        <div class="div-100">
+          <input type="text" id="string-to-analyze" placeholder="Joe" />
+          <div class="cell-separator"></div>
+          <select name="analyzed-options" placeholder="Choose some options..." id="analyzed-options" multiple="multiple">
+            <option value="LookUps">LookUps</option>
+            <option value="WordInfo">WordInfo</option>
+            <option value="MostCommon">MostCommon</option>
+            <option value="SplitWordsByUpperCase">SplitWordsByUpperCase</option>
+            <option value="SplitWordsByAlphabet">SplitWordsByAlphabet</option>
+            <option value="ConvertNumbers">ConvertNumbers</option>
+            <option value="FindNumbers">FindNumbers</option>
+            <option value="FindSymbols">FindSymbols</option>
+            <option value="FindUserProfilesFast">FindUserProfilesFast</option>
+            <option value="FindUserProfilesSlow">FindUserProfilesSlow</option>
+            <option value="ShowUserProfilesSlow">ShowUserProfilesSlow</option>
+            <option value="FindUserProfilesSpecial">FindUserProfilesSpecial</option>
+            <option value="FindOrigins">FindOrigins</option>
+          </select>
+          <div class="cell-separator"></div>
+          <input type="button" id="analyze-normal" value="Analyze" />
+          <div class="cell-separator"></div>
+          <input type="button" id="clear-options" value="Clear" />
+          <div class="cell-separator"></div>
+          <input type="button" id="reset-everything" value="Reset" />
+        </div>
+      </div>
+      <div class="box-border-style" id="lookups-section">
+        <div class="div-header">
+          <div class="div-left">String LookUps</div>
+          <div class="div-right"></div>
+        </div>
+        <div class="div-100">
+          <div id="lookups-checking-info"></div>
+        </div>
+        <div id="lookups-table">
+        </div>
+      </div>
+      <div class="box-border-style" id="most-common-words-section">
+        <div class="div-header">
+          <div class="div-left">Most common words by languages</div>
+          <div class="div-right"></div>
+        </div>
+        <div id="most-common-words-table">
+        </div>
+      </div>
+      <div class="box-border-style" id="names-origins-section">
+        <div class="div-header">
+          <div class="div-left">Extracted names with orginis</div>
+          <div class="div-right"></div>
+        </div>
+        <div id="names-origins-table">
+        </div>
+      </div>
+      <div class="box-border-style" id="words-info-section">
+        <div class="div-header">
+          <div class="div-left">Extracted words information </div>
+          <div class="div-right"></div>
+        </div>
+        <div id="words-info-tables">
+        </div>
+      </div>
+      <div class="box-border-style" id="possible-words-section">
+        <div class="div-header">
+          <div class="div-left">Possible words for combinations</div>
+          <div class="div-right"></div>
+        </div>
+        <div id="possible-words-section-table"></div>
+      </div>
+      <div class="box-border-style" id="combinations-section">
+        <div class="div-header">
+          <div class="div-left">Save Report</div>
+          <div class="div-right"></div>
+        </div>
+        <div class="div-100">
+          <input type="button" class="save-text" value="Save as (Text)" />
+          <div class="cell-separator"></div>
+          <input type="button" class="save-json" value="Save as (Json)" />
+          <div class="cell-separator"></div>
+          <input type="button" class="save-xml" value="Save as (XML)" />
+        </div>
+      </div>
+      <div class="box-border-style" id="output-section-1">
+        <div class="div-header">
+          <div class="div-left">Profiles</div>
+          <div class="div-right"></div>
+        </div>
+        <div id="output-table-1"></div>
+      </div>
+      <div class="box-border-style" id="output-section-2">
+        <div class="div-header">
+          <div class="div-left">Detected Profiles (Advanced)</div>
+          <div class="div-right"></div>
+        </div>
+        <div id="output-table-2"></div>
+      </div>
+      <div class="box-border-style" id="output-section-3">
+        <div class="div-header">
+          <div class="div-left">Detected Profiles (Normal)</div>
+          <div class="div-right"></div>
+        </div>
+        <div id="output-table-3"></div>
+      </div>
+      <div class="box-border-style" id="output-section-4">
+        <div class="div-header">
+          <div class="div-left">Detected Profiles (Special)</div>
+          <div class="div-right"></div>
+        </div>
+        <div id="output-table-4"></div>
+      </div>
     </div>
-    <script>
-        var interval_logs;
+  </div>
+  <script>
+    var interval_logs;
 
-        $('#analyzed-options').selectize({
-            plugins: ['remove_button'],
-        });
+    $('#analyzed-options').selectize({
+      plugins: ['remove_button'],
+    });
 
-        setup_selectable('#analyzed-options')
+    setup_selectable('#analyzed-options')
 
-        function spinner_on_off(on_off) {
-            if (on_off) {
-                $('#logs').text("")
-                $('.waiting').show();
-                $('.waiting-box').show();
+    function spinner_on_off(on_off) {
+      if (on_off) {
+        $('#logs').text("")
+        $('.waiting').show();
+        $('.waiting-box').show();
+      } else {
+        $('#logs').text("")
+        $('.waiting').hide();
+        $('.waiting-box').hide();
+      }
+    }
+
+    function get_logs(uuid) {
+      $.ajax({
+        type: "POST",
+        url: "/get_logs",
+        data: {
+          'last_line': $('#logs').text(),
+          'uuid': uuid
+        },
+      }).done(function(data) {
+        if (data != "nothinghere" && data != "") {
+          $('#logs').text(data)
+        }
+      })
+    }
+
+    function reset_everything() {
+      //$('#analyzed-options')[0].selectize.clear()
+      $("#lookups-checking-info").html("");
+      $("#lookups-table").html("");
+      $('#lookups-section').hide();
+      $("#most-common-words-table").html("")
+      $('#most-common-words-section').hide();
+      $("#words-info-tables").html("");
+      $('#words-info-section').hide();
+      $('#possible-words-section').hide();
+      $('#possible-words-section-table').html("");
+      $('#combinations-section').hide();
+      $('#output-section-1').hide();
+      $('#output-table-1').html("");
+      $('#output-section-2').hide();
+      $('#output-table-2').html("");
+      $('#output-section-3').hide();
+      $('#output-table-3').html("");
+      $('#output-section-4').hide();
+      $('#output-table-4').html("");
+      $('#names-origins-section').hide();
+      $('#names-origins-table').html("");
+      $('#logs').html("");
+      clearInterval(interval_logs);
+    }
+
+    function setup_selectable(tag) {
+      $(tag).selectable({
+        selecting: function(event, ui) {
+          if ($(ui.selecting).hasClass('ui-selected')) {
+            this.del_selected.push(ui.selecting);
+          }
+        },
+        unselecting: function(event, ui) {
+          $(ui.unselecting).addClass('ui-selected');
+        },
+        stop: function() {
+          $.each(this.del_selected, function(ix, de) {
+            $(de).removeClass('ui-selecting').removeClass('ui-selected');
+          });
+          this.del_selected = [];
+        }
+      });
+    }
+
+    function add_table(items) {
+
+      var temp_th = ""
+      var temp_td = ""
+
+      Object.keys(items).forEach(function(key) {
+        if (items[key].length > 0) {
+          temp_th += '<th>' + key + '</th>'
+          temp_ul = ""
+          items[key].forEach(function(item) {
+            temp_ul += "<li>" + item + "</li>";
+          });
+          temp_td += '<td id="selectable"><ul id="' + key + '-prefix-search-box">' + temp_ul + '</ul></td>';
+
+        }
+      });
+
+      if (temp_th != "" && temp_td != "") {
+        $('#possible-words-section-table').html('<table><tr>' + temp_th + '</tr>' + '<tr>' + temp_td + '</tr>' + '</table>')
+        $('#possible-words-section').show();
+      }
+
+    }
+
+    async function analyze_string() {
+      reset_everything()
+      spinner_on_off(true)
+      random_string = Math.random().toString(36).substring(2);
+      interval_logs = setInterval(get_logs.bind(null, random_string), 1000);
+      list_of_options = []
+      $('.selectize-input .item').each(function() {
+        list_of_options.push($(this).attr('data-value'))
+      });
+
+      await $.ajax({
+        type: "POST",
+        url: "/url",
+        data: {
+          'string': $('#string-to-analyze').val(),
+          'option': list_of_options.join(","),
+          'uuid': random_string
+        },
+      }).done(function(data) {
+        if (data != "Error") {
+          if (data.common.length > 0) {
+            var temp_tr = ""
+            Object.keys(data.common).forEach(function(item) {
+              temp_tr += '<tr><td>' + data.common[item].word + '</td><td>' + data.common[item].languages + '</td></tr>'
+            });
+
+            $("#most-common-words-table").last().append('<table><tr><th>word</th><th>languages</th></tr>' + temp_tr + '</table>')
+            $('#most-common-words-section').show();
+          }
+          if ((data.info.checking.indexOf('with no lookups') === -1)) {
+            $("#lookups-checking-info").html(data.info.checking);
+            if (data.info.items.length > 0) {
+              var temp_tr = ""
+              Object.keys(data.info.items).forEach(function(item) {
+                temp_tr += '<tr><td>' + data.info.items[item].title + '</td><td>' + data.info.items[item].snippet + '</td></tr>'
+              });
+              $("#lookups-table").last().append('<table><tr><th>title</th><th>snippet</th></tr>' + temp_tr + '</table>')
+              $('#lookups-table').show();
             }
-            else {
-                $('#logs').text("")
-                $('.waiting').hide();
-                $('.waiting-box').hide();
-            }
-        }
 
-        function get_logs(uuid) {
-                $.ajax({
-                type: "POST",
-                url: "/get_logs",
-                data: { 'last_line': $('#logs').text(),'uuid':uuid },
-                }).done(function (data) {
-                    if (data != "nothinghere" && data != "")
-                    {
-                        $('#logs').text(data)
-                    }
-                })
-        }
-
-        function reset_everything() {
-            //$('#analyzed-options')[0].selectize.clear()
-            $("#lookups-checking-info").html("");
-            $("#lookups-table").html("");
-            $('#lookups-section').hide();
-            $("#most-common-words-table").html("")
-            $('#most-common-words-section').hide();
-            $("#words-info-tables").html("");
-            $('#words-info-section').hide();
-            $('#possible-words-section').hide();
-            $('#possible-words-section-table').html("");
-            $('#combinations-section').hide();
-            $('#output-section-1').hide();
-            $('#output-table-1').html("");
-            $('#output-section-2').hide();
-            $('#output-table-2').html("");
-            $('#output-section-3').hide();
-            $('#output-table-3').html("");
-            $('#output-section-4').hide();
-            $('#output-table-4').html("");
-            $('#names-origins-section').hide();
-            $('#names-origins-table').html("");
-            $('#logs').html("");
-            clearInterval(interval_logs);
-        }
-
-        function setup_selectable(tag) {
-            $(tag).selectable({
-                selecting: function (event, ui) {
-                    if ($(ui.selecting).hasClass('ui-selected')) {
-                        this.del_selected.push(ui.selecting);
-                    }
-                },
-                unselecting: function (event, ui) {
-                    $(ui.unselecting).addClass('ui-selected');
-                },
-                stop: function () {
-                    $.each(this.del_selected, function (ix, de) {
-                        $(de).removeClass('ui-selecting').removeClass('ui-selected');
-                    });
-                    this.del_selected = [];
-                }
-            });
-        }
-
-        function add_table(items) {
-
-            var temp_th = ""
-            var temp_td = ""
-
-            Object.keys(items).forEach(function (key) {
-                if (items[key].length > 0) {
-                    temp_th += '<th>' + key + '</th>'
-                    temp_ul = ""
-                    items[key].forEach(function (item) {
-                        temp_ul += "<li>" + item + "</li>";
-                    });
-                    temp_td += '<td id="selectable"><ul id="' + key + '-prefix-search-box">' + temp_ul + '</ul></td>';
-
-                }
-            });
-
-            if (temp_th != "" && temp_td != "") {
-                $('#possible-words-section-table').html('<table><tr>' + temp_th + '</tr>' + '<tr>' + temp_td + '</tr>' + '</table>')
-                $('#possible-words-section').show();
-            }
-
-        }
-
-        async function analyze_string() {
-            reset_everything()
-            spinner_on_off(true)
-            random_string = Math.random().toString(36).substring(2);
-            interval_logs = setInterval(get_logs.bind(null,random_string),1000);
-            list_of_options = []
-            $('.selectize-input .item').each(function () {
-                list_of_options.push($(this).attr('data-value'))
-            });
-
-            await $.ajax({
-                type: "POST",
-                url: "/url",
-                data: { 'string': $('#string-to-analyze').val(), 'option': list_of_options.join(","),'uuid':random_string },
-            }).done(function (data) {
-                if (data != "Error") {
-                    if (data.common.length > 0) {
-                        var temp_tr = ""
-                        Object.keys(data.common).forEach(function (item) {
-                            temp_tr += '<tr><td>' + data.common[item].word + '</td><td>' + data.common[item].languages + '</td></tr>'
-                        });
-
-                        $("#most-common-words-table").last().append('<table><tr><th>word</th><th>languages</th></tr>' + temp_tr + '</table>')
-                        $('#most-common-words-section').show();
-                    }
-                    if ((data.info.checking.indexOf('with no lookups') === -1)) {
-                        $("#lookups-checking-info").html(data.info.checking);
-                        if (data.info.items.length > 0) {
-                            var temp_tr = ""
-                            Object.keys(data.info.items).forEach(function (item) {
-                                temp_tr += '<tr><td>' + data.info.items[item].title + '</td><td>' + data.info.items[item].snippet + '</td></tr>'
-                            });
-                            $("#lookups-table").last().append('<table><tr><th>title</th><th>snippet</th></tr>' + temp_tr + '</table>')
-                            $('#lookups-table').show();
-                        }
-
-                        $('#lookups-section').show();
-                    }
-                    if (data.words_info.length > 0) {
-                        data.words_info.forEach(function (item) {
-                            var temp_tr = '<tr><td>' + item.word + '</td><td>definition</td><td>' + item.text + '</td></tr>'
-                            if (item.results.length > 0) {
-                                item.results.forEach(function (result) {
-                                    temp_tr += '<tr><td>' + item.word + '</td><td>' + result.type + '</td><td>' + result.text + '</td></tr>'
-                                });
-                            }
-                            $("#words-info-tables").last().append('<table><tr><th>word</th><th>type</th><th>text</th></tr>' + temp_tr + '</table>')
-                        });
-                        $('#words-info-section').show();
-                    }
-
-                    add_table(data.table)
-
-                    if (data.user_info_normal.data.length > 0) {
-                        var temp_tr = ""
-                        if (data.user_info_normal.type == "all" || data.user_info_normal.type == "noshow") {
-                            data.user_info_normal.data.forEach(function (site) {
-                                if (site.found > 0 || site.image != "") {
-                                    temp_image = ""
-                                    if (site.image != "") {
-                                        temp_image = '<img src=' + site.image + '>'
-                                    }
-                                    temp_tr += '<div class="user-info-container"><div class="user-info-container-left"><div>Link: <a href="' + site.link + '">' + site.link + '</a></div><div>Rate: ' + site.rate + '</div><div>Title: ' + site.title + '</div><div>Site Type: ' + site.type + '</div><div>Text: ' + site.text + '</div></div><div class="user-info-container-right">' + temp_image + '</div></div>'
-                                    console.log(temp_tr)
-                                }
-                            });
-
-                            $("#output-table-2").html(temp_tr)
-                            $('#output-section-2').show();
-                        }
-                        else if (data.user_info_normal.type == "show") {
-                            data.user_info_normal.data.forEach(function (site) {
-                                if (site.found > 0 || site.image != "") {
-                                    temp_image = ""
-                                    if (site.image != "") {
-                                        temp_image = '<img src=' + site.image + '>'
-                                    }
-                                    temp_tr += '<div class="profile-card"><div class="profile-card-text">Link: <a href="' + site.link + '">' + site.link + '</a></div>' + temp_image + ' </div>'
-                                    console.log(temp_tr)
-                                }
-                            });
-
-                            $("#output-table-1").html(temp_tr)
-                            $('#output-section-1').show();
-                        }
-                    }
-
-                    if (data.user_info_advanced.data.length > 0) {
-                        var temp_tr = ""
-                        data.user_info_advanced.data.forEach(function (site) {
-                            if (site.found > 0 || site.image != "") {
-                                temp_image = ""
-                                if (site.image != "") {
-                                    temp_image = '<img src=' + site.image + '>'
-                                }
-                                temp_tr += '<div class="user-info-container"><div class="user-info-container-left"><div>Link: <a href="' + site.link + '">' + site.link + '</a></div><div>Rate: ' + site.rate + '</div><div>Title: ' + site.title + '</div><div>Site Type: ' + site.type + '</div><div>Text: ' + site.text + '</div></div><div class="user-info-container-right">' + temp_image + '</div></div>'
-                                console.log(temp_tr)
-                            }
-                        });
-
-                        $("#output-table-3").html(temp_tr)
-                        $('#output-section-3').show();
-                    }
-
-                    if (data.user_info_special.data.length > 0) {
-                        var temp_tr = ""
-                        data.user_info_special.data.forEach(function (site) {
-                            if (site.found > 0) {
-                                temp_image = ""
-                                temp_tr += '<div class="user-info-container"><div class="user-info-container-left"><div>Link: <a href="' + site.link + '">' + site.link + '</a></div><div>Rate: ' + site.rate + '</div><div>Title: ' + site.title + '</div><div>Site Type: ' + site.type + '</div><div>Text: ' + site.text + '</div></div><div class="user-info-container-right">' + temp_image + '</div></div>'
-                                console.log(temp_tr)
-                            }
-                        });
-
-                        $("#output-table-4").html(temp_tr)
-                        $('#output-section-4').show();
-                    }
-                    if (data.names_origins.length > 0) {
-                        var temp_tr = ""
-                        Object.keys(data.names_origins).forEach(function (item) {
-                            temp_tr += '<tr><td>' + data.names_origins[item].origin + '</td><td>' + data.names_origins[item].name + '</td><td>' + data.names_origins[item].gender + '</td></tr>'
-                        });
-                        $("#names-origins-table").last().append('<table><tr><th>origin</th><th>name</th><th>gender</th></tr>' + temp_tr + '</table>')
-                        $('#names-origins-section').show();
-                    }
-                }
-            });
-
-            clearInterval(interval_logs);
-            spinner_on_off(false)
-        }
-
-        async function settings_modal(option) {
-            spinner_on_off(true)
-            if (option == 'get_settings') {
-                await $.ajax({
-                    type: "GET",
-                    url: "/get_settings"
-                }).done(function (data) {
-                    if (data != "Error") {
-                        if (data.detections.length > 0) {
-                            var temp_tr = ""
-                            data.detections.forEach(function (site) {
-                                var temp_selected = ""
-                                if (site.selected == "true") {
-                                    temp_selected = "checked"
-                                }
-                                temp_tr += '<li><input type="checkbox" name=url_' + site.index + ' ' + temp_selected + '>' + '<label for=url_' + site.index + '>' + site.url + '</label></li>'
-                            });
-
-                            $("#detection-options-list").html(temp_tr)
-                        }
-                        $("#user-agent-string").val(data.user_agent)
-                        $("#google-api-key").val(data.google[0])
-                        $("#google-api-cs").val(data.google[1])
-                    }
+            $('#lookups-section').show();
+          }
+          if (data.words_info.length > 0) {
+            data.words_info.forEach(function(item) {
+              var temp_tr = '<tr><td>' + item.word + '</td><td>definition</td><td>' + item.text + '</td></tr>'
+              if (item.results.length > 0) {
+                item.results.forEach(function(result) {
+                  temp_tr += '<tr><td>' + item.word + '</td><td>' + result.type + '</td><td>' + result.text + '</td></tr>'
                 });
-            }
-            else if (option == 'save_settings') {
-                temp_checked = []
-                $("#detection-options-list :checked").each(function () {
-                    temp_checked.push(Number(this.name.substring('url_'.length)))
-                });
-                await $.ajax({
-                    type: "POST",
-                    url: "/save_settings",
-                    data: { 'detections': temp_checked.join(","), 'user_agent':$("#user-agent-string").val(), 'google_key': $("#google-api-key").val(), 'google_cv':$("#google-api-cs").val()}
-                }).done(function (data) {
-                    if (data != "Error") {
-                    }
-                });
-            }
+              }
+              $("#words-info-tables").last().append('<table><tr><th>word</th><th>type</th><th>text</th></tr>' + temp_tr + '</table>')
+            });
+            $('#words-info-section').show();
+          }
 
-            spinner_on_off(false)
+          add_table(data.table)
+
+          if (data.user_info_normal.data.length > 0) {
+            var temp_tr = ""
+            if (data.user_info_normal.type == "all" || data.user_info_normal.type == "noshow") {
+              data.user_info_normal.data.forEach(function(site) {
+                if (site.found > 0 || site.image != "") {
+                  temp_image = ""
+                  if (site.image != "") {
+                    temp_image = '<img src=' + site.image + '>'
+                  }
+                  temp_tr += '<div class="user-info-container"><div class="user-info-container-left"><div>Link: <a href="' + site.link + '">' + site.link + '</a></div><div>Rate: ' + site.rate + '</div><div>Title: ' + site.title +
+                    '</div><div>Site Type: ' + site.type + '</div><div>Text: ' + site.text + '</div></div><div class="user-info-container-right">' + temp_image + '</div></div>'
+                  console.log(temp_tr)
+                }
+              });
+
+              $("#output-table-2").html(temp_tr)
+              $('#output-section-2').show();
+            } else if (data.user_info_normal.type == "show") {
+              data.user_info_normal.data.forEach(function(site) {
+                if (site.found > 0 || site.image != "") {
+                  temp_image = ""
+                  if (site.image != "") {
+                    temp_image = '<img src=' + site.image + '>'
+                  }
+                  temp_tr += '<div class="profile-card"><div class="profile-card-text">Link: <a href="' + site.link + '">' + site.link + '</a></div>' + temp_image + ' </div>'
+                  console.log(temp_tr)
+                }
+              });
+
+              $("#output-table-1").html(temp_tr)
+              $('#output-section-1').show();
+            }
+          }
+
+          if (data.user_info_advanced.data.length > 0) {
+            var temp_tr = ""
+            data.user_info_advanced.data.forEach(function(site) {
+              if (site.found > 0 || site.image != "") {
+                temp_image = ""
+                if (site.image != "") {
+                  temp_image = '<img src=' + site.image + '>'
+                }
+                temp_tr += '<div class="user-info-container"><div class="user-info-container-left"><div>Link: <a href="' + site.link + '">' + site.link + '</a></div><div>Rate: ' + site.rate + '</div><div>Title: ' + site.title +
+                  '</div><div>Site Type: ' + site.type + '</div><div>Text: ' + site.text + '</div></div><div class="user-info-container-right">' + temp_image + '</div></div>'
+                console.log(temp_tr)
+              }
+            });
+
+            $("#output-table-3").html(temp_tr)
+            $('#output-section-3').show();
+          }
+
+          if (data.user_info_special.data.length > 0) {
+            var temp_tr = ""
+            data.user_info_special.data.forEach(function(site) {
+              if (site.found > 0) {
+                temp_image = ""
+                temp_tr += '<div class="user-info-container"><div class="user-info-container-left"><div>Link: <a href="' + site.link + '">' + site.link + '</a></div><div>Rate: ' + site.rate + '</div><div>Title: ' + site.title +
+                  '</div><div>Site Type: ' + site.type + '</div><div>Text: ' + site.text + '</div></div><div class="user-info-container-right">' + temp_image + '</div></div>'
+                console.log(temp_tr)
+              }
+            });
+
+            $("#output-table-4").html(temp_tr)
+            $('#output-section-4').show();
+          }
+          if (data.names_origins.length > 0) {
+            var temp_tr = ""
+            Object.keys(data.names_origins).forEach(function(item) {
+              temp_tr += '<tr><td>' + data.names_origins[item].origin + '</td><td>' + data.names_origins[item].name + '</td><td>' + data.names_origins[item].gender + '</td></tr>'
+            });
+            $("#names-origins-table").last().append('<table><tr><th>origin</th><th>name</th><th>gender</th></tr>' + temp_tr + '</table>')
+            $('#names-origins-section').show();
+          }
         }
+      });
 
-        $('#de-settings-select-all').click(function () {
-            $('#detection-options-list input:checkbox').prop('checked', false);
-        });
+      clearInterval(interval_logs);
+      spinner_on_off(false)
+    }
 
-        $('#settings-select-all').click(function () {
-            $('#detection-options-list input:checkbox').prop('checked', true);
-        });
+    async function settings_modal(option) {
+      spinner_on_off(true)
+      if (option == 'get_settings') {
+        await $.ajax({
+          type: "GET",
+          url: "/get_settings"
+        }).done(function(data) {
+          if (data != "Error") {
+            if (data.detections.length > 0) {
+              var temp_tr = ""
+              data.detections.forEach(function(site) {
+                var temp_selected = ""
+                if (site.selected == "true") {
+                  temp_selected = "checked"
+                }
+                temp_tr += '<li><input type="checkbox" name=url_' + site.index + ' ' + temp_selected + '>' + '<label for=url_' + site.index + '>' + site.url + '</label></li>'
+              });
 
-        $('#analyze-normal').click(function () {
-            analyze_string();
+              $("#detection-options-list").html(temp_tr)
+            }
+            $("#user-agent-string").val(data.user_agent)
+            $("#google-api-key").val(data.google[0])
+            $("#google-api-cs").val(data.google[1])
+          }
         });
+      } else if (option == 'save_settings') {
+        temp_checked = []
+        $("#detection-options-list :checked").each(function() {
+          temp_checked.push(Number(this.name.substring('url_'.length)))
+        });
+        await $.ajax({
+          type: "POST",
+          url: "/save_settings",
+          data: {
+            'detections': temp_checked.join(","),
+            'user_agent': $("#user-agent-string").val(),
+            'google_key': $("#google-api-key").val(),
+            'google_cv': $("#google-api-cs").val()
+          }
+        }).done(function(data) {
+          if (data != "Error") {}
+        });
+      }
 
-        $('.generate').click(function () {
-            generate_combinations('Generate');
-        });
+      spinner_on_off(false)
+    }
 
-        $('#reset-everything').click(function () {
-            reset_everything();
-        });
+    $('#de-settings-select-all').click(function() {
+      $('#detection-options-list input:checkbox').prop('checked', false);
+    });
 
-        $('#save-settings').click(function () {
-            settings_modal("save_settings")
-            $("#settings-modal").modal("toggle")
-        });
+    $('#settings-select-all').click(function() {
+      $('#detection-options-list input:checkbox').prop('checked', true);
+    });
 
-        $('#open-settings').click(function () {
-            settings_modal("get_settings")
-            $("#settings-modal").modal();
-        });
+    $('#analyze-normal').click(function() {
+      analyze_string();
+    });
 
-        $('#clear-options').click(function () {
-            $('#analyzed-options')[0].selectize.clear()
-        });
-    </script>
+    $('.generate').click(function() {
+      generate_combinations('Generate');
+    });
+
+    $('#reset-everything').click(function() {
+      reset_everything();
+    });
+
+    $('#save-settings').click(function() {
+      settings_modal("save_settings")
+      $("#settings-modal").modal("toggle")
+    });
+
+    $('#open-settings').click(function() {
+      settings_modal("get_settings")
+      $("#settings-modal").modal();
+    });
+
+    $('#clear-options').click(function() {
+      $('#analyzed-options')[0].selectize.clear()
+    });
+  </script>
 </body>
 
 </html>
