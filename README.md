@@ -8,17 +8,18 @@ API and Web App for analyzing & finding a person profile across +300 social medi
 **Please submit your contribution in a Pull Request!**
 
 ## Updates
+- (New) Added more automated tests for handling PR requests (will be adding documentation on how PR are being handled)
 - (New) Added logic that enhance FindUserProfilesSlow & ShowUserProfilesSlow checking speed (Limited to docker-compose)👏
 - (New) Added FindOrigins (This extracts well-known names with their origins from the username) 👏
-- (New) Added descriptions logic to websites (will be adding the categories later on) 👏
-- Added pyhton CLI (limited to FindUserProfilesFast option)
-- Added a slack [channel](https://qeeqbox.slack.com/messages/social-analyzer)
+- (New) Added descriptions' logic to websites (will be adding the categories later on) 👏
+- Added Python CLI (limited to FindUserProfilesFast option)
+- Added a Slack [channel](https://qeeqbox.slack.com/messages/social-analyzer)
 - Added Custom user-agent option
-- Added nodejs CLI (You can use this project from Command Line, but it's limited to FindUserProfilesFast option)
+- Added NodeJS CLI (You can use this project from Command Line, but it's limited to FindUserProfilesFast option)
 - Added an optional timeout and implicit wait for each detection (Some websites have a delay logic implemented in the backend)
 - Added logs (user request)
 - Added 5 seconds timeout to https.get (user request)
-- Added the API documentation [WiKi](https://github.com/qeeqbox/social-analyzer/wiki)
+- Added the API documentation [Wiki](https://github.com/qeeqbox/social-analyzer/wiki)
 
 ## Security Testing
 
@@ -56,9 +57,9 @@ Profile images **will not** be blurred. If you want them to be blurred, turn tha
 - And more!
 
 ## Special Detections
-- facebook
+- Facebook
 
-## Install and run as web app (Nodejs + NPM + Firefox)
+## Install and run as web app (NodeJS + NPM + Firefox)
 ```bash
 sudo add-apt-repository ppa:mozillateam/ppa
 sudo apt-get update
@@ -71,7 +72,7 @@ npm install
 npm start
 ```
 
-## Install and run as CLI (Nodejs + NPM + Firefox)
+## Install and run as CLI (NodeJS + NPM + Firefox)
 ```bash
 sudo add-apt-repository ppa:mozillateam/ppa
 sudo apt-get update
@@ -86,7 +87,7 @@ npm install
 node app.js -c -m "fast" -u "username" -w "youtube pinterest tumblr"
 ```
 
-## Install and run as CLI (python3 + NPM + Firefox)
+## Install and run as CLI (Python3 + NPM + Firefox)
 ```bash
 sudo add-apt-repository ppa:mozillateam/ppa
 sudo apt-get update
@@ -127,8 +128,8 @@ sudo kill -9 $(sudo lsof -t -i:9005)
 - Adding the generic websites detections (These need some reviewing, but I will try to add them in 2021)
 
 ## Resources
-- api.duckduckgo, google api, nodejs, bootstrap, selectize, jquery, wikipedia and font-awesome
-- Let me know if i missed a reference or resource!
+- DuckDuckGo API, Google API, NodeJS, bootstrap, selectize, jQuery, Wikipedia and font-awesome
+- Let me know if I missed a reference or resource!
 
 ## Disclaimer\Notes
 - This tool meant to be used locally (It does not have any type of Access Control)
