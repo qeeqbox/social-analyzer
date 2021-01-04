@@ -48,10 +48,9 @@ Profile images **will not** be blurred. If you want them to be blurred, turn tha
 - Find Profile Special (Slow)
 - Profile Screenshot (Slow)
 - Python CLI (Limited to FindUserProfilesFast option) 
-- NodeJS CLI (You can use this project from Command Line, but it's limited to FindUserProfilesFast option)
+- NodeJS CLI (Limited to FindUserProfilesFast option)
 - Optional timeout and implicit wait for each detection (Some websites have a delay logic implemented in the backend)
-- API documentation [Wiki](https://github.com/qeeqbox/social-analyzer/wiki)
-- Addimg descriptions' logic to websites (will be adding the categories later on)
+- Adding descriptions' logic to websites (will be adding the categories later on)
 - Custom user-agent option
 - Dump Logs to folder
 
