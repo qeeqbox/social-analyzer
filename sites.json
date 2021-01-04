@@ -3462,11 +3462,15 @@
   },
   {
     "url": "https://imgur.com/user/{username}",
-    "detections": [],
+    "detections": [{
+      "return": "true",
+      "string": "{username}",
+      "type": "advanced"
+    }],
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
-    "type": "Image hosting service"
+    "type": "hosting"
   },
   {
     "url": "https://independent.academia.edu/{username}",
