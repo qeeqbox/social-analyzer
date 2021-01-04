@@ -228,7 +228,7 @@ async function find_username_advanced(req) {
       functions.push(find_username_site_new.bind(null, req.body.uuid, req.body.string, req.body.option, site));
     }
   });
-  const results = await async.parallelLimit(functions, 5);
+  const results = await async.parallelLimit(functions, 8);
   console.log(`Total time ${new Date() - time}`);
   return results.filter(item => item !== undefined)
 }

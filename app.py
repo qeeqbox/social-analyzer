@@ -139,7 +139,7 @@ def check_user_cli(username, websites):
 					del item['image']
 					temp_found.append(item)
 	if len(temp_found) == 0:
-		LOG.info('User does not exist (try FindUserProfilesSlow or FindUserProfilesSpecial)')
+		LOG.info('User does not exist (try FindUserProfilesSlow or FindUserProfilesSpecial) in the web app version')
 	else:
 		for item in temp_found:
 			LOG.info(item)
