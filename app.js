@@ -1,6 +1,6 @@
 //  -------------------------------------------------------------
 //  author        Giga
-//  project       qeeqbox/social-analyzer 
+//  project       qeeqbox/social-analyzer
 //  email         gigaqeeq@gmail.com
 //  description   app.py (CLI)
 //  licensee      AGPL-3.0
@@ -10,7 +10,7 @@
 
 var google_api_key = "";
 var google_api_cs = "";
-var grid_url = ""; 
+var grid_url = "";
 
 var header_options = {
   headers: {
@@ -254,7 +254,7 @@ async function find_username_site_new(uuid, username, options, site) {
         height: 480
       }))
       .usingServer(grid_url)
-      .build();    
+      .build();
     }
 
 
@@ -338,6 +338,14 @@ async function find_username_site_new(uuid, username, options, site) {
               tmpobj.removeCallback();
             } else if (detection.type == "normal" && source != "") {
               if (source.toLowerCase().includes(detection.string.replace("{username}", username).toLowerCase())) {
+                temp_found = "true";
+              }
+              if (detection.return == temp_found) {
+                //console.log(detection.string,"  >  normal");
+                temp_profile.found += 1
+              }
+            }else if (detection.type == "advanced" && text_only != "") {
+              if (text_only.toLowerCase().includes(detection.string.replace("{username}", username).toLowerCase())) {
                 temp_found = "true";
               }
               if (detection.return == temp_found) {
