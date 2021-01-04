@@ -6227,18 +6227,6 @@
     "type": "unavailable"
   },
   {
-    "url": "https://translate.jellyfin.org/user/{username}/",
-    "detections": [{
-      "return": "false",
-      "string": "No User matches the given query",
-      "type": "normal"
-    }],
-    "selected": "false",
-    "timeout": 0,
-    "implicit": 0,
-    "type": "Weblate instance"
-  },
-  {
     "url": "https://trashbox.ru/users/{username}",
     "detections": [{
       "return": "true",
@@ -6854,14 +6842,6 @@
     "type": "unavailable"
   },
   {
-    "url": "https://younow.com/{username}",
-    "detections": [],
-    "selected": "false",
-    "timeout": 0,
-    "implicit": 0,
-    "type": "Video chat"
-  },
-  {
     "url": "https://youpic.com/photographer/{username}",
     "detections": [{
         "return": "false",
@@ -6930,14 +6910,6 @@
     "timeout": 0,
     "implicit": 0,
     "type": "Knowledge markets"
-  },
-  {
-    "url": "https://{username}.basecamphq.com/login",
-    "detections": [],
-    "selected": "false",
-    "timeout": 0,
-    "implicit": 0,
-    "type": "unavailable"
   },
   {
     "url": "https://{username}.blogspot.com",
