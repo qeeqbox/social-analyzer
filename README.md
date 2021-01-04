@@ -8,7 +8,7 @@ API and Web App for analyzing & finding a person profile across +300 social medi
 **Please submit your contribution in a Pull Request!**
 
 ## Updates
-- (New) Added more automated tests for handling PR requests (will be adding documentation on how PR are being handled)
+- (New) Added more automated tests for handling Pull Requests (will be adding documentation on how PR are being handled)
 - (New) Added logic that enhance FindUserProfilesSlow & ShowUserProfilesSlow checking speed (Limited to docker-compose)👏
 - (New) Added FindOrigins (This extracts well-known names with their origins from the username) 👏
 - (New) Added descriptions' logic to websites (will be adding the categories later on) 👏
