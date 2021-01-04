@@ -8,19 +8,11 @@ API and Web App for analyzing & finding a person profile across +300 social medi
 **Please submit your contribution in a Pull Request!**
 
 ## Updates
-- (New) Added detection type:advanced (This will allow detection on websites that manipulate DOM via JavaScript etc..) 👏👏👏
-- (New) Added more automated tests for handling Pull Requests (will be adding documentation on how PR are being handled)
-- (New) Added logic that enhances FindUserProfilesSlow & ShowUserProfilesSlow checking speed (Limited to docker-compose) 👏
-- (New) Added FindOrigins (This extracts well-known names with their origins from the username) 👏
-- (New) Added descriptions' logic to websites (will be adding the categories later on) 👏
-- Added Python CLI (limited to FindUserProfilesFast option)
-- Added a Slack [channel](https://qeeqbox.slack.com/messages/social-analyzer)
-- Added Custom user-agent option
-- Added NodeJS CLI (You can use this project from Command Line, but it's limited to FindUserProfilesFast option)
-- Added an optional timeout and implicit wait for each detection (Some websites have a delay logic implemented in the backend)
-- Added logs (user request)
-- Added 5 seconds timeout to https.get (user request)
-- Added the API documentation [Wiki](https://github.com/qeeqbox/social-analyzer/wiki)
+- Added documentation on how to write detections [Wiki](https://github.com/qeeqbox/social-analyzer/wiki) 👏
+- Added detection type:advanced (This will allow detection on websites that manipulate DOM via JavaScript etc..) 👏
+- Added more automated tests for handling Pull Requests (will be adding documentation on how PR are being handled) 👏
+- Added logic that enhances FindUserProfilesSlow & ShowUserProfilesSlow checking speed (Limited to docker-compose) 👏
+- Added FindOrigins (This extracts well-known names with their origins from the username) 👏
 
 ## Security Testing
 
@@ -54,8 +46,14 @@ Profile images **will not** be blurred. If you want them to be blurred, turn tha
 - Find Profile Normal (Fast)
 - Find Profile Advanced (Slow)
 - Find Profile Special (Slow)
-- Profile Screenshot
-- And more!
+- Profile Screenshot (Slow)
+- Python CLI (Limited to FindUserProfilesFast option) 
+- NodeJS CLI (You can use this project from Command Line, but it's limited to FindUserProfilesFast option)
+- Optional timeout and implicit wait for each detection (Some websites have a delay logic implemented in the backend)
+- API documentation [Wiki](https://github.com/qeeqbox/social-analyzer/wiki)
+- Addimg descriptions' logic to websites (will be adding the categories later on)
+- Custom user-agent option
+- Dump Logs to folder
 
 ## Special Detections
 - Facebook
