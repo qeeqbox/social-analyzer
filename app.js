@@ -1037,7 +1037,6 @@ app.post("/url", async function(req, res, next) {
   if (req.body.string == null || req.body.string == "") {
     res.json("Error");
   } else {
-    console.log(header_options)
     req.body.uuid = req.body.uuid.replace(/[^a-zA-Z0-9\-]+/g, '');
     if (req.body.option.includes("FindUserProfilesSpecial")) {
       log_to_file_queue(req.body.uuid, "[Starting] Checking user profiles special")
