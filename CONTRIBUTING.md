@@ -14,7 +14,7 @@ Pull Requests are the best way to propose changes to the codebase. We actively w
 5. Add description and references if possible
 6. Issue that Pull Request!
 
-These tags [test-code], [test-text] or [test-other] will trigger a Dedicated Testing System called Macaw. Macaw will issue a UUID4 that for tracking some tests. If Macaw approves the changes, then your Pull Request will be merged and the changes will be added to a queue. The system may revert or remove changes after merging them due to test failure
+These tags [test-code], [test-text] or [test-other] will trigger a Dedicated Testing System called Macaw. Macaw will issue a UUID4 for tracking some tests. If Macaw approves the changes, then your Pull Request will be merged and the changes will be added to a queue. The system may revert or remove changes after merging them due to test failure
 
 Example of title: [test-text] added documentation to functions
 
