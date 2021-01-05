@@ -8,6 +8,7 @@ API and Web App for analyzing & finding a person profile across +300 social medi
 **Please submit your contribution in a Pull Request!**
 
 ## Updates
+- (Testing) proxy option for FindUserProfilesFast & FindUserProfilesSlow
 - Added documentation on how to write detections [Wiki](https://github.com/qeeqbox/social-analyzer/wiki) 👏👏👏
 - Added detection type:advanced (This allows detection on websites that manipulate DOM) 👏
 - Added more automated tests for handling Pull Requests (will be adding documentation on how PR are being handled) 👏
