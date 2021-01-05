@@ -8,11 +8,11 @@ API and Web App for analyzing & finding a person profile across +300 social medi
 **Please submit your contribution in a Pull Request!**
 
 ## Updates
-- Added documentation on how to write detections [Wiki](https://github.com/qeeqbox/social-analyzer/wiki) 👏
-- Added detection type:advanced (This will allow detection on websites that manipulate DOM via JavaScript etc..) 👏
+- Added documentation on how to write detections [Wiki](https://github.com/qeeqbox/social-analyzer/wiki) 👏👏👏
+- Added detection type:advanced (This allows detection on websites that manipulate DOM) 👏
 - Added more automated tests for handling Pull Requests (will be adding documentation on how PR are being handled) 👏
-- Added logic that enhances FindUserProfilesSlow & ShowUserProfilesSlow checking speed (Limited to docker-compose) 👏
 - Added FindOrigins (This extracts well-known names with their origins from the username) 👏
+- Enhanceced FindUserProfilesSlow & ShowUserProfilesSlow checking speed (Limited to docker-compose) 👏
 
 ## Security Testing
 
