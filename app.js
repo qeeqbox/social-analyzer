@@ -11,6 +11,8 @@
 var google_api_key = "";
 var google_api_cs = "";
 var grid_url = "";
+var verbose = false
+var proxy = ""
 
 var header_options = {
   headers: {
@@ -51,7 +53,6 @@ var tmp = require("tmp");
 var express = require("express");
 var fs = require("fs");
 var tokenizer = require("wink-tokenizer");
-var axios = require("axios")
 var WordsNinjaPack = require("wordsninja");
 var generatorics = require("generatorics");
 var {
@@ -68,6 +69,7 @@ var {
 var util = require('util');
 var https = require("follow-redirects").https;
 var async = require("async");
+var HttpsProxyAgent = require('https-proxy-agent');
 var PrettyError = require('pretty-error');
 var pe = new PrettyError();
 require('express-async-errors');
@@ -108,6 +110,35 @@ function log_to_file_queue(uuid, msg) {
       });
     });
   });
+}
+
+async function get_url_wrapper_json(url, time) {
+  try {
+    let http_promise = new Promise((resolve, reject) => {
+      var request = https.get(url, header_options, function(res) {
+        var body = ""
+        res.on("data", function(chunk) {
+          body += chunk;
+        });
+        res.on("end", function() {
+          resolve({'data':JSON.parse(body.toString())});
+        });
+      });
+      request.on('error', function(e) {
+        reject({'data':''})
+      });
+      request.on('socket', function(socket) {
+        var timeout = (time != 0) ? time * 1000 : 5000;
+        socket.setTimeout(timeout, function() {
+          request.abort();
+        });
+      });
+    });
+    let response_body = await http_promise;
+    return response_body
+  } catch (error) {
+    verbose && console.log('');
+  }
 }
 
 app.post("/get_logs", async function(req, res, next) {
@@ -207,7 +238,7 @@ async function find_username_site_special_facebook_1(uuid, username, site) {
         try {
           await driver.quit()
         } catch (err) {
-          console.log("Driver Session Issue")
+          verbose && console.log("Driver Session Issue")
         }
       }
       resolve(undefined)
@@ -238,23 +269,22 @@ async function find_username_site_new(uuid, username, options, site) {
     log_to_file_queue(uuid, "[Checking] " + get_site_from_url(site.url))
     let driver = undefined
     if (grid_url == "") {
-    driver = new Builder()
-      .forBrowser("firefox")
-      .setFirefoxOptions(new firefox.Options().headless().windowSize({
-        width: 640,
-        height: 480
-      }))
-      .build();
-    }
-    else{
       driver = new Builder()
-      .forBrowser("firefox")
-      .setFirefoxOptions(new firefox.Options().headless().windowSize({
-        width: 640,
-        height: 480
-      }))
-      .usingServer(grid_url)
-      .build();
+        .forBrowser("firefox")
+        .setFirefoxOptions(new firefox.Options().headless().windowSize({
+          width: 640,
+          height: 480
+        }))
+        .build();
+    } else {
+      driver = new Builder()
+        .forBrowser("firefox")
+        .setFirefoxOptions(new firefox.Options().headless().windowSize({
+          width: 640,
+          height: 480
+        }))
+        .usingServer(grid_url)
+        .build();
     }
 
 
@@ -333,7 +363,7 @@ async function find_username_site_new(uuid, username, options, site) {
                   }
                 })
                 .catch(error => {
-                  console.log(error.message);
+                  verbose && console.log(error.message);
                 })
               tmpobj.removeCallback();
             } else if (detection.type == "normal" && source != "") {
@@ -344,7 +374,7 @@ async function find_username_site_new(uuid, username, options, site) {
                 //console.log(detection.string,"  >  normal");
                 temp_profile.found += 1
               }
-            }else if (detection.type == "advanced" && text_only != "") {
+            } else if (detection.type == "advanced" && text_only != "") {
               if (text_only.toLowerCase().includes(detection.string.replace("{username}", username).toLowerCase())) {
                 temp_found = "true";
               }
@@ -374,7 +404,7 @@ async function find_username_site_new(uuid, username, options, site) {
         try {
           await driver.quit()
         } catch (err) {
-          console.log("Driver Session Issue")
+          verbose && console.log("Driver Session Issue")
         }
       }
       resolve(undefined)
@@ -542,7 +572,7 @@ async function find_username_advanced_2(username, options) {
                   }
                 })
                 .catch(error => {
-                  console.log(error.message);
+                  verbose && console.log(error.message);
                 })
               tmpobj.removeCallback();
             } else if (detection.type == "normal" && source != "") {
@@ -639,6 +669,7 @@ app.get("/get_settings", async function(req, res, next) {
     return 0;
   });
   res.json({
+    proxy:proxy,
     user_agent: header_options['headers']['User-Agent'],
     google: [google_api_key.substring(0, 10) + "******", google_api_cs.substring(0, 10) + "******"],
     detections: temp_list
@@ -664,6 +695,18 @@ app.post("/save_settings", async function(req, res, next) {
   }
   if (req.body.user_agent != header_options['headers']['User-Agent']) {
     header_options['headers']['User-Agent'] = req.body.user_agent;
+  }
+  if (req.body.proxy != proxy) {
+      proxy = req.body.proxy;
+  }
+
+  if (proxy != "") {
+      header_options['agent'] = HttpsProxyAgent(proxy)
+  }
+  else{
+    if ('agent' in header_options){
+      delete header_options['agent'];
+    }
   }
 
   res.json("Done");
@@ -735,12 +778,12 @@ async function get_words_info(all_words, words_info) {
         try {
           var url1 = "https://api.duckduckgo.com/?q={0}&format=json&pretty=1&no_html=1&skip_disambig=1".replace("{0}", all_words_word);
           var url2 = "https://api.duckduckgo.com/?q={0}&format=json&pretty=1".replace("{0}", all_words_word);
-          var response1 = await axios.get(url1);
-          var response2 = await axios.get(url2);
-          if (response2.status === 200) {
+          var response1 = await get_url_wrapper_json(url1);
+          var response2 = await get_url_wrapper_json(url2);
+          if (response2.data != '') {
             if ("RelatedTopics" in response2.data) {
               if (response2.data.RelatedTopics.length > 0) {
-                if (response1.status === 200) {
+                if (response2.data != '') {
                   if ("AbstractText" in response1.data && response1.data.AbstractText != "") {
                     temp_words_info.text = response1.data.AbstractText;
                   } else if ("Abstract" in response1.data && response1.data.AbstractText != "") {
@@ -774,7 +817,7 @@ async function get_words_info(all_words, words_info) {
             words_info.push(temp_words_info);
           }
         } catch (error) {
-          console.log(error);
+          verbose && console.log(error);
         }
       }
     }
@@ -787,8 +830,8 @@ async function check_engines(req, info) {
       return
     }
     var url = "https://www.googleapis.com/customsearch/v1?key={0}&cx={1}&q={2}".replace("{0}", google_api_key).replace("{1}", google_api_cs).replace("{2}", req.body.string);
-    var response = await axios.get(url);
-    if (response.status === 200) {
+    var response = await get_url_wrapper_json(url);
+    if (response.data != '') {
       try {
         info.original = response.data.queries.request[0].searchTerms
       } catch (e) {}
@@ -819,7 +862,7 @@ async function check_engines(req, info) {
       } catch (e) {}
     }
   } catch (error) {
-    console.log(error);
+    verbose && console.log(error);
   }
 }
 
@@ -994,6 +1037,7 @@ app.post("/url", async function(req, res, next) {
   if (req.body.string == null || req.body.string == "") {
     res.json("Error");
   } else {
+    console.log(header_options)
     req.body.uuid = req.body.uuid.replace(/[^a-zA-Z0-9\-]+/g, '');
     if (req.body.option.includes("FindUserProfilesSpecial")) {
       log_to_file_queue(req.body.uuid, "[Starting] Checking user profiles special")
@@ -1153,20 +1197,20 @@ app.post("/url", async function(req, res, next) {
 });
 
 app.use((err, req, res, next) => {
-  console.log(" --- Global Error ---")
-  console.log(pe.render(err));
+  verbose && console.log(" --- Global Error ---")
+  verbose && console.log(pe.render(err));
   res.json("Error");
 });
 
 process.on('uncaughtException', function(err) {
-  console.log(" --- Uncaught Error ---")
-  console.log(pe.render(err));
+  verbose && console.log(" --- Uncaught Error ---")
+  verbose && console.log(pe.render(err));
 })
 
 
 process.on('unhandledRejection', function(err) {
-  console.log(" --- Uncaught Rejection ---")
-  console.log(pe.render(err));
+  verbose && console.log(" --- Uncaught Rejection ---")
+  verbose && console.log(pe.render(err));
 })
 
 const server_host = '0.0.0.0';
@@ -1215,7 +1259,7 @@ async function list_all_websites() {
   console.log('[Listing] Available websites\n' + temp_arr.join('\n'))
 }
 
-if ('grid' in argv){
+if ('grid' in argv) {
   grid_url = argv.grid
 }
 
