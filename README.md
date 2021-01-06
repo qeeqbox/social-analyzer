@@ -16,6 +16,9 @@ API and Web App for analyzing & finding a person profile across +300 social medi
 - Added FindOrigins (This extracts well-known names with their origins from the username) 👏
 - Enhanceced FindUserProfilesSlow & ShowUserProfilesSlow checking speed (Limited to docker-compose) 👏
 
+## Case uses:
+Investigating profiles related to cyberbullying, cybergrooming, cyberstalking & spreading misinformation
+
 ## Security Testing
 
 ```bash
