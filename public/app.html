@@ -1005,9 +1005,10 @@
           if (data.names_origins.length > 0) {
             var temp_tr = ""
             Object.keys(data.names_origins).forEach(function(item) {
-              temp_tr += '<tr><td>' + data.names_origins[item].origin + '</td><td>' + data.names_origins[item].name + '</td><td>' + data.names_origins[item].gender + '</td></tr>'
+              temp_tr += '<tr><td>' + data.names_origins[item].origin + '</td><td>' + data.names_origins[item].name + '</td><td>' + data.names_origins[item].matched + '</td><td>' + data.names_origins[item].similar + '</td><td>' + data
+                .names_origins[item].gender + '</td></tr>'
             });
-            $("#names-origins-table").last().append('<table><tr><th>origin</th><th>name</th><th>gender</th></tr>' + temp_tr + '</table>')
+            $("#names-origins-table").last().append('<table><tr><th>origin</th><th>name</th><th>matched</th><th>similar</th><th>gender</th></tr>' + temp_tr + '</table>')
             $('#names-origins-section').show();
           }
         }

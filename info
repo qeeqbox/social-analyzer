@@ -1,4 +1,4 @@
-{"version":"2021.V.2.04",
+{"version":"2021.V.2.05",
  "build":"pass",
  "test":"pass",
  "grid_test":"pass",
@@ -6,4 +6,4 @@
  "detections":"907",
  "special":"1",
  "awaiting_verification":"23",
- "auto_testing":"e786f88e-40fd-4afc-a6af-ff6b23782b68"}
+ "auto_testing":"cd1a7307-c8eb-474e-b1ec-abdfda0b155e"}
