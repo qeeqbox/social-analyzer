@@ -71,6 +71,7 @@ var https = require("follow-redirects").https;
 var async = require("async");
 var HttpsProxyAgent = require('https-proxy-agent');
 var PrettyError = require('pretty-error');
+var stringSimilarity = require("string-similarity");
 var pe = new PrettyError();
 require('express-async-errors');
 //var jsdom = require('jsdom');
@@ -121,11 +122,15 @@ async function get_url_wrapper_json(url, time) {
           body += chunk;
         });
         res.on("end", function() {
-          resolve({'data':JSON.parse(body.toString())});
+          resolve({
+            'data': JSON.parse(body.toString())
+          });
         });
       });
       request.on('error', function(e) {
-        reject({'data':''})
+        reject({
+          'data': ''
+        })
       });
       request.on('socket', function(socket) {
         var timeout = (time != 0) ? time * 1000 : 5000;
@@ -669,7 +674,7 @@ app.get("/get_settings", async function(req, res, next) {
     return 0;
   });
   res.json({
-    proxy:proxy,
+    proxy: proxy,
     user_agent: header_options['headers']['User-Agent'],
     google: [google_api_key.substring(0, 10) + "******", google_api_cs.substring(0, 10) + "******"],
     detections: temp_list
@@ -697,14 +702,13 @@ app.post("/save_settings", async function(req, res, next) {
     header_options['headers']['User-Agent'] = req.body.user_agent;
   }
   if (req.body.proxy != proxy) {
-      proxy = req.body.proxy;
+    proxy = req.body.proxy;
   }
 
   if (proxy != "") {
-      header_options['agent'] = HttpsProxyAgent(proxy)
-  }
-  else{
-    if ('agent' in header_options){
+    header_options['agent'] = HttpsProxyAgent(proxy)
+  } else {
+    if ('agent' in header_options) {
       delete header_options['agent'];
     }
   }
@@ -737,8 +741,21 @@ async function find_origins(req) {
         found.push({
           "name": parsed_names_origins[key]['boy'][name],
           "origin": key,
-          "gender": "boy"
+          "gender": "boy",
+          "matched": parsed_names_origins[key]['boy'][name],
+          "similar": ""
         })
+      } else {
+        var similarity = stringSimilarity.compareTwoStrings(req.body.string, parsed_names_origins[key]['boy'][name]);
+        if (similarity > 0.7) {
+          found.push({
+            "name": req.body.string,
+            "origin": key,
+            "gender": "boy",
+            "matched": "",
+            "similar": parsed_names_origins[key]['boy'][name]
+          })
+        }
       }
     }
     for (name in parsed_names_origins[key]['girl']) {
@@ -746,8 +763,21 @@ async function find_origins(req) {
         found.push({
           "name": parsed_names_origins[key]['girl'][name],
           "origin": key,
-          "gender": "girl"
+          "gender": "girl",
+          "matched": parsed_names_origins[key]['girl'][name],
+          "similar": ""
         })
+      } else {
+        var similarity = stringSimilarity.compareTwoStrings(req.body.string, parsed_names_origins[key]['girl'][name]);
+        if (similarity > 0.7) {
+          found.push({
+            "name": req.body.string,
+            "origin": key,
+            "gender": "girl",
+            "matched": "",
+            "similar": parsed_names_origins[key]['girl'][name]
+          })
+        }
       }
     }
     for (name in parsed_names_origins[key]['uni']) {
@@ -755,8 +785,21 @@ async function find_origins(req) {
         found.push({
           "name": parsed_names_origins[key]['uni'][name],
           "origin": key,
-          "gender": "uni"
+          "gender": "uni",
+          "matched": parsed_names_origins[key]['uni'][name],
+          "similar": ""
         })
+      } else {
+        var similarity = stringSimilarity.compareTwoStrings(req.body.string, parsed_names_origins[key]['uni'][name]);
+        if (similarity > 0.7) {
+          found.push({
+            "name": req.body.string,
+            "origin": key,
+            "gender": "uni",
+            "matched": "",
+            "similar": parsed_names_origins[key]['uni'][name]
+          })
+        }
       }
     }
   }
