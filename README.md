@@ -17,7 +17,7 @@ API and Web App for analyzing & finding a person profile across +300 social medi
 - Enhanceced FindUserProfilesSlow & ShowUserProfilesSlow checking speed (Limited to docker-compose) 👏
 
 ## Case uses:
-This project could help in investigating profiles related to suspicious activities such as cyberbullying, cybergrooming, cyberstalking & spreading misinformation etc..
+This project could help in investigating profiles related to suspicious or malicious activities such as cyberbullying, cybergrooming, cyberstalking & spreading misinformation etc..
 
 ## Security Testing
 
