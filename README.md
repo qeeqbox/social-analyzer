@@ -5,6 +5,8 @@
 
 API and Web App for analyzing & finding a person profile across +300 social media websites. It includes different string analysis and detection modules, you can choose which combination of modules to use during the investigation. The detection modules utilize a rating mechanism based on different detection techniques, which produces a rate value that starts from 0 to 100 (No-Maybe-Yes)
 
+This project could help in investigating profiles related to suspicious or malicious activities such as [Cyberbullying]( Cyberbullying), [Cybergrooming](https://de.wikipedia.org/wiki/Cyber-Grooming), [Cyberstalking](https://en.wikipedia.org/wiki/Cyberstalking) & spreading [Misinformation](https://en.wikipedia.org/wiki/Misinformation) etc..
+
 **Please submit your contribution in a Pull Request!**
 
 ## Updates
@@ -15,9 +17,6 @@ API and Web App for analyzing & finding a person profile across +300 social medi
 - Added more automated tests for handling Pull Requests (will be adding documentation on how PR are being handled) 👏
 - Added FindOrigins (This extracts well-known names with their origins from the username) 👏
 - Enhanceced FindUserProfilesSlow & ShowUserProfilesSlow checking speed (Limited to docker-compose) 👏
-
-## Case uses:
-This project could help in investigating profiles related to suspicious or malicious activities such as cyberbullying, cybergrooming, cyberstalking & spreading misinformation etc..
 
 ## Security Testing
 
