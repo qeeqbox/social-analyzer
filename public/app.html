@@ -228,6 +228,7 @@
   #output-section-4,
   #most-common-words-section,
   #words-info-section,
+  #custom-search-section,
   #names-origins-section {
     display: none;
   }
@@ -258,6 +259,14 @@
 
   #words-info-section table tr th:nth-child(2),
   #words-info-section table tr td:nth-child(2) {
+    width: 150px;
+    min-width: 150px;
+    max-width: 150px;
+    word-break: break-word;
+  }
+
+  #custom-search-section table tr th:first-child,
+  #custom-search-section table tr td:first-child {
     width: 150px;
     min-width: 150px;
     max-width: 150px;
@@ -670,16 +679,17 @@
             <option value="LookUps">LookUps</option>
             <option value="WordInfo">WordInfo</option>
             <option value="MostCommon">MostCommon</option>
-            <option value="SplitWordsByUpperCase">SplitWordsByUpperCase</option>
-            <option value="SplitWordsByAlphabet">SplitWordsByAlphabet</option>
-            <option value="ConvertNumbers">ConvertNumbers</option>
+            <option value="FindOrigins">FindOrigins</option>
             <option value="FindNumbers">FindNumbers</option>
             <option value="FindSymbols">FindSymbols</option>
+            <option value="CustomSearch">CustomSearch</option>
+            <option value="ConvertNumbers">ConvertNumbers</option>
+            <option value="SplitWordsByAlphabet">SplitWordsByAlphabet</option>
+            <option value="SplitWordsByUpperCase">SplitWordsByUpperCase</option>
             <option value="FindUserProfilesFast">FindUserProfilesFast</option>
             <option value="FindUserProfilesSlow">FindUserProfilesSlow</option>
             <option value="ShowUserProfilesSlow">ShowUserProfilesSlow</option>
             <option value="FindUserProfilesSpecial">FindUserProfilesSpecial</option>
-            <option value="FindOrigins">FindOrigins</option>
           </select>
           <div class="cell-separator"></div>
           <input type="button" id="analyze-normal" value="Analyze" />
@@ -722,6 +732,14 @@
           <div class="div-right"></div>
         </div>
         <div id="words-info-tables">
+        </div>
+      </div>
+      <div class="box-border-style" id="custom-search-section">
+        <div class="div-header">
+          <div class="div-left">Custom Search</div>
+          <div class="div-right"></div>
+        </div>
+        <div id="custom-search-table">
         </div>
       </div>
       <div class="box-border-style" id="possible-words-section">
@@ -832,6 +850,8 @@
       $('#output-table-4').html("");
       $('#names-origins-section').hide();
       $('#names-origins-table').html("");
+      $('#custom-search-section').hide();
+      $('#custom-search-table').html("");
       $('#logs').html("");
       clearInterval(interval_logs);
     }
@@ -1010,6 +1030,14 @@
             });
             $("#names-origins-table").last().append('<table><tr><th>origin</th><th>name</th><th>matched</th><th>similar</th><th>gender</th></tr>' + temp_tr + '</table>')
             $('#names-origins-section').show();
+          }
+          if (data.custom_search.length > 0) {
+            var temp_tr = ""
+            Object.keys(data.custom_search).forEach(function(item) {
+              temp_tr += '<tr><td>' + data.custom_search[item].site + '</td><td><a href="' + data.custom_search[item].link + '">' + data.custom_search[item].link + '</a></td><td>' + data.custom_search[item].snippet + '</td></tr>'
+            });
+            $("#custom-search-table").last().append('<table><tr><th>site</th><th>link</th><th>snippet</th></tr>' + temp_tr + '</table>')
+            $('#custom-search-section').show();
           }
         }
       });
