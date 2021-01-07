@@ -113,7 +113,7 @@ function log_to_file_queue(uuid, msg) {
   });
 }
 
-async function get_url_wrapper_json(url, time) {
+async function get_url_wrapper_json(url, time=5) {
   try {
     let http_promise = new Promise((resolve, reject) => {
       var request = https.get(url, header_options, function(res) {
@@ -141,8 +141,8 @@ async function get_url_wrapper_json(url, time) {
     });
     let response_body = await http_promise;
     return response_body
-  } catch (error) {
-    verbose && console.log('');
+  } catch (err) {
+    verbose && console.log(err);
   }
 }
 
@@ -181,7 +181,7 @@ async function find_username_special(req) {
     }
   });
   const results = await async.parallelLimit(functions, 5);
-  console.log(`Total time ${new Date() - time}`);
+  verbose && console.log(`Total time ${new Date() - time}`);
   return results.filter(item => item !== undefined)
 }
 
@@ -265,7 +265,7 @@ async function find_username_advanced(req) {
     }
   });
   const results = await async.parallelLimit(functions, 8);
-  console.log(`Total time ${new Date() - time}`);
+  verbose && console.log(`Total time ${new Date() - time}`);
   return results.filter(item => item !== undefined)
 }
 
@@ -310,7 +310,7 @@ async function find_username_site_new(uuid, username, options, site) {
         script: timeout
       };
 
-      console.log(timeouts)
+      verbose && console.log(timeouts)
 
       var source = "";
       var data = "";
@@ -632,6 +632,45 @@ async function find_username_advanced_2(username, options) {
   var results = await find_username_sites(username, options, driver, parsed_sites);
   await driver.quit();
   return results.filter(item => item !== undefined);
+}
+
+async function custom_search_ouputs(req) {
+  var possible_parameters = ['user', 'profile', 'account']
+  const time = new Date();
+  const functions = [];
+  possible_parameters.forEach((key) => {
+    functions.push(custom_search_ouputs_website.bind(null, req.body.uuid, req.body.string, key));
+  });
+  const results = await async.parallelLimit(functions, 6);
+  verbose && console.log(`Total time ${new Date() - time}`);
+  var merged = [].concat.apply([], results.filter(item => item !== undefined));
+  return merged
+}
+
+async function custom_search_ouputs_website(uuid, name, key) {
+
+  return new Promise(async (resolve, reject) => {
+    try {
+      var results = []
+      log_to_file_queue(uuid, "[Custom Search Using] " + key)
+      var url = "https://www.googleapis.com/customsearch/v1?key={0}&cx={1}&q={2}:{3}".replace("{0}", google_api_key).replace("{1}", google_api_cs).replace("{2}", key).replace("{3}", name);
+      var response = await get_url_wrapper_json(url);
+      if (response.data != '') {
+        if ('items' in response.data){
+            response.data.items.forEach((key) => {
+              results.push({site:get_site_from_url(key.link),link:key.link,snippet:key.snippet})
+          });
+        }
+      }
+      if (results.length > 0) {
+        resolve(results);
+      } else {
+        resolve(undefined)
+      }
+    } catch (err) {
+      resolve(undefined)
+    }
+  });
 }
 
 app.get("/get_settings", async function(req, res, next) {
@@ -1077,6 +1116,7 @@ app.post("/url", async function(req, res, next) {
   var names_origins = []
   var words_info = []
   var temp_words = []
+  var custom_search = []
   if (req.body.string == null || req.body.string == "") {
     res.json("Error");
   } else {
@@ -1105,6 +1145,11 @@ app.post("/url", async function(req, res, next) {
       log_to_file_queue(req.body.uuid, "[Starting] Lookup")
       await check_engines(req, info);
       log_to_file_queue(req.body.uuid, "[Done] Lookup")
+    }
+    if (req.body.option.includes("CustomSearch")) {
+      log_to_file_queue(req.body.uuid, "[Starting] Custom Search")
+      custom_search = await custom_search_ouputs(req);
+      log_to_file_queue(req.body.uuid, "[Done] Custom Search")
     }
     if (req.body.option.includes("SplitWordsByUpperCase")) {
       try {
@@ -1233,7 +1278,8 @@ app.post("/url", async function(req, res, next) {
       user_info_normal: user_info_normal,
       user_info_advanced: user_info_advanced,
       user_info_special: user_info_special,
-      names_origins: names_origins
+      names_origins: names_origins,
+      custom_search:custom_search
     });
   }
 });
