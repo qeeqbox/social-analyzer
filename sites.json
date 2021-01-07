@@ -1382,7 +1382,11 @@
     "url": "https://crunchyroll.com/user/{username}",
     "detections": [{
       "return": "false",
-      "string": "but we were unable to find the page you were looking for",
+      "string": "but we were unable to find",
+      "type": "normal"
+    }, {
+      "return": "true",
+      "string": "user_profile",
       "type": "normal"
     }],
     "selected": "false",
@@ -7311,7 +7315,7 @@
     "type": "unavailable"
   },
   {
-    "url": "https://www.heavy-r.com/user/{username}",
+    "url": "https://heavy-r.com/user/{username}",
     "detections": [{
         "return": "false",
         "string": "Channel not found",
@@ -7329,7 +7333,7 @@
     "type": "unavailable"
   },
   {
-    "url": "https://www.xrares.com/user/{username}",
+    "url": "https://xrares.com/user/{username}",
     "detections": [{
         "return": "false",
         "string": "This user does not exist",
@@ -7347,7 +7351,7 @@
     "type": "unavailable"
   },
   {
-    "url": "https://www.xvideos.com/profiles/{username}",
+    "url": "https://xvideos.com/profiles/{username}",
     "detections": [{
         "return": "false",
         "string": "THIS PROFILE DOESN",
@@ -7365,7 +7369,7 @@
     "type": "adult"
   },
   {
-    "url": "https://www.tnaflix.com/profile/{username}",
+    "url": "https://tnaflix.com/profile/{username}",
     "detections": [{
         "return": "false",
         "string": "looking for is lost somewhere",
@@ -7417,5 +7421,115 @@
     "timeout": 0,
     "implicit": 0,
     "type": "adult"
+  },
+  {
+    "url": "https://mix.com/{username}",
+    "detections": [{
+      "return": "true",
+      "string": "UserProfile",
+      "type": "normal"
+    }],
+    "selected": "false",
+    "timeout": 0,
+    "implicit": 0,
+    "type": "unavailable"
+  },
+  {
+    "url": "https://{username}.skyrock.com/profil",
+    "detections": [{
+        "return": "false",
+        "string": "Page not found",
+        "type": "ocr"
+      }, {
+        "return": "false",
+        "string": "Page not found",
+        "type": "normal"
+      },
+      {
+        "return": "true",
+        "string": "profil-zone",
+        "type": "normal"
+      },
+      {
+        "return": "true",
+        "string": ":username",
+        "type": "normal"
+      }
+    ],
+    "selected": "false",
+    "timeout": 0,
+    "implicit": 0,
+    "type": "unavailable"
+  },
+  {
+    "url": "https://gaiaonline.com/profiles/{username}",
+    "detections": [{
+        "return": "false",
+        "string": "General Error",
+        "type": "ocr"
+      }, {
+        "return": "false",
+        "string": "General Error",
+        "type": "normal"
+      },
+      {
+        "return": "true",
+        "string": "about_title",
+        "type": "normal"
+      },
+      {
+        "return": "true",
+        "string": "\"username\">",
+        "type": "normal"
+      }
+    ],
+    "selected": "false",
+    "timeout": 0,
+    "implicit": 0,
+    "type": "unavailable"
+  },
+  {
+    "url": "https://steemit.com/@{username}",
+    "detections": [{
+        "return": "false",
+        "string": "This page doesn",
+        "type": "ocr"
+      }, {
+        "return": "false",
+        "string": "This page doesn",
+        "type": "normal"
+      },
+      {
+        "return": "true",
+        "string": "UserProfile",
+        "type": "normal"
+      }
+    ],
+    "selected": "false",
+    "timeout": 0,
+    "implicit": 0,
+    "type": "unavailable"
+  },
+  {
+    "url": "https://influenster.com/{username}",
+    "detections": [{
+        "return": "false",
+        "string": "Page not found",
+        "type": "ocr"
+      }, {
+        "return": "false",
+        "string": "Page not found",
+        "type": "normal"
+      },
+      {
+        "return": "true",
+        "string": "@{username}",
+        "type": "advanced"
+      }
+    ],
+    "selected": "false",
+    "timeout": 0,
+    "implicit": 0,
+    "type": "unavailable"
   }
 ]
