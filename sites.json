@@ -7291,5 +7291,131 @@
     "timeout": 0,
     "implicit": 0,
     "type": "unavailable"
+  },
+  {
+    "url": "https://udemy.com/user/{username}/",
+    "detections": [{
+        "return": "true",
+        "string": "-profile-",
+        "type": "normal"
+      },
+      {
+        "return": "true",
+        "string": "about-me",
+        "type": "normal"
+      }
+    ],
+    "selected": "false",
+    "timeout": 0,
+    "implicit": 0,
+    "type": "unavailable"
+  },
+  {
+    "url": "https://www.heavy-r.com/user/{username}",
+    "detections": [{
+        "return": "false",
+        "string": "Channel not found",
+        "type": "normal"
+      },
+      {
+        "return": "true",
+        "string": "member-info",
+        "type": "normal"
+      }
+    ],
+    "selected": "false",
+    "timeout": 0,
+    "implicit": 0,
+    "type": "unavailable"
+  },
+  {
+    "url": "https://www.xrares.com/user/{username}",
+    "detections": [{
+        "return": "false",
+        "string": "This user does not exist",
+        "type": "normal"
+      },
+      {
+        "return": "true",
+        "string": "panel-body",
+        "type": "normal"
+      }
+    ],
+    "selected": "false",
+    "timeout": 0,
+    "implicit": 0,
+    "type": "unavailable"
+  },
+  {
+    "url": "https://www.xvideos.com/profiles/{username}",
+    "detections": [{
+        "return": "false",
+        "string": "THIS PROFILE DOESN",
+        "type": "normal"
+      },
+      {
+        "return": "true",
+        "string": "profile-title",
+        "type": "normal"
+      }
+    ],
+    "selected": "false",
+    "timeout": 0,
+    "implicit": 0,
+    "type": "adult"
+  },
+  {
+    "url": "https://www.tnaflix.com/profile/{username}",
+    "detections": [{
+        "return": "false",
+        "string": "looking for is lost somewhere",
+        "type": "normal"
+      },
+      {
+        "return": "true",
+        "string": "userProfileHeader",
+        "type": "normal"
+      }
+    ],
+    "selected": "false",
+    "timeout": 0,
+    "implicit": 0,
+    "type": "adult"
+  },
+  {
+    "url": "https://xhamster.com/users/{username}",
+    "detections": [{
+        "return": "false",
+        "string": "User not found",
+        "type": "normal"
+      },
+      {
+        "return": "true",
+        "string": "user-header",
+        "type": "normal"
+      }
+    ],
+    "selected": "false",
+    "timeout": 0,
+    "implicit": 0,
+    "type": "adult"
+  },
+  {
+    "url": "https://xxxbunker.com/users/{username}",
+    "detections": [{
+        "return": "false",
+        "string": "FILE NOT FOUND",
+        "type": "normal"
+      },
+      {
+        "return": "true",
+        "string": "\"profile\"",
+        "type": "normal"
+      }
+    ],
+    "selected": "false",
+    "timeout": 0,
+    "implicit": 0,
+    "type": "adult"
   }
 ]
