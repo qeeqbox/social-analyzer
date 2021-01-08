@@ -5,9 +5,7 @@
 
 API and Web App for analyzing & finding a person profile across +300 social media websites. It includes different string analysis and detection modules, you can choose which combination of modules to use during the investigation. The detection modules utilize a rating mechanism based on different detection techniques, which produces a rate value that starts from 0 to 100 (No-Maybe-Yes)
 
-This project could help in investigating profiles related to suspicious or malicious activities such as [cyberbullying](https://en.wikipedia.org/wiki/Wikipedia:Cyberbullying), [cybergrooming](https://de.wikipedia.org/wiki/Cyber-Grooming), [cyberstalking](https://en.wikipedia.org/wiki/Cyberstalking) & [spreading misinformation](https://en.wikipedia.org/wiki/Misinformation) etc..
-
-This project is used by some law enforcement agencies in countries where resources are limited **(I'm very proud!!!)**
+This project could help in investigating profiles related to suspicious or malicious activities such as [cyberbullying](https://en.wikipedia.org/wiki/Wikipedia:Cyberbullying), [cybergrooming](https://de.wikipedia.org/wiki/Cyber-Grooming), [cyberstalking](https://en.wikipedia.org/wiki/Cyberstalking) & [spreading misinformation](https://en.wikipedia.org/wiki/Misinformation) etc.. And, it's currently used by some law enforcement agencies in countries where resources are limited **(I'm very proud!!!)**
 
 Please submit your contribution in a Pull Request!
 
