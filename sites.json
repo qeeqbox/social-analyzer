@@ -2150,9 +2150,9 @@
       }
     ],
     "selected": "true",
+    "top": "top10",
     "timeout": 0,
     "implicit": 0,
-    "top10": "true",
     "type": "Social networking service"
   },
   {
@@ -3550,8 +3550,8 @@
         "type": "normal"
       }
     ],
-    "top10": "true",
     "selected": "true",
+    "top": "top10",
     "timeout": 0,
     "implicit": 0,
     "type": "unavailable"
@@ -4311,9 +4311,9 @@
       }
     ],
     "selected": "true",
+    "top": "top10",
     "timeout": 0,
     "implicit": 0,
-    "top10": "true",
     "type": "social networking service"
   },
   {
@@ -5077,8 +5077,8 @@
         "type": "normal"
       }
     ],
-    "top10": "true",
     "selected": "true",
+    "top": "top10",
     "timeout": 0,
     "implicit": 0,
     "type": "Social media service"
@@ -5519,9 +5519,9 @@
       }
     ],
     "selected": "true",
+    "top": "top10",
     "timeout": 0,
     "implicit": 0,
-    "top10": "true",
     "type": "Social news"
   },
   {
@@ -6122,7 +6122,7 @@
       "string": "media-body main",
       "type": "normal"
     }],
-    "selected": "true",
+    "selected": "false",
     "timeout": 0,
     "implicit": 0,
     "type": "unavailable"
@@ -6134,7 +6134,7 @@
       "string": "user_profile",
       "type": "normal"
     }],
-    "selected": "true",
+    "selected": "false",
     "timeout": 10,
     "implicit": 10,
     "type": "unavailable"
@@ -6162,8 +6162,8 @@
         "type": "normal"
       }
     ],
-    "top10": "true",
     "selected": "true",
+    "top": "top10",
     "timeout": 0,
     "implicit": 0,
     "type": "unavailable"
@@ -6175,7 +6175,7 @@
       "string": "me/{username}",
       "type": "normal"
     }],
-    "selected": "true",
+    "selected": "false",
     "timeout": 0,
     "implicit": 0,
     "type": "unavailable"
@@ -6244,8 +6244,8 @@
         "type": "normal"
       }
     ],
-    "top10": "true",
     "selected": "true",
+    "top": "top10",
     "timeout": 0,
     "implicit": 0,
     "type": "unavailable"
@@ -6257,7 +6257,7 @@
       "string": "404 Not Found",
       "type": "normal"
     }],
-    "selected": "true",
+    "selected": "false",
     "timeout": 0,
     "implicit": 0,
     "type": "unavailable"
@@ -6887,6 +6887,7 @@
       }
     ],
     "selected": "true",
+    "top": "top10",
     "timeout": 0,
     "implicit": 0,
     "type": "Video hosting service"
@@ -7204,8 +7205,8 @@
         "type": "normal"
       }
     ],
-    "top10": "true",
     "selected": "true",
+    "top": "top10",
     "timeout": 0,
     "implicit": 0,
     "type": "unavailable"
