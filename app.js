@@ -716,7 +716,7 @@ app.get("/get_settings", async function(req, res, next) {
     proxy: proxy,
     user_agent: header_options['headers']['User-Agent'],
     google: [google_api_key.substring(0, 10) + "******", google_api_cs.substring(0, 10) + "******"],
-    detections: temp_list
+    websites: temp_list
   });
 });
 
@@ -724,9 +724,9 @@ app.post("/save_settings", async function(req, res, next) {
   await parsed_sites.forEach(function(value, i) {
     parsed_sites[i].selected = "false"
   });
-  if ("detections" in req.body) {
-    if (req.body.detections.length > 0) {
-      await req.body.detections.split(',').forEach(item => {
+  if ("websites" in req.body) {
+    if (req.body.websites.length > 0) {
+      await req.body.websites.split(',').forEach(item => {
         parsed_sites[Number(item)].selected = "true";
       });
     }
