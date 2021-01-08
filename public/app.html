@@ -644,7 +644,7 @@
               </div>
               <div id="detection-options">
                 <div class="div-header">
-                  <div class="div-left">Available Detections</div>
+                  <div class="div-left">Available websites</div>
                   <div class="div-right"></div>
                 </div>
                 <ul id="detection-options-list">
@@ -1052,9 +1052,9 @@
           url: "/get_settings"
         }).done(function(data) {
           if (data != "Error") {
-            if (data.detections.length > 0) {
+            if (data.websites.length > 0) {
               var temp_tr = ""
-              data.detections.forEach(function(site) {
+              data.websites.forEach(function(site) {
                 var temp_selected = ""
                 if (site.selected == "true") {
                   temp_selected = "checked"
@@ -1078,7 +1078,7 @@
           type: "POST",
           url: "/save_settings",
           data: {
-            'detections': temp_checked.join(","),
+            'websites': temp_checked.join(","),
             'user_agent': $("#user-agent-string").val(),
             'proxy': $("#proxy-string").val(),
             'google_key': $("#google-api-key").val(),
