@@ -82,6 +82,7 @@ require('express-async-errors');
 const {
   htmlToText
 } = require('html-to-text');
+var cheerio = require('cheerio');
 var _tokenizer = tokenizer();
 var parsed_json = JSON.parse(fs.readFileSync("dict.json"));
 var parsed_sites = JSON.parse(fs.readFileSync("sites.json"));
@@ -438,6 +439,7 @@ async function find_username_normal(req) {
         "text": "",
         "type": ""
       };
+
       await Promise.all(site.detections.map(async detection => {
         var temp_found = "false";
         if (detection.type == "normal" && options.includes("FindUserProfilesFast") && source != "") {
@@ -461,7 +463,20 @@ async function find_username_normal(req) {
         if (temp_profile.text == "") {
           temp_profile.text = "unavailable"
         }
-        temp_profile.title = sanitizeHtml(title);
+
+        try{
+          var $ = cheerio.load(body);
+          title = sanitizeHtml($("title").text())
+          if (title.length == 0){
+            title = "unavailable"
+          }
+        }
+        catch(err)
+        {
+          verbose && console.log(err);
+        }
+
+        temp_profile.title = title;
         temp_profile.rate = "%" + ((temp_profile["found"] / detections_count) * 100).toFixed(2);
         temp_profile.link = site.url.replace("{username}", username);
         temp_profile.type = site.type
