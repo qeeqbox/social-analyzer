@@ -7532,5 +7532,19 @@
     "timeout": 0,
     "implicit": 0,
     "type": "unavailable"
+  },
+  {
+    "url": "https://www.v2ex.com/member/{username}",
+    "detections": [
+      {
+        "return": "true",
+        "string": "号会员，加入于",
+        "type": "normal"
+      }
+    ],
+    "selected": "false",
+    "timeout": 0,
+    "implicit": 0,
+    "type": "Internet forum"
   }
 ]
