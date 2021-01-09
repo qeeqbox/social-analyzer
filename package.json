@@ -24,11 +24,12 @@
     "sanitize-html": "2.1.2",
     "selenium-webdriver": "4.0.0-alpha.7",
     "semver": "7.3.4",
+    "string-similarity": "4.0.4",
     "tmp": "0.2.1",
     "wink-tokenizer": "1.1.0",
     "wordsninja": "1.0.0",
     "yargs": "16.2.0",
-    "string-similarity": "4.0.4"
+    "cheerio": "1.0.0-rc.5"
   },
   "author": "QeeqBox",
   "license": "AGPL-3.0",
