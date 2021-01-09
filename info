@@ -5,6 +5,6 @@
  "websites":"342",
  "detections":"939",
  "special":"1",
- "non-english":"1",
+ "non_english":"1",
  "awaiting_verification":"22",
  "auto_testing":"ea21d91f-a1c1-4496-b3ed-9ed15545ce54"}
