@@ -307,7 +307,7 @@
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
-    "type": "Recreation & Hobbies"
+    "type": "Art & Entertainment"
   },
   {
     "url": "https://asciinema.org/~{username}",
@@ -507,7 +507,7 @@
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
-    "type": "Arts and Entertainment"
+    "type": "Arts & Entertainment"
   },
   {
     "url": "https://behance.net/{username}",
@@ -540,7 +540,7 @@
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
-    "type": "unavailable"
+    "type": "Internet & Telecom"
   },
   {
     "url": "https://beta.cent.co/@{username}",
@@ -560,7 +560,7 @@
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
-    "type": "unavailable"
+    "type": "Computer & electronics"
   },
   {
     "url": "https://bintray.com/{username}",
@@ -572,7 +572,7 @@
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
-    "type": "Packaged software repository"
+    "type": "Computer & electronics"
   },
   {
     "url": "https://bitbucket.org/{username}",
@@ -595,7 +595,7 @@
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
-    "type": "Collaborative version control"
+    "type": "Computer & electronics"
   },
   {
     "url": "https://bitcoinforum.com/profile/{username}",
@@ -618,7 +618,7 @@
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
-    "type": "unavailable"
+    "type": "Computer & electronics"
   },
   {
     "url": "https://blip.fm/{username}",
@@ -646,7 +646,7 @@
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
-    "type": "Online music database"
+    "type": "Arts & Entertainment"
   },
   {
     "url": "https://blog.naver.com/{username}",
@@ -664,7 +664,7 @@
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
-    "type": "Search Engine"
+    "type": "Internet & Telecom"
   },
   {
     "url": "https://bodyspace.bodybuilding.com/{username}",
@@ -682,7 +682,7 @@
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
-    "type": "unavailable"
+    "type": "Recreation & Hobbies"
   },
   {
     "url": "https://bookcrossing.com/mybookshelf/{username}",
