@@ -7,9 +7,9 @@ API and Web App for analyzing & finding a person profile across +300 social medi
 
 The detection modules utilize a rating mechanism based on different detection techniques, which produces a rate value that starts from 0 to 100 (No-Maybe-Yes)
 
-This project could help in investigating profiles related to suspicious or malicious activities such as [cyberbullying](https://en.wikipedia.org/wiki/Wikipedia:Cyberbullying), [cybergrooming](https://de.wikipedia.org/wiki/Cyber-Grooming), [cyberstalking](https://en.wikipedia.org/wiki/Cyberstalking), [spreading misinformation](https://en.wikipedia.org/wiki/Misinformation) etc.. And, it's currently used by some law enforcement agencies in countries where resources are limited 👍
+This project could help in investigating profiles related to suspicious or malicious activities such as [cyberbullying](https://en.wikipedia.org/wiki/Wikipedia:Cyberbullying), [cybergrooming](https://de.wikipedia.org/wiki/Cyber-Grooming), [cyberstalking](https://en.wikipedia.org/wiki/Cyberstalking), [spreading misinformation](https://en.wikipedia.org/wiki/Misinformation) etc.. And, it's currently used by some law enforcement agencies in countries where resources are limited 👍👍👍
 
-Please submit your contribution in a Pull Request!
+**Pull Requests are welcomed!**
 
 ## Updates
 - Added Custom Search Query 👏
@@ -17,8 +17,6 @@ Please submit your contribution in a Pull Request!
 - Added Proxy option for FindUserProfilesFast & FindUserProfilesSlow 👏
 - Added documentation on how to write detections [Wiki](https://github.com/qeeqbox/social-analyzer/wiki) 👏
 - Added detection type:advanced (This allows detection on websites that manipulate DOM) 👏
-- Added more automated tests for handling Pull Requests (will be adding documentation on how PR are being handled) 👏
-- Added FindOrigins (This extracts well-known names with their origins from the username) 👏
 
 ## Security Testing
 
