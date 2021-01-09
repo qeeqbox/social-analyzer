@@ -8,7 +8,7 @@
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
-    "type": "Social Networking"
+    "type": "Photo Sharing"
   },
   {
     "url": "https://7cups.com/@{username}",
@@ -36,7 +36,7 @@
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
-    "type": "Emotional support website"
+    "type": "Online Therapy"
   },
   {
     "url": "https://9gag.com/u/{username}",
@@ -59,7 +59,7 @@
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
-    "type": "Entertainment"
+    "type": "Art & Entertainment"
   },
   {
     "url": "https://about.me/{username}",
@@ -82,7 +82,7 @@
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
-    "type": "Social directory"
+    "type": "Directory Hosting"
   },
   {
     "status": "bad",
@@ -101,7 +101,7 @@
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
-    "type": "unavailable"
+    "type": "Books and Literature"
   },
   {
     "url": "https://alik.cz/u/{username}",
@@ -113,7 +113,7 @@
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
-    "type": "unavailable"
+    "type": "Art & Entertainment"
   },
   {
     "url": "https://allmylinks.com/{username}",
@@ -141,7 +141,7 @@
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
-    "type": "unavailable"
+    "type": "Directory Hosting"
   },
   {
     "url": "https://alltrails.com/members/{username}",
@@ -169,7 +169,7 @@
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
-    "type": "unavailable"
+    "type": "Recreation & Hobbies"
   },
   {
     "url": "https://aminoapps.com/u/{username}",
@@ -192,7 +192,7 @@
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
-    "type": "unavailable"
+    "type": "Computers & Technology"
   },
   {
     "url": "https://angel.co/{username}",
@@ -220,7 +220,7 @@
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
-    "type": "unavailable"
+    "type": "Job Search"
   },
   {
     "url": "https://anilist.co/user/{username}/",
@@ -232,7 +232,7 @@
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
-    "type": "Anime and manga database and social network"
+    "type": "Recreation & Hobbies"
   },
   {
     "url": "https://anobii.com/{username}/profile",
@@ -255,7 +255,7 @@
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
-    "type": "Catalog and community"
+    "type": "Books & Literature"
   },
   {
     "url": "https://apps.runescape.com/runemetrics/app/overview/player/{username}",
@@ -267,7 +267,7 @@
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
-    "type": "MMORPG"
+    "type": "Games"
   },
   {
     "url": "https://archive.org/details/@{username}",
@@ -295,7 +295,7 @@
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
-    "type": "unavailable"
+    "type": "Digital Library"
   },
   {
     "url": "https://artstation.com/{username}",
@@ -307,7 +307,7 @@
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
-    "type": "Professional hub for artists to share or license work"
+    "type": "Recreation & Hobbies"
   },
   {
     "url": "https://asciinema.org/~{username}",
@@ -330,7 +330,7 @@
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
-    "type": "unavailable"
+    "type": "Computer & electronics"
   },
   {
     "url": "https://ask.fedoraproject.org/u/{username}",
@@ -358,7 +358,7 @@
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
-    "type": "unavailable"
+    "type": "Computer & electronics"
   },
   {
     "url": "https://ask.fm/{username}",
@@ -386,7 +386,7 @@
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
-    "type": "Social Q&A website"
+    "type": "Social Networking"
   },
   {
     "url": "https://audiojungle.net/user/{username}",
@@ -414,7 +414,7 @@
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
-    "type": "unavailable"
+    "type": "Internet & Telecom"
   },
   {
     "url": "https://authorstream.com/{username}",
@@ -437,7 +437,7 @@
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
-    "type": "unavailable"
+    "type": "Presentations Hosting"
   },
   {
     "url": "https://avforums.com/members/{username}",
@@ -449,7 +449,7 @@
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
-    "type": "unavailable"
+    "type": "Internet & Telecom"
   },
   {
     "url": "https://baby.ru/u/{username}",
@@ -467,7 +467,7 @@
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
-    "type": "unavailable"
+    "type": "adult"
   },
   {
     "url": "https://babyblog.ru/user/info/{username}",
@@ -479,7 +479,7 @@
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
-    "type": "unavailable"
+    "type": "Internet & Telecom"
   },
   {
     "url": "https://bandcamp.com/{username}",
@@ -507,7 +507,7 @@
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
-    "type": "Privately held company"
+    "type": "Arts and Entertainment"
   },
   {
     "url": "https://behance.net/{username}",
