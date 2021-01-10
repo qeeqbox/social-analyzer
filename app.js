@@ -64,7 +64,8 @@ var sanitizeHtml = require("sanitize-html");
 var firefox = require("selenium-webdriver/firefox");
 var {
   Builder,
-  By
+  By,
+  Key
 } = require("selenium-webdriver");
 var util = require('util');
 var https = require("follow-redirects").https;
@@ -114,7 +115,7 @@ function log_to_file_queue(uuid, msg) {
   });
 }
 
-async function get_url_wrapper_json(url, time=5) {
+async function get_url_wrapper_json(url, time = 5) {
   try {
     let http_promise = new Promise((resolve, reject) => {
       var request = https.get(url, header_options, function(res) {
@@ -173,12 +174,16 @@ async function find_username_special(req) {
         return Promise.resolve();
       }
     }
-    if ("name" in site) {
-      if (site.name == "facebook") {
-        if (site.selected == "true") {
-          functions.push(find_username_site_special_facebook_1.bind(null, req.body.uuid, req.body.string, site));
+    if (site.selected == "true") {
+      site.detections.forEach((detection) => {
+        if (detection.type == 'special') {
+          if (detection.function == 'special_facebook_1') {
+            functions.push(find_username_site_special_facebook_1.bind(null, req.body.uuid, req.body.string, site));
+          } else if (detection.function == 'special_google_1') {
+            functions.push(find_username_site_special_google_1.bind(null, req.body.uuid, req.body.string, site));
+          }
         }
-      }
+      });
     }
   });
   const results = await async.parallelLimit(functions, 5);
@@ -226,6 +231,72 @@ async function find_username_site_special_facebook_1(uuid, username, site) {
       text_only = await driver.findElement(By.tagName("body")).getText();
       await driver.quit()
       if (source.includes("Try Entering Your Password")) {
+        temp_found = "true";
+        temp_profile.found += 1
+      }
+      if (temp_profile.found > 0) {
+        temp_profile.text = "unavailable";
+        temp_profile.title = "unavailable";
+        temp_profile.rate = "%" + ((temp_profile.found / 1) * 100).toFixed(2);
+        temp_profile.link = site.url.replace("{username}", username);
+        temp_profile.type = site.type
+        resolve(temp_profile);
+      } else {
+        resolve(undefined)
+      }
+    } catch (err) {
+      if (driver !== undefined) {
+        try {
+          await driver.quit()
+        } catch (err) {
+          verbose && console.log("Driver Session Issue")
+        }
+      }
+      resolve(undefined)
+    }
+  });
+}
+
+async function find_username_site_special_google_1(uuid, username, site) {
+  return new Promise(async (resolve, reject) => {
+    log_to_file_queue(uuid, "[Checking] " + get_site_from_url(site.url))
+    let driver = new Builder()
+      .forBrowser("firefox")
+      .setFirefoxOptions(new firefox.Options().headless().windowSize({
+        width: 640,
+        height: 480
+      }))
+      .build();
+
+    try {
+      var timeouts = {
+        implicit: 0,
+        pageLoad: 10000,
+        script: 10000
+      };
+
+      var source = "";
+      var data = "";
+      var text_only = "unavailable";
+      var title = "unavailable";
+      var temp_profile = {
+        "found": 0,
+        "image": "",
+        "link": "",
+        "rate": "",
+        "title": "",
+        "text": "",
+        "type": ""
+      };
+      var link = "https://accounts.google.com/signup/v2/webcreateaccount?service=mail&continue=https%3A%2F%2Fmail.google.com%2Fmail%2F%3Fpc%3Dtopnav-about-n-en&flowName=GlifWebSignIn&flowEntry=SignUp";
+      await driver.manage().setTimeouts(timeouts);
+      await driver.get(link);;
+      await driver.findElement(By.id('username')).sendKeys(username);
+      await driver.findElement(By.id('selectioni1')).click();
+      source = await driver.getPageSource();
+      text_only = await driver.findElement(By.tagName("body")).getText();
+      await driver.quit()
+      if (text_only.includes("That username is taken") && !text_only.includes('your username must be between') && !text_only.includes('You can use letters')) {
         temp_found = "true";
         temp_profile.found += 1
       }
@@ -464,15 +535,13 @@ async function find_username_normal(req) {
           temp_profile.text = "unavailable"
         }
 
-        try{
+        try {
           var $ = cheerio.load(body);
           title = sanitizeHtml($("title").text())
-          if (title.length == 0){
+          if (title.length == 0) {
             title = "unavailable"
           }
-        }
-        catch(err)
-        {
+        } catch (err) {
           verbose && console.log(err);
         }
 
@@ -671,9 +740,13 @@ async function custom_search_ouputs_website(uuid, name, key) {
       var url = "https://www.googleapis.com/customsearch/v1?key={0}&cx={1}&q={2}:{3}".replace("{0}", google_api_key).replace("{1}", google_api_cs).replace("{2}", key).replace("{3}", name);
       var response = await get_url_wrapper_json(url);
       if (response.data != '') {
-        if ('items' in response.data){
-            response.data.items.forEach((key) => {
-              results.push({site:get_site_from_url(key.link),link:key.link,snippet:key.snippet})
+        if ('items' in response.data) {
+          response.data.items.forEach((key) => {
+            results.push({
+              site: get_site_from_url(key.link),
+              link: key.link,
+              snippet: key.snippet
+            })
           });
         }
       }
@@ -1294,7 +1367,7 @@ app.post("/url", async function(req, res, next) {
       user_info_advanced: user_info_advanced,
       user_info_special: user_info_special,
       names_origins: names_origins,
-      custom_search:custom_search
+      custom_search: custom_search
     });
   }
 });
