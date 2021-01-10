@@ -1,9 +1,9 @@
-{"version":"2021.V.2.08",
+{"version":"2021.V.2.09",
  "build":"pass",
  "test":"pass",
  "grid_test":"pass",
  "websites":"342",
  "detections":"939",
- "special":"1",
+ "special":"2",
  "awaiting_verification":"22",
- "auto_testing":"08c80c8b-968a-4957-88f2-b4835b6860c7"}
+ "auto_testing":"606e2f07-cf0d-4f05-98e0-bfd6ed204a1a"}

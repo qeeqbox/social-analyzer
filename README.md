@@ -7,11 +7,12 @@ API and Web App for analyzing & finding a person profile across +300 social medi
 
 The detection modules utilize a rating mechanism based on different detection techniques, which produces a rate value that starts from 0 to 100 (No-Maybe-Yes)
 
-This project could help in investigating profiles related to suspicious or malicious activities such as [cyberbullying](https://en.wikipedia.org/wiki/Wikipedia:Cyberbullying), [cybergrooming](https://de.wikipedia.org/wiki/Cyber-Grooming), [cyberstalking](https://en.wikipedia.org/wiki/Cyberstalking), [spreading misinformation](https://en.wikipedia.org/wiki/Misinformation) etc.. And, it's currently used by some law enforcement agencies in countries where resources are limited 👍👍👍
+This project could help in investigating profiles related to suspicious or malicious activities such as [cyberbullying](https://en.wikipedia.org/wiki/Wikipedia:Cyberbullying), [cybergrooming](https://de.wikipedia.org/wiki/Cyber-Grooming) & [cyberstalking](https://en.wikipedia.org/wiki/Cyberstalking), [spreading misinformation](https://en.wikipedia.org/wiki/Misinformation). *It's currently used by some law enforcement agencies in countries where resources are limited*
 
 **Pull Requests are welcomed!**
 
 ## Updates
+- Added special detection for google 👏
 - Added more customization to the CLI python version (It's a lot easier to integrate using the JSON output switch) 👏
 - Added Custom Search Query 👏
 - Added similarity checking to FindOrigins 👏

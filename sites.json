@@ -2131,7 +2131,6 @@
     "type": "unavailable"
   },
   {
-    "name": "facebook",
     "url": "https://facebook.com/{username}",
     "detections": [{
         "return": "false",
@@ -2147,6 +2146,28 @@
         "return": "false",
         "string": "page:\"/4oh4.php",
         "type": "normal"
+      },
+      {
+        "return": "true",
+        "string": "",
+        "function": "special_facebook_1",
+        "type": "special"
+      }
+    ],
+    "selected": "true",
+    "top": "top10",
+    "timeout": 0,
+    "implicit": 0,
+    "type": "Social networking service"
+  },
+  {
+    "url": "https://google.com/{username}",
+    "detections": [
+      {
+        "return": "true",
+        "string": "",
+        "function": "special_google_1",
+        "type": "special"
       }
     ],
     "selected": "true",
