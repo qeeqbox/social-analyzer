@@ -301,10 +301,10 @@ async function find_username_site_special_google_1(uuid, username, site) {
         temp_profile.found += 1
       }
       if (temp_profile.found > 0) {
-        temp_profile.text = "unavailable";
+        temp_profile.text = username + "@gmail.com";
         temp_profile.title = "unavailable";
         temp_profile.rate = "%" + ((temp_profile.found / 1) * 100).toFixed(2);
-        temp_profile.link = site.url.replace("{username}", username);
+        temp_profile.link = "https://google.com"
         temp_profile.type = site.type
         resolve(temp_profile);
       } else {
