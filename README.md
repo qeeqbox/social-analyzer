@@ -7,18 +7,16 @@ API and Web App for analyzing & finding a person profile across +300 social medi
 
 The detection modules utilize a rating mechanism based on different detection techniques, which produces a rate value that starts from 0 to 100 (No-Maybe-Yes)
 
-This project could help in investigating profiles related to suspicious or malicious activities such as [cyberbullying](https://en.wikipedia.org/wiki/Wikipedia:Cyberbullying), [cybergrooming](https://de.wikipedia.org/wiki/Cyber-Grooming) & [cyberstalking](https://en.wikipedia.org/wiki/Cyberstalking), [spreading misinformation](https://en.wikipedia.org/wiki/Misinformation). *It's currently used by some law enforcement agencies in countries where resources are limited*
+This project could help in investigating profiles related to suspicious or malicious activities such as [cyberbullying](https://en.wikipedia.org/wiki/Wikipedia:Cyberbullying), [cybergrooming](https://de.wikipedia.org/wiki/Cyber-Grooming) & [cyberstalking](https://en.wikipedia.org/wiki/Cyberstalking), [spreading misinformation](https://en.wikipedia.org/wiki/Misinformation). And, *"It's currently used by some law enforcement agencies in countries where resources are limited"*
 
 **Pull Requests are welcomed!**
 
 ## Updates
+- (Testing) A new refactored version (Coming soon!!)
 - Added special detection for google 👏
 - Added more customization to the CLI python version (It's a lot easier to integrate using the JSON output switch) 👏
 - Added Custom Search Query 👏
 - Added similarity checking to FindOrigins 👏
-- Added Proxy option for FindUserProfilesFast & FindUserProfilesSlow 👏
-- Added documentation on how to write detections [Wiki](https://github.com/qeeqbox/social-analyzer/wiki) 👏
-- Added detection type:advanced (This allows detection on websites that manipulate DOM) 👏
 
 ## Security Testing
 
@@ -44,24 +42,18 @@ Profile images **will not** be blurred. If you want them to be blurred, turn tha
 <img src="https://raw.githubusercontent.com/qeeqbox/social-analyzer/main/readme/cli.gif" style="max-width:768px"/>
 
 ## Features
-- String Analysis
-- Search Engine Lookup
-- Multi Layers Detections
-- Most Common Names & Words
-- Convert Numbers to Letters
-- Find Profile Normal (Fast)
-- Find Profile Advanced (Slow)
-- Find Profile Special (Slow)
-- Profile Screenshot (Slow)
-- Find Name Origins
-- Custom Search Queries
-- Websites description
-- Custom user-agent option
-- Dump Logs to folder
-- Optional timeout & implicit wait for each detection
-- Python CLI (Limited to FindUserProfilesFast option)
-- NodeJS CLI (Limited to FindUserProfilesFast option)
-- Grid option (Limited to docker-compose) 👏
+- String & Name Analysis
+- Search Engine Lookup (Google API - Optional)
+- Custom Search Queries (Google API & duckduckgo - Optional)
+- Multi Layers Detections (OCR, Normal, Advanced & Special)
+- Find Profile using Multiple Techniques (Fast & Slow)
+- Profile Screenshot, Title, Info and Website Description
+- Find Name Origins & Common words by Language
+- Custom user-agent, proxy, timeout & implicit wait
+- Python CLI & NodeJS CLI (Limited to FindUserProfilesFast option)
+- Grid Option for Faster Checking (Limited to docker-compose) 👏
+- Dump Logs to folder or terminal
+- [Wiki](https://github.com/qeeqbox/social-analyzer/wiki)
 
 ## Special Detections
 - Facebook
