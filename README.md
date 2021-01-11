@@ -5,18 +5,18 @@
 
 API and Web App for analyzing & finding a person profile across +300 social media websites. It includes different string analysis and detection modules, you can choose which combination of modules to use during the investigation.
 
-The detection modules utilize a rating mechanism based on different detection techniques, which produces a rate value that starts from 0 to 100 (No-Maybe-Yes)
+The detection modules utilize a rating mechanism based on different detection techniques, which produces a rate value that starts from 0 to 100 (No-Maybe-Yes). This model produces less *False Positive* unlike other projects
 
 This project could help in investigating profiles related to suspicious or malicious activities such as [cyberbullying](https://en.wikipedia.org/wiki/Wikipedia:Cyberbullying), [cybergrooming](https://de.wikipedia.org/wiki/Cyber-Grooming) & [cyberstalking](https://en.wikipedia.org/wiki/Cyberstalking), [spreading misinformation](https://en.wikipedia.org/wiki/Misinformation). And, *"It's currently used by some law enforcement agencies in countries where resources are limited"*
 
 **Pull Requests are welcomed!**
 
 ## Updates
-- (Testing) A new refactored version (Coming soon!!)
-- Added special detection for google 👏
-- Added more customization to the CLI python version (It's a lot easier to integrate using the JSON output switch) 👏
-- Added Custom Search Query 👏
-- Added similarity checking to FindOrigins 👏
+- Added a new refactored version 👏👏👏
+- Added special detection for google
+- Added more customization to the CLI python version (It's a lot easier to integrate using the JSON output switch)
+- Added Custom Search Query
+- Added similarity checking to FindOrigins
 
 ## Security Testing
 
@@ -52,11 +52,11 @@ Profile images **will not** be blurred. If you want them to be blurred, turn tha
 - Custom user-agent, proxy, timeout & implicit wait
 - Python CLI & NodeJS CLI (Limited to FindUserProfilesFast option)
 - Grid Option for Faster Checking (Limited to docker-compose) 👏
-- Dump Logs to folder or terminal
+- Dump Logs to folder or terminal (prettified)
 - [Wiki](https://github.com/qeeqbox/social-analyzer/wiki)
 
 ## Special Detections
-- Facebook
+- Facebook, @gmail and google
 
 ## Install and run as web app (NodeJS + NPM + Firefox)
 ```bash
@@ -81,9 +81,9 @@ cd social-analyzer
 rm -rf package-lock.json node_modules
 npm install lodash
 npm install
-# If you want to list all websites use node app.js -c -l
+# If you want to list all websites use node app.js --cli --list
 # Remember the following runs as FindUserProfilesFast
-node app.js -c -m "fast" -u "username" -w "youtube pinterest tumblr"
+node app.j --cli --mode "fast" --username "johndoe" --websites "youtube pinterest tumblr" --output "pretty"
 ```
 
 ## Install and run as CLI (Python3 + NPM + Firefox)
@@ -94,7 +94,7 @@ sudo apt-get install -y firefox-esr tesseract-ocr git
 git clone https://github.com/qeeqbox/social-analyzer.git
 cd social-analyzer
 pip3 install lxml BeautifulSoup4 tld pygments
-# If you want to list all websites use python3 app.py -c -l
+# If you want to list all websites use python3 app.py --cli --list
 # Remember the following runs as FindUserProfilesFast
 python3 app.py --cli --mode "fast" --username "johndoe" --websites "youtube pinterest tumblr" --output "pretty"
 ```

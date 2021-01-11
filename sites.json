@@ -2161,6 +2161,22 @@
     "type": "Social networking service"
   },
   {
+    "url": "https://gmail.com/{username}",
+    "detections": [
+      {
+        "return": "true",
+        "string": "",
+        "function": "special_gmail_1",
+        "type": "special"
+      }
+    ],
+    "selected": "false",
+    "top": "top10",
+    "timeout": 0,
+    "implicit": 0,
+    "type": "Social networking service"
+  },
+  {
     "url": "https://google.com/{username}",
     "detections": [
       {
@@ -2170,7 +2186,7 @@
         "type": "special"
       }
     ],
-    "selected": "true",
+    "selected": "false",
     "top": "top10",
     "timeout": 0,
     "implicit": 0,
@@ -7226,7 +7242,7 @@
         "type": "normal"
       }
     ],
-    "selected": "true",
+    "selected": "false",
     "top": "top10",
     "timeout": 0,
     "implicit": 0,

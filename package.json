@@ -1,14 +1,15 @@
 {
   "name": "social-analyzer",
-  "version": "2.0.2",
+  "version": "2.0.10",
   "description": "Advanced Social Media Profiles Finder and String Analysis Tool",
-  "main": "server.js",
+  "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node app.js"
   },
   "dependencies": {
     "async": "3.2.0",
+    "cheerio": "1.0.0-rc.5",
     "express": "^4.16.3",
     "express-async-errors": "3.1.1",
     "follow-redirects": "1.13.0",
@@ -28,8 +29,7 @@
     "tmp": "0.2.1",
     "wink-tokenizer": "1.1.0",
     "wordsninja": "1.0.0",
-    "yargs": "16.2.0",
-    "cheerio": "1.0.0-rc.5"
+    "yargs": "16.2.0"
   },
   "author": "QeeqBox",
   "license": "AGPL-3.0",
