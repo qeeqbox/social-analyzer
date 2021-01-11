@@ -55,7 +55,7 @@ Profile images **will not** be blurred. If you want them to be blurred, turn tha
 - [Wiki](https://github.com/qeeqbox/social-analyzer/wiki)
 
 ## Special Detections
-- Facebook (Phone number, name or profile name
+- Facebook (Phone number, name or profile name)
 - Gmail (example@gmail.com)
 - Google (example@example.com) 
 
