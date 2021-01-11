@@ -5,18 +5,17 @@
 
 API and Web App for analyzing & finding a person profile across +300 social media websites. It includes different string analysis and detection modules, you can choose which combination of modules to use during the investigation
 
-The detection modules utilize a rating mechanism based on different detection techniques, which produces a rate value that starts from 0 to 100 (No-Maybe-Yes) - This model produces less *False Positive* comparing with other models
+The detection modules utilize a rating mechanism based on different detection techniques, which produces a rate value that starts from 0 to 100 (No-Maybe-Yes)
 
 This project could help in investigating profiles related to suspicious or malicious activities such as [cyberbullying](https://en.wikipedia.org/wiki/Wikipedia:Cyberbullying), [cybergrooming](https://de.wikipedia.org/wiki/Cyber-Grooming) & [cyberstalking](https://en.wikipedia.org/wiki/Cyberstalking), [spreading misinformation](https://en.wikipedia.org/wiki/Misinformation). And, *"It's currently used by some law enforcement agencies in countries where resources are limited"*
 
 **Pull Requests are welcomed!**
 
 ## Updates
-- Added a new refactored version 👏👏👏
+- Added --websites "all" for python & NodeJS CLI (You can scan ALL the websites within 2~10 seconds) 👏👏👏
+- Added a new refactored version
 - Added special detection for google
 - Added more customization to the CLI python version (It's a lot easier to integrate using the JSON output switch)
-- Added Custom Search Query
-- Added similarity checking to FindOrigins
 
 ## Security Testing
 
@@ -48,15 +47,17 @@ Profile images **will not** be blurred. If you want them to be blurred, turn tha
 - Multi Layers Detections (OCR, Normal, Advanced & Special)
 - Find Profile using Multiple Techniques (Fast & Slow)
 - Profile Screenshot, Title, Info and Website Description
-- Find Name Origins & Common words by Language
+- Find Name Origins, Name Similarity & Common words by Language
 - Custom user-agent, proxy, timeout & implicit wait
 - Python CLI & NodeJS CLI (Limited to FindUserProfilesFast option)
 - Grid Option for Faster Checking (Limited to docker-compose) 👏
-- Dump Logs to folder or terminal (prettified)
+- Dump Logs to Folder or Terminal (prettified)
 - [Wiki](https://github.com/qeeqbox/social-analyzer/wiki)
 
 ## Special Detections
-- Facebook, @gmail and google
+- Facebook (Phone number, name or profile name
+- Gmail (example@gmail.com)
+- Google (example@example.com) 
 
 ## Install and run as web app (NodeJS + NPM + Firefox)
 ```bash

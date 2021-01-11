@@ -367,16 +367,24 @@ async function check_user_cli(argv) {
       'option': 'FindUserProfilesFast,' + argv.output
     }
   }
-  await helper.parsed_sites.forEach(async function(value, i) {
-    helper.parsed_sites[i].selected = "false"
-    if (argv.websites.length > 0) {
-      await argv.websites.split(' ').forEach(item => {
-        if (helper.parsed_sites[i].url.toLowerCase().includes(item.toLowerCase())) {
-          helper.parsed_sites[i].selected = "true"
-        }
-      });
-    }
-  });
+
+  if (argv.websites == "all"){
+    await helper.parsed_sites.forEach(async function(value, i) {
+            helper.parsed_sites[i].selected = "true"
+    });
+  }
+  else{
+    await helper.parsed_sites.forEach(async function(value, i) {
+      helper.parsed_sites[i].selected = "false"
+      if (argv.websites.length > 0) {
+        await argv.websites.split(' ').forEach(item => {
+          if (helper.parsed_sites[i].url.toLowerCase().includes(item.toLowerCase())) {
+            helper.parsed_sites[i].selected = "true"
+          }
+        });
+      }
+    });
+  }
 
   ret = await fastscan.find_username_normal(req)
   if (typeof ret === 'undefined' || ret === undefined || ret.length == 0) {
