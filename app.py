@@ -37,14 +37,14 @@ LOG = getLogger("social-analyzer")
 
 @contextmanager
 def ignore_excpetion(*exceptions):
-    '''
-    catch excpetion
-    '''
-    try:
-        yield
-    except exceptions as error:
-        #print("{} {} {}".format(datetime.utcnow(), EXCLAMATION_MARK, error))
-        pass
+	'''
+	catch excpetion
+	'''
+	try:
+		yield
+	except exceptions as error:
+		#print("{} {} {}".format(datetime.utcnow(), EXCLAMATION_MARK, error))
+		pass
 
 def check_errors(on_off=None):
 	def decorator(func):
@@ -147,10 +147,15 @@ def check_user_cli(parsed):
 	temp_keys = {"found": 0,"link": "","rate": "","title": "","text": ""};
 	req = {"body": {"uuid": str(uuid4()),"string": parsed.username,"option": "FindUserProfilesFast"}}
 	setup_logger(req["body"]["uuid"],True)
-	for site in PARSED_SITES:
-		for temp in parsed.websites.split(" "):
-			if temp in site["url"]:
-				site["selected"] = "true"
+
+	if parsed.websites == "all":
+		for site in PARSED_SITES:
+			site["selected"] = "true"
+	else:
+		for site in PARSED_SITES:
+			for temp in parsed.websites.split(" "):
+				if temp in site["url"]:
+					site["selected"] = "true"
 	find_username_normal(req, parsed)
 	while not QUEUE.empty():
 		items = QUEUE.get()
