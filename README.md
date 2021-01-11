@@ -83,7 +83,7 @@ npm install lodash
 npm install
 # If you want to list all websites use node app.js --cli --list
 # Remember the following runs as FindUserProfilesFast
-node app.j --cli --mode "fast" --username "johndoe" --websites "youtube pinterest tumblr" --output "pretty"
+node app.js --cli --mode "fast" --username "johndoe" --websites "youtube pinterest tumblr" --output "pretty"
 ```
 
 ## Install and run as CLI (Python3 + NPM + Firefox)
