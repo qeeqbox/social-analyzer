@@ -705,7 +705,7 @@
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
-    "type": "unavailable"
+    "type": "Books and Literature"
   },
   {
     "url": "https://buymeacoffee.com/{username}",
@@ -728,7 +728,7 @@
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
-    "type": "unavailable"
+    "type": "Arts and Entertainment"
   },
   {
     "url": "https://buzzfeed.com/{username}",
@@ -756,7 +756,7 @@
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
-    "type": "EntertainmentNews"
+    "type": "Arts and Entertainment"
   },
   {
     "url": "https://canva.com/{username}",
@@ -776,7 +776,7 @@
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
-    "type": "unavailable"
+    "type": "Sports"
   },
   {
     "url": "https://career.habr.com/{username}",
@@ -794,7 +794,7 @@
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
-    "type": "Web search engine"
+    "type": "Job Search"
   },
   {
     "url": "https://cash.me/{username}",
@@ -822,7 +822,7 @@
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
-    "type": "unavailable"
+    "type": "Finance"
   },
   {
     "url": "https://championat.com/user/{username}",
@@ -840,7 +840,7 @@
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
-    "type": "unavailable"
+    "type": "Sports"
   },
   {
     "url": "https://chaos.social/@{username}",
@@ -863,7 +863,7 @@
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
-    "type": "unavailable"
+    "type": "Internet & Telecom"
   },
   {
     "url": "https://chess.com/member/{username}",
@@ -891,7 +891,7 @@
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
-    "type": "Social networking service"
+    "type": "Games"
   },
   {
     "url": "https://cloob.com/name/{username}",
@@ -909,7 +909,7 @@
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
-    "type": "Social network service"
+    "type": "Internet and Telecom"
   },
   {
     "url": "https://cnet.com/profiles/{username}",
@@ -937,7 +937,7 @@
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
-    "type": "Technology"
+    "type": "Internet and Telecom"
   },
   {
     "url": "https://codechef.com/users/{username}",
@@ -955,7 +955,7 @@
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
-    "type": "unavailable"
+    "type": "Computer & electronics"
   },
   {
     "url": "https://codementor.io/{username}",
@@ -978,7 +978,7 @@
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
-    "type": "unavailable"
+    "type": "Job Search"
   },
   {
     "url": "https://codepen.io/{username}",
@@ -1006,7 +1006,7 @@
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
-    "type": "unavailable"
+    "type": "Computer & electronics"
   },
   {
     "url": "https://codewars.com/users/{username}",
@@ -1029,7 +1029,7 @@
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
-    "type": "Technology"
+    "type": "Computer & electronics"
   },
   {
     "url": "https://coil.com/u/{username}",
