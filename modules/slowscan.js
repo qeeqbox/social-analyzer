@@ -74,6 +74,7 @@ async function find_username_site(uuid, username, options, site) {
 
       var source = "";
       var data = "";
+      var language = "unavailable"
       var text_only = "unavailable";
       var title = "unavailable";
       var temp_profile = {
@@ -82,6 +83,7 @@ async function find_username_site(uuid, username, options, site) {
         "link": "",
         "rate": "",
         "title": "",
+        "language": "",
         "text": "",
         "type": ""
       };
@@ -155,8 +157,15 @@ async function find_username_site(uuid, username, options, site) {
         }));
       }
       if (temp_profile.found > 0 || temp_profile.image != "") {
+
+        language = helper.get_language_by_parsing(source)
+        if (language == "unavailable"){
+          language = helper.get_language_by_guessing(text_only)
+        }
+
         temp_profile.text = sanitizeHtml(text_only);
         temp_profile.title = sanitizeHtml(title);
+        temp_profile.language = language
         temp_profile.rate = "%" + ((temp_profile.found / site.detections.length) * 100).toFixed(2);
         temp_profile.link = site.url.replace("{username}", username);
         temp_profile.type = site.type
