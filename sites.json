@@ -1041,7 +1041,7 @@
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
-    "type": "Web monetization vendor"
+    "type": "Finance"
   },
   {
     "url": "https://colourlovers.com/lover/{username}",
@@ -1064,7 +1064,7 @@
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
-    "type": "unavailable"
+    "type": "Art & Entertainment"
   },
   {
     "url": "https://community.bitwarden.com/u/{username}/summary",
@@ -1087,7 +1087,7 @@
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
-    "type": "Discourse forum"
+    "type": "Internet and Telecom"
   },
   {
     "url": "https://community.cloudflare.com/u/{username}",
@@ -1110,7 +1110,7 @@
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
-    "type": "unavailable"
+    "type": "Internet and Telecom"
   },
   {
     "url": "https://community.eintracht.de/fans/{username}",
@@ -1128,7 +1128,7 @@
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
-    "type": "unavailable"
+    "type": "Sports"
   },
   {
     "url": "https://community.oracle.com/people/{username}",
@@ -1146,7 +1146,7 @@
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
-    "type": "unavailable"
+    "type": "Computer and electronics"
   },
   {
     "url": "https://community.signalusers.org/u/{username}",
@@ -1174,7 +1174,7 @@
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
-    "type": "unavailable"
+    "type": "Computer and electronics"
   },
   {
     "url": "https://community.windy.com/user/{username}",
@@ -1202,7 +1202,7 @@
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
-    "type": "unavailable"
+    "type": "Internet and Telecom"
   },
   {
     "url": "https://connect.opensuse.org/pg/profile/{username}",
@@ -1225,7 +1225,7 @@
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
-    "type": "unavailable"
+    "type": "Computer and electronics"
   },
   {
     "url": "https://coroflot.com/{username}",
@@ -1248,7 +1248,7 @@
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
-    "type": "unavailable"
+    "type": "Job Search"
   },
   {
     "url": "https://couchsurfing.com/people/{username}",
@@ -1289,7 +1289,7 @@
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
-    "type": "unavailable"
+    "type": "News"
   },
   {
     "url": "https://cracked.com/members/{username}",
@@ -1301,7 +1301,7 @@
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
-    "type": "Entertainment"
+    "type": "Art & Entertainment"
   },
   {
     "url": "https://create.arduino.cc/projecthub/{username}",
@@ -1313,7 +1313,7 @@
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
-    "type": "unavailable"
+    "type": "Computer and electronics"
   },
   {
     "url": "https://creativemarket.com/{username}",
@@ -1336,7 +1336,7 @@
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
-    "type": "unavailable"
+    "type": "Shopping"
   },
   {
     "url": "https://crowdin.com/profile/{username}",
@@ -1376,7 +1376,7 @@
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
-    "type": "unavailable"
+    "type": "Internet and Telecom"
   },
   {
     "url": "https://crunchyroll.com/user/{username}",
@@ -1392,7 +1392,7 @@
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
-    "type": "Anime streaming"
+    "type": "Arts and Entertainment"
   },
   {
     "url": "https://d3.ru/user/{username}/posts",
@@ -1404,7 +1404,7 @@
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
-    "type": "Communities Platform"
+    "type": "Computer and electronics"
   },
   {
     "url": "https://dailykos.com/user/{username}",
@@ -1432,7 +1432,7 @@
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
-    "type": "Political blog"
+    "type": "News"
   },
   {
     "url": "https://dailymotion.com/{username}",
@@ -1455,7 +1455,7 @@
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
-    "type": "Video hosting service"
+    "type": "Video Hosting"
   },
   {
     "url": "https://data.typeracer.com/pit/profile?user={username}",
@@ -1483,7 +1483,7 @@
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
-    "type": "Multiplayer online game"
+    "type": "Games"
   },
   {
     "url": "https://dating.ru/{username}",
