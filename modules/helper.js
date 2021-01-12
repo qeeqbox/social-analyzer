@@ -13,6 +13,9 @@ var header_options = {
 var https = require("follow-redirects").https;
 var fs = require("fs");
 var url = require("url");
+var franc = require('franc');
+var langs = require('langs');
+var cheerio = require('cheerio');
 
 var parsed_sites = JSON.parse(fs.readFileSync("sites.json"));
 var logs_queue = Promise.resolve();
@@ -26,6 +29,36 @@ function log_to_file_queue(uuid, msg) {
       });
     });
   });
+}
+
+function get_language_by_parsing(body) {
+  var language = "unavailable"
+  try {
+    var $ = cheerio.load(body);
+    var code = $("html").attr("lang")
+    if (code != "") {
+      language = langs.where("1", code).name
+    }
+  } catch (err) {
+    helper.verbose && console.log(err);
+  }
+  return language
+}
+
+function get_language_by_guessing(text) {
+  var language = "unavailable"
+  try {
+    if (text != "unavailable" && text != "") {
+      var code = franc(text);
+      if (code !== 'und') {
+        language = langs.where("3", code).name + " (Maybe)"
+      }
+    }
+  } catch (err) {
+    helper.verbose && console.log(err);
+  }
+
+  return language
 }
 
 function get_site_from_url(_url) {
@@ -98,6 +131,8 @@ async function get_url_wrapper_text(url, time = 5) {
 }
 
 module.exports = {
+  get_language_by_parsing,
+  get_language_by_guessing,
   parsed_sites,
   verbose,
   google_api_key,

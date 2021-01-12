@@ -66,6 +66,7 @@ async function find_username_site_special_facebook_1(uuid, username, site) {
         "link": "",
         "rate": "",
         "title": "",
+        "language": "",
         "text": "",
         "type": ""
       };
@@ -132,6 +133,7 @@ async function find_username_site_special_gmail_1(uuid, username, site) {
         "link": "",
         "rate": "",
         "title": "",
+        "language": "",
         "text": "",
         "type": ""
       };
@@ -198,6 +200,7 @@ async function find_username_site_special_google_1(uuid, username, site) {
         "link": "",
         "rate": "",
         "title": "",
+        "language": "",
         "text": "",
         "type": ""
       };

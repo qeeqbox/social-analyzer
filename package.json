@@ -1,6 +1,6 @@
 {
   "name": "social-analyzer",
-  "version": "2.0.10",
+  "version": "2.0.12",
   "description": "Advanced Social Media Profiles Finder and String Analysis Tool",
   "main": "app.js",
   "scripts": {
@@ -29,7 +29,9 @@
     "tmp": "0.2.1",
     "wink-tokenizer": "1.1.0",
     "wordsninja": "1.0.0",
-    "yargs": "16.2.0"
+    "yargs": "16.2.0",
+    "franc": "5.0.0",
+    "langs": "2.0.0"
   },
   "author": "QeeqBox",
   "license": "AGPL-3.0",

@@ -1,7 +1,7 @@
 var helper = require("./helper.js")
 var async = require("async");
 var sanitizeHtml = require("sanitize-html");
-const {
+var {
   htmlToText
 } = require('html-to-text');
 var cheerio = require('cheerio');
@@ -35,12 +35,14 @@ async function find_username_site(uuid, username, options, site) {
       var source = body;
       var text_only = "unavailable";
       var title = "unavailable";
+      var language = "unavailable"
       var temp_profile = {
         "found": 0,
         "image": "",
         "link": "",
         "rate": "",
         "title": "",
+        "language": "",
         "text": "",
         "type": ""
       };
@@ -79,7 +81,13 @@ async function find_username_site(uuid, username, options, site) {
           helper.verbose && console.log(err);
         }
 
+        language = helper.get_language_by_parsing(body)
+        if (language == "unavailable"){
+          language = helper.get_language_by_guessing(temp_profile.text)
+        }
+
         temp_profile.title = title;
+        temp_profile.language = language;
         temp_profile.rate = "%" + ((temp_profile["found"] / detections_count) * 100).toFixed(2);
         temp_profile.link = site.url.replace("{username}", username);
         temp_profile.type = site.type

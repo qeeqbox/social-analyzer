@@ -12,6 +12,7 @@ This project *is currently used by some law enforcement agencies in countries wh
 **All Pull Requests are welcomed!**
 
 ## Updates
+- Added dynamic language detections for profiles
 - Added --websites "all" for python & NodeJS CLI (You can scan ALL the websites within 2~10 seconds) 👏👏👏
 - Added a new refactored version
 
@@ -55,7 +56,7 @@ Profile images **will not** be blurred. If you want them to be blurred, turn tha
 ## Special Detections
 - Facebook (Phone number, name or profile name)
 - Gmail (example@gmail.com)
-- Google (example@example.com) 
+- Google (example@example.com)
 
 ## Install and run as web app (NodeJS + NPM + Firefox)
 ```bash
