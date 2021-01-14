@@ -1,10 +1,13 @@
-[{
+[
+  {
     "url": "https://500px.com/p/{username}",
-    "detections": [{
-      "return": "false",
-      "string": "This page is no longer available",
-      "type": "ocr"
-    }],
+    "detections": [
+      {
+        "return": "false",
+        "string": "This page is no longer available",
+        "type": "ocr"
+      }
+    ],
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
@@ -12,7 +15,8 @@
   },
   {
     "url": "https://7cups.com/@{username}",
-    "detections": [{
+    "detections": [
+      {
         "return": "false",
         "string": "Not Found",
         "type": "ocr"
@@ -40,7 +44,8 @@
   },
   {
     "url": "https://9gag.com/u/{username}",
-    "detections": [{
+    "detections": [
+      {
         "return": "false",
         "string": "There's nothing here",
         "type": "ocr"
@@ -63,7 +68,8 @@
   },
   {
     "url": "https://about.me/{username}",
-    "detections": [{
+    "detections": [
+      {
         "return": "false",
         "string": "There is no one",
         "type": "ocr"
@@ -87,7 +93,8 @@
   {
     "status": "bad",
     "url": "https://akniga.org/profile/{username}",
-    "detections": [{
+    "detections": [
+      {
         "return": "false",
         "string": "error-code",
         "type": "normal"
@@ -105,11 +112,13 @@
   },
   {
     "url": "https://alik.cz/u/{username}",
-    "detections": [{
-      "return": "true",
-      "string": "user-",
-      "type": "normal"
-    }],
+    "detections": [
+      {
+        "return": "true",
+        "string": "user-",
+        "type": "normal"
+      }
+    ],
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
@@ -117,7 +126,8 @@
   },
   {
     "url": "https://allmylinks.com/{username}",
-    "detections": [{
+    "detections": [
+      {
         "return": "false",
         "string": "Page not found",
         "type": "ocr"
@@ -145,7 +155,8 @@
   },
   {
     "url": "https://alltrails.com/members/{username}",
-    "detections": [{
+    "detections": [
+      {
         "return": "false",
         "string": "User could not be found",
         "type": "ocr"
@@ -173,7 +184,8 @@
   },
   {
     "url": "https://aminoapps.com/u/{username}",
-    "detections": [{
+    "detections": [
+      {
         "return": "false",
         "string": "It may have been removed",
         "type": "normal"
@@ -196,7 +208,8 @@
   },
   {
     "url": "https://angel.co/{username}",
-    "detections": [{
+    "detections": [
+      {
         "return": "false",
         "string": "We couldn't find",
         "type": "ocr"
@@ -224,11 +237,13 @@
   },
   {
     "url": "https://anilist.co/user/{username}/",
-    "detections": [{
-      "return": "false",
-      "string": "404 Page Not Found-Chan",
-      "type": "ocr"
-    }],
+    "detections": [
+      {
+        "return": "false",
+        "string": "404 Page Not Found-Chan",
+        "type": "ocr"
+      }
+    ],
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
@@ -236,7 +251,8 @@
   },
   {
     "url": "https://anobii.com/{username}/profile",
-    "detections": [{
+    "detections": [
+      {
         "return": "false",
         "string": "No route found for",
         "type": "ocr"
@@ -259,11 +275,13 @@
   },
   {
     "url": "https://apps.runescape.com/runemetrics/app/overview/player/{username}",
-    "detections": [{
-      "return": "false",
-      "string": "Sorry, that player could not be found",
-      "type": "normal"
-    }],
+    "detections": [
+      {
+        "return": "false",
+        "string": "Sorry, that player could not be found",
+        "type": "normal"
+      }
+    ],
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
@@ -271,7 +289,8 @@
   },
   {
     "url": "https://archive.org/details/@{username}",
-    "detections": [{
+    "detections": [
+      {
         "return": "false",
         "string": "cannot find account",
         "type": "normal"
@@ -299,11 +318,13 @@
   },
   {
     "url": "https://artstation.com/{username}",
-    "detections": [{
-      "return": "false",
-      "string": "Page not found",
-      "type": "normal"
-    }],
+    "detections": [
+      {
+        "return": "false",
+        "string": "Page not found",
+        "type": "normal"
+      }
+    ],
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
@@ -311,7 +332,8 @@
   },
   {
     "url": "https://asciinema.org/~{username}",
-    "detections": [{
+    "detections": [
+      {
         "return": "false",
         "string": "404 Not Found",
         "type": "ocr"
@@ -334,7 +356,8 @@
   },
   {
     "url": "https://ask.fedoraproject.org/u/{username}",
-    "detections": [{
+    "detections": [
+      {
         "return": "false",
         "string": "Sorry, we couldn't find that page",
         "type": "ocr"
@@ -362,7 +385,8 @@
   },
   {
     "url": "https://ask.fm/{username}",
-    "detections": [{
+    "detections": [
+      {
         "return": "false",
         "string": "Here used to be",
         "type": "ocr"
@@ -390,7 +414,8 @@
   },
   {
     "url": "https://audiojungle.net/user/{username}",
-    "detections": [{
+    "detections": [
+      {
         "return": "false",
         "string": "Nothing to see here",
         "type": "ocr"
@@ -418,7 +443,8 @@
   },
   {
     "url": "https://authorstream.com/{username}",
-    "detections": [{
+    "detections": [
+      {
         "return": "false",
         "string": "We apologize for this inconvenience",
         "type": "ocr"
@@ -441,11 +467,13 @@
   },
   {
     "url": "https://avforums.com/members/{username}",
-    "detections": [{
-      "return": "true",
-      "string": "logged-in to do that",
-      "type": "normal"
-    }],
+    "detections": [
+      {
+        "return": "true",
+        "string": "logged-in to do that",
+        "type": "normal"
+      }
+    ],
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
@@ -453,7 +481,8 @@
   },
   {
     "url": "https://baby.ru/u/{username}",
-    "detections": [{
+    "detections": [
+      {
         "return": "false",
         "string": "error404",
         "type": "normal"
@@ -471,11 +500,13 @@
   },
   {
     "url": "https://babyblog.ru/user/info/{username}",
-    "detections": [{
-      "return": "true",
-      "string": "diary-header",
-      "type": "normal"
-    }],
+    "detections": [
+      {
+        "return": "true",
+        "string": "diary-header",
+        "type": "normal"
+      }
+    ],
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
@@ -483,7 +514,8 @@
   },
   {
     "url": "https://bandcamp.com/{username}",
-    "detections": [{
+    "detections": [
+      {
         "return": "false",
         "string": "Sorry, that something isn’t here",
         "type": "ocr"
@@ -511,7 +543,8 @@
   },
   {
     "url": "https://behance.net/{username}",
-    "detections": [{
+    "detections": [
+      {
         "return": "false",
         "string": "Oops! We can’t find that page",
         "type": "ocr"
@@ -552,11 +585,13 @@
   },
   {
     "url": "https://binarysearch.io/@/{username}",
-    "detections": [{
-      "return": "false",
-      "string": "Profile not found",
-      "type": "ocr"
-    }],
+    "detections": [
+      {
+        "return": "false",
+        "string": "Profile not found",
+        "type": "ocr"
+      }
+    ],
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
@@ -564,11 +599,13 @@
   },
   {
     "url": "https://bintray.com/{username}",
-    "detections": [{
-      "return": "false",
-      "string": "Page not found",
-      "type": "normal"
-    }],
+    "detections": [
+      {
+        "return": "false",
+        "string": "Page not found",
+        "type": "normal"
+      }
+    ],
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
@@ -576,7 +613,8 @@
   },
   {
     "url": "https://bitbucket.org/{username}",
-    "detections": [{
+    "detections": [
+      {
         "return": "false",
         "string": "That link has no power here",
         "type": "ocr"
@@ -599,7 +637,8 @@
   },
   {
     "url": "https://bitcoinforum.com/profile/{username}",
-    "detections": [{
+    "detections": [
+      {
         "return": "false",
         "string": "An Error Has Occurred!",
         "type": "ocr"
@@ -622,7 +661,8 @@
   },
   {
     "url": "https://blip.fm/{username}",
-    "detections": [{
+    "detections": [
+      {
         "return": "false",
         "string": "Page Not Found",
         "type": "ocr"
@@ -650,7 +690,8 @@
   },
   {
     "url": "https://blog.naver.com/{username}",
-    "detections": [{
+    "detections": [
+      {
         "return": "false",
         "string": "error_content",
         "type": "normal"
@@ -668,7 +709,8 @@
   },
   {
     "url": "https://bodyspace.bodybuilding.com/{username}",
-    "detections": [{
+    "detections": [
+      {
         "return": "true",
         "string": "com/{username}",
         "type": "normal"
@@ -686,7 +728,8 @@
   },
   {
     "url": "https://bookcrossing.com/mybookshelf/{username}",
-    "detections": [{
+    "detections": [
+      {
         "return": "false",
         "string": "Sorry, we were unable",
         "type": "ocr"
@@ -709,7 +752,8 @@
   },
   {
     "url": "https://buymeacoffee.com/{username}",
-    "detections": [{
+    "detections": [
+      {
         "return": "false",
         "string": "seem to find the page",
         "type": "ocr"
@@ -732,7 +776,8 @@
   },
   {
     "url": "https://buzzfeed.com/{username}",
-    "detections": [{
+    "detections": [
+      {
         "return": "false",
         "string": "We can't find the page you're looking for",
         "type": "ocr"
@@ -768,11 +813,13 @@
   },
   {
     "url": "https://capfriendly.com/users/{username}",
-    "detections": [{
-      "return": "false",
-      "string": "No results found",
-      "type": "normal"
-    }],
+    "detections": [
+      {
+        "return": "false",
+        "string": "No results found",
+        "type": "normal"
+      }
+    ],
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
@@ -780,7 +827,8 @@
   },
   {
     "url": "https://career.habr.com/{username}",
-    "detections": [{
+    "detections": [
+      {
         "return": "false",
         "string": "404 error",
         "type": "normal"
@@ -798,7 +846,8 @@
   },
   {
     "url": "https://cash.me/{username}",
-    "detections": [{
+    "detections": [
+      {
         "return": "false",
         "string": "The page you are looking for can't be found.",
         "type": "ocr"
@@ -826,7 +875,8 @@
   },
   {
     "url": "https://championat.com/user/{username}",
-    "detections": [{
+    "detections": [
+      {
         "return": "false",
         "string": "error404",
         "type": "normal"
@@ -844,7 +894,8 @@
   },
   {
     "url": "https://chaos.social/@{username}",
-    "detections": [{
+    "detections": [
+      {
         "return": "false",
         "string": "The page you are looking",
         "type": "normal"
@@ -867,7 +918,8 @@
   },
   {
     "url": "https://chess.com/member/{username}",
-    "detections": [{
+    "detections": [
+      {
         "return": "false",
         "string": "somebody made a wrong move",
         "type": "ocr"
@@ -895,7 +947,8 @@
   },
   {
     "url": "https://cloob.com/name/{username}",
-    "detections": [{
+    "detections": [
+      {
         "return": "false",
         "string": "notFound",
         "type": "normal"
@@ -913,7 +966,8 @@
   },
   {
     "url": "https://cnet.com/profiles/{username}",
-    "detections": [{
+    "detections": [
+      {
         "return": "false",
         "string": "You are here in error",
         "type": "ocr"
@@ -941,7 +995,8 @@
   },
   {
     "url": "https://codechef.com/users/{username}",
-    "detections": [{
+    "detections": [
+      {
         "return": "true",
         "string": "users/{username}",
         "type": "normal"
@@ -959,7 +1014,8 @@
   },
   {
     "url": "https://codementor.io/{username}",
-    "detections": [{
+    "detections": [
+      {
         "return": "false",
         "string": "/404/",
         "type": "ocr"
@@ -982,7 +1038,8 @@
   },
   {
     "url": "https://codepen.io/{username}",
-    "detections": [{
+    "detections": [
+      {
         "return": "false",
         "string": "I'm afraid you've found",
         "type": "ocr"
@@ -1010,7 +1067,8 @@
   },
   {
     "url": "https://codewars.com/users/{username}",
-    "detections": [{
+    "detections": [
+      {
         "return": "false",
         "string": "The page you were looking",
         "type": "ocr"
@@ -1033,11 +1091,13 @@
   },
   {
     "url": "https://coil.com/u/{username}",
-    "detections": [{
-      "return": "false",
-      "string": "Whoops, the thing you were looking for isn't here",
-      "type": "ocr"
-    }],
+    "detections": [
+      {
+        "return": "false",
+        "string": "Whoops, the thing you were looking for isn't here",
+        "type": "ocr"
+      }
+    ],
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
@@ -1045,7 +1105,8 @@
   },
   {
     "url": "https://colourlovers.com/lover/{username}",
-    "detections": [{
+    "detections": [
+      {
         "return": "false",
         "string": "Are you looking for someone",
         "type": "ocr"
@@ -1068,7 +1129,8 @@
   },
   {
     "url": "https://community.bitwarden.com/u/{username}/summary",
-    "detections": [{
+    "detections": [
+      {
         "return": "false",
         "string": "That page doesn",
         "type": "ocr"
@@ -1091,7 +1153,8 @@
   },
   {
     "url": "https://community.cloudflare.com/u/{username}",
-    "detections": [{
+    "detections": [
+      {
         "return": "false",
         "string": "That page doesn",
         "type": "ocr"
@@ -1114,7 +1177,8 @@
   },
   {
     "url": "https://community.eintracht.de/fans/{username}",
-    "detections": [{
+    "detections": [
+      {
         "return": "false",
         "string": "Seite nicht gefunden",
         "type": "normal"
@@ -1132,7 +1196,8 @@
   },
   {
     "url": "https://community.oracle.com/people/{username}",
-    "detections": [{
+    "detections": [
+      {
         "return": "false",
         "string": "User Not Found",
         "type": "ocr"
@@ -1150,7 +1215,8 @@
   },
   {
     "url": "https://community.signalusers.org/u/{username}",
-    "detections": [{
+    "detections": [
+      {
         "return": "false",
         "string": "That page doesn’t exist",
         "type": "ocr"
@@ -1178,7 +1244,8 @@
   },
   {
     "url": "https://community.windy.com/user/{username}",
-    "detections": [{
+    "detections": [
+      {
         "return": "false",
         "string": "You seem to have stumbled",
         "type": "ocr"
@@ -1206,7 +1273,8 @@
   },
   {
     "url": "https://connect.opensuse.org/pg/profile/{username}",
-    "detections": [{
+    "detections": [
+      {
         "return": "false",
         "string": "we could not find the",
         "type": "ocr"
@@ -1229,7 +1297,8 @@
   },
   {
     "url": "https://coroflot.com/{username}",
-    "detections": [{
+    "detections": [
+      {
         "return": "false",
         "string": "Looking for something",
         "type": "ocr"
@@ -1252,7 +1321,8 @@
   },
   {
     "url": "https://couchsurfing.com/people/{username}",
-    "detections": [{
+    "detections": [
+      {
         "return": "false",
         "string": "not found",
         "type": "normal"
@@ -1270,7 +1340,8 @@
   },
   {
     "url": "https://countable.us/{username}",
-    "detections": [{
+    "detections": [
+      {
         "return": "false",
         "string": "The page you were looking for",
         "type": "ocr"
@@ -1293,11 +1364,13 @@
   },
   {
     "url": "https://cracked.com/members/{username}",
-    "detections": [{
-      "return": "true",
-      "string": "data-username={username}",
-      "type": "normal"
-    }],
+    "detections": [
+      {
+        "return": "true",
+        "string": "data-username={username}",
+        "type": "normal"
+      }
+    ],
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
@@ -1305,11 +1378,13 @@
   },
   {
     "url": "https://create.arduino.cc/projecthub/{username}",
-    "detections": [{
-      "return": "false",
-      "string": "Bummer, we couldn't find that page",
-      "type": "normal"
-    }],
+    "detections": [
+      {
+        "return": "false",
+        "string": "Bummer, we couldn't find that page",
+        "type": "normal"
+      }
+    ],
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
@@ -1317,7 +1392,8 @@
   },
   {
     "url": "https://creativemarket.com/{username}",
-    "detections": [{
+    "detections": [
+      {
         "return": "false",
         "string": "Whoomp, there it isn",
         "type": "ocr"
@@ -1340,11 +1416,13 @@
   },
   {
     "url": "https://crowdin.com/profile/{username}",
-    "detections": [{
-      "return": "false",
-      "string": "This is not the place you're looking for",
-      "type": "normal"
-    }],
+    "detections": [
+      {
+        "return": "false",
+        "string": "This is not the place you're looking for",
+        "type": "normal"
+      }
+    ],
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
@@ -1352,7 +1430,8 @@
   },
   {
     "url": "https://crunchbase.com/person/{username}",
-    "detections": [{
+    "detections": [
+      {
         "return": "false",
         "string": "find this page for you.",
         "type": "normal"
@@ -1380,15 +1459,18 @@
   },
   {
     "url": "https://crunchyroll.com/user/{username}",
-    "detections": [{
-      "return": "false",
-      "string": "but we were unable to find",
-      "type": "normal"
-    }, {
-      "return": "true",
-      "string": "user_profile",
-      "type": "normal"
-    }],
+    "detections": [
+      {
+        "return": "false",
+        "string": "but we were unable to find",
+        "type": "normal"
+      },
+      {
+        "return": "true",
+        "string": "user_profile",
+        "type": "normal"
+      }
+    ],
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
@@ -1396,11 +1478,13 @@
   },
   {
     "url": "https://d3.ru/user/{username}/posts",
-    "detections": [{
-      "return": "true",
-      "string": "/user/{username}",
-      "type": "normal"
-    }],
+    "detections": [
+      {
+        "return": "true",
+        "string": "/user/{username}",
+        "type": "normal"
+      }
+    ],
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
@@ -1408,7 +1492,8 @@
   },
   {
     "url": "https://dailykos.com/user/{username}",
-    "detections": [{
+    "detections": [
+      {
         "return": "false",
         "string": "Sorry, that blog could not be found",
         "type": "ocr"
@@ -1436,7 +1521,8 @@
   },
   {
     "url": "https://dailymotion.com/{username}",
-    "detections": [{
+    "detections": [
+      {
         "return": "false",
         "string": "Page not found",
         "type": "ocr"
@@ -1459,7 +1545,8 @@
   },
   {
     "url": "https://data.typeracer.com/pit/profile?user={username}",
-    "detections": [{
+    "detections": [
+      {
         "return": "false",
         "string": "Profile Not Found",
         "type": "ocr"
@@ -1487,7 +1574,8 @@
   },
   {
     "url": "https://dating.ru/{username}",
-    "detections": [{
+    "detections": [
+      {
         "return": "true",
         "string": "ru/{username}",
         "type": "normal"
@@ -1505,7 +1593,8 @@
   },
   {
     "url": "https://depop.com/{username}/",
-    "detections": [{
+    "detections": [
+      {
         "return": "false",
         "string": "that page doesn",
         "type": "normal"
@@ -1528,7 +1617,8 @@
   },
   {
     "url": "https://designspiration.net/{username}",
-    "detections": [{
+    "detections": [
+      {
         "return": "false",
         "string": "Content Not Found",
         "type": "ocr"
@@ -1556,7 +1646,8 @@
   },
   {
     "url": "https://dev.to/{username}",
-    "detections": [{
+    "detections": [
+      {
         "return": "false",
         "string": "This page does not exist ",
         "type": "ocr"
@@ -1584,7 +1675,8 @@
   },
   {
     "url": "https://devrant.com/users/{username}",
-    "detections": [{
+    "detections": [
+      {
         "return": "true",
         "string": "/users/{username}",
         "type": "normal"
@@ -1602,7 +1694,8 @@
   },
   {
     "url": "https://discogs.com/user/{username}",
-    "detections": [{
+    "detections": [
+      {
         "return": "false",
         "string": "We couldn't find that page",
         "type": "ocr"
@@ -1625,11 +1718,13 @@
   },
   {
     "url": "https://discourse.wicg.io/u/{username}/summary",
-    "detections": [{
-      "return": "false",
-      "string": "Oops! That page doesn’t exist or is private",
-      "type": "normal"
-    }],
+    "detections": [
+      {
+        "return": "false",
+        "string": "Oops! That page doesn’t exist or is private",
+        "type": "normal"
+      }
+    ],
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
@@ -1637,7 +1732,8 @@
   },
   {
     "url": "https://discuss.atom.io/u/{username}/summary",
-    "detections": [{
+    "detections": [
+      {
         "return": "false",
         "string": "Oops! That page doesn’t exist",
         "type": "ocr"
@@ -1665,7 +1761,8 @@
   },
   {
     "url": "https://discuss.elastic.co/u/{username}",
-    "detections": [{
+    "detections": [
+      {
         "return": "false",
         "string": "That page doesn’t exist",
         "type": "ocr"
@@ -1693,7 +1790,8 @@
   },
   {
     "url": "https://discussions.apple.com/profile/{username}",
-    "detections": [{
+    "detections": [
+      {
         "return": "false",
         "string": "Looking for something in",
         "type": "ocr"
@@ -1721,11 +1819,13 @@
   },
   {
     "url": "https://displate.com/{username}/profile",
-    "detections": [{
-      "return": "false",
-      "string": "Oops!",
-      "type": "normal"
-    }],
+    "detections": [
+      {
+        "return": "false",
+        "string": "Oops!",
+        "type": "normal"
+      }
+    ],
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
@@ -1733,7 +1833,8 @@
   },
   {
     "url": "https://disqus.com/{username}",
-    "detections": [{
+    "detections": [
+      {
         "return": "false",
         "string": "Something didn't work",
         "type": "ocr"
@@ -1761,7 +1862,8 @@
   },
   {
     "url": "https://douban.com/people/{username}/",
-    "detections": [{
+    "detections": [
+      {
         "return": "true",
         "string": "error.",
         "type": "normal"
@@ -1779,7 +1881,8 @@
   },
   {
     "url": "https://dribbble.com/{username}",
-    "detections": [{
+    "detections": [
+      {
         "return": "false",
         "string": "Whoops, that page is gone",
         "type": "ocr"
@@ -1807,7 +1910,8 @@
   },
   {
     "url": "https://drive2.ru/users/{username}",
-    "detections": [{
+    "detections": [
+      {
         "return": "false",
         "string": ">404",
         "type": "normal"
@@ -1830,7 +1934,8 @@
   },
   {
     "url": "https://duolingo.com/profile/{username}",
-    "detections": [{
+    "detections": [
+      {
         "return": "false",
         "string": "Error 404",
         "type": "ocr"
@@ -1858,7 +1963,8 @@
   },
   {
     "url": "https://ebay.com/usr/{username}",
-    "detections": [{
+    "detections": [
+      {
         "return": "false",
         "string": "The User ID you entered was not found",
         "type": "ocr"
@@ -1891,11 +1997,13 @@
   },
   {
     "url": "https://echo.msk.ru/users/{username}",
-    "detections": [{
-      "return": "false",
-      "string": "404<",
-      "type": "normal"
-    }],
+    "detections": [
+      {
+        "return": "false",
+        "string": "404<",
+        "type": "normal"
+      }
+    ],
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
@@ -1903,7 +2011,8 @@
   },
   {
     "url": "https://egpu.io/forums/profile/{username}",
-    "detections": [{
+    "detections": [
+      {
         "return": "false",
         "string": "Page not found",
         "type": "ocr"
@@ -1926,7 +2035,8 @@
   },
   {
     "url": "https://ello.co/{username}",
-    "detections": [{
+    "detections": [
+      {
         "return": "false",
         "string": "We couldn't find",
         "type": "ocr"
@@ -1959,7 +2069,8 @@
   },
   {
     "url": "https://en.gravatar.com/{username}",
-    "detections": [{
+    "detections": [
+      {
         "return": "false",
         "string": "We’re sorry",
         "type": "ocr"
@@ -1990,7 +2101,8 @@
   },
   {
     "url": "https://escapistmagazine.com/profiles/view/{username}",
-    "detections": [{
+    "detections": [
+      {
         "return": "false",
         "string": "Please log in to search for users",
         "type": "normal"
@@ -2013,7 +2125,8 @@
   },
   {
     "url": "https://etsy.com/shop/{username}",
-    "detections": [{
+    "detections": [
+      {
         "return": "false",
         "string": "the page you were looking for was not found",
         "type": "ocr"
@@ -2046,7 +2159,8 @@
   },
   {
     "url": "https://eurogamer.net/profiles/{username}",
-    "detections": [{
+    "detections": [
+      {
         "return": "false",
         "string": "404 Page not found",
         "type": "normal"
@@ -2069,7 +2183,8 @@
   },
   {
     "url": "https://euw.op.gg/summoner/userName={username}",
-    "detections": [{
+    "detections": [
+      {
         "return": "false",
         "string": "This summoner is not registered at",
         "type": "ocr"
@@ -2097,7 +2212,8 @@
   },
   {
     "url": "https://eyeem.com/u/{username}",
-    "detections": [{
+    "detections": [
+      {
         "return": "false",
         "string": "We can't find the user you're looking",
         "type": "ocr"
@@ -2120,11 +2236,13 @@
   },
   {
     "url": "https://f3.cool/{username}",
-    "detections": [{
-      "return": "true",
-      "string": "og:title",
-      "type": "normal"
-    }],
+    "detections": [
+      {
+        "return": "true",
+        "string": "og:title",
+        "type": "normal"
+      }
+    ],
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
@@ -2132,7 +2250,8 @@
   },
   {
     "url": "https://facebook.com/{username}",
-    "detections": [{
+    "detections": [
+      {
         "return": "false",
         "string": "This page isn't available",
         "type": "ocr"
@@ -2162,12 +2281,14 @@
   },
   {
     "url": "https://gmail.com/{username}",
-    "detections": [{
-      "return": "true",
-      "string": "",
-      "function": "special_gmail_1",
-      "type": "special"
-    }],
+    "detections": [
+      {
+        "return": "true",
+        "string": "",
+        "function": "special_gmail_1",
+        "type": "special"
+      }
+    ],
     "selected": "false",
     "top": "top10",
     "timeout": 0,
@@ -2176,12 +2297,14 @@
   },
   {
     "url": "https://google.com/{username}",
-    "detections": [{
-      "return": "true",
-      "string": "",
-      "function": "special_google_1",
-      "type": "special"
-    }],
+    "detections": [
+      {
+        "return": "true",
+        "string": "",
+        "function": "special_google_1",
+        "type": "special"
+      }
+    ],
     "selected": "false",
     "top": "top10",
     "timeout": 0,
@@ -2190,7 +2313,8 @@
   },
   {
     "url": "https://facenama.com/{username}",
-    "detections": [{
+    "detections": [
+      {
         "return": "false",
         "string": "404 Error",
         "type": "normal"
@@ -2213,7 +2337,8 @@
   },
   {
     "url": "https://fandom.com/u/{username}",
-    "detections": [{
+    "detections": [
+      {
         "return": "false",
         "string": "t always catch",
         "type": "ocr"
@@ -2241,11 +2366,13 @@
   },
   {
     "url": "https://fiverr.com/{username}",
-    "detections": [{
-      "return": "false",
-      "string": "The user account you are looking for is no longer available.",
-      "type": "normal"
-    }],
+    "detections": [
+      {
+        "return": "false",
+        "string": "The user account you are looking for is no longer available.",
+        "type": "normal"
+      }
+    ],
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
@@ -2261,7 +2388,8 @@
   },
   {
     "url": "https://fl.ru/users/{username}/portfolio",
-    "detections": [{
+    "detections": [
+      {
         "return": "false",
         "string": "404 Not Found",
         "type": "normal"
@@ -2279,7 +2407,8 @@
   },
   {
     "url": "https://flickr.com/people/{username}",
-    "detections": [{
+    "detections": [
+      {
         "return": "false",
         "string": "This is not the page you’re looking for",
         "type": "ocr"
@@ -2307,7 +2436,8 @@
   },
   {
     "url": "https://flipboard.com/@{username}",
-    "detections": [{
+    "detections": [
+      {
         "return": "false",
         "string": "This page does not exist",
         "type": "ocr"
@@ -2335,7 +2465,8 @@
   },
   {
     "url": "https://fortnitetracker.com/profile/all/{username}",
-    "detections": [{
+    "detections": [
+      {
         "return": "false",
         "string": "We are unable to find your profile",
         "type": "ocr"
@@ -2371,11 +2502,13 @@
   },
   {
     "url": "https://forum.guns.ru/forummisc/blog/{username}",
-    "detections": [{
-      "return": "true",
-      "string": "username=",
-      "type": "normal"
-    }],
+    "detections": [
+      {
+        "return": "true",
+        "string": "username=",
+        "type": "normal"
+      }
+    ],
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
@@ -2383,7 +2516,8 @@
   },
   {
     "url": "https://forum.hackthebox.eu/profile/{username}",
-    "detections": [{
+    "detections": [
+      {
         "return": "false",
         "string": "User not found",
         "type": "ocr"
@@ -2419,7 +2553,8 @@
   },
   {
     "url": "https://forum.leasehackr.com/u/{username}/summary",
-    "detections": [{
+    "detections": [
+      {
         "return": "false",
         "string": "That page doesn’t exist or is private",
         "type": "ocr"
@@ -2447,7 +2582,8 @@
   },
   {
     "url": "https://forum.sublimetext.com/u/{username}",
-    "detections": [{
+    "detections": [
+      {
         "return": "false",
         "string": "That page doesn’t exist or is private",
         "type": "ocr"
@@ -2475,7 +2611,8 @@
   },
   {
     "url": "https://forum.velomania.ru/member.php?username={username}",
-    "detections": [{
+    "detections": [
+      {
         "return": "false",
         "string": "standard_error",
         "type": "normal"
@@ -2493,7 +2630,8 @@
   },
   {
     "url": "https://forumhouse.ru/members/?username={username}",
-    "detections": [{
+    "detections": [
+      {
         "return": "false",
         "string": "\"error\"",
         "type": "normal"
@@ -2511,7 +2649,8 @@
   },
   {
     "url": "https://forumophilia.com/profile.php?mode=viewprofile&u={username}",
-    "detections": [{
+    "detections": [
+      {
         "return": "false",
         "string": "but that user does not exist",
         "type": "ocr"
@@ -2534,7 +2673,8 @@
   },
   {
     "url": "https://forums.gunsandammo.com/profile/{username}",
-    "detections": [{
+    "detections": [
+      {
         "return": "false",
         "string": "User Not Found",
         "type": "ocr"
@@ -2562,7 +2702,8 @@
   },
   {
     "url": "https://forums.kali.org/member.php?username={username}",
-    "detections": [{
+    "detections": [
+      {
         "return": "false",
         "string": "This user has not registered and therefore does",
         "type": "ocr"
@@ -2585,7 +2726,8 @@
   },
   {
     "url": "https://forums.mmorpg.com/profile/{username}",
-    "detections": [{
+    "detections": [
+      {
         "return": "false",
         "string": "404 Not Found",
         "type": "normal"
@@ -2613,7 +2755,8 @@
   },
   {
     "url": "https://forums.pcgamer.com/members/?username={username}",
-    "detections": [{
+    "detections": [
+      {
         "return": "false",
         "string": "The specified member cannot be found",
         "type": "ocr"
@@ -2636,7 +2779,8 @@
   },
   {
     "url": "https://forums.whonix.org/u/{username}",
-    "detections": [{
+    "detections": [
+      {
         "return": "false",
         "string": "That page doesn’t exist or is private",
         "type": "ocr"
@@ -2664,11 +2808,13 @@
   },
   {
     "url": "https://fosstodon.org/web/accounts/{username}",
-    "detections": [{
-      "return": "false",
-      "string": "This resource could not be found",
-      "type": "normal"
-    }],
+    "detections": [
+      {
+        "return": "false",
+        "string": "This resource could not be found",
+        "type": "normal"
+      }
+    ],
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
@@ -2676,7 +2822,8 @@
   },
   {
     "url": "https://fotolog.com/author/{username}",
-    "detections": [{
+    "detections": [
+      {
         "return": "false",
         "string": "That page doesn’t exist or is private",
         "type": "ocr"
@@ -2704,7 +2851,8 @@
   },
   {
     "url": "https://freelance.habr.com/freelancers/{username}",
-    "detections": [{
+    "detections": [
+      {
         "return": "false",
         "string": "404<",
         "type": "normal"
@@ -2722,7 +2870,8 @@
   },
   {
     "url": "https://freelancer.com/u/{username}",
-    "detections": [{
+    "detections": [
+      {
         "return": "false",
         "string": "Looks like the page you are looking",
         "type": "ocr"
@@ -2750,7 +2899,8 @@
   },
   {
     "url": "https://freesound.org/people/{username}",
-    "detections": [{
+    "detections": [
+      {
         "return": "false",
         "string": "Page not found",
         "type": "ocr"
@@ -2778,7 +2928,8 @@
   },
   {
     "url": "https://gamefaqs.gamespot.com/community/{username}",
-    "detections": [{
+    "detections": [
+      {
         "return": "false",
         "string": "Page Not Found",
         "type": "normal"
@@ -2806,7 +2957,8 @@
   },
   {
     "url": "https://gamespot.com/profile/{username}",
-    "detections": [{
+    "detections": [
+      {
         "return": "false",
         "string": "you seem to be lost",
         "type": "ocr"
@@ -2834,7 +2986,8 @@
   },
   {
     "url": "https://gaminglatest.com/members/{username}",
-    "detections": [{
+    "detections": [
+      {
         "return": "false",
         "string": "We ran into some problems",
         "type": "normal"
@@ -2860,7 +3013,8 @@
   },
   {
     "url": "https://geocaching.com/p/default.aspx?u={username}",
-    "detections": [{
+    "detections": [
+      {
         "return": "false",
         "string": "Sorry about that",
         "type": "ocr"
@@ -2891,7 +3045,8 @@
   },
   {
     "url": "https://gfycat.com/@{username}",
-    "detections": [{
+    "detections": [
+      {
         "return": "false",
         "string": "Page not found",
         "type": "ocr"
@@ -2919,7 +3074,8 @@
   },
   {
     "url": "https://giantbomb.com/profile/{username}",
-    "detections": [{
+    "detections": [
+      {
         "return": "false",
         "string": "Not Found",
         "type": "normal"
@@ -2942,7 +3098,8 @@
   },
   {
     "url": "https://giphy.com/{username}",
-    "detections": [{
+    "detections": [
+      {
         "return": "false",
         "string": "There’s nothing here. Looking for GIFs",
         "type": "ocr"
@@ -2970,7 +3127,8 @@
   },
   {
     "url": "https://gitee.com/{username}",
-    "detections": [{
+    "detections": [
+      {
         "return": "false",
         "string": "(404)<",
         "type": "normal"
@@ -2993,7 +3151,8 @@
   },
   {
     "url": "https://github.com/{username}",
-    "detections": [{
+    "detections": [
+      {
         "return": "false",
         "string": "This is not the web page you",
         "type": "ocr"
@@ -3016,7 +3175,8 @@
   },
   {
     "url": "https://gitlab.com/{username}",
-    "detections": [{
+    "detections": [
+      {
         "return": "false",
         "string": "have an account yet",
         "type": "normal"
@@ -3034,11 +3194,13 @@
   },
   {
     "url": "https://gitlab.gnome.org/{username}",
-    "detections": [{
-      "return": "false",
-      "string": "You need to sign in or sign up before continuing.",
-      "type": "normal"
-    }],
+    "detections": [
+      {
+        "return": "false",
+        "string": "You need to sign in or sign up before continuing.",
+        "type": "normal"
+      }
+    ],
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
@@ -3046,7 +3208,8 @@
   },
   {
     "url": "https://goodreads.com/{username}",
-    "detections": [{
+    "detections": [
+      {
         "return": "false",
         "string": "Page not found",
         "type": "normal"
@@ -3064,11 +3227,13 @@
   },
   {
     "url": "https://gotinder.com/@{username}",
-    "detections": [{
-      "return": "true",
-      "string": "\"_id\"",
-      "type": "normal"
-    }],
+    "detections": [
+      {
+        "return": "true",
+        "string": "\"_id\"",
+        "type": "normal"
+      }
+    ],
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
@@ -3076,7 +3241,8 @@
   },
   {
     "url": "https://gumroad.com/{username}",
-    "detections": [{
+    "detections": [
+      {
         "return": "false",
         "string": "Page not found",
         "type": "ocr"
@@ -3112,11 +3278,13 @@
   },
   {
     "url": "https://habr.com/ru/users/{username}",
-    "detections": [{
-      "return": "true",
-      "string": "user-profile",
-      "type": "normal"
-    }],
+    "detections": [
+      {
+        "return": "true",
+        "string": "user-profile",
+        "type": "normal"
+      }
+    ],
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
@@ -3124,7 +3292,8 @@
   },
   {
     "url": "https://hackaday.io/{username}",
-    "detections": [{
+    "detections": [
+      {
         "return": "false",
         "string": "Page Not Found",
         "type": "ocr"
@@ -3152,7 +3321,8 @@
   },
   {
     "url": "https://hackerone.com/{username}",
-    "detections": [{
+    "detections": [
+      {
         "return": "false",
         "string": "Page not found",
         "type": "ocr"
@@ -3175,7 +3345,8 @@
   },
   {
     "url": "https://hackerrank.com/{username}",
-    "detections": [{
+    "detections": [
+      {
         "return": "false",
         "string": "Something went wrong",
         "type": "normal"
@@ -3193,7 +3364,8 @@
   },
   {
     "url": "https://hackster.io/{username}",
-    "detections": [{
+    "detections": [
+      {
         "return": "false",
         "string": "we couldn't find that page",
         "type": "ocr"
@@ -3221,7 +3393,8 @@
   },
   {
     "url": "https://hackthissite.org/user/view/{username}",
-    "detections": [{
+    "detections": [
+      {
         "return": "false",
         "string": "Cannot Retrieve Information",
         "type": "ocr"
@@ -3244,7 +3417,8 @@
   },
   {
     "url": "https://hellboundhackers.org/user/{username}.html",
-    "detections": [{
+    "detections": [
+      {
         "return": "true",
         "string": "Email Address:",
         "type": "normal"
@@ -3262,11 +3436,13 @@
   },
   {
     "url": "https://hexrpg.com/userinfo/{username}",
-    "detections": [{
-      "return": "false",
-      "string": "not found",
-      "type": "normal"
-    }],
+    "detections": [
+      {
+        "return": "false",
+        "string": "not found",
+        "type": "normal"
+      }
+    ],
     "type": "unavailable",
     "selected": "false",
     "timeout": 0,
@@ -3274,11 +3450,13 @@
   },
   {
     "url": "https://hosted.weblate.org/user/{username}/",
-    "detections": [{
-      "return": "false",
-      "string": "Page Not Found",
-      "type": "normal"
-    }],
+    "detections": [
+      {
+        "return": "false",
+        "string": "Page Not Found",
+        "type": "normal"
+      }
+    ],
     "type": "Cloud crowd translation platform",
     "selected": "false",
     "timeout": 0,
@@ -3286,7 +3464,8 @@
   },
   {
     "url": "https://house-mixes.com/profile/{username}",
-    "detections": [{
+    "detections": [
+      {
         "return": "false",
         "string": "Profile Not Found",
         "type": "ocr"
@@ -3314,7 +3493,8 @@
   },
   {
     "url": "https://houzz.com/user/{username}",
-    "detections": [{
+    "detections": [
+      {
         "return": "false",
         "string": "The page you requested",
         "type": "ocr"
@@ -3337,11 +3517,13 @@
   },
   {
     "url": "https://hub.docker.com/u/{username}",
-    "detections": [{
-      "return": "false",
-      "string": "The page you requested",
-      "type": "ocr"
-    }],
+    "detections": [
+      {
+        "return": "false",
+        "string": "The page you requested",
+        "type": "ocr"
+      }
+    ],
     "selected": "false",
     "timeout": 0,
     "implicit": 10,
@@ -3349,7 +3531,8 @@
   },
   {
     "url": "https://hubpages.com/@{username}",
-    "detections": [{
+    "detections": [
+      {
         "return": "false",
         "string": "Page does not exist",
         "type": "ocr"
@@ -3372,7 +3555,8 @@
   },
   {
     "url": "https://hubski.com/user/{username}",
-    "detections": [{
+    "detections": [
+      {
         "return": "false",
         "string": "No such user",
         "type": "ocr"
@@ -3400,11 +3584,13 @@
   },
   {
     "url": "https://hunting.ru/forum/members/?username={username}",
-    "detections": [{
-      "return": "true",
-      "string": "\"profile\"",
-      "type": "normal"
-    }],
+    "detections": [
+      {
+        "return": "true",
+        "string": "\"profile\"",
+        "type": "normal"
+      }
+    ],
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
@@ -3412,7 +3598,8 @@
   },
   {
     "url": "https://icq.im/{username}",
-    "detections": [{
+    "detections": [
+      {
         "return": "false",
         "string": "Profile not found",
         "type": "ocr"
@@ -3435,7 +3622,8 @@
   },
   {
     "url": "https://ifttt.com/p/{username}",
-    "detections": [{
+    "detections": [
+      {
         "return": "false",
         "string": "The requested page or file",
         "type": "ocr"
@@ -3471,7 +3659,8 @@
   },
   {
     "url": "https://imgup.cz/{username}",
-    "detections": [{
+    "detections": [
+      {
         "return": "false",
         "string": "That page doesn",
         "type": "ocr"
@@ -3499,11 +3688,13 @@
   },
   {
     "url": "https://imgur.com/user/{username}",
-    "detections": [{
-      "return": "true",
-      "string": "{username}",
-      "type": "advanced"
-    }],
+    "detections": [
+      {
+        "return": "true",
+        "string": "{username}",
+        "type": "advanced"
+      }
+    ],
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
@@ -3511,7 +3702,8 @@
   },
   {
     "url": "https://independent.academia.edu/{username}",
-    "detections": [{
+    "detections": [
+      {
         "return": "false",
         "string": "It looks like you",
         "type": "ocr"
@@ -3539,7 +3731,8 @@
   },
   {
     "url": "https://indiblogger.in/{username}",
-    "detections": [{
+    "detections": [
+      {
         "return": "false",
         "string": "page not found",
         "type": "normal"
@@ -3562,7 +3755,8 @@
   },
   {
     "url": "https://instagram.com/{username}",
-    "detections": [{
+    "detections": [
+      {
         "return": "false",
         "string": "Sorry, this page isn't available",
         "type": "ocr"
@@ -3591,7 +3785,8 @@
   },
   {
     "url": "https://instructables.com/member/{username}",
-    "detections": [{
+    "detections": [
+      {
         "return": "false",
         "string": "things break sometimes",
         "type": "ocr"
@@ -3619,7 +3814,8 @@
   },
   {
     "url": "https://interpals.net/{username}",
-    "detections": [{
+    "detections": [
+      {
         "return": "false",
         "string": "The requested user does not",
         "type": "ocr"
@@ -3642,11 +3838,13 @@
   },
   {
     "url": "https://irecommend.ru/users/{username}",
-    "detections": [{
-      "return": "true",
-      "string": "profile",
-      "type": "normal"
-    }],
+    "detections": [
+      {
+        "return": "true",
+        "string": "profile",
+        "type": "normal"
+      }
+    ],
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
@@ -3654,7 +3852,8 @@
   },
   {
     "url": "https://issuu.com/{username}",
-    "detections": [{
+    "detections": [
+      {
         "return": "false",
         "string": "seem to find",
         "type": "ocr"
@@ -3682,7 +3881,8 @@
   },
   {
     "url": "https://jbzd.com.pl/uzytkownik/{username}",
-    "detections": [{
+    "detections": [
+      {
         "return": "false",
         "string": "404<",
         "type": "normal"
@@ -3700,7 +3900,8 @@
   },
   {
     "url": "https://jeuxvideo.com/profil/{username}?mode=infos",
-    "detections": [{
+    "detections": [
+      {
         "return": "false",
         "string": "erreurs",
         "type": "normal"
@@ -3718,7 +3919,8 @@
   },
   {
     "url": "https://kaggle.com/{username}",
-    "detections": [{
+    "detections": [
+      {
         "return": "false",
         "string": "find that page",
         "type": "ocr"
@@ -3746,7 +3948,8 @@
   },
   {
     "url": "https://keybase.io/{username}",
-    "detections": [{
+    "detections": [
+      {
         "return": "false",
         "string": "what you are looking for",
         "type": "ocr"
@@ -3782,11 +3985,13 @@
   },
   {
     "url": "https://ko-fi.com/{username}",
-    "detections": [{
-      "return": "true",
-      "string": "\"profile\"",
-      "type": "normal"
-    }],
+    "detections": [
+      {
+        "return": "true",
+        "string": "\"profile\"",
+        "type": "normal"
+      }
+    ],
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
@@ -3794,7 +3999,8 @@
   },
   {
     "url": "https://kongregate.com/accounts/{username}",
-    "detections": [{
+    "detections": [
+      {
         "return": "false",
         "string": "no account with that name was found",
         "type": "ocr"
@@ -3817,7 +4023,8 @@
   },
   {
     "url": "https://kwork.ru/user/{username}",
-    "detections": [{
+    "detections": [
+      {
         "return": "false",
         "string": "page-404",
         "type": "normal"
@@ -3840,11 +4047,13 @@
   },
   {
     "url": "https://lab.pentestit.ru/profile/{username}",
-    "detections": [{
-      "return": "true",
-      "string": "profile/{username}",
-      "type": "normal"
-    }],
+    "detections": [
+      {
+        "return": "true",
+        "string": "profile/{username}",
+        "type": "normal"
+      }
+    ],
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
@@ -3852,7 +4061,8 @@
   },
   {
     "url": "https://last.fm/user/{username}",
-    "detections": [{
+    "detections": [
+      {
         "return": "false",
         "string": "Page Not Found",
         "type": "ocr"
@@ -3875,7 +4085,8 @@
   },
   {
     "url": "https://launchpad.net/~{username}",
-    "detections": [{
+    "detections": [
+      {
         "return": "false",
         "string": "Lost something",
         "type": "ocr"
@@ -3898,7 +4109,8 @@
   },
   {
     "url": "https://leetcode.com/{username}",
-    "detections": [{
+    "detections": [
+      {
         "return": "false",
         "string": "Page Not Found",
         "type": "ocr"
@@ -3921,7 +4133,8 @@
   },
   {
     "url": "https://letterboxd.com/{username}",
-    "detections": [{
+    "detections": [
+      {
         "return": "false",
         "string": "find the page you’ve requested",
         "type": "ocr"
@@ -3949,7 +4162,8 @@
   },
   {
     "url": "https://lichess.org/@/{username}",
-    "detections": [{
+    "detections": [
+      {
         "return": "false",
         "string": "Page not found",
         "type": "ocr"
@@ -3972,11 +4186,13 @@
   },
   {
     "url": "https://linkedin.com/in/{username}/",
-    "detections": [{
-      "return": "false",
-      "string": "This profile is not available",
-      "type": "normal"
-    }],
+    "detections": [
+      {
+        "return": "false",
+        "string": "This profile is not available",
+        "type": "normal"
+      }
+    ],
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
@@ -3984,11 +4200,13 @@
   },
   {
     "url": "https://linux.org.ru/people/{username}/profile",
-    "detections": [{
-      "return": "true",
-      "string": "userpic",
-      "type": "normal"
-    }],
+    "detections": [
+      {
+        "return": "true",
+        "string": "userpic",
+        "type": "normal"
+      }
+    ],
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
@@ -3996,7 +4214,8 @@
   },
   {
     "url": "https://liveleak.com/c/{username}",
-    "detections": [{
+    "detections": [
+      {
         "return": "false",
         "string": "channel not found",
         "type": "ocr"
@@ -4019,7 +4238,8 @@
   },
   {
     "url": "https://livelib.ru/reader/{username}",
-    "detections": [{
+    "detections": [
+      {
         "return": "false",
         "string": "logo-404",
         "type": "normal"
@@ -4037,7 +4257,8 @@
   },
   {
     "url": "https://lobste.rs/u/{username}",
-    "detections": [{
+    "detections": [
+      {
         "return": "false",
         "string": "they changed their username",
         "type": "ocr"
@@ -4060,7 +4281,8 @@
   },
   {
     "url": "https://lolchess.gg/profile/na/{username}",
-    "detections": [{
+    "detections": [
+      {
         "return": "false",
         "string": "No search results",
         "type": "ocr"
@@ -4083,7 +4305,8 @@
   },
   {
     "url": "https://mastodon.cloud/@{username}",
-    "detections": [{
+    "detections": [
+      {
         "return": "false",
         "string": "The page you are looking for isn",
         "type": "ocr"
@@ -4111,7 +4334,8 @@
   },
   {
     "url": "https://mastodon.social/@{username}",
-    "detections": [{
+    "detections": [
+      {
         "return": "false",
         "string": "The page you are looking for isn",
         "type": "ocr"
@@ -4139,7 +4363,8 @@
   },
   {
     "url": "https://mastodon.technology/@{username}",
-    "detections": [{
+    "detections": [
+      {
         "return": "false",
         "string": "The page you are looking for isn",
         "type": "ocr"
@@ -4167,7 +4392,8 @@
   },
   {
     "url": "https://mastodon.xyz/@{username}",
-    "detections": [{
+    "detections": [
+      {
         "return": "false",
         "string": "The page you are looking for isn",
         "type": "ocr"
@@ -4195,7 +4421,8 @@
   },
   {
     "url": "https://medium.com/@{username}",
-    "detections": [{
+    "detections": [
+      {
         "return": "false",
         "string": "Out of nothing",
         "type": "ocr"
@@ -4218,7 +4445,8 @@
   },
   {
     "url": "https://memrise.com/user/{username}",
-    "detections": [{
+    "detections": [
+      {
         "return": "false",
         "string": "The page you are trying",
         "type": "ocr"
@@ -4246,7 +4474,8 @@
   },
   {
     "url": "https://mercadolivre.com.br/perfil/{username}",
-    "detections": [{
+    "detections": [
+      {
         "return": "false",
         "string": "\"error\"",
         "type": "normal"
@@ -4264,7 +4493,8 @@
   },
   {
     "url": "https://meta.wikimedia.org/wiki/Special:CentralAuth/{username}",
-    "detections": [{
+    "detections": [
+      {
         "return": "false",
         "string": "There is no global account",
         "type": "ocr"
@@ -4292,7 +4522,8 @@
   },
   {
     "url": "https://metacritic.com/user/{username}",
-    "detections": [{
+    "detections": [
+      {
         "return": "false",
         "string": "User not found",
         "type": "ocr"
@@ -4315,11 +4546,13 @@
   },
   {
     "url": "https://mixcloud.com/{username}",
-    "detections": [{
-      "return": "false",
-      "string": "User not found",
-      "type": "ocr"
-    }],
+    "detections": [
+      {
+        "return": "false",
+        "string": "User not found",
+        "type": "ocr"
+      }
+    ],
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
@@ -4327,7 +4560,8 @@
   },
   {
     "url": "https://mobile.twitter.com/{username}",
-    "detections": [{
+    "detections": [
+      {
         "return": "false",
         "string": "This account doesn’t exist",
         "type": "ocr"
@@ -4351,7 +4585,8 @@
   },
   {
     "url": "https://moikrug.ru/{username}",
-    "detections": [{
+    "detections": [
+      {
         "return": "false",
         "string": "404<",
         "type": "normal"
@@ -4369,7 +4604,8 @@
   },
   {
     "url": "https://mstdn.io/@{username}",
-    "detections": [{
+    "detections": [
+      {
         "return": "false",
         "string": "The page you are looking for",
         "type": "ocr"
@@ -4397,7 +4633,8 @@
   },
   {
     "url": "https://munzee.com/m/{username}",
-    "detections": [{
+    "detections": [
+      {
         "return": "false",
         "string": "looks like the page is not found",
         "type": "ocr"
@@ -4420,7 +4657,8 @@
   },
   {
     "url": "https://my.flightradar24.com/{username}",
-    "detections": [{
+    "detections": [
+      {
         "return": "false",
         "string": "this page could not be found",
         "type": "ocr"
@@ -4443,7 +4681,8 @@
   },
   {
     "url": "https://myanimelist.net/profile/{username}",
-    "detections": [{
+    "detections": [
+      {
         "return": "false",
         "string": "This page doesn",
         "type": "ocr"
@@ -4466,7 +4705,8 @@
   },
   {
     "url": "https://myminifactory.com/users/{username}",
-    "detections": [{
+    "detections": [
+      {
         "return": "false",
         "string": "Something has gone wrong",
         "type": "ocr"
@@ -4494,7 +4734,8 @@
   },
   {
     "url": "https://myspace.com/{username}",
-    "detections": [{
+    "detections": [
+      {
         "return": "false",
         "string": "Page Not Found",
         "type": "ocr"
@@ -4512,7 +4753,8 @@
   },
   {
     "url": "https://nairaland.com/{username}",
-    "detections": [{
+    "detections": [
+      {
         "return": "false",
         "string": "Page Not Found",
         "type": "ocr"
@@ -4535,11 +4777,13 @@
   },
   {
     "url": "https://namemc.com/profile/{username}",
-    "detections": [{
-      "return": "true",
-      "string": "Minecraft Profile",
-      "type": "normal"
-    }],
+    "detections": [
+      {
+        "return": "true",
+        "string": "Minecraft Profile",
+        "type": "normal"
+      }
+    ],
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
@@ -4547,7 +4791,8 @@
   },
   {
     "url": "https://nationstates.net/nation={username}",
-    "detections": [{
+    "detections": [
+      {
         "return": "false",
         "string": "does not exist",
         "type": "ocr"
@@ -4570,7 +4815,8 @@
   },
   {
     "url": "https://nationstates.net/{username}",
-    "detections": [{
+    "detections": [
+      {
         "return": "false",
         "string": "does not exist",
         "type": "ocr"
@@ -4593,7 +4839,8 @@
   },
   {
     "url": "https://native-instruments.com/forum/members?username={username}",
-    "detections": [{
+    "detections": [
+      {
         "return": "false",
         "string": "- Error",
         "type": "ocr"
@@ -4616,11 +4863,13 @@
   },
   {
     "url": "https://neogaf.com/members/{username}/",
-    "detections": [{
-      "return": "false",
-      "string": "content=\"Oops! We ran",
-      "type": "normal"
-    }],
+    "detections": [
+      {
+        "return": "false",
+        "string": "content=\"Oops! We ran",
+        "type": "normal"
+      }
+    ],
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
@@ -4628,7 +4877,8 @@
   },
   {
     "url": "https://news.ycombinator.com/user?id={username}",
-    "detections": [{
+    "detections": [
+      {
         "return": "false",
         "string": "No such user",
         "type": "ocr"
@@ -4659,11 +4909,13 @@
   },
   {
     "url": "https://ninjakiwi.com/profile/{username}",
-    "detections": [{
-      "return": "true",
-      "string": "\"profile\"",
-      "type": "normal"
-    }],
+    "detections": [
+      {
+        "return": "true",
+        "string": "\"profile\"",
+        "type": "normal"
+      }
+    ],
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
@@ -4671,7 +4923,8 @@
   },
   {
     "url": "https://notabug.org/{username}",
-    "detections": [{
+    "detections": [
+      {
         "return": "false",
         "string": "If you think this is an error",
         "type": "ocr"
@@ -4699,7 +4952,8 @@
   },
   {
     "url": "https://note.com/{username}",
-    "detections": [{
+    "detections": [
+      {
         "return": "true",
         "string": "username",
         "type": "normal"
@@ -4717,7 +4971,8 @@
   },
   {
     "url": "https://npmjs.com/~{username}",
-    "detections": [{
+    "detections": [
+      {
         "return": "false",
         "string": "Scope not found",
         "type": "ocr"
@@ -4740,11 +4995,13 @@
   },
   {
     "url": "https://nyaa.si/user/{username}",
-    "detections": [{
-      "return": "false",
-      "string": "The path you requested does not exist on this server",
-      "type": "normal"
-    }],
+    "detections": [
+      {
+        "return": "false",
+        "string": "The path you requested does not exist on this server",
+        "type": "normal"
+      }
+    ],
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
@@ -4752,7 +5009,8 @@
   },
   {
     "url": "https://ok.ru/{username}",
-    "detections": [{
+    "detections": [
+      {
         "return": "false",
         "string": "This page does not",
         "type": "ocr"
@@ -4775,7 +5033,8 @@
   },
   {
     "url": "https://open.spotify.com/user/{username}",
-    "detections": [{
+    "detections": [
+      {
         "return": "false",
         "string": "Search for something else",
         "type": "ocr"
@@ -4793,11 +5052,13 @@
   },
   {
     "url": "https://opencollective.com/{username}",
-    "detections": [{
-      "return": "false",
-      "string": "Not found<",
-      "type": "normal"
-    }],
+    "detections": [
+      {
+        "return": "false",
+        "string": "Not found<",
+        "type": "normal"
+      }
+    ],
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
@@ -4805,7 +5066,8 @@
   },
   {
     "url": "https://openhub.net/accounts/{username}",
-    "detections": [{
+    "detections": [
+      {
         "return": "false",
         "string": "Something seems wrong",
         "type": "ocr"
@@ -4828,11 +5090,13 @@
   },
   {
     "url": "https://opennet.ru/~{username}",
-    "detections": [{
-      "return": "true",
-      "string": "show_user",
-      "type": "normal"
-    }],
+    "detections": [
+      {
+        "return": "true",
+        "string": "show_user",
+        "type": "normal"
+      }
+    ],
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
@@ -4840,7 +5104,8 @@
   },
   {
     "url": "https://opensource.com/users/{username}",
-    "detections": [{
+    "detections": [
+      {
         "return": "false",
         "string": "Unfortunately the page you",
         "type": "ocr"
@@ -4863,7 +5128,8 @@
   },
   {
     "url": "https://openstreetmap.org/user/{username}",
-    "detections": [{
+    "detections": [
+      {
         "return": "false",
         "string": "does not exist",
         "type": "ocr"
@@ -4891,7 +5157,8 @@
   },
   {
     "url": "https://osu.ppy.sh/users/{username}",
-    "detections": [{
+    "detections": [
+      {
         "return": "false",
         "string": "User not found",
         "type": "ocr"
@@ -4914,7 +5181,8 @@
   },
   {
     "url": "https://ourdjtalk.com/members?username={username}",
-    "detections": [{
+    "detections": [
+      {
         "return": "false",
         "string": "The specified member cannot be found",
         "type": "ocr"
@@ -4937,7 +5205,8 @@
   },
   {
     "url": "https://packagist.org/packages/{username}",
-    "detections": [{
+    "detections": [
+      {
         "return": "false",
         "string": "No packages found",
         "type": "ocr"
@@ -4955,7 +5224,8 @@
   },
   {
     "url": "https://pastebin.com/u/{username}",
-    "detections": [{
+    "detections": [
+      {
         "return": "false",
         "string": "The requested page does not exist",
         "type": "ocr"
@@ -4978,7 +5248,8 @@
   },
   {
     "url": "https://patreon.com/{username}",
-    "detections": [{
+    "detections": [
+      {
         "return": "false",
         "string": "Looks like you got lost",
         "type": "ocr"
@@ -5001,7 +5272,8 @@
   },
   {
     "url": "https://pcpartpicker.com/user/{username}",
-    "detections": [{
+    "detections": [
+      {
         "return": "false",
         "string": "The page you requested",
         "type": "ocr"
@@ -5024,7 +5296,8 @@
   },
   {
     "url": "https://periscope.tv/{username}",
-    "detections": [{
+    "detections": [
+      {
         "return": "false",
         "string": "Sorry, this page",
         "type": "ocr"
@@ -5047,11 +5320,13 @@
   },
   {
     "url": "https://php.ru/forum/members/?username={username}",
-    "detections": [{
-      "return": "true",
-      "string": "\"profile\"",
-      "type": "normal"
-    }],
+    "detections": [
+      {
+        "return": "true",
+        "string": "\"profile\"",
+        "type": "normal"
+      }
+    ],
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
@@ -5059,11 +5334,13 @@
   },
   {
     "url": "https://pikabu.ru/@{username}",
-    "detections": [{
-      "return": "true",
-      "string": "data-profile",
-      "type": "normal"
-    }],
+    "detections": [
+      {
+        "return": "true",
+        "string": "data-profile",
+        "type": "normal"
+      }
+    ],
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
@@ -5071,7 +5348,8 @@
   },
   {
     "url": "https://pinkbike.com/u/{username}",
-    "detections": [{
+    "detections": [
+      {
         "return": "false",
         "string": "Could Not Find This Page",
         "type": "ocr"
@@ -5094,7 +5372,8 @@
   },
   {
     "url": "https://pinterest.com/{username}",
-    "detections": [{
+    "detections": [
+      {
         "return": "false",
         "string": "User not found",
         "type": "normal"
@@ -5126,11 +5405,13 @@
   },
   {
     "url": "https://pling.com/u/{username}",
-    "detections": [{
-      "return": "true",
-      "string": "about-title",
-      "type": "normal"
-    }],
+    "detections": [
+      {
+        "return": "true",
+        "string": "about-title",
+        "type": "normal"
+      }
+    ],
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
@@ -5138,7 +5419,8 @@
   },
   {
     "url": "https://plug.dj/@/{username}",
-    "detections": [{
+    "detections": [
+      {
         "return": "false",
         "string": "s the party",
         "type": "ocr"
@@ -5166,11 +5448,13 @@
   },
   {
     "url": "https://plugins.gradle.org/u/{username}",
-    "detections": [{
-      "return": "false",
-      "string": "User not found",
-      "type": "normal"
-    }],
+    "detections": [
+      {
+        "return": "false",
+        "string": "User not found",
+        "type": "normal"
+      }
+    ],
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
@@ -5178,7 +5462,8 @@
   },
   {
     "url": "https://pokemonshowdown.com/users/{username}",
-    "detections": [{
+    "detections": [
+      {
         "return": "true",
         "string": "Joined:",
         "type": "normal"
@@ -5196,11 +5481,13 @@
   },
   {
     "url": "https://polarsteps.com/{username}",
-    "detections": [{
-      "return": "true",
-      "string": "user-info",
-      "type": "normal"
-    }],
+    "detections": [
+      {
+        "return": "true",
+        "string": "user-info",
+        "type": "normal"
+      }
+    ],
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
@@ -5208,7 +5495,8 @@
   },
   {
     "url": "https://polygon.com/users/{username}",
-    "detections": [{
+    "detections": [
+      {
         "return": "false",
         "string": "404 Not found",
         "type": "ocr"
@@ -5239,7 +5527,8 @@
   },
   {
     "url": "https://producthunt.com/@{username}",
-    "detections": [{
+    "detections": [
+      {
         "return": "false",
         "string": "Page Not Found",
         "type": "ocr"
@@ -5262,7 +5551,8 @@
   },
   {
     "url": "https://profil.chatujme.cz/{username}",
-    "detections": [{
+    "detections": [
+      {
         "return": "true",
         "string": "profilu",
         "type": "normal"
@@ -5280,7 +5570,8 @@
   },
   {
     "url": "https://profile.ameba.jp/ameba/{username}/",
-    "detections": [{
+    "detections": [
+      {
         "return": "false",
         "string": "\"info_",
         "type": "normal"
@@ -5298,7 +5589,8 @@
   },
   {
     "url": "https://profiles.wordpress.org/{username}",
-    "detections": [{
+    "detections": [
+      {
         "return": "false",
         "string": "User not found",
         "type": "ocr"
@@ -5326,11 +5618,13 @@
   },
   {
     "url": "https://prog.hu/azonosito/info/{username}",
-    "detections": [{
-      "return": "true",
-      "string": "userprofile",
-      "type": "normal"
-    }],
+    "detections": [
+      {
+        "return": "true",
+        "string": "userprofile",
+        "type": "normal"
+      }
+    ],
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
@@ -5339,7 +5633,8 @@
   {
     "status": "bad",
     "url": "https://promodj.com/{username}",
-    "detections": [{
+    "detections": [
+      {
         "return": "false",
         "string": "Page not found",
         "type": "ocr"
@@ -5362,11 +5657,13 @@
   },
   {
     "url": "https://psnprofiles.com/{username}",
-    "detections": [{
-      "return": "true",
-      "string": "profile-",
-      "type": "normal"
-    }],
+    "detections": [
+      {
+        "return": "true",
+        "string": "profile-",
+        "type": "normal"
+      }
+    ],
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
@@ -5374,7 +5671,8 @@
   },
   {
     "url": "https://pypi.org/user/{username}",
-    "detections": [{
+    "detections": [
+      {
         "return": "false",
         "string": "We looked everywhere",
         "type": "ocr"
@@ -5397,7 +5695,8 @@
   },
   {
     "url": "https://quizlet.com/{username}",
-    "detections": [{
+    "detections": [
+      {
         "return": "false",
         "string": "We have no idea what to put here",
         "type": "ocr"
@@ -5420,7 +5719,8 @@
   },
   {
     "url": "https://quora.com/profile/{username}",
-    "detections": [{
+    "detections": [
+      {
         "return": "false",
         "string": "Page Not Found",
         "type": "ocr"
@@ -5443,7 +5743,8 @@
   },
   {
     "url": "https://raidforums.com/User-{username}",
-    "detections": [{
+    "detections": [
+      {
         "return": "false",
         "string": "The member you specified is",
         "type": "ocr"
@@ -5466,7 +5767,8 @@
   },
   {
     "url": "https://rateyourmusic.com/~{username}",
-    "detections": [{
+    "detections": [
+      {
         "return": "false",
         "string": "File not found",
         "type": "ocr"
@@ -5489,7 +5791,8 @@
   },
   {
     "url": "https://realmeye.com/player/{username}",
-    "detections": [{
+    "detections": [
+      {
         "return": "false",
         "string": "but we either",
         "type": "ocr"
@@ -5512,7 +5815,8 @@
   },
   {
     "url": "https://redbubble.com/people/{username}",
-    "detections": [{
+    "detections": [
+      {
         "return": "false",
         "string": "This is a lost cause",
         "type": "ocr"
@@ -5535,7 +5839,8 @@
   },
   {
     "url": "https://reddit.com/user/{username}",
-    "detections": [{
+    "detections": [
+      {
         "return": "false",
         "string": "Sorry, nobody",
         "type": "ocr"
@@ -5559,7 +5864,8 @@
   },
   {
     "url": "https://repl.it/@{username}",
-    "detections": [{
+    "detections": [
+      {
         "return": "false",
         "string": "Not found",
         "type": "ocr"
@@ -5577,11 +5883,13 @@
   },
   {
     "url": "https://researchgate.net/profile/{username}",
-    "detections": [{
-      "return": "true",
-      "string": "profile:username",
-      "type": "normal"
-    }],
+    "detections": [
+      {
+        "return": "true",
+        "string": "profile:username",
+        "type": "normal"
+      }
+    ],
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
@@ -5589,7 +5897,8 @@
   },
   {
     "url": "https://reverbnation.com/{username}",
-    "detections": [{
+    "detections": [
+      {
         "return": "false",
         "string": "we couldn't find that page",
         "type": "ocr"
@@ -5612,7 +5921,8 @@
   },
   {
     "url": "https://rive.app/a/{username}",
-    "detections": [{
+    "detections": [
+      {
         "return": "false",
         "string": "Not Found",
         "type": "ocr"
@@ -5640,7 +5950,8 @@
   },
   {
     "url": "https://robertsspaceindustries.com/citizens/{username}",
-    "detections": [{
+    "detections": [
+      {
         "return": "false",
         "string": "No results for",
         "type": "ocr"
@@ -5671,7 +5982,8 @@
   },
   {
     "url": "https://rubygems.org/profiles/{username}",
-    "detections": [{
+    "detections": [
+      {
         "return": "false",
         "string": "Page not found",
         "type": "ocr"
@@ -5707,7 +6019,8 @@
   },
   {
     "url": "https://satsis.info/user/{username}",
-    "detections": [{
+    "detections": [
+      {
         "return": "false",
         "string": "berrors",
         "type": "normal"
@@ -5725,7 +6038,8 @@
   },
   {
     "url": "https://sbazar.cz/{username}",
-    "detections": [{
+    "detections": [
+      {
         "return": "false",
         "string": "error-box",
         "type": "normal"
@@ -5743,7 +6057,8 @@
   },
   {
     "url": "https://scratch.mit.edu/users/{username}",
-    "detections": [{
+    "detections": [
+      {
         "return": "false",
         "string": "Our server is Scratch",
         "type": "ocr"
@@ -5766,7 +6081,8 @@
   },
   {
     "url": "https://scribd.com/{username}",
-    "detections": [{
+    "detections": [
+      {
         "return": "false",
         "string": "Page not found",
         "type": "ocr"
@@ -5784,11 +6100,13 @@
   },
   {
     "url": "https://sharechat.com/profile/{username}",
-    "detections": [{
-      "return": "true",
-      "string": "profile/{username}/info",
-      "type": "normal"
-    }],
+    "detections": [
+      {
+        "return": "true",
+        "string": "profile/{username}/info",
+        "type": "normal"
+      }
+    ],
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
@@ -5804,11 +6122,13 @@
   },
   {
     "url": "https://slant.co/users/{username}",
-    "detections": [{
-      "return": "false",
-      "string": "404 Page Not Found",
-      "type": "normal"
-    }],
+    "detections": [
+      {
+        "return": "false",
+        "string": "404 Page Not Found",
+        "type": "normal"
+      }
+    ],
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
@@ -5816,7 +6136,8 @@
   },
   {
     "url": "https://slashdot.org/~{username}",
-    "detections": [{
+    "detections": [
+      {
         "return": "false",
         "string": "The user you requested does not exist",
         "type": "ocr"
@@ -5839,7 +6160,8 @@
   },
   {
     "url": "https://slideshare.net/{username}",
-    "detections": [{
+    "detections": [
+      {
         "return": "false",
         "string": "This username",
         "type": "ocr"
@@ -5862,7 +6184,8 @@
   },
   {
     "url": "https://smule.com/{username}",
-    "detections": [{
+    "detections": [
+      {
         "return": "false",
         "string": "The page you are looking",
         "type": "ocr"
@@ -5890,7 +6213,8 @@
   },
   {
     "url": "https://social.tchncs.de/@{username}",
-    "detections": [{
+    "detections": [
+      {
         "return": "false",
         "string": "The page you are looking",
         "type": "ocr"
@@ -5918,7 +6242,8 @@
   },
   {
     "url": "https://soundcloud.com/{username}",
-    "detections": [{
+    "detections": [
+      {
         "return": "false",
         "string": "We can’t find that user",
         "type": "ocr"
@@ -5936,7 +6261,8 @@
   },
   {
     "url": "https://sourceforge.net/u/{username}",
-    "detections": [{
+    "detections": [
+      {
         "return": "false",
         "string": "t find that page",
         "type": "ocr"
@@ -5964,7 +6290,8 @@
   },
   {
     "url": "https://soylentnews.org/~{username}",
-    "detections": [{
+    "detections": [
+      {
         "return": "false",
         "string": "The user you requested does not exist",
         "type": "ocr"
@@ -5987,7 +6314,8 @@
   },
   {
     "url": "https://sparkpeople.com/mypage.asp?id={username}",
-    "detections": [{
+    "detections": [
+      {
         "return": "false",
         "string": "We couldn't find that user",
         "type": "ocr"
@@ -6010,7 +6338,8 @@
   },
   {
     "url": "https://speedrun.com/user/{username}",
-    "detections": [{
+    "detections": [
+      {
         "return": "false",
         "string": "not found.",
         "type": "ocr"
@@ -6033,7 +6362,8 @@
   },
   {
     "url": "https://spletnik.ru/user/{username}",
-    "detections": [{
+    "detections": [
+      {
         "return": "false",
         "string": "error-page",
         "type": "normal"
@@ -6051,7 +6381,8 @@
   },
   {
     "url": "https://splits.io/users/{username}",
-    "detections": [{
+    "detections": [
+      {
         "return": "false",
         "string": "This page doesn't exist",
         "type": "ocr"
@@ -6074,7 +6405,8 @@
   },
   {
     "url": "https://sporcle.com/user/{username}/people",
-    "detections": [{
+    "detections": [
+      {
         "return": "false",
         "string": "This Sporcle user cannot",
         "type": "ocr"
@@ -6097,11 +6429,13 @@
   },
   {
     "url": "https://sports.ru/profile/{username}",
-    "detections": [{
-      "return": "true",
-      "string": "info-block",
-      "type": "normal"
-    }],
+    "detections": [
+      {
+        "return": "true",
+        "string": "info-block",
+        "type": "normal"
+      }
+    ],
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
@@ -6109,7 +6443,8 @@
   },
   {
     "url": "https://steamcommunity.com/id/{username}",
-    "detections": [{
+    "detections": [
+      {
         "return": "false",
         "string": "An error was encountered",
         "type": "ocr"
@@ -6132,7 +6467,8 @@
   },
   {
     "url": "https://steamid.uk/profile/{username}",
-    "detections": [{
+    "detections": [
+      {
         "return": "false",
         "string": "Profile not found",
         "type": "normal"
@@ -6150,11 +6486,13 @@
   },
   {
     "url": "https://strava.com/athletes/{username}",
-    "detections": [{
-      "return": "true",
-      "string": "media-body main",
-      "type": "normal"
-    }],
+    "detections": [
+      {
+        "return": "true",
+        "string": "media-body main",
+        "type": "normal"
+      }
+    ],
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
@@ -6162,11 +6500,13 @@
   },
   {
     "url": "https://svidbook.ru/user/{username}",
-    "detections": [{
-      "return": "true",
-      "string": "user_profile",
-      "type": "normal"
-    }],
+    "detections": [
+      {
+        "return": "true",
+        "string": "user_profile",
+        "type": "normal"
+      }
+    ],
     "selected": "false",
     "timeout": 10,
     "implicit": 10,
@@ -6174,7 +6514,8 @@
   },
   {
     "url": "https://t.me/{username}",
-    "detections": [{
+    "detections": [
+      {
         "return": "false",
         "string": "you can contact",
         "type": "ocr"
@@ -6203,11 +6544,13 @@
   },
   {
     "url": "https://tellonym.me/{username}",
-    "detections": [{
-      "return": "true",
-      "string": "me/{username}",
-      "type": "normal"
-    }],
+    "detections": [
+      {
+        "return": "true",
+        "string": "me/{username}",
+        "type": "normal"
+      }
+    ],
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
@@ -6215,7 +6558,8 @@
   },
   {
     "url": "https://tenor.com/users/{username}",
-    "detections": [{
+    "detections": [
+      {
         "return": "false",
         "string": "We could not find the page",
         "type": "ocr"
@@ -6238,7 +6582,8 @@
   },
   {
     "url": "https://theverge.com/users/{username}",
-    "detections": [{
+    "detections": [
+      {
         "return": "false",
         "string": "404 Not found",
         "type": "ocr"
@@ -6261,7 +6606,8 @@
   },
   {
     "url": "https://tiktok.com/@{username}",
-    "detections": [{
+    "detections": [
+      {
         "return": "false",
         "string": "Couldn't find this account",
         "type": "ocr"
@@ -6285,11 +6631,13 @@
   },
   {
     "url": "https://tldrlegal.com/users/{username}/",
-    "detections": [{
-      "return": "false",
-      "string": "404 Not Found",
-      "type": "normal"
-    }],
+    "detections": [
+      {
+        "return": "false",
+        "string": "404 Not Found",
+        "type": "normal"
+      }
+    ],
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
@@ -6297,7 +6645,8 @@
   },
   {
     "url": "https://tradingview.com/u/{username}",
-    "detections": [{
+    "detections": [
+      {
         "return": "false",
         "string": "that page doesn",
         "type": "ocr"
@@ -6320,7 +6669,8 @@
   },
   {
     "url": "https://trakt.tv/users/{username}",
-    "detections": [{
+    "detections": [
+      {
         "return": "false",
         "string": "(404)",
         "type": "normal"
@@ -6338,11 +6688,13 @@
   },
   {
     "url": "https://trashbox.ru/users/{username}",
-    "detections": [{
-      "return": "true",
-      "string": "frm_profile",
-      "type": "normal"
-    }],
+    "detections": [
+      {
+        "return": "true",
+        "string": "frm_profile",
+        "type": "normal"
+      }
+    ],
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
@@ -6350,7 +6702,8 @@
   },
   {
     "url": "https://travellerspoint.com/users/{username}",
-    "detections": [{
+    "detections": [
+      {
         "return": "false",
         "string": "404 Not Found",
         "type": "ocr"
@@ -6378,11 +6731,13 @@
   },
   {
     "url": "https://trello.com/{username}",
-    "detections": [{
-      "return": "false",
-      "string": "Page not found",
-      "type": "ocr"
-    }],
+    "detections": [
+      {
+        "return": "false",
+        "string": "Page not found",
+        "type": "ocr"
+      }
+    ],
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
@@ -6390,7 +6745,8 @@
   },
   {
     "url": "https://tripadvisor.com/members/{username}",
-    "detections": [{
+    "detections": [
+      {
         "return": "false",
         "string": "This page is on vacation",
         "type": "ocr"
@@ -6413,7 +6769,8 @@
   },
   {
     "url": "https://tryhackme.com/p/{username}",
-    "detections": [{
+    "detections": [
+      {
         "return": "false",
         "string": "An error occured",
         "type": "ocr"
@@ -6436,11 +6793,13 @@
   },
   {
     "url": "https://twitch.tv/{username}",
-    "detections": [{
-      "return": "false",
-      "string": "that content is unavailable",
-      "type": "ocr"
-    }],
+    "detections": [
+      {
+        "return": "false",
+        "string": "that content is unavailable",
+        "type": "ocr"
+      }
+    ],
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
@@ -6448,7 +6807,8 @@
   },
   {
     "url": "https://uid.me/{username}",
-    "detections": [{
+    "detections": [
+      {
         "return": "false",
         "string": "Page not found",
         "type": "ocr"
@@ -6471,7 +6831,8 @@
   },
   {
     "url": "https://ultimate-guitar.com/u/{username}",
-    "detections": [{
+    "detections": [
+      {
         "return": "false",
         "string": "We couldn't find that page",
         "type": "ocr"
@@ -6499,7 +6860,8 @@
   },
   {
     "url": "https://unsplash.com/@{username}",
-    "detections": [{
+    "detections": [
+      {
         "return": "false",
         "string": "the page you were looking",
         "type": "ocr"
@@ -6527,7 +6889,8 @@
   },
   {
     "url": "https://us.forums.blizzard.com/en/blizzard/u/{username}",
-    "detections": [{
+    "detections": [
+      {
         "return": "false",
         "string": "Page Not Found",
         "type": "normal"
@@ -6550,7 +6913,8 @@
   },
   {
     "url": "https://venmo.com/{username}",
-    "detections": [{
+    "detections": [
+      {
         "return": "false",
         "string": "the page you requested does",
         "type": "ocr"
@@ -6578,7 +6942,8 @@
   },
   {
     "url": "https://vero.co/{username}",
-    "detections": [{
+    "detections": [
+      {
         "return": "false",
         "string": "The page you are looking",
         "type": "ocr"
@@ -6601,7 +6966,8 @@
   },
   {
     "url": "https://vgr.com/forum/profile/{username}",
-    "detections": [{
+    "detections": [
+      {
         "return": "false",
         "string": "The page you requested",
         "type": "normal"
@@ -6624,11 +6990,13 @@
   },
   {
     "url": "https://videogamer.com/forums/index.php?/profile/{username}/",
-    "detections": [{
-      "return": "true",
-      "string": "ProfilePhoto",
-      "type": "normal"
-    }],
+    "detections": [
+      {
+        "return": "true",
+        "string": "ProfilePhoto",
+        "type": "normal"
+      }
+    ],
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
@@ -6636,7 +7004,8 @@
   },
   {
     "url": "https://vimeo.com/{username}",
-    "detections": [{
+    "detections": [
+      {
         "return": "false",
         "string": "Make sure you’ve typed the URL correctly",
         "type": "normal"
@@ -6659,11 +7028,13 @@
   },
   {
     "url": "https://virgool.io/@{username}",
-    "detections": [{
-      "return": "true",
-      "string": "profile-",
-      "type": "normal"
-    }],
+    "detections": [
+      {
+        "return": "true",
+        "string": "profile-",
+        "type": "normal"
+      }
+    ],
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
@@ -6679,7 +7050,8 @@
   },
   {
     "url": "https://vk.com/{username}",
-    "detections": [{
+    "detections": [
+      {
         "return": "false",
         "string": "404 Not Found",
         "type": "normal"
@@ -6702,7 +7074,8 @@
   },
   {
     "url": "https://vsco.co/{username}",
-    "detections": [{
+    "detections": [
+      {
         "return": "false",
         "string": "This page does not exist",
         "type": "ocr"
@@ -6720,7 +7093,8 @@
   },
   {
     "url": "https://warriorforum.com/members/{username}.html",
-    "detections": [{
+    "detections": [
+      {
         "return": "false",
         "string": "This user has not registered",
         "type": "normal"
@@ -6748,7 +7122,8 @@
   },
   {
     "url": "https://wattpad.com/user/{username}",
-    "detections": [{
+    "detections": [
+      {
         "return": "false",
         "string": "User not found",
         "type": "normal"
@@ -6771,7 +7146,8 @@
   },
   {
     "url": "https://weheartit.com/{username}",
-    "detections": [{
+    "detections": [
+      {
         "return": "false",
         "string": "landed on a moving target",
         "type": "normal"
@@ -6799,7 +7175,8 @@
   },
   {
     "url": "https://wikidot.com/user:info/{username}",
-    "detections": [{
+    "detections": [
+      {
         "return": "false",
         "string": "User Information",
         "type": "normal"
@@ -6822,7 +7199,8 @@
   },
   {
     "url": "https://wikipedia.org/wiki/User:{username}",
-    "detections": [{
+    "detections": [
+      {
         "return": "false",
         "string": "is not registered on this wiki",
         "type": "ocr"
@@ -6845,11 +7223,13 @@
   },
   {
     "url": "https://wordnik.com/users/{username}",
-    "detections": [{
-      "return": "false",
-      "string": "You've found our 404 page",
-      "type": "normal"
-    }],
+    "detections": [
+      {
+        "return": "false",
+        "string": "You've found our 404 page",
+        "type": "normal"
+      }
+    ],
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
@@ -6857,7 +7237,8 @@
   },
   {
     "url": "https://xboxgamertag.com/search/{username}",
-    "detections": [{
+    "detections": [
+      {
         "return": "false",
         "string": "Gamertag doesn",
         "type": "normal"
@@ -6875,7 +7256,8 @@
   },
   {
     "url": "https://youpic.com/photographer/{username}",
-    "detections": [{
+    "detections": [
+      {
         "return": "false",
         "string": "404 page",
         "type": "normal"
@@ -6898,7 +7280,8 @@
   },
   {
     "url": "https://youtube.com/{username}",
-    "detections": [{
+    "detections": [
+      {
         "return": "false",
         "string": "This page isn't available",
         "type": "ocr"
@@ -6927,7 +7310,8 @@
   },
   {
     "url": "https://zhihu.com/people/{username}",
-    "detections": [{
+    "detections": [
+      {
         "return": "false",
         "string": ">404",
         "type": "normal"
@@ -6945,7 +7329,8 @@
   },
   {
     "url": "https://{username}.blogspot.com",
-    "detections": [{
+    "detections": [
+      {
         "return": "false",
         "string": "the blog you were looking",
         "type": "ocr"
@@ -6981,7 +7366,8 @@
   },
   {
     "url": "https://{username}.carbonmade.com",
-    "detections": [{
+    "detections": [
+      {
         "return": "false",
         "string": "site not found",
         "type": "ocr"
@@ -7012,7 +7398,8 @@
   },
   {
     "url": "https://{username}.crevado.com",
-    "detections": [{
+    "detections": [
+      {
         "return": "false",
         "string": "Site not found",
         "type": "ocr"
@@ -7035,7 +7422,8 @@
   },
   {
     "url": "https://{username}.deviantart.com",
-    "detections": [{
+    "detections": [
+      {
         "return": "false",
         "string": "Page Not Found",
         "type": "ocr"
@@ -7063,7 +7451,8 @@
   },
   {
     "url": "https://{username}.hatenablog.com/about",
-    "detections": [{
+    "detections": [
+      {
         "return": "false",
         "string": "Blog is not found",
         "type": "ocr"
@@ -7086,7 +7475,8 @@
   },
   {
     "url": "https://{username}.hubpages.com",
-    "detections": [{
+    "detections": [
+      {
         "return": "false",
         "string": "Page does not exist",
         "type": "ocr"
@@ -7109,7 +7499,8 @@
   },
   {
     "url": "https://{username}.itch.io",
-    "detections": [{
+    "detections": [
+      {
         "return": "false",
         "string": "t find your page",
         "type": "ocr"
@@ -7140,7 +7531,8 @@
   },
   {
     "url": "https://{username}.livejournal.com",
-    "detections": [{
+    "detections": [
+      {
         "return": "false",
         "string": "Use the links to access more options",
         "type": "ocr"
@@ -7168,7 +7560,8 @@
   },
   {
     "url": "https://{username}.newgrounds.com",
-    "detections": [{
+    "detections": [
+      {
         "return": "false",
         "string": "exists in our system",
         "type": "ocr"
@@ -7191,7 +7584,8 @@
   },
   {
     "url": "https://{username}.rajce.idnes.cz",
-    "detections": [{
+    "detections": [
+      {
         "return": "false",
         "string": "err-site",
         "type": "normal"
@@ -7217,7 +7611,8 @@
   },
   {
     "url": "https://{username}.tumblr.com",
-    "detections": [{
+    "detections": [
+      {
         "return": "false",
         "string": "There's nothing here",
         "type": "ocr"
@@ -7246,7 +7641,8 @@
   },
   {
     "url": "https://{username}.webnode.cz",
-    "detections": [{
+    "detections": [
+      {
         "return": "false",
         "string": "We are sorry",
         "type": "ocr"
@@ -7269,11 +7665,13 @@
   },
   {
     "url": "https://{username}.wix.com",
-    "detections": [{
-      "return": "false",
-      "string": "We Looked Everywhere",
-      "type": "ocr"
-    }],
+    "detections": [
+      {
+        "return": "false",
+        "string": "We Looked Everywhere",
+        "type": "ocr"
+      }
+    ],
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
@@ -7281,7 +7679,8 @@
   },
   {
     "url": "https://{username}.wordpress.com",
-    "detections": [{
+    "detections": [
+      {
         "return": "false",
         "string": "Do you want to register",
         "type": "ocr"
@@ -7309,7 +7708,8 @@
   },
   {
     "url": "https://{username}.www.nn.ru",
-    "detections": [{
+    "detections": [
+      {
         "return": "false",
         "string": "404<",
         "type": "normal"
@@ -7332,7 +7732,8 @@
   },
   {
     "url": "https://udemy.com/user/{username}/",
-    "detections": [{
+    "detections": [
+      {
         "return": "true",
         "string": "-profile-",
         "type": "normal"
@@ -7350,7 +7751,8 @@
   },
   {
     "url": "https://heavy-r.com/user/{username}",
-    "detections": [{
+    "detections": [
+      {
         "return": "false",
         "string": "Channel not found",
         "type": "normal"
@@ -7368,7 +7770,8 @@
   },
   {
     "url": "https://xrares.com/user/{username}",
-    "detections": [{
+    "detections": [
+      {
         "return": "false",
         "string": "This user does not exist",
         "type": "normal"
@@ -7386,7 +7789,8 @@
   },
   {
     "url": "https://xvideos.com/profiles/{username}",
-    "detections": [{
+    "detections": [
+      {
         "return": "false",
         "string": "THIS PROFILE DOESN",
         "type": "normal"
@@ -7404,7 +7808,8 @@
   },
   {
     "url": "https://tnaflix.com/profile/{username}",
-    "detections": [{
+    "detections": [
+      {
         "return": "false",
         "string": "looking for is lost somewhere",
         "type": "normal"
@@ -7422,7 +7827,8 @@
   },
   {
     "url": "https://xhamster.com/users/{username}",
-    "detections": [{
+    "detections": [
+      {
         "return": "false",
         "string": "User not found",
         "type": "normal"
@@ -7440,7 +7846,8 @@
   },
   {
     "url": "https://xxxbunker.com/users/{username}",
-    "detections": [{
+    "detections": [
+      {
         "return": "false",
         "string": "FILE NOT FOUND",
         "type": "normal"
@@ -7458,11 +7865,13 @@
   },
   {
     "url": "https://mix.com/{username}",
-    "detections": [{
-      "return": "true",
-      "string": "UserProfile",
-      "type": "normal"
-    }],
+    "detections": [
+      {
+        "return": "true",
+        "string": "UserProfile",
+        "type": "normal"
+      }
+    ],
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
@@ -7470,11 +7879,13 @@
   },
   {
     "url": "https://{username}.skyrock.com/profil",
-    "detections": [{
+    "detections": [
+      {
         "return": "false",
         "string": "Page not found",
         "type": "ocr"
-      }, {
+      },
+      {
         "return": "false",
         "string": "Page not found",
         "type": "normal"
@@ -7497,11 +7908,13 @@
   },
   {
     "url": "https://gaiaonline.com/profiles/{username}",
-    "detections": [{
+    "detections": [
+      {
         "return": "false",
         "string": "General Error",
         "type": "ocr"
-      }, {
+      },
+      {
         "return": "false",
         "string": "General Error",
         "type": "normal"
@@ -7524,11 +7937,13 @@
   },
   {
     "url": "https://steemit.com/@{username}",
-    "detections": [{
+    "detections": [
+      {
         "return": "false",
         "string": "This page doesn",
         "type": "ocr"
-      }, {
+      },
+      {
         "return": "false",
         "string": "This page doesn",
         "type": "normal"
@@ -7546,11 +7961,13 @@
   },
   {
     "url": "https://influenster.com/{username}",
-    "detections": [{
+    "detections": [
+      {
         "return": "false",
         "string": "Page not found",
         "type": "ocr"
-      }, {
+      },
+      {
         "return": "false",
         "string": "Page not found",
         "type": "normal"
@@ -7568,11 +7985,13 @@
   },
   {
     "url": "https://v2ex.com/member/{username}",
-    "detections": [{
-      "return": "true",
-      "string": "号会员，加入于",
-      "type": "normal"
-    }],
+    "detections": [
+      {
+        "return": "true",
+        "string": "号会员，加入于",
+        "type": "normal"
+      }
+    ],
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
@@ -7580,7 +7999,8 @@
   },
   {
     "url": "https://gitmemory.com/{username}",
-    "detections": [{
+    "detections": [
+      {
         "return": "false",
         "string": "404<",
         "type": "normal"
@@ -7598,7 +8018,8 @@
   },
   {
     "url": "https://codeberg.com/{username}",
-    "detections": [{
+    "detections": [
+      {
         "return": "false",
         "string": "does not exist",
         "type": "normal"
