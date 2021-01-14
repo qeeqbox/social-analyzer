@@ -13,7 +13,7 @@ This project *is currently used by some law enforcement agencies in countries wh
 
 ## Updates
 - Added dynamic language detections for profiles
-- Added --websites "all" for python & NodeJS CLI (You can scan ALL the websites within 2~10 seconds) 👏👏👏
+- Added --websites "all" for python & NodeJS CLI (You can scan ALL the websites within 2~10 seconds)
 - Added a new refactored version
 
 ## Security Testing
@@ -40,17 +40,17 @@ Profile images **will not** be blurred. If you want them to be blurred, turn tha
 <img src="https://raw.githubusercontent.com/qeeqbox/social-analyzer/main/readme/cli.gif" style="max-width:768px"/>
 
 ## Features
-- String & Name Analysis
-- Find Profile using Multiple Techniques (Fast & Slow)
-- Multi Layers Detections (OCR, Normal, Advanced & Special)
-- Search Engine Lookup (Google API - Optional)
-- Custom Search Queries (Google API & duckduckgo API - Optional)
-- Profile Screenshot, Title, Info and Website Description
-- Find Name Origins, Name Similarity & Common words by Language
+- String & name analysis
+- Find profile using multiple techniques (HTTPS library & Webdriver)
+- Multi layers detections (OCR, normal, advanced & special)
+- Search engine lookup (Google API - optional)
+- Custom search queries (Google API & DuckDuckGo API - optional)
+- Profile screenshot, title, info and website description
+- Find name origins, name similarity & common words by language
 - Custom user-agent, proxy, timeout & implicit wait
-- Python CLI & NodeJS CLI (Limited to FindUserProfilesFast option)
-- Grid Option for Faster Checking (Limited to docker-compose)
-- Dump Logs to Folder or Terminal (prettified)
+- Python CLI & NodeJS CLI (limited to FindUserProfilesFast option)
+- Grid option for faster checking (limited to docker-compose)
+- Dump logs to folder or terminal (prettified)
 - [Wiki](https://github.com/qeeqbox/social-analyzer/wiki)
 
 ## Special Detections

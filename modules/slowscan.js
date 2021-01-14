@@ -158,9 +158,14 @@ async function find_username_site(uuid, username, options, site) {
       }
       if (temp_profile.found > 0 || temp_profile.image != "") {
 
-        language = helper.get_language_by_parsing(source)
-        if (language == "unavailable"){
-          language = helper.get_language_by_guessing(text_only)
+        try{
+          language = helper.get_language_by_parsing(source)
+          if (language == "unavailable"){
+            language = helper.get_language_by_guessing(text_only)
+          }
+        }
+        catch(err){
+          helper.verbose && console.log(err);
         }
 
         temp_profile.text = sanitizeHtml(text_only);

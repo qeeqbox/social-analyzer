@@ -40,7 +40,7 @@ function get_language_by_parsing(body) {
       language = langs.where("1", code).name
     }
   } catch (err) {
-    helper.verbose && console.log(err);
+    verbose && console.log(err);
   }
   return language
 }
@@ -55,7 +55,7 @@ function get_language_by_guessing(text) {
       }
     }
   } catch (err) {
-    helper.verbose && console.log(err);
+    verbose && console.log(err);
   }
 
   return language

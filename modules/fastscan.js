@@ -81,9 +81,14 @@ async function find_username_site(uuid, username, options, site) {
           helper.verbose && console.log(err);
         }
 
-        language = helper.get_language_by_parsing(body)
-        if (language == "unavailable"){
-          language = helper.get_language_by_guessing(temp_profile.text)
+        try{
+          language = helper.get_language_by_parsing(body)
+          if (language == "unavailable"){
+            language = helper.get_language_by_guessing(temp_profile.text)
+          }
+        }
+        catch(err){
+          helper.verbose && console.log(err);
         }
 
         temp_profile.title = title;
