@@ -280,6 +280,11 @@
         "return": "false",
         "string": "Sorry, that player could not be found",
         "type": "normal"
+      },
+      {
+        "return": "true",
+        "string": "{username}",
+        "type": "advanced"
       }
     ],
     "selected": "false",
@@ -1954,6 +1959,11 @@
         "return": "true",
         "string": "og:title",
         "type": "normal"
+      },
+      {
+        "return": "true",
+        "string": "{username}",
+        "type": "normal"
       }
     ],
     "selected": "false",
@@ -2368,8 +2378,8 @@
     "url": "https://fiverr.com/{username}",
     "detections": [
       {
-        "return": "false",
-        "string": "The user account you are looking for is no longer available.",
+        "return": "true",
+        "string": "{username}",
         "type": "normal"
       }
     ],
@@ -2807,11 +2817,26 @@
     "type": "unavailable"
   },
   {
-    "url": "https://fosstodon.org/web/accounts/{username}",
+    "url": "https://fosstodon.org/@{username}",
     "detections": [
       {
         "return": "false",
-        "string": "This resource could not be found",
+        "string": "The page you are looking for isn",
+        "type": "ocr"
+      },
+      {
+        "return": "false",
+        "string": "The page you are looking for isn",
+        "type": "normal"
+      },
+      {
+        "return": "true",
+        "string": "profile:username",
+        "type": "normal"
+      },
+      {
+        "return": "true",
+        "string": "/@{username}",
         "type": "normal"
       }
     ],
@@ -3199,6 +3224,11 @@
         "return": "false",
         "string": "You need to sign in or sign up before continuing.",
         "type": "normal"
+      },
+      {
+        "return": "true",
+        "string": "@{username}",
+        "type": "normal"
       }
     ],
     "selected": "false",
@@ -3522,6 +3552,11 @@
         "return": "false",
         "string": "The page you requested",
         "type": "ocr"
+      },
+      {
+        "return": "false",
+        "string": "Page Not Found",
+        "type": "normal"
       }
     ],
     "selected": "false",
@@ -4189,8 +4224,13 @@
     "detections": [
       {
         "return": "false",
-        "string": "This profile is not available",
-        "type": "normal"
+        "string": "Join to view full profiles for free",
+        "type": "advanced"
+      },
+      {
+        "return": "false",
+        "string": "An exact match for {username} could not be found.",
+        "type": "advanced"
       }
     ],
     "selected": "false",
@@ -4549,8 +4589,8 @@
     "detections": [
       {
         "return": "false",
-        "string": "User not found",
-        "type": "ocr"
+        "string": "Page Not Found",
+        "type": "advanced"
       }
     ],
     "selected": "false",
