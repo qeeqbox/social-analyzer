@@ -1,10 +1,10 @@
-{"version":"2021.V.2.12",
+{"version":"2021.V.2.13",
  "build":"pass",
  "test":"pass",
  "grid_test":"pass",
- "websites":"342",
- "detections":"939",
+ "websites":"346",
+ "detections":"946",
  "special":"3",
- "full_scan":"2-8s",
+ "full_scan":"2-9s",
  "awaiting_verification":"22",
- "auto_testing":"e1c95116-4579-4922-bc33-25e56308cd4c"}
+ "auto_testing":"044fd42f-092c-4e43-9c6b-9ece092db947"}

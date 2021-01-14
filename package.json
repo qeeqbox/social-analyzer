@@ -13,10 +13,12 @@
     "express": "^4.16.3",
     "express-async-errors": "3.1.1",
     "follow-redirects": "1.13.0",
+    "franc": "5.0.0",
     "geckodriver": "1.21.0",
     "generatorics": "1.1.0",
     "html-to-text": "6.0.0",
     "https-proxy-agent": "5.0.0",
+    "langs": "2.0.0",
     "lodash": "^4.17.20",
     "most-common-words-by-language": "2.17.8",
     "node-tesseract-ocr": "2.0.0",
@@ -29,9 +31,7 @@
     "tmp": "0.2.1",
     "wink-tokenizer": "1.1.0",
     "wordsninja": "1.0.0",
-    "yargs": "16.2.0",
-    "franc": "5.0.0",
-    "langs": "2.0.0"
+    "yargs": "16.2.0"
   },
   "author": "QeeqBox",
   "license": "AGPL-3.0",

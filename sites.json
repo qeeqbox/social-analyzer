@@ -1348,7 +1348,7 @@
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
-    "type": "Cloud crowd translation platform"
+    "type": "Computer and electronics"
   },
   {
     "url": "https://crunchbase.com/person/{username}",
@@ -1501,7 +1501,7 @@
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
-    "type": "unavailable"
+    "type": "Adult"
   },
   {
     "url": "https://depop.com/{username}/",
@@ -1524,7 +1524,7 @@
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
-    "type": "unavailable"
+    "type": "Shopping"
   },
   {
     "url": "https://designspiration.net/{username}",
@@ -1580,7 +1580,7 @@
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
-    "type": "unavailable"
+    "type": "Computer and electronics"
   },
   {
     "url": "https://devrant.com/users/{username}",
@@ -1598,7 +1598,7 @@
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
-    "type": "unavailable"
+    "type": "Computer and electronics"
   },
   {
     "url": "https://discogs.com/user/{username}",
@@ -1633,7 +1633,7 @@
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
-    "type": "Discourse forum"
+    "type": "Computer and electronics"
   },
   {
     "url": "https://discuss.atom.io/u/{username}/summary",
@@ -1661,7 +1661,7 @@
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
-    "type": "unavailable"
+    "type": "Computer and electronics"
   },
   {
     "url": "https://discuss.elastic.co/u/{username}",
@@ -1689,7 +1689,7 @@
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
-    "type": "unavailable"
+    "type": "Computer and electronics"
   },
   {
     "url": "https://discussions.apple.com/profile/{username}",
@@ -1717,7 +1717,7 @@
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
-    "type": "unavailable"
+    "type": "Computer and electronics"
   },
   {
     "url": "https://displate.com/{username}/profile",
@@ -2162,14 +2162,12 @@
   },
   {
     "url": "https://gmail.com/{username}",
-    "detections": [
-      {
-        "return": "true",
-        "string": "",
-        "function": "special_gmail_1",
-        "type": "special"
-      }
-    ],
+    "detections": [{
+      "return": "true",
+      "string": "",
+      "function": "special_gmail_1",
+      "type": "special"
+    }],
     "selected": "false",
     "top": "top10",
     "timeout": 0,
@@ -2178,14 +2176,12 @@
   },
   {
     "url": "https://google.com/{username}",
-    "detections": [
-      {
-        "return": "true",
-        "string": "",
-        "function": "special_google_1",
-        "type": "special"
-      }
-    ],
+    "detections": [{
+      "return": "true",
+      "string": "",
+      "function": "special_google_1",
+      "type": "special"
+    }],
     "selected": "false",
     "top": "top10",
     "timeout": 0,
@@ -7571,17 +7567,51 @@
     "type": "unavailable"
   },
   {
-    "url": "https://www.v2ex.com/member/{username}",
-    "detections": [
+    "url": "https://v2ex.com/member/{username}",
+    "detections": [{
+      "return": "true",
+      "string": "号会员，加入于",
+      "type": "normal"
+    }],
+    "selected": "false",
+    "timeout": 0,
+    "implicit": 0,
+    "type": "Internet forum"
+  },
+  {
+    "url": "https://gitmemory.com/{username}",
+    "detections": [{
+        "return": "false",
+        "string": "404<",
+        "type": "normal"
+      },
       {
         "return": "true",
-        "string": "号会员，加入于",
+        "string": "user-name",
         "type": "normal"
       }
     ],
     "selected": "false",
     "timeout": 0,
     "implicit": 0,
-    "type": "Internet forum"
+    "type": "Projects Archive"
+  },
+  {
+    "url": "https://codeberg.com/{username}",
+    "detections": [{
+        "return": "false",
+        "string": "does not exist",
+        "type": "normal"
+      },
+      {
+        "return": "true",
+        "string": "\"profile\"",
+        "type": "normal"
+      }
+    ],
+    "selected": "false",
+    "timeout": 0,
+    "implicit": 0,
+    "type": "Projects Archive"
   }
 ]
