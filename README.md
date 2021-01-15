@@ -12,6 +12,7 @@ This project *is currently used by some law enforcement agencies in countries wh
 **All Pull Requests are welcomed!**
 
 ## Updates
+- (Testing) high & extreme detection level (This checks if detection meets the requirement or not)
 - Added dynamic language detections for profiles
 - Added --websites "all" for python & NodeJS CLI (You can scan ALL the websites within 2~10 seconds)
 - Added a new refactored version
