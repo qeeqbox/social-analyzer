@@ -7,12 +7,14 @@ API, CLI & Web App for analyzing & finding a person profile across +300 social m
 
 The detection modules utilize a rating mechanism based on different detection techniques, which produces a rate value that starts from 0 to 100 (No-Maybe-Yes)
 
-This project *is currently used by some law enforcement agencies in countries where resources are limited*. It could help in investigating profiles related to suspicious or malicious activities such as [cyberbullying](https://en.wikipedia.org/wiki/Wikipedia:Cyberbullying), [cybergrooming](https://de.wikipedia.org/wiki/Cyber-Grooming) & [cyberstalking](https://en.wikipedia.org/wiki/Cyberstalking), [spreading misinformation](https://en.wikipedia.org/wiki/Misinformation)
+This project *is currently used by some law enforcement agencies in countries where resources are limited*. 
+
+The results from the analysis could help in investigating profiles related to suspicious or malicious activities such as [cyberbullying](https://en.wikipedia.org/wiki/Wikipedia:Cyberbullying), [cybergrooming](https://de.wikipedia.org/wiki/Cyber-Grooming) & [cyberstalking](https://en.wikipedia.org/wiki/Cyberstalking), [spreading misinformation](https://en.wikipedia.org/wiki/Misinformation)
 
 **All Pull Requests are welcomed!**
 
 ## Updates
-- (Testing) high & extreme detection level (This checks if detection meets the requirement or not)
+- Added detection levels (This checks if detection meets the requirement or not)
 - Added dynamic language detections for profiles
 - Added --websites "all" for python & NodeJS CLI (You can scan ALL the websites within 2~10 seconds)
 - Added a new refactored version

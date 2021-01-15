@@ -4,6 +4,42 @@ var google_api_cs = "";
 var grid_url = "";
 var proxy = ""
 
+var detection_level = {
+  "extreme": {
+    "types": "normal,advanced,ocr",
+    "detections": "true",
+    "count":1,
+    "found":2
+  },
+  "high": {
+    "types": "normal,advanced,ocr",
+    "detections": "true,false",
+    "count":1,
+    "found":1
+  },
+  "current":"high"
+}
+
+var profile_template = {
+  "found": 0,
+  "image": "",
+  "link": "",
+  "rate": "",
+  "title": "",
+  "language": "",
+  "text": "",
+  "type": ""
+};
+
+var detected_websites = {
+  "normal":0,
+  "advanced":0,
+  "ocr":0,
+  "true":0,
+  "false":0,
+  "count":0,
+}
+
 var header_options = {
   headers: {
     'User-Agent': 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:84.0) Gecko/20100101 Firefox/84.0',
@@ -37,7 +73,9 @@ function get_language_by_parsing(body) {
     var $ = cheerio.load(body);
     var code = $("html").attr("lang")
     if (code != "") {
-      language = langs.where("1", code).name
+      if ('undefined' !== langs.where("1", code) && langs.where("1", code)){
+        language = langs.where("1", code).name
+      }
     }
   } catch (err) {
     verbose && console.log(err);
@@ -51,7 +89,10 @@ function get_language_by_guessing(text) {
     if (text != "unavailable" && text != "") {
       var code = franc(text);
       if (code !== 'und') {
-        language = langs.where("3", code).name + " (Maybe)"
+        if ('undefined' !== langs.where("3", code) && langs.where("3", code))
+        {
+          language = langs.where("3", code).name + " (Maybe)"
+        }
       }
     }
   } catch (err) {
@@ -131,6 +172,9 @@ async function get_url_wrapper_text(url, time = 5) {
 }
 
 module.exports = {
+  profile_template,
+  detection_level,
+  detected_websites,
   get_language_by_parsing,
   get_language_by_guessing,
   parsed_sites,

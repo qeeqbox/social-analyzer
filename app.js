@@ -58,12 +58,12 @@ require('express-async-errors');
 var _tokenizer = tokenizer();
 
 var helper = require("./modules/helper.js")
-var fastscan = require("./modules/fastscan.js")
-var slowscan = require("./modules/slowscan.js")
+var fastScan = require("./modules/fast-scan.js")
+var slowScan = require("./modules/slow-scan.js")
 var special = require("./modules/special.js")
-var externalapis = require("./modules/externalapis.js")
-var stringanalysis = require("./modules/stringanalysis.js")
-var nameanalysis = require("./modules/nameanalysis.js")
+var externalApis = require("./modules/external-apis.js")
+var stringAnalysis = require("./modules/string-analysis.js")
+var nameAnalysis = require("./modules/name-analysis.js")
 
 if (!fs.existsSync('logs')) {
   fs.mkdirSync('logs');
@@ -230,7 +230,7 @@ app.post("/analyze_string", async function(req, res, next) {
     }
     if (req.body.option.includes("FindUserProfilesFast")) {
       helper.log_to_file_queue(req.body.uuid, "[Starting] Checking user profiles normal")
-      user_info_advanced.data = await fastscan.find_username_normal(req);
+      user_info_advanced.data = await fastScan.find_username_normal(req);
       helper.log_to_file_queue(req.body.uuid, "[Done] Checking user profiles normal")
     }
     if (req.body.option.includes("FindUserProfilesSlow") || req.body.option.includes("ShowUserProfilesSlow")) {
@@ -240,49 +240,49 @@ app.post("/analyze_string", async function(req, res, next) {
         user_info_normal.type = "noshow"
       }
       helper.log_to_file_queue(req.body.uuid, "[Starting] Checking user profiles advanced")
-      user_info_normal.data = await slowscan.find_username_advanced(req);
+      user_info_normal.data = await slowScan.find_username_advanced(req);
       helper.log_to_file_queue(req.body.uuid, "[Done] Checking user profiles advanced")
     }
     if (req.body.option.includes("LookUps")) {
       helper.log_to_file_queue(req.body.uuid, "[Starting] Lookup")
-      await externalapis.check_engines(req, info);
+      await externalApis.check_engines(req, info);
       helper.log_to_file_queue(req.body.uuid, "[Done] Lookup")
     }
     if (req.body.option.includes("CustomSearch")) {
       helper.log_to_file_queue(req.body.uuid, "[Starting] Custom Search")
-      custom_search = await externalapis.custom_search_ouputs(req);
+      custom_search = await externalApis.custom_search_ouputs(req);
       helper.log_to_file_queue(req.body.uuid, "[Done] Custom Search")
     }
     if (req.body.option.includes("FindOrigins")) {
       helper.log_to_file_queue(req.body.uuid, "[Starting] Finding Origins")
-      names_origins = await nameanalysis.find_origins(req);
+      names_origins = await nameAnalysis.find_origins(req);
       helper.log_to_file_queue(req.body.uuid, "[Done] Finding Origins")
     }
     if (req.body.option.includes("SplitWordsByUpperCase")) {
       helper.log_to_file_queue(req.body.uuid, "[Starting] Split by UpperCase")
-      await stringanalysis.split_upper_case(req,all_words)
+      await stringAnalysis.split_upper_case(req,all_words)
       helper.log_to_file_queue(req.body.uuid, "[Done] Split by UpperCase")
     }
     if (req.body.option.includes("SplitWordsByAlphabet")) {
       helper.log_to_file_queue(req.body.uuid, "[Starting] Split by Alphabet")
-      await stringanalysis.split_alphabet_case(req,all_words)
+      await stringAnalysis.split_alphabet_case(req,all_words)
       helper.log_to_file_queue(req.body.uuid, "[Done] Split by Alphabet")
     }
     if (req.body.option.includes("FindSymbols")) {
       helper.log_to_file_queue(req.body.uuid, "[Starting] Finding Symbols")
-      await stringanalysis.find_symbols(req,all_words)
+      await stringAnalysis.find_symbols(req,all_words)
       helper.log_to_file_queue(req.body.uuid, "[Done] Finding Symbols")
     }
     if (req.body.option.includes("FindNumbers")) {
       helper.log_to_file_queue(req.body.uuid, "[Starting] Finding Numbers")
-      await stringanalysis.find_numbers(req,all_words)
+      await stringAnalysis.find_numbers(req,all_words)
       helper.log_to_file_queue(req.body.uuid, "[Done] Finding Numbers")
     }
     req.body.string = req.body.string.toLowerCase();
 
     if (req.body.option.includes("ConvertNumbers")) {
       helper.log_to_file_queue(req.body.uuid, "[Starting] Convert Numbers")
-      await stringanalysis.convert_numbers(req,all_words)
+      await stringAnalysis.convert_numbers(req,all_words)
       helper.log_to_file_queue(req.body.uuid, "[Done] Convert Numbers")
     }
 
@@ -295,16 +295,16 @@ app.post("/analyze_string", async function(req, res, next) {
       req.body.option.includes("FindNumbers") ||
       req.body.option.includes("ConvertNumbers")) {
 
-      await stringanalysis.get_maybe_words(req, all_words)
-      await stringanalysis.analyze_string(req, all_words);
+      await stringAnalysis.get_maybe_words(req, all_words)
+      await stringAnalysis.analyze_string(req, all_words);
 
       Object.keys(all_words).forEach((key) => (all_words[key].length == 0) && delete all_words[key]);
 
       if (req.body.option.includes("MostCommon")) {
-        await stringanalysis.most_common(all_words, temp_words);
+        await stringAnalysis.most_common(all_words, temp_words);
       }
       if (req.body.option.includes("WordInfo")) {
-        await externalapis.get_words_info(all_words, words_info);
+        await externalApis.get_words_info(all_words, words_info);
       }
     } else if (req.body.option.includes("NormalAnalysis@@")) {
       //var maybe_words = WordsNinja.splitSentence(req.body.string);
@@ -386,7 +386,7 @@ async function check_user_cli(argv) {
     });
   }
 
-  ret = await fastscan.find_username_normal(req)
+  ret = await fastScan.find_username_normal(req)
   if (typeof ret === 'undefined' || ret === undefined || ret.length == 0) {
     helper.log_to_file_queue(req.body.uuid, 'User does not exist (try FindUserProfilesSlow or FindUserProfilesSpecial)');
   } else {
