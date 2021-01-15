@@ -60,16 +60,7 @@ async function find_username_site_special_facebook_1(uuid, username, site) {
       var data = "";
       var text_only = "unavailable";
       var title = "unavailable";
-      var temp_profile = {
-        "found": 0,
-        "image": "",
-        "link": "",
-        "rate": "",
-        "title": "",
-        "language": "",
-        "text": "",
-        "type": ""
-      };
+      var temp_profile = Object.assign({}, helper.profile_template);
       var link = "https://mbasic.facebook.com/login/identify/?ctx=recoveqr";
       await driver.manage().setTimeouts(timeouts);
       await driver.get(link);;
@@ -127,16 +118,7 @@ async function find_username_site_special_gmail_1(uuid, username, site) {
       var data = "";
       var text_only = "unavailable";
       var title = "unavailable";
-      var temp_profile = {
-        "found": 0,
-        "image": "",
-        "link": "",
-        "rate": "",
-        "title": "",
-        "language": "",
-        "text": "",
-        "type": ""
-      };
+      var temp_profile = Object.assign({}, helper.profile_template);
       var link = "https://accounts.google.com/signup/v2/webcreateaccount?service=mail&continue=https%3A%2F%2Fmail.google.com%2Fmail%2F%3Fpc%3Dtopnav-about-n-en&flowName=GlifWebSignIn&flowEntry=SignUp";
       await driver.manage().setTimeouts(timeouts);
       await driver.get(link);;
@@ -194,16 +176,7 @@ async function find_username_site_special_google_1(uuid, username, site) {
       var data = "";
       var text_only = "unavailable";
       var title = "unavailable";
-      var temp_profile = {
-        "found": 0,
-        "image": "",
-        "link": "",
-        "rate": "",
-        "title": "",
-        "language": "",
-        "text": "",
-        "type": ""
-      };
+      var temp_profile = Object.assign({}, helper.profile_template);
       var link = "https://accounts.google.com/signin/v2/identifier?continue=https%3A%2F%2Fmail.google.com%2Fmail%2F&service=mail&sacu=1&rip=1&flowName=GlifWebSignIn&flowEntry=ServiceLogin";
       await driver.manage().setTimeouts(timeouts);
       await driver.get(link);;
