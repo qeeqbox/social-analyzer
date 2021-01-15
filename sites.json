@@ -1943,32 +1943,17 @@
       {
         "return": "false",
         "string": "Error 404",
-        "type": "ocr"
-      },
-      {
-        "return": "false",
-        "string": "Error 404",
-        "type": "normal"
-      },
-      {
-        "return": "true",
-        "string": "/profile/{username}",
-        "type": "normal"
-      },
-      {
-        "return": "true",
-        "string": "og:title",
-        "type": "normal"
+        "type": "advanced"
       },
       {
         "return": "true",
         "string": "{username}",
-        "type": "normal"
+        "type": "advanced"
       }
     ],
     "selected": "false",
     "timeout": 0,
-    "implicit": 0,
+    "implicit": 5,
     "type": "unavailable"
   },
   {
