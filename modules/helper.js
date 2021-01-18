@@ -1,8 +1,8 @@
-var verbose = false
+var verbose = false;
 var google_api_key = "";
 var google_api_cs = "";
 var grid_url = "";
-var proxy = ""
+var proxy = "";
 
 var detection_level = {
   "extreme": {
@@ -52,14 +52,30 @@ var url = require("url");
 var franc = require('franc');
 var langs = require('langs');
 var cheerio = require('cheerio');
+var path = require('path');
+var slash = require('slash');
 
-var parsed_sites = JSON.parse(fs.readFileSync("sites.json"));
+var sites_json_path = slash(path.join(__dirname,'..','data', 'sites.json'))
+var names_json_path = slash(path.join(__dirname,'..','data', 'names.json'))
+var dict_json_path = slash(path.join(__dirname,'..','data', 'dict.json'))
+
+var parsed_sites = JSON.parse(fs.readFileSync(sites_json_path));
+var parsed_names_origins = JSON.parse(fs.readFileSync(names_json_path));
+var parsed_json = JSON.parse(fs.readFileSync(dict_json_path));
+
 var logs_queue = Promise.resolve();
+
+function get_log_file(uuid) {
+  _uuid = uuid.replace(/[^a-zA-Z0-9\-]+/g, '');
+  _string = slash(path.join('logs', _uuid + "_log.txt"))
+  return _string
+}
 
 function log_to_file_queue(uuid, msg) {
   logs_queue = logs_queue.then(function() {
     return new Promise(function(resolve) {
-      fs.appendFile("logs/" + uuid + "_log.txt", msg + "\n", function(err, data) {
+      temp_log_file = slash(path.join('logs', uuid + "_log.txt"))
+      fs.appendFile(temp_log_file, msg + "\n", function(err, data) {
         console.log(msg)
         resolve();
       });
@@ -172,12 +188,15 @@ async function get_url_wrapper_text(url, time = 5) {
 }
 
 module.exports = {
+  get_log_file,
   profile_template,
   detection_level,
   detected_websites,
   get_language_by_parsing,
   get_language_by_guessing,
   parsed_sites,
+  parsed_names_origins,
+  parsed_json,
   verbose,
   google_api_key,
   google_api_cs,

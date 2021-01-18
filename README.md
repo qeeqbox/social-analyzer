@@ -1,7 +1,7 @@
 <p align="center"> <img src="https://raw.githubusercontent.com/qeeqbox/social-analyzer/main/readme/socialanalyzerlogo_.png"></p>
 
 #
-[![Generic badge](https://img.shields.io/badge/dynamic/json.svg?url=https://raw.githubusercontent.com/qeeqbox/social-analyzer/main/info&label=version&query=$.version&colorB=blue&style=flat-square)](https://github.com/qeeqbox/social-analyzer/blob/main/info) [![Generic badge](https://img.shields.io/badge/dynamic/json.svg?url=https://raw.githubusercontent.com/qeeqbox/social-analyzer/main/info&label=verified%20sites&query=$.websites&colorB=blue&style=flat-square)](https://github.com/qeeqbox/social-analyzer/blob/main/info) [![Generic badge](https://img.shields.io/badge/dynamic/json.svg?url=https://raw.githubusercontent.com/qeeqbox/social-analyzer/main/info&label=verified%20detections&query=$.detections&colorB=blue&style=flat-square)](https://github.com/qeeqbox/social-analyzer/blob/main/info) [![Generic badge](https://img.shields.io/badge/dynamic/json.svg?url=https://raw.githubusercontent.com/qeeqbox/social-analyzer/main/info&label=special%20detections&query=$.special&colorB=blue&style=flat-square)](https://github.com/qeeqbox/social-analyzer/blob/main/info) [![Generic badge](https://img.shields.io/badge/dynamic/json.svg?url=https://raw.githubusercontent.com/qeeqbox/social-analyzer/main/info&label=levels&query=$.levels&colorB=blue&style=flat-square)](https://github.com/qeeqbox/social-analyzer/blob/main/info) [![Generic badge](https://img.shields.io/badge/dynamic/json.svg?url=https://raw.githubusercontent.com/qeeqbox/social-analyzer/main/info&label=full%20scan%20time&query=$.full_scan&colorB=blue&style=flat-square)](https://github.com/qeeqbox/social-analyzer/blob/main/info) [![Generic badge](https://img.shields.io/badge/dynamic/json.svg?url=https://raw.githubusercontent.com/qeeqbox/social-analyzer/main/info&label=awaiting%20verification&query=$.awaiting_verification&colorB=orange&style=flat-square)](https://github.com/qeeqbox/social-analyzer/blob/main/info) [![Generic badge](https://img.shields.io/badge/dynamic/json.svg?url=https://raw.githubusercontent.com/qeeqbox/social-analyzer/main/info&label=build&query=$.build&colorB=green&style=flat-square)](https://github.com/qeeqbox/social-analyzer/blob/main/info) [![Generic badge](https://img.shields.io/badge/dynamic/json.svg?url=https://raw.githubusercontent.com/qeeqbox/social-analyzer/main/info&label=test&query=$.test&colorB=green&style=flat-square)](https://github.com/qeeqbox/social-analyzer/blob/main/info) [![Generic badge](https://img.shields.io/badge/dynamic/json.svg?url=https://raw.githubusercontent.com/qeeqbox/social-analyzer/main/info&label=grid&query=$.grid_test&colorB=green&style=flat-square)](https://github.com/qeeqbox/social-analyzer/blob/main/info) [![Generic badge](https://img.shields.io/static/v1?label=%F0%9F%91%8D&message=★&color=yellow&style=flat-square)](https://github.com/qeeqbox/social-analyzer/stargazers)
+[![Generic badge](https://img.shields.io/badge/dynamic/json.svg?url=https://raw.githubusercontent.com/qeeqbox/social-analyzer/main/info&label=version&query=$.version&colorB=blue&style=flat-square)](https://github.com/qeeqbox/social-analyzer/blob/main/info) [![Generic badge](https://img.shields.io/badge/dynamic/json.svg?url=https://raw.githubusercontent.com/qeeqbox/social-analyzer/main/info&label=verified%20sites&query=$.websites&colorB=blue&style=flat-square)](https://github.com/qeeqbox/social-analyzer/blob/main/info) [![Generic badge](https://img.shields.io/badge/dynamic/json.svg?url=https://raw.githubusercontent.com/qeeqbox/social-analyzer/main/info&label=verified%20detections&query=$.detections&colorB=blue&style=flat-square)](https://github.com/qeeqbox/social-analyzer/blob/main/info) [![Generic badge](https://img.shields.io/badge/dynamic/json.svg?url=https://raw.githubusercontent.com/qeeqbox/social-analyzer/main/info&label=special%20detections&query=$.special&colorB=blue&style=flat-square)](https://github.com/qeeqbox/social-analyzer/blob/main/info) [![Generic badge](https://img.shields.io/badge/dynamic/json.svg?url=https://raw.githubusercontent.com/qeeqbox/social-analyzer/main/info&label=levels&query=$.levels&colorB=blue&style=flat-square)](https://github.com/qeeqbox/social-analyzer/blob/main/info) [![Generic badge](https://img.shields.io/badge/dynamic/json.svg?url=https://raw.githubusercontent.com/qeeqbox/social-analyzer/main/info&label=full%20scan%20time&query=$.full_scan&colorB=blue&style=flat-square)](https://github.com/qeeqbox/social-analyzer/blob/main/info) [![Generic badge](https://img.shields.io/badge/dynamic/json.svg?url=https://raw.githubusercontent.com/qeeqbox/social-analyzer/main/info&label=awaiting%20verification&query=$.awaiting_verification&colorB=orange&style=flat-square)](https://github.com/qeeqbox/social-analyzer/blob/main/info) [![Generic badge](https://img.shields.io/badge/dynamic/json.svg?url=https://raw.githubusercontent.com/qeeqbox/social-analyzer/main/info&label=build&query=$.build&colorB=green&style=flat-square)](https://github.com/qeeqbox/social-analyzer/blob/main/info) [![Generic badge](https://img.shields.io/badge/dynamic/json.svg?url=https://raw.githubusercontent.com/qeeqbox/social-analyzer/main/info&label=test&query=$.test&colorB=green&style=flat-square)](https://github.com/qeeqbox/social-analyzer/blob/main/info) [![Generic badge](https://img.shields.io/badge/dynamic/json.svg?url=https://raw.githubusercontent.com/qeeqbox/social-analyzer/main/info&label=grid&query=$.grid_test&colorB=green&style=flat-square)](https://github.com/qeeqbox/social-analyzer/blob/main/info) [![Generic badge](https://img.shields.io/badge/dynamic/json.svg?url=https://raw.githubusercontent.com/qeeqbox/social-analyzer/main/info&label=windows&query=$.windows&colorB=green&style=flat-square)](https://github.com/qeeqbox/social-analyzer/blob/main/info) [![Generic badge](https://img.shields.io/badge/dynamic/json.svg?url=https://raw.githubusercontent.com/qeeqbox/social-analyzer/main/info&label=linux&query=$.linux&colorB=green&style=flat-square)](https://github.com/qeeqbox/social-analyzer/blob/main/info) [![Generic badge](https://img.shields.io/static/v1?label=%F0%9F%91%8D&message=★&color=yellow&style=flat-square)](https://github.com/qeeqbox/social-analyzer/stargazers)
 
 API, CLI & Web App for analyzing & finding a person profile across +300 social media websites. It includes different string analysis and detection modules, you can choose which combination of modules to use during the investigation
 
@@ -11,9 +11,10 @@ This project *is currently used by some law enforcement agencies in countries wh
 
 The results from the analysis could help in investigating profiles related to suspicious or malicious activities such as [cyberbullying](https://en.wikipedia.org/wiki/Wikipedia:Cyberbullying), [cybergrooming](https://de.wikipedia.org/wiki/Cyber-Grooming) & [cyberstalking](https://en.wikipedia.org/wiki/Cyberstalking), [spreading misinformation](https://en.wikipedia.org/wiki/Misinformation)
 
-**All Pull Requests are welcomed!**
+Make sure to download this tool from GitHub - (ONLY) ⚠️
 
 ## Updates
+- Added Windows support (Some features are disabled)
 - Added detection levels (This checks if detection meets the requirement or not)
 - Added dynamic language detections for profiles
 - Added --websites "all" for python & NodeJS CLI (You can scan ALL the websites within 2~10 seconds)
@@ -61,27 +62,36 @@ Profile images **will not** be blurred. If you want them to be blurred, turn tha
 - Gmail (example@gmail.com)
 - Google (example@example.com)
 
-## Install and run as web app (NodeJS + NPM + Firefox)
+## Install and run as web app (Linux + NodeJS + NPM + Firefox)
 ```bash
 sudo add-apt-repository ppa:mozillateam/ppa
 sudo apt-get update
 sudo apt-get install -y firefox-esr tesseract-ocr git
 git clone https://github.com/qeeqbox/social-analyzer.git
 cd social-analyzer
-rm -rf package-lock.json node_modules
 npm install lodash
 npm install
 npm start
 ```
 
-## Install and run as CLI (NodeJS + NPM + Firefox)
+## Install and run as web app (Windows + NodeJS + NPM + Firefox)
+```bash
+Download & Install firfox esr (Extended Support Release) from https://www.mozilla.org/en-US/firefox/enterprise/#download
+Download & Install https://nodejs.org/en/download/
+Download & Extract https://github.com/qeeqbox/social-analyzer/archive/main.zip
+cd social-analyzer
+npm install lodash
+npm install
+npm start
+```
+
+## Install and run as CLI (Linux + NodeJS + NPM + Firefox)
 ```bash
 sudo add-apt-repository ppa:mozillateam/ppa
 sudo apt-get update
 sudo apt-get install -y firefox-esr tesseract-ocr git
 git clone https://github.com/qeeqbox/social-analyzer.git
 cd social-analyzer
-rm -rf package-lock.json node_modules
 npm install lodash
 npm install
 # If you want to list all websites use node app.js --cli --list
@@ -89,7 +99,7 @@ npm install
 node app.js --cli --mode "fast" --username "johndoe" --websites "youtube pinterest tumblr" --output "pretty"
 ```
 
-## Install and run as CLI (Python3 + NPM + Firefox)
+## Install and run as CLI (Linux + Python3 + NPM + Firefox)
 ```bash
 sudo add-apt-repository ppa:mozillateam/ppa
 sudo apt-get update
@@ -136,6 +146,7 @@ sudo kill -9 $(sudo lsof -t -i:9005)
 ## Disclaimer\Notes
 - This tool meant to be used locally (It does not have any type of Access Control)
 - If you want your website to be excluded from this project, please reach out
+- Make sure to download this tool from GitHub - ONLY ⚠️
 
 ## Contact
 [![Generic badge](https://img.shields.io/badge/slack-@qeeqbox-yellow.svg?logo=slack&style=flat-square)](https://qeeqbox.slack.com/messages/social-analyzer)

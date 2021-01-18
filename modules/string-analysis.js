@@ -1,9 +1,9 @@
-var helper = require("./helper.js")
+var helper = require('./helper.js')
 var {
   findWord
 } = require("most-common-words-by-language");
 var fs = require("fs");
-var parsed_json = JSON.parse(fs.readFileSync("dict.json"));
+
 var WordsNinjaPack = require("wordsninja");
 var WordsNinja = new WordsNinjaPack();
 
@@ -83,7 +83,7 @@ async function analyze_string(req, all_words) {
   helper.log_to_file_queue(req.body.uuid, "[Starting] String analysis")
   temp_rr_names = []
   string_to_check = req.body.string
-  parsed_json.prefix.forEach(function(item, index) {
+  helper.parsed_json.prefix.forEach(function(item, index) {
     if (string_to_check.indexOf(item) == 0 && !all_words.prefix.includes(item)) {
       all_words.prefix.push(item);
       temp = remove_word(string_to_check, item);
@@ -92,7 +92,7 @@ async function analyze_string(req, all_words) {
       }
     }
   });
-  parsed_json.m_names.forEach(function(item, index) {
+  helper.parsed_json.m_names.forEach(function(item, index) {
     if (string_to_check.indexOf(item) >= 0 && !all_words.name.includes(item)) {
       all_words.name.push(item);
       temp = remove_word(string_to_check, item);
@@ -101,7 +101,7 @@ async function analyze_string(req, all_words) {
       }
     }
   });
-  parsed_json.f_names.forEach(function(item, index) {
+  helper.parsed_json.f_names.forEach(function(item, index) {
     if (string_to_check.indexOf(item) >= 0 && !all_words.name.includes(item)) {
       all_words.name.push(item);
       temp = remove_word(string_to_check, item);

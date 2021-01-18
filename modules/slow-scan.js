@@ -1,4 +1,4 @@
-var helper = require("./helper.js")
+var helper = require('./helper.js')
 var async = require("async");
 var sanitizeHtml = require("sanitize-html");
 var tesseract = require("node-tesseract-ocr");
@@ -11,6 +11,12 @@ var {
 } = require("selenium-webdriver");
 var tmp = require("tmp");
 var fs = require("fs");
+var path = require('path');
+
+if (process.platform == 'win32'){
+  var package_path = path.join(path.dirname(require.resolve("geckodriver")),'..')
+  process.env['PATH'] = process.env['PATH'] + ';' + package_path
+}
 
 async function find_username_advanced(req) {
   const time = new Date();
@@ -97,7 +103,7 @@ async function find_username_site(uuid, username, options, site) {
             detections_count += 1
             temp_detected.count += 1
             var temp_found = "false"
-            if (detection.type == "ocr" && data != "") {
+            if (detection.type == "ocr" && data != "" && process.platform == "linux") {
               tmpobj = tmp.fileSync();
               fs.writeFileSync(tmpobj.name, Buffer.from(data, "base64"));
               await tesseract.recognize(tmpobj.name, {
