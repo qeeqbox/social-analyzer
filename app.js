@@ -57,17 +57,17 @@ var pe = new PrettyError();
 require('express-async-errors');
 var _tokenizer = tokenizer();
 
-var helper = require("./modules/helper.js")
-var fastScan = require("./modules/fast-scan.js")
-var slowScan = require("./modules/slow-scan.js")
-var special = require("./modules/special.js")
-var externalApis = require("./modules/external-apis.js")
-var stringAnalysis = require("./modules/string-analysis.js")
-var nameAnalysis = require("./modules/name-analysis.js")
-
 if (!fs.existsSync('logs')) {
   fs.mkdirSync('logs');
 }
+
+var helper = require("./modules/helper.js")
+var fastScan = require("./modules/fast-scan.js")
+var slowScan = require("./modules/slow-scan.js")
+var specialScan = require("./modules/special-scan.js")
+var externalApis = require("./modules/external-apis.js")
+var stringAnalysis = require("./modules/string-analysis.js")
+var nameAnalysis = require("./modules/name-analysis.js")
 
 var app = express();
 
@@ -80,8 +80,8 @@ app.use(express.static("public"));
 app.post("/get_logs", async function(req, res, next) {
   var last_line = "nothinghere"
   if (req.body.uuid != "") {
-    req.body.uuid = req.body.uuid.replace(/[^a-zA-Z0-9\-]+/g, '');
-    var data = fs.readFileSync("logs/" + req.body.uuid + "_log.txt").toString();
+    temp_log_file = helper.get_log_file(req.body.uuid)
+    var data = fs.readFileSync(temp_log_file).toString();
     if (typeof data !== 'undefined' && data) {
       last_line = data.split('\n').slice(-2)[0];
     }
@@ -225,7 +225,7 @@ app.post("/analyze_string", async function(req, res, next) {
     req.body.uuid = req.body.uuid.replace(/[^a-zA-Z0-9\-]+/g, '');
     if (req.body.option.includes("FindUserProfilesSpecial")) {
       helper.log_to_file_queue(req.body.uuid, "[Starting] Checking user profiles special")
-      user_info_special.data = await special.find_username_special(req);
+      user_info_special.data = await specialScan.find_username_special(req);
       helper.log_to_file_queue(req.body.uuid, "[Done] Checking user profiles special")
     }
     if (req.body.option.includes("FindUserProfilesFast")) {
@@ -354,7 +354,7 @@ process.on('unhandledRejection', function(err) {
   helper.verbose && console.log(pe.render(err));
 })
 
-const server_host = '0.0.0.0';
+const server_host = 'localhost';
 const server_port = process.env.PORT || 9005;
 
 async function check_user_cli(argv) {

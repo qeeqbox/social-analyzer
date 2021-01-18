@@ -1,4 +1,4 @@
-var helper = require("./helper.js")
+var helper = require('./helper.js')
 var async = require("async");
 var sanitizeHtml = require("sanitize-html");
 var {

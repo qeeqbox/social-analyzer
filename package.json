@@ -31,7 +31,8 @@
     "tmp": "0.2.1",
     "wink-tokenizer": "1.1.0",
     "wordsninja": "1.0.0",
-    "yargs": "16.2.0"
+    "yargs": "16.2.0",
+    "slash": "3.0.0"
   },
   "author": "QeeqBox",
   "license": "AGPL-3.0",
