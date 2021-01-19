@@ -5,6 +5,7 @@ var {
   htmlToText
 } = require('html-to-text');
 var cheerio = require('cheerio');
+var engine = require('./engine.js')
 
 async function find_username_normal(req) {
   const time = new Date();
@@ -30,40 +31,14 @@ async function find_username_site(uuid, username, options, site) {
       if (!options.includes('json')) {
         helper.log_to_file_queue(uuid, "[Checking] " + helper.get_site_from_url(site.url))
       }
-      var body = await helper.get_url_wrapper_text(site.url.replace("{username}", username));
+      var source = await helper.get_url_wrapper_text(site.url.replace("{username}", username));
       var detections_count = 0;
-      var source = body;
       var text_only = "unavailable";
       var title = "unavailable";
       var language = "unavailable"
-      var temp_profile = Object.assign({}, helper.profile_template);
-      var temp_detected = Object.assign({}, helper.detected_websites);
-      await Promise.all(site.detections.map(async detection => {
-        var temp_found = "false";
-        if (detection.type == "normal" && options.includes("FindUserProfilesFast") && source != "" && helper.detection_level[helper.detection_level.current].types.includes(detection.type)) {
-          detections_count += 1
-          temp_detected.count += 1
-          if (source.toLowerCase().includes(detection.string.replace("{username}", username).toLowerCase())) {
-            temp_found = "true";
-          }
-          if (detection.return == temp_found) {
-            temp_profile.found += 1
-            temp_detected.normal += 1
-            if (detection.return == 'true'){
-              temp_detected.true += 1
-            }else{
-              temp_detected.false += 1
-            }
-          }
-        }
-            //helper.verbose && console.log("[Requirement] " + site.url.replace("{username}", username)+ " Dosn't meet meet detection level");
-
-      }));
-
-      helper.verbose && console.log({"Temp Profile":temp_profile,"Detected":temp_detected})
-
+      var {temp_profile, temp_detected, detections_count} = await engine.detect("fast", uuid, username, options, site ,source)
       if (temp_profile.found >= helper.detection_level[helper.detection_level.current].found && detections_count >= helper.detection_level[helper.detection_level.current].count) {
-        temp_profile.text = sanitizeHtml(htmlToText(body, {
+        temp_profile.text = sanitizeHtml(htmlToText(source, {
           wordwrap: false,
           hideLinkHrefIfSameAsText: true,
           ignoreHref: true,
@@ -74,7 +49,7 @@ async function find_username_site(uuid, username, options, site) {
         }
 
         try {
-          var $ = cheerio.load(body);
+          var $ = cheerio.load(source);
           title = sanitizeHtml($("title").text())
           if (title.length == 0) {
             title = "unavailable"
@@ -84,7 +59,7 @@ async function find_username_site(uuid, username, options, site) {
         }
 
         try{
-          language = helper.get_language_by_parsing(body)
+          language = helper.get_language_by_parsing(source)
           if (language == "unavailable"){
             language = helper.get_language_by_guessing(temp_profile.text)
           }

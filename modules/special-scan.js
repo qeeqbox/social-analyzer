@@ -1,8 +1,6 @@
 var helper = require('./helper.js')
 var async = require("async");
 var sanitizeHtml = require("sanitize-html");
-var tesseract = require("node-tesseract-ocr");
-var sanitizeHtml = require("sanitize-html");
 var firefox = require("selenium-webdriver/firefox");
 var {
   Builder,
