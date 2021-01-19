@@ -7,6 +7,7 @@
  "special":"3",
  "linux":"pass",
  "windows":"pass",
+ "docker":"pass",
  "full_scan":"2-14s",
  "awaiting_verification":"22",
- "auto_testing":"6d39ff74-dbc2-49d8-add5-887d7ca7bf27"}
+ "auto_testing":"84c9e3f1-a6d0-4a87-a26b-059818f85d3b"}
