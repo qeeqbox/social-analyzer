@@ -6,15 +6,17 @@ var proxy = "";
 
 var detection_level = {
   "extreme": {
-    "types": "normal,advanced,ocr",
+    "fast": "normal",
+    "slow": "normal,advanced,ocr",
     "detections": "true",
     "count":1,
     "found":2
   },
   "high": {
-    "types": "normal,advanced,ocr",
+    "fast": "normal",
+    "slow": "normal,advanced,ocr",
     "detections": "true,false",
-    "count":1,
+    "count":2,
     "found":1
   },
   "current":"high"

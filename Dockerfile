@@ -4,6 +4,6 @@ COPY . .
 RUN apk update && \
   apk add --no-cache firefox-esr tesseract-ocr && \
   npm install lodash && \
-  npm install
+  npm install --loglevel=error
 EXPOSE 9005
 ENTRYPOINT [ "npm", "start" ]

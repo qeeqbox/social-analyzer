@@ -1,7 +1,6 @@
 var helper = require('./helper.js')
 var async = require("async");
 var sanitizeHtml = require("sanitize-html");
-var tesseract = require("node-tesseract-ocr");
 var sanitizeHtml = require("sanitize-html");
 var firefox = require("selenium-webdriver/firefox");
 var {
@@ -9,9 +8,8 @@ var {
   By,
   Key
 } = require("selenium-webdriver");
-var tmp = require("tmp");
-var fs = require("fs");
 var path = require('path');
+var engine = require('./engine.js')
 
 if (process.platform == 'win32'){
   var package_path = path.join(path.dirname(require.resolve("geckodriver")),'..')
@@ -79,98 +77,22 @@ async function find_username_site(uuid, username, options, site) {
       helper.verbose && console.log(timeouts)
 
       var source = "";
-      var data = "";
+      var screen_shot = "";
       var language = "unavailable"
       var text_only = "unavailable";
       var title = "unavailable";
-      var detections_count = 0;
-      var temp_profile = Object.assign({}, helper.profile_template);
-      var temp_detected = Object.assign({}, helper.detected_websites);
       var link = site.url.replace("{username}", username);
       await driver.manage().setTimeouts(timeouts);
       await driver.get(link);;
       source = await driver.getPageSource();
-      data = await driver.takeScreenshot();
+      screen_shot = await driver.takeScreenshot();
       title = await driver.getTitle();
       text_only = await driver.findElement(By.tagName("body")).getText();
       await driver.quit()
+      var {temp_profile, temp_detected, detections_count} = await engine.detect("slow", uuid, username, options, site ,source, screen_shot)
       if (options.includes("ShowUserProfilesSlow")) {
-        temp_profile["image"] = "data:image/png;base64,{image}".replace("{image}", data);
+        temp_profile["image"] = "data:image/png;base64,{image}".replace("{image}", screen_shot);
       }
-      await Promise.all(site.detections.map(async detection => {
-        if (options.includes("FindUserProfilesSlow") && source != "" && helper.detection_level[helper.detection_level.current].types.includes(detection.type)) {
-          try {
-            detections_count += 1
-            temp_detected.count += 1
-            var temp_found = "false"
-            if (detection.type == "ocr" && data != "" && process.platform == "linux") {
-              tmpobj = tmp.fileSync();
-              fs.writeFileSync(tmpobj.name, Buffer.from(data, "base64"));
-              await tesseract.recognize(tmpobj.name, {
-                  lang: "eng",
-                  oem: 1,
-                  psm: 3,
-                })
-                .then(text => {
-                  text = text.replace(/[^A-Za-z0-9]/gi, "");
-                  detection.string = detection.string.replace(/[^A-Za-z0-9]/gi, "");
-                  if (text != "") {
-                    if (text.toLowerCase().includes(detection.string.toLowerCase())) {
-                      temp_found = "true";
-                    }
-
-                    if (detection.return == temp_found) {
-                      temp_profile.found += 1
-                      temp_detected.ocr += 1
-                      if (detection.return == 'true'){
-                        temp_detected.true += 1
-                      }else{
-                        temp_detected.false += 1
-                      }
-                    }
-                  }
-                })
-                .catch(error => {
-                  helper.verbose && console.log(error.message);
-                })
-              tmpobj.removeCallback();
-            } else if (detection.type == "normal" && source != "") {
-              if (source.toLowerCase().includes(detection.string.replace("{username}", username).toLowerCase())) {
-                temp_found = "true";
-              }
-
-              if (detection.return == temp_found) {
-                temp_profile.found += 1
-                temp_detected.normal += 1
-                if (detection.return == 'true'){
-                  temp_detected.true += 1
-                }else{
-                  temp_detected.false += 1
-                }
-              }
-            } else if (detection.type == "advanced" && text_only != "") {
-              if (text_only.toLowerCase().includes(detection.string.replace("{username}", username).toLowerCase())) {
-                temp_found = "true";
-              }
-
-              if (detection.return == temp_found) {
-                temp_profile.found += 1
-                temp_detected.advanced += 1
-                if (detection.return == 'true'){
-                  temp_detected.true += 1
-                }else{
-                  temp_detected.false += 1
-                }
-              }
-            }
-          } catch (err) {
-            helper.verbose && console.log(err);
-          }
-        }
-      }));
-
-      helper.verbose && console.log({"Temp Profile":temp_profile,"Detected":temp_detected})
-
       if (temp_profile.found >= helper.detection_level[helper.detection_level.current].found && detections_count >= helper.detection_level[helper.detection_level.current].count){
         try {
           language = helper.get_language_by_parsing(source)
