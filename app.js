@@ -26,6 +26,9 @@ var argv = require('yargs')
   .describe('list', 'List all available websites')
   .default("list", false)
   .boolean('list')
+  .describe('docker', 'allow docker')
+  .default("docker", false)
+  .boolean('docker')
   .describe('grid', 'grid option, not for CLI')
   .default("grid", "")
   .help('help')
@@ -354,9 +357,6 @@ process.on('unhandledRejection', function(err) {
   helper.verbose && console.log(pe.render(err));
 })
 
-const server_host = 'localhost';
-const server_port = process.env.PORT || 9005;
-
 async function check_user_cli(argv) {
   var ret = []
   var random_string = Math.random().toString(36).substring(2);
@@ -431,10 +431,15 @@ async function list_all_websites() {
   console.log('[Listing] Available websites\n' + temp_arr.join('\n'))
 }
 
+var server_host = 'localhost';
+var server_port = process.env.PORT || 9005;
+
 if (argv.grid != "") {
   helper.grid_url = argv.grid
 }
-
+if (argv.docker) {
+  server_host = '0.0.0.0'
+}
 if (argv.cli) {
   if (argv.list) {
     list_all_websites();
