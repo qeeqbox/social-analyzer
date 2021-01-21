@@ -1037,6 +1037,44 @@
     "type": "Computer & electronics"
   },
   {
+    "url": "https://codechef.com/users/{username}",
+    "detections": [
+      {
+        "return": "true",
+        "string": "user-details",
+        "type": "normal"
+      },
+      {
+        "return": "true",
+        "string": "/users/{username}",
+        "type": "normal"
+      }
+    ],
+    "selected": "false",
+    "timeout": 0,
+    "implicit": 0,
+    "type": "unavailable"
+  },
+  {
+    "url": "https://codeforces.com/profile/{username}",
+    "detections": [
+      {
+        "return": "true",
+        "string": "user-rank",
+        "type": "normal"
+      },
+      {
+        "return": "true",
+        "string": "\"/profile/{username}\"",
+        "type": "normal"
+      }
+    ],
+    "selected": "false",
+    "timeout": 0,
+    "implicit": 0,
+    "type": "unavailable"
+  },
+  {
     "url": "https://codementor.io/{username}",
     "detections": [
       {
@@ -2225,6 +2263,25 @@
     "type": "unavailable"
   },
   {
+    "url": "https://expo.io/@{username}",
+    "detections": [
+      {
+        "return": "true",
+        "string": "firstName",
+        "type": "normal"
+      },
+      {
+        "return": "true",
+        "string": "username",
+        "type": "normal"
+      }
+    ],
+    "selected": "false",
+    "timeout": 0,
+    "implicit": 0,
+    "type": "unavailable"
+  },
+  {
     "url": "https://eyeem.com/u/{username}",
     "detections": [
       {
@@ -3400,6 +3457,25 @@
     "timeout": 0,
     "implicit": 0,
     "type": "Weblog"
+  },
+  {
+    "url": "https://hackernoon.com/u/{username}",
+    "detections": [
+      {
+        "return": "true",
+        "string": "bio-text",
+        "type": "normal"
+      },
+      {
+        "return": "true",
+        "string": "\"/u/{username}\"",
+        "type": "normal"
+      }
+    ],
+    "selected": "false",
+    "timeout": 0,
+    "implicit": 0,
+    "type": "unavailable"
   },
   {
     "url": "https://hackerone.com/{username}",
@@ -7296,6 +7372,30 @@
     "timeout": 0,
     "implicit": 0,
     "type": "Social networking service"
+  },
+  {
+    "url": "https://voice.com/profile/{username}",
+    "detections": [
+      {
+        "return": "false",
+        "string": "\"name\":\"Home",
+        "type": "normal"
+      },
+      {
+        "return": "false",
+        "string": "voice-meta.jpg",
+        "type": "normal"
+      },
+      {
+        "return": "true",
+        "string": "\"noindex\"",
+        "type": "normal"
+      }
+    ],
+    "selected": "false",
+    "timeout": 0,
+    "implicit": 0,
+    "type": "unavailable"
   },
   {
     "url": "https://vsco.co/{username}",
