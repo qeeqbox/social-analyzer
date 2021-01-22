@@ -231,16 +231,17 @@ app.post("/analyze_string", async function(req, res, next) {
       user_info_special.data = await specialScan.find_username_special(req);
       helper.log_to_file_queue(req.body.uuid, "[Done] Checking user profiles special")
     }
-    if (req.body.option.includes("FindUserProfilesFast")) {
+    if (req.body.option.includes("FindUserProfilesFast") || req.body.option.includes("GetUserProfilesFast")) {
       helper.log_to_file_queue(req.body.uuid, "[Starting] Checking user profiles normal")
-      user_info_advanced.data = await fastScan.find_username_normal(req);
+      user_info_normal.data = await fastScan.find_username_normal(req);
+      console.log(user_info_normal.data)
       helper.log_to_file_queue(req.body.uuid, "[Done] Checking user profiles normal")
     }
     if (req.body.option.includes("FindUserProfilesSlow") || req.body.option.includes("ShowUserProfilesSlow")) {
       if (!req.body.option.includes("FindUserProfilesSlow")) {
-        user_info_normal.type = "show"
+        user_info_advanced.type = "show"
       } else if (!req.body.option.includes("ShowUserProfilesSlow")) {
-        user_info_normal.type = "noshow"
+        user_info_advanced.type = "noshow"
       }
       helper.log_to_file_queue(req.body.uuid, "[Starting] Checking user profiles advanced")
       user_info_normal.data = await slowScan.find_username_advanced(req);
