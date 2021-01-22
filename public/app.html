@@ -219,6 +219,18 @@
     padding-right: 2px;
   }
 
+  .selectize-dropdown .optgroup{
+    border-top: 1px solid #666666;
+  }
+
+  .optgroup-header{
+    border: none !important;
+    background-color: #383939 !important;
+    color: #d0d0d0 !important;
+    font-weight: bold;
+    font-size: 14px !important;
+  }
+
   #lookups-section,
   #possible-words-section,
   #combinations-section,
@@ -226,6 +238,7 @@
   #output-section-2,
   #output-section-3,
   #output-section-4,
+  #output-section-5,
   #most-common-words-section,
   #words-info-section,
   #custom-search-section,
@@ -580,6 +593,11 @@
   .logs {
     padding-top: 20px
   }
+
+  .user-info-container-color {
+    opacity: 0.4 !important;
+  }
+
 </style>
 
 <body>
@@ -674,20 +692,31 @@
           <input type="text" id="string-to-analyze" placeholder="Joe" />
           <div class="cell-separator"></div>
           <select name="analyzed-options" placeholder="Choose some options..." id="analyzed-options" multiple="multiple">
-            <option value="LookUps">LookUps</option>
+            <optgroup label="Name Analysis">
             <option value="WordInfo">WordInfo</option>
             <option value="MostCommon">MostCommon</option>
             <option value="FindOrigins">FindOrigins</option>
+            </optgroup>
+            <optgroup label="Find Profiles">
+            <option value="LookUps">LookUps</option>
+            <option value="CustomSearch">CustomSearch</option>
+            <option value="FindUserProfilesFast">FindUserProfilesFast</option>
+            <option value="FindUserProfilesSlow">FindUserProfilesSlow</option>
+            <option value="FindUserProfilesSpecial">FindUserProfilesSpecial</option>
+            </optgroup>
+            <optgroup label="Get Profiles">
+            <option value="GetUserProfilesFast">GetUserProfilesFast</option>
+            </optgroup>
+            <optgroup label="Show Profiles">
+            <option value="ShowUserProfilesSlow">ShowUserProfilesSlow</option>
+            </optgroup>
+            <optgroup label="Other options">
             <option value="FindNumbers">FindNumbers</option>
             <option value="FindSymbols">FindSymbols</option>
-            <option value="CustomSearch">CustomSearch</option>
             <option value="ConvertNumbers">ConvertNumbers</option>
             <option value="SplitWordsByAlphabet">SplitWordsByAlphabet</option>
             <option value="SplitWordsByUpperCase">SplitWordsByUpperCase</option>
-            <option value="FindUserProfilesFast">FindUserProfilesFast</option>
-            <option value="FindUserProfilesSlow">FindUserProfilesSlow</option>
-            <option value="ShowUserProfilesSlow">ShowUserProfilesSlow</option>
-            <option value="FindUserProfilesSpecial">FindUserProfilesSpecial</option>
+            </optgroup>
           </select>
           <div class="cell-separator"></div>
           <input type="button" id="analyze-normal" value="Analyze" />
@@ -783,7 +812,7 @@
       </div>
       <div class="box-border-style" id="output-section-4">
         <div class="div-header">
-          <div class="div-left">Detected Profiles (Special)</div>
+          <div class="div-left">All Profiles (Normal)</div>
           <div class="div-right"></div>
         </div>
         <div id="output-table-4"></div>
@@ -954,10 +983,10 @@
 
           add_table(data.table)
 
-          if (data.user_info_normal.data.length > 0) {
+          if (data.user_info_advanced.data.length > 0) {
             var temp_tr = ""
-            if (data.user_info_normal.type == "all" || data.user_info_normal.type == "noshow") {
-              data.user_info_normal.data.forEach(function(site) {
+            if (data.user_info_advanced.type == "all" || data.user_info_advanced.type == "noshow") {
+              data.user_info_advanced.data.forEach(function(site) {
                 if (site.found > 0 || site.image != "") {
                   temp_image = ""
                   if (site.image != "") {
@@ -965,21 +994,19 @@
                   }
                   temp_tr += '<div class="user-info-container"><div class="user-info-container-left"><div>Link: <a href="' + site.link + '">' + site.link + '</a></div><div>Rate: ' + site.rate + '</div><div>Title: ' + site.title +
                     '</div><div>Language: ' + site.language + '</div><div>Description: ' + site.type + '</div><div>Text: ' + site.text + '</div></div><div class="user-info-container-right">' + temp_image + '</div></div>'
-                  console.log(temp_tr)
                 }
               });
 
               $("#output-table-2").html(temp_tr)
               $('#output-section-2').show();
-            } else if (data.user_info_normal.type == "show") {
-              data.user_info_normal.data.forEach(function(site) {
+            } else if (data.user_info_advanced.type == "show") {
+              data.user_info_advanced.data.forEach(function(site) {
                 if (site.found > 0 || site.image != "") {
                   temp_image = ""
                   if (site.image != "") {
                     temp_image = '<img src=' + site.image + '>'
                   }
                   temp_tr += '<div class="profile-card"><div class="profile-card-text">Link: <a href="' + site.link + '">' + site.link + '</a></div>' + temp_image + ' </div>'
-                  console.log(temp_tr)
                 }
               });
 
@@ -988,19 +1015,33 @@
             }
           }
 
-          if (data.user_info_advanced.data.length > 0) {
+          if (data.user_info_normal.data.length > 0) {
             var temp_tr = ""
-            data.user_info_advanced.data.forEach(function(site) {
-              if (site.found > 0 || site.image != "") {
-                temp_image = ""
-                if (site.image != "") {
-                  temp_image = '<img src=' + site.image + '>'
+
+            data.user_info_normal.data.forEach(function(site) {
+              if (site.method == "both") {
+                if (site.good == "true"){
+                  temp_tr += '<div class="user-info-container"><div class="user-info-container-left"><div>Link: <a href="' + site.link + '">' + site.link + '</a></div><div>Rate: ' + site.rate + '</div><div>Title: ' + site.title +
+                    '</div><div>Language: ' + site.language + '</div><div>Description: ' + site.type + '</div><div>Text: ' + site.text + '</div></div><div class="user-info-container-right"></div></div>'
                 }
-                temp_tr += '<div class="user-info-container"><div class="user-info-container-left"><div>Link: <a href="' + site.link + '">' + site.link + '</a></div><div>Rate: ' + site.rate + '</div><div>Title: ' + site.title +
-                  '</div><div>Language: ' + site.language + '</div><div>Description: ' + site.type + '</div><div>Text: ' + site.text + '</div></div><div class="user-info-container-right">' + temp_image + '</div></div>'
-                console.log(temp_tr)
+                else{
+                  temp_tr += '<div class="user-info-container user-info-container-color"><div class="user-info-container-left"><div>Link: <a href="' + site.link + '">' + site.link + '</a></div><div>Title: ' + site.title +
+                    '</div><div>Language: ' + site.language + '</div><div>Description: ' + site.type + '</div><div>Text: ' + site.text + '</div></div><div class="user-info-container-right"></div></div>'
+                }
+              }
+              else if (site.method == "find") {
+                if(site.good == "true"){
+                  temp_tr += '<div class="user-info-container"><div class="user-info-container-left"><div>Link: <a href="' + site.link + '">' + site.link + '</a></div><div>Rate: ' + site.rate + '</div><div>Title: ' + site.title +
+                    '</div><div>Language: ' + site.language + '</div><div>Description: ' + site.type + '</div><div>Text: ' + site.text + '</div></div><div class="user-info-container-right"></div></div>'
+                }
+              }
+              else if (site.method == "get") {
+                temp_tr += '<div class="user-info-container user-info-container-color"><div class="user-info-container-left"><div>Link: <a href="' + site.link + '">' + site.link + '</a></div><div>Rate: ' + site.rate + '</div><div>Title: ' + site.title +
+                    '</div><div>Language: ' + site.language + '</div><div>Description: ' + site.type + '</div><div>Text: ' + site.text + '</div></div><div class="user-info-container-right"></div></div>'
               }
             });
+
+            console.log(temp_tr)
 
             $("#output-table-3").html(temp_tr)
             $('#output-section-3').show();
@@ -1013,7 +1054,6 @@
                 temp_image = ""
                 temp_tr += '<div class="user-info-container"><div class="user-info-container-left"><div>Link: <a href="' + site.link + '">' + site.link + '</a></div><div>Rate: ' + site.rate + '</div><div>Title: ' + site.title +
                   '</div><div>Description: ' + site.type + '</div><div>Text: ' + site.text + '</div></div><div class="user-info-container-right">' + temp_image + '</div></div>'
-                console.log(temp_tr)
               }
             });
 

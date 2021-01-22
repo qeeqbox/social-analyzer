@@ -14,6 +14,7 @@ The results from the analysis could help in investigating profiles related to su
 Make sure to download this tool from GitHub - (ONLY) ⚠️
 
 ## Updates
+- (Request) Added GetUserProfilesFast (This option will bring the profile regardless if detected or not)
 - Optimized slow scan & fast scan
 - Added Windows support
 - Added detection levels
@@ -69,7 +70,7 @@ sudo apt-get install -y firefox-esr tesseract-ocr git
 git clone https://github.com/qeeqbox/social-analyzer.git
 cd social-analyzer
 npm install lodash
-npm install --loglevel=error
+npm install
 npm start
 ```
 
@@ -80,7 +81,7 @@ Download & Install https://nodejs.org/en/download/
 Download & Extract https://github.com/qeeqbox/social-analyzer/archive/main.zip
 cd social-analyzer
 npm install lodash
-npm install --loglevel=error
+npm install
 npm start
 ```
 
@@ -92,7 +93,7 @@ sudo apt-get install -y firefox-esr tesseract-ocr git
 git clone https://github.com/qeeqbox/social-analyzer.git
 cd social-analyzer
 npm install lodash
-npm install --loglevel=error
+npm install
 # If you want to list all websites use node app.js --cli --list
 # Remember the following runs as FindUserProfilesFast
 # You can also scan all websites using --websites "all"

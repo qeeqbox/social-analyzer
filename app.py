@@ -34,6 +34,7 @@ QUEUE = Queue()
 USER_AGENT = "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:84.0) Gecko/20100101 Firefox/84.0"
 PARSED_SITES = []
 LOG = getLogger("social-analyzer")
+SITES_PATH = path.join('data','sites.json')
 
 @contextmanager
 def ignore_excpetion(*exceptions):
@@ -77,7 +78,7 @@ def setup_logger(uuid=None,file=False):
 @check_errors(True)
 def init_websites():
 	temp_list = []
-	with open("sites.json") as f:
+	with open(SITES_PATH) as f:
 		for item in load(f):
 			item["selected"] = "false"
 			temp_list.append(item)

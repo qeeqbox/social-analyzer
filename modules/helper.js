@@ -30,7 +30,9 @@ var profile_template = {
   "title": "",
   "language": "",
   "text": "",
-  "type": ""
+  "type": "",
+  "good":"",
+  "method":""
 };
 
 var detected_websites = {
