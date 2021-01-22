@@ -29,6 +29,8 @@ var argv = require('yargs')
   .describe('docker', 'allow docker')
   .default("docker", false)
   .boolean('docker')
+  .describe('method', 'find -> show detected profiles, get -> show all profiles regardless detected or not, both -> combine find & get')
+  .default("method", "all")
   .describe('grid', 'grid option, not for CLI')
   .default("grid", "")
   .help('help')
@@ -234,7 +236,6 @@ app.post("/analyze_string", async function(req, res, next) {
     if (req.body.option.includes("FindUserProfilesFast") || req.body.option.includes("GetUserProfilesFast")) {
       helper.log_to_file_queue(req.body.uuid, "[Starting] Checking user profiles normal")
       user_info_normal.data = await fastScan.find_username_normal(req);
-      console.log(user_info_normal.data)
       helper.log_to_file_queue(req.body.uuid, "[Done] Checking user profiles normal")
     }
     if (req.body.option.includes("FindUserProfilesSlow") || req.body.option.includes("ShowUserProfilesSlow")) {
@@ -264,29 +265,29 @@ app.post("/analyze_string", async function(req, res, next) {
     }
     if (req.body.option.includes("SplitWordsByUpperCase")) {
       helper.log_to_file_queue(req.body.uuid, "[Starting] Split by UpperCase")
-      await stringAnalysis.split_upper_case(req,all_words)
+      await stringAnalysis.split_upper_case(req, all_words)
       helper.log_to_file_queue(req.body.uuid, "[Done] Split by UpperCase")
     }
     if (req.body.option.includes("SplitWordsByAlphabet")) {
       helper.log_to_file_queue(req.body.uuid, "[Starting] Split by Alphabet")
-      await stringAnalysis.split_alphabet_case(req,all_words)
+      await stringAnalysis.split_alphabet_case(req, all_words)
       helper.log_to_file_queue(req.body.uuid, "[Done] Split by Alphabet")
     }
     if (req.body.option.includes("FindSymbols")) {
       helper.log_to_file_queue(req.body.uuid, "[Starting] Finding Symbols")
-      await stringAnalysis.find_symbols(req,all_words)
+      await stringAnalysis.find_symbols(req, all_words)
       helper.log_to_file_queue(req.body.uuid, "[Done] Finding Symbols")
     }
     if (req.body.option.includes("FindNumbers")) {
       helper.log_to_file_queue(req.body.uuid, "[Starting] Finding Numbers")
-      await stringAnalysis.find_numbers(req,all_words)
+      await stringAnalysis.find_numbers(req, all_words)
       helper.log_to_file_queue(req.body.uuid, "[Done] Finding Numbers")
     }
     req.body.string = req.body.string.toLowerCase();
 
     if (req.body.option.includes("ConvertNumbers")) {
       helper.log_to_file_queue(req.body.uuid, "[Starting] Convert Numbers")
-      await stringAnalysis.convert_numbers(req,all_words)
+      await stringAnalysis.convert_numbers(req, all_words)
       helper.log_to_file_queue(req.body.uuid, "[Done] Convert Numbers")
     }
 
@@ -358,23 +359,58 @@ process.on('unhandledRejection', function(err) {
   helper.verbose && console.log(pe.render(err));
 })
 
+function delete_keys(object, temp_keys) {
+  temp_keys.forEach((key) => {
+    try {
+      delete object[key]
+    } catch (err) {
+    }
+  });
+  return object
+}
+
+function clean_up_item(object,temp_keys_str){
+  delete object['image']
+  if (temp_keys_str == "") {
+    delete object['text']
+  } else {
+    Object.keys(object).forEach((key) => {
+      try {
+        if (!temp_keys_str.includes(key)){
+          delete object[key]
+        }
+      } catch (err) {
+      }
+    });
+  }
+  return object
+}
+
 async function check_user_cli(argv) {
   var ret = []
   var random_string = Math.random().toString(36).substring(2);
+  var temp_options = "GetUserProfilesFast,FindUserProfilesFast"
+  if (argv.method != "") {
+    if (argv.method == "find") {
+      temp_options = "FindUserProfilesFast"
+    } else if (argv.method == "get") {
+      temp_options = "GetUserProfilesFast"
+    }
+  }
+
   var req = {
     'body': {
       'uuid': random_string,
       'string': argv.username,
-      'option': 'FindUserProfilesFast,' + argv.output
+      'option': temp_options + argv.output
     }
   }
 
-  if (argv.websites == "all"){
+  if (argv.websites == "all") {
     await helper.parsed_sites.forEach(async function(value, i) {
-            helper.parsed_sites[i].selected = "true"
+      helper.parsed_sites[i].selected = "true"
     });
-  }
-  else{
+  } else {
     await helper.parsed_sites.forEach(async function(value, i) {
       helper.parsed_sites[i].selected = "false"
       if (argv.websites.length > 0) {
@@ -391,33 +427,56 @@ async function check_user_cli(argv) {
   if (typeof ret === 'undefined' || ret === undefined || ret.length == 0) {
     helper.log_to_file_queue(req.body.uuid, 'User does not exist (try FindUserProfilesSlow or FindUserProfilesSpecial)');
   } else {
-    var temp_detected = []
+    var temp_detected = {
+      "detected": [],
+      "unknown": []
+    }
     await ret.forEach(item => {
-      var temp_keys = {"found": 0,"link": "","rate": "","title": "","text": "","image":""};
-      if (argv.options == "")
-      {
-        delete item['text']
-        delete item['image']
-      }
-      else{
-        for (var key in temp_keys) {
-          if (!argv.options.includes(key)){
-            delete item[key]
-          }
+      var temp_keys = Object.assign({}, helper.profile_template);
+
+      if (item.method == "all") {
+        if (item.good == "true") {
+          item = delete_keys(item,['method','good'])
+          item = clean_up_item(item,argv.options)
+          temp_detected.detected.push(item)
+        } else {
+          item = delete_keys(item,['found','rate','method','good'])
+          item = clean_up_item(item,argv.options)
+          temp_detected.unknown.push(item)
         }
-      }
-
-      temp_detected.push(item)
-
-      if (argv.output == "pretty"){
-        helper.log_to_file_queue(req.body.uuid, item);
-      }
-      else if (argv.output == ""){
-        helper.log_to_file_queue(req.body.uuid, item);
+      } else if (item.method == "find") {
+        if (item.good == "true") {
+          item = delete_keys(item,['method','good'])
+          item = clean_up_item(item,argv.options)
+          temp_detected.detected.push(item)
+        }
+      } else if (item.method == "get") {
+        item = delete_keys(item,['found','rate','method','good'])
+        item = clean_up_item(item,argv.options)
+        temp_detected.unknown.push(item)
       }
     });
 
-    if (argv.output == "json"){
+    if (temp_detected.detected.length == 0) {
+      delete temp_detected["detected"];
+    }
+
+    if (temp_detected.unknown.length == 0) {
+      delete temp_detected["unknown"];
+    }
+
+    if (argv.output == "pretty" || argv.output == "") {
+      if ('detected' in temp_detected) {
+        helper.log_to_file_queue(req.body.uuid, "\n[Detected] " + temp_detected.detected.length + " Profile[s]\n");
+        helper.log_to_file_queue(req.body.uuid, temp_detected.detected, true);
+      }
+      if ('unknown' in temp_detected) {
+        helper.log_to_file_queue(req.body.uuid, "\n[Unknown] " + temp_detected.unknown.length + " Profile[s]\n");
+        helper.log_to_file_queue(req.body.uuid, temp_detected.unknown, true);
+      }
+    }
+
+    if (argv.output == "json") {
       console.log(JSON.stringify(temp_detected, null, 2))
     }
   }

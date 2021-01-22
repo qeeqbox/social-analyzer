@@ -14,11 +14,11 @@ The results from the analysis could help in investigating profiles related to su
 Make sure to download this tool from GitHub - (ONLY) ⚠️
 
 ## Updates
+- (Request) Added detection level to python & NodeJS cli
+- (Request) Added GetUserProfilesFast to python & NodeJS cli
 - (Request) Added GetUserProfilesFast (This option will bring the profile regardless if detected or not)
 - Optimized slow scan & fast scan
 - Added Windows support
-- Added detection levels
-- Added dynamic language detections for profiles
 
 ## Security Testing
 
@@ -107,7 +107,7 @@ sudo apt-get update
 sudo apt-get install -y firefox-esr tesseract-ocr git
 git clone https://github.com/qeeqbox/social-analyzer.git
 cd social-analyzer
-pip3 install lxml BeautifulSoup4 tld pygments
+pip3 install lxml BeautifulSoup4 tld pygments langdetect
 # If you want to list all websites use python3 app.py --cli --list
 # Remember the following runs as FindUserProfilesFast
 # You can also scan all websites using --websites "all"
