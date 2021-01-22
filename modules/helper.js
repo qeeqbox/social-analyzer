@@ -75,12 +75,17 @@ function get_log_file(uuid) {
   return _string
 }
 
-function log_to_file_queue(uuid, msg) {
+function log_to_file_queue(uuid, msg, json=false) {
   logs_queue = logs_queue.then(function() {
     return new Promise(function(resolve) {
       temp_log_file = slash(path.join('logs', uuid + "_log.txt"))
       fs.appendFile(temp_log_file, msg + "\n", function(err, data) {
-        console.log(msg)
+        if (json){
+          console.log(JSON.stringify(msg, null, 2))
+        }
+        else{
+          console.log(msg)
+        }
         resolve();
       });
     });

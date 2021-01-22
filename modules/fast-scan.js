@@ -89,7 +89,7 @@ async function find_username_site(uuid, username, options, site) {
         temp_profile.method = "get"
       }
       else if (options.includes("GetUserProfilesFast") && options.includes("FindUserProfilesFast")){
-        temp_profile.method = "both"
+        temp_profile.method = "all"
       }
       resolve(temp_profile);
     } catch (err) {

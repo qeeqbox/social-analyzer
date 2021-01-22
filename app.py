@@ -13,7 +13,6 @@
 
 from logging import getLogger, DEBUG, StreamHandler, Formatter
 from logging.handlers import RotatingFileHandler
-from contextlib import contextmanager
 from sys import stdout
 from os import path, makedirs
 from requests import get
@@ -29,23 +28,86 @@ from json import dumps
 from queue import Queue
 from pygments import highlight, lexers, formatters
 from re import sub as resub
+from copy import deepcopy
+from contextlib import suppress
+from langdetect import detect
 
 QUEUE = Queue()
 USER_AGENT = "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:84.0) Gecko/20100101 Firefox/84.0"
 PARSED_SITES = []
 LOG = getLogger("social-analyzer")
 SITES_PATH = path.join('data','sites.json')
+LANGUAGES_PATH = path.join('data','languages.json')
+LANGUAGES_JSON = {}
 
-@contextmanager
-def ignore_excpetion(*exceptions):
-	'''
-	catch excpetion
-	'''
+with open(LANGUAGES_PATH) as f:
+	LANGUAGES_JSON =  load(f)
+
+detection_level = {
+  "extreme": {
+	"fast": "normal",
+	"slow": "normal,advanced,ocr",
+	"detections": "true",
+	"count":1,
+	"found":2
+  },
+  "high": {
+	"fast": "normal",
+	"slow": "normal,advanced,ocr",
+	"detections": "true,false",
+	"count":2,
+	"found":1
+  },
+  "current":"high"
+}
+
+profile_template = {
+  "found": 0,
+  "image": "",
+  "link": "",
+  "rate": "",
+  "title": "",
+  "language": "",
+  "text": "",
+  "type": "",
+  "good":"",
+  "method":""
+}
+
+def delete_keys(object,keys):
+	for key in keys:
+		with suppress(Exception):
+			del object[key]
+	return object
+
+def clean_up_item(object,keys_str):
+	del object['image']
+	if keys_str == "" or keys_str == None:
+		del object['text']
+	else:
+		for key in object.copy():
+			if key not in keys_str:
+				with suppress(Exception):
+					del object[key]
+	return object
+
+def get_language_by_guessing(text):
 	try:
-		yield
-	except exceptions as error:
-		#print("{} {} {}".format(datetime.utcnow(), EXCLAMATION_MARK, error))
+		lang = detect(text)
+		if lang and lang != "":
+			return LANGUAGES_JSON[lang] + " (Maybe)"
+	except:
 		pass
+	return "unavailable"
+
+def get_language_by_parsing(source):
+	try:
+		lang = BeautifulSoup(source, 'html.parser').find('html',attrs={'lang':True})['lang']
+		if lang and lang != "":
+			return LANGUAGES_JSON[lang]
+	except:
+		pass
+	return "unavailable"
 
 def check_errors(on_off=None):
 	def decorator(func):
@@ -55,8 +117,7 @@ def check_errors(on_off=None):
 				try:
 					return func(*args, **kwargs)
 				except Exception as e:
-					pass
-					#print(e)
+					print(e)
 			else:
 				return func(*args, **kwargs)
 		return wrapper
@@ -92,102 +153,141 @@ def list_all_websites():
 			LOG.info(x)
 
 @check_errors(True)
-def find_username_normal(req, options):
+def find_username_normal(req):
 
 	@check_errors(True)
-	def fetch_url(queue, site, options):
-		if options.output != "json":
-			LOG.info("[Checking] "+ get_fld(site["url"]))
+	def fetch_url(queue, site, username, options):
+		LOG.info("[Checking] "+ get_fld(site["url"]))
 		timeout = site["timeout"] if site["timeout"] != 0 else 10
 		implicit = site["implicit"] if site["implicit"] != 0 else 5
 		detections_count = 0;
-		source = get(site["url"].replace("{username}", req["body"]["string"]), timeout=(implicit, timeout)).text
+		source = get(site["url"].replace("{username}", username), timeout=(implicit, timeout)).text
 		text_only = "unavailable";
 		title = "unavailable";
-		temp_profile = {"found": 0,"link": "","rate": "","title": "","text": ""};
+		temp_profile = deepcopy(profile_template)
 		for detection in site["detections"]:
 			temp_found = "false";
-			if detection["type"] == "normal" and source != "" and detection["return"] == "true":
+			if detection['type'] in detection_level[detection_level['current']]['fast'] and source != "":
 				detections_count += 1
-				if detection["string"].replace("{username}", req["body"]["string"]).lower() in source.lower():
+				if detection["string"].replace("{username}", username).lower() in source.lower():
 					temp_found = "true"
 				if detection["return"] == temp_found:
 					temp_profile['found'] += 1
 
-		if temp_profile["found"] > 0 and detections_count != 0:
-			with ignore_excpetion():
-				soup = BeautifulSoup(source, 'html.parser')
-				[tag.extract() for tag in soup(['head', 'title','style', 'script', '[document]'])]
-				temp_profile["text"] = soup.getText()
-				temp_profile["text"] = resub("\s\s+", " ", temp_profile["text"])
-				temp_profile["text"] = temp_profile["text"].replace("\n", "").replace("\t", "").replace("\r", "").strip()
-			with ignore_excpetion():
-				temp_profile["title"] = BeautifulSoup(source, 'html.parser').title.string
-				temp_profile["title"] = resub("\s\s+", " ", temp_profile["title"])
-				temp_profile["title"] = temp_profile["title"].replace("\n", "").replace("\t", "").replace("\r", "").strip()
-			if temp_profile["text"] == "":
-				temp_profile["text"] = "unavailable"
-			if temp_profile["title"] == "":
-				temp_profile["title"] = "unavailable"
-			temp_profile["rate"] = "%" + str(round(((temp_profile["found"] / detections_count) * 100), 2))
-			temp_profile["link"] = site["url"].replace("{username}", req["body"]["string"]);
-			copy_temp_profile = temp_profile.copy()
-			queue.put([copy_temp_profile])
-		else:
-			queue.put(None)
+		if temp_profile['found'] >= detection_level[detection_level['current']]['found'] and detections_count >= detection_level[detection_level['current']]['count']:
+			temp_profile['good'] = "true"
 
-	threads = [Thread(target=fetch_url, args=(QUEUE,site,options)) for site in PARSED_SITES if site["selected"] == "true"]
+		with suppress(Exception):
+			soup = BeautifulSoup(source, 'html.parser')
+			[tag.extract() for tag in soup(['head', 'title','style', 'script', '[document]'])]
+			temp_profile["text"] = soup.getText()
+			temp_profile["text"] = resub("\s\s+", " ", temp_profile["text"])
+			temp_profile["text"] = temp_profile["text"].replace("\n", "").replace("\t", "").replace("\r", "").strip()
+		with suppress(Exception):
+			temp_profile["language"] = get_language_by_parsing(source)
+			if temp_profile["language"] == "unavailable":
+				temp_profile["language"] = get_language_by_guessing(temp_profile["text"])
+		with suppress(Exception):
+			temp_profile["title"] = BeautifulSoup(source, 'html.parser').title.string
+			temp_profile["title"] = resub("\s\s+", " ", temp_profile["title"])
+			temp_profile["title"] = temp_profile["title"].replace("\n", "").replace("\t", "").replace("\r", "").strip()
+		if temp_profile["text"] == "":
+			temp_profile["text"] = "unavailable"
+		if temp_profile["title"] == "":
+			temp_profile["title"] = "unavailable"
+		with suppress(Exception):
+			temp_profile["rate"] = "%" + str(round(((temp_profile["found"] / detections_count) * 100), 2))
+
+		temp_profile["link"] = site["url"].replace("{username}", req["body"]["string"]);
+		temp_profile["type"] = site["type"]
+
+		if "FindUserProfilesFast" in options and "GetUserProfilesFast" not in options:
+			temp_profile['method'] = "find"
+		elif "GetUserProfilesFast" in options and "FindUserProfilesFast" not in options:
+			temp_profile['method'] = "get"
+		elif "FindUserProfilesFast" in options and "GetUserProfilesFast" in options:
+			temp_profile['method'] = "all"
+
+		copy_temp_profile = temp_profile.copy()
+		queue.put([copy_temp_profile])
+
+	threads = [Thread(target=fetch_url, args=(QUEUE,site,req["body"]["string"],req["body"]["options"])) for site in PARSED_SITES if site["selected"] == "true"]
 	for thread in threads:
 		thread.start()
 	for thread in threads:
 		thread.join()
 
 @check_errors(True)
-def check_user_cli(parsed):
-	temp_found = []
+def check_user_cli(argv):
+	temp_detected = {"detected":[],"unknown":[]}
 	temp_keys = {"found": 0,"link": "","rate": "","title": "","text": ""};
-	req = {"body": {"uuid": str(uuid4()),"string": parsed.username,"option": "FindUserProfilesFast"}}
+	temp_options = "GetUserProfilesFast,FindUserProfilesFast"
+	if argv.method != "":
+		if argv.method == "find":
+			temp_options = "FindUserProfilesFast"
+		if argv.method == "get":
+			temp_options = "GetUserProfilesFast"
+
+	req = {"body": {"uuid": str(uuid4()),"string": argv.username,"options": temp_options}}
+
 	setup_logger(req["body"]["uuid"],True)
 
-	if parsed.websites == "all":
+	if argv.websites == "all":
 		for site in PARSED_SITES:
 			site["selected"] = "true"
 	else:
 		for site in PARSED_SITES:
-			for temp in parsed.websites.split(" "):
+			for temp in argv.websites.split(" "):
 				if temp in site["url"]:
 					site["selected"] = "true"
-	find_username_normal(req, parsed)
+
+	find_username_normal(req)
+
 	while not QUEUE.empty():
 		items = QUEUE.get()
 		if items != None:
 			for item in items:
 				if item != None:
-					if parsed.options == "" or parsed.options == None:
-						del item['text']
-					else:
-						for key in temp_keys:
-							if key not in parsed.options:
-								with ignore_excpetion():
-									del item[key]
-					temp_found.append(item)
-	if len(temp_found) == 0:
-		if parsed.output != "json":
-			LOG.info('User does not exist (try FindUserProfilesSlow or FindUserProfilesSpecial) in the web app version')
-	else:
-		if parsed.output == "json":
-			print(dumps(temp_found, sort_keys=True, indent=None))
-		elif parsed.output == "pretty":
-			LOG.info('[Total Profiles Found] {}\n'.format(len(temp_found)))
-			for item in temp_found:
+					if item['method'] == "all":
+						if item['good'] == "true":
+							item = delete_keys(item,['method','good'])
+							item = clean_up_item(item,argv.options)
+							temp_detected['detected'].append(item)
+						else:
+							item = delete_keys(item,['found','rate','method','good'])
+							item = clean_up_item(item,argv.options)
+							temp_detected['unknown'].append(item)
+					elif item['method'] == "find":
+						if item['good'] == "true":
+							item = delete_keys(item,['method','good'])
+							item = clean_up_item(item,argv.options)
+							temp_detected['detected'].append(item)
+					elif item['method'] == "get":
+						item = delete_keys(item,['found','rate','method','good'])
+						item = clean_up_item(item,argv.options)
+						temp_detected['unknown'].append(item)
+
+	if len(temp_detected['detected']) == 0:
+	   del temp_detected["detected"]
+
+	if len(temp_detected['unknown']) == 0:
+	   del temp_detected["unknown"];
+
+	if argv.output == "pretty" or argv.output == "":
+		if 'detected' in temp_detected:
+			LOG.info("\n[Detected] {} Profile[s]\n".format(len(temp_detected['detected'])));
+			for item in temp_detected['detected']:
 				LOG.info(highlight(dumps(item, sort_keys=True, indent=4), lexers.JsonLexer(), formatters.TerminalFormatter()))
-		else:
-			LOG.info('[Total Profiles Found ] {}\n'.format(len(temp_found)))
-			for item in temp_found:
-				LOG.info(item)
+		if 'unknown' in temp_detected:
+			LOG.info("\n[unknown] {} Profile[s]\n".format(len(temp_detected['unknown'])));
+			for item in temp_detected['unknown']:
+				LOG.info(highlight(dumps(item, sort_keys=True, indent=4), lexers.JsonLexer(), formatters.TerminalFormatter()))
+
+	if argv.output == "json":
+		print(dumps(temp_detected, sort_keys=True, indent=None))
 
 def msg(name=None):
-	return '''app.py --cli --mode "fast" --username "johndoe" --websites "youtube tiktok"'''
+	return '''python3 app.py --cli --mode "fast" --username "johndoe" --websites "youtube pinterest tumblr" --output "pretty"'''
 
 PARSED_SITES = init_websites()
 arg_parser = ArgumentParser(description="Qeeqbox/social-analyzer - API and Web App for analyzing & finding a person profile across 300+ social media websites (Detections are updated regularly)",usage=msg())
@@ -200,17 +300,18 @@ arg_parser_required.add_argument("--mode", help="Analysis mode E.g.fast -> FindU
 arg_parser_optional = arg_parser.add_argument_group('Optional Arguments')
 arg_parser_optional.add_argument("--output", help="Show the output in the following format: json -> json output for integration or pretty -> prettify the output", metavar="", default="")
 arg_parser_optional.add_argument("--options", help="Show the following when a profile is found: link, rate, title or text", metavar="", default="")
+arg_parser_required.add_argument("--method", help="find -> show detected profiles, get -> show all profiles regardless detected or not, both -> combine find & get", metavar="", default="all")
 arg_parser_list = arg_parser.add_argument_group('Listing websites & detections')
 arg_parser_list.add_argument("--list", action="store_true",  help="List all available websites")
-parsed = arg_parser.parse_args()
+argv = arg_parser.parse_args()
 
-if parsed.output != "json":
+if argv.output != "json":
 	print("[!] Detections are updated every often, make sure to get the most updated ones")
 
-if parsed.cli:
-	if parsed.list:
+if argv.cli:
+	if argv.list:
 		setup_logger()
 		list_all_websites()
-	elif parsed.mode == "fast":
-		if parsed.username != "" and parsed.websites != "":
-			check_user_cli(parsed)
+	elif argv.mode == "fast":
+		if argv.username != "" and argv.websites != "":
+			check_user_cli(argv)
