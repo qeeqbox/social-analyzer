@@ -244,7 +244,7 @@ app.post("/analyze_string", async function(req, res, next) {
         user_info_advanced.type = "noshow"
       }
       helper.log_to_file_queue(req.body.uuid, "[Starting] Checking user profiles advanced")
-      user_info_normal.data = await slowScan.find_username_advanced(req);
+      user_info_advanced.data = await slowScan.find_username_advanced(req);
       helper.log_to_file_queue(req.body.uuid, "[Done] Checking user profiles advanced")
     }
     if (req.body.option.includes("LookUps")) {
