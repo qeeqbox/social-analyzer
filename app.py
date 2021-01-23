@@ -236,9 +236,10 @@ def find_username_normal(req):
 		return None,site["url"],[]
 
 	for i in range(3):
+		PARSED_SITES[:] = [d for d in PARSED_SITES if d.get('selected') == "true"]
 		if len(PARSED_SITES) > 0:
 			with ThreadPoolExecutor(max_workers=WORKERS) as executor:
-				future_fetch_url = (executor.submit(fetch_url, site, req["body"]["string"],req["body"]["options"]) for site in PARSED_SITES if site["selected"] == "true")
+				future_fetch_url = (executor.submit(fetch_url, site, req["body"]["string"],req["body"]["options"]) for site in PARSED_SITES)
 				for future in as_completed(future_fetch_url):
 					try:
 						good, site, data = future.result()
@@ -252,6 +253,7 @@ def find_username_normal(req):
 
 
 	if len(PARSED_SITES) > 0:
+		PARSED_SITES[:] = [d for d in PARSED_SITES if d.get('selected') == "true"]
 		for site in PARSED_SITES:
 			temp_profile = {
 							  "found": 0,
