@@ -41,7 +41,7 @@ LOG = getLogger("social-analyzer")
 SITES_PATH = path.join("data","sites.json")
 LANGUAGES_PATH = path.join("data","languages.json")
 LANGUAGES_JSON = {}
-WORKERS = 5
+WORKERS = 15
 
 with open(LANGUAGES_PATH) as f:
 	LANGUAGES_JSON =  load(f)
@@ -53,9 +53,11 @@ def delete_keys(object,keys):
 	return object
 
 def clean_up_item(object,keys_str):
-	del object["image"]
+	with suppress(Exception):
+		del object["image"]
 	if keys_str == "" or keys_str == None:
-		del object["text"]
+		with suppress(Exception):
+			del object["text"]
 	else:
 		for key in object.copy():
 			if key not in keys_str:
@@ -118,6 +120,11 @@ def init_websites():
 			temp_list.append(item)
 	return temp_list
 
+def get_website(site):
+	x = get_fld(site, fix_protocol=True)
+	x = x.replace(".{username}","").replace("{username}.","")
+	return x
+
 def list_all_websites():
 	if len(PARSED_SITES) > 0:
 		for site in PARSED_SITES:
@@ -172,74 +179,101 @@ def find_username_normal(req):
 		}
 
 
-		with suppress(Exception):
+		try:
 			response = get(site["url"].replace("{username}", username), timeout=5, headers=headers, verify=False)
 			source = response.text
 			response.close()
+			text_only = "unavailable";
+			title = "unavailable";
 
-		text_only = "unavailable";
-		title = "unavailable";
+			for detection in site["detections"]:
+				temp_found = "false";
+				if detection["type"] in detection_level[detection_level["current"]]["fast"] and source != "":
+					detections_count += 1
+					if detection["string"].replace("{username}", username).lower() in source.lower():
+						temp_found = "true"
+					if detection["return"] == temp_found:
+						temp_profile["found"] += 1
 
-		for detection in site["detections"]:
-			temp_found = "false";
-			if detection["type"] in detection_level[detection_level["current"]]["fast"] and source != "":
-				detections_count += 1
-				if detection["string"].replace("{username}", username).lower() in source.lower():
-					temp_found = "true"
-				if detection["return"] == temp_found:
-					temp_profile["found"] += 1
+			if temp_profile["found"] >= detection_level[detection_level["current"]]["found"] and detections_count >= detection_level[detection_level["current"]]["count"]:
+				temp_profile["good"] = "true"
 
-		if temp_profile["found"] >= detection_level[detection_level["current"]]["found"] and detections_count >= detection_level[detection_level["current"]]["count"]:
-			temp_profile["good"] = "true"
+			with suppress(Exception):
+				soup = BeautifulSoup(source, "html.parser")
+				[tag.extract() for tag in soup(["head", "title","style", "script", "[document]"])]
+				temp_profile["text"] = soup.getText()
+				temp_profile["text"] = resub("\s\s+", " ", temp_profile["text"])
+				temp_profile["text"] = temp_profile["text"].replace("\n", "").replace("\t", "").replace("\r", "").strip()
+			with suppress(Exception):
+				temp_profile["language"] = get_language_by_parsing(source)
+				if temp_profile["language"] == "unavailable":
+					temp_profile["language"] = get_language_by_guessing(temp_profile["text"])
+			with suppress(Exception):
+				temp_profile["title"] = BeautifulSoup(source, "html.parser").title.string
+				temp_profile["title"] = resub("\s\s+", " ", temp_profile["title"])
+				temp_profile["title"] = temp_profile["title"].replace("\n", "").replace("\t", "").replace("\r", "").strip()
+			if temp_profile["text"] == "":
+				temp_profile["text"] = "unavailable"
+			with suppress(Exception):	
+				if detections_count != 0:
+					temp_profile["rate"] = "%" + str(round(((temp_profile["found"] / detections_count) * 100), 2))
 
-		with suppress(Exception):
-			soup = BeautifulSoup(source, "html.parser")
-			[tag.extract() for tag in soup(["head", "title","style", "script", "[document]"])]
-			temp_profile["text"] = soup.getText()
-			temp_profile["text"] = resub("\s\s+", " ", temp_profile["text"])
-			temp_profile["text"] = temp_profile["text"].replace("\n", "").replace("\t", "").replace("\r", "").strip()
-		with suppress(Exception):
-			temp_profile["language"] = get_language_by_parsing(source)
-			if temp_profile["language"] == "unavailable":
-				temp_profile["language"] = get_language_by_guessing(temp_profile["text"])
-		with suppress(Exception):
-			temp_profile["title"] = BeautifulSoup(source, "html.parser").title.string
-			temp_profile["title"] = resub("\s\s+", " ", temp_profile["title"])
-			temp_profile["title"] = temp_profile["title"].replace("\n", "").replace("\t", "").replace("\r", "").strip()
-		if temp_profile["text"] == "":
-			temp_profile["text"] = "unavailable"
-		if temp_profile["title"] == "":
-			temp_profile["title"] = "unavailable"
-		with suppress(Exception):	
-			if detections_count != 0:
-				temp_profile["rate"] = "%" + str(round(((temp_profile["found"] / detections_count) * 100), 2))
+			temp_profile["link"] = site["url"].replace("{username}", req["body"]["string"]);
+			temp_profile["type"] = site["type"]
 
-		temp_profile["link"] = site["url"].replace("{username}", req["body"]["string"]);
-		temp_profile["type"] = site["type"]
+			if "FindUserProfilesFast" in options and "GetUserProfilesFast" not in options:
+				temp_profile["method"] = "find"
+			elif "GetUserProfilesFast" in options and "FindUserProfilesFast" not in options:
+				temp_profile["method"] = "get"
+			elif "FindUserProfilesFast" in options and "GetUserProfilesFast" in options:
+				temp_profile["method"] = "all"
 
-		if "FindUserProfilesFast" in options and "GetUserProfilesFast" not in options:
-			temp_profile["method"] = "find"
-		elif "GetUserProfilesFast" in options and "FindUserProfilesFast" not in options:
-			temp_profile["method"] = "get"
-		elif "FindUserProfilesFast" in options and "GetUserProfilesFast" in options:
-			temp_profile["method"] = "all"
+			copy_temp_profile = temp_profile.copy()
+			return 1,site["url"], copy_temp_profile
+		except Exception as e:
+			pass
 
-		copy_temp_profile = temp_profile.copy()
-		return copy_temp_profile
+		return None,site["url"],[]
 
-	with ThreadPoolExecutor(max_workers=WORKERS) as executor:
-		future_fetch_url = (executor.submit(fetch_url, site, req["body"]["string"],req["body"]["options"]) for site in PARSED_SITES if site["selected"] == "true")
-		for future in as_completed(future_fetch_url):
-			try:
-				data = future.result()
-				resutls.append(future.result())
-			except Exception as e:
-				pass
+	for i in range(3):
+		if len(PARSED_SITES) > 0:
+			with ThreadPoolExecutor(max_workers=WORKERS) as executor:
+				future_fetch_url = (executor.submit(fetch_url, site, req["body"]["string"],req["body"]["options"]) for site in PARSED_SITES if site["selected"] == "true")
+				for future in as_completed(future_fetch_url):
+					try:
+						good, site, data = future.result()
+						if good:
+							PARSED_SITES[:] = [d for d in PARSED_SITES if d.get('url') != site]
+							resutls.append(data)
+						else:
+							LOG.info("[Waiting to retry] "+ get_website(site))
+					except Exception as e:
+						pass
+
+
+	if len(PARSED_SITES) > 0:
+		for site in PARSED_SITES:
+			temp_profile = {
+							  "found": 0,
+							  "image": "",
+							  "link": "",
+							  "rate": "",
+							  "title": "unavailable",
+							  "language": "unavailable",
+							  "text": "unavailable",
+							  "type": "",
+							  "good":"",
+							  "method":""
+							}
+			temp_profile["link"] = site["url"].replace("{username}", req["body"]["string"]);
+			temp_profile["type"] = site["type"]
+			resutls.append(temp_profile)
+
 	return resutls
 
 @check_errors(True)
 def check_user_cli(argv):
-	temp_detected = {"detected":[],"unknown":[]}
+	temp_detected = {"detected":[],"unknown":[],"failed":[]}
 	temp_keys = {"found": 0,"link": "","rate": "","title": "","text": ""};
 	temp_options = "GetUserProfilesFast,FindUserProfilesFast"
 	if argv.method != "":
@@ -282,12 +316,19 @@ def check_user_cli(argv):
 				item = delete_keys(item,["found","rate","method","good"])
 				item = clean_up_item(item,argv.options)
 				temp_detected["unknown"].append(item)
+			else:
+				item = delete_keys(item,["found","rate","method","good","text","title","language","rate"])
+				item = clean_up_item(item,argv.options)
+				temp_detected["failed"].append(item)
 
 	if len(temp_detected["detected"]) == 0:
 	   del temp_detected["detected"]
 
 	if len(temp_detected["unknown"]) == 0:
 	   del temp_detected["unknown"];
+
+	if len(temp_detected["failed"]) == 0:
+	   del temp_detected["failed"];
 
 	if argv.output == "pretty" or argv.output == "":
 		if 'detected' in temp_detected:
@@ -298,7 +339,11 @@ def check_user_cli(argv):
 			LOG.info("\n[unknown] {} Profile[s]\n".format(len(temp_detected['unknown'])));
 			for item in temp_detected['unknown']:
 				LOG.info(highlight(dumps(item, sort_keys=True, indent=4), lexers.JsonLexer(), formatters.TerminalFormatter()))
-	
+		if 'failed' in temp_detected:
+			LOG.info("\n[failed] {} Profile[s]\n".format(len(temp_detected['failed'])));
+			for item in temp_detected['failed']:
+				LOG.info(highlight(dumps(item, sort_keys=True, indent=4), lexers.JsonLexer(), formatters.TerminalFormatter()))
+
 	if argv.output == "json":
 		print(dumps(temp_detected, sort_keys=True, indent=None))
 

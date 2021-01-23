@@ -14,12 +14,10 @@ The results from the analysis could help in investigating profiles related to su
 Make sure to download this tool from GitHub - (ONLY) ⚠️
 
 ## Updates
-- (Request) changed workers to 5 (If your system hardware & internet connection is great, change this to higher value - I will be adding an option to change it in the next update)
+- Added retry & failed logics profiles to Python CLI (This will show websites that failed to connect)
 - (Request) Added detection level to python & NodeJS cli
 - (Request) Added GetUserProfilesFast to python & NodeJS cli
 - (Request) Added GetUserProfilesFast (This option will bring the profile regardless if detected or not)
-- Optimized slow scan & fast scan
-- Added Windows support
 
 ## Security Testing
 
@@ -56,6 +54,7 @@ Profile images **will not** be blurred. If you want them to be blurred, turn tha
 - Python CLI & NodeJS CLI (limited to FindUserProfilesFast option)
 - Grid option for faster checking (limited to docker-compose)
 - Dump logs to folder or terminal (prettified)
+- Adjust finding\getting profile workers (default 15)
 - [Wiki](https://github.com/qeeqbox/social-analyzer/wiki)
 
 ## Special Detections
