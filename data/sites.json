@@ -7689,7 +7689,7 @@
       },
       {
         "return": "false",
-        "string": "This page isn't available",
+        "string": "404 Not Found",
         "type": "normal"
       },
       {
