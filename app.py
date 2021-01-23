@@ -15,8 +15,7 @@ from logging import getLogger, DEBUG, StreamHandler, Formatter
 from logging.handlers import RotatingFileHandler
 from sys import stdout
 from os import path, makedirs
-from requests import get
-from threading import Thread
+from requests import get, packages
 from time import time
 from argparse import ArgumentParser
 from json import load
@@ -31,6 +30,10 @@ from re import sub as resub
 from copy import deepcopy
 from contextlib import suppress
 from langdetect import detect
+from urllib3.exceptions import InsecureRequestWarning
+from concurrent.futures import ThreadPoolExecutor, as_completed
+
+packages.urllib3.disable_warnings(category=InsecureRequestWarning)
 
 QUEUE = Queue()
 USER_AGENT = "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:84.0) Gecko/20100101 Firefox/84.0"
@@ -39,6 +42,7 @@ LOG = getLogger("social-analyzer")
 SITES_PATH = path.join('data','sites.json')
 LANGUAGES_PATH = path.join('data','languages.json')
 LANGUAGES_JSON = {}
+WORKERS = 5
 
 with open(LANGUAGES_PATH) as f:
 	LANGUAGES_JSON =  load(f)
@@ -155,13 +159,16 @@ def list_all_websites():
 @check_errors(True)
 def find_username_normal(req):
 
-	@check_errors(True)
-	def fetch_url(queue, site, username, options):
+	resutls = []
+
+	def fetch_url(site, username, options):
 		LOG.info("[Checking] "+ get_fld(site["url"]))
 		timeout = site["timeout"] if site["timeout"] != 0 else 10
 		implicit = site["implicit"] if site["implicit"] != 0 else 5
 		detections_count = 0;
-		source = get(site["url"].replace("{username}", username), timeout=(implicit, timeout)).text
+		source = ""
+		with suppress(Exception):
+			source = get(site["url"].replace("{username}", username), timeout=(implicit, timeout)).text
 		text_only = "unavailable";
 		title = "unavailable";
 		temp_profile = deepcopy(profile_template)
@@ -209,13 +216,17 @@ def find_username_normal(req):
 			temp_profile['method'] = "all"
 
 		copy_temp_profile = temp_profile.copy()
-		queue.put([copy_temp_profile])
+		return copy_temp_profile
 
-	threads = [Thread(target=fetch_url, args=(QUEUE,site,req["body"]["string"],req["body"]["options"])) for site in PARSED_SITES if site["selected"] == "true"]
-	for thread in threads:
-		thread.start()
-	for thread in threads:
-		thread.join()
+	with ThreadPoolExecutor(max_workers=WORKERS) as executor:
+		future_fetch_url = (executor.submit(fetch_url, site, req["body"]["string"],req["body"]["options"]) for site in PARSED_SITES if site["selected"] == "true")
+		for future in as_completed(future_fetch_url):
+			try:
+				data = future.result()
+				resutls.append(future.result())
+			except Exception as exc:
+				pass
+	return resutls
 
 @check_errors(True)
 def check_user_cli(argv):
@@ -229,7 +240,6 @@ def check_user_cli(argv):
 			temp_options = "GetUserProfilesFast"
 
 	req = {"body": {"uuid": str(uuid4()),"string": argv.username,"options": temp_options}}
-
 	setup_logger(req["body"]["uuid"],True)
 
 	if argv.websites == "all":
@@ -241,31 +251,27 @@ def check_user_cli(argv):
 				if temp in site["url"]:
 					site["selected"] = "true"
 
-	find_username_normal(req)
-
-	while not QUEUE.empty():
-		items = QUEUE.get()
-		if items != None:
-			for item in items:
-				if item != None:
-					if item['method'] == "all":
-						if item['good'] == "true":
-							item = delete_keys(item,['method','good'])
-							item = clean_up_item(item,argv.options)
-							temp_detected['detected'].append(item)
-						else:
-							item = delete_keys(item,['found','rate','method','good'])
-							item = clean_up_item(item,argv.options)
-							temp_detected['unknown'].append(item)
-					elif item['method'] == "find":
-						if item['good'] == "true":
-							item = delete_keys(item,['method','good'])
-							item = clean_up_item(item,argv.options)
-							temp_detected['detected'].append(item)
-					elif item['method'] == "get":
-						item = delete_keys(item,['found','rate','method','good'])
-						item = clean_up_item(item,argv.options)
-						temp_detected['unknown'].append(item)
+	resutls = find_username_normal(req)
+	for item in resutls:
+		if item != None:
+			if item['method'] == "all":
+				if item['good'] == "true":
+					item = delete_keys(item,['method','good'])
+					item = clean_up_item(item,argv.options)
+					temp_detected['detected'].append(item)
+				else:
+					item = delete_keys(item,['found','rate','method','good'])
+					item = clean_up_item(item,argv.options)
+					temp_detected['unknown'].append(item)
+			elif item['method'] == "find":
+				if item['good'] == "true":
+					item = delete_keys(item,['method','good'])
+					item = clean_up_item(item,argv.options)
+					temp_detected['detected'].append(item)
+			elif item['method'] == "get":
+				item = delete_keys(item,['found','rate','method','good'])
+				item = clean_up_item(item,argv.options)
+				temp_detected['unknown'].append(item)
 
 	if len(temp_detected['detected']) == 0:
 	   del temp_detected["detected"]
