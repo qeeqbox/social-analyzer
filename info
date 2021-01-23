@@ -9,6 +9,6 @@
  "windows":"pass",
  "docker":"pass",
  "full_scan":"15 workers < 30secs",
- "max retries":"3",
+ "max_retries":"3",
  "awaiting_verification":"22",
  "auto_testing":"f4807195-cd53-47a4-aed4-de6c9bee938e"}
