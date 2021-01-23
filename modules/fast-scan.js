@@ -20,7 +20,7 @@ async function find_username_normal(req) {
       functions.push(find_username_site.bind(null, req.body.uuid, req.body.string, req.body.option, site));
     }
   });
-  const results = await async.parallelLimit(functions, 25);
+  const results = await async.parallelLimit(functions, 5);
   helper.verbose && console.log(`Total time ${new Date() - time}`);
   return results.filter(item => item !== undefined)
 }

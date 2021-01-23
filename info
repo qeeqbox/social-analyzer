@@ -1,4 +1,4 @@
-{"version":"2021.V.2.18",
+{"version":"2021.V.2.19",
  "build":"pass",
  "test":"pass",
  "grid_test":"pass",
@@ -8,6 +8,6 @@
  "linux":"pass",
  "windows":"pass",
  "docker":"pass",
- "full_scan":"2-14s",
+ "full_scan":"5 workers < ~1 min:",
  "awaiting_verification":"22",
- "auto_testing":"77b81f74-8b23-43f5-97c1-0f45e69aa8a0"}
+ "auto_testing":"621b9b6e-6af7-48fc-b081-9a94f8fd2542"}
