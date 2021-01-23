@@ -252,8 +252,8 @@ def find_username_normal(req):
 						pass
 
 
+	PARSED_SITES[:] = [d for d in PARSED_SITES if d.get('selected') == "true"]
 	if len(PARSED_SITES) > 0:
-		PARSED_SITES[:] = [d for d in PARSED_SITES if d.get('selected') == "true"]
 		for site in PARSED_SITES:
 			temp_profile = {
 							  "found": 0,
@@ -270,7 +270,6 @@ def find_username_normal(req):
 			temp_profile["link"] = site["url"].replace("{username}", req["body"]["string"]);
 			temp_profile["type"] = site["type"]
 			resutls.append(temp_profile)
-
 	return resutls
 
 @check_errors(True)
