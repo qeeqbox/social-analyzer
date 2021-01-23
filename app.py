@@ -136,7 +136,6 @@ def find_username_normal(req):
 		implicit = site["implicit"] if site["implicit"] != 0 else 5
 		detections_count = 0;
 		source = ""
-		print(timeout,implicit)
 		with suppress(Exception):
 			source = get(site["url"].replace("{username}", username), timeout=(implicit, timeout)).text
 		text_only = "unavailable";
