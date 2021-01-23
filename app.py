@@ -41,7 +41,7 @@ LOG = getLogger("social-analyzer")
 SITES_PATH = path.join("data","sites.json")
 LANGUAGES_PATH = path.join("data","languages.json")
 LANGUAGES_JSON = {}
-WORKERS = 15
+WORKERS = 5
 
 with open(LANGUAGES_PATH) as f:
 	LANGUAGES_JSON =  load(f)
@@ -173,7 +173,10 @@ def find_username_normal(req):
 
 
 		with suppress(Exception):
-			source = get(site["url"].replace("{username}", username), timeout=5, headers=headers).text
+			response = get(site["url"].replace("{username}", username), timeout=5, headers=headers, verify=False)
+			source = response.text
+			response.close()
+
 		text_only = "unavailable";
 		title = "unavailable";
 
@@ -207,8 +210,9 @@ def find_username_normal(req):
 			temp_profile["text"] = "unavailable"
 		if temp_profile["title"] == "":
 			temp_profile["title"] = "unavailable"
-		with suppress(Exception):
-			temp_profile["rate"] = "%" + str(round(((temp_profile["found"] / detections_count) * 100), 2))
+		with suppress(Exception):	
+			if detections_count != 0:
+				temp_profile["rate"] = "%" + str(round(((temp_profile["found"] / detections_count) * 100), 2))
 
 		temp_profile["link"] = site["url"].replace("{username}", req["body"]["string"]);
 		temp_profile["type"] = site["type"]
@@ -229,7 +233,7 @@ def find_username_normal(req):
 			try:
 				data = future.result()
 				resutls.append(future.result())
-			except Exception as exc:
+			except Exception as e:
 				pass
 	return resutls
 
