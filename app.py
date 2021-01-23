@@ -47,37 +47,6 @@ WORKERS = 5
 with open(LANGUAGES_PATH) as f:
 	LANGUAGES_JSON =  load(f)
 
-detection_level = {
-  "extreme": {
-	"fast": "normal",
-	"slow": "normal,advanced,ocr",
-	"detections": "true",
-	"count":1,
-	"found":2
-  },
-  "high": {
-	"fast": "normal",
-	"slow": "normal,advanced,ocr",
-	"detections": "true,false",
-	"count":2,
-	"found":1
-  },
-  "current":"high"
-}
-
-profile_template = {
-  "found": 0,
-  "image": "",
-  "link": "",
-  "rate": "",
-  "title": "",
-  "language": "",
-  "text": "",
-  "type": "",
-  "good":"",
-  "method":""
-}
-
 def delete_keys(object,keys):
 	for key in keys:
 		with suppress(Exception):
@@ -167,11 +136,43 @@ def find_username_normal(req):
 		implicit = site["implicit"] if site["implicit"] != 0 else 5
 		detections_count = 0;
 		source = ""
+		print(timeout,implicit)
 		with suppress(Exception):
 			source = get(site["url"].replace("{username}", username), timeout=(implicit, timeout)).text
 		text_only = "unavailable";
 		title = "unavailable";
-		temp_profile = deepcopy(profile_template)
+
+		detection_level = {
+		  "extreme": {
+			"fast": "normal",
+			"slow": "normal,advanced,ocr",
+			"detections": "true",
+			"count":1,
+			"found":2
+		  },
+		  "high": {
+			"fast": "normal",
+			"slow": "normal,advanced,ocr",
+			"detections": "true,false",
+			"count":2,
+			"found":1
+		  },
+		  "current":"high"
+		}
+
+		temp_profile = {
+		  "found": 0,
+		  "image": "",
+		  "link": "",
+		  "rate": "",
+		  "title": "",
+		  "language": "",
+		  "text": "",
+		  "type": "",
+		  "good":"",
+		  "method":""
+		}
+
 		for detection in site["detections"]:
 			temp_found = "false";
 			if detection['type'] in detection_level[detection_level['current']]['fast'] and source != "":
@@ -252,6 +253,7 @@ def check_user_cli(argv):
 					site["selected"] = "true"
 
 	resutls = find_username_normal(req)
+
 	for item in resutls:
 		if item != None:
 			if item['method'] == "all":
