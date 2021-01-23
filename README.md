@@ -14,7 +14,7 @@ The results from the analysis could help in investigating profiles related to su
 Make sure to download this tool from GitHub - (ONLY) ⚠️
 
 ## Updates
-- (Request) changed workers to 5 (If your system hardware & internet connection is great, change this to higher value - I will be adding an option to change it in the next update)'
+- (Request) changed workers to 5 (If your system hardware & internet connection is great, change this to higher value - I will be adding an option to change it in the next update)
 - (Request) Added detection level to python & NodeJS cli
 - (Request) Added GetUserProfilesFast to python & NodeJS cli
 - (Request) Added GetUserProfilesFast (This option will bring the profile regardless if detected or not)
