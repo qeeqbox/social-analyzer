@@ -17,7 +17,7 @@ Make sure to download this tool from GitHub - (ONLY) ⚠️
 * API, CLIs & Web App produce:
     * [Detected] -> 0 to 100 (No-Maybe-Yes)
     * [Unknown]  -> Detection did not meet the requirement
-    * [Failed]   -> Profile website did not respond)
+    * [Failed]   -> Profile website did not respond
 
 ## Security Testing
 
