@@ -11,7 +11,8 @@ This project *is currently used by some law enforcement agencies in countries wh
 
 The results from the analysis could help in investigating profiles related to suspicious or malicious activities such as [cyberbullying](https://en.wikipedia.org/wiki/Wikipedia:Cyberbullying), [cybergrooming](https://de.wikipedia.org/wiki/Cyber-Grooming), [cyberstalking](https://en.wikipedia.org/wiki/Cyberstalking), and [spreading misinformation](https://en.wikipedia.org/wiki/Misinformation)
 
-Make sure to download this tool from GitHub - (ONLY) ⚠️
+Make sure to download this tool from GitHub - (ONLY) ⚠️  
+**All Pull Requests are welcomed!**
 
 ## Updates
 * API, CLIs & Web App produce:
