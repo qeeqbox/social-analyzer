@@ -166,6 +166,7 @@ async function get_url_wrapper_json(url, time = 5) {
 }
 
 async function get_url_wrapper_text(url, time = 5) {
+  response_body = "error-get-url"
   try {
     let http_promise = new Promise((resolve, reject) => {
       var request = https.get(url, header_options, function(res) {
@@ -193,6 +194,7 @@ async function get_url_wrapper_text(url, time = 5) {
     return response_body
   } catch (err) {
     verbose && console.log(err);
+    return response_body
   }
 }
 

@@ -429,7 +429,8 @@ async function check_user_cli(argv) {
   } else {
     var temp_detected = {
       "detected": [],
-      "unknown": []
+      "unknown": [],
+      "failed": []
     }
     await ret.forEach(item => {
       var temp_keys = Object.assign({}, helper.profile_template);
@@ -454,6 +455,10 @@ async function check_user_cli(argv) {
         item = delete_keys(item,['found','rate','method','good'])
         item = clean_up_item(item,argv.options)
         temp_detected.unknown.push(item)
+      } else if (item.method == "failed") {
+        item = delete_keys(item,['found','rate','method','good','text','language','title','type'])
+        item = clean_up_item(item,argv.options)
+        temp_detected.failed.push(item)
       }
     });
 
@@ -465,6 +470,10 @@ async function check_user_cli(argv) {
       delete temp_detected["unknown"];
     }
 
+    if (temp_detected.failed.length == 0) {
+      delete temp_detected["failed"];
+    }
+
     if (argv.output == "pretty" || argv.output == "") {
       if ('detected' in temp_detected) {
         helper.log_to_file_queue(req.body.uuid, "\n[Detected] " + temp_detected.detected.length + " Profile[s]\n");
@@ -473,6 +482,10 @@ async function check_user_cli(argv) {
       if ('unknown' in temp_detected) {
         helper.log_to_file_queue(req.body.uuid, "\n[Unknown] " + temp_detected.unknown.length + " Profile[s]\n");
         helper.log_to_file_queue(req.body.uuid, temp_detected.unknown, true);
+      }
+      if ('failed' in temp_detected) {
+        helper.log_to_file_queue(req.body.uuid, "\n[failed] " + temp_detected.failed.length + " Profile[s]\n");
+        helper.log_to_file_queue(req.body.uuid, temp_detected.failed, true);
       }
     }
 

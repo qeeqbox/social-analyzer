@@ -14,10 +14,10 @@ The results from the analysis could help in investigating profiles related to su
 Make sure to download this tool from GitHub - (ONLY) ⚠️
 
 ## Updates
-- Added retry & failed logics profiles to Python CLI (This will show websites that failed to connect)
-- (Request) Added detection level to python & NodeJS cli
-- (Request) Added GetUserProfilesFast to python & NodeJS cli
-- (Request) Added GetUserProfilesFast (This option will bring the profile regardless if detected or not)
+- API, CLIs & Web App produce:
+- - [Detected] -> 0 to 100 (No-Maybe-Yes)
+- - [Unknown]  -> Detection did not meet the requirement
+- - [Failed]   -> Profile website did not respond)
 
 ## Security Testing
 
@@ -55,6 +55,7 @@ Profile images **will not** be blurred. If you want them to be blurred, turn tha
 - Grid option for faster checking (limited to docker-compose)
 - Dump logs to folder or terminal (prettified)
 - Adjust finding\getting profile workers (default 15)
+- Re-checking option for failed profiles
 - [Wiki](https://github.com/qeeqbox/social-analyzer/wiki)
 
 ## Special Detections

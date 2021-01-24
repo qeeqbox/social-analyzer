@@ -594,8 +594,12 @@
     padding-top: 20px
   }
 
-  .user-info-container-color {
+  .user-info-container-color-unknown {
     opacity: 0.4 !important;
+  }
+
+  .user-info-container-color-failed {
+    opacity: 0.1 !important;
   }
 
 </style>
@@ -1025,7 +1029,7 @@
                     '</div><div>Language: ' + site.language + '</div><div>Description: ' + site.type + '</div><div>Text: ' + site.text + '</div></div><div class="user-info-container-right"></div></div>'
                 }
                 else{
-                  temp_tr += '<div class="user-info-container user-info-container-color"><div class="user-info-container-left"><div>Link: <a href="' + site.link + '">' + site.link + '</a></div><div>Title: ' + site.title +
+                  temp_tr += '<div class="user-info-container user-info-container-color-unknown"><div class="user-info-container-left"><div>Link: <a href="' + site.link + '">' + site.link + '</a></div><div>Title: ' + site.title +
                     '</div><div>Language: ' + site.language + '</div><div>Description: ' + site.type + '</div><div>Text: ' + site.text + '</div></div><div class="user-info-container-right"></div></div>'
                 }
               }
@@ -1036,12 +1040,13 @@
                 }
               }
               else if (site.method == "get") {
-                temp_tr += '<div class="user-info-container user-info-container-color"><div class="user-info-container-left"><div>Link: <a href="' + site.link + '">' + site.link + '</a></div><div>Rate: ' + site.rate + '</div><div>Title: ' + site.title +
+                temp_tr += '<div class="user-info-container user-info-container-color-unknown"><div class="user-info-container-left"><div>Link: <a href="' + site.link + '">' + site.link + '</a></div><div>Rate: ' + site.rate + '</div><div>Title: ' + site.title +
                     '</div><div>Language: ' + site.language + '</div><div>Description: ' + site.type + '</div><div>Text: ' + site.text + '</div></div><div class="user-info-container-right"></div></div>'
               }
+              else if (site.method == "failed") {
+                temp_tr += '<div class="user-info-container user-info-container-color-failed"><div class="user-info-container-left"><div>Link: <a href="' + site.link + '">' + site.link + '</a></div></div><div class="user-info-container-right"></div></div>'
+              }
             });
-
-            console.log(temp_tr)
 
             $("#output-table-3").html(temp_tr)
             $('#output-section-3').show();
