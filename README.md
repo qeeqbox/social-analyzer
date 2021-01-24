@@ -14,10 +14,10 @@ The results from the analysis could help in investigating profiles related to su
 Make sure to download this tool from GitHub - (ONLY) ⚠️
 
 ## Updates
-- API, CLIs & Web App produce:
-- - [Detected] -> 0 to 100 (No-Maybe-Yes)
-- - [Unknown]  -> Detection did not meet the requirement
-- - [Failed]   -> Profile website did not respond)
+* API, CLIs & Web App produce:
+    * [Detected] -> 0 to 100 (No-Maybe-Yes)
+    * [Unknown]  -> Detection did not meet the requirement
+    * [Failed]   -> Profile website did not respond)
 
 ## Security Testing
 
