@@ -173,7 +173,7 @@ def find_username_normal(req):
 		  "good":"",
 		  "method":""
 		}
-		
+
 		headers = {
 			"User-Agent": "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:84.0) Gecko/20100101 Firefox/84.0",
 		}
@@ -214,7 +214,7 @@ def find_username_normal(req):
 				temp_profile["title"] = temp_profile["title"].replace("\n", "").replace("\t", "").replace("\r", "").strip()
 			if temp_profile["text"] == "":
 				temp_profile["text"] = "unavailable"
-			with suppress(Exception):	
+			with suppress(Exception):
 				if detections_count != 0:
 					temp_profile["rate"] = "%" + str(round(((temp_profile["found"] / detections_count) * 100), 2))
 
@@ -255,20 +255,9 @@ def find_username_normal(req):
 	PARSED_SITES[:] = [d for d in PARSED_SITES if d.get('selected') == "true"]
 	if len(PARSED_SITES) > 0:
 		for site in PARSED_SITES:
-			temp_profile = {
-							  "found": 0,
-							  "image": "",
-							  "link": "",
-							  "rate": "",
-							  "title": "unavailable",
-							  "language": "unavailable",
-							  "text": "unavailable",
-							  "type": "",
-							  "good":"",
-							  "method":""
-							}
+			temp_profile = {"link": "",
+							"method":"failed"}
 			temp_profile["link"] = site["url"].replace("{username}", req["body"]["string"]);
-			temp_profile["type"] = site["type"]
 			resutls.append(temp_profile)
 	return resutls
 
