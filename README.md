@@ -151,5 +151,8 @@ sudo kill -9 $(sudo lsof -t -i:9005)
 - This tool meant to be used locally (It does not have any type of Access Control)
 - If you want your website to be excluded from this project, please reach out
 
+## Articles
+- [Console 37](https://console.substack.com/p/console-37?r=3cbez&utm_campaign=post&utm_medium=web&utm_source=osint_subreddit)
+
 ## Contact
 [![Generic badge](https://img.shields.io/badge/slack-@qeeqbox-yellow.svg?logo=slack&style=flat-square)](https://qeeqbox.slack.com/messages/social-analyzer)
