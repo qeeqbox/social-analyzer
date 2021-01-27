@@ -19,7 +19,7 @@ if (process.platform == 'win32'){
 async function find_username_advanced(req) {
   const time = new Date();
   const functions = [];
-  helper.parsed_sites.forEach((site) => {
+  helper.websites_entries.forEach((site) => {
     if ("status" in site) {
       if (site.status == "bad") {
         return Promise.resolve();

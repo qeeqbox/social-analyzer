@@ -36,7 +36,9 @@ from time import sleep
 
 packages.urllib3.disable_warnings(category=InsecureRequestWarning)
 
-PARSED_SITES = []
+WEBSITES_ENTRIES = []
+SHARED_DETECTIONS = []
+GENERIC_DETECTION = []
 LOG = getLogger("social-analyzer")
 SITES_PATH = path.join("data","sites.json")
 LANGUAGES_PATH = path.join("data","languages.json")
@@ -115,7 +117,25 @@ def setup_logger(uuid=None,file=False):
 def init_websites():
 	temp_list = []
 	with open(SITES_PATH) as f:
-		for item in load(f):
+		for item in load(f)["websites_entries"]:
+			item["selected"] = "false"
+			temp_list.append(item)
+	return temp_list
+
+@check_errors(True)
+def init_shared_detections():
+	temp_list = []
+	with open(SITES_PATH) as f:
+		for item in load(f)["shared_detections"]:
+			item["selected"] = "false"
+			temp_list.append(item)
+	return temp_list
+
+@check_errors(True)
+def init_generic_detection():
+	temp_list = []
+	with open(SITES_PATH) as f:
+		for item in load(f)["generic_detection"]:
 			item["selected"] = "false"
 			temp_list.append(item)
 	return temp_list
@@ -126,8 +146,8 @@ def get_website(site):
 	return x
 
 def list_all_websites():
-	if len(PARSED_SITES) > 0:
-		for site in PARSED_SITES:
+	if len(WEBSITES_ENTRIES) > 0:
+		for site in WEBSITES_ENTRIES:
 			x = get_fld(site["url"], fix_protocol=True)
 			x = x.replace(".{username}","").replace("{username}.","")
 			LOG.info(x)
@@ -236,15 +256,15 @@ def find_username_normal(req):
 		return None,site["url"],[]
 
 	for i in range(3):
-		PARSED_SITES[:] = [d for d in PARSED_SITES if d.get('selected') == "true"]
-		if len(PARSED_SITES) > 0:
+		WEBSITES_ENTRIES[:] = [d for d in WEBSITES_ENTRIES if d.get('selected') == "true"]
+		if len(WEBSITES_ENTRIES) > 0:
 			with ThreadPoolExecutor(max_workers=WORKERS) as executor:
-				future_fetch_url = (executor.submit(fetch_url, site, req["body"]["string"],req["body"]["options"]) for site in PARSED_SITES)
+				future_fetch_url = (executor.submit(fetch_url, site, req["body"]["string"],req["body"]["options"]) for site in WEBSITES_ENTRIES)
 				for future in as_completed(future_fetch_url):
 					try:
 						good, site, data = future.result()
 						if good:
-							PARSED_SITES[:] = [d for d in PARSED_SITES if d.get('url') != site]
+							WEBSITES_ENTRIES[:] = [d for d in WEBSITES_ENTRIES if d.get('url') != site]
 							resutls.append(data)
 						else:
 							LOG.info("[Waiting to retry] "+ get_website(site))
@@ -252,9 +272,9 @@ def find_username_normal(req):
 						pass
 
 
-	PARSED_SITES[:] = [d for d in PARSED_SITES if d.get('selected') == "true"]
-	if len(PARSED_SITES) > 0:
-		for site in PARSED_SITES:
+	WEBSITES_ENTRIES[:] = [d for d in WEBSITES_ENTRIES if d.get('selected') == "true"]
+	if len(WEBSITES_ENTRIES) > 0:
+		for site in WEBSITES_ENTRIES:
 			temp_profile = {"link": "",
 							"method":"failed"}
 			temp_profile["link"] = site["url"].replace("{username}", req["body"]["string"]);
@@ -276,10 +296,10 @@ def check_user_cli(argv):
 	setup_logger(req["body"]["uuid"],True)
 
 	if argv.websites == "all":
-		for site in PARSED_SITES:
+		for site in WEBSITES_ENTRIES:
 			site["selected"] = "true"
 	else:
-		for site in PARSED_SITES:
+		for site in WEBSITES_ENTRIES:
 			for temp in argv.websites.split(" "):
 				if temp in site["url"]:
 					site["selected"] = "true"
@@ -340,7 +360,10 @@ def check_user_cli(argv):
 def msg(name=None):
 	return """python3 app.py --cli --mode 'fast' --username 'johndoe' --websites 'youtube pinterest tumblr' --output 'pretty'"""
 
-PARSED_SITES = init_websites()
+WEBSITES_ENTRIES = init_websites()
+SHARED_DETECTIONS = init_websites()
+GENERIC_DETECTION = init_websites()
+
 arg_parser = ArgumentParser(description="Qeeqbox/social-analyzer - API and Web App for analyzing & finding a person profile across 300+ social media websites (Detections are updated regularly)",usage=msg())
 arg_parser._action_groups.pop()
 arg_parser_required = arg_parser.add_argument_group("Required Arguments")

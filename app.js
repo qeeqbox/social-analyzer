@@ -96,7 +96,7 @@ app.post("/get_logs", async function(req, res, next) {
 
 app.get("/get_settings", async function(req, res, next) {
   temp_list = [];
-  temp_list = await Promise.all(helper.parsed_sites.map(async (site, index) => {
+  temp_list = await Promise.all(helper.websites_entries.map(async (site, index) => {
     var temp_url = "";
     if ("status" in site) {
       if (site.status == "bad") {
@@ -141,13 +141,13 @@ app.get("/get_settings", async function(req, res, next) {
 });
 
 app.post("/save_settings", async function(req, res, next) {
-  await helper.parsed_sites.forEach(function(value, i) {
-    helper.parsed_sites[i].selected = "false"
+  await helper.websites_entries.forEach(function(value, i) {
+    helper.websites_entries[i].selected = "false"
   });
   if ("websites" in req.body) {
     if (req.body.websites.length > 0) {
       await req.body.websites.split(',').forEach(item => {
-        helper.parsed_sites[Number(item)].selected = "true";
+        helper.websites_entries[Number(item)].selected = "true";
       });
     }
   }
@@ -407,16 +407,16 @@ async function check_user_cli(argv) {
   }
 
   if (argv.websites == "all") {
-    await helper.parsed_sites.forEach(async function(value, i) {
-      helper.parsed_sites[i].selected = "true"
+    await helper.websites_entries.forEach(async function(value, i) {
+      helper.websites_entries[i].selected = "true"
     });
   } else {
-    await helper.parsed_sites.forEach(async function(value, i) {
-      helper.parsed_sites[i].selected = "false"
+    await helper.websites_entries.forEach(async function(value, i) {
+      helper.websites_entries[i].selected = "false"
       if (argv.websites.length > 0) {
         await argv.websites.split(' ').forEach(item => {
-          if (helper.parsed_sites[i].url.toLowerCase().includes(item.toLowerCase())) {
-            helper.parsed_sites[i].selected = "true"
+          if (helper.websites_entries[i].url.toLowerCase().includes(item.toLowerCase())) {
+            helper.websites_entries[i].selected = "true"
           }
         });
       }
@@ -497,7 +497,7 @@ async function check_user_cli(argv) {
 
 async function list_all_websites() {
   var temp_arr = []
-  await helper.parsed_sites.forEach(item => {
+  await helper.websites_entries.forEach(item => {
     temp_arr.push(helper.get_site_from_url(item.url))
   });
 
