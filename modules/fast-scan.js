@@ -10,7 +10,7 @@ var engine = require('./engine.js')
 async function find_username_normal(req) {
   const time = new Date();
   var all_results = []
-  var [first_re_try, first_profiles] = await find_username_normal_wrapper(req, helper.parsed_sites);
+  var [first_re_try, first_profiles] = await find_username_normal_wrapper(req, helper.websites_entries);
   helper.verbose && console.log(`Total time ${new Date() - time}`);
   var [second_re_try, second_profiles] = await find_username_normal_wrapper(req, first_re_try)
   helper.verbose && console.log(`Total time ${new Date() - time}`);

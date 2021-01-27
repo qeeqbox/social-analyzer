@@ -63,7 +63,8 @@ var sites_json_path = slash(path.join(__dirname,'..','data', 'sites.json'))
 var names_json_path = slash(path.join(__dirname,'..','data', 'names.json'))
 var dict_json_path = slash(path.join(__dirname,'..','data', 'dict.json'))
 
-var parsed_sites = JSON.parse(fs.readFileSync(sites_json_path));
+var websites_entries = JSON.parse(fs.readFileSync(sites_json_path))['websites_entries'];
+var shared_detections = JSON.parse(fs.readFileSync(sites_json_path))['shared_detections'];
 var parsed_names_origins = JSON.parse(fs.readFileSync(names_json_path));
 var parsed_json = JSON.parse(fs.readFileSync(dict_json_path));
 
@@ -205,7 +206,7 @@ module.exports = {
   detected_websites,
   get_language_by_parsing,
   get_language_by_guessing,
-  parsed_sites,
+  websites_entries,
   parsed_names_origins,
   parsed_json,
   verbose,
