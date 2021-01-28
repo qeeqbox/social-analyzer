@@ -37,7 +37,7 @@ var argv = require('yargs')
   .argv;
 
 if (argv.output != "json") {
-  console.log('[!] Detections are updated every often, make sure to get the most updated ones');
+  console.log('[!] Detections are updated very often, make sure to get the most up-to-date ones');
 }
 
 var semver = require('semver');
