@@ -89,11 +89,12 @@ async function find_username_site(uuid, username, options, site) {
       title = await driver.getTitle();
       text_only = await driver.findElement(By.tagName("body")).getText();
       await driver.quit()
-      var {temp_profile, temp_detected, detections_count} = await engine.detect("slow", uuid, username, options, site ,source, screen_shot)
+      var [temp_profile, temp_detected, detections_count] = await engine.detect("slow", uuid, username, options, site ,source, screen_shot)
       if (options.includes("ShowUserProfilesSlow")) {
         temp_profile["image"] = "data:image/png;base64,{image}".replace("{image}", screen_shot);
       }
       if (temp_profile.found >= helper.detection_level[helper.detection_level.current].found && detections_count >= helper.detection_level[helper.detection_level.current].count){
+        temp_profile.good = "true"
         try {
           language = helper.get_language_by_parsing(source)
           if (language == "unavailable") {
@@ -106,7 +107,9 @@ async function find_username_site(uuid, username, options, site) {
         temp_profile.text = sanitizeHtml(text_only);
         temp_profile.title = sanitizeHtml(title);
         temp_profile.language = language
-        temp_profile.rate = "%" + ((temp_profile.found / site.detections.length) * 100).toFixed(2);
+        if (temp_profile.good == "true") {
+          temp_profile.rate = "%" + ((temp_profile["found"] / detections_count) * 100).toFixed(2);
+        }
         temp_profile.link = site.url.replace("{username}", username);
         temp_profile.type = site.type
         resolve(temp_profile);

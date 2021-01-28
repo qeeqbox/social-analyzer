@@ -90,11 +90,11 @@ async function find_username_site(uuid, username, options, site) {
         var title = "unavailable";
         var language = "unavailable"
         var good_or_bad = "false"
-        var {
+        var [
           temp_profile,
           temp_detected,
           detections_count
-        } = await engine.detect("fast", uuid, username, options, site, source)
+        ] = await engine.detect("fast", uuid, username, options, site, source)
         if (temp_profile.found >= helper.detection_level[helper.detection_level.current].found && detections_count >= helper.detection_level[helper.detection_level.current].count) {
           temp_profile.good = "true"
         }

@@ -1,4 +1,4 @@
-{"version":"2021.V.2.22",
+{"version":"2021.V.2.23",
  "build":"pass",
  "test":"pass",
  "grid_test":"pass",
@@ -11,4 +11,4 @@
  "full_scan":"15 workers < 20secs",
  "max_retries":"3",
  "awaiting_verification":"22",
- "auto_testing":"a420a20b-c7be-49b3-b9ca-c02f418bca79"}
+ "auto_testing":"aa4326d3-a290-47cb-bc8d-1836c34292de"}
