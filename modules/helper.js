@@ -204,6 +204,7 @@ module.exports = {
   profile_template,
   detection_level,
   detected_websites,
+  shared_detections,
   get_language_by_parsing,
   get_language_by_guessing,
   websites_entries,

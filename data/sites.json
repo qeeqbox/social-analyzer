@@ -2219,8 +2219,6 @@
           "type": "normal"
         },
         {
-          "return": "true",
-          "string": "",
           "function": "special_facebook_1",
           "type": "special"
         }
@@ -2708,30 +2706,14 @@
     {
       "url": "https://fosstodon.org/@{username}",
       "detections": [{
-          "return": "false",
-          "string": "The page you are looking for isn",
-          "type": "ocr"
-        },
-        {
-          "return": "false",
-          "string": "The page you are looking for isn",
-          "type": "normal"
-        },
-        {
-          "return": "true",
-          "string": "profile:username",
-          "type": "normal"
-        },
-        {
-          "return": "true",
-          "string": "/@{username}",
-          "type": "normal"
+          "name": "mastodon",
+          "type": "shared"
         }
       ],
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
-      "type": "Mastodon instance"
+      "type": "unavailable"
     },
     {
       "url": "https://fotolog.com/author/{username}",
@@ -3158,13 +3140,10 @@
     {
       "url": "https://gmail.com/{username}",
       "detections": [{
-        "return": "true",
-        "string": "",
         "function": "special_gmail_1",
         "type": "special"
       }],
       "selected": "false",
-      "top": "top10",
       "timeout": 0,
       "implicit": 0,
       "type": "Social networking service"
@@ -3190,13 +3169,10 @@
     {
       "url": "https://google.com/{username}",
       "detections": [{
-        "return": "true",
-        "string": "",
         "function": "special_google_1",
         "type": "special"
       }],
       "selected": "false",
-      "top": "top10",
       "timeout": 0,
       "implicit": 0,
       "type": "Social networking service"
@@ -4294,24 +4270,8 @@
     {
       "url": "https://mastodon.cloud/@{username}",
       "detections": [{
-          "return": "false",
-          "string": "The page you are looking for isn",
-          "type": "ocr"
-        },
-        {
-          "return": "false",
-          "string": "The page you are looking for isn",
-          "type": "normal"
-        },
-        {
-          "return": "true",
-          "string": "profile:username",
-          "type": "normal"
-        },
-        {
-          "return": "true",
-          "string": "/@{username}",
-          "type": "normal"
+          "name": "mastodon",
+          "type": "shared"
         }
       ],
       "selected": "false",
@@ -4322,24 +4282,8 @@
     {
       "url": "https://mastodon.social/@{username}",
       "detections": [{
-          "return": "false",
-          "string": "The page you are looking for isn",
-          "type": "ocr"
-        },
-        {
-          "return": "false",
-          "string": "The page you are looking for isn",
-          "type": "normal"
-        },
-        {
-          "return": "true",
-          "string": "profile:username",
-          "type": "normal"
-        },
-        {
-          "return": "true",
-          "string": "/@{username}",
-          "type": "normal"
+          "name": "mastodon",
+          "type": "shared"
         }
       ],
       "selected": "false",
@@ -4350,24 +4294,8 @@
     {
       "url": "https://mastodon.technology/@{username}",
       "detections": [{
-          "return": "false",
-          "string": "The page you are looking for isn",
-          "type": "ocr"
-        },
-        {
-          "return": "false",
-          "string": "The page you are looking for isn",
-          "type": "normal"
-        },
-        {
-          "return": "true",
-          "string": "profile:username",
-          "type": "normal"
-        },
-        {
-          "return": "true",
-          "string": "/@{username}",
-          "type": "normal"
+          "name": "mastodon",
+          "type": "shared"
         }
       ],
       "selected": "false",
@@ -4378,24 +4306,8 @@
     {
       "url": "https://mastodon.xyz/@{username}",
       "detections": [{
-          "return": "false",
-          "string": "The page you are looking for isn",
-          "type": "ocr"
-        },
-        {
-          "return": "false",
-          "string": "The page you are looking for isn",
-          "type": "normal"
-        },
-        {
-          "return": "true",
-          "string": "profile:username",
-          "type": "normal"
-        },
-        {
-          "return": "true",
-          "string": "/@{username}",
-          "type": "normal"
+          "name": "mastodon",
+          "type": "shared"
         }
       ],
       "selected": "false",
@@ -4592,24 +4504,8 @@
     {
       "url": "https://mstdn.io/@{username}",
       "detections": [{
-          "return": "false",
-          "string": "The page you are looking for",
-          "type": "ocr"
-        },
-        {
-          "return": "false",
-          "string": "The page you are looking for",
-          "type": "normal"
-        },
-        {
-          "return": "true",
-          "string": "og:title",
-          "type": "normal"
-        },
-        {
-          "return": "true",
-          "string": "profile:username",
-          "type": "normal"
+          "name": "mastodon",
+          "type": "shared"
         }
       ],
       "selected": "false",
@@ -7654,7 +7550,7 @@
           "type": "normal"
         }
       ],
-      "selected": "false",
+      "selected": "true",
       "top": "top10",
       "timeout": 0,
       "implicit": 0,
@@ -7747,6 +7643,29 @@
       "type": "unavailable"
     }
   ],
-  "shared_detections": [],
+  "shared_detections": [{
+    "name": "mastodon",
+    "detections": [{
+        "return": "false",
+        "string": "The page you are looking for isn",
+        "type": "ocr"
+      },
+      {
+        "return": "false",
+        "string": "The page you are looking for isn",
+        "type": "normal"
+      },
+      {
+        "return": "true",
+        "string": "profile:username",
+        "type": "normal"
+      },
+      {
+        "return": "true",
+        "string": "/@{username}",
+        "type": "normal"
+      }
+    ]
+  }],
   "generic_detection": []
 }

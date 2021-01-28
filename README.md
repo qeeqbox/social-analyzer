@@ -12,7 +12,7 @@ The analysis and extracted social media information from this OSINT tool could h
 This project *is currently used by some law enforcement agencies in countries where resources are limited*.
 
 ## Updates
-* Implementing generic and shared detections
+* Added shared detections to NodeJS Web App & CLI 👏
 * API, CLIs & Web App produce:
     * [Detected] -> 0 to 100 (No-Maybe-Yes)
     * [Unknown]  -> Detection did not meet the requirement
