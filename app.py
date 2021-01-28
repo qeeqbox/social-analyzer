@@ -364,7 +364,7 @@ WEBSITES_ENTRIES = init_websites()
 SHARED_DETECTIONS = init_websites()
 GENERIC_DETECTION = init_websites()
 
-arg_parser = ArgumentParser(description="Qeeqbox/social-analyzer - API and Web App for analyzing & finding a person profile across 300+ social media websites (Detections are updated regularly)",usage=msg())
+arg_parser = ArgumentParser(description="Qeeqbox/social-analyzer - API and Web App for analyzing & finding a person's profile across 300+ social media websites (Detections are updated regularly)",usage=msg())
 arg_parser._action_groups.pop()
 arg_parser_required = arg_parser.add_argument_group("Required Arguments")
 arg_parser_required.add_argument("--cli",action="store_true", help="Turn this CLI on", required=True)
@@ -380,7 +380,7 @@ arg_parser_list.add_argument("--list", action="store_true",  help="List all avai
 argv = arg_parser.parse_args()
 
 if argv.output != "json":
-	print("[!] Detections are updated every often, make sure to get the most updated ones")
+	print("[!] Detections are updated very often, make sure to get the most up-to-date ones")
 
 if argv.cli:
 	if argv.list:
