@@ -12,7 +12,6 @@ The analysis and extracted social media information from this OSINT tool could h
 This project *is currently used by some law enforcement agencies in countries where resources are limited*.
 
 ## Updates
-*  Thanks everyone for the Awesome Open Source Rating! [![Generic badge](https://raw.githubusercontent.com/qeeqbox/social-analyzer/main/readme/awesomeopensource.png)](https://github.com/qeeqbox/social-analyzer/stargazers)
 * Added shared detections to NodeJS Web App & CLI 👏
 * API, CLIs & Web App produce:
     * [Detected] -> 0 to 100 (No-Maybe-Yes)
