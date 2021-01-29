@@ -12,6 +12,7 @@ The analysis and extracted social media information from this OSINT tool could h
 This project *is currently used by some law enforcement agencies in countries where resources are limited*.
 
 ## Updates
+* Added nested detections 👏
 * Added shared detections to NodeJS Web App & CLI 👏
 * API, CLIs & Web App produce:
     * [Detected] -> 0 to 100 (No-Maybe-Yes)
@@ -148,7 +149,7 @@ sudo kill -9 $(sudo lsof -t -i:9005)
 ## Disclaimer\Notes
 - This tool meant to be used locally (It does not have any type of Access Control)
 - If you want your website to be excluded from this project, please reach out
-- Make sure to download this tool from GitHub - (ONLY) ⚠️ 
+- Make sure to download this tool from GitHub - (ONLY) ⚠️
 
 ## Interviews
 [Console 37](https://console.substack.com/p/console-37)
@@ -158,3 +159,6 @@ sudo kill -9 $(sudo lsof -t -i:9005)
 
 ## Contact
 [![Generic badge](https://img.shields.io/badge/slack-@qeeqbox-yellow.svg?logo=slack&style=flat-square)](https://qeeqbox.slack.com/messages/social-analyzer)
+
+## Rate
+Thanks everyone for the Awesome Open Source Rating! [![Generic badge](https://raw.githubusercontent.com/qeeqbox/social-analyzer/main/readme/awesomeopensource.png)](https://github.com/qeeqbox/social-analyzer/stargazers)

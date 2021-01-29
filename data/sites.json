@@ -342,26 +342,9 @@
     {
       "url": "https://ask.fedoraproject.org/u/{username}",
       "detections": [{
-          "return": "false",
-          "string": "Sorry, we couldn't find that page",
-          "type": "ocr"
-        },
-        {
-          "return": "false",
-          "string": "Sorry, we couldn't find that page",
-          "type": "normal"
-        },
-        {
-          "return": "true",
-          "string": "og:title",
-          "type": "normal"
-        },
-        {
-          "return": "true",
-          "string": "user_{username}",
-          "type": "normal"
-        }
-      ],
+        "name": "discourse",
+        "type": "shared"
+      }],
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
@@ -1130,21 +1113,9 @@
     {
       "url": "https://community.bitwarden.com/u/{username}/summary",
       "detections": [{
-          "return": "false",
-          "string": "That page doesn",
-          "type": "ocr"
-        },
-        {
-          "return": "false",
-          "string": "That page doesn",
-          "type": "normal"
-        },
-        {
-          "return": "true",
-          "string": "\"/u/{username}/summary\"",
-          "type": "normal"
-        }
-      ],
+        "name": "discourse",
+        "type": "shared"
+      }],
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
@@ -1153,21 +1124,9 @@
     {
       "url": "https://community.cloudflare.com/u/{username}",
       "detections": [{
-          "return": "false",
-          "string": "That page doesn",
-          "type": "ocr"
-        },
-        {
-          "return": "false",
-          "string": "That page doesn",
-          "type": "normal"
-        },
-        {
-          "return": "true",
-          "string": "data-user",
-          "type": "normal"
-        }
-      ],
+        "name": "discourse",
+        "type": "shared"
+      }],
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
@@ -1212,26 +1171,9 @@
     {
       "url": "https://community.signalusers.org/u/{username}",
       "detections": [{
-          "return": "false",
-          "string": "That page doesn’t exist",
-          "type": "ocr"
-        },
-        {
-          "return": "false",
-          "string": "That page doesn’t exist",
-          "type": "normal"
-        },
-        {
-          "return": "true",
-          "string": "\"/u/{username}\"",
-          "type": "normal"
-        },
-        {
-          "return": "true",
-          "string": "og:title",
-          "type": "normal"
-        }
-      ],
+        "name": "discourse",
+        "type": "shared"
+      }],
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
@@ -1689,9 +1631,8 @@
     {
       "url": "https://discourse.wicg.io/u/{username}/summary",
       "detections": [{
-        "return": "false",
-        "string": "Oops! That page doesn’t exist or is private",
-        "type": "normal"
+        "name": "discourse",
+        "type": "shared"
       }],
       "selected": "false",
       "timeout": 0,
@@ -1701,26 +1642,9 @@
     {
       "url": "https://discuss.atom.io/u/{username}/summary",
       "detections": [{
-          "return": "false",
-          "string": "Oops! That page doesn’t exist",
-          "type": "ocr"
-        },
-        {
-          "return": "false",
-          "string": "Oops! That page doesn’t exist",
-          "type": "normal"
-        },
-        {
-          "return": "true",
-          "string": "username",
-          "type": "normal"
-        },
-        {
-          "return": "true",
-          "string": "og:title",
-          "type": "normal"
-        }
-      ],
+        "name": "discourse",
+        "type": "shared"
+      }],
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
@@ -1729,26 +1653,9 @@
     {
       "url": "https://discuss.elastic.co/u/{username}",
       "detections": [{
-          "return": "false",
-          "string": "That page doesn’t exist",
-          "type": "ocr"
-        },
-        {
-          "return": "false",
-          "string": "That page doesn’t exist",
-          "type": "normal"
-        },
-        {
-          "return": "true",
-          "string": "username",
-          "type": "normal"
-        },
-        {
-          "return": "true",
-          "string": "og:title",
-          "type": "normal"
-        }
-      ],
+        "name": "discourse",
+        "type": "shared"
+      }],
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
@@ -2461,26 +2368,9 @@
     {
       "url": "https://forum.leasehackr.com/u/{username}/summary",
       "detections": [{
-          "return": "false",
-          "string": "That page doesn’t exist or is private",
-          "type": "ocr"
-        },
-        {
-          "return": "false",
-          "string": "That page doesn’t exist or is private",
-          "type": "normal"
-        },
-        {
-          "return": "true",
-          "string": "\"/u/{username}\"",
-          "type": "normal"
-        },
-        {
-          "return": "true",
-          "string": "og:title",
-          "type": "normal"
-        }
-      ],
+        "name": "discourse",
+        "type": "shared"
+      }],
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
@@ -2489,26 +2379,9 @@
     {
       "url": "https://forum.sublimetext.com/u/{username}",
       "detections": [{
-          "return": "false",
-          "string": "That page doesn’t exist or is private",
-          "type": "ocr"
-        },
-        {
-          "return": "false",
-          "string": "That page doesn’t exist or is private",
-          "type": "normal"
-        },
-        {
-          "return": "true",
-          "string": "\"/u/{username}\"",
-          "type": "normal"
-        },
-        {
-          "return": "true",
-          "string": "og:title",
-          "type": "normal"
-        }
-      ],
+        "name": "discourse",
+        "type": "shared"
+      }],
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
@@ -2678,26 +2551,9 @@
     {
       "url": "https://forums.whonix.org/u/{username}",
       "detections": [{
-          "return": "false",
-          "string": "That page doesn’t exist or is private",
-          "type": "ocr"
-        },
-        {
-          "return": "false",
-          "string": "That page doesn’t exist or is private",
-          "type": "normal"
-        },
-        {
-          "return": "true",
-          "string": "\"/u/{username}\"",
-          "type": "normal"
-        },
-        {
-          "return": "true",
-          "string": "og:title",
-          "type": "normal"
-        }
-      ],
+        "name": "discourse",
+        "type": "shared"
+      }],
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
@@ -2706,10 +2562,9 @@
     {
       "url": "https://fosstodon.org/@{username}",
       "detections": [{
-          "name": "mastodon",
-          "type": "shared"
-        }
-      ],
+        "name": "mastodon",
+        "type": "shared"
+      }],
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
@@ -3091,9 +2946,8 @@
           "type": "normal"
         },
         {
-          "return": "true",
-          "string": "user-profile",
-          "type": "normal"
+          "name": "gitlab",
+          "type": "shared"
         }
       ],
       "selected": "false",
@@ -3109,9 +2963,8 @@
           "type": "normal"
         },
         {
-          "return": "true",
-          "string": "@{username}",
-          "type": "normal"
+          "name": "gitlab",
+          "type": "shared"
         }
       ],
       "selected": "false",
@@ -4270,10 +4123,9 @@
     {
       "url": "https://mastodon.cloud/@{username}",
       "detections": [{
-          "name": "mastodon",
-          "type": "shared"
-        }
-      ],
+        "name": "mastodon",
+        "type": "shared"
+      }],
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
@@ -4282,10 +4134,9 @@
     {
       "url": "https://mastodon.social/@{username}",
       "detections": [{
-          "name": "mastodon",
-          "type": "shared"
-        }
-      ],
+        "name": "mastodon",
+        "type": "shared"
+      }],
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
@@ -4294,10 +4145,9 @@
     {
       "url": "https://mastodon.technology/@{username}",
       "detections": [{
-          "name": "mastodon",
-          "type": "shared"
-        }
-      ],
+        "name": "mastodon",
+        "type": "shared"
+      }],
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
@@ -4306,10 +4156,9 @@
     {
       "url": "https://mastodon.xyz/@{username}",
       "detections": [{
-          "name": "mastodon",
-          "type": "shared"
-        }
-      ],
+        "name": "mastodon",
+        "type": "shared"
+      }],
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
@@ -4387,26 +4236,9 @@
     {
       "url": "https://meta.wikimedia.org/wiki/Special:CentralAuth/{username}",
       "detections": [{
-          "return": "false",
-          "string": "There is no global account",
-          "type": "ocr"
-        },
-        {
-          "return": "false",
-          "string": "There is no global account",
-          "type": "normal"
-        },
-        {
-          "return": "true",
-          "string": "Registered",
-          "type": "normal"
-        },
-        {
-          "return": "true",
-          "string": "Total edit count",
-          "type": "normal"
-        }
-      ],
+        "name": "mediawiki",
+        "type": "shared"
+      }],
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
@@ -4504,10 +4336,9 @@
     {
       "url": "https://mstdn.io/@{username}",
       "detections": [{
-          "name": "mastodon",
-          "type": "shared"
-        }
-      ],
+        "name": "mastodon",
+        "type": "shared"
+      }],
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
@@ -7033,23 +6864,11 @@
       "type": "Online website builder"
     },
     {
-      "url": "https://wikipedia.org/wiki/User:{username}",
+      "url": "https://en.wikipedia.org/wiki/Special:CentralAuth/{username}",
       "detections": [{
-          "return": "false",
-          "string": "is not registered on this wiki",
-          "type": "ocr"
-        },
-        {
-          "return": "false",
-          "string": "is not registered on this wiki",
-          "type": "normal"
-        },
-        {
-          "return": "true",
-          "string": "read<",
-          "type": "normal"
-        }
-      ],
+        "name": "mediawiki",
+        "type": "shared"
+      }],
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
@@ -7663,6 +7482,39 @@
       {
         "return": "true",
         "string": "/@{username}",
+        "type": "normal"
+      }
+    ]
+  }, {
+    "name": "discourse",
+    "detections": [{
+        "return": "true",
+        "string": "og:title",
+        "type": "normal"
+      },
+      {
+        "return": "true",
+        "string": "\"{username}\"",
+        "type": "normal"
+      }
+    ]
+  }, {
+    "name": "gitlab",
+    "detections": [{
+      "return": "true",
+      "string": "user-profile",
+      "type": "normal"
+    }]
+  }, {
+    "name": "mediawiki",
+    "detections": [{
+        "return": "true",
+        "string": "Registered",
+        "type": "normal"
+      },
+      {
+        "return": "true",
+        "string": "Total edit count",
         "type": "normal"
       }
     ]
