@@ -9,9 +9,10 @@ The detection modules utilize a rating mechanism based on different detection te
 
 The analysis and extracted social media information from this OSINT tool could help in investigating profiles related to suspicious or malicious activities such as [cyberbullying](https://en.wikipedia.org/wiki/Wikipedia:Cyberbullying), [cybergrooming](https://de.wikipedia.org/wiki/Cyber-Grooming), [cyberstalking](https://en.wikipedia.org/wiki/Cyberstalking), and [spreading misinformation](https://en.wikipedia.org/wiki/Misinformation).
 
-This project *is currently used by some law enforcement agencies in countries where resources are limited*.
+This project is *"currently used by some law enforcement agencies in countries where resources are limited"*.
 
 ## Updates
+* [Request] - Added more improvements to the Web App (You can toggle the tables) 👏
 * Added nested detections 👏
 * Added shared detections to NodeJS Web App & CLI 👏
 * API, CLIs & Web App produce:
