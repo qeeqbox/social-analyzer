@@ -77,7 +77,7 @@ npm start
 
 ## Install and run as web app (Windows + NodeJS + NPM + Firefox)
 ```bash
-Download & Install firfox esr (Extended Support Release) from https://www.mozilla.org/en-US/firefox/enterprise/#download
+Download & Install firefox esr (Extended Support Release) from https://www.mozilla.org/en-US/firefox/enterprise/#download
 Download & Install https://nodejs.org/en/download/
 Download & Extract https://github.com/qeeqbox/social-analyzer/archive/main.zip
 cd social-analyzer
