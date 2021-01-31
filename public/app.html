@@ -602,6 +602,11 @@
     opacity: 0.1 !important;
   }
 
+  #div-right-icon{
+    float:right;
+    font-size: 16px;
+  }
+
 </style>
 
 <body>
@@ -684,7 +689,6 @@
               <input type="button" value="Dismiss" data-dismiss="modal" />
             </div>
           </div>
-
         </div>
       </div>
       <div class="box-border-style" id="string-section">
@@ -692,7 +696,7 @@
           <div class="div-left">Enter Profile Name</div>
           <div class="div-right"><i id="open-settings" class="fa fa-cog"></i></div>
         </div>
-        <div class="div-100">
+        <div class="div-100" class="collapse show">
           <input type="text" id="string-to-analyze" placeholder="Joe" />
           <div class="cell-separator"></div>
           <select name="analyzed-options" placeholder="Choose some options..." id="analyzed-options" multiple="multiple">
@@ -730,10 +734,10 @@
       <div class="box-border-style" id="lookups-section">
         <div class="div-header">
           <div class="div-left">String LookUps</div>
-          <div class="div-right"></div>
+          <div class="div-right"><i id="div-right-icon" class="fa fa-caret-down"></i></div>
         </div>
         <div class="div-100">
-          <div id="lookups-checking-info"></div>
+          <div id="lookups-checking-info" class="collapse show"></div>
         </div>
         <div id="lookups-table">
         </div>
@@ -741,48 +745,48 @@
       <div class="box-border-style" id="most-common-words-section">
         <div class="div-header">
           <div class="div-left">Most common words by languages</div>
-          <div class="div-right"></div>
+          <div class="div-right"><i id="div-right-icon" class="fa fa-caret-down"></i></div>
         </div>
-        <div id="most-common-words-table">
+        <div id="most-common-words-table" class="collapse show">
         </div>
       </div>
       <div class="box-border-style" id="names-origins-section">
         <div class="div-header">
           <div class="div-left">Extracted names with orginis</div>
-          <div class="div-right"></div>
+          <div class="div-right"><i id="div-right-icon" class="fa fa-caret-down"></i></div>
         </div>
-        <div id="names-origins-table">
+        <div id="names-origins-table" class="collapse show">
         </div>
       </div>
       <div class="box-border-style" id="words-info-section">
         <div class="div-header">
           <div class="div-left">Extracted words information </div>
-          <div class="div-right"></div>
+          <div class="div-right"><i id="div-right-icon" class="fa fa-caret-down"></i></div>
         </div>
-        <div id="words-info-tables">
+        <div id="words-info-tables" class="collapse show">
         </div>
       </div>
       <div class="box-border-style" id="custom-search-section">
         <div class="div-header">
           <div class="div-left">Custom Search</div>
-          <div class="div-right"></div>
+          <div class="div-right"><i id="div-right-icon" class="fa fa-caret-down"></i></div>
         </div>
-        <div id="custom-search-table">
+        <div id="custom-search-table" class="collapse show">
         </div>
       </div>
       <div class="box-border-style" id="possible-words-section">
         <div class="div-header">
           <div class="div-left">Possible words for combinations</div>
-          <div class="div-right"></div>
+          <div class="div-right"><i id="div-right-icon" class="fa fa-caret-down"></i></div>
         </div>
-        <div id="possible-words-section-table"></div>
+        <div id="possible-words-section-table" class="collapse show"></div>
       </div>
       <div class="box-border-style" id="combinations-section">
         <div class="div-header">
           <div class="div-left">Save Report</div>
-          <div class="div-right"></div>
+          <div class="div-right"><i id="div-right-icon" class="fa fa-caret-down"></i></div>
         </div>
-        <div class="div-100">
+        <div class="div-100" class="collapse show">
           <input type="button" class="save-text" value="Save as (Text)" />
           <div class="cell-separator"></div>
           <input type="button" class="save-json" value="Save as (Json)" />
@@ -793,34 +797,39 @@
       <div class="box-border-style" id="output-section-1">
         <div class="div-header">
           <div class="div-left">Profiles</div>
-          <div class="div-right"></div>
+          <div class="div-right"><i id="div-right-icon" class="fa fa-caret-down"></i></div>
         </div>
-        <div id="output-table-1"></div>
+        <div id="output-table-1" class="collapse show"></div>
       </div>
       <div class="box-border-style" id="output-section-2">
         <div class="div-header">
           <div class="div-left">Detected Profiles (Advanced)</div>
-          <div class="div-right"></div>
+          <div class="div-right"><i id="div-right-icon" class="fa fa-caret-down"></i></div>
         </div>
-        <div id="output-table-2"></div>
+        <div id="output-table-2" class="collapse show"></div>
       </div>
       <div class="box-border-style" id="output-section-3">
         <div class="div-header">
           <div class="div-left">Detected Profiles (Normal)</div>
-          <div class="div-right"></div>
+          <div class="div-right"><i id="div-right-icon" class="fa fa-caret-down"></i></div>
         </div>
-        <div id="output-table-3"></div>
+        <div id="output-table-3" class="collapse show"></div>
       </div>
       <div class="box-border-style" id="output-section-4">
         <div class="div-header">
           <div class="div-left">All Profiles (Normal)</div>
-          <div class="div-right"></div>
+          <div class="div-right"><i id="div-right-icon" class="fa fa-caret-down"></i></div>
         </div>
-        <div id="output-table-4"></div>
+        <div id="output-table-4" class="collapse show"></div>
       </div>
     </div>
   </div>
   <script>
+
+    random_names = ["sophia","liam","riley","jackson","emma","aiden","ava","elijah","isabella","grayson","aria","lucas","aaliyah","oliver","amelia","caden","mia","mateo","layla","muhammad","zoe","mason","camilla","carter","charlotte","jayden","eliana","ethan","mila","sebastian","everly","james","luna","michael","avery","benjamin","evelyn","logan","harper","leo","lily","luca","ella","alexander","gianna","levi","chloe","daniel","adalyn","josiah","charlie","henry","isla","jayce","ellie","julian","leah","jack","nora","ryan","scarlett","jacob","maya","asher","abigail","wyatt","madison","william","aubrey","owen","emily","gabriel","kinsley","miles","elena","lincoln","paisley","ezra","madelyn","isaiah","aurora","luke","peyton","cameron","nova","caleb","emilia","isaac","hannah","carson","sarah","samuel","ariana","colton","penelope","maverick","lila","matthew"]
+
+    $("#string-to-analyze").attr("placeholder", random_names[(Math.random() * random_names.length) | 0]);
+
     var interval_logs;
 
     $('#analyzed-options').selectize({
@@ -1167,6 +1176,25 @@
     $('#clear-options').click(function() {
       $('#analyzed-options')[0].selectize.clear()
     });
+
+    $(function() {
+        $('.div-header').click(function() {
+            if (this.innerText != "Enter Profile Name"){
+              if ($(this).next().hasClass('show'))
+              {
+                 $(this).find('#div-right-icon').removeClass("fa-caret-down")
+                 $(this).find('#div-right-icon').addClass("fa-caret-right")
+              }
+              else
+              {
+                 $(this).find('#div-right-icon').removeClass("fa-caret-right")
+                 $(this).find('#div-right-icon').addClass("fa-caret-down")
+              }
+              $(this).next().collapse('toggle');
+            }
+        });
+    });
+
   </script>
 </body>
 
