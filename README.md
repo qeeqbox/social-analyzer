@@ -12,6 +12,7 @@ The analysis and extracted social media information from this OSINT tool could h
 This project is *"currently used by some law enforcement agencies in countries where resources are limited"*.
 
 ## Updates
+* [Testing] - Adding locations to detections (This allows more customization to detection)
 * [Request] - Added full logs to Web App
 * [Request] - Added more improvements to the Web App (You can toggle the tables) 👏
 * Added nested detections 👏
