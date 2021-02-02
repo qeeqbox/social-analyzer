@@ -224,21 +224,41 @@ app.post("/analyze_string", async function(req, res, next) {
   var words_info = []
   var temp_words = []
   var custom_search = []
+  var logs = ""
+  var fast = false
   if (req.body.string == null || req.body.string == "") {
     res.json("Error");
   } else {
     req.body.uuid = req.body.uuid.replace(/[^a-zA-Z0-9\-]+/g, '');
-    if (req.body.option.includes("FindUserProfilesSpecial")) {
-      helper.log_to_file_queue(req.body.uuid, "[Starting] Checking user profiles special")
-      user_info_special.data = await specialScan.find_username_special(req);
-      helper.log_to_file_queue(req.body.uuid, "[Done] Checking user profiles special")
-    }
     if (req.body.option.includes("FindUserProfilesFast") || req.body.option.includes("GetUserProfilesFast")) {
+      fast = true
       helper.log_to_file_queue(req.body.uuid, "[Starting] Checking user profiles normal")
       user_info_normal.data = await fastScan.find_username_normal(req);
       helper.log_to_file_queue(req.body.uuid, "[Done] Checking user profiles normal")
     }
-    if (req.body.option.includes("FindUserProfilesSlow") || req.body.option.includes("ShowUserProfilesSlow")) {
+
+    if (req.body.option.includes("FindUserProfilesSpecial")) {
+      if(!fast){
+        helper.log_to_file_queue(req.body.uuid, "[Starting] Checking user profiles special")
+        user_info_special.data = await specialScan.find_username_special(req);
+        helper.log_to_file_queue(req.body.uuid, "[Done] Checking user profiles special")
+      }else {
+        helper.log_to_file_queue(req.body.uuid, "[Warning] FindUserProfilesFast with FindUserProfilesSpecial")
+        helper.log_to_file_queue(req.body.uuid, "[Skipping] FindUserProfilesSpecial")
+      }
+    }
+
+    if (req.body.option.includes("FindUserProfilesSlow") && fast) {
+      helper.log_to_file_queue(req.body.uuid, "[Warning] FindUserProfilesFast with FindUserProfilesSlow")
+      helper.log_to_file_queue(req.body.uuid, "[Skipping] FindUserProfilesSlow")
+    }
+
+    if (req.body.option.includes("ShowUserProfilesSlow") && fast) {
+      helper.log_to_file_queue(req.body.uuid, "[Warning] FindUserProfilesFast with ShowUserProfilesSlow")
+      helper.log_to_file_queue(req.body.uuid, "[Skipping] ShowUserProfilesSlow")
+    }
+
+    if ((req.body.option.includes("FindUserProfilesSlow") && !fast) || (req.body.option.includes("ShowUserProfilesSlow") && !fast)) {
       if (!req.body.option.includes("FindUserProfilesSlow")) {
         user_info_advanced.type = "show"
       } else if (!req.body.option.includes("ShowUserProfilesSlow")) {
@@ -248,6 +268,7 @@ app.post("/analyze_string", async function(req, res, next) {
       user_info_advanced.data = await slowScan.find_username_advanced(req);
       helper.log_to_file_queue(req.body.uuid, "[Done] Checking user profiles advanced")
     }
+
     if (req.body.option.includes("LookUps")) {
       helper.log_to_file_queue(req.body.uuid, "[Starting] Lookup")
       await externalApis.check_engines(req, info);
@@ -328,6 +349,9 @@ app.post("/analyze_string", async function(req, res, next) {
 
       Object.keys(all_words).forEach((key) => (all_words[key].length == 0) && delete all_words[key]);
     }
+
+    logs = fs.readFileSync(helper.get_log_file(req.body.uuid), 'utf8');
+
     res.json({
       info,
       table: all_words,
@@ -337,7 +361,8 @@ app.post("/analyze_string", async function(req, res, next) {
       user_info_advanced: user_info_advanced,
       user_info_special: user_info_special,
       names_origins: names_origins,
-      custom_search: custom_search
+      custom_search: custom_search,
+      logs: logs
     });
   }
 });
