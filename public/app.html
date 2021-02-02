@@ -239,6 +239,7 @@
   #output-section-3,
   #output-section-4,
   #output-section-5,
+  #logs-section,
   #most-common-words-section,
   #words-info-section,
   #custom-search-section,
@@ -607,6 +608,12 @@
     font-size: 16px;
   }
 
+  #logs-section pre{
+    color: #d0d0d0 !important;
+    font-size: 12px !important;
+    font-family: monospace !important;
+  }
+
 </style>
 
 <body>
@@ -822,6 +829,13 @@
         </div>
         <div id="output-table-4" class="collapse show"></div>
       </div>
+      <div class="box-border-style" id="logs-section">
+        <div class="div-header">
+          <div class="div-left">Logs</div>
+          <div class="div-right"><i id="div-right-icon" class="fa fa-caret-right"></i></div>
+        </div>
+        <div id="logs-pre" class="collapse"></div>
+      </div>
     </div>
   </div>
   <script>
@@ -885,6 +899,8 @@
       $('#output-table-3').html("");
       $('#output-section-4').hide();
       $('#output-table-4').html("");
+      $('#logs-section').hide();
+      $('#logs-pre').html("");
       $('#names-origins-section').hide();
       $('#names-origins-table').html("");
       $('#custom-search-section').hide();
@@ -1088,6 +1104,12 @@
             $("#custom-search-table").last().append('<table><tr><th>site</th><th>link</th><th>snippet</th></tr>' + temp_tr + '</table>')
             $('#custom-search-section').show();
           }
+
+          if (data.logs.length > 0) {
+            $("#logs-pre").html('<pre>' + data.logs + '</pre>')
+            $('#logs-section').show();
+          }
+
         }
       });
 
