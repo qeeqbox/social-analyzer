@@ -159,9 +159,3 @@ sudo kill -9 $(sudo lsof -t -i:9005)
 
 ## Articles
 `kitploit professionalhackers secnhack meethackers raidforums redpacketsecurity hacking reviews hacking land securityonline skynettools luca-mercatanti pentesttools  anonymousmedia ddosi tenochtitlan-sec modernnetsec haktechs haxf4rall hacker-gadgets mrhacker sector035`
-
-## Contact
-[![Generic badge](https://img.shields.io/badge/slack-@qeeqbox-yellow.svg?logo=slack&style=flat-square)](https://qeeqbox.slack.com/messages/social-analyzer)
-
-## Rate
-Thanks everyone for the Awesome Open Source Rating! [![Generic badge](https://raw.githubusercontent.com/qeeqbox/social-analyzer/main/readme/awesomeopensource.png)](https://github.com/qeeqbox/social-analyzer/stargazers)
