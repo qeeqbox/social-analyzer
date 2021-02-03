@@ -160,7 +160,6 @@ def find_username_normal(req):
 	def fetch_url(site, username, options):
 		sleep(randint(1, 99) / 100)
 		LOG.info("[Checking] "+ get_fld(site["url"]))
-		detections_count = 0;
 		source = ""
 
 		detection_level = {
@@ -181,19 +180,6 @@ def find_username_normal(req):
 		  "current":"high"
 		}
 
-		temp_profile = {
-		  "found": 0,
-		  "image": "",
-		  "link": "",
-		  "rate": "",
-		  "title": "",
-		  "language": "",
-		  "text": "",
-		  "type": "",
-		  "good":"",
-		  "method":""
-		}
-
 		headers = {
 			"User-Agent": "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:84.0) Gecko/20100101 Firefox/84.0",
 		}
@@ -205,15 +191,65 @@ def find_username_normal(req):
 			response.close()
 			text_only = "unavailable";
 			title = "unavailable";
+			temp_profile = {}
+			temp_detected = {}
+			detections_count = 0
 
-			for detection in site["detections"]:
-				temp_found = "false";
-				if detection["type"] in detection_level[detection_level["current"]]["fast"] and source != "":
-					detections_count += 1
-					if detection["string"].replace("{username}", username).lower() in source.lower():
-						temp_found = "true"
-					if detection["return"] == temp_found:
-						temp_profile["found"] += 1
+			def merge_dicts(temp_dict):
+				result = {}
+				for item in temp_dict:
+					for key, value in item.items():
+						if key in result:
+							result[key] += value
+						else:
+							result[key] = value
+				return result
+
+			def detect_logic(detections):
+				detections_count = 0
+				temp_detected = []
+				temp_found = "false"
+				temp_profile = {
+				  "found": 0,
+				  "image": "",
+				  "link": "",
+				  "rate": "",
+				  "title": "",
+				  "language": "",
+				  "text": "",
+				  "type": "",
+				  "good":"",
+				  "method":""
+				}
+				for detection in detections:
+					temp_found = "false"
+					if detection["type"] in detection_level[detection_level["current"]]["fast"] and source != "":
+						detections_count += 1
+						if detection["string"].replace("{username}", username).lower() in source.lower():
+							temp_found = "true"
+						if detection["return"] == temp_found:
+							temp_profile["found"] += 1
+				return temp_profile, temp_detected, detections_count
+
+			def detect():
+				temp_profile_all = []
+				temp_detected_all = []
+				detections_count_all = 0
+				for detection in site["detections"]:
+					detections_ = []
+					if detection["type"] == "shared":
+						detections_ = next(item for item in SHARED_DETECTIONS if item["name"] == detection['name'])
+						if len(detections_) > 0:
+							val1, val2, val3 = detect_logic(detections_["detections"])
+							temp_profile_all.append(val1)
+							detections_count_all += val3
+
+				val1, val2, val3 = detect_logic(site["detections"])
+				temp_profile_all.append(val1)
+				detections_count_all += val3
+				return merge_dicts(temp_profile_all), temp_detected_all, detections_count_all
+
+			temp_profile, temp_detected, detections_count = detect()
 
 			if temp_profile["found"] >= detection_level[detection_level["current"]]["found"] and detections_count >= detection_level[detection_level["current"]]["count"]:
 				temp_profile["good"] = "true"
@@ -361,7 +397,7 @@ def msg(name=None):
 	return """python3 app.py --cli --mode 'fast' --username 'johndoe' --websites 'youtube pinterest tumblr' --output 'pretty'"""
 
 WEBSITES_ENTRIES = init_websites()
-SHARED_DETECTIONS = init_websites()
+SHARED_DETECTIONS = init_shared_detections()
 GENERIC_DETECTION = init_websites()
 
 arg_parser = ArgumentParser(description="Qeeqbox/social-analyzer - API and Web App for analyzing & finding a person's profile across 300+ social media websites (Detections are updated regularly)",usage=msg())
