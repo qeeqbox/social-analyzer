@@ -12,15 +12,11 @@ The analysis and extracted social media information from this OSINT tool could h
 This project is *"currently used by some law enforcement agencies in countries where resources are limited"*.
 
 ## Updates
-* ~~[Testing] - Adding locations to detections (This will allow more customization to the detections)~~
-* [Request] - Added full logs to Web App
-* [Request] - Added more improvements to the Web App (You can toggle the tables) 👏
+* Added shared detections to Python CLI 👏👏👏
+* Added full logs to Web App
+* Added more improvements to the Web App (You can toggle the tables) 👏
 * Added nested detections 👏
 * Added shared detections to NodeJS Web App & CLI 👏
-* API, CLIs & Web App produce:
-    * [Detected] -> 0 to 100 (No-Maybe-Yes)
-    * [Unknown]  -> Detection did not meet the requirement
-    * [Failed]   -> Profile website did not respond
 
 ## Security Testing
 
@@ -150,9 +146,9 @@ sudo kill -9 $(sudo lsof -t -i:9005)
 - Let me know if I missed a reference or resource!
 
 ## Disclaimer\Notes
-- This tool meant to be used locally (It does not have any type of Access Control)
-- If you want your website to be excluded from this project, please reach out
 - Make sure to download this tool from GitHub - (ONLY) ⚠️
+- If you want your website to be excluded from this project, please reach out
+- This tool meant to be used locally (It does not have any type of Access Control)
 
 ## Interviews
 [Console 37](https://console.substack.com/p/console-37)
