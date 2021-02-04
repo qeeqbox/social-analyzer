@@ -107,7 +107,7 @@ sudo apt-get update
 sudo apt-get install -y firefox-esr tesseract-ocr git
 git clone https://github.com/qeeqbox/social-analyzer.git
 cd social-analyzer
-pip3 install lxml BeautifulSoup4 tld pygments langdetect
+pip3 install lxml BeautifulSoup4 tld pygments langdetect requests
 # If you want to list all websites use python3 app.py --cli --list
 # Remember the following runs as FindUserProfilesFast
 # You can also scan all websites using --websites "all"
