@@ -117,11 +117,11 @@ python3 app.py --cli --mode "fast" --username "johndoe" --websites "youtube pint
 ## Install and run as CLI (Windows + Python3 + NPM + Firefox)
 ```bash
 Download Python3 from https://www.python.org/downloads/
-pip3 install lxml BeautifulSoup4 tld pygments langdetect requests
+pip install lxml BeautifulSoup4 tld pygments langdetect requests
 # If you want to list all websites use python3 app.py --cli --list
 # Remember the following runs as FindUserProfilesFast
 # You can also scan all websites using --websites "all"
-python3 app.py --cli --mode "fast" --username "johndoe" --websites "youtube pinterest tumblr" --output "pretty"
+python app.py --cli --mode "fast" --username "johndoe" --websites "youtube pinterest tumblr" --output "pretty"
 ```
 
 ## Install and run as web app with a grid (docker-compose)
