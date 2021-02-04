@@ -13,7 +13,7 @@
 
 from logging import getLogger, DEBUG, StreamHandler, Formatter
 from logging.handlers import RotatingFileHandler
-from sys import stdout
+from sys import stdout, platform
 from os import path, makedirs
 from requests import get, packages
 from time import time
@@ -102,6 +102,7 @@ def check_errors(on_off=None):
 
 @check_errors(True)
 def setup_logger(uuid=None,file=False):
+
 	if not path.exists("logs"):
 		makedirs("logs")
 	LOG.setLevel(DEBUG)
@@ -109,14 +110,14 @@ def setup_logger(uuid=None,file=False):
 	st.setFormatter(Formatter("%(message)s"))
 	LOG.addHandler(st)
 	if file and uuid:
-		fh = RotatingFileHandler("logs/{}".format(uuid))
+		fh = RotatingFileHandler(path.join("logs",uuid))
 		fh.setFormatter(Formatter("%(asctime)s - %(name)s - %(levelname)s - %(message)s"))
 		LOG.addHandler(fh)
 
 @check_errors(True)
 def init_websites():
 	temp_list = []
-	with open(SITES_PATH) as f:
+	with open(SITES_PATH, encoding='utf-8') as f:
 		for item in load(f)["websites_entries"]:
 			item["selected"] = "false"
 			temp_list.append(item)
@@ -125,7 +126,7 @@ def init_websites():
 @check_errors(True)
 def init_shared_detections():
 	temp_list = []
-	with open(SITES_PATH) as f:
+	with open(SITES_PATH, encoding='utf-8') as f:
 		for item in load(f)["shared_detections"]:
 			item["selected"] = "false"
 			temp_list.append(item)
@@ -134,7 +135,7 @@ def init_shared_detections():
 @check_errors(True)
 def init_generic_detection():
 	temp_list = []
-	with open(SITES_PATH) as f:
+	with open(SITES_PATH, encoding='utf-8') as f:
 		for item in load(f)["generic_detection"]:
 			item["selected"] = "false"
 			temp_list.append(item)
@@ -307,7 +308,6 @@ def find_username_normal(req):
 					except Exception as e:
 						pass
 
-
 	WEBSITES_ENTRIES[:] = [d for d in WEBSITES_ENTRIES if d.get('selected') == "true"]
 	if len(WEBSITES_ENTRIES) > 0:
 		for site in WEBSITES_ENTRIES:
@@ -380,15 +380,24 @@ def check_user_cli(argv):
 		if 'detected' in temp_detected:
 			LOG.info("\n[Detected] {} Profile[s]\n".format(len(temp_detected['detected'])));
 			for item in temp_detected['detected']:
-				LOG.info(highlight(dumps(item, sort_keys=True, indent=4), lexers.JsonLexer(), formatters.TerminalFormatter()))
+				if platform == "win32":
+					LOG.info(dumps(item, sort_keys=True, indent=4))
+				else:
+					LOG.info(highlight(dumps(item, sort_keys=True, indent=4), lexers.JsonLexer(), formatters.TerminalFormatter()))
 		if 'unknown' in temp_detected:
 			LOG.info("\n[unknown] {} Profile[s]\n".format(len(temp_detected['unknown'])));
 			for item in temp_detected['unknown']:
-				LOG.info(highlight(dumps(item, sort_keys=True, indent=4), lexers.JsonLexer(), formatters.TerminalFormatter()))
+				if platform == "win32":
+					LOG.info(dumps(item, sort_keys=True, indent=4))
+				else:
+					LOG.info(highlight(dumps(item, sort_keys=True, indent=4), lexers.JsonLexer(), formatters.TerminalFormatter()))
 		if 'failed' in temp_detected:
 			LOG.info("\n[failed] {} Profile[s]\n".format(len(temp_detected['failed'])));
 			for item in temp_detected['failed']:
-				LOG.info(highlight(dumps(item, sort_keys=True, indent=4), lexers.JsonLexer(), formatters.TerminalFormatter()))
+				if platform == "win32":
+					LOG.info(dumps(item, sort_keys=True, indent=4))
+				else:
+					LOG.info(highlight(dumps(item, sort_keys=True, indent=4), lexers.JsonLexer(), formatters.TerminalFormatter()))
 
 	if argv.output == "json":
 		print(dumps(temp_detected, sort_keys=True, indent=None))
