@@ -63,7 +63,14 @@ Profile images **will not** be blurred. If you want them to be blurred, turn tha
 - Gmail (example@gmail.com)
 - Google (example@example.com)
 
-## Install and run as web app (Linux + NodeJS + NPM + Firefox)
+## Install and run as Python CLI (Windows, Linux, MacOS, Raspberry pi..)
+```bash
+pip install social-analyzer
+# You can also scan all websites using --websites "all"
+python -m social-analyzer --cli --mode "fast" --username "johndoe" --websites "youtube pinterest tumblr" --output "pretty"
+```
+
+## Install and run as NodeJS Web App (Linux + NodeJS + NPM + Firefox)
 ```bash
 sudo add-apt-repository ppa:mozillateam/ppa
 sudo apt-get update
@@ -75,7 +82,7 @@ npm install
 npm start
 ```
 
-## Install and run as web app (Windows + NodeJS + NPM + Firefox)
+## Install and run as NodeJS Web App (Windows + NodeJS + NPM + Firefox)
 ```bash
 Download & Install firefox esr (Extended Support Release) from https://www.mozilla.org/en-US/firefox/enterprise/#download
 Download & Install https://nodejs.org/en/download/
@@ -86,7 +93,7 @@ npm install
 npm start
 ```
 
-## Install and run as CLI (Linux + NodeJS + NPM + Firefox)
+## Install and run as NodeJS CLI (Linux + NodeJS + NPM + Firefox)
 ```bash
 sudo add-apt-repository ppa:mozillateam/ppa
 sudo apt-get update
@@ -101,38 +108,14 @@ npm install
 node app.js --cli --mode "fast" --username "johndoe" --websites "youtube pinterest tumblr" --output "pretty"
 ```
 
-## Install and run as CLI (Linux + Python3 + NPM + Firefox)
-```bash
-sudo add-apt-repository ppa:mozillateam/ppa
-sudo apt-get update
-sudo apt-get install -y firefox-esr tesseract-ocr git
-git clone https://github.com/qeeqbox/social-analyzer.git
-cd social-analyzer
-pip3 install lxml BeautifulSoup4 tld pygments langdetect requests
-# If you want to list all websites use python3 app.py --cli --list
-# Remember the following runs as FindUserProfilesFast
-# You can also scan all websites using --websites "all"
-python3 app.py --cli --mode "fast" --username "johndoe" --websites "youtube pinterest tumblr" --output "pretty"
-```
-
-## Install and run as CLI (Windows + Python3 + NPM + Firefox)
-```bash
-Download Python3 from https://www.python.org/downloads/
-pip install BeautifulSoup4 tld pygments langdetect requests
-# If you want to list all websites use python3 app.py --cli --list
-# Remember the following runs as FindUserProfilesFast
-# You can also scan all websites using --websites "all"
-python app.py --cli --mode "fast" --username "johndoe" --websites "youtube pinterest tumblr" --output "pretty"
-```
-
-## Install and run as web app with a grid (docker-compose)
+## Install and run as NodeJS Web App with a grid (docker-compose)
 ```bash
 git clone https://github.com/qeeqbox/social-analyzer.git
 cd social-analyzer
 docker-compose -f docker-compose.yml up --build
 ```
 
-## Install and run as web app (docker)
+## Install and run as NodeJS Web App (docker)
 ```bash
 git clone https://github.com/qeeqbox/social-analyzer.git
 cd social-analyzer
