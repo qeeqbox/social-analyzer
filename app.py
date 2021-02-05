@@ -1,4 +1,5 @@
-#!/usr/bin/env python3
+#!/usr/bin/env python
+
 """
 //  -------------------------------------------------------------
 //  author        Giga
@@ -16,14 +17,13 @@ from logging.handlers import RotatingFileHandler
 from sys import stdout, platform
 from os import path, makedirs
 from requests import get, packages
-from time import time
+from time import time,sleep
 from argparse import ArgumentParser
-from json import load
+from json import load,dumps
 from uuid import uuid4
 from tld import get_fld
 from functools import wraps
 from bs4 import BeautifulSoup
-from json import dumps
 from pygments import highlight, lexers, formatters
 from re import sub as resub
 from copy import deepcopy
@@ -32,7 +32,7 @@ from langdetect import detect
 from urllib3.exceptions import InsecureRequestWarning
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from random import randint
-from time import sleep
+from tempfile import mkdtemp
 
 packages.urllib3.disable_warnings(category=InsecureRequestWarning)
 
@@ -40,8 +40,8 @@ WEBSITES_ENTRIES = []
 SHARED_DETECTIONS = []
 GENERIC_DETECTION = []
 LOG = getLogger("social-analyzer")
-SITES_PATH = path.join("data","sites.json")
-LANGUAGES_PATH = path.join("data","languages.json")
+SITES_PATH = path.join(path.dirname(__file__),"data","sites.json")
+LANGUAGES_PATH = path.join(path.dirname(__file__),"data","languages.json")
 LANGUAGES_JSON = {}
 WORKERS = 15
 
@@ -102,15 +102,14 @@ def check_errors(on_off=None):
 
 @check_errors(True)
 def setup_logger(uuid=None,file=False):
-
-	if not path.exists("logs"):
-		makedirs("logs")
+	temp_folder = mkdtemp()
+	print('[!] Temporary Logs Directory {}'.format(temp_folder))
 	LOG.setLevel(DEBUG)
 	st = StreamHandler(stdout)
 	st.setFormatter(Formatter("%(message)s"))
 	LOG.addHandler(st)
 	if file and uuid:
-		fh = RotatingFileHandler(path.join("logs",uuid))
+		fh = RotatingFileHandler(path.join(temp_folder,uuid))
 		fh.setFormatter(Formatter("%(asctime)s - %(name)s - %(levelname)s - %(message)s"))
 		LOG.addHandler(fh)
 
@@ -403,7 +402,10 @@ def check_user_cli(argv):
 		print(dumps(temp_detected, sort_keys=True, indent=None))
 
 def msg(name=None):
-	return """python3 app.py --cli --mode 'fast' --username 'johndoe' --websites 'youtube pinterest tumblr' --output 'pretty'"""
+	if path.basename(__file__) == "__main__.py":
+		return """python -m social-analyzer --cli --mode 'fast' --username 'johndoe' --websites 'youtube pinterest tumblr' --output 'pretty'"""
+	else:
+		return """python3 app.py --cli --mode 'fast' --username 'johndoe' --websites 'youtube pinterest tumblr' --output 'pretty'"""
 
 WEBSITES_ENTRIES = init_websites()
 SHARED_DETECTIONS = init_shared_detections()
@@ -424,13 +426,12 @@ arg_parser_list = arg_parser.add_argument_group("Listing websites & detections")
 arg_parser_list.add_argument("--list", action="store_true",  help="List all available websites")
 argv = arg_parser.parse_args()
 
-if argv.output != "json":
+if __name__ == "__main__":
 	print("[!] Detections are updated very often, make sure to get the most up-to-date ones")
-
-if argv.cli:
-	if argv.list:
-		setup_logger()
-		list_all_websites()
-	elif argv.mode == "fast":
-		if argv.username != "" and argv.websites != "":
-			check_user_cli(argv)
+	if argv.cli:
+		if argv.list:
+			setup_logger()
+			list_all_websites()
+		elif argv.mode == "fast":
+			if argv.username != "" and argv.websites != "":
+				check_user_cli(argv)
