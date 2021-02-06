@@ -454,7 +454,6 @@ async function check_user_cli(argv) {
   } else {
     var temp_detected = {
       "detected": [],
-      "maybe": [],
       "unknown": [],
       "failed": []
     }
@@ -502,7 +501,7 @@ async function check_user_cli(argv) {
 
     if (argv.output == "pretty" || argv.output == "") {
       if ('detected' in temp_detected) {
-        helper.log_to_file_queue(req.body.uuid, "\n[detected] " + temp_detected.detected.length + " Profile[s]\n");
+        helper.log_to_file_queue(req.body.uuid, "\n[Detected] " + temp_detected.detected.length + " Profile[s]\n");
         helper.log_to_file_queue(req.body.uuid, temp_detected.detected, true);
       }
       if ('unknown' in temp_detected) {
