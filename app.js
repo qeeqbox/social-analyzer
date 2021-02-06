@@ -548,6 +548,7 @@ if (argv.cli) {
   }
 } else {
   var server = app.listen(server_port, server_host, function() {
+    helper.setup_tecert()
     console.log("Server started at http://%s:%s/app.html", server_host, server_port);
   });
 }

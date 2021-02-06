@@ -16,31 +16,30 @@ async function find_username_normal(req) {
   helper.verbose && console.log(`Total time ${new Date() - time}`);
   var [third_re_try, third_profiles] = await find_username_normal_wrapper(req, second_re_try)
   helper.verbose && console.log(`Total time ${new Date() - time}`);
-  if (third_re_try.length > 0){
-    failed_sites = await get_failed(req,third_re_try)
+  if (third_re_try.length > 0) {
+    failed_sites = await get_failed(req, third_re_try)
     all_results = Array.prototype.concat(first_profiles, second_profiles, third_profiles, failed_sites)
-  }
-  else{
+  } else {
     all_results = Array.prototype.concat(first_profiles, second_profiles, third_profiles)
   }
 
-  return all_results
+  all_results = all_results.filter(item => item)
+  return all_results.sort((first, second) => {return helper.compare_objects(first, second, 'rate')})
 }
 
-async function get_failed(req,failed){
+async function get_failed(req, failed) {
   temp_result = []
-  try{
+  try {
     await failed.forEach(site => {
       var temp_profile = {
         "link": "",
-        "method":""
+        "method": ""
       };
       temp_profile.method = "failed"
       temp_profile.link = site.url.replace("{username}", req.body.string)
       temp_result.push(temp_profile)
     });
-  }
-  catch(err){
+  } catch (err) {
     helper.verbose && console.log(err);
   }
   return temp_result
@@ -50,7 +49,7 @@ async function find_username_normal_wrapper(req, sites) {
   var results = []
   var re_try = []
   var functions = [];
-  try{
+  try {
     var temp_sites = sites.filter(site => site.selected == "true")
     if (temp_sites.length > 0) {
       await temp_sites.forEach(site => {
@@ -70,8 +69,7 @@ async function find_username_normal_wrapper(req, sites) {
         }
       });
     }
-  }
-  catch(err){
+  } catch (err) {
     helper.verbose && console.log(err);
   }
   return [re_try, results]
