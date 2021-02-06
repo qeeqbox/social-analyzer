@@ -349,7 +349,7 @@ def check_user_cli(argv):
 					item = clean_up_item(item,argv.options)
 					temp_detected["detected"].append(item)
 				else:
-					item = delete_keys(item,["found","rate","method","good"])
+					item = delete_keys(item,["found","rate","exist","method","good"])
 					item = clean_up_item(item,argv.options)
 					temp_detected["unknown"].append(item)
 			elif item["method"] == "find":
@@ -358,11 +358,11 @@ def check_user_cli(argv):
 					item = clean_up_item(item,argv.options)
 					temp_detected["detected"].append(item)
 			elif item["method"] == "get":
-				item = delete_keys(item,["found","rate","method","good"])
+				item = delete_keys(item,["found","rate","exist","method","good"])
 				item = clean_up_item(item,argv.options)
 				temp_detected["unknown"].append(item)
 			else:
-				item = delete_keys(item,["found","rate","method","good","text","title","language","rate"])
+				item = delete_keys(item,["found","rate","exist","method","good","text","title","language","rate"])
 				item = clean_up_item(item,argv.options)
 				temp_detected["failed"].append(item)
 
