@@ -128,7 +128,17 @@ async function find_username_site(uuid, username, options, site) {
         temp_profile.title = title;
         temp_profile.language = language;
         if (temp_profile.good == "true") {
-          temp_profile.rate = "%" + ((temp_profile["found"] / detections_count) * 100).toFixed(2);
+          var temp_value = ((temp_profile["found"] / detections_count) * 100).toFixed(2)
+          temp_profile.rate = "%" + temp_value;
+          if (temp_value >= 100.00){
+            temp_profile.exist = "Yes"
+          }
+          else if (temp_value >= 50.00 && temp_value < 100.00){
+            temp_profile.exist = "Maybe"
+          }
+          else{
+            temp_profile.exist = "No"
+          }
         }
         temp_profile.link = site.url.replace("{username}", username);
         temp_profile.type = site.type

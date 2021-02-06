@@ -454,6 +454,7 @@ async function check_user_cli(argv) {
   } else {
     var temp_detected = {
       "detected": [],
+      "maybe": [],
       "unknown": [],
       "failed": []
     }
@@ -466,7 +467,7 @@ async function check_user_cli(argv) {
           item = clean_up_item(item,argv.options)
           temp_detected.detected.push(item)
         } else {
-          item = delete_keys(item,['found','rate','method','good'])
+          item = delete_keys(item,['found','rate','exist','method','good'])
           item = clean_up_item(item,argv.options)
           temp_detected.unknown.push(item)
         }
@@ -477,11 +478,11 @@ async function check_user_cli(argv) {
           temp_detected.detected.push(item)
         }
       } else if (item.method == "get") {
-        item = delete_keys(item,['found','rate','method','good'])
+        item = delete_keys(item,['found','rate','exist','method','good'])
         item = clean_up_item(item,argv.options)
         temp_detected.unknown.push(item)
       } else if (item.method == "failed") {
-        item = delete_keys(item,['found','rate','method','good','text','language','title','type'])
+        item = delete_keys(item,['found','rate','exist','method','good','text','language','title','type'])
         item = clean_up_item(item,argv.options)
         temp_detected.failed.push(item)
       }
@@ -501,7 +502,7 @@ async function check_user_cli(argv) {
 
     if (argv.output == "pretty" || argv.output == "") {
       if ('detected' in temp_detected) {
-        helper.log_to_file_queue(req.body.uuid, "\n[Detected] " + temp_detected.detected.length + " Profile[s]\n");
+        helper.log_to_file_queue(req.body.uuid, "\n[detected] " + temp_detected.detected.length + " Profile[s]\n");
         helper.log_to_file_queue(req.body.uuid, temp_detected.detected, true);
       }
       if ('unknown' in temp_detected) {

@@ -28,6 +28,7 @@ var profile_template = {
   "image": "",
   "link": "",
   "rate": "",
+  "exist": "No",
   "title": "",
   "language": "",
   "text": "",
