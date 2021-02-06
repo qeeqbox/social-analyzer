@@ -84,7 +84,7 @@ async function find_username_site(uuid, username, options, site) {
       var text_only = "unavailable";
       var title = "unavailable";
       var link = site.url.replace("{username}", username);
-      await driver.manage().setTimeouts(timeouts);
+      //await driver.manage().setTimeouts(timeouts);
       await driver.get(link);;
       source = await driver.getPageSource();
       screen_shot = await driver.takeScreenshot();
