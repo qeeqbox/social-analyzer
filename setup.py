@@ -15,7 +15,7 @@ setup(
     version='0.4',
     license='AGPL-3.0',
     url='https://github.com/qeeqbox/social-analyzer',
-    packages=['socialanalyzer'],
+    packages=['social-analyzer'],
     include_package_data=True,
     entry_points={'console_scripts': ['social_analyzer = social_analyzer.__main__:main']},
     install_requires=['BeautifulSoup4', 'tld', 'pygments', 'langdetect', 'requests'],
