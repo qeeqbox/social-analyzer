@@ -1,5 +1,6 @@
 var helper = require('./helper.js')
 var tesseract = require("tesseract.js")
+const { createWorker } = require('tesseract.js');
 
 function merge_dicts(temp_dict){
   result = {}
@@ -53,29 +54,38 @@ async function detect_logic(type, uuid, username, options, site, source = "", sc
         detections_count += 1
         temp_detected.count += 1
         var temp_found = "false"
-        if (detection.type == "ocr" && screen_shot != "" && options.includes("FindUserProfilesSlowTempDisable")) {
+        if (detection.type == "ocr" && screen_shot != "" && options.includes("FindUserProfilesSlow")) {
           const temp_buffer_image = Buffer.from(screen_shot, "base64")
-          await tesseract.recognize(temp_buffer_image, "eng").then(result => {
-              text = result.data.text.replace(/[^A-Za-z0-9]/gi, "");
-              detection.string = detection.string.replace(/[^A-Za-z0-9]/gi, "");
-              if (text != "") {
-                if (text.toLowerCase().includes(detection.string.toLowerCase())) {
-                  temp_found = "true";
-                }
-                if (detection.return == temp_found) {
-                  temp_profile.found += 1
-                  temp_detected.ocr += 1
-                  if (detection.return == 'true') {
-                    temp_detected.true += 1
-                  } else {
-                    temp_detected.false += 1
-                  }
+          const ocr_worker = createWorker();
+          try{
+            await ocr_worker.load();
+            await ocr_worker.loadLanguage('eng');
+            await ocr_worker.initialize('eng');
+            const { data: { text } } = await ocr_worker.recognize(temp_buffer_image);
+            await ocr_worker.terminate();
+            if (text != "") {
+              if (text.toLowerCase().includes(detection.string.toLowerCase())) {
+                temp_found = "true";
+              }
+              if (detection.return == temp_found) {
+                temp_profile.found += 1
+                temp_detected.ocr += 1
+                if (detection.return == 'true') {
+                  temp_detected.true += 1
+                } else {
+                  temp_detected.false += 1
                 }
               }
-            })
-            .catch(err => {
-              helper.verbose && console.log(err);
-            })
+            }
+            else{
+              detections_count -= 1
+              temp_detected.count -= 1
+            }
+          }
+          catch(err){
+            detections_count -= 1
+            temp_detected.count -= 1
+          }
         } else if (detection.type == "normal" && source != "") {
           if (source.toLowerCase().includes(detection.string.replace("{username}", username).toLowerCase())) {
             temp_found = "true";
