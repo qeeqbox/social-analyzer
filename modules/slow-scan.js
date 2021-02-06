@@ -19,6 +19,7 @@ if (process.platform == 'win32'){
 async function find_username_advanced(req) {
   const time = new Date();
   const functions = [];
+  var all_results = []
   helper.websites_entries.forEach((site) => {
     if ("status" in site) {
       if (site.status == "bad") {
@@ -29,9 +30,10 @@ async function find_username_advanced(req) {
       functions.push(find_username_site.bind(null, req.body.uuid, req.body.string, req.body.option, site));
     }
   });
-  const results = await async.parallelLimit(functions, 8);
+  var results = await async.parallelLimit(functions, 8);
   helper.verbose && console.log(`Total time ${new Date() - time}`);
-  return results.filter(item => item !== undefined)
+  results = results.filter(item => item)
+  return results.sort((first, second) => {return helper.compare_objects(first, second, 'rate')})
 }
 
 async function find_username_site(uuid, username, options, site) {

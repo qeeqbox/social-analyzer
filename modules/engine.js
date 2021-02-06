@@ -23,7 +23,7 @@ async function detect(type, uuid, username, options, site, source = "", screen_s
   await Promise.all(site.detections.map(async detection => {
     if (detection.type == "shared") {
       var shared_detection = await helper.shared_detections.find(o => o.name === detection.name);
-      var [val1, val2, val3] = await detect_logic("fast", uuid, username, options, shared_detection, source)
+      var [val1, val2, val3] = await detect_logic(type, uuid, username, options, shared_detection, source, screen_shot)
       temp_profile.push(val1)
       temp_detected.push(val2)
       detections_count += val3
@@ -34,7 +34,8 @@ async function detect(type, uuid, username, options, site, source = "", screen_s
     }
   }));
 
-  var [val1, val2, val3] = await detect_logic("fast", uuid, username, options, site, source)
+
+  var [val1, val2, val3] = await detect_logic(type, uuid, username, options, site, source, screen_shot)
   temp_profile.push(val1)
   temp_detected.push(val2)
   detections_count += val3
@@ -52,7 +53,7 @@ async function detect_logic(type, uuid, username, options, site, source = "", sc
         detections_count += 1
         temp_detected.count += 1
         var temp_found = "false"
-        if (detection.type == "ocr" && screen_shot != "" && options.includes("FindUserProfilesSlow")) {
+        if (detection.type == "ocr" && screen_shot != "" && options.includes("FindUserProfilesSlowTempDisable")) {
           const temp_buffer_image = Buffer.from(screen_shot, "base64")
           await tesseract.recognize(temp_buffer_image, "eng").then(result => {
               text = result.data.text.replace(/[^A-Za-z0-9]/gi, "");

@@ -3,23 +3,24 @@ var google_api_key = "";
 var google_api_cs = "";
 var grid_url = "";
 var proxy = "";
+var tecert_file = "";
 
 var detection_level = {
   "extreme": {
     "fast": "normal",
     "slow": "normal,advanced,ocr",
     "detections": "true",
-    "count":1,
-    "found":2
+    "count": 1,
+    "found": 2
   },
   "high": {
     "fast": "normal",
     "slow": "normal,advanced,ocr",
     "detections": "true,false",
-    "count":2,
-    "found":1
+    "count": 2,
+    "found": 1
   },
-  "current":"high"
+  "current": "high"
 }
 
 var profile_template = {
@@ -31,17 +32,17 @@ var profile_template = {
   "language": "",
   "text": "",
   "type": "",
-  "good":"",
-  "method":""
+  "good": "",
+  "method": ""
 };
 
 var detected_websites = {
-  "normal":0,
-  "advanced":0,
-  "ocr":0,
-  "true":0,
-  "false":0,
-  "count":0,
+  "normal": 0,
+  "advanced": 0,
+  "ocr": 0,
+  "true": 0,
+  "false": 0,
+  "count": 0,
 }
 
 var header_options = {
@@ -59,9 +60,9 @@ var cheerio = require('cheerio');
 var path = require('path');
 var slash = require('slash');
 
-var sites_json_path = slash(path.join(__dirname,'..','data', 'sites.json'))
-var names_json_path = slash(path.join(__dirname,'..','data', 'names.json'))
-var dict_json_path = slash(path.join(__dirname,'..','data', 'dict.json'))
+var sites_json_path = slash(path.join(__dirname, '..', 'data', 'sites.json'))
+var names_json_path = slash(path.join(__dirname, '..', 'data', 'names.json'))
+var dict_json_path = slash(path.join(__dirname, '..', 'data', 'dict.json'))
 
 var websites_entries = JSON.parse(fs.readFileSync(sites_json_path))['websites_entries'];
 var shared_detections = JSON.parse(fs.readFileSync(sites_json_path))['shared_detections'];
@@ -76,15 +77,14 @@ function get_log_file(uuid) {
   return _string
 }
 
-function log_to_file_queue(uuid, msg, json=false) {
+function log_to_file_queue(uuid, msg, json = false) {
   logs_queue = logs_queue.then(function() {
     return new Promise(function(resolve) {
       temp_log_file = slash(path.join('logs', uuid + "_log.txt"))
       fs.appendFile(temp_log_file, msg + "\n", function(err, data) {
-        if (json){
+        if (json) {
           console.log(JSON.stringify(msg, null, 2))
-        }
-        else{
+        } else {
           console.log(msg)
         }
         resolve();
@@ -99,7 +99,7 @@ function get_language_by_parsing(body) {
     var $ = cheerio.load(body);
     var code = $("html").attr("lang")
     if (code != "") {
-      if ('undefined' !== langs.where("1", code) && langs.where("1", code)){
+      if ('undefined' !== langs.where("1", code) && langs.where("1", code)) {
         language = langs.where("1", code).name
       }
     }
@@ -115,8 +115,7 @@ function get_language_by_guessing(text) {
     if (text != "unavailable" && text != "") {
       var code = franc(text);
       if (code !== 'und') {
-        if ('undefined' !== langs.where("3", code) && langs.where("3", code))
-        {
+        if ('undefined' !== langs.where("3", code) && langs.where("3", code)) {
           language = langs.where("3", code).name + " (Maybe)"
         }
       }
@@ -199,7 +198,77 @@ async function get_url_wrapper_text(url, time = 5) {
   }
 }
 
+function compare_objects(object1, object2, key) {
+  try {
+    if (object1[key] == "") {
+      object1[key] = "%0.0"
+    }
+    if (object2[key] == "") {
+      object2[key] = "%0.0"
+    }
+    if (parseInt(object1[key].replace("%", "")) > parseInt(object2[key].replace("%", ""))) {
+      return -1
+    } else if (parseInt(object1[key].replace("%", "")) < parseInt(object2[key].replace("%", ""))) {
+      return 1
+    } else {
+      return 0
+    }
+  } catch (err) {
+    return 0
+  }
+}
+
+async function is_empty(file) {
+  try {
+    stats = fs.statSync(file);
+    console.log(stats.size)
+    if (stats.size > 0 ){
+      return true
+    }
+  } catch (err) {
+  }
+
+  return false
+}
+
+async function setup_tecert() {
+  if (!fs.existsSync('eng.traineddata')) {
+    var file = fs.createWriteStream("eng.traineddata");
+    let http_promise = new Promise((resolve, reject) => {
+      var request = https.get("https://raw.githubusercontent.com/tesseract-ocr/tessdata/master/eng.traineddata", function(response) {
+        response.pipe(file);
+        resolve(1);
+        request.setTimeout(12000, function() {
+          request.abort();
+        });
+        file.on('finish', function() {
+          file.close();
+        });
+        resolve(0)
+      });
+
+    });
+
+    let get_eng = await http_promise
+    if (get_eng == 1) {
+        if (fs.existsSync('eng.traineddata')) {
+            tecert_file = path.resolve(__dirname, 'eng.traineddata')
+        }
+    }
+  }
+  else{
+    if (tecert_file == ""){
+      if (fs.existsSync('eng.traineddata')) {
+          tecert_file = path.resolve(__dirname, 'eng.traineddata')
+      }
+    }
+  }
+}
+
 module.exports = {
+  tecert_file,
+  setup_tecert,
+  compare_objects,
   get_log_file,
   profile_template,
   detection_level,
