@@ -214,6 +214,7 @@ def find_username_normal(req):
 				  "image": "",
 				  "link": "",
 				  "rate": "",
+				  "exist":"No",
 				  "title": "",
 				  "language": "",
 				  "text": "",
@@ -272,7 +273,14 @@ def find_username_normal(req):
 				temp_profile["text"] = "unavailable"
 			with suppress(Exception):
 				if detections_count != 0:
-					temp_profile["rate"] = "%" + str(round(((temp_profile["found"] / detections_count) * 100), 2))
+					temp_value = round(((temp_profile["found"] / detections_count) * 100), 2)
+					temp_profile["rate"] = "%" + str(temp_value)
+					if temp_value >= 100.00:
+						temp_profile["exist"] = "Yes"
+					elif temp_value >= 50.00 and temp_value < 100.00:
+						temp_profile["exist"] = "Maybe"
+					else:
+						temp_profile["exist"] = "No"
 
 			temp_profile["link"] = site["url"].replace("{username}", req["body"]["string"]);
 			temp_profile["type"] = site["type"]
