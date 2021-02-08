@@ -131,13 +131,10 @@ sudo kill -9 $(sudo lsof -t -i:9005)
 - DuckDuckGo API, Google API, NodeJS, bootstrap, selectize, jQuery, Wikipedia, font-awesome, selenium-webdriver & tesseract.js
 - Let me know if I missed a reference or resource!
 
+## Interviews
+[Console 37](https://console.substack.com/p/console-37)
+
 ## Disclaimer\Notes
 - Make sure to download this tool from GitHub - (ONLY) ⚠️
 - If you want your website to be excluded from this project, please reach out
 - This tool meant to be used locally (It does not have any type of Access Control)
-
-## Interviews
-[Console 37](https://console.substack.com/p/console-37)
-
-## Articles
-`kitploit professionalhackers secnhack meethackers raidforums redpacketsecurity hacking reviews hacking land securityonline skynettools luca-mercatanti pentesttools  anonymousmedia ddosi tenochtitlan-sec modernnetsec haktechs haxf4rall hacker-gadgets mrhacker sector035`
