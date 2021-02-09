@@ -28,11 +28,11 @@ var profile_template = {
   "image": "",
   "link": "",
   "rate": "",
-  "exist": "No",
-  "title": "",
-  "language": "",
-  "text": "",
-  "type": "",
+  "status": "",
+  "title": "unavailable",
+  "language": "unavailable",
+  "text": "unavailable",
+  "type": "unavailable",
   "good": "",
   "method": ""
 };
@@ -60,6 +60,7 @@ var langs = require('langs');
 var cheerio = require('cheerio');
 var path = require('path');
 var slash = require('slash');
+var colors = require('colors/safe');
 
 var sites_json_path = slash(path.join(__dirname, '..', 'data', 'sites.json'))
 var names_json_path = slash(path.join(__dirname, '..', 'data', 'names.json'))
@@ -78,13 +79,21 @@ function get_log_file(uuid) {
   return _string
 }
 
-function log_to_file_queue(uuid, msg, json = false) {
+function log_to_file_queue(uuid, msg, table = false) {
   logs_queue = logs_queue.then(function() {
     return new Promise(function(resolve) {
       temp_log_file = slash(path.join('logs', uuid + "_log.txt"))
       fs.appendFile(temp_log_file, msg + "\n", function(err, data) {
-        if (json) {
-          console.log(JSON.stringify(msg, null, 2))
+        if (table) {
+          msg.forEach((item,index) => {
+            if (index == 0){
+              console.log("-----------------------")
+            }
+            for (const [key, value] of Object.entries(item)) {
+              console.log(colors.blue(key.padEnd(9)) + " : " + colors.yellow(value));
+            }
+            console.log("-----------------------")
+          });
         } else {
           console.log(msg)
         }

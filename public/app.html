@@ -1018,7 +1018,7 @@
                   if (site.image != "") {
                     temp_image = '<img src=' + site.image + '>'
                   }
-                  temp_tr += '<div class="user-info-container"><div class="user-info-container-left"><div>Link: <a href="' + site.link + '">' + site.link + '</a></div><div>Rate: ' + site.rate + '</div><div>Exist: ' + site.exist + '</div><div>Title: ' + site.title +
+                  temp_tr += '<div class="user-info-container"><div class="user-info-container-left"><div>Link: <a href="' + site.link + '">' + site.link + '</a></div><div>Rate: ' + site.rate + '</div><div>Status: ' + site.status + '</div><div>Title: ' + site.title +
                     '</div><div>Language: ' + site.language + '</div><div>Description: ' + site.type + '</div><div>Text: ' + site.text + '</div></div><div class="user-info-container-right">' + temp_image + '</div></div>'
                 }
               });
@@ -1047,7 +1047,7 @@
             data.user_info_normal.data.forEach(function(site) {
               if (site.method == "all") {
                 if (site.good == "true"){
-                  temp_tr += '<div class="user-info-container"><div class="user-info-container-left"><div>Link: <a href="' + site.link + '">' + site.link + '</a></div><div>Rate: ' + site.rate + '</div><div>Exist: ' + site.exist + '</div><div>Title: ' + site.title +
+                  temp_tr += '<div class="user-info-container"><div class="user-info-container-left"><div>Link: <a href="' + site.link + '">' + site.link + '</a></div><div>Rate: ' + site.rate + '</div><div>Status: ' + site.status + '</div><div>Title: ' + site.title +
                     '</div><div>Language: ' + site.language + '</div><div>Description: ' + site.type + '</div><div>Text: ' + site.text + '</div></div><div class="user-info-container-right"></div></div>'
                 }
                 else{
@@ -1057,12 +1057,12 @@
               }
               else if (site.method == "find") {
                 if(site.good == "true"){
-                  temp_tr += '<div class="user-info-container"><div class="user-info-container-left"><div>Link: <a href="' + site.link + '">' + site.link + '</a></div><div>Rate: ' + site.rate + '</div><div>Exist: ' + site.exist + '</div><div>Title: ' + site.title +
+                  temp_tr += '<div class="user-info-container"><div class="user-info-container-left"><div>Link: <a href="' + site.link + '">' + site.link + '</a></div><div>Rate: ' + site.rate + '</div><div>Status: ' + site.status + '</div><div>Title: ' + site.title +
                     '</div><div>Language: ' + site.language + '</div><div>Description: ' + site.type + '</div><div>Text: ' + site.text + '</div></div><div class="user-info-container-right"></div></div>'
                 }
               }
               else if (site.method == "get") {
-                temp_tr += '<div class="user-info-container user-info-container-color-unknown"><div class="user-info-container-left"><div>Link: <a href="' + site.link + '">' + site.link + '</a></div><div>Rate: ' + site.rate + '</div><div>Exist: ' + site.exist + '</div><div>Title: ' + site.title +
+                temp_tr += '<div class="user-info-container user-info-container-color-unknown"><div class="user-info-container-left"><div>Link: <a href="' + site.link + '">' + site.link + '</a></div><div>Rate: ' + site.rate + '</div><div>Status: ' + site.status + '</div><div>Title: ' + site.title +
                     '</div><div>Language: ' + site.language + '</div><div>Description: ' + site.type + '</div><div>Text: ' + site.text + '</div></div><div class="user-info-container-right"></div></div>'
               }
               else if (site.method == "failed") {
@@ -1079,7 +1079,7 @@
             data.user_info_special.data.forEach(function(site) {
               if (site.found > 0) {
                 temp_image = ""
-                temp_tr += '<div class="user-info-container"><div class="user-info-container-left"><div>Link: <a href="' + site.link + '">' + site.link + '</a></div><div>Rate: ' + site.rate + '</div><div>Exist: ' + site.exist + '</div><div>Title: ' + site.title +
+                temp_tr += '<div class="user-info-container"><div class="user-info-container-left"><div>Link: <a href="' + site.link + '">' + site.link + '</a></div><div>Rate: ' + site.rate + '</div><div>Status: ' + site.status + '</div><div>Title: ' + site.title +
                   '</div><div>Description: ' + site.type + '</div><div>Text: ' + site.text + '</div></div><div class="user-info-container-right">' + temp_image + '</div></div>'
               }
             });

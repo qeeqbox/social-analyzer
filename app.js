@@ -466,7 +466,7 @@ async function check_user_cli(argv) {
           item = clean_up_item(item,argv.options)
           temp_detected.detected.push(item)
         } else {
-          item = delete_keys(item,['found','rate','exist','method','good'])
+          item = delete_keys(item,['found','rate','status','method','good'])
           item = clean_up_item(item,argv.options)
           temp_detected.unknown.push(item)
         }
@@ -477,11 +477,11 @@ async function check_user_cli(argv) {
           temp_detected.detected.push(item)
         }
       } else if (item.method == "get") {
-        item = delete_keys(item,['found','rate','exist','method','good'])
+        item = delete_keys(item,['found','rate','status','method','good'])
         item = clean_up_item(item,argv.options)
         temp_detected.unknown.push(item)
       } else if (item.method == "failed") {
-        item = delete_keys(item,['found','rate','exist','method','good','text','language','title','type'])
+        item = delete_keys(item,['found','rate','status','method','good','text','language','title','type'])
         item = clean_up_item(item,argv.options)
         temp_detected.failed.push(item)
       }
@@ -501,15 +501,15 @@ async function check_user_cli(argv) {
 
     if (argv.output == "pretty" || argv.output == "") {
       if ('detected' in temp_detected) {
-        helper.log_to_file_queue(req.body.uuid, "\n[Detected] " + temp_detected.detected.length + " Profile[s]\n");
+        helper.log_to_file_queue(req.body.uuid, "[Detected] " + temp_detected.detected.length + " Profile[s]");
         helper.log_to_file_queue(req.body.uuid, temp_detected.detected, true);
       }
       if ('unknown' in temp_detected) {
-        helper.log_to_file_queue(req.body.uuid, "\n[Unknown] " + temp_detected.unknown.length + " Profile[s]\n");
+        helper.log_to_file_queue(req.body.uuid, "[Unknown] " + temp_detected.unknown.length + " Profile[s]");
         helper.log_to_file_queue(req.body.uuid, temp_detected.unknown, true);
       }
       if ('failed' in temp_detected) {
-        helper.log_to_file_queue(req.body.uuid, "\n[failed] " + temp_detected.failed.length + " Profile[s]\n");
+        helper.log_to_file_queue(req.body.uuid, "[failed] " + temp_detected.failed.length + " Profile[s]");
         helper.log_to_file_queue(req.body.uuid, temp_detected.failed, true);
       }
     }

@@ -12,7 +12,7 @@
 //  -------------------------------------------------------------
 """
 
-from logging import getLogger, DEBUG, StreamHandler, Formatter
+from logging import getLogger, DEBUG, StreamHandler, Formatter, Handler, addLevelName
 from logging.handlers import RotatingFileHandler
 from sys import stdout, platform
 from os import path, makedirs
@@ -24,7 +24,6 @@ from uuid import uuid4
 from tld import get_fld
 from functools import wraps
 from bs4 import BeautifulSoup
-from pygments import highlight, lexers, formatters
 from re import sub as resub
 from copy import deepcopy
 from contextlib import suppress
@@ -33,6 +32,7 @@ from urllib3.exceptions import InsecureRequestWarning
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from random import randint
 from tempfile import mkdtemp
+from termcolor import colored
 
 packages.urllib3.disable_warnings(category=InsecureRequestWarning)
 
@@ -44,6 +44,7 @@ SITES_PATH = path.join(path.dirname(__file__),"data","sites.json")
 LANGUAGES_PATH = path.join(path.dirname(__file__),"data","languages.json")
 LANGUAGES_JSON = {}
 WORKERS = 15
+CUSTOM_MESSAGE = 51
 
 with open(LANGUAGES_PATH) as f:
 	LANGUAGES_JSON =  load(f)
@@ -100,14 +101,30 @@ def check_errors(on_off=None):
 		return wrapper
 	return decorator
 
+class CustomHandler(Handler):
+	def __init__(self):
+		Handler.__init__(self)
+
+	def emit(self, record):
+		if record.levelname == "CUSTOM":
+			print_between = False
+			for item in record.msg:
+				with suppress(Exception):
+					if item == record.msg[0]:
+						print("-----------------------")
+					for key, value in item.items():
+						print(colored(key.ljust(9, ' '), 'blue'),colored(value, 'yellow'),sep=": ")
+					print("-----------------------")
+		else:
+			print(record.msg)
+
 @check_errors(True)
 def setup_logger(uuid=None,file=False):
 	temp_folder = mkdtemp()
 	print('[!] Temporary Logs Directory {}'.format(temp_folder))
 	LOG.setLevel(DEBUG)
-	st = StreamHandler(stdout)
-	st.setFormatter(Formatter("%(message)s"))
-	LOG.addHandler(st)
+	LOG.addHandler(CustomHandler())
+	addLevelName(CUSTOM_MESSAGE,"CUSTOM")
 	if file and uuid:
 		fh = RotatingFileHandler(path.join(temp_folder,uuid))
 		fh.setFormatter(Formatter("%(asctime)s - %(name)s - %(levelname)s - %(message)s"))
@@ -214,11 +231,11 @@ def find_username_normal(req):
 				  "image": "",
 				  "link": "",
 				  "rate": "",
-				  "exist":"No",
-				  "title": "",
-				  "language": "",
-				  "text": "",
-				  "type": "",
+				  "status":"",
+				  "title": "unavailable",
+				  "language": "unavailable",
+				  "text": "unavailable",
+				  "type": "unavailable",
 				  "good":"",
 				  "method":""
 				}
@@ -260,7 +277,6 @@ def find_username_normal(req):
 				[tag.extract() for tag in soup(["head", "title","style", "script", "[document]"])]
 				temp_profile["text"] = soup.getText()
 				temp_profile["text"] = resub("\s\s+", " ", temp_profile["text"])
-				temp_profile["text"] = temp_profile["text"].replace("\n", "").replace("\t", "").replace("\r", "").strip()
 			with suppress(Exception):
 				temp_profile["language"] = get_language_by_parsing(source)
 				if temp_profile["language"] == "unavailable":
@@ -268,7 +284,10 @@ def find_username_normal(req):
 			with suppress(Exception):
 				temp_profile["title"] = BeautifulSoup(source, "html.parser").title.string
 				temp_profile["title"] = resub("\s\s+", " ", temp_profile["title"])
-				temp_profile["title"] = temp_profile["title"].replace("\n", "").replace("\t", "").replace("\r", "").strip()
+
+			temp_profile["text"] = temp_profile["text"].replace("\n", "").replace("\t", "").replace("\r", "").strip()
+			temp_profile["title"] = temp_profile["title"].replace("\n", "").replace("\t", "").replace("\r", "").strip()
+
 			if temp_profile["text"] == "":
 				temp_profile["text"] = "unavailable"
 			with suppress(Exception):
@@ -276,11 +295,11 @@ def find_username_normal(req):
 					temp_value = round(((temp_profile["found"] / detections_count) * 100), 2)
 					temp_profile["rate"] = "%" + str(temp_value)
 					if temp_value >= 100.00:
-						temp_profile["exist"] = "Yes"
+						temp_profile["status"] = "good"
 					elif temp_value >= 50.00 and temp_value < 100.00:
-						temp_profile["exist"] = "Maybe"
+						temp_profile["status"] = "maybe"
 					else:
-						temp_profile["exist"] = "No"
+						temp_profile["status"] = "bad"
 
 			temp_profile["link"] = site["url"].replace("{username}", req["body"]["string"]);
 			temp_profile["type"] = site["type"]
@@ -357,7 +376,7 @@ def check_user_cli(argv):
 					item = clean_up_item(item,argv.options)
 					temp_detected["detected"].append(item)
 				else:
-					item = delete_keys(item,["found","rate","exist","method","good"])
+					item = delete_keys(item,["found","rate","status","method","good"])
 					item = clean_up_item(item,argv.options)
 					temp_detected["unknown"].append(item)
 			elif item["method"] == "find":
@@ -366,16 +385,18 @@ def check_user_cli(argv):
 					item = clean_up_item(item,argv.options)
 					temp_detected["detected"].append(item)
 			elif item["method"] == "get":
-				item = delete_keys(item,["found","rate","exist","method","good"])
+				item = delete_keys(item,["found","rate","status","method","good"])
 				item = clean_up_item(item,argv.options)
 				temp_detected["unknown"].append(item)
 			else:
-				item = delete_keys(item,["found","rate","exist","method","good","text","title","language","rate"])
+				item = delete_keys(item,["found","rate","status","method","good","text","title","language","rate"])
 				item = clean_up_item(item,argv.options)
 				temp_detected["failed"].append(item)
 
 	if len(temp_detected["detected"]) == 0:
-	   del temp_detected["detected"]
+		del temp_detected["detected"]
+	else:
+		temp_detected["detected"] = sorted(temp_detected["detected"], key=lambda k: float(k['rate'].strip('%')),reverse=True)
 
 	if len(temp_detected["unknown"]) == 0:
 	   del temp_detected["unknown"];
@@ -385,26 +406,23 @@ def check_user_cli(argv):
 
 	if argv.output == "pretty" or argv.output == "":
 		if 'detected' in temp_detected:
-			LOG.info("\n[Detected] {} Profile[s]\n".format(len(temp_detected['detected'])));
-			for item in temp_detected['detected']:
-				if platform == "win32":
-					LOG.info(dumps(item, sort_keys=True, indent=4))
-				else:
-					LOG.info(highlight(dumps(item, sort_keys=True, indent=4), lexers.JsonLexer(), formatters.TerminalFormatter()))
+			LOG.info("[Detected] {} Profile[s]".format(len(temp_detected['detected'])));
+			if platform == "win32":
+				LOG.info(dumps(temp_detected['detected'], sort_keys=True, indent=4))
+			else:
+				LOG.log(CUSTOM_MESSAGE,temp_detected['detected'])
 		if 'unknown' in temp_detected:
-			LOG.info("\n[unknown] {} Profile[s]\n".format(len(temp_detected['unknown'])));
-			for item in temp_detected['unknown']:
-				if platform == "win32":
-					LOG.info(dumps(item, sort_keys=True, indent=4))
-				else:
-					LOG.info(highlight(dumps(item, sort_keys=True, indent=4), lexers.JsonLexer(), formatters.TerminalFormatter()))
+			LOG.info("[unknown] {} Profile[s]".format(len(temp_detected['unknown'])));
+			if platform == "win32":
+				LOG.info(dumps(temp_detected['unknown'], sort_keys=True, indent=4))
+			else:
+				LOG.log(CUSTOM_MESSAGE,temp_detected['unknown'])
 		if 'failed' in temp_detected:
-			LOG.info("\n[failed] {} Profile[s]\n".format(len(temp_detected['failed'])));
-			for item in temp_detected['failed']:
-				if platform == "win32":
-					LOG.info(dumps(item, sort_keys=True, indent=4))
-				else:
-					LOG.info(highlight(dumps(item, sort_keys=True, indent=4), lexers.JsonLexer(), formatters.TerminalFormatter()))
+			LOG.info("[failed] {} Profile[s]".format(len(temp_detected['failed'])));
+			if platform == "win32":
+				LOG.info(dumps(temp_detected['failed'], sort_keys=True, indent=4))
+			else:
+				LOG.log(CUSTOM_MESSAGE,temp_detected['failed'])
 
 	if argv.output == "json":
 		print(dumps(temp_detected, sort_keys=True, indent=None))

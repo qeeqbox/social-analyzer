@@ -10,6 +10,7 @@
   "dependencies": {
     "async": "3.2.0",
     "cheerio": "1.0.0-rc.5",
+    "colors": "1.4.0",
     "express": "^4.16.3",
     "express-async-errors": "3.1.1",
     "follow-redirects": "1.13.0",
