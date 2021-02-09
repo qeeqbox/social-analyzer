@@ -33,6 +33,10 @@ from concurrent.futures import ThreadPoolExecutor, as_completed
 from random import randint
 from tempfile import mkdtemp
 from termcolor import colored
+from os import system
+
+if platform == "win32":
+	system("color")
 
 packages.urllib3.disable_warnings(category=InsecureRequestWarning)
 
@@ -407,22 +411,13 @@ def check_user_cli(argv):
 	if argv.output == "pretty" or argv.output == "":
 		if 'detected' in temp_detected:
 			LOG.info("[Detected] {} Profile[s]".format(len(temp_detected['detected'])));
-			if platform == "win32":
-				LOG.info(dumps(temp_detected['detected'], sort_keys=True, indent=4))
-			else:
-				LOG.log(CUSTOM_MESSAGE,temp_detected['detected'])
+			LOG.log(CUSTOM_MESSAGE,temp_detected['detected'])
 		if 'unknown' in temp_detected:
 			LOG.info("[unknown] {} Profile[s]".format(len(temp_detected['unknown'])));
-			if platform == "win32":
-				LOG.info(dumps(temp_detected['unknown'], sort_keys=True, indent=4))
-			else:
-				LOG.log(CUSTOM_MESSAGE,temp_detected['unknown'])
+			LOG.log(CUSTOM_MESSAGE,temp_detected['unknown'])
 		if 'failed' in temp_detected:
 			LOG.info("[failed] {} Profile[s]".format(len(temp_detected['failed'])));
-			if platform == "win32":
-				LOG.info(dumps(temp_detected['failed'], sort_keys=True, indent=4))
-			else:
-				LOG.log(CUSTOM_MESSAGE,temp_detected['failed'])
+			LOG.log(CUSTOM_MESSAGE,temp_detected['failed'])
 
 	if argv.output == "json":
 		print(dumps(temp_detected, sort_keys=True, indent=None))
