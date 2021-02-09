@@ -11,6 +11,12 @@ The analysis and extracted social media information from this OSINT tool could h
 
 This project is *"currently used by some law enforcement agencies in countries where resources are limited"*.
 
+## Update
+- The following rate is currently being tested, and will be implemented as soon as the automated test passes:
+- - Detected (profiles that have => %75)
+- - Maybe (profiles that have < %75 or profiles without detections)
+- - Failed (connectivity issues)
+
 ## Security Testing
 
 ```bash
