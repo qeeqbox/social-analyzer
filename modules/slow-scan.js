@@ -113,13 +113,13 @@ async function find_username_site(uuid, username, options, site) {
           var temp_value = ((temp_profile["found"] / detections_count) * 100).toFixed(2)
           temp_profile.rate = "%" + temp_value;
           if (temp_value >= 100.00){
-            temp_profile.exist = "Yes"
+            temp_profile.status = "good"
           }
           else if (temp_value >= 50.00 && temp_value < 100.00){
-            temp_profile.exist = "Maybe"
+            temp_profile.status = "maybe"
           }
           else{
-            temp_profile.exist = "No"
+            temp_profile.status = "bad"
           }
         }
         temp_profile.link = site.url.replace("{username}", username);

@@ -5,12 +5,12 @@ echo "[x] Deleting pip-social-analyzer"
 echo "[x] Making pip-social-analyzer"
 mkdir -p pip-social-analyzer/social-analyzer
 echo "[x] Copying app.py, setup.py, README.rst & README.rst"
-cp app.py pip-social-analyzer/__main__.py
+cp app.py pip-social-analyzer/social-analyzer/__main__.py
 cp setup.py pip-social-analyzer/setup.py
 cp README.rst pip-social-analyzer/README.rst
 echo "[x] Copying data folder"
-cp -r data pip-social-analyzer/
-cd pip-social-analyzer
+cp -r data pip-social-analyzer/social-analyzer/
+cd pip-social-analyzer/
 echo "[x] Checking setup.py"
 python3 setup.py check -r -s
 echo "[x] Creating pypi Package"
