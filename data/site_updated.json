@@ -596,17 +596,12 @@
       "detections": [{
           "return": "false",
           "string": "An Error Has Occurred!",
-          "type": "ocr"
-        },
-        {
-          "return": "false",
-          "string": "An Error Has Occurred!",
-          "type": "normal"
+          "type": "advanced"
         },
         {
           "return": "true",
           "string": "profile/{username}",
-          "type": "normal"
+          "type": "advanced"
         }
       ],
       "selected": "false",
