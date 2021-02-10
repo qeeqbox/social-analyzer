@@ -1,0 +1,7523 @@
+{
+  "websites_entries": [{
+      "url": "https://500px.com/p/{username}",
+      "detections": [{
+        "return": "false",
+        "string": "This page is no longer available",
+        "type": "ocr"
+      }],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "Photo Sharing"
+    },
+    {
+      "url": "https://7cups.com/@{username}",
+      "detections": [{
+          "return": "false",
+          "string": "Not Found",
+          "type": "ocr"
+        },
+        {
+          "return": "false",
+          "string": "Not Found",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "com/@{username}",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "Profile - 7 Cups",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "Online Therapy"
+    },
+    {
+      "url": "https://9gag.com/u/{username}",
+      "detections": [{
+          "return": "false",
+          "string": "There's nothing here",
+          "type": "ocr"
+        },
+        {
+          "return": "false",
+          "string": "There's nothing here",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "og:title",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "Art & Entertainment"
+    },
+    {
+      "url": "https://about.me/{username}",
+      "detections": [{
+          "return": "false",
+          "string": "There is no one",
+          "type": "ocr"
+        },
+        {
+          "return": "true",
+          "string": "me/{username}",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "name-headline",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "Directory Hosting"
+    },
+    {
+      "status": "bad",
+      "url": "https://akniga.org/profile/{username}",
+      "detections": [{
+          "return": "false",
+          "string": "error-code",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "user-info-name",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "Books and Literature"
+    },
+    {
+      "url": "https://alik.cz/u/{username}",
+      "detections": [{
+        "return": "true",
+        "string": "user-",
+        "type": "normal"
+      }],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "Art & Entertainment"
+    },
+    {
+      "url": "https://allmylinks.com/{username}",
+      "detections": [{
+          "return": "false",
+          "string": "Page not found",
+          "type": "ocr"
+        },
+        {
+          "return": "false",
+          "string": "The link you followed may be broken",
+          "type": "normal"
+        },
+        {
+          "return": "false",
+          "string": "error?username",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "og:title",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "Directory Hosting"
+    },
+    {
+      "url": "https://alltrails.com/members/{username}",
+      "detections": [{
+          "return": "false",
+          "string": "User could not be found",
+          "type": "ocr"
+        },
+        {
+          "return": "false",
+          "string": "User could not be found",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "members/{username}",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "Member Since",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "Recreation & Hobbies"
+    },
+    {
+      "url": "https://aminoapps.com/u/{username}",
+      "detections": [{
+          "return": "false",
+          "string": "It may have been removed",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "@{username}",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "aminoId\":\"",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "Computers & Technology"
+    },
+    {
+      "url": "https://angel.co/{username}",
+      "detections": [{
+          "return": "false",
+          "string": "We couldn't find",
+          "type": "ocr"
+        },
+        {
+          "return": "false",
+          "string": "We couldn't find",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "\"name\":\"",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "u/{username}",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "Job Search"
+    },
+    {
+      "url": "https://anilist.co/user/{username}/",
+      "detections": [{
+        "return": "false",
+        "string": "404 Page Not Found-Chan",
+        "type": "ocr"
+      }],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "Recreation & Hobbies"
+    },
+    {
+      "url": "https://anobii.com/{username}/profile",
+      "detections": [{
+          "return": "false",
+          "string": "No route found for",
+          "type": "ocr"
+        },
+        {
+          "return": "false",
+          "string": "No route found for",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "profile-",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "Books & Literature"
+    },
+    {
+      "url": "https://apps.runescape.com/runemetrics/app/overview/player/{username}",
+      "detections": [{
+          "return": "false",
+          "string": "Sorry, that player could not be found",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "{username}",
+          "type": "advanced"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "Games"
+    },
+    {
+      "url": "https://archive.org/details/@{username}",
+      "detections": [{
+          "return": "false",
+          "string": "cannot find account",
+          "type": "normal"
+        },
+        {
+          "return": "false",
+          "string": "cannot find account",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "@{username}",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "{username}?tab",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "Digital Library"
+    },
+    {
+      "url": "https://artstation.com/{username}",
+      "detections": [{
+        "return": "false",
+        "string": "Page not found",
+        "type": "normal"
+      }],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "Art & Entertainment"
+    },
+    {
+      "url": "https://asciinema.org/~{username}",
+      "detections": [{
+          "return": "false",
+          "string": "404 Not Found",
+          "type": "ocr"
+        },
+        {
+          "return": "false",
+          "string": "This page doesn't exist",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "~{username}",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "Computer & electronics"
+    },
+    {
+      "url": "https://ask.fedoraproject.org/u/{username}",
+      "detections": [{
+        "name": "discourse",
+        "type": "shared"
+      }],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "Computer & electronics"
+    },
+    {
+      "url": "https://ask.fm/{username}",
+      "detections": [{
+          "return": "false",
+          "string": "Here used to be",
+          "type": "ocr"
+        },
+        {
+          "return": "false",
+          "string": "Well, apparently not anymore",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "og:title",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "fm/{username}",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "Social Networking"
+    },
+    {
+      "url": "https://audiojungle.net/user/{username}",
+      "detections": [{
+          "return": "false",
+          "string": "Nothing to see here",
+          "type": "ocr"
+        },
+        {
+          "return": "false",
+          "string": "Nothing to see here",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "og:title",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "user/{username}",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "Internet & Telecom"
+    },
+    {
+      "url": "https://authorstream.com/{username}",
+      "detections": [{
+          "return": "false",
+          "string": "We apologize for this inconvenience",
+          "type": "ocr"
+        },
+        {
+          "return": "false",
+          "string": "We apologize for this inconvenience",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "subheading",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "Presentations Hosting"
+    },
+    {
+      "url": "https://avforums.com/members/{username}",
+      "detections": [{
+        "return": "true",
+        "string": "logged-in to do that",
+        "type": "normal"
+      }],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "Internet & Telecom"
+    },
+    {
+      "url": "https://baby.ru/u/{username}",
+      "detections": [{
+          "return": "false",
+          "string": "error404",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "user-header",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "adult"
+    },
+    {
+      "url": "https://babyblog.ru/user/info/{username}",
+      "detections": [{
+        "return": "true",
+        "string": "diary-header",
+        "type": "normal"
+      }],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "Internet & Telecom"
+    },
+    {
+      "url": "https://bandcamp.com/{username}",
+      "detections": [{
+          "return": "false",
+          "string": "Sorry, that something isn’t here",
+          "type": "ocr"
+        },
+        {
+          "return": "false",
+          "string": "Sorry, that something isn’t here",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "og:title",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "com/{username}",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "Arts & Entertainment"
+    },
+    {
+      "url": "https://behance.net/{username}",
+      "detections": [{
+          "return": "false",
+          "string": "Oops! We can’t find that page",
+          "type": "ocr"
+        },
+        {
+          "return": "false",
+          "string": "Oops! We can’t find that page",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "og:title",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "net/{username}",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "\"name\":\"",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "Internet & Telecom"
+    },
+    {
+      "url": "https://beta.cent.co/@{username}",
+      "detections": [],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "unavailable"
+    },
+    {
+      "url": "https://binarysearch.io/@/{username}",
+      "detections": [{
+        "return": "false",
+        "string": "Profile not found",
+        "type": "ocr"
+      }],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "Computer & electronics"
+    },
+    {
+      "url": "https://bintray.com/{username}",
+      "detections": [{
+        "return": "false",
+        "string": "Page not found",
+        "type": "normal"
+      }],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "Computer & electronics"
+    },
+    {
+      "url": "https://bitbucket.org/{username}",
+      "detections": [{
+          "return": "false",
+          "string": "That link has no power here",
+          "type": "ocr"
+        },
+        {
+          "return": "false",
+          "string": "That link has no power here",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "\"uuid\"",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "Computer & electronics"
+    },
+    {
+      "url": "https://bitcoinforum.com/profile/{username}",
+      "detections": [{
+          "return": "false",
+          "string": "An Error Has Occurred!",
+          "type": "ocr"
+        },
+        {
+          "return": "false",
+          "string": "An Error Has Occurred!",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "profile/{username}",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "Computer & electronics"
+    },
+    {
+      "url": "https://blip.fm/{username}",
+      "detections": [{
+          "return": "false",
+          "string": "Page Not Found",
+          "type": "ocr"
+        },
+        {
+          "return": "false",
+          "string": "Page Not Found",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "urlName",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "profilePic",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "Arts & Entertainment"
+    },
+    {
+      "url": "https://blog.naver.com/{username}",
+      "detections": [{
+          "return": "false",
+          "string": "error_content",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "com/{username}.xml",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "Internet & Telecom"
+    },
+    {
+      "url": "https://bodyspace.bodybuilding.com/{username}",
+      "detections": [{
+          "return": "true",
+          "string": "com/{username}",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "userName",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "Recreation & Hobbies"
+    },
+    {
+      "url": "https://bookcrossing.com/mybookshelf/{username}",
+      "detections": [{
+          "return": "false",
+          "string": "Sorry, we were unable",
+          "type": "ocr"
+        },
+        {
+          "return": "false",
+          "string": "Sorry, we were unable",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "-profile",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "Books and Literature"
+    },
+    {
+      "url": "https://buymeacoffee.com/{username}",
+      "detections": [{
+          "return": "false",
+          "string": "seem to find the page",
+          "type": "ocr"
+        },
+        {
+          "return": "false",
+          "string": "seem to find the page",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "creator-csrf",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "Arts and Entertainment"
+    },
+    {
+      "url": "https://buzzfeed.com/{username}",
+      "detections": [{
+          "return": "false",
+          "string": "We can't find the page you're looking for",
+          "type": "ocr"
+        },
+        {
+          "return": "false",
+          "string": "We can't find the page you're looking for",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "\"username\"",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "og:title",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "Arts and Entertainment"
+    },
+    {
+      "url": "https://canva.com/{username}",
+      "detections": [],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "unavailable"
+    },
+    {
+      "url": "https://capfriendly.com/users/{username}",
+      "detections": [{
+        "return": "false",
+        "string": "No results found",
+        "type": "normal"
+      }],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "Sports"
+    },
+    {
+      "url": "https://career.habr.com/{username}",
+      "detections": [{
+          "return": "false",
+          "string": "404 error",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "og:title",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "Job Search"
+    },
+    {
+      "url": "https://cash.me/{username}",
+      "detections": [{
+          "return": "false",
+          "string": "The page you are looking for can't be found.",
+          "type": "ocr"
+        },
+        {
+          "return": "false",
+          "string": "The page you are looking for can't be found.",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "display_name",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "og:title",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "Finance"
+    },
+    {
+      "url": "https://championat.com/user/{username}",
+      "detections": [{
+          "return": "false",
+          "string": "error404",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "profile_",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "Sports"
+    },
+    {
+      "url": "https://chaos.social/@{username}",
+      "detections": [{
+          "return": "false",
+          "string": "The page you are looking",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "/@{username}",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "og:title",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "Internet & Telecom"
+    },
+    {
+      "url": "https://chess.com/member/{username}",
+      "detections": [{
+          "return": "false",
+          "string": "somebody made a wrong move",
+          "type": "ocr"
+        },
+        {
+          "return": "false",
+          "string": "somebody made a wrong move",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "username",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "og:title",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "Games"
+    },
+    {
+      "url": "https://cloob.com/name/{username}",
+      "detections": [{
+          "return": "false",
+          "string": "notFound",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "userHeader",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "Internet and Telecom"
+    },
+    {
+      "url": "https://cnet.com/profiles/{username}",
+      "detections": [{
+          "return": "false",
+          "string": "You are here in error",
+          "type": "ocr"
+        },
+        {
+          "return": "false",
+          "string": "You are here in error",
+          "type": "normal"
+        },
+        {
+          "return": "false",
+          "string": "Page Not Found",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "recipientName",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "Internet and Telecom"
+    },
+    {
+      "url": "https://codeberg.com/{username}",
+      "detections": [{
+          "return": "false",
+          "string": "does not exist",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "\"profile\"",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "Projects Archive"
+    },
+    {
+      "url": "https://codechef.com/users/{username}",
+      "detections": [{
+          "return": "true",
+          "string": "users/{username}",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "user-profile",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "Computer & electronics"
+    },
+    {
+      "url": "https://codechef.com/users/{username}",
+      "detections": [{
+          "return": "true",
+          "string": "user-details",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "/users/{username}",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "unavailable"
+    },
+    {
+      "url": "https://codeforces.com/profile/{username}",
+      "detections": [{
+          "return": "true",
+          "string": "user-rank",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "\"/profile/{username}\"",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "unavailable"
+    },
+    {
+      "url": "https://codementor.io/{username}",
+      "detections": [{
+          "return": "false",
+          "string": "/404/",
+          "type": "ocr"
+        },
+        {
+          "return": "true",
+          "string": "box-sizing",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "username",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "Job Search"
+    },
+    {
+      "url": "https://codepen.io/{username}",
+      "detections": [{
+          "return": "false",
+          "string": "I'm afraid you've found",
+          "type": "ocr"
+        },
+        {
+          "return": "false",
+          "string": "I'm afraid you've found",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "username",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "og:title",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "Computer & electronics"
+    },
+    {
+      "url": "https://codewars.com/users/{username}",
+      "detections": [{
+          "return": "false",
+          "string": "The page you were looking",
+          "type": "ocr"
+        },
+        {
+          "return": "false",
+          "string": "The page you were looking",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "username",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "Computer & electronics"
+    },
+    {
+      "url": "https://coil.com/u/{username}",
+      "detections": [{
+        "return": "false",
+        "string": "Whoops, the thing you were looking for isn't here",
+        "type": "ocr"
+      }],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "Finance"
+    },
+    {
+      "url": "https://colourlovers.com/lover/{username}",
+      "detections": [{
+          "return": "false",
+          "string": "Are you looking for someone",
+          "type": "ocr"
+        },
+        {
+          "return": "false",
+          "string": "Are you looking for someone",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "feature-detail",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "Art & Entertainment"
+    },
+    {
+      "url": "https://community.bitwarden.com/u/{username}/summary",
+      "detections": [{
+        "name": "discourse",
+        "type": "shared"
+      }],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "Internet and Telecom"
+    },
+    {
+      "url": "https://community.cloudflare.com/u/{username}",
+      "detections": [{
+        "name": "discourse",
+        "type": "shared"
+      }],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "Internet and Telecom"
+    },
+    {
+      "url": "https://community.eintracht.de/fans/{username}",
+      "detections": [{
+          "return": "false",
+          "string": "Seite nicht gefunden",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "username",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "Sports"
+    },
+    {
+      "url": "https://community.oracle.com/people/{username}",
+      "detections": [{
+          "return": "false",
+          "string": "User Not Found",
+          "type": "ocr"
+        },
+        {
+          "return": "false",
+          "string": "User Not Found",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "Computer and electronics"
+    },
+    {
+      "url": "https://community.signalusers.org/u/{username}",
+      "detections": [{
+        "name": "discourse",
+        "type": "shared"
+      }],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "Computer and electronics"
+    },
+    {
+      "url": "https://community.windy.com/user/{username}",
+      "detections": [{
+          "return": "false",
+          "string": "You seem to have stumbled",
+          "type": "ocr"
+        },
+        {
+          "return": "false",
+          "string": "You seem to have stumbled",
+          "type": "normal"
+        },
+        {
+          "return": "false",
+          "string": "\"404\"",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "account-stats",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "Internet and Telecom"
+    },
+    {
+      "url": "https://connect.opensuse.org/pg/profile/{username}",
+      "detections": [{
+          "return": "false",
+          "string": "we could not find the",
+          "type": "ocr"
+        },
+        {
+          "return": "false",
+          "string": "we could not find the",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "profile_info",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "Computer and electronics"
+    },
+    {
+      "url": "https://coroflot.com/{username}",
+      "detections": [{
+          "return": "false",
+          "string": "Looking for something",
+          "type": "ocr"
+        },
+        {
+          "return": "false",
+          "string": "Looking for something",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "com/{username}",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "Job Search"
+    },
+    {
+      "url": "https://couchsurfing.com/people/{username}",
+      "detections": [{
+          "return": "false",
+          "string": "not found",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "profile-",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "unavailable"
+    },
+    {
+      "url": "https://countable.us/{username}",
+      "detections": [{
+          "return": "false",
+          "string": "The page you were looking for",
+          "type": "ocr"
+        },
+        {
+          "return": "false",
+          "string": "The page you were looking for",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "_TITLE",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "News"
+    },
+    {
+      "url": "https://cracked.com/members/{username}",
+      "detections": [{
+        "return": "true",
+        "string": "data-username={username}",
+        "type": "normal"
+      }],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "Art & Entertainment"
+    },
+    {
+      "url": "https://create.arduino.cc/projecthub/{username}",
+      "detections": [{
+        "return": "false",
+        "string": "Bummer, we couldn't find that page",
+        "type": "normal"
+      }],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "Computer and electronics"
+    },
+    {
+      "url": "https://creativemarket.com/{username}",
+      "detections": [{
+          "return": "false",
+          "string": "Whoomp, there it isn",
+          "type": "ocr"
+        },
+        {
+          "return": "false",
+          "string": "Whoomp, there it isn",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "\"username\":\"{username}\"",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "Shopping"
+    },
+    {
+      "url": "https://crowdin.com/profile/{username}",
+      "detections": [{
+        "return": "false",
+        "string": "This is not the place you're looking for",
+        "type": "normal"
+      }],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "Computer and electronics"
+    },
+    {
+      "url": "https://crunchbase.com/person/{username}",
+      "detections": [{
+          "return": "false",
+          "string": "find this page for you.",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "find this page for you.",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "\"section-title\"",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "\"profile\"",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "Internet and Telecom"
+    },
+    {
+      "url": "https://crunchyroll.com/user/{username}",
+      "detections": [{
+          "return": "false",
+          "string": "but we were unable to find",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "user_profile",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "Arts and Entertainment"
+    },
+    {
+      "url": "https://d3.ru/user/{username}/posts",
+      "detections": [{
+        "return": "true",
+        "string": "/user/{username}",
+        "type": "normal"
+      }],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "Computer and electronics"
+    },
+    {
+      "url": "https://dailykos.com/user/{username}",
+      "detections": [{
+          "return": "false",
+          "string": "Sorry, that blog could not be found",
+          "type": "ocr"
+        },
+        {
+          "return": "false",
+          "string": "Sorry, that blog could not be found",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "/user/{username}",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "group_info",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "News"
+    },
+    {
+      "url": "https://dailymotion.com/{username}",
+      "detections": [{
+          "return": "false",
+          "string": "Page not found",
+          "type": "ocr"
+        },
+        {
+          "return": "false",
+          "string": "Page not found",
+          "type": "normal"
+        },
+        {
+          "return": "false",
+          "string": "error404",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "Video Hosting"
+    },
+    {
+      "url": "https://data.typeracer.com/pit/profile?user={username}",
+      "detections": [{
+          "return": "false",
+          "string": "Profile Not Found",
+          "type": "ocr"
+        },
+        {
+          "return": "false",
+          "string": "Profile Not Found",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "profile:first_name",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "og:title",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "Games"
+    },
+    {
+      "url": "https://dating.ru/{username}",
+      "detections": [{
+          "return": "true",
+          "string": "ru/{username}",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "statistics",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "Adult"
+    },
+    {
+      "url": "https://depop.com/{username}/",
+      "detections": [{
+          "return": "false",
+          "string": "that page doesn",
+          "type": "normal"
+        },
+        {
+          "return": "false",
+          "string": "404 Page not found<",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "UserName-",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "Shopping"
+    },
+    {
+      "url": "https://designspiration.net/{username}",
+      "detections": [{
+          "return": "false",
+          "string": "Content Not Found",
+          "type": "ocr"
+        },
+        {
+          "return": "false",
+          "string": "Content Not Found",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "\"profile",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "username",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "unavailable"
+    },
+    {
+      "url": "https://dev.to/{username}",
+      "detections": [{
+          "return": "false",
+          "string": "This page does not exist ",
+          "type": "ocr"
+        },
+        {
+          "return": "false",
+          "string": "This page does not exist ",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "data-username=\"{username}\"",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "to/{username}",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "Computer and electronics"
+    },
+    {
+      "url": "https://devrant.com/users/{username}",
+      "detections": [{
+          "return": "true",
+          "string": "/users/{username}",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "profile-username",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "Computer and electronics"
+    },
+    {
+      "url": "https://discogs.com/user/{username}",
+      "detections": [{
+          "return": "false",
+          "string": "We couldn't find that page",
+          "type": "ocr"
+        },
+        {
+          "return": "false",
+          "string": "We couldn't find that page",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "data-username",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "Music"
+    },
+    {
+      "url": "https://discourse.wicg.io/u/{username}/summary",
+      "detections": [{
+        "name": "discourse",
+        "type": "shared"
+      }],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "Computer and electronics"
+    },
+    {
+      "url": "https://discuss.atom.io/u/{username}/summary",
+      "detections": [{
+        "name": "discourse",
+        "type": "shared"
+      }],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "Computer and electronics"
+    },
+    {
+      "url": "https://discuss.elastic.co/u/{username}",
+      "detections": [{
+        "name": "discourse",
+        "type": "shared"
+      }],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "Computer and electronics"
+    },
+    {
+      "url": "https://discussions.apple.com/profile/{username}",
+      "detections": [{
+          "return": "false",
+          "string": "Looking for something in",
+          "type": "ocr"
+        },
+        {
+          "return": "false",
+          "string": "Looking for something in",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "/profile/{username}",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "user-profile",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "Computer and electronics"
+    },
+    {
+      "url": "https://displate.com/{username}/profile",
+      "detections": [{
+        "return": "false",
+        "string": "Oops!",
+        "type": "normal"
+      }],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "unavailable"
+    },
+    {
+      "url": "https://disqus.com/{username}",
+      "detections": [{
+          "return": "false",
+          "string": "Something didn't work",
+          "type": "ocr"
+        },
+        {
+          "return": "false",
+          "string": "Something didn't work",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "by/{username}",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "og:title",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "unavailable"
+    },
+    {
+      "url": "https://douban.com/people/{username}/",
+      "detections": [{
+          "return": "true",
+          "string": "error.",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "-profile-",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "movie and book database"
+    },
+    {
+      "url": "https://dribbble.com/{username}",
+      "detections": [{
+          "return": "false",
+          "string": "Whoops, that page is gone",
+          "type": "ocr"
+        },
+        {
+          "return": "false",
+          "string": "Whoops, that page is gone",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "com/{username}",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "og:title",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "unavailable"
+    },
+    {
+      "url": "https://drive2.ru/users/{username}",
+      "detections": [{
+          "return": "false",
+          "string": ">404",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "/users/{username}",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "username",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "unavailable"
+    },
+    {
+      "url": "https://duolingo.com/profile/{username}",
+      "detections": [{
+          "return": "false",
+          "string": "Error 404",
+          "type": "advanced"
+        },
+        {
+          "return": "true",
+          "string": "{username}",
+          "type": "advanced"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 5,
+      "type": "unavailable"
+    },
+    {
+      "url": "https://ebay.com/usr/{username}",
+      "detections": [{
+          "return": "false",
+          "string": "The User ID you entered was not found",
+          "type": "ocr"
+        },
+        {
+          "return": "false",
+          "string": "The User ID you entered was not found",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "/usr/{username}",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "og:title",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "username",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "unavailable"
+    },
+    {
+      "url": "https://echo.msk.ru/users/{username}",
+      "detections": [{
+        "return": "false",
+        "string": "404<",
+        "type": "normal"
+      }],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "unavailable"
+    },
+    {
+      "url": "https://egpu.io/forums/profile/{username}",
+      "detections": [{
+          "return": "false",
+          "string": "Page not found",
+          "type": "ocr"
+        },
+        {
+          "return": "false",
+          "string": "Page not found",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "profile-display",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "unavailable"
+    },
+    {
+      "url": "https://ello.co/{username}",
+      "detections": [{
+          "return": "false",
+          "string": "We couldn't find",
+          "type": "ocr"
+        },
+        {
+          "return": "false",
+          "string": "We couldn't find",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "co/{username}",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "og:title",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "username",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "Social network"
+    },
+    {
+      "url": "https://en.gravatar.com/{username}",
+      "detections": [{
+          "return": "false",
+          "string": "We’re sorry",
+          "type": "ocr"
+        },
+        {
+          "return": "false",
+          "string": "We’re sorry",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "com/{username}",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "Avatar hosting"
+    },
+    {
+      "url": "https://en.tm-ladder.com/{username}_rech.php",
+      "detections": [],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "unavailable"
+    },
+    {
+      "url": "https://escapistmagazine.com/profiles/view/{username}",
+      "detections": [{
+          "return": "false",
+          "string": "Please log in to search for users",
+          "type": "normal"
+        },
+        {
+          "return": "false",
+          "string": "Please log in to search for users",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "profiles_personal",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "Video game website"
+    },
+    {
+      "url": "https://etsy.com/shop/{username}",
+      "detections": [{
+          "return": "false",
+          "string": "the page you were looking for was not found",
+          "type": "ocr"
+        },
+        {
+          "return": "false",
+          "string": "the page you were looking for was not found",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "shop/{username}",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "username",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "user_id",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "unavailable"
+    },
+    {
+      "url": "https://eurogamer.net/profiles/{username}",
+      "detections": [{
+          "return": "false",
+          "string": "404 Page not found",
+          "type": "normal"
+        },
+        {
+          "return": "false",
+          "string": "404 Page not found",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "\"profile\"",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "Video game journalism"
+    },
+    {
+      "url": "https://euw.op.gg/summoner/userName={username}",
+      "detections": [{
+          "return": "false",
+          "string": "This summoner is not registered at",
+          "type": "ocr"
+        },
+        {
+          "return": "false",
+          "string": "This summoner is not registered at",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "\"Profile\"",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "ProfileImage",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "unavailable"
+    },
+    {
+      "url": "https://expo.io/@{username}",
+      "detections": [{
+          "return": "true",
+          "string": "firstName",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "username",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "unavailable"
+    },
+    {
+      "url": "https://eyeem.com/u/{username}",
+      "detections": [{
+          "return": "false",
+          "string": "We can't find the user you're looking",
+          "type": "ocr"
+        },
+        {
+          "return": "false",
+          "string": "We can't find the user you're looking",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "username",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "Photo sharing / Social Networking"
+    },
+    {
+      "url": "https://f3.cool/{username}",
+      "detections": [{
+        "return": "true",
+        "string": "og:title",
+        "type": "normal"
+      }],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "unavailable"
+    },
+    {
+      "url": "https://facebook.com/{username}",
+      "detections": [{
+          "return": "false",
+          "string": "This page isn't available",
+          "type": "ocr"
+        },
+        {
+          "return": "false",
+          "string": "The link you followed may be broken",
+          "type": "normal"
+        },
+        {
+          "return": "false",
+          "string": "page:\"/4oh4.php",
+          "type": "normal"
+        },
+        {
+          "function": "special_facebook_1",
+          "type": "special"
+        }
+      ],
+      "selected": "true",
+      "top": "top10",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "Social networking service"
+    },
+    {
+      "url": "https://facenama.com/{username}",
+      "detections": [{
+          "return": "false",
+          "string": "404 Error",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "profile",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "og:title",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "unavailable"
+    },
+    {
+      "url": "https://fandom.com/u/{username}",
+      "detections": [{
+          "return": "false",
+          "string": "t always catch",
+          "type": "ocr"
+        },
+        {
+          "return": "false",
+          "string": "t always catch",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "username",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "u/{username}",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "Wiki hosting service"
+    },
+    {
+      "url": "https://fiverr.com/{username}",
+      "detections": [{
+        "return": "true",
+        "string": "{username}",
+        "type": "normal"
+      }],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "Sales of services"
+    },
+    {
+      "url": "https://fixya.com/users/{username}",
+      "detections": [],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "unavailable"
+    },
+    {
+      "url": "https://fl.ru/users/{username}/portfolio",
+      "detections": [{
+          "return": "false",
+          "string": "404 Not Found",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "users/{username}",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "unavailable"
+    },
+    {
+      "url": "https://flickr.com/people/{username}",
+      "detections": [{
+          "return": "false",
+          "string": "This is not the page you’re looking for",
+          "type": "ocr"
+        },
+        {
+          "return": "false",
+          "string": "This is not the page you’re looking for",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "og:title",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "people/{username}",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "Image/Video hosting service"
+    },
+    {
+      "url": "https://flipboard.com/@{username}",
+      "detections": [{
+          "return": "false",
+          "string": "This page does not exist",
+          "type": "ocr"
+        },
+        {
+          "return": "false",
+          "string": "This page does not exist",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "username/{username}",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "profile-header",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "unavailable"
+    },
+    {
+      "url": "https://fortnitetracker.com/profile/all/{username}",
+      "detections": [{
+          "return": "false",
+          "string": "We are unable to find your profile",
+          "type": "ocr"
+        },
+        {
+          "return": "false",
+          "string": "We are unable to find your profile",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "profile/{username}",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "profile-header",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "unavailable"
+    },
+    {
+      "url": "https://forum.3dnews.ru/member.php?username={username}",
+      "detections": [],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "Torrent index"
+    },
+    {
+      "url": "https://forum.guns.ru/forummisc/blog/{username}",
+      "detections": [{
+        "return": "true",
+        "string": "username=",
+        "type": "normal"
+      }],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "unavailable"
+    },
+    {
+      "url": "https://forum.hackthebox.eu/profile/{username}",
+      "detections": [{
+          "return": "false",
+          "string": "User not found",
+          "type": "ocr"
+        },
+        {
+          "return": "false",
+          "string": "User not found",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "profile/{username}",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "og:title",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "unavailable"
+    },
+    {
+      "url": "https://forum.igromania.ru/member.php?username={username}",
+      "detections": [],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "unavailable"
+    },
+    {
+      "url": "https://forum.leasehackr.com/u/{username}/summary",
+      "detections": [{
+        "name": "discourse",
+        "type": "shared"
+      }],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "unavailable"
+    },
+    {
+      "url": "https://forum.sublimetext.com/u/{username}",
+      "detections": [{
+        "name": "discourse",
+        "type": "shared"
+      }],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "unavailable"
+    },
+    {
+      "url": "https://forum.velomania.ru/member.php?username={username}",
+      "detections": [{
+          "return": "false",
+          "string": "standard_error",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "member_username",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "unavailable"
+    },
+    {
+      "url": "https://forumhouse.ru/members/?username={username}",
+      "detections": [{
+          "return": "false",
+          "string": "\"error\"",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "profilePage",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "unavailable"
+    },
+    {
+      "url": "https://forumophilia.com/profile.php?mode=viewprofile&u={username}",
+      "detections": [{
+          "return": "false",
+          "string": "but that user does not exist",
+          "type": "ocr"
+        },
+        {
+          "return": "false",
+          "string": "but that user does not exist",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "user-profile",
+          "type": "normal"
+        }
+      ],
+      "type": "adult",
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0
+    },
+    {
+      "url": "https://forums.gunsandammo.com/profile/{username}",
+      "detections": [{
+          "return": "false",
+          "string": "User Not Found",
+          "type": "ocr"
+        },
+        {
+          "return": "false",
+          "string": "User Not Found",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "profile/{username}",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "og:title",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "unavailable"
+    },
+    {
+      "url": "https://forums.kali.org/member.php?username={username}",
+      "detections": [{
+          "return": "false",
+          "string": "This user has not registered and therefore does",
+          "type": "ocr"
+        },
+        {
+          "return": "false",
+          "string": "This user has not registered and therefore does",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "member_username",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "unavailable"
+    },
+    {
+      "url": "https://forums.mmorpg.com/profile/{username}",
+      "detections": [{
+          "return": "false",
+          "string": "404 Not Found",
+          "type": "normal"
+        },
+        {
+          "return": "false",
+          "string": "404 Not Found",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "ProfileOptions",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "profile/{username}",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "unavailable"
+    },
+    {
+      "url": "https://forums.pcgamer.com/members/?username={username}",
+      "detections": [{
+          "return": "false",
+          "string": "The specified member cannot be found",
+          "type": "ocr"
+        },
+        {
+          "return": "false",
+          "string": "The specified member cannot be found",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "members/{username}",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "unavailable"
+    },
+    {
+      "url": "https://forums.whonix.org/u/{username}",
+      "detections": [{
+        "name": "discourse",
+        "type": "shared"
+      }],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "unavailable"
+    },
+    {
+      "url": "https://fosstodon.org/@{username}",
+      "detections": [{
+        "name": "mastodon",
+        "type": "shared"
+      }],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "unavailable"
+    },
+    {
+      "url": "https://fotolog.com/author/{username}",
+      "detections": [{
+          "return": "false",
+          "string": "That page doesn’t exist or is private",
+          "type": "ocr"
+        },
+        {
+          "return": "false",
+          "string": "That page doesn’t exist or is private",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "author/{username}/feed/",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "page-header",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "social network"
+    },
+    {
+      "url": "https://freelance.habr.com/freelancers/{username}",
+      "detections": [{
+          "return": "false",
+          "string": "404<",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "freelancers/{username}",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "Web search engine"
+    },
+    {
+      "url": "https://freelancer.com/u/{username}",
+      "detections": [{
+          "return": "false",
+          "string": "Looks like the page you are looking",
+          "type": "ocr"
+        },
+        {
+          "return": "false",
+          "string": "Looks like the page you are looking",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "userId",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "og:title",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "Freelance marketplace"
+    },
+    {
+      "url": "https://freesound.org/people/{username}",
+      "detections": [{
+          "return": "false",
+          "string": "Page not found",
+          "type": "ocr"
+        },
+        {
+          "return": "false",
+          "string": "Page not found",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "account_info",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "follow_user",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "Audio clip sharing"
+    },
+    {
+      "url": "https://gaiaonline.com/profiles/{username}",
+      "detections": [{
+          "return": "false",
+          "string": "General Error",
+          "type": "ocr"
+        },
+        {
+          "return": "false",
+          "string": "General Error",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "about_title",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "\"username\">",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "unavailable"
+    },
+    {
+      "url": "https://gamefaqs.gamespot.com/community/{username}",
+      "detections": [{
+          "return": "false",
+          "string": "Page Not Found",
+          "type": "normal"
+        },
+        {
+          "return": "false",
+          "string": "Page Not Found",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "sub_info",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "profile_user",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "Video game journalism"
+    },
+    {
+      "url": "https://gamespot.com/profile/{username}",
+      "detections": [{
+          "return": "false",
+          "string": "you seem to be lost",
+          "type": "ocr"
+        },
+        {
+          "return": "false",
+          "string": "you seem to be lost",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "profile/{username}",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "username",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "Video game journalism"
+    },
+    {
+      "url": "https://gaminglatest.com/members/{username}",
+      "detections": [{
+          "return": "false",
+          "string": "We ran into some problems",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "memberHeader",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "unavailable"
+    },
+    {
+      "url": "https://gdprofiles.com/{username}",
+      "detections": [],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "unavailable"
+    },
+    {
+      "url": "https://geocaching.com/p/default.aspx?u={username}",
+      "detections": [{
+          "return": "false",
+          "string": "Sorry about that",
+          "type": "ocr"
+        },
+        {
+          "return": "false",
+          "string": "Sorry about that",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "u={username}",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "unavailable"
+    },
+    {
+      "url": "https://getmyuni.com/user/{username}",
+      "detections": [],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "unavailable"
+    },
+    {
+      "url": "https://gfycat.com/@{username}",
+      "detections": [{
+          "return": "false",
+          "string": "Page not found",
+          "type": "ocr"
+        },
+        {
+          "return": "false",
+          "string": "Page not found",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "username",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "userid",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "unavailable"
+    },
+    {
+      "url": "https://giantbomb.com/profile/{username}",
+      "detections": [{
+          "return": "false",
+          "string": "Not Found",
+          "type": "normal"
+        },
+        {
+          "return": "false",
+          "string": "Not Found",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "profile-header",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "Gaming wiki"
+    },
+    {
+      "url": "https://giphy.com/{username}",
+      "detections": [{
+          "return": "false",
+          "string": "There’s nothing here. Looking for GIFs",
+          "type": "ocr"
+        },
+        {
+          "return": "false",
+          "string": "404 Not Found",
+          "type": "normal"
+        },
+        {
+          "return": "false",
+          "string": "status_code",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "username",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "Subsidiary"
+    },
+    {
+      "url": "https://gitee.com/{username}",
+      "detections": [{
+          "return": "false",
+          "string": "(404)<",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "com/{username}",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "profile",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "unavailable"
+    },
+    {
+      "url": "https://github.com/{username}",
+      "detections": [{
+          "return": "false",
+          "string": "This is not the web page you",
+          "type": "ocr"
+        },
+        {
+          "return": "false",
+          "string": "This is not the web page you",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "profile:username",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "Collaborative version control"
+    },
+    {
+      "url": "https://gitlab.com/{username}",
+      "detections": [{
+          "return": "false",
+          "string": "have an account yet",
+          "type": "normal"
+        },
+        {
+          "name": "gitlab",
+          "type": "shared"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "Git-repository hosting service"
+    },
+    {
+      "url": "https://gitlab.gnome.org/{username}",
+      "detections": [{
+          "return": "false",
+          "string": "You need to sign in or sign up before continuing.",
+          "type": "normal"
+        },
+        {
+          "name": "gitlab",
+          "type": "shared"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "GitLab instance"
+    },
+    {
+      "url": "https://gitmemory.com/{username}",
+      "detections": [{
+          "return": "false",
+          "string": "404<",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "user-name",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "Projects Archive"
+    },
+    {
+      "url": "https://gmail.com/{username}",
+      "detections": [{
+        "function": "special_gmail_1",
+        "type": "special"
+      }],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "Social networking service"
+    },
+    {
+      "url": "https://goodreads.com/{username}",
+      "detections": [{
+          "return": "false",
+          "string": "Page not found",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "profile:",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "Book"
+    },
+    {
+      "url": "https://google.com/{username}",
+      "detections": [{
+        "function": "special_google_1",
+        "type": "special"
+      }],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "Social networking service"
+    },
+    {
+      "url": "https://gotinder.com/@{username}",
+      "detections": [{
+        "return": "true",
+        "string": "\"_id\"",
+        "type": "normal"
+      }],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "unavailable"
+    },
+    {
+      "url": "https://gumroad.com/{username}",
+      "detections": [{
+          "return": "false",
+          "string": "Page not found",
+          "type": "ocr"
+        },
+        {
+          "return": "false",
+          "string": "Page not found",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "og:title",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "data-username",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "unavailable"
+    },
+    {
+      "url": "https://gurushots.com/{username}/photos",
+      "detections": [],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "unavailable"
+    },
+    {
+      "url": "https://habr.com/ru/users/{username}",
+      "detections": [{
+        "return": "true",
+        "string": "user-profile",
+        "type": "normal"
+      }],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "Web search engine"
+    },
+    {
+      "url": "https://hackaday.io/{username}",
+      "detections": [{
+          "return": "false",
+          "string": "Page Not Found",
+          "type": "ocr"
+        },
+        {
+          "return": "false",
+          "string": "Page Not Found",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "username",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "\"id\"",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "Weblog"
+    },
+    {
+      "url": "https://hackernoon.com/u/{username}",
+      "detections": [{
+          "return": "true",
+          "string": "bio-text",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "\"/u/{username}\"",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "unavailable"
+    },
+    {
+      "url": "https://hackerone.com/{username}",
+      "detections": [{
+          "return": "false",
+          "string": "Page not found",
+          "type": "ocr"
+        },
+        {
+          "return": "false",
+          "string": "Page not found",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "profile:username",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "unavailable"
+    },
+    {
+      "url": "https://hackerrank.com/{username}",
+      "detections": [{
+          "return": "false",
+          "string": "Something went wrong",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "profile-username-heading",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "unavailable"
+    },
+    {
+      "url": "https://hackster.io/{username}",
+      "detections": [{
+          "return": "false",
+          "string": "we couldn't find that page",
+          "type": "ocr"
+        },
+        {
+          "return": "false",
+          "string": "we couldn't find that page",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "UserProfile",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "user_",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "unavailable"
+    },
+    {
+      "url": "https://hackthissite.org/user/view/{username}",
+      "detections": [{
+          "return": "false",
+          "string": "Cannot Retrieve Information",
+          "type": "ocr"
+        },
+        {
+          "return": "false",
+          "string": "Cannot Retrieve Information",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "id={username}",
+          "type": "normal"
+        }
+      ],
+      "type": "ethical hacking",
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0
+    },
+    {
+      "url": "https://heavy-r.com/user/{username}",
+      "detections": [{
+          "return": "false",
+          "string": "Channel not found",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "member-info",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "unavailable"
+    },
+    {
+      "url": "https://hellboundhackers.org/user/{username}.html",
+      "detections": [{
+          "return": "true",
+          "string": "Email Address:",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "General Information",
+          "type": "normal"
+        }
+      ],
+      "type": "ethical hacking",
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0
+    },
+    {
+      "url": "https://hexrpg.com/userinfo/{username}",
+      "detections": [{
+        "return": "false",
+        "string": "not found",
+        "type": "normal"
+      }],
+      "type": "unavailable",
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0
+    },
+    {
+      "url": "https://hosted.weblate.org/user/{username}/",
+      "detections": [{
+        "return": "false",
+        "string": "Page Not Found",
+        "type": "normal"
+      }],
+      "type": "Cloud crowd translation platform",
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0
+    },
+    {
+      "url": "https://house-mixes.com/profile/{username}",
+      "detections": [{
+          "return": "false",
+          "string": "Profile Not Found",
+          "type": "ocr"
+        },
+        {
+          "return": "false",
+          "string": "Profile Not Found",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "profile/{username}",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "og:title",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "unavailable"
+    },
+    {
+      "url": "https://houzz.com/user/{username}",
+      "detections": [{
+          "return": "false",
+          "string": "The page you requested",
+          "type": "ocr"
+        },
+        {
+          "return": "false",
+          "string": "The page you requested",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "userProfile",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "unavailable"
+    },
+    {
+      "url": "https://hub.docker.com/u/{username}",
+      "detections": [{
+          "return": "false",
+          "string": "The page you requested",
+          "type": "ocr"
+        },
+        {
+          "return": "false",
+          "string": "Page Not Found",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 10,
+      "type": "unavailable"
+    },
+    {
+      "url": "https://hubpages.com/@{username}",
+      "detections": [{
+          "return": "false",
+          "string": "Page does not exist",
+          "type": "ocr"
+        },
+        {
+          "return": "false",
+          "string": "Page does not exist",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "\"profile\"",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "unavailable"
+    },
+    {
+      "url": "https://hubski.com/user/{username}",
+      "detections": [{
+          "return": "false",
+          "string": "No such user",
+          "type": "ocr"
+        },
+        {
+          "return": "false",
+          "string": "No such user",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "profile",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "\"username\"",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "Social news"
+    },
+    {
+      "url": "https://hunting.ru/forum/members/?username={username}",
+      "detections": [{
+        "return": "true",
+        "string": "\"profile\"",
+        "type": "normal"
+      }],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "unavailable"
+    },
+    {
+      "url": "https://icq.im/{username}",
+      "detections": [{
+          "return": "false",
+          "string": "Profile not found",
+          "type": "ocr"
+        },
+        {
+          "return": "false",
+          "string": "Profile not found",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "og:title",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "unavailable"
+    },
+    {
+      "url": "https://ifttt.com/p/{username}",
+      "detections": [{
+          "return": "false",
+          "string": "The requested page or file",
+          "type": "ocr"
+        },
+        {
+          "return": "false",
+          "string": "The requested page or file",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "user_id",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "Profile",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "unavailable"
+    },
+    {
+      "url": "https://imgsrc.ru/main/user.php?user={username}",
+      "detections": [],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "unavailable"
+    },
+    {
+      "url": "https://imgup.cz/{username}",
+      "detections": [{
+          "return": "false",
+          "string": "That page doesn",
+          "type": "ocr"
+        },
+        {
+          "return": "false",
+          "string": "That page doesn",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "\"profile\"",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "username:",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "unavailable"
+    },
+    {
+      "url": "https://imgur.com/user/{username}",
+      "detections": [{
+        "return": "true",
+        "string": "{username}",
+        "type": "advanced"
+      }],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "hosting"
+    },
+    {
+      "url": "https://independent.academia.edu/{username}",
+      "detections": [{
+          "return": "false",
+          "string": "It looks like you",
+          "type": "ocr"
+        },
+        {
+          "return": "false",
+          "string": "It looks like you",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "profile-info",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "user_",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "Platform for sharing research papers"
+    },
+    {
+      "url": "https://indiblogger.in/{username}",
+      "detections": [{
+          "return": "false",
+          "string": "page not found",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "page not found",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "profile",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "unavailable"
+    },
+    {
+      "url": "https://influenster.com/{username}",
+      "detections": [{
+          "return": "false",
+          "string": "Page not found",
+          "type": "ocr"
+        },
+        {
+          "return": "false",
+          "string": "Page not found",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "@{username}",
+          "type": "advanced"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "unavailable"
+    },
+    {
+      "url": "https://instagram.com/{username}",
+      "detections": [{
+          "return": "false",
+          "string": "Sorry, this page isn't available",
+          "type": "ocr"
+        },
+        {
+          "return": "false",
+          "string": "Sorry, this page isn't available",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "full_name\":\"",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "og:title",
+          "type": "normal"
+        }
+      ],
+      "selected": "true",
+      "top": "top10",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "unavailable"
+    },
+    {
+      "url": "https://instructables.com/member/{username}",
+      "detections": [{
+          "return": "false",
+          "string": "things break sometimes",
+          "type": "ocr"
+        },
+        {
+          "return": "false",
+          "string": "things break sometimes",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "\"profile\"",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "profile-",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "Informational"
+    },
+    {
+      "url": "https://interpals.net/{username}",
+      "detections": [{
+          "return": "false",
+          "string": "The requested user does not",
+          "type": "ocr"
+        },
+        {
+          "return": "false",
+          "string": "The requested user does not",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "\"profile\"",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "unavailable"
+    },
+    {
+      "url": "https://irecommend.ru/users/{username}",
+      "detections": [{
+        "return": "true",
+        "string": "profile",
+        "type": "normal"
+      }],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "unavailable"
+    },
+    {
+      "url": "https://issuu.com/{username}",
+      "detections": [{
+          "return": "false",
+          "string": "seem to find",
+          "type": "ocr"
+        },
+        {
+          "return": "false",
+          "string": "seem to find",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "og:title",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "username",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "Electronic publishing"
+    },
+    {
+      "url": "https://jbzd.com.pl/uzytkownik/{username}",
+      "detections": [{
+          "return": "false",
+          "string": "404<",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "user-profile",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "unavailable"
+    },
+    {
+      "url": "https://jeuxvideo.com/profil/{username}?mode=infos",
+      "detections": [{
+          "return": "false",
+          "string": "erreurs",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "infos-pseudo",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "Video game journalism"
+    },
+    {
+      "url": "https://kaggle.com/{username}",
+      "detections": [{
+          "return": "false",
+          "string": "find that page",
+          "type": "ocr"
+        },
+        {
+          "return": "false",
+          "string": "404.png",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "userId",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "\"username\"",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "unavailable"
+    },
+    {
+      "url": "https://keybase.io/{username}",
+      "detections": [{
+          "return": "false",
+          "string": "what you are looking for",
+          "type": "ocr"
+        },
+        {
+          "return": "false",
+          "string": "what you are looking for",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "profile-",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "data-username",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "Encrypted social networking service"
+    },
+    {
+      "url": "https://kik.me/{username}",
+      "detections": [],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "unavailable"
+    },
+    {
+      "url": "https://ko-fi.com/{username}",
+      "detections": [{
+        "return": "true",
+        "string": "\"profile\"",
+        "type": "normal"
+      }],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "unavailable"
+    },
+    {
+      "url": "https://kongregate.com/accounts/{username}",
+      "detections": [{
+          "return": "false",
+          "string": "no account with that name was found",
+          "type": "ocr"
+        },
+        {
+          "return": "false",
+          "string": "no account with that name was found",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "profile_heading",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "Online gaming website and/or social network"
+    },
+    {
+      "url": "https://kwork.ru/user/{username}",
+      "detections": [{
+          "return": "false",
+          "string": "page-404",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "page-profile",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "user-username",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "unavailable"
+    },
+    {
+      "url": "https://lab.pentestit.ru/profile/{username}",
+      "detections": [{
+        "return": "true",
+        "string": "profile/{username}",
+        "type": "normal"
+      }],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "unavailable"
+    },
+    {
+      "url": "https://last.fm/user/{username}",
+      "detections": [{
+          "return": "false",
+          "string": "Page Not Found",
+          "type": "ocr"
+        },
+        {
+          "return": "false",
+          "string": "Page Not Found",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "header-info",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "Online music database"
+    },
+    {
+      "url": "https://launchpad.net/~{username}",
+      "detections": [{
+          "return": "false",
+          "string": "Lost something",
+          "type": "ocr"
+        },
+        {
+          "return": "false",
+          "string": "Lost something",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "og:title",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "Project Hosting Server"
+    },
+    {
+      "url": "https://leetcode.com/{username}",
+      "detections": [{
+          "return": "false",
+          "string": "Page Not Found",
+          "type": "ocr"
+        },
+        {
+          "return": "false",
+          "string": "Page Not Found",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "profile-root",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "Competitive programming"
+    },
+    {
+      "url": "https://letterboxd.com/{username}",
+      "detections": [{
+          "return": "false",
+          "string": "find the page you’ve requested",
+          "type": "ocr"
+        },
+        {
+          "return": "false",
+          "string": "find the page you’ve requested",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "\"profile\"",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "data-user",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "Social networking service for films"
+    },
+    {
+      "url": "https://lichess.org/@/{username}",
+      "detections": [{
+          "return": "false",
+          "string": "Page not found",
+          "type": "ocr"
+        },
+        {
+          "return": "false",
+          "string": "Page not found",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "username",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "Internet chess server"
+    },
+    {
+      "url": "https://linkedin.com/in/{username}/",
+      "detections": [{
+          "return": "false",
+          "string": "Join to view full profiles for free",
+          "type": "advanced"
+        },
+        {
+          "return": "false",
+          "string": "An exact match for {username} could not be found.",
+          "type": "advanced"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "Social media platform"
+    },
+    {
+      "url": "https://linux.org.ru/people/{username}/profile",
+      "detections": [{
+        "return": "true",
+        "string": "userpic",
+        "type": "normal"
+      }],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "unavailable"
+    },
+    {
+      "url": "https://liveleak.com/c/{username}",
+      "detections": [{
+          "return": "false",
+          "string": "channel not found",
+          "type": "ocr"
+        },
+        {
+          "return": "false",
+          "string": "channel not found",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "content_main_right",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "Video sharing"
+    },
+    {
+      "url": "https://livelib.ru/reader/{username}",
+      "detections": [{
+          "return": "false",
+          "string": "logo-404",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "user-profile",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "unavailable"
+    },
+    {
+      "url": "https://lobste.rs/u/{username}",
+      "detections": [{
+          "return": "false",
+          "string": "they changed their username",
+          "type": "ocr"
+        },
+        {
+          "return": "false",
+          "string": "they changed their username",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "/u#{username}",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "unavailable"
+    },
+    {
+      "url": "https://lolchess.gg/profile/na/{username}",
+      "detections": [{
+          "return": "false",
+          "string": "No search results",
+          "type": "ocr"
+        },
+        {
+          "return": "false",
+          "string": "No search results",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "\"profile\"",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "unavailable"
+    },
+    {
+      "url": "https://mastodon.cloud/@{username}",
+      "detections": [{
+        "name": "mastodon",
+        "type": "shared"
+      }],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "unavailable"
+    },
+    {
+      "url": "https://mastodon.social/@{username}",
+      "detections": [{
+        "name": "mastodon",
+        "type": "shared"
+      }],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "unavailable"
+    },
+    {
+      "url": "https://mastodon.technology/@{username}",
+      "detections": [{
+        "name": "mastodon",
+        "type": "shared"
+      }],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "unavailable"
+    },
+    {
+      "url": "https://mastodon.xyz/@{username}",
+      "detections": [{
+        "name": "mastodon",
+        "type": "shared"
+      }],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "unavailable"
+    },
+    {
+      "url": "https://medium.com/@{username}",
+      "detections": [{
+          "return": "false",
+          "string": "Out of nothing",
+          "type": "ocr"
+        },
+        {
+          "return": "false",
+          "string": "Out of nothing",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "profile:username",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "unavailable"
+    },
+    {
+      "url": "https://memrise.com/user/{username}",
+      "detections": [{
+          "return": "false",
+          "string": "The page you are trying",
+          "type": "ocr"
+        },
+        {
+          "return": "false",
+          "string": "The page you are trying",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "user-details",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "profile-stats",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "Privately held company"
+    },
+    {
+      "url": "https://mercadolivre.com.br/perfil/{username}",
+      "detections": [{
+          "return": "false",
+          "string": "\"error\"",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "username",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "unavailable"
+    },
+    {
+      "url": "https://meta.wikimedia.org/wiki/Special:CentralAuth/{username}",
+      "detections": [{
+        "name": "mediawiki",
+        "type": "shared"
+      }],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "unavailable"
+    },
+    {
+      "url": "https://metacritic.com/user/{username}",
+      "detections": [{
+          "return": "false",
+          "string": "User not found",
+          "type": "ocr"
+        },
+        {
+          "return": "false",
+          "string": "User not found",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "userName:",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "Review aggregator"
+    },
+    {
+      "url": "https://mix.com/{username}",
+      "detections": [{
+        "return": "true",
+        "string": "UserProfile",
+        "type": "normal"
+      }],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "unavailable"
+    },
+    {
+      "url": "https://mixcloud.com/{username}",
+      "detections": [{
+        "return": "false",
+        "string": "Page Not Found",
+        "type": "advanced"
+      }],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "Audio Streaming"
+    },
+    {
+      "url": "https://mobile.twitter.com/{username}",
+      "detections": [{
+          "return": "false",
+          "string": "This account doesn’t exist",
+          "type": "ocr"
+        },
+        {
+          "return": "false",
+          "string": "This account doesn’t exist",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "Tweets & replies",
+          "type": "normal"
+        }
+      ],
+      "selected": "true",
+      "top": "top10",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "social networking service"
+    },
+    {
+      "url": "https://moikrug.ru/{username}",
+      "detections": [{
+          "return": "false",
+          "string": "404<",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "username:",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "unavailable"
+    },
+    {
+      "url": "https://mstdn.io/@{username}",
+      "detections": [{
+        "name": "mastodon",
+        "type": "shared"
+      }],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "unavailable"
+    },
+    {
+      "url": "https://munzee.com/m/{username}",
+      "detections": [{
+          "return": "false",
+          "string": "looks like the page is not found",
+          "type": "ocr"
+        },
+        {
+          "return": "false",
+          "string": "looks like the page is not found",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "username",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "unavailable"
+    },
+    {
+      "url": "https://my.flightradar24.com/{username}",
+      "detections": [{
+          "return": "false",
+          "string": "this page could not be found",
+          "type": "ocr"
+        },
+        {
+          "return": "false",
+          "string": "this page could not be found",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "profile-",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "Aircraft tracking"
+    },
+    {
+      "url": "https://myanimelist.net/profile/{username}",
+      "detections": [{
+          "return": "false",
+          "string": "This page doesn",
+          "type": "ocr"
+        },
+        {
+          "return": "false",
+          "string": "This page doesn",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "user-profile",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "Anime and manga social networking and cataloging"
+    },
+    {
+      "url": "https://myminifactory.com/users/{username}",
+      "detections": [{
+          "return": "false",
+          "string": "Something has gone wrong",
+          "type": "ocr"
+        },
+        {
+          "return": "false",
+          "string": "Something has gone wrong",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "\"username\"",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "profilename",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "3D Design sharing platform"
+    },
+    {
+      "url": "https://myspace.com/{username}",
+      "detections": [{
+          "return": "false",
+          "string": "Page Not Found",
+          "type": "ocr"
+        },
+        {
+          "return": "false",
+          "string": "Page Not Found",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "Social media"
+    },
+    {
+      "url": "https://nairaland.com/{username}",
+      "detections": [{
+          "return": "false",
+          "string": "Page Not Found",
+          "type": "ocr"
+        },
+        {
+          "return": "false",
+          "string": "Page Not Found",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "profile",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "Internet forum"
+    },
+    {
+      "url": "https://namemc.com/profile/{username}",
+      "detections": [{
+        "return": "true",
+        "string": "Minecraft Profile",
+        "type": "normal"
+      }],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "unavailable"
+    },
+    {
+      "url": "https://nationstates.net/nation={username}",
+      "detections": [{
+          "return": "false",
+          "string": "does not exist",
+          "type": "ocr"
+        },
+        {
+          "return": "false",
+          "string": "does not exist",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "nationsummary",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "Government simulation game"
+    },
+    {
+      "url": "https://nationstates.net/{username}",
+      "detections": [{
+          "return": "false",
+          "string": "does not exist",
+          "type": "ocr"
+        },
+        {
+          "return": "false",
+          "string": "does not exist",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "viewprofile",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "Government simulation game"
+    },
+    {
+      "url": "https://native-instruments.com/forum/members?username={username}",
+      "detections": [{
+          "return": "false",
+          "string": "- Error",
+          "type": "ocr"
+        },
+        {
+          "return": "false",
+          "string": "- Error",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "profile:username",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "unavailable"
+    },
+    {
+      "url": "https://neogaf.com/members/{username}/",
+      "detections": [{
+        "return": "false",
+        "string": "content=\"Oops! We ran",
+        "type": "normal"
+      }],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "Internet forum"
+    },
+    {
+      "url": "https://news.ycombinator.com/user?id={username}",
+      "detections": [{
+          "return": "false",
+          "string": "No such user",
+          "type": "ocr"
+        },
+        {
+          "return": "false",
+          "string": "No such user",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "Profile",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "unavailable"
+    },
+    {
+      "url": "https://nightbot.tv/t/{username}/commands",
+      "detections": [],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "unavailable"
+    },
+    {
+      "url": "https://ninjakiwi.com/profile/{username}",
+      "detections": [{
+        "return": "true",
+        "string": "\"profile\"",
+        "type": "normal"
+      }],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "Flash game website"
+    },
+    {
+      "url": "https://notabug.org/{username}",
+      "detections": [{
+          "return": "false",
+          "string": "If you think this is an error",
+          "type": "ocr"
+        },
+        {
+          "return": "false",
+          "string": "If you think this is an error",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "username",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "profile",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "unavailable"
+    },
+    {
+      "url": "https://note.com/{username}",
+      "detections": [{
+          "return": "true",
+          "string": "username",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "og:title",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "Study guide"
+    },
+    {
+      "url": "https://npmjs.com/~{username}",
+      "detections": [{
+          "return": "false",
+          "string": "Scope not found",
+          "type": "ocr"
+        },
+        {
+          "return": "false",
+          "string": "Scope not found",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "scope/{username}",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "unavailable"
+    },
+    {
+      "url": "https://nyaa.si/user/{username}",
+      "detections": [{
+        "return": "false",
+        "string": "The path you requested does not exist on this server",
+        "type": "normal"
+      }],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "Torrent index"
+    },
+    {
+      "url": "https://ok.ru/{username}",
+      "detections": [{
+          "return": "false",
+          "string": "This page does not",
+          "type": "ocr"
+        },
+        {
+          "return": "false",
+          "string": "This page does not",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "og:title",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "unavailable"
+    },
+    {
+      "url": "https://open.spotify.com/user/{username}",
+      "detections": [{
+          "return": "false",
+          "string": "Search for something else",
+          "type": "ocr"
+        },
+        {
+          "return": "false",
+          "string": "Search for something else",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "Music streaming service"
+    },
+    {
+      "url": "https://opencollective.com/{username}",
+      "detections": [{
+        "return": "false",
+        "string": "Not found<",
+        "type": "normal"
+      }],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "unavailable"
+    },
+    {
+      "url": "https://openhub.net/accounts/{username}",
+      "detections": [{
+          "return": "false",
+          "string": "Something seems wrong",
+          "type": "ocr"
+        },
+        {
+          "return": "false",
+          "string": "Something seems wrong",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "account_header",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "Public directory of free and open-source software (FOSS)"
+    },
+    {
+      "url": "https://opennet.ru/~{username}",
+      "detections": [{
+        "return": "true",
+        "string": "show_user",
+        "type": "normal"
+      }],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "News and forum"
+    },
+    {
+      "url": "https://opensource.com/users/{username}",
+      "detections": [{
+          "return": "false",
+          "string": "Unfortunately the page you",
+          "type": "ocr"
+        },
+        {
+          "return": "false",
+          "string": "Unfortunately the page you",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "user-info",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "unavailable"
+    },
+    {
+      "url": "https://openstreetmap.org/user/{username}",
+      "detections": [{
+          "return": "false",
+          "string": "does not exist",
+          "type": "ocr"
+        },
+        {
+          "return": "false",
+          "string": "does not exist",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "profile",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "user_",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "Collaborative mapping"
+    },
+    {
+      "url": "https://osu.ppy.sh/users/{username}",
+      "detections": [{
+          "return": "false",
+          "string": "User not found",
+          "type": "ocr"
+        },
+        {
+          "return": "false",
+          "string": "User not found",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "profile-",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "unavailable"
+    },
+    {
+      "url": "https://ourdjtalk.com/members?username={username}",
+      "detections": [{
+          "return": "false",
+          "string": "The specified member cannot be found",
+          "type": "ocr"
+        },
+        {
+          "return": "false",
+          "string": "The specified member cannot be found",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "memberHeader",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "unavailable"
+    },
+    {
+      "url": "https://packagist.org/packages/{username}",
+      "detections": [{
+          "return": "false",
+          "string": "No packages found",
+          "type": "ocr"
+        },
+        {
+          "return": "true",
+          "string": "package-item",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "unavailable"
+    },
+    {
+      "url": "https://pastebin.com/u/{username}",
+      "detections": [{
+          "return": "false",
+          "string": "The requested page does not exist",
+          "type": "ocr"
+        },
+        {
+          "return": "false",
+          "string": "The requested page does not exist",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "user-view",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "Web application"
+    },
+    {
+      "url": "https://patreon.com/{username}",
+      "detections": [{
+          "return": "false",
+          "string": "Looks like you got lost",
+          "type": "ocr"
+        },
+        {
+          "return": "false",
+          "string": "error.",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "profile.",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "Membership platform"
+    },
+    {
+      "url": "https://pcpartpicker.com/user/{username}",
+      "detections": [{
+          "return": "false",
+          "string": "The page you requested",
+          "type": "ocr"
+        },
+        {
+          "return": "false",
+          "string": "The page you requested",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "\"Profile\"",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "Comparison shopping"
+    },
+    {
+      "url": "https://periscope.tv/{username}",
+      "detections": [{
+          "return": "false",
+          "string": "Sorry, this page",
+          "type": "ocr"
+        },
+        {
+          "return": "false",
+          "string": "Sorry, this page",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "ProfileName",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "unavailable"
+    },
+    {
+      "url": "https://php.ru/forum/members/?username={username}",
+      "detections": [{
+        "return": "true",
+        "string": "\"profile\"",
+        "type": "normal"
+      }],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "unavailable"
+    },
+    {
+      "url": "https://pikabu.ru/@{username}",
+      "detections": [{
+        "return": "true",
+        "string": "data-profile",
+        "type": "normal"
+      }],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "unavailable"
+    },
+    {
+      "url": "https://pinkbike.com/u/{username}",
+      "detections": [{
+          "return": "false",
+          "string": "Could Not Find This Page",
+          "type": "ocr"
+        },
+        {
+          "return": "false",
+          "string": "Could Not Find This Page",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "user-details",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "unavailable"
+    },
+    {
+      "url": "https://pinterest.com/{username}",
+      "detections": [{
+          "return": "false",
+          "string": "User not found",
+          "type": "normal"
+        },
+        {
+          "return": "false",
+          "string": "statusCode\":404",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "\"first_name\"",
+          "type": "normal"
+        }
+      ],
+      "selected": "true",
+      "top": "top10",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "Social media service"
+    },
+    {
+      "url": "https://play.google.com/store/apps/developer?id={username}",
+      "detections": [],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "Web search engine"
+    },
+    {
+      "url": "https://pling.com/u/{username}",
+      "detections": [{
+        "return": "true",
+        "string": "about-title",
+        "type": "normal"
+      }],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "Libre services and content sharing"
+    },
+    {
+      "url": "https://plug.dj/@/{username}",
+      "detections": [{
+          "return": "false",
+          "string": "s the party",
+          "type": "ocr"
+        },
+        {
+          "return": "false",
+          "string": "s the party",
+          "type": "normal"
+        },
+        {
+          "return": "false",
+          "string": "error-404",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "\"profile\"",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "unavailable"
+    },
+    {
+      "url": "https://plugins.gradle.org/u/{username}",
+      "detections": [{
+        "return": "false",
+        "string": "User not found",
+        "type": "normal"
+      }],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "unavailable"
+    },
+    {
+      "url": "https://pokemonshowdown.com/users/{username}",
+      "detections": [{
+          "return": "true",
+          "string": "Joined:",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "Account disabled",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "unavailable"
+    },
+    {
+      "url": "https://polarsteps.com/{username}",
+      "detections": [{
+        "return": "true",
+        "string": "user-info",
+        "type": "normal"
+      }],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "unavailable"
+    },
+    {
+      "url": "https://polygon.com/users/{username}",
+      "detections": [{
+          "return": "false",
+          "string": "404 Not found",
+          "type": "ocr"
+        },
+        {
+          "return": "false",
+          "string": "404 Not found",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "_profile",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "Gaming website"
+    },
+    {
+      "url": "https://pr0gramm.com/user/{username}",
+      "detections": [],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "unavailable"
+    },
+    {
+      "url": "https://producthunt.com/@{username}",
+      "detections": [{
+          "return": "false",
+          "string": "Page Not Found",
+          "type": "ocr"
+        },
+        {
+          "return": "false",
+          "string": "Page Not Found",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "\"creator\":\"@",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "unavailable"
+    },
+    {
+      "url": "https://profil.chatujme.cz/{username}",
+      "detections": [{
+          "return": "true",
+          "string": "profilu",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "profilview",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "unavailable"
+    },
+    {
+      "url": "https://profile.ameba.jp/ameba/{username}/",
+      "detections": [{
+          "return": "false",
+          "string": "\"info_",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "profile-",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "Social network service"
+    },
+    {
+      "url": "https://profiles.wordpress.org/{username}",
+      "detections": [{
+          "return": "false",
+          "string": "User not found",
+          "type": "ocr"
+        },
+        {
+          "return": "false",
+          "string": "Page Not Found",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "username",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "user-",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "unavailable"
+    },
+    {
+      "url": "https://prog.hu/azonosito/info/{username}",
+      "detections": [{
+        "return": "true",
+        "string": "userprofile",
+        "type": "normal"
+      }],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "unavailable"
+    },
+    {
+      "status": "bad",
+      "url": "https://promodj.com/{username}",
+      "detections": [{
+          "return": "false",
+          "string": "Page not found",
+          "type": "ocr"
+        },
+        {
+          "return": "false",
+          "string": "Page not found",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "com/{username}",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "unavailable"
+    },
+    {
+      "url": "https://psnprofiles.com/{username}",
+      "detections": [{
+        "return": "true",
+        "string": "profile-",
+        "type": "normal"
+      }],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "unavailable"
+    },
+    {
+      "url": "https://pypi.org/user/{username}",
+      "detections": [{
+          "return": "false",
+          "string": "We looked everywhere",
+          "type": "ocr"
+        },
+        {
+          "return": "false",
+          "string": "We looked everywhere",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "author-profile",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "unavailable"
+    },
+    {
+      "url": "https://quizlet.com/{username}",
+      "detections": [{
+          "return": "false",
+          "string": "We have no idea what to put here",
+          "type": "ocr"
+        },
+        {
+          "return": "false",
+          "string": "We have no idea what to put here",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "\"username\":\"",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "Education"
+    },
+    {
+      "url": "https://quora.com/profile/{username}",
+      "detections": [{
+          "return": "false",
+          "string": "Page Not Found",
+          "type": "ocr"
+        },
+        {
+          "return": "false",
+          "string": "Page Not Found",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "username",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "Question and answer"
+    },
+    {
+      "url": "https://raidforums.com/User-{username}",
+      "detections": [{
+          "return": "false",
+          "string": "The member you specified is",
+          "type": "ocr"
+        },
+        {
+          "return": "false",
+          "string": "The member you specified is",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "profile__user",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "unavailable"
+    },
+    {
+      "url": "https://rateyourmusic.com/~{username}",
+      "detections": [{
+          "return": "false",
+          "string": "File not found",
+          "type": "ocr"
+        },
+        {
+          "return": "false",
+          "string": "File not found",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "profilename",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "Database and community"
+    },
+    {
+      "url": "https://realmeye.com/player/{username}",
+      "detections": [{
+          "return": "false",
+          "string": "but we either",
+          "type": "ocr"
+        },
+        {
+          "return": "false",
+          "string": "but we either",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "entity-name",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "unavailable"
+    },
+    {
+      "url": "https://redbubble.com/people/{username}",
+      "detections": [{
+          "return": "false",
+          "string": "This is a lost cause",
+          "type": "ocr"
+        },
+        {
+          "return": "false",
+          "string": "This is a lost cause",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "artistName",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "unavailable"
+    },
+    {
+      "url": "https://reddit.com/user/{username}",
+      "detections": [{
+          "return": "false",
+          "string": "Sorry, nobody",
+          "type": "ocr"
+        },
+        {
+          "return": "false",
+          "string": "Sorry, nobody",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "u/{username}",
+          "type": "normal"
+        }
+      ],
+      "selected": "true",
+      "top": "top10",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "Social news"
+    },
+    {
+      "url": "https://repl.it/@{username}",
+      "detections": [{
+          "return": "false",
+          "string": "Not found",
+          "type": "ocr"
+        },
+        {
+          "return": "true",
+          "string": " profile-",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "unavailable"
+    },
+    {
+      "url": "https://researchgate.net/profile/{username}",
+      "detections": [{
+        "return": "true",
+        "string": "profile:username",
+        "type": "normal"
+      }],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "Social network service for scientists"
+    },
+    {
+      "url": "https://reverbnation.com/{username}",
+      "detections": [{
+          "return": "false",
+          "string": "we couldn't find that page",
+          "type": "ocr"
+        },
+        {
+          "return": "false",
+          "string": "we couldn't find that page",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "profile-header",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "Music and Social Networking"
+    },
+    {
+      "url": "https://rive.app/a/{username}",
+      "detections": [{
+          "return": "false",
+          "string": "Not Found",
+          "type": "ocr"
+        },
+        {
+          "return": "false",
+          "string": "The page you were looking for",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "\"username\":\"",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "Profile",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "unavailable"
+    },
+    {
+      "url": "https://robertsspaceindustries.com/citizens/{username}",
+      "detections": [{
+          "return": "false",
+          "string": "No results for",
+          "type": "ocr"
+        },
+        {
+          "return": "false",
+          "string": "No results for",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "-profile",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "unavailable"
+    },
+    {
+      "url": "https://roblox.com/user.aspx?username={username}",
+      "detections": [],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "unavailable"
+    },
+    {
+      "url": "https://rubygems.org/profiles/{username}",
+      "detections": [{
+          "return": "false",
+          "string": "Page not found",
+          "type": "ocr"
+        },
+        {
+          "return": "false",
+          "string": "Page not found",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "profile_",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "profile-",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "unavailable"
+    },
+    {
+      "url": "https://rusfootball.info/user/{username}",
+      "detections": [],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "unavailable"
+    },
+    {
+      "url": "https://satsis.info/user/{username}",
+      "detections": [{
+          "return": "false",
+          "string": "berrors",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "\"userinfo\"",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "unavailable"
+    },
+    {
+      "url": "https://sbazar.cz/{username}",
+      "detections": [{
+          "return": "false",
+          "string": "error-box",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "-info",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "Joint stock company"
+    },
+    {
+      "url": "https://scratch.mit.edu/users/{username}",
+      "detections": [{
+          "return": "false",
+          "string": "Our server is Scratch",
+          "type": "ocr"
+        },
+        {
+          "return": "false",
+          "string": "Our server is Scratch",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "username:",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "unavailable"
+    },
+    {
+      "url": "https://scribd.com/{username}",
+      "detections": [{
+          "return": "false",
+          "string": "Page not found",
+          "type": "ocr"
+        },
+        {
+          "return": "false",
+          "string": "Page not found",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "unavailable"
+    },
+    {
+      "url": "https://sharechat.com/profile/{username}",
+      "detections": [{
+        "return": "true",
+        "string": "profile/{username}/info",
+        "type": "normal"
+      }],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "unavailable"
+    },
+    {
+      "url": "https://shitpostbot.com/user/{username}",
+      "detections": [],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "unavailable"
+    },
+    {
+      "url": "https://slant.co/users/{username}",
+      "detections": [{
+        "return": "false",
+        "string": "404 Page Not Found",
+        "type": "normal"
+      }],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "Product comparison"
+    },
+    {
+      "url": "https://slashdot.org/~{username}",
+      "detections": [{
+          "return": "false",
+          "string": "The user you requested does not exist",
+          "type": "ocr"
+        },
+        {
+          "return": "false",
+          "string": "The user you requested does not exist",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "user_bio",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "Online newspapersocial news"
+    },
+    {
+      "url": "https://slideshare.net/{username}",
+      "detections": [{
+          "return": "false",
+          "string": "This username",
+          "type": "ocr"
+        },
+        {
+          "return": "false",
+          "string": "This username",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "profileHeader",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "Slide hosting service"
+    },
+    {
+      "url": "https://smule.com/{username}",
+      "detections": [{
+          "return": "false",
+          "string": "The page you are looking",
+          "type": "ocr"
+        },
+        {
+          "return": "false",
+          "string": "The page you are looking",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "\"profile\"",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "username:",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "unavailable"
+    },
+    {
+      "url": "https://social.tchncs.de/@{username}",
+      "detections": [{
+          "return": "false",
+          "string": "The page you are looking",
+          "type": "ocr"
+        },
+        {
+          "return": "false",
+          "string": "The page you are looking",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "og:title",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "profile:username",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "unavailable"
+    },
+    {
+      "url": "https://soundcloud.com/{username}",
+      "detections": [{
+          "return": "false",
+          "string": "We can’t find that user",
+          "type": "ocr"
+        },
+        {
+          "return": "true",
+          "string": "com/{username}",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "Music streaming"
+    },
+    {
+      "url": "https://sourceforge.net/u/{username}",
+      "detections": [{
+          "return": "false",
+          "string": "t find that page",
+          "type": "ocr"
+        },
+        {
+          "return": "false",
+          "string": "t find that page",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "project-icon",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "Username:",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "Collaborative revision control"
+    },
+    {
+      "url": "https://soylentnews.org/~{username}",
+      "detections": [{
+          "return": "false",
+          "string": "The user you requested does not exist",
+          "type": "ocr"
+        },
+        {
+          "return": "false",
+          "string": "The user you requested does not exist",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "users-",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "unavailable"
+    },
+    {
+      "url": "https://sparkpeople.com/mypage.asp?id={username}",
+      "detections": [{
+          "return": "false",
+          "string": "We couldn't find that user",
+          "type": "ocr"
+        },
+        {
+          "return": "false",
+          "string": "We couldn't find that user",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "member_",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "unavailable"
+    },
+    {
+      "url": "https://speedrun.com/user/{username}",
+      "detections": [{
+          "return": "false",
+          "string": "not found.",
+          "type": "ocr"
+        },
+        {
+          "return": "false",
+          "string": "not found.",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "username-",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "unavailable"
+    },
+    {
+      "url": "https://spletnik.ru/user/{username}",
+      "detections": [{
+          "return": "false",
+          "string": "error-page",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "user-profile",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "unavailable"
+    },
+    {
+      "url": "https://splits.io/users/{username}",
+      "detections": [{
+          "return": "false",
+          "string": "This page doesn't exist",
+          "type": "ocr"
+        },
+        {
+          "return": "false",
+          "string": "This page doesn't exist",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "users/{username}",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "unavailable"
+    },
+    {
+      "url": "https://sporcle.com/user/{username}/people",
+      "detections": [{
+          "return": "false",
+          "string": "This Sporcle user cannot",
+          "type": "ocr"
+        },
+        {
+          "return": "false",
+          "string": "This Sporcle user cannot",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "profile-",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "Quizzes"
+    },
+    {
+      "url": "https://sports.ru/profile/{username}",
+      "detections": [{
+        "return": "true",
+        "string": "info-block",
+        "type": "normal"
+      }],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "unavailable"
+    },
+    {
+      "url": "https://steamcommunity.com/id/{username}",
+      "detections": [{
+          "return": "false",
+          "string": "An error was encountered",
+          "type": "ocr"
+        },
+        {
+          "return": "false",
+          "string": "An error was encountered",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "profile_",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "unavailable"
+    },
+    {
+      "url": "https://steamid.uk/profile/{username}",
+      "detections": [{
+          "return": "false",
+          "string": "Profile not found",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "nickname",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "unavailable"
+    },
+    {
+      "url": "https://steemit.com/@{username}",
+      "detections": [{
+          "return": "false",
+          "string": "This page doesn",
+          "type": "ocr"
+        },
+        {
+          "return": "false",
+          "string": "This page doesn",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "UserProfile",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "unavailable"
+    },
+    {
+      "url": "https://strava.com/athletes/{username}",
+      "detections": [{
+        "return": "true",
+        "string": "media-body main",
+        "type": "normal"
+      }],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "unavailable"
+    },
+    {
+      "url": "https://svidbook.ru/user/{username}",
+      "detections": [{
+        "return": "true",
+        "string": "user_profile",
+        "type": "normal"
+      }],
+      "selected": "false",
+      "timeout": 10,
+      "implicit": 10,
+      "type": "unavailable"
+    },
+    {
+      "url": "https://t.me/{username}",
+      "detections": [{
+          "return": "false",
+          "string": "you can contact",
+          "type": "ocr"
+        },
+        {
+          "return": "false",
+          "string": "noindex,",
+          "type": "normal"
+        },
+        {
+          "return": "false",
+          "string": "tgme_username_link",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "tgme_page_title",
+          "type": "normal"
+        }
+      ],
+      "selected": "true",
+      "top": "top10",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "unavailable"
+    },
+    {
+      "url": "https://tellonym.me/{username}",
+      "detections": [{
+        "return": "true",
+        "string": "me/{username}",
+        "type": "normal"
+      }],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "unavailable"
+    },
+    {
+      "url": "https://tenor.com/users/{username}",
+      "detections": [{
+          "return": "false",
+          "string": "We could not find the page",
+          "type": "ocr"
+        },
+        {
+          "return": "false",
+          "string": "We could not find the page",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "name-info",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "unavailable"
+    },
+    {
+      "url": "https://theverge.com/users/{username}",
+      "detections": [{
+          "return": "false",
+          "string": "404 Not found",
+          "type": "ocr"
+        },
+        {
+          "return": "false",
+          "string": "404 Not found",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "-user-",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "Technology news"
+    },
+    {
+      "url": "https://tiktok.com/@{username}",
+      "detections": [{
+          "return": "false",
+          "string": "Couldn't find this account",
+          "type": "ocr"
+        },
+        {
+          "return": "true",
+          "string": "\"serverCode\":200",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "sign-sg.tiktokcdn.com",
+          "type": "normal"
+        }
+      ],
+      "selected": "true",
+      "top": "top10",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "unavailable"
+    },
+    {
+      "url": "https://tldrlegal.com/users/{username}/",
+      "detections": [{
+        "return": "false",
+        "string": "404 Not Found",
+        "type": "normal"
+      }],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "unavailable"
+    },
+    {
+      "url": "https://tnaflix.com/profile/{username}",
+      "detections": [{
+          "return": "false",
+          "string": "looking for is lost somewhere",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "userProfileHeader",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "adult"
+    },
+    {
+      "url": "https://tradingview.com/u/{username}",
+      "detections": [{
+          "return": "false",
+          "string": "that page doesn",
+          "type": "ocr"
+        },
+        {
+          "return": "false",
+          "string": "that page doesn",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "data-username",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "unavailable"
+    },
+    {
+      "url": "https://trakt.tv/users/{username}",
+      "detections": [{
+          "return": "false",
+          "string": "(404)",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "meta-username",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "unavailable"
+    },
+    {
+      "url": "https://trashbox.ru/users/{username}",
+      "detections": [{
+        "return": "true",
+        "string": "frm_profile",
+        "type": "normal"
+      }],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "unavailable"
+    },
+    {
+      "url": "https://travellerspoint.com/users/{username}",
+      "detections": [{
+          "return": "false",
+          "string": "404 Not Found",
+          "type": "ocr"
+        },
+        {
+          "return": "false",
+          "string": "404 Not Found",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "og:title",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "nickname",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "Social network service"
+    },
+    {
+      "url": "https://trello.com/{username}",
+      "detections": [{
+        "return": "false",
+        "string": "Page not found",
+        "type": "ocr"
+      }],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "unavailable"
+    },
+    {
+      "url": "https://tripadvisor.com/members/{username}",
+      "detections": [{
+          "return": "false",
+          "string": "This page is on vacation",
+          "type": "ocr"
+        },
+        {
+          "return": "false",
+          "string": "error404",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "ui_card",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "unavailable"
+    },
+    {
+      "url": "https://tryhackme.com/p/{username}",
+      "detections": [{
+          "return": "false",
+          "string": "An error occured",
+          "type": "ocr"
+        },
+        {
+          "return": "false",
+          "string": "An error occured",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "profile-social",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "unavailable"
+    },
+    {
+      "url": "https://twitch.tv/{username}",
+      "detections": [{
+        "return": "false",
+        "string": "that content is unavailable",
+        "type": "ocr"
+      }],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "Live streaming"
+    },
+    {
+      "url": "https://udemy.com/user/{username}/",
+      "detections": [{
+          "return": "true",
+          "string": "-profile-",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "about-me",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "unavailable"
+    },
+    {
+      "url": "https://uid.me/{username}",
+      "detections": [{
+          "return": "false",
+          "string": "Page not found",
+          "type": "ocr"
+        },
+        {
+          "return": "false",
+          "string": "Page not found",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "profile_name",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "unavailable"
+    },
+    {
+      "url": "https://ultimate-guitar.com/u/{username}",
+      "detections": [{
+          "return": "false",
+          "string": "We couldn't find that page",
+          "type": "ocr"
+        },
+        {
+          "return": "false",
+          "string": "We couldn't find that page",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "_profile",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "username",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "Tablature archive"
+    },
+    {
+      "url": "https://unsplash.com/@{username}",
+      "detections": [{
+          "return": "false",
+          "string": "the page you were looking",
+          "type": "ocr"
+        },
+        {
+          "return": "false",
+          "string": "the page you were looking",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "profile_",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "username",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "Stock photography"
+    },
+    {
+      "url": "https://us.forums.blizzard.com/en/blizzard/u/{username}",
+      "detections": [{
+          "return": "false",
+          "string": "Page Not Found",
+          "type": "normal"
+        },
+        {
+          "return": "false",
+          "string": "Page Not Found",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "user-profile",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "unavailable"
+    },
+    {
+      "url": "https://v2ex.com/member/{username}",
+      "detections": [{
+        "return": "true",
+        "string": "号会员，加入于",
+        "type": "normal"
+      }],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "Internet forum"
+    },
+    {
+      "url": "https://venmo.com/{username}",
+      "detections": [{
+          "return": "false",
+          "string": "the page you requested does",
+          "type": "ocr"
+        },
+        {
+          "return": "false",
+          "string": "the page you requested does",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "profile-",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "username\":",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "unavailable"
+    },
+    {
+      "url": "https://vero.co/{username}",
+      "detections": [{
+          "return": "false",
+          "string": "The page you are looking",
+          "type": "ocr"
+        },
+        {
+          "return": "false",
+          "string": "The page you are looking",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "user-details",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "unavailable"
+    },
+    {
+      "url": "https://vgr.com/forum/profile/{username}",
+      "detections": [{
+          "return": "false",
+          "string": "The page you requested",
+          "type": "normal"
+        },
+        {
+          "return": "false",
+          "string": "The page you requested",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "ProfileStats",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "unavailable"
+    },
+    {
+      "url": "https://videogamer.com/forums/index.php?/profile/{username}/",
+      "detections": [{
+        "return": "true",
+        "string": "ProfilePhoto",
+        "type": "normal"
+      }],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "unavailable"
+    },
+    {
+      "url": "https://vimeo.com/{username}",
+      "detections": [{
+          "return": "false",
+          "string": "Make sure you’ve typed the URL correctly",
+          "type": "normal"
+        },
+        {
+          "return": "false",
+          "string": "Make sure you’ve typed the URL correctly",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "og:title",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 10,
+      "type": "Video hosting service"
+    },
+    {
+      "url": "https://virgool.io/@{username}",
+      "detections": [{
+        "return": "true",
+        "string": "profile-",
+        "type": "normal"
+      }],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "unavailable"
+    },
+    {
+      "url": "https://virustotal.com/ui/users/{username}/trusted_users",
+      "detections": [],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "Internet security"
+    },
+    {
+      "url": "https://vk.com/{username}",
+      "detections": [{
+          "return": "false",
+          "string": "404 Not Found",
+          "type": "normal"
+        },
+        {
+          "return": "false",
+          "string": "Error 400",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "profile_",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "Social networking service"
+    },
+    {
+      "url": "https://voice.com/profile/{username}",
+      "detections": [{
+          "return": "false",
+          "string": "\"name\":\"Home",
+          "type": "normal"
+        },
+        {
+          "return": "false",
+          "string": "voice-meta.jpg",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "\"noindex\"",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "unavailable"
+    },
+    {
+      "url": "https://vsco.co/{username}",
+      "detections": [{
+          "return": "false",
+          "string": "This page does not exist",
+          "type": "ocr"
+        },
+        {
+          "return": "true",
+          "string": "co/{username}",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "unavailable"
+    },
+    {
+      "url": "https://warriorforum.com/members/{username}.html",
+      "detections": [{
+          "return": "false",
+          "string": "This user has not registered",
+          "type": "normal"
+        },
+        {
+          "return": "false",
+          "string": "This user has not registered",
+          "type": "normal"
+        },
+        {
+          "return": "false",
+          "string": "Error 400",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "\"username",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "unavailable"
+    },
+    {
+      "url": "https://wattpad.com/user/{username}",
+      "detections": [{
+          "return": "false",
+          "string": "User not found",
+          "type": "normal"
+        },
+        {
+          "return": "false",
+          "string": "error404",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "data-username",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "Reading app"
+    },
+    {
+      "url": "https://weheartit.com/{username}",
+      "detections": [{
+          "return": "false",
+          "string": "landed on a moving target",
+          "type": "normal"
+        },
+        {
+          "return": "false",
+          "string": "landed on a moving target",
+          "type": "normal"
+        },
+        {
+          "return": "false",
+          "string": "error_",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "data-username",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "unavailable"
+    },
+    {
+      "url": "https://wikidot.com/user:info/{username}",
+      "detections": [{
+          "return": "false",
+          "string": "User Information",
+          "type": "normal"
+        },
+        {
+          "return": "false",
+          "string": "User Information",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "user-info",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "Online website builder"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Special:CentralAuth/{username}",
+      "detections": [{
+        "name": "mediawiki",
+        "type": "shared"
+      }],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "Online encyclopedia"
+    },
+    {
+      "url": "https://wordnik.com/users/{username}",
+      "detections": [{
+        "return": "false",
+        "string": "You've found our 404 page",
+        "type": "normal"
+      }],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "Digital dictionary"
+    },
+    {
+      "url": "https://xboxgamertag.com/search/{username}",
+      "detections": [{
+          "return": "false",
+          "string": "Gamertag doesn",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "profile-detail",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "unavailable"
+    },
+    {
+      "url": "https://xhamster.com/users/{username}",
+      "detections": [{
+          "return": "false",
+          "string": "User not found",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "user-header",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "adult"
+    },
+    {
+      "url": "https://xrares.com/user/{username}",
+      "detections": [{
+          "return": "false",
+          "string": "This user does not exist",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "panel-body",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "unavailable"
+    },
+    {
+      "url": "https://xvideos.com/profiles/{username}",
+      "detections": [{
+          "return": "false",
+          "string": "THIS PROFILE DOESN",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "profile-title",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "adult"
+    },
+    {
+      "url": "https://xxxbunker.com/users/{username}",
+      "detections": [{
+          "return": "false",
+          "string": "FILE NOT FOUND",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "\"profile\"",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "adult"
+    },
+    {
+      "url": "https://youpic.com/photographer/{username}",
+      "detections": [{
+          "return": "false",
+          "string": "404 page",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "profile-",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "\"username\"",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "unavailable"
+    },
+    {
+      "url": "https://youtube.com/{username}",
+      "detections": [{
+          "return": "false",
+          "string": "This page isn't available",
+          "type": "ocr"
+        },
+        {
+          "return": "false",
+          "string": "404 Not Found",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "c/{username}",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "og:title",
+          "type": "normal"
+        }
+      ],
+      "selected": "true",
+      "top": "top10",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "Video hosting service"
+    },
+    {
+      "url": "https://zhihu.com/people/{username}",
+      "detections": [{
+          "return": "false",
+          "string": ">404",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "\"users\":{\"",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "Knowledge markets"
+    },
+    {
+      "url": "https://{username}.blogspot.com",
+      "detections": [{
+          "return": "false",
+          "string": "the blog you were looking",
+          "type": "ocr"
+        },
+        {
+          "return": "false",
+          "string": "the blog you were looking",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "itemprop='name'",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "profile-",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "Blog host"
+    },
+    {
+      "url": "https://{username}.booth.pm",
+      "detections": [],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "unavailable"
+    },
+    {
+      "url": "https://{username}.carbonmade.com",
+      "detections": [{
+          "return": "false",
+          "string": "site not found",
+          "type": "ocr"
+        },
+        {
+          "return": "false",
+          "string": "site not found",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "og:description",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "unavailable"
+    },
+    {
+      "url": "https://{username}.contently.com",
+      "detections": [],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "unavailable"
+    },
+    {
+      "url": "https://{username}.crevado.com",
+      "detections": [{
+          "return": "false",
+          "string": "Site not found",
+          "type": "ocr"
+        },
+        {
+          "return": "false",
+          "string": "Site not found",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "og:title",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "unavailable"
+    },
+    {
+      "url": "https://{username}.deviantart.com",
+      "detections": [{
+          "return": "false",
+          "string": "Page Not Found",
+          "type": "ocr"
+        },
+        {
+          "return": "false",
+          "string": "Page Not Found",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "data-username",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "profile-",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "Art display/Social networking service"
+    },
+    {
+      "url": "https://{username}.hatenablog.com/about",
+      "detections": [{
+          "return": "false",
+          "string": "Blog is not found",
+          "type": "ocr"
+        },
+        {
+          "return": "false",
+          "string": "Blog is not found",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "profile-",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "unavailable"
+    },
+    {
+      "url": "https://{username}.hubpages.com",
+      "detections": [{
+          "return": "false",
+          "string": "Page does not exist",
+          "type": "ocr"
+        },
+        {
+          "return": "false",
+          "string": "Page does not exist",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "\"profile\"",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "unavailable"
+    },
+    {
+      "url": "https://{username}.itch.io",
+      "detections": [{
+          "return": "false",
+          "string": "t find your page",
+          "type": "ocr"
+        },
+        {
+          "return": "false",
+          "string": "t find your page",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "\"name\":\"",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "unavailable"
+    },
+    {
+      "url": "https://{username}.jimdosite.com",
+      "detections": [],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "unavailable"
+    },
+    {
+      "url": "https://{username}.livejournal.com",
+      "detections": [{
+          "return": "false",
+          "string": "Use the links to access more options",
+          "type": "ocr"
+        },
+        {
+          "return": "false",
+          "string": "Use the links to access more options",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "user-profile",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "\"username\"",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "Blog hosting"
+    },
+    {
+      "url": "https://{username}.newgrounds.com",
+      "detections": [{
+          "return": "false",
+          "string": "exists in our system",
+          "type": "ocr"
+        },
+        {
+          "return": "false",
+          "string": "exists in our system",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "userbody",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "Entertainment"
+    },
+    {
+      "url": "https://{username}.rajce.idnes.cz",
+      "detections": [{
+          "return": "false",
+          "string": "err-site",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "og:title",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "unavailable"
+    },
+    {
+      "url": "https://{username}.skyrock.com/profil",
+      "detections": [{
+          "return": "false",
+          "string": "Page not found",
+          "type": "ocr"
+        },
+        {
+          "return": "false",
+          "string": "Page not found",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "profil-zone",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": ":username",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "unavailable"
+    },
+    {
+      "url": "https://{username}.slack.com",
+      "detections": [],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "unavailable"
+    },
+    {
+      "url": "https://{username}.tumblr.com",
+      "detections": [{
+          "return": "false",
+          "string": "There's nothing here",
+          "type": "ocr"
+        },
+        {
+          "return": "false",
+          "string": "There's nothing here",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "og:title",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "{username}.tumblr",
+          "type": "normal"
+        }
+      ],
+      "selected": "true",
+      "top": "top10",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "unavailable"
+    },
+    {
+      "url": "https://{username}.webnode.cz",
+      "detections": [{
+          "return": "false",
+          "string": "We are sorry",
+          "type": "ocr"
+        },
+        {
+          "return": "false",
+          "string": "We are sorry",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "\"name\":",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "unavailable"
+    },
+    {
+      "url": "https://{username}.wix.com",
+      "detections": [{
+        "return": "false",
+        "string": "We Looked Everywhere",
+        "type": "ocr"
+      }],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "unavailable"
+    },
+    {
+      "url": "https://{username}.wordpress.com",
+      "detections": [{
+          "return": "false",
+          "string": "Do you want to register",
+          "type": "ocr"
+        },
+        {
+          "return": "false",
+          "string": "Do you want to register",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "//{username}.wordpress",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "og:title",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "unavailable"
+    },
+    {
+      "url": "https://{username}.www.nn.ru",
+      "detections": [{
+          "return": "false",
+          "string": "404<",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "aboutme",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "/profile",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "unavailable"
+    }
+  ],
+  "shared_detections": [{
+    "name": "mastodon",
+    "detections": [{
+        "return": "false",
+        "string": "The page you are looking for isn",
+        "type": "ocr"
+      },
+      {
+        "return": "false",
+        "string": "The page you are looking for isn",
+        "type": "normal"
+      },
+      {
+        "return": "true",
+        "string": "profile:username",
+        "type": "normal"
+      },
+      {
+        "return": "true",
+        "string": "/@{username}",
+        "type": "normal"
+      }
+    ]
+  }, {
+    "name": "discourse",
+    "detections": [{
+        "return": "true",
+        "string": "og:title",
+        "type": "normal"
+      },
+      {
+        "return": "true",
+        "string": "\"{username}\"",
+        "type": "normal"
+      }
+    ]
+  }, {
+    "name": "gitlab",
+    "detections": [{
+      "return": "true",
+      "string": "user-profile",
+      "type": "normal"
+    }]
+  }, {
+    "name": "mediawiki",
+    "detections": [{
+        "return": "true",
+        "string": "Registered",
+        "type": "normal"
+      },
+      {
+        "return": "true",
+        "string": "Total edit count",
+        "type": "normal"
+      }
+    ]
+  }],
+  "generic_detection": []
+}
