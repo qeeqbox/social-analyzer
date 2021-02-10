@@ -307,8 +307,12 @@
     {
       "url": "https://artstation.com/{username}",
       "detections": [{
-        "return": "false",
-        "string": "Page not found",
+        "return": "true",
+        "string": "\"username",
+        "type": "normal"
+      },{
+        "return": "true",
+        "string": "full_name",
         "type": "normal"
       }],
       "selected": "false",
