@@ -91,7 +91,7 @@ async function find_username_site(uuid, username, options, site) {
       title = await driver.getTitle();
       text_only = await driver.findElement(By.tagName("body")).getText();
       await driver.quit()
-      var [temp_profile, temp_detected, detections_count] = await engine.detect("slow", uuid, username, options, site ,source, screen_shot)
+      var [temp_profile, temp_detected, detections_count] = await engine.detect("slow", uuid, username, options, site ,source, text_only, screen_shot)
       if (options.includes("ShowUserProfilesSlow")) {
         temp_profile["image"] = "data:image/png;base64,{image}".replace("{image}", screen_shot);
       }

@@ -16,7 +16,7 @@ function merge_dicts(temp_dict){
   return result;
 }
 
-async function detect(type, uuid, username, options, site, source = "", screen_shot = "") {
+async function detect(type, uuid, username, options, site, source = "", text_only = "", screen_shot = "") {
   var all_results = [];
   var temp_profile = [];
   var temp_detected = [];
@@ -24,7 +24,7 @@ async function detect(type, uuid, username, options, site, source = "", screen_s
   await Promise.all(site.detections.map(async detection => {
     if (detection.type == "shared") {
       var shared_detection = await helper.shared_detections.find(o => o.name === detection.name);
-      var [val1, val2, val3] = await detect_logic(type, uuid, username, options, shared_detection, source, screen_shot)
+      var [val1, val2, val3] = await detect_logic(type, uuid, username, options, shared_detection, source, text_only, screen_shot)
       temp_profile.push(val1)
       temp_detected.push(val2)
       detections_count += val3
@@ -36,7 +36,7 @@ async function detect(type, uuid, username, options, site, source = "", screen_s
   }));
 
 
-  var [val1, val2, val3] = await detect_logic(type, uuid, username, options, site, source, screen_shot)
+  var [val1, val2, val3] = await detect_logic(type, uuid, username, options, site, source, text_only, screen_shot)
   temp_profile.push(val1)
   temp_detected.push(val2)
   detections_count += val3
@@ -44,7 +44,7 @@ async function detect(type, uuid, username, options, site, source = "", screen_s
   return [merge_dicts(temp_profile),merge_dicts(temp_detected),detections_count]
 }
 
-async function detect_logic(type, uuid, username, options, site, source = "", screen_shot = "") {
+async function detect_logic(type, uuid, username, options, site, source = "", text_only = "", screen_shot = "") {
   var temp_profile = Object.assign({}, helper.profile_template);
   var temp_detected = Object.assign({}, helper.detected_websites);
   var detections_count = 0;
@@ -100,7 +100,7 @@ async function detect_logic(type, uuid, username, options, site, source = "", sc
               temp_detected.false += 1
             }
           }
-        } else if (detection.type == "advanced" && text_only != "") {
+        } else if (detection.type == "advanced" && text_only != "" && text_only != "unavailable") {
           if (text_only.toLowerCase().includes(detection.string.replace("{username}", username).toLowerCase())) {
             temp_found = "true";
           }
