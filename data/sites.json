@@ -259,24 +259,6 @@
       "type": "Books & Literature"
     },
     {
-      "url": "https://apps.runescape.com/runemetrics/app/overview/player/{username}",
-      "detections": [{
-          "return": "false",
-          "string": "Sorry, that player could not be found",
-          "type": "normal"
-        },
-        {
-          "return": "true",
-          "string": "{username}",
-          "type": "advanced"
-        }
-      ],
-      "selected": "false",
-      "timeout": 0,
-      "implicit": 0,
-      "type": "Games"
-    },
-    {
       "url": "https://archive.org/details/@{username}",
       "detections": [{
           "return": "false",
@@ -1076,18 +1058,6 @@
       "type": "Computer & electronics"
     },
     {
-      "url": "https://coil.com/u/{username}",
-      "detections": [{
-        "return": "false",
-        "string": "Whoops, the thing you were looking for isn't here",
-        "type": "advanced"
-      }],
-      "selected": "false",
-      "timeout": 0,
-      "implicit": 0,
-      "type": "Finance"
-    },
-    {
       "url": "https://colourlovers.com/lover/{username}",
       "detections": [{
           "return": "false",
@@ -1109,17 +1079,6 @@
       "timeout": 0,
       "implicit": 0,
       "type": "Art & Entertainment"
-    },
-    {
-      "url": "https://community.bitwarden.com/u/{username}/summary",
-      "detections": [{
-        "name": "discourse",
-        "type": "shared"
-      }],
-      "selected": "false",
-      "timeout": 0,
-      "implicit": 0,
-      "type": "Internet and Telecom"
     },
     {
       "url": "https://community.cloudflare.com/u/{username}",
@@ -1340,18 +1299,6 @@
       "timeout": 0,
       "implicit": 0,
       "type": "Shopping"
-    },
-    {
-      "url": "https://crowdin.com/profile/{username}",
-      "detections": [{
-        "return": "false",
-        "string": "This is not the place you're looking for",
-        "type": "normal"
-      }],
-      "selected": "false",
-      "timeout": 0,
-      "implicit": 0,
-      "type": "Computer and electronics"
     },
     {
       "url": "https://crunchbase.com/person/{username}",
@@ -1627,17 +1574,6 @@
       "timeout": 0,
       "implicit": 0,
       "type": "Music"
-    },
-    {
-      "url": "https://discourse.wicg.io/u/{username}/summary",
-      "detections": [{
-        "name": "discourse",
-        "type": "shared"
-      }],
-      "selected": "false",
-      "timeout": 0,
-      "implicit": 0,
-      "type": "Computer and electronics"
     },
     {
       "url": "https://discuss.atom.io/u/{username}/summary",
@@ -3265,30 +3201,6 @@
       "implicit": 0
     },
     {
-      "url": "https://hexrpg.com/userinfo/{username}",
-      "detections": [{
-        "return": "false",
-        "string": "not found",
-        "type": "normal"
-      }],
-      "type": "unavailable",
-      "selected": "false",
-      "timeout": 0,
-      "implicit": 0
-    },
-    {
-      "url": "https://hosted.weblate.org/user/{username}/",
-      "detections": [{
-        "return": "false",
-        "string": "Page Not Found",
-        "type": "normal"
-      }],
-      "type": "Cloud crowd translation platform",
-      "selected": "false",
-      "timeout": 0,
-      "implicit": 0
-    },
-    {
       "url": "https://house-mixes.com/profile/{username}",
       "detections": [{
           "return": "false",
@@ -4688,18 +4600,6 @@
       "type": "unavailable"
     },
     {
-      "url": "https://nyaa.si/user/{username}",
-      "detections": [{
-        "return": "false",
-        "string": "The path you requested does not exist on this server",
-        "type": "normal"
-      }],
-      "selected": "false",
-      "timeout": 0,
-      "implicit": 0,
-      "type": "Torrent index"
-    },
-    {
       "url": "https://ok.ru/{username}",
       "detections": [{
           "return": "false",
@@ -5108,18 +5008,6 @@
           "type": "normal"
         }
       ],
-      "selected": "false",
-      "timeout": 0,
-      "implicit": 0,
-      "type": "unavailable"
-    },
-    {
-      "url": "https://plugins.gradle.org/u/{username}",
-      "detections": [{
-        "return": "false",
-        "string": "User not found",
-        "type": "normal"
-      }],
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
@@ -5750,18 +5638,6 @@
       "timeout": 0,
       "implicit": 0,
       "type": "unavailable"
-    },
-    {
-      "url": "https://slant.co/users/{username}",
-      "detections": [{
-        "return": "false",
-        "string": "404 Page Not Found",
-        "type": "normal"
-      }],
-      "selected": "false",
-      "timeout": 0,
-      "implicit": 0,
-      "type": "Product comparison"
     },
     {
       "url": "https://slashdot.org/~{username}",
