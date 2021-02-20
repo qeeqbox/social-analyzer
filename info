@@ -2,7 +2,7 @@
  "build":"pass",
  "test":"pass",
  "grid_test":"pass",
- "websites":"346",
+ "websites":"358",
  "detections":"946",
  "special":"3",
  "linux":"pass",
@@ -11,4 +11,4 @@
  "full_scan":"15 workers < 20secs",
  "max_retries":"3",
  "awaiting_verification":"22",
- "auto_testing":"87e6b6e7-7106-4d1d-8086-a14965f3eb40"}
+ "auto_testing":"35c73e1e-f50c-4845-a512-bd6938d8419c"}
