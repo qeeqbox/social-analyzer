@@ -7336,6 +7336,377 @@
       "timeout": 0,
       "implicit": 0,
       "type": "unavailable"
+    },
+    {
+      "url": "https://ptt.cc/bbs/C_Chat/search?q=author%3A{username}",
+      "detections": [
+        {
+          "return": "true",
+          "string": "class=\"title\"",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "class=\"author\"",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "unavailable"
+    },
+    {
+      "url": "https://redtube.com/users/{username}",
+      "detections": [
+        {
+          "return": "true",
+          "string": "user_name",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "user_details",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "unavailable"
+    },
+    {
+      "url": "https://beeg.com/people/{username}",
+      "detections": [
+        {
+          "return": "true",
+          "string": "{username}",
+          "type": "advanced"
+        },
+        {
+          "return": "true",
+          "string": "Suggest Edits",
+          "type": "advanced"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "unavailable"
+    },
+    {
+      "url": "https://imagefap.com/profile/{username}",
+      "detections": [
+        {
+          "return": "false",
+          "string": "Invalid uid",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "profile_hdr",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "var username",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "unavailable"
+    },
+    {
+      "url": "https://douban.com/people/{username}/",
+      "detections": [
+        {
+          "return": "true",
+          "string": "db-usr-profile",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "user-intro",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "unavailable"
+    },
+    {
+      "url": "https://irl.com/{username}",
+      "detections": [
+        {
+          "return": "true",
+          "string": "user-disk",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "username",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "unavailable"
+    },
+    {
+      "url": "https://8tracks.com/{username}",
+      "detections": [
+        {
+          "return": "true",
+          "string": "profile:username",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "user_details",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "unavailable"
+    },
+    {
+      "url": "https://alimero.ru/profile/{username}",
+      "detections": [
+        {
+          "return": "true",
+          "string": "profile-title",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "header-user",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "unavailable"
+    },
+    {
+      "url": "https://anphabe.com/profile/{username}",
+      "detections": [
+        {
+          "return": "true",
+          "string": "fullname",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "profile/{username}",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "unavailable"
+    },
+    {
+      "url": "https://caringbridge.org/visit/{username}",
+      "detections": [
+        {
+          "return": "true",
+          "string": "donation/{username}",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "user-signin-page",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "unavailable"
+    },
+    {
+      "url": "https://carswap.me/{username}",
+      "detections": [
+        {
+          "return": "true",
+          "string": "products_dtils",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "ask-list",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "unavailable"
+    },
+    {
+      "url": "http://chictopia.com/{username}",
+      "detections": [
+        {
+          "return": "true",
+          "string": "profile_photo_hover",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "hidden_about",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "unavailable"
+    },
+    {
+      "url": "http://chictopia.com/{username}",
+      "detections": [
+        {
+          "return": "true",
+          "string": "profile_photo_hover",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "hidden_about",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "unavailable"
+    },
+    {
+      "url": "https://fandalism.com/{username}",
+      "detections": [
+        {
+          "return": "true",
+          "string": "/{username}/",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "user.username",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "unavailable"
+    },
+    {
+      "url": "https://fark.com/users/{username}",
+      "detections": [
+        {
+          "return": "true",
+          "string": "profileTable",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "users/{username}",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "unavailable"
+    },
+    {
+      "url": "https://filmow.com/usuario/{username}",
+      "detections": [
+        {
+          "return": "true",
+          "string": "avatar",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "page-user",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "page-user",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "unavailable"
+    },
+    {
+      "url": "https://members.fotki.com/{username}/about/",
+      "detections": [
+        {
+          "return": "true",
+          "string": "profile-aboutme",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "user_profile_info",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "unavailable"
+    },
+    {
+      "url": "https://gab.com/{username}",
+      "detections": [
+        {
+          "return": "true",
+          "string": "{username}",
+          "type": "advanced"
+        },
+        {
+          "return": "true",
+          "string": "user_profile_info",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "unavailable"
+    },
+    {
+      "url": "http://gametz.com/user/{username}.html",
+      "detections": [
+        {
+          "return": "true",
+          "string": "itemprop=\"name\"",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "/user/{username}",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "type": "unavailable"
     }
   ],
   "shared_detections": [{
