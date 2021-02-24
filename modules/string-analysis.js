@@ -199,11 +199,9 @@ async function convert_numbers(req) {
     temp_value = ""
     for (i = 0; i < req.body.string.length; i++) {
       _temp = numbers_to_letters[req.body.string.charAt(i)]
-      if (_temp != undefined) {
-        temp_value += numbers_to_letters[req.body.string.charAt(i)];
-      } else {
-        temp_value += req.body.string.charAt(i);
-      }
+      temp_value += _temp != undefined
+        ? numbers_to_letters[req.body.string.charAt(i)]
+        : req.body.string.charAt(i);
     }
     req.body.string = temp_value
   } catch (err) {}

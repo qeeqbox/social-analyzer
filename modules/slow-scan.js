@@ -40,16 +40,13 @@ async function find_username_site(uuid, username, options, site) {
   return new Promise(async (resolve, reject) => {
     helper.log_to_file_queue(uuid, "[Checking] " + helper.get_site_from_url(site.url))
     let driver = undefined
-    if (helper.grid_url == "") {
-      driver = new Builder()
+    driver = helper.grid_url == "" ? new Builder()
         .forBrowser("firefox")
         .setFirefoxOptions(new firefox.Options().headless().windowSize({
           width: 640,
           height: 480
         }))
-        .build();
-    } else {
-      driver = new Builder()
+        .build() : new Builder()
         .forBrowser("firefox")
         .setFirefoxOptions(new firefox.Options().headless().windowSize({
           width: 640,
@@ -57,7 +54,6 @@ async function find_username_site(uuid, username, options, site) {
         }))
         .usingServer(helper.grid_url)
         .build();
-    }
 
     try {
 

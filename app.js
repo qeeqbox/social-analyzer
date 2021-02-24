@@ -431,12 +431,9 @@ async function check_user_cli(argv) {
     }
   }
 
-  if (argv.websites == "all") {
-    await helper.websites_entries.forEach(async function(value, i) {
+  await (argv.websites == "all" ? helper.websites_entries.forEach(async function(value, i) {
       helper.websites_entries[i].selected = "true"
-    });
-  } else {
-    await helper.websites_entries.forEach(async function(value, i) {
+    }) : helper.websites_entries.forEach(async function(value, i) {
       helper.websites_entries[i].selected = "false"
       if (argv.websites.length > 0) {
         await argv.websites.split(' ').forEach(item => {
@@ -445,8 +442,7 @@ async function check_user_cli(argv) {
           }
         });
       }
-    });
-  }
+    }));
 
   ret = await fastScan.find_username_normal(req)
   if (typeof ret === 'undefined' || ret === undefined || ret.length == 0) {

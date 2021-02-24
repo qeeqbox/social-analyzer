@@ -12,12 +12,12 @@
 //  -------------------------------------------------------------
 """
 
-from logging import getLogger, DEBUG, StreamHandler, Formatter, Handler, addLevelName
+from logging import getLogger, DEBUG, Formatter, Handler, addLevelName
 from logging.handlers import RotatingFileHandler
-from sys import stdout, platform
-from os import path, makedirs
+from sys import platform
+from os import path
 from requests import get, packages
-from time import time,sleep
+from time import sleep
 from argparse import ArgumentParser
 from json import load,dumps
 from uuid import uuid4
@@ -25,7 +25,6 @@ from tld import get_fld
 from functools import wraps
 from bs4 import BeautifulSoup
 from re import sub as resub
-from copy import deepcopy
 from contextlib import suppress
 from langdetect import detect
 from urllib3.exceptions import InsecureRequestWarning
@@ -62,7 +61,7 @@ def delete_keys(object,keys):
 def clean_up_item(object,keys_str):
 	with suppress(Exception):
 		del object["image"]
-	if keys_str == "" or keys_str == None:
+    if keys_str in ("", None):
 		with suppress(Exception):
 			del object["text"]
 	else:
@@ -408,7 +407,7 @@ def check_user_cli(argv):
 	if len(temp_detected["failed"]) == 0:
 	   del temp_detected["failed"];
 
-	if argv.output == "pretty" or argv.output == "":
+    if argv.output in ("pretty", ""):
 		if 'detected' in temp_detected:
 			LOG.info("[Detected] {} Profile[s]".format(len(temp_detected['detected'])));
 			LOG.log(CUSTOM_MESSAGE,temp_detected['detected'])
@@ -424,9 +423,8 @@ def check_user_cli(argv):
 
 def msg(name=None):
 	if path.basename(__file__) == "__main__.py":
-		return """python -m social-analyzer --cli --mode 'fast' --username 'johndoe' --websites 'youtube pinterest tumblr' --output 'pretty'"""
-	else:
-		return """python3 app.py --cli --mode 'fast' --username 'johndoe' --websites 'youtube pinterest tumblr' --output 'pretty'"""
+	    return """python -m social-analyzer --cli --mode 'fast' --username 'johndoe' --websites 'youtube pinterest tumblr' --output 'pretty'"""
+	return """python3 app.py --cli --mode 'fast' --username 'johndoe' --websites 'youtube pinterest tumblr' --output 'pretty'"""
 
 WEBSITES_ENTRIES = init_websites()
 SHARED_DETECTIONS = init_shared_detections()
@@ -454,5 +452,5 @@ if __name__ == "__main__":
 			setup_logger()
 			list_all_websites()
 		elif argv.mode == "fast":
-			if argv.username != "" and argv.websites != "":
+            if "" not in (argv.username, argv.websites):
 				check_user_cli(argv)
