@@ -57,13 +57,18 @@ Profile images **will not** be blurred. If you want them to be blurred, turn tha
 
 ## Install and run as Python CLI (Windows, Linux, MacOS, Raspberry pi..)
 ```bash
-pip install social-analyzer
+# Remember the following runs as FindUserProfilesFast
 # You can also scan all websites using --websites "all"
+# There will be status:good or rate %100 for existing profiles
+
+pip install social-analyzer
 python -m social-analyzer --cli --mode "fast" --username "johndoe" --websites "youtube pinterest tumblr" --output "pretty"
 ```
 
 ## Install and run as NodeJS Web App (Linux + NodeJS + NPM + Firefox)
 ```bash
+# There will be status:good or rate %100 for existing profiles
+
 sudo add-apt-repository ppa:mozillateam/ppa
 sudo apt-get update
 sudo apt-get install -y firefox-esr tesseract-ocr git
@@ -76,6 +81,8 @@ npm start
 
 ## Install and run as NodeJS Web App (Windows + NodeJS + NPM + Firefox)
 ```bash
+# There will be status:good or rate %100 for existing profiles
+
 Download & Install firefox esr (Extended Support Release) from https://www.mozilla.org/en-US/firefox/enterprise/#download
 Download & Install https://nodejs.org/en/download/
 Download & Extract https://github.com/qeeqbox/social-analyzer/archive/main.zip
@@ -87,6 +94,11 @@ npm start
 
 ## Install and run as NodeJS CLI (Linux + NodeJS + NPM + Firefox)
 ```bash
+# If you want to list all websites use node app.js --cli --list
+# Remember the following runs as FindUserProfilesFast
+# You can also scan all websites using --websites "all"
+# There will be status:good or rate %100 for existing profiles
+
 sudo add-apt-repository ppa:mozillateam/ppa
 sudo apt-get update
 sudo apt-get install -y firefox-esr tesseract-ocr git
@@ -94,14 +106,13 @@ git clone https://github.com/qeeqbox/social-analyzer.git
 cd social-analyzer
 npm install lodash
 npm install
-# If you want to list all websites use node app.js --cli --list
-# Remember the following runs as FindUserProfilesFast
-# You can also scan all websites using --websites "all"
 node app.js --cli --mode "fast" --username "johndoe" --websites "youtube pinterest tumblr" --output "pretty"
 ```
 
 ## Install and run as NodeJS Web App with a grid (docker-compose)
 ```bash
+# There will be status:good or rate %100 for existing profiles
+
 git clone https://github.com/qeeqbox/social-analyzer.git
 cd social-analyzer
 docker-compose -f docker-compose.yml up --build
@@ -109,20 +120,21 @@ docker-compose -f docker-compose.yml up --build
 
 ## Install and run as NodeJS Web App (docker)
 ```bash
+# There will be status:good or rate %100 for existing profiles
+
 git clone https://github.com/qeeqbox/social-analyzer.git
 cd social-analyzer
 docker build -t social-analyzer . && docker run -p 9005:9005 -it social-analyzer
 ```
 
 ## Running Issues
-```
-Make sure to update to the latest nodejs and npm
-```
-
-## Closing the app by port number
-```
-sudo kill -9 $(sudo lsof -t -i:9005)
-```
+- Remember that existing profiles show `status:good` or `rate %100`
+- Use Proxy, VPN, TOR or anything similar for periodic suspicious-profiles checking
+- Change the user-agent to most updated one or increase the random time between requests
+- Use the slow mode is (Not available in the CLIs) to avoid running into blocking\results issue
+- Some websites return `blocked` or `invalid` <- this is the intended behavior and correct!
+- Check out the WiKi before submitting an issue regarding this project
+- Make sure to update to the latest nodejs and npm
 
 ## Goals
 - Adding the generic websites detections (These need some reviewing, but I will try to add them in 2021)
