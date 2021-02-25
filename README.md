@@ -131,7 +131,7 @@ docker build -t social-analyzer . && docker run -p 9005:9005 -it social-analyzer
 - Remember that existing profiles show `status:good` or `rate %100`
 - Use Proxy, VPN, TOR or anything similar for periodic suspicious-profiles checking
 - Change the user-agent to most updated one or increase the random time between requests
-- Use the slow mode is (Not available in the CLIs) to avoid running into blocking\results issue
+- Use the slow mode (Not available in the CLIs) to avoid running into blocking\results issue
 - Some websites return `blocked` or `invalid` <- this is the intended behavior and correct!
 - Check out the WiKi before submitting an issue regarding this project
 - Make sure to update to the latest nodejs and npm
