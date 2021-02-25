@@ -59,7 +59,7 @@ Profile images **will not** be blurred. If you want them to be blurred, turn tha
 ```bash
 # Remember the following runs as FindUserProfilesFast
 # You can also scan all websites using --websites "all"
-# There will be status:good or rate %100 for existing profiles
+# There will be status:good or rate:%100 for existing profiles
 
 pip install social-analyzer
 python -m social-analyzer --cli --mode "fast" --username "johndoe" --websites "youtube pinterest tumblr" --output "pretty"
@@ -67,7 +67,7 @@ python -m social-analyzer --cli --mode "fast" --username "johndoe" --websites "y
 
 ## Install and run as NodeJS Web App (Linux + NodeJS + NPM + Firefox)
 ```bash
-# There will be status:good or rate %100 for existing profiles
+# There will be status:good or rate:%100 for existing profiles
 
 sudo add-apt-repository ppa:mozillateam/ppa
 sudo apt-get update
@@ -81,7 +81,7 @@ npm start
 
 ## Install and run as NodeJS Web App (Windows + NodeJS + NPM + Firefox)
 ```bash
-# There will be status:good or rate %100 for existing profiles
+# There will be status:good or rate:%100 for existing profiles
 
 Download & Install firefox esr (Extended Support Release) from https://www.mozilla.org/en-US/firefox/enterprise/#download
 Download & Install https://nodejs.org/en/download/
@@ -97,7 +97,7 @@ npm start
 # If you want to list all websites use node app.js --cli --list
 # Remember the following runs as FindUserProfilesFast
 # You can also scan all websites using --websites "all"
-# There will be status:good or rate %100 for existing profiles
+# There will be status:good or rate:%100 for existing profiles
 
 sudo add-apt-repository ppa:mozillateam/ppa
 sudo apt-get update
@@ -111,7 +111,7 @@ node app.js --cli --mode "fast" --username "johndoe" --websites "youtube pintere
 
 ## Install and run as NodeJS Web App with a grid (docker-compose)
 ```bash
-# There will be status:good or rate %100 for existing profiles
+# There will be status:good or rate:%100 for existing profiles
 
 git clone https://github.com/qeeqbox/social-analyzer.git
 cd social-analyzer
@@ -120,7 +120,7 @@ docker-compose -f docker-compose.yml up --build
 
 ## Install and run as NodeJS Web App (docker)
 ```bash
-# There will be status:good or rate %100 for existing profiles
+# There will be status:good or rate:%100 for existing profiles
 
 git clone https://github.com/qeeqbox/social-analyzer.git
 cd social-analyzer
@@ -128,7 +128,7 @@ docker build -t social-analyzer . && docker run -p 9005:9005 -it social-analyzer
 ```
 
 ## Running Issues
-- Remember that existing profiles show `status:good` or `rate %100`
+- Remember that existing profiles show `status:good` or `rate:%100`
 - Use Proxy, VPN, TOR or anything similar for periodic suspicious-profiles checking
 - Change the user-agent to most updated one or increase the random time between requests
 - Use the slow mode (Not available in the CLIs) to avoid running into blocking\results issue
