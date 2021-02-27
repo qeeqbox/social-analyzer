@@ -9,6 +9,8 @@ The detection modules utilize a rating mechanism based on different detection te
 
 The analysis and extracted social media information from this OSINT tool could help in investigating profiles related to suspicious or malicious activities such as [cyberbullying](https://en.wikipedia.org/wiki/Wikipedia:Cyberbullying), [cybergrooming](https://de.wikipedia.org/wiki/Cyber-Grooming), [cyberstalking](https://en.wikipedia.org/wiki/Cyberstalking), and [spreading misinformation](https://en.wikipedia.org/wiki/Misinformation).
 
+so·cial me·di·a - websites and applications that enable users to create and share content or to participate in social networking - Oxford Dictionary
+
 This project is *"currently used by some law enforcement agencies in countries where resources are limited"*.
 
 ## Security Testing
@@ -132,8 +134,7 @@ docker build -t social-analyzer . && docker run -p 9005:9005 -it social-analyzer
 - Use Proxy, VPN, TOR or anything similar for periodic suspicious-profiles checking
 - Change the user-agent to most updated one or increase the random time between requests
 - Use the slow mode (Not available in the CLIs) to avoid running into blocking\results issue
-- Some websites return `blocked` or `invalid` <- this is the intended behavior and correct!
-- Check out the WiKi before submitting an issue regarding this project
+- Some websites return `blocked` or `invalid` <- this is the intended behavior
 - Make sure to update to the latest nodejs and npm
 
 ## Goals
@@ -148,5 +149,6 @@ docker build -t social-analyzer . && docker run -p 9005:9005 -it social-analyzer
 
 ## Disclaimer\Notes
 - Make sure to download this tool from GitHub - (ONLY) ⚠️
+- Check out the WiKi before submitting an issue regarding this project
 - If you want your website to be excluded from this project, please reach out
 - This tool meant to be used locally (It does not have any type of Access Control)
