@@ -1,19 +1,24 @@
 {
-  "websites_entries": [{
+  "websites_entries": [
+    {
       "url": "https://500px.com/p/{username}",
-      "detections": [{
-        "return": "false",
-        "string": "This page is no longer available",
-        "type": "advanced"
-      }],
+      "detections": [
+        {
+          "return": "false",
+          "string": "This page is no longer available",
+          "type": "advanced"
+        }
+      ],
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
+      "extract": [],
       "type": "Photo Sharing"
     },
     {
       "url": "https://7cups.com/@{username}",
-      "detections": [{
+      "detections": [
+        {
           "return": "false",
           "string": "Not Found",
           "type": "advanced"
@@ -37,11 +42,13 @@
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
+      "extract": [],
       "type": "Online Therapy"
     },
     {
       "url": "https://9gag.com/u/{username}",
-      "detections": [{
+      "detections": [
+        {
           "return": "false",
           "string": "There's nothing here",
           "type": "advanced"
@@ -60,11 +67,13 @@
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
+      "extract": [],
       "type": "Art & Entertainment"
     },
     {
       "url": "https://about.me/{username}",
-      "detections": [{
+      "detections": [
+        {
           "return": "false",
           "string": "There is no one",
           "type": "advanced"
@@ -83,12 +92,14 @@
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
+      "extract": [],
       "type": "Directory Hosting"
     },
     {
       "status": "bad",
       "url": "https://akniga.org/profile/{username}",
-      "detections": [{
+      "detections": [
+        {
           "return": "false",
           "string": "error-code",
           "type": "normal"
@@ -102,23 +113,28 @@
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
+      "extract": [],
       "type": "Books and Literature"
     },
     {
       "url": "https://alik.cz/u/{username}",
-      "detections": [{
-        "return": "true",
-        "string": "user-",
-        "type": "normal"
-      }],
+      "detections": [
+        {
+          "return": "true",
+          "string": "user-",
+          "type": "normal"
+        }
+      ],
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
+      "extract": [],
       "type": "Art & Entertainment"
     },
     {
       "url": "https://allmylinks.com/{username}",
-      "detections": [{
+      "detections": [
+        {
           "return": "false",
           "string": "Page not found",
           "type": "advanced"
@@ -142,11 +158,13 @@
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
+      "extract": [],
       "type": "Directory Hosting"
     },
     {
       "url": "https://alltrails.com/members/{username}",
-      "detections": [{
+      "detections": [
+        {
           "return": "false",
           "string": "User could not be found",
           "type": "advanced"
@@ -170,11 +188,13 @@
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
+      "extract": [],
       "type": "Recreation & Hobbies"
     },
     {
       "url": "https://aminoapps.com/u/{username}",
-      "detections": [{
+      "detections": [
+        {
           "return": "false",
           "string": "It may have been removed",
           "type": "normal"
@@ -193,11 +213,13 @@
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
+      "extract": [],
       "type": "Computers & Technology"
     },
     {
       "url": "https://angel.co/{username}",
-      "detections": [{
+      "detections": [
+        {
           "return": "false",
           "string": "We couldn't find",
           "type": "advanced"
@@ -221,23 +243,28 @@
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
+      "extract": [],
       "type": "Job Search"
     },
     {
       "url": "https://anilist.co/user/{username}/",
-      "detections": [{
-        "return": "false",
-        "string": "404 Page Not Found-Chan",
-        "type": "advanced"
-      }],
+      "detections": [
+        {
+          "return": "false",
+          "string": "404 Page Not Found-Chan",
+          "type": "advanced"
+        }
+      ],
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
+      "extract": [],
       "type": "Recreation & Hobbies"
     },
     {
       "url": "https://anobii.com/{username}/profile",
-      "detections": [{
+      "detections": [
+        {
           "return": "false",
           "string": "No route found for",
           "type": "advanced"
@@ -256,11 +283,13 @@
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
+      "extract": [],
       "type": "Books & Literature"
     },
     {
       "url": "https://archive.org/details/@{username}",
-      "detections": [{
+      "detections": [
+        {
           "return": "false",
           "string": "cannot find account",
           "type": "normal"
@@ -284,23 +313,28 @@
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
+      "extract": [],
       "type": "Digital Library"
     },
     {
       "url": "https://artstation.com/{username}",
-      "detections": [{
-        "return": "false",
-        "string": "Page not found",
-        "type": "normal"
-      }],
+      "detections": [
+        {
+          "return": "false",
+          "string": "Page not found",
+          "type": "normal"
+        }
+      ],
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
+      "extract": [],
       "type": "Art & Entertainment"
     },
     {
       "url": "https://asciinema.org/~{username}",
-      "detections": [{
+      "detections": [
+        {
           "return": "false",
           "string": "404 Not Found",
           "type": "advanced"
@@ -319,22 +353,27 @@
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
+      "extract": [],
       "type": "Computer & electronics"
     },
     {
       "url": "https://ask.fedoraproject.org/u/{username}",
-      "detections": [{
-        "name": "discourse",
-        "type": "shared"
-      }],
+      "detections": [
+        {
+          "name": "discourse",
+          "type": "shared"
+        }
+      ],
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
+      "extract": [],
       "type": "Computer & electronics"
     },
     {
       "url": "https://ask.fm/{username}",
-      "detections": [{
+      "detections": [
+        {
           "return": "false",
           "string": "Here used to be",
           "type": "advanced"
@@ -358,11 +397,13 @@
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
+      "extract": [],
       "type": "Social Networking"
     },
     {
       "url": "https://audiojungle.net/user/{username}",
-      "detections": [{
+      "detections": [
+        {
           "return": "false",
           "string": "Nothing to see here",
           "type": "advanced"
@@ -386,11 +427,13 @@
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
+      "extract": [],
       "type": "Internet & Telecom"
     },
     {
       "url": "https://authorstream.com/{username}",
-      "detections": [{
+      "detections": [
+        {
           "return": "false",
           "string": "We apologize for this inconvenience",
           "type": "advanced"
@@ -409,23 +452,28 @@
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
+      "extract": [],
       "type": "Presentations Hosting"
     },
     {
       "url": "https://avforums.com/members/{username}",
-      "detections": [{
-        "return": "true",
-        "string": "logged-in to do that",
-        "type": "normal"
-      }],
+      "detections": [
+        {
+          "return": "true",
+          "string": "logged-in to do that",
+          "type": "normal"
+        }
+      ],
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
+      "extract": [],
       "type": "Internet & Telecom"
     },
     {
       "url": "https://baby.ru/u/{username}",
-      "detections": [{
+      "detections": [
+        {
           "return": "false",
           "string": "error404",
           "type": "normal"
@@ -439,23 +487,28 @@
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
+      "extract": [],
       "type": "adult"
     },
     {
       "url": "https://babyblog.ru/user/info/{username}",
-      "detections": [{
-        "return": "true",
-        "string": "diary-header",
-        "type": "normal"
-      }],
+      "detections": [
+        {
+          "return": "true",
+          "string": "diary-header",
+          "type": "normal"
+        }
+      ],
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
+      "extract": [],
       "type": "Internet & Telecom"
     },
     {
       "url": "https://bandcamp.com/{username}",
-      "detections": [{
+      "detections": [
+        {
           "return": "false",
           "string": "Sorry, that something isn’t here",
           "type": "advanced"
@@ -479,11 +532,13 @@
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
+      "extract": [],
       "type": "Arts & Entertainment"
     },
     {
       "url": "https://behance.net/{username}",
-      "detections": [{
+      "detections": [
+        {
           "return": "false",
           "string": "Oops! We can’t find that page",
           "type": "advanced"
@@ -512,6 +567,7 @@
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
+      "extract": [],
       "type": "Internet & Telecom"
     },
     {
@@ -520,35 +576,43 @@
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
+      "extract": [],
       "type": "unavailable"
     },
     {
       "url": "https://binarysearch.io/@/{username}",
-      "detections": [{
-        "return": "false",
-        "string": "Profile not found",
-        "type": "advanced"
-      }],
+      "detections": [
+        {
+          "return": "false",
+          "string": "Profile not found",
+          "type": "advanced"
+        }
+      ],
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
+      "extract": [],
       "type": "Computer & electronics"
     },
     {
       "url": "https://bintray.com/{username}",
-      "detections": [{
-        "return": "false",
-        "string": "Page not found",
-        "type": "normal"
-      }],
+      "detections": [
+        {
+          "return": "false",
+          "string": "Page not found",
+          "type": "normal"
+        }
+      ],
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
+      "extract": [],
       "type": "Computer & electronics"
     },
     {
       "url": "https://bitbucket.org/{username}",
-      "detections": [{
+      "detections": [
+        {
           "return": "false",
           "string": "That link has no power here",
           "type": "advanced"
@@ -567,11 +631,13 @@
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
+      "extract": [],
       "type": "Computer & electronics"
     },
     {
       "url": "https://bitcoinforum.com/profile/{username}",
-      "detections": [{
+      "detections": [
+        {
           "return": "false",
           "string": "An Error Has Occurred!",
           "type": "advanced"
@@ -590,11 +656,13 @@
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
+      "extract": [],
       "type": "Computer & electronics"
     },
     {
       "url": "https://blip.fm/{username}",
-      "detections": [{
+      "detections": [
+        {
           "return": "false",
           "string": "Page Not Found",
           "type": "advanced"
@@ -618,11 +686,13 @@
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
+      "extract": [],
       "type": "Arts & Entertainment"
     },
     {
       "url": "https://blog.naver.com/{username}",
-      "detections": [{
+      "detections": [
+        {
           "return": "false",
           "string": "error_content",
           "type": "normal"
@@ -636,11 +706,13 @@
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
+      "extract": [],
       "type": "Internet & Telecom"
     },
     {
       "url": "https://bodyspace.bodybuilding.com/{username}",
-      "detections": [{
+      "detections": [
+        {
           "return": "true",
           "string": "com/{username}",
           "type": "normal"
@@ -654,11 +726,13 @@
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
+      "extract": [],
       "type": "Recreation & Hobbies"
     },
     {
       "url": "https://bookcrossing.com/mybookshelf/{username}",
-      "detections": [{
+      "detections": [
+        {
           "return": "false",
           "string": "Sorry, we were unable",
           "type": "advanced"
@@ -677,11 +751,13 @@
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
+      "extract": [],
       "type": "Books and Literature"
     },
     {
       "url": "https://buymeacoffee.com/{username}",
-      "detections": [{
+      "detections": [
+        {
           "return": "false",
           "string": "seem to find the page",
           "type": "advanced"
@@ -700,11 +776,13 @@
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
+      "extract": [],
       "type": "Arts and Entertainment"
     },
     {
       "url": "https://buzzfeed.com/{username}",
-      "detections": [{
+      "detections": [
+        {
           "return": "false",
           "string": "We can't find the page you're looking for",
           "type": "advanced"
@@ -728,6 +806,7 @@
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
+      "extract": [],
       "type": "Arts and Entertainment"
     },
     {
@@ -736,23 +815,28 @@
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
+      "extract": [],
       "type": "unavailable"
     },
     {
       "url": "https://capfriendly.com/users/{username}",
-      "detections": [{
-        "return": "false",
-        "string": "No results found",
-        "type": "normal"
-      }],
+      "detections": [
+        {
+          "return": "false",
+          "string": "No results found",
+          "type": "normal"
+        }
+      ],
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
+      "extract": [],
       "type": "Sports"
     },
     {
       "url": "https://career.habr.com/{username}",
-      "detections": [{
+      "detections": [
+        {
           "return": "false",
           "string": "404 error",
           "type": "normal"
@@ -766,11 +850,13 @@
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
+      "extract": [],
       "type": "Job Search"
     },
     {
       "url": "https://cash.me/{username}",
-      "detections": [{
+      "detections": [
+        {
           "return": "false",
           "string": "The page you are looking for can't be found.",
           "type": "advanced"
@@ -794,11 +880,13 @@
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
+      "extract": [],
       "type": "Finance"
     },
     {
       "url": "https://championat.com/user/{username}",
-      "detections": [{
+      "detections": [
+        {
           "return": "false",
           "string": "error404",
           "type": "normal"
@@ -812,11 +900,13 @@
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
+      "extract": [],
       "type": "Sports"
     },
     {
       "url": "https://chaos.social/@{username}",
-      "detections": [{
+      "detections": [
+        {
           "return": "false",
           "string": "The page you are looking",
           "type": "normal"
@@ -835,11 +925,13 @@
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
+      "extract": [],
       "type": "Internet & Telecom"
     },
     {
       "url": "https://chess.com/member/{username}",
-      "detections": [{
+      "detections": [
+        {
           "return": "false",
           "string": "somebody made a wrong move",
           "type": "advanced"
@@ -863,11 +955,13 @@
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
+      "extract": [],
       "type": "Games"
     },
     {
       "url": "https://cloob.com/name/{username}",
-      "detections": [{
+      "detections": [
+        {
           "return": "false",
           "string": "notFound",
           "type": "normal"
@@ -881,11 +975,13 @@
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
+      "extract": [],
       "type": "Internet and Telecom"
     },
     {
       "url": "https://cnet.com/profiles/{username}",
-      "detections": [{
+      "detections": [
+        {
           "return": "false",
           "string": "You are here in error",
           "type": "advanced"
@@ -909,11 +1005,13 @@
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
+      "extract": [],
       "type": "Internet and Telecom"
     },
     {
       "url": "https://codeberg.com/{username}",
-      "detections": [{
+      "detections": [
+        {
           "return": "false",
           "string": "does not exist",
           "type": "normal"
@@ -927,11 +1025,13 @@
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
+      "extract": [],
       "type": "Projects Archive"
     },
     {
       "url": "https://codechef.com/users/{username}",
-      "detections": [{
+      "detections": [
+        {
           "return": "true",
           "string": "users/{username}",
           "type": "normal"
@@ -945,11 +1045,13 @@
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
+      "extract": [],
       "type": "Computer & electronics"
     },
     {
       "url": "https://codechef.com/users/{username}",
-      "detections": [{
+      "detections": [
+        {
           "return": "true",
           "string": "user-details",
           "type": "normal"
@@ -963,11 +1065,13 @@
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
+      "extract": [],
       "type": "unavailable"
     },
     {
       "url": "https://codeforces.com/profile/{username}",
-      "detections": [{
+      "detections": [
+        {
           "return": "true",
           "string": "user-rank",
           "type": "normal"
@@ -981,11 +1085,13 @@
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
+      "extract": [],
       "type": "unavailable"
     },
     {
       "url": "https://codementor.io/{username}",
-      "detections": [{
+      "detections": [
+        {
           "return": "false",
           "string": "/404/",
           "type": "advanced"
@@ -1004,11 +1110,13 @@
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
+      "extract": [],
       "type": "Job Search"
     },
     {
       "url": "https://codepen.io/{username}",
-      "detections": [{
+      "detections": [
+        {
           "return": "false",
           "string": "I'm afraid you've found",
           "type": "advanced"
@@ -1032,11 +1140,13 @@
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
+      "extract": [],
       "type": "Computer & electronics"
     },
     {
       "url": "https://codewars.com/users/{username}",
-      "detections": [{
+      "detections": [
+        {
           "return": "false",
           "string": "The page you were looking",
           "type": "advanced"
@@ -1055,11 +1165,13 @@
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
+      "extract": [],
       "type": "Computer & electronics"
     },
     {
       "url": "https://colourlovers.com/lover/{username}",
-      "detections": [{
+      "detections": [
+        {
           "return": "false",
           "string": "Are you looking for someone",
           "type": "advanced"
@@ -1078,22 +1190,27 @@
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
+      "extract": [],
       "type": "Art & Entertainment"
     },
     {
       "url": "https://community.cloudflare.com/u/{username}",
-      "detections": [{
-        "name": "discourse",
-        "type": "shared"
-      }],
+      "detections": [
+        {
+          "name": "discourse",
+          "type": "shared"
+        }
+      ],
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
+      "extract": [],
       "type": "Internet and Telecom"
     },
     {
       "url": "https://community.eintracht.de/fans/{username}",
-      "detections": [{
+      "detections": [
+        {
           "return": "false",
           "string": "Seite nicht gefunden",
           "type": "normal"
@@ -1107,11 +1224,13 @@
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
+      "extract": [],
       "type": "Sports"
     },
     {
       "url": "https://community.oracle.com/people/{username}",
-      "detections": [{
+      "detections": [
+        {
           "return": "false",
           "string": "User Not Found",
           "type": "advanced"
@@ -1125,22 +1244,27 @@
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
+      "extract": [],
       "type": "Computer and electronics"
     },
     {
       "url": "https://community.signalusers.org/u/{username}",
-      "detections": [{
-        "name": "discourse",
-        "type": "shared"
-      }],
+      "detections": [
+        {
+          "name": "discourse",
+          "type": "shared"
+        }
+      ],
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
+      "extract": [],
       "type": "Computer and electronics"
     },
     {
       "url": "https://community.windy.com/user/{username}",
-      "detections": [{
+      "detections": [
+        {
           "return": "false",
           "string": "You seem to have stumbled",
           "type": "advanced"
@@ -1164,11 +1288,13 @@
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
+      "extract": [],
       "type": "Internet and Telecom"
     },
     {
       "url": "https://connect.opensuse.org/pg/profile/{username}",
-      "detections": [{
+      "detections": [
+        {
           "return": "false",
           "string": "we could not find the",
           "type": "advanced"
@@ -1187,11 +1313,13 @@
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
+      "extract": [],
       "type": "Computer and electronics"
     },
     {
       "url": "https://coroflot.com/{username}",
-      "detections": [{
+      "detections": [
+        {
           "return": "false",
           "string": "Looking for something",
           "type": "advanced"
@@ -1210,11 +1338,13 @@
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
+      "extract": [],
       "type": "Job Search"
     },
     {
       "url": "https://couchsurfing.com/people/{username}",
-      "detections": [{
+      "detections": [
+        {
           "return": "false",
           "string": "not found",
           "type": "normal"
@@ -1228,11 +1358,13 @@
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
+      "extract": [],
       "type": "unavailable"
     },
     {
       "url": "https://countable.us/{username}",
-      "detections": [{
+      "detections": [
+        {
           "return": "false",
           "string": "The page you were looking for",
           "type": "advanced"
@@ -1251,35 +1383,43 @@
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
+      "extract": [],
       "type": "News"
     },
     {
       "url": "https://cracked.com/members/{username}",
-      "detections": [{
-        "return": "true",
-        "string": "data-username={username}",
-        "type": "normal"
-      }],
+      "detections": [
+        {
+          "return": "true",
+          "string": "data-username={username}",
+          "type": "normal"
+        }
+      ],
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
+      "extract": [],
       "type": "Art & Entertainment"
     },
     {
       "url": "https://create.arduino.cc/projecthub/{username}",
-      "detections": [{
-        "return": "false",
-        "string": "Bummer, we couldn't find that page",
-        "type": "normal"
-      }],
+      "detections": [
+        {
+          "return": "false",
+          "string": "Bummer, we couldn't find that page",
+          "type": "normal"
+        }
+      ],
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
+      "extract": [],
       "type": "Computer and electronics"
     },
     {
       "url": "https://creativemarket.com/{username}",
-      "detections": [{
+      "detections": [
+        {
           "return": "false",
           "string": "Whoomp, there it isn",
           "type": "advanced"
@@ -1298,11 +1438,13 @@
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
+      "extract": [],
       "type": "Shopping"
     },
     {
       "url": "https://crunchbase.com/person/{username}",
-      "detections": [{
+      "detections": [
+        {
           "return": "false",
           "string": "find this page for you.",
           "type": "normal"
@@ -1326,11 +1468,13 @@
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
+      "extract": [],
       "type": "Internet and Telecom"
     },
     {
       "url": "https://crunchyroll.com/user/{username}",
-      "detections": [{
+      "detections": [
+        {
           "return": "false",
           "string": "but we were unable to find",
           "type": "normal"
@@ -1344,23 +1488,28 @@
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
+      "extract": [],
       "type": "Arts and Entertainment"
     },
     {
       "url": "https://d3.ru/user/{username}/posts",
-      "detections": [{
-        "return": "true",
-        "string": "/user/{username}",
-        "type": "normal"
-      }],
+      "detections": [
+        {
+          "return": "true",
+          "string": "/user/{username}",
+          "type": "normal"
+        }
+      ],
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
+      "extract": [],
       "type": "Computer and electronics"
     },
     {
       "url": "https://dailykos.com/user/{username}",
-      "detections": [{
+      "detections": [
+        {
           "return": "false",
           "string": "Sorry, that blog could not be found",
           "type": "advanced"
@@ -1384,11 +1533,13 @@
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
+      "extract": [],
       "type": "News"
     },
     {
       "url": "https://dailymotion.com/{username}",
-      "detections": [{
+      "detections": [
+        {
           "return": "false",
           "string": "Page not found",
           "type": "advanced"
@@ -1407,11 +1558,13 @@
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
+      "extract": [],
       "type": "Video Hosting"
     },
     {
       "url": "https://data.typeracer.com/pit/profile?user={username}",
-      "detections": [{
+      "detections": [
+        {
           "return": "false",
           "string": "Profile Not Found",
           "type": "advanced"
@@ -1435,11 +1588,13 @@
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
+      "extract": [],
       "type": "Games"
     },
     {
       "url": "https://dating.ru/{username}",
-      "detections": [{
+      "detections": [
+        {
           "return": "true",
           "string": "ru/{username}",
           "type": "normal"
@@ -1453,11 +1608,13 @@
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
+      "extract": [],
       "type": "Adult"
     },
     {
       "url": "https://depop.com/{username}/",
-      "detections": [{
+      "detections": [
+        {
           "return": "false",
           "string": "that page doesn",
           "type": "normal"
@@ -1476,11 +1633,13 @@
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
+      "extract": [],
       "type": "Shopping"
     },
     {
       "url": "https://designspiration.net/{username}",
-      "detections": [{
+      "detections": [
+        {
           "return": "false",
           "string": "Content Not Found",
           "type": "advanced"
@@ -1504,11 +1663,13 @@
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
+      "extract": [],
       "type": "unavailable"
     },
     {
       "url": "https://dev.to/{username}",
-      "detections": [{
+      "detections": [
+        {
           "return": "false",
           "string": "This page does not exist ",
           "type": "advanced"
@@ -1532,11 +1693,13 @@
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
+      "extract": [],
       "type": "Computer and electronics"
     },
     {
       "url": "https://devrant.com/users/{username}",
-      "detections": [{
+      "detections": [
+        {
           "return": "true",
           "string": "/users/{username}",
           "type": "normal"
@@ -1550,11 +1713,13 @@
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
+      "extract": [],
       "type": "Computer and electronics"
     },
     {
       "url": "https://discogs.com/user/{username}",
-      "detections": [{
+      "detections": [
+        {
           "return": "false",
           "string": "We couldn't find that page",
           "type": "advanced"
@@ -1573,33 +1738,41 @@
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
+      "extract": [],
       "type": "Music"
     },
     {
       "url": "https://discuss.atom.io/u/{username}/summary",
-      "detections": [{
-        "name": "discourse",
-        "type": "shared"
-      }],
+      "detections": [
+        {
+          "name": "discourse",
+          "type": "shared"
+        }
+      ],
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
+      "extract": [],
       "type": "Computer and electronics"
     },
     {
       "url": "https://discuss.elastic.co/u/{username}",
-      "detections": [{
-        "name": "discourse",
-        "type": "shared"
-      }],
+      "detections": [
+        {
+          "name": "discourse",
+          "type": "shared"
+        }
+      ],
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
+      "extract": [],
       "type": "Computer and electronics"
     },
     {
       "url": "https://discussions.apple.com/profile/{username}",
-      "detections": [{
+      "detections": [
+        {
           "return": "false",
           "string": "Looking for something in",
           "type": "advanced"
@@ -1623,23 +1796,28 @@
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
+      "extract": [],
       "type": "Computer and electronics"
     },
     {
       "url": "https://displate.com/{username}/profile",
-      "detections": [{
-        "return": "false",
-        "string": "Oops!",
-        "type": "normal"
-      }],
+      "detections": [
+        {
+          "return": "false",
+          "string": "Oops!",
+          "type": "normal"
+        }
+      ],
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
+      "extract": [],
       "type": "unavailable"
     },
     {
       "url": "https://disqus.com/{username}",
-      "detections": [{
+      "detections": [
+        {
           "return": "false",
           "string": "Something didn't work",
           "type": "advanced"
@@ -1663,11 +1841,13 @@
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
+      "extract": [],
       "type": "unavailable"
     },
     {
       "url": "https://douban.com/people/{username}/",
-      "detections": [{
+      "detections": [
+        {
           "return": "true",
           "string": "error.",
           "type": "normal"
@@ -1681,11 +1861,13 @@
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
+      "extract": [],
       "type": "movie and book database"
     },
     {
       "url": "https://dribbble.com/{username}",
-      "detections": [{
+      "detections": [
+        {
           "return": "false",
           "string": "Whoops, that page is gone",
           "type": "advanced"
@@ -1709,11 +1891,13 @@
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
+      "extract": [],
       "type": "unavailable"
     },
     {
       "url": "https://drive2.ru/users/{username}",
-      "detections": [{
+      "detections": [
+        {
           "return": "false",
           "string": ">404",
           "type": "normal"
@@ -1732,11 +1916,13 @@
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
+      "extract": [],
       "type": "unavailable"
     },
     {
       "url": "https://duolingo.com/profile/{username}",
-      "detections": [{
+      "detections": [
+        {
           "return": "false",
           "string": "Error 404",
           "type": "advanced"
@@ -1754,7 +1940,8 @@
     },
     {
       "url": "https://ebay.com/usr/{username}",
-      "detections": [{
+      "detections": [
+        {
           "return": "false",
           "string": "The User ID you entered was not found",
           "type": "advanced"
@@ -1783,23 +1970,28 @@
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
+      "extract": [],
       "type": "unavailable"
     },
     {
       "url": "https://echo.msk.ru/users/{username}",
-      "detections": [{
-        "return": "false",
-        "string": "404<",
-        "type": "normal"
-      }],
+      "detections": [
+        {
+          "return": "false",
+          "string": "404<",
+          "type": "normal"
+        }
+      ],
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
+      "extract": [],
       "type": "unavailable"
     },
     {
       "url": "https://egpu.io/forums/profile/{username}",
-      "detections": [{
+      "detections": [
+        {
           "return": "false",
           "string": "Page not found",
           "type": "advanced"
@@ -1818,11 +2010,13 @@
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
+      "extract": [],
       "type": "unavailable"
     },
     {
       "url": "https://ello.co/{username}",
-      "detections": [{
+      "detections": [
+        {
           "return": "false",
           "string": "We couldn't find",
           "type": "advanced"
@@ -1851,11 +2045,13 @@
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
+      "extract": [],
       "type": "Social network"
     },
     {
       "url": "https://en.gravatar.com/{username}",
-      "detections": [{
+      "detections": [
+        {
           "return": "false",
           "string": "We’re sorry",
           "type": "advanced"
@@ -1874,6 +2070,7 @@
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
+      "extract": [],
       "type": "Avatar hosting"
     },
     {
@@ -1882,11 +2079,13 @@
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
+      "extract": [],
       "type": "unavailable"
     },
     {
       "url": "https://escapistmagazine.com/profiles/view/{username}",
-      "detections": [{
+      "detections": [
+        {
           "return": "false",
           "string": "Please log in to search for users",
           "type": "normal"
@@ -1905,11 +2104,13 @@
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
+      "extract": [],
       "type": "Video game website"
     },
     {
       "url": "https://etsy.com/shop/{username}",
-      "detections": [{
+      "detections": [
+        {
           "return": "false",
           "string": "the page you were looking for was not found",
           "type": "advanced"
@@ -1938,11 +2139,13 @@
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
+      "extract": [],
       "type": "unavailable"
     },
     {
       "url": "https://eurogamer.net/profiles/{username}",
-      "detections": [{
+      "detections": [
+        {
           "return": "false",
           "string": "404 Page not found",
           "type": "normal"
@@ -1961,11 +2164,13 @@
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
+      "extract": [],
       "type": "Video game journalism"
     },
     {
       "url": "https://euw.op.gg/summoner/userName={username}",
-      "detections": [{
+      "detections": [
+        {
           "return": "false",
           "string": "This summoner is not registered at",
           "type": "advanced"
@@ -1989,11 +2194,13 @@
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
+      "extract": [],
       "type": "unavailable"
     },
     {
       "url": "https://expo.io/@{username}",
-      "detections": [{
+      "detections": [
+        {
           "return": "true",
           "string": "firstName",
           "type": "normal"
@@ -2007,11 +2214,13 @@
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
+      "extract": [],
       "type": "unavailable"
     },
     {
       "url": "https://eyeem.com/u/{username}",
-      "detections": [{
+      "detections": [
+        {
           "return": "false",
           "string": "We can't find the user you're looking",
           "type": "advanced"
@@ -2030,23 +2239,28 @@
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
+      "extract": [],
       "type": "Photo sharing / Social Networking"
     },
     {
       "url": "https://f3.cool/{username}",
-      "detections": [{
-        "return": "true",
-        "string": "og:title",
-        "type": "normal"
-      }],
+      "detections": [
+        {
+          "return": "true",
+          "string": "og:title",
+          "type": "normal"
+        }
+      ],
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
+      "extract": [],
       "type": "unavailable"
     },
     {
       "url": "https://facebook.com/{username}",
-      "detections": [{
+      "detections": [
+        {
           "return": "false",
           "string": "This page isn't available",
           "type": "advanced"
@@ -2070,11 +2284,13 @@
       "top": "top10",
       "timeout": 0,
       "implicit": 0,
+      "extract": [],
       "type": "Social networking service"
     },
     {
       "url": "https://facenama.com/{username}",
-      "detections": [{
+      "detections": [
+        {
           "return": "false",
           "string": "404 Error",
           "type": "normal"
@@ -2093,11 +2309,13 @@
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
+      "extract": [],
       "type": "unavailable"
     },
     {
       "url": "https://fandom.com/u/{username}",
-      "detections": [{
+      "detections": [
+        {
           "return": "false",
           "string": "t always catch",
           "type": "advanced"
@@ -2121,18 +2339,22 @@
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
+      "extract": [],
       "type": "Wiki hosting service"
     },
     {
       "url": "https://fiverr.com/{username}",
-      "detections": [{
-        "return": "true",
-        "string": "{username}",
-        "type": "normal"
-      }],
+      "detections": [
+        {
+          "return": "true",
+          "string": "{username}",
+          "type": "normal"
+        }
+      ],
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
+      "extract": [],
       "type": "Sales of services"
     },
     {
@@ -2141,11 +2363,13 @@
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
+      "extract": [],
       "type": "unavailable"
     },
     {
       "url": "https://fl.ru/users/{username}/portfolio",
-      "detections": [{
+      "detections": [
+        {
           "return": "false",
           "string": "404 Not Found",
           "type": "normal"
@@ -2159,11 +2383,13 @@
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
+      "extract": [],
       "type": "unavailable"
     },
     {
       "url": "https://flickr.com/people/{username}",
-      "detections": [{
+      "detections": [
+        {
           "return": "false",
           "string": "This is not the page you’re looking for",
           "type": "advanced"
@@ -2187,11 +2413,13 @@
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
+      "extract": [],
       "type": "Image/Video hosting service"
     },
     {
       "url": "https://flipboard.com/@{username}",
-      "detections": [{
+      "detections": [
+        {
           "return": "false",
           "string": "This page does not exist",
           "type": "advanced"
@@ -2215,11 +2443,13 @@
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
+      "extract": [],
       "type": "unavailable"
     },
     {
       "url": "https://fortnitetracker.com/profile/all/{username}",
-      "detections": [{
+      "detections": [
+        {
           "return": "false",
           "string": "We are unable to find your profile",
           "type": "advanced"
@@ -2243,6 +2473,7 @@
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
+      "extract": [],
       "type": "unavailable"
     },
     {
@@ -2251,23 +2482,28 @@
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
+      "extract": [],
       "type": "Torrent index"
     },
     {
       "url": "https://forum.guns.ru/forummisc/blog/{username}",
-      "detections": [{
-        "return": "true",
-        "string": "username=",
-        "type": "normal"
-      }],
+      "detections": [
+        {
+          "return": "true",
+          "string": "username=",
+          "type": "normal"
+        }
+      ],
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
+      "extract": [],
       "type": "unavailable"
     },
     {
       "url": "https://forum.hackthebox.eu/profile/{username}",
-      "detections": [{
+      "detections": [
+        {
           "return": "false",
           "string": "User not found",
           "type": "advanced"
@@ -2291,6 +2527,7 @@
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
+      "extract": [],
       "type": "unavailable"
     },
     {
@@ -2299,33 +2536,41 @@
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
+      "extract": [],
       "type": "unavailable"
     },
     {
       "url": "https://forum.leasehackr.com/u/{username}/summary",
-      "detections": [{
-        "name": "discourse",
-        "type": "shared"
-      }],
+      "detections": [
+        {
+          "name": "discourse",
+          "type": "shared"
+        }
+      ],
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
+      "extract": [],
       "type": "unavailable"
     },
     {
       "url": "https://forum.sublimetext.com/u/{username}",
-      "detections": [{
-        "name": "discourse",
-        "type": "shared"
-      }],
+      "detections": [
+        {
+          "name": "discourse",
+          "type": "shared"
+        }
+      ],
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
+      "extract": [],
       "type": "unavailable"
     },
     {
       "url": "https://forum.velomania.ru/member.php?username={username}",
-      "detections": [{
+      "detections": [
+        {
           "return": "false",
           "string": "standard_error",
           "type": "normal"
@@ -2339,11 +2584,13 @@
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
+      "extract": [],
       "type": "unavailable"
     },
     {
       "url": "https://forumhouse.ru/members/?username={username}",
-      "detections": [{
+      "detections": [
+        {
           "return": "false",
           "string": "\"error\"",
           "type": "normal"
@@ -2357,11 +2604,13 @@
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
+      "extract": [],
       "type": "unavailable"
     },
     {
       "url": "https://forumophilia.com/profile.php?mode=viewprofile&u={username}",
-      "detections": [{
+      "detections": [
+        {
           "return": "false",
           "string": "but that user does not exist",
           "type": "advanced"
@@ -2384,7 +2633,8 @@
     },
     {
       "url": "https://forums.gunsandammo.com/profile/{username}",
-      "detections": [{
+      "detections": [
+        {
           "return": "false",
           "string": "User Not Found",
           "type": "advanced"
@@ -2408,11 +2658,13 @@
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
+      "extract": [],
       "type": "unavailable"
     },
     {
       "url": "https://forums.kali.org/member.php?username={username}",
-      "detections": [{
+      "detections": [
+        {
           "return": "false",
           "string": "This user has not registered and therefore does",
           "type": "advanced"
@@ -2431,11 +2683,13 @@
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
+      "extract": [],
       "type": "unavailable"
     },
     {
       "url": "https://forums.mmorpg.com/profile/{username}",
-      "detections": [{
+      "detections": [
+        {
           "return": "false",
           "string": "404 Not Found",
           "type": "normal"
@@ -2459,11 +2713,13 @@
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
+      "extract": [],
       "type": "unavailable"
     },
     {
       "url": "https://forums.pcgamer.com/members/?username={username}",
-      "detections": [{
+      "detections": [
+        {
           "return": "false",
           "string": "The specified member cannot be found",
           "type": "advanced"
@@ -2482,33 +2738,41 @@
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
+      "extract": [],
       "type": "unavailable"
     },
     {
       "url": "https://forums.whonix.org/u/{username}",
-      "detections": [{
-        "name": "discourse",
-        "type": "shared"
-      }],
+      "detections": [
+        {
+          "name": "discourse",
+          "type": "shared"
+        }
+      ],
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
+      "extract": [],
       "type": "unavailable"
     },
     {
       "url": "https://fosstodon.org/@{username}",
-      "detections": [{
-        "name": "mastodon",
-        "type": "shared"
-      }],
+      "detections": [
+        {
+          "name": "mastodon",
+          "type": "shared"
+        }
+      ],
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
+      "extract": [],
       "type": "unavailable"
     },
     {
       "url": "https://fotolog.com/author/{username}",
-      "detections": [{
+      "detections": [
+        {
           "return": "false",
           "string": "That page doesn’t exist or is private",
           "type": "advanced"
@@ -2532,11 +2796,13 @@
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
+      "extract": [],
       "type": "social network"
     },
     {
       "url": "https://freelance.habr.com/freelancers/{username}",
-      "detections": [{
+      "detections": [
+        {
           "return": "false",
           "string": "404<",
           "type": "normal"
@@ -2550,11 +2816,13 @@
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
+      "extract": [],
       "type": "Web search engine"
     },
     {
       "url": "https://freelancer.com/u/{username}",
-      "detections": [{
+      "detections": [
+        {
           "return": "false",
           "string": "Looks like the page you are looking",
           "type": "advanced"
@@ -2578,11 +2846,13 @@
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
+      "extract": [],
       "type": "Freelance marketplace"
     },
     {
       "url": "https://freesound.org/people/{username}",
-      "detections": [{
+      "detections": [
+        {
           "return": "false",
           "string": "Page not found",
           "type": "advanced"
@@ -2606,11 +2876,13 @@
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
+      "extract": [],
       "type": "Audio clip sharing"
     },
     {
       "url": "https://gaiaonline.com/profiles/{username}",
-      "detections": [{
+      "detections": [
+        {
           "return": "false",
           "string": "General Error",
           "type": "advanced"
@@ -2634,11 +2906,13 @@
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
+      "extract": [],
       "type": "unavailable"
     },
     {
       "url": "https://gamefaqs.gamespot.com/community/{username}",
-      "detections": [{
+      "detections": [
+        {
           "return": "false",
           "string": "Page Not Found",
           "type": "normal"
@@ -2662,11 +2936,13 @@
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
+      "extract": [],
       "type": "Video game journalism"
     },
     {
       "url": "https://gamespot.com/profile/{username}",
-      "detections": [{
+      "detections": [
+        {
           "return": "false",
           "string": "you seem to be lost",
           "type": "advanced"
@@ -2690,11 +2966,13 @@
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
+      "extract": [],
       "type": "Video game journalism"
     },
     {
       "url": "https://gaminglatest.com/members/{username}",
-      "detections": [{
+      "detections": [
+        {
           "return": "false",
           "string": "We ran into some problems",
           "type": "normal"
@@ -2708,6 +2986,7 @@
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
+      "extract": [],
       "type": "unavailable"
     },
     {
@@ -2716,11 +2995,13 @@
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
+      "extract": [],
       "type": "unavailable"
     },
     {
       "url": "https://geocaching.com/p/default.aspx?u={username}",
-      "detections": [{
+      "detections": [
+        {
           "return": "false",
           "string": "Sorry about that",
           "type": "advanced"
@@ -2739,6 +3020,7 @@
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
+      "extract": [],
       "type": "unavailable"
     },
     {
@@ -2747,11 +3029,13 @@
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
+      "extract": [],
       "type": "unavailable"
     },
     {
       "url": "https://gfycat.com/@{username}",
-      "detections": [{
+      "detections": [
+        {
           "return": "false",
           "string": "Page not found",
           "type": "advanced"
@@ -2775,11 +3059,13 @@
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
+      "extract": [],
       "type": "unavailable"
     },
     {
       "url": "https://giantbomb.com/profile/{username}",
-      "detections": [{
+      "detections": [
+        {
           "return": "false",
           "string": "Not Found",
           "type": "normal"
@@ -2798,11 +3084,13 @@
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
+      "extract": [],
       "type": "Gaming wiki"
     },
     {
       "url": "https://giphy.com/{username}",
-      "detections": [{
+      "detections": [
+        {
           "return": "false",
           "string": "There’s nothing here. Looking for GIFs",
           "type": "advanced"
@@ -2826,11 +3114,13 @@
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
+      "extract": [],
       "type": "Subsidiary"
     },
     {
       "url": "https://gitee.com/{username}",
-      "detections": [{
+      "detections": [
+        {
           "return": "false",
           "string": "(404)<",
           "type": "normal"
@@ -2849,11 +3139,13 @@
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
+      "extract": [],
       "type": "unavailable"
     },
     {
       "url": "https://github.com/{username}",
-      "detections": [{
+      "detections": [
+        {
           "return": "false",
           "string": "This is not the web page you",
           "type": "advanced"
@@ -2872,11 +3164,13 @@
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
+      "extract": [],
       "type": "Collaborative version control"
     },
     {
       "url": "https://gitlab.com/{username}",
-      "detections": [{
+      "detections": [
+        {
           "return": "false",
           "string": "have an account yet",
           "type": "normal"
@@ -2889,11 +3183,13 @@
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
+      "extract": [],
       "type": "Git-repository hosting service"
     },
     {
       "url": "https://gitlab.gnome.org/{username}",
-      "detections": [{
+      "detections": [
+        {
           "return": "false",
           "string": "You need to sign in or sign up before continuing.",
           "type": "normal"
@@ -2906,11 +3202,13 @@
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
+      "extract": [],
       "type": "GitLab instance"
     },
     {
       "url": "https://gitmemory.com/{username}",
-      "detections": [{
+      "detections": [
+        {
           "return": "false",
           "string": "404<",
           "type": "normal"
@@ -2924,22 +3222,27 @@
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
+      "extract": [],
       "type": "Projects Archive"
     },
     {
       "url": "https://gmail.com/{username}",
-      "detections": [{
-        "function": "special_gmail_1",
-        "type": "special"
-      }],
+      "detections": [
+        {
+          "function": "special_gmail_1",
+          "type": "special"
+        }
+      ],
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
+      "extract": [],
       "type": "Social networking service"
     },
     {
       "url": "https://goodreads.com/{username}",
-      "detections": [{
+      "detections": [
+        {
           "return": "false",
           "string": "Page not found",
           "type": "normal"
@@ -2953,34 +3256,42 @@
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
+      "extract": [],
       "type": "Book"
     },
     {
       "url": "https://google.com/{username}",
-      "detections": [{
-        "function": "special_google_1",
-        "type": "special"
-      }],
+      "detections": [
+        {
+          "function": "special_google_1",
+          "type": "special"
+        }
+      ],
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
+      "extract": [],
       "type": "Social networking service"
     },
     {
       "url": "https://gotinder.com/@{username}",
-      "detections": [{
-        "return": "true",
-        "string": "\"_id\"",
-        "type": "normal"
-      }],
+      "detections": [
+        {
+          "return": "true",
+          "string": "\"_id\"",
+          "type": "normal"
+        }
+      ],
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
+      "extract": [],
       "type": "unavailable"
     },
     {
       "url": "https://gumroad.com/{username}",
-      "detections": [{
+      "detections": [
+        {
           "return": "false",
           "string": "Page not found",
           "type": "advanced"
@@ -3004,6 +3315,7 @@
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
+      "extract": [],
       "type": "unavailable"
     },
     {
@@ -3012,23 +3324,28 @@
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
+      "extract": [],
       "type": "unavailable"
     },
     {
       "url": "https://habr.com/ru/users/{username}",
-      "detections": [{
-        "return": "true",
-        "string": "user-profile",
-        "type": "normal"
-      }],
+      "detections": [
+        {
+          "return": "true",
+          "string": "user-profile",
+          "type": "normal"
+        }
+      ],
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
+      "extract": [],
       "type": "Web search engine"
     },
     {
       "url": "https://hackaday.io/{username}",
-      "detections": [{
+      "detections": [
+        {
           "return": "false",
           "string": "Page Not Found",
           "type": "advanced"
@@ -3052,11 +3369,13 @@
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
+      "extract": [],
       "type": "Weblog"
     },
     {
       "url": "https://hackernoon.com/u/{username}",
-      "detections": [{
+      "detections": [
+        {
           "return": "true",
           "string": "bio-text",
           "type": "normal"
@@ -3070,11 +3389,13 @@
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
+      "extract": [],
       "type": "unavailable"
     },
     {
       "url": "https://hackerone.com/{username}",
-      "detections": [{
+      "detections": [
+        {
           "return": "false",
           "string": "Page not found",
           "type": "advanced"
@@ -3093,11 +3414,13 @@
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
+      "extract": [],
       "type": "unavailable"
     },
     {
       "url": "https://hackerrank.com/{username}",
-      "detections": [{
+      "detections": [
+        {
           "return": "false",
           "string": "Something went wrong",
           "type": "normal"
@@ -3111,11 +3434,13 @@
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
+      "extract": [],
       "type": "unavailable"
     },
     {
       "url": "https://hackster.io/{username}",
-      "detections": [{
+      "detections": [
+        {
           "return": "false",
           "string": "we couldn't find that page",
           "type": "advanced"
@@ -3139,11 +3464,13 @@
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
+      "extract": [],
       "type": "unavailable"
     },
     {
       "url": "https://hackthissite.org/user/view/{username}",
-      "detections": [{
+      "detections": [
+        {
           "return": "false",
           "string": "Cannot Retrieve Information",
           "type": "advanced"
@@ -3166,7 +3493,8 @@
     },
     {
       "url": "https://heavy-r.com/user/{username}",
-      "detections": [{
+      "detections": [
+        {
           "return": "false",
           "string": "Channel not found",
           "type": "normal"
@@ -3180,11 +3508,13 @@
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
+      "extract": [],
       "type": "unavailable"
     },
     {
       "url": "https://hellboundhackers.org/user/{username}.html",
-      "detections": [{
+      "detections": [
+        {
           "return": "true",
           "string": "Email Address:",
           "type": "normal"
@@ -3202,7 +3532,8 @@
     },
     {
       "url": "https://house-mixes.com/profile/{username}",
-      "detections": [{
+      "detections": [
+        {
           "return": "false",
           "string": "Profile Not Found",
           "type": "advanced"
@@ -3226,11 +3557,13 @@
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
+      "extract": [],
       "type": "unavailable"
     },
     {
       "url": "https://houzz.com/user/{username}",
-      "detections": [{
+      "detections": [
+        {
           "return": "false",
           "string": "The page you requested",
           "type": "advanced"
@@ -3249,11 +3582,13 @@
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
+      "extract": [],
       "type": "unavailable"
     },
     {
       "url": "https://hub.docker.com/u/{username}",
-      "detections": [{
+      "detections": [
+        {
           "return": "false",
           "string": "The page you requested",
           "type": "advanced"
@@ -3271,7 +3606,8 @@
     },
     {
       "url": "https://hubpages.com/@{username}",
-      "detections": [{
+      "detections": [
+        {
           "return": "false",
           "string": "Page does not exist",
           "type": "advanced"
@@ -3290,11 +3626,13 @@
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
+      "extract": [],
       "type": "unavailable"
     },
     {
       "url": "https://hubski.com/user/{username}",
-      "detections": [{
+      "detections": [
+        {
           "return": "false",
           "string": "No such user",
           "type": "advanced"
@@ -3318,23 +3656,28 @@
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
+      "extract": [],
       "type": "Social news"
     },
     {
       "url": "https://hunting.ru/forum/members/?username={username}",
-      "detections": [{
-        "return": "true",
-        "string": "\"profile\"",
-        "type": "normal"
-      }],
+      "detections": [
+        {
+          "return": "true",
+          "string": "\"profile\"",
+          "type": "normal"
+        }
+      ],
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
+      "extract": [],
       "type": "unavailable"
     },
     {
       "url": "https://icq.im/{username}",
-      "detections": [{
+      "detections": [
+        {
           "return": "false",
           "string": "Profile not found",
           "type": "advanced"
@@ -3353,11 +3696,13 @@
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
+      "extract": [],
       "type": "unavailable"
     },
     {
       "url": "https://ifttt.com/p/{username}",
-      "detections": [{
+      "detections": [
+        {
           "return": "false",
           "string": "The requested page or file",
           "type": "advanced"
@@ -3381,6 +3726,7 @@
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
+      "extract": [],
       "type": "unavailable"
     },
     {
@@ -3389,11 +3735,13 @@
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
+      "extract": [],
       "type": "unavailable"
     },
     {
       "url": "https://imgup.cz/{username}",
-      "detections": [{
+      "detections": [
+        {
           "return": "false",
           "string": "That page doesn",
           "type": "advanced"
@@ -3417,23 +3765,28 @@
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
+      "extract": [],
       "type": "unavailable"
     },
     {
       "url": "https://imgur.com/user/{username}",
-      "detections": [{
-        "return": "true",
-        "string": "{username}",
-        "type": "advanced"
-      }],
+      "detections": [
+        {
+          "return": "true",
+          "string": "{username}",
+          "type": "advanced"
+        }
+      ],
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
+      "extract": [],
       "type": "hosting"
     },
     {
       "url": "https://independent.academia.edu/{username}",
-      "detections": [{
+      "detections": [
+        {
           "return": "false",
           "string": "It looks like you",
           "type": "advanced"
@@ -3457,11 +3810,13 @@
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
+      "extract": [],
       "type": "Platform for sharing research papers"
     },
     {
       "url": "https://indiblogger.in/{username}",
-      "detections": [{
+      "detections": [
+        {
           "return": "false",
           "string": "page not found",
           "type": "normal"
@@ -3480,11 +3835,13 @@
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
+      "extract": [],
       "type": "unavailable"
     },
     {
       "url": "https://influenster.com/{username}",
-      "detections": [{
+      "detections": [
+        {
           "return": "false",
           "string": "Page not found",
           "type": "advanced"
@@ -3503,11 +3860,13 @@
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
+      "extract": [],
       "type": "unavailable"
     },
     {
       "url": "https://instagram.com/{username}",
-      "detections": [{
+      "detections": [
+        {
           "return": "false",
           "string": "Sorry, this page isn't available",
           "type": "advanced"
@@ -3532,11 +3891,13 @@
       "top": "top10",
       "timeout": 0,
       "implicit": 0,
+      "extract": [],
       "type": "unavailable"
     },
     {
       "url": "https://instructables.com/member/{username}",
-      "detections": [{
+      "detections": [
+        {
           "return": "false",
           "string": "things break sometimes",
           "type": "advanced"
@@ -3560,11 +3921,13 @@
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
+      "extract": [],
       "type": "Informational"
     },
     {
       "url": "https://interpals.net/{username}",
-      "detections": [{
+      "detections": [
+        {
           "return": "false",
           "string": "The requested user does not",
           "type": "advanced"
@@ -3583,23 +3946,28 @@
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
+      "extract": [],
       "type": "unavailable"
     },
     {
       "url": "https://irecommend.ru/users/{username}",
-      "detections": [{
-        "return": "true",
-        "string": "profile",
-        "type": "normal"
-      }],
+      "detections": [
+        {
+          "return": "true",
+          "string": "profile",
+          "type": "normal"
+        }
+      ],
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
+      "extract": [],
       "type": "unavailable"
     },
     {
       "url": "https://issuu.com/{username}",
-      "detections": [{
+      "detections": [
+        {
           "return": "false",
           "string": "seem to find",
           "type": "advanced"
@@ -3623,11 +3991,13 @@
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
+      "extract": [],
       "type": "Electronic publishing"
     },
     {
       "url": "https://jbzd.com.pl/uzytkownik/{username}",
-      "detections": [{
+      "detections": [
+        {
           "return": "false",
           "string": "404<",
           "type": "normal"
@@ -3641,11 +4011,13 @@
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
+      "extract": [],
       "type": "unavailable"
     },
     {
       "url": "https://jeuxvideo.com/profil/{username}?mode=infos",
-      "detections": [{
+      "detections": [
+        {
           "return": "false",
           "string": "erreurs",
           "type": "normal"
@@ -3659,11 +4031,13 @@
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
+      "extract": [],
       "type": "Video game journalism"
     },
     {
       "url": "https://kaggle.com/{username}",
-      "detections": [{
+      "detections": [
+        {
           "return": "false",
           "string": "find that page",
           "type": "advanced"
@@ -3687,11 +4061,13 @@
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
+      "extract": [],
       "type": "unavailable"
     },
     {
       "url": "https://keybase.io/{username}",
-      "detections": [{
+      "detections": [
+        {
           "return": "false",
           "string": "what you are looking for",
           "type": "advanced"
@@ -3715,6 +4091,7 @@
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
+      "extract": [],
       "type": "Encrypted social networking service"
     },
     {
@@ -3723,23 +4100,28 @@
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
+      "extract": [],
       "type": "unavailable"
     },
     {
       "url": "https://ko-fi.com/{username}",
-      "detections": [{
-        "return": "true",
-        "string": "\"profile\"",
-        "type": "normal"
-      }],
+      "detections": [
+        {
+          "return": "true",
+          "string": "\"profile\"",
+          "type": "normal"
+        }
+      ],
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
+      "extract": [],
       "type": "unavailable"
     },
     {
       "url": "https://kongregate.com/accounts/{username}",
-      "detections": [{
+      "detections": [
+        {
           "return": "false",
           "string": "no account with that name was found",
           "type": "advanced"
@@ -3758,11 +4140,13 @@
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
+      "extract": [],
       "type": "Online gaming website and/or social network"
     },
     {
       "url": "https://kwork.ru/user/{username}",
-      "detections": [{
+      "detections": [
+        {
           "return": "false",
           "string": "page-404",
           "type": "normal"
@@ -3781,23 +4165,28 @@
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
+      "extract": [],
       "type": "unavailable"
     },
     {
       "url": "https://lab.pentestit.ru/profile/{username}",
-      "detections": [{
-        "return": "true",
-        "string": "profile/{username}",
-        "type": "normal"
-      }],
+      "detections": [
+        {
+          "return": "true",
+          "string": "profile/{username}",
+          "type": "normal"
+        }
+      ],
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
+      "extract": [],
       "type": "unavailable"
     },
     {
       "url": "https://last.fm/user/{username}",
-      "detections": [{
+      "detections": [
+        {
           "return": "false",
           "string": "Page Not Found",
           "type": "advanced"
@@ -3816,11 +4205,13 @@
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
+      "extract": [],
       "type": "Online music database"
     },
     {
       "url": "https://launchpad.net/~{username}",
-      "detections": [{
+      "detections": [
+        {
           "return": "false",
           "string": "Lost something",
           "type": "advanced"
@@ -3839,11 +4230,13 @@
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
+      "extract": [],
       "type": "Project Hosting Server"
     },
     {
       "url": "https://leetcode.com/{username}",
-      "detections": [{
+      "detections": [
+        {
           "return": "false",
           "string": "Page Not Found",
           "type": "advanced"
@@ -3862,11 +4255,13 @@
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
+      "extract": [],
       "type": "Competitive programming"
     },
     {
       "url": "https://letterboxd.com/{username}",
-      "detections": [{
+      "detections": [
+        {
           "return": "false",
           "string": "find the page you’ve requested",
           "type": "advanced"
@@ -3890,11 +4285,13 @@
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
+      "extract": [],
       "type": "Social networking service for films"
     },
     {
       "url": "https://lichess.org/@/{username}",
-      "detections": [{
+      "detections": [
+        {
           "return": "false",
           "string": "Page not found",
           "type": "advanced"
@@ -3913,11 +4310,13 @@
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
+      "extract": [],
       "type": "Internet chess server"
     },
     {
       "url": "https://linkedin.com/in/{username}/",
-      "detections": [{
+      "detections": [
+        {
           "return": "false",
           "string": "Join to view full profiles for free",
           "type": "advanced"
@@ -3931,23 +4330,28 @@
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
+      "extract": [],
       "type": "Social media platform"
     },
     {
       "url": "https://linux.org.ru/people/{username}/profile",
-      "detections": [{
-        "return": "true",
-        "string": "userpic",
-        "type": "normal"
-      }],
+      "detections": [
+        {
+          "return": "true",
+          "string": "userpic",
+          "type": "normal"
+        }
+      ],
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
+      "extract": [],
       "type": "unavailable"
     },
     {
       "url": "https://liveleak.com/c/{username}",
-      "detections": [{
+      "detections": [
+        {
           "return": "false",
           "string": "channel not found",
           "type": "advanced"
@@ -3966,11 +4370,13 @@
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
+      "extract": [],
       "type": "Video sharing"
     },
     {
       "url": "https://livelib.ru/reader/{username}",
-      "detections": [{
+      "detections": [
+        {
           "return": "false",
           "string": "logo-404",
           "type": "normal"
@@ -3984,11 +4390,13 @@
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
+      "extract": [],
       "type": "unavailable"
     },
     {
       "url": "https://lobste.rs/u/{username}",
-      "detections": [{
+      "detections": [
+        {
           "return": "false",
           "string": "they changed their username",
           "type": "advanced"
@@ -4007,11 +4415,13 @@
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
+      "extract": [],
       "type": "unavailable"
     },
     {
       "url": "https://lolchess.gg/profile/na/{username}",
-      "detections": [{
+      "detections": [
+        {
           "return": "false",
           "string": "No search results",
           "type": "advanced"
@@ -4030,55 +4440,69 @@
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
+      "extract": [],
       "type": "unavailable"
     },
     {
       "url": "https://mastodon.cloud/@{username}",
-      "detections": [{
-        "name": "mastodon",
-        "type": "shared"
-      }],
+      "detections": [
+        {
+          "name": "mastodon",
+          "type": "shared"
+        }
+      ],
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
+      "extract": [],
       "type": "unavailable"
     },
     {
       "url": "https://mastodon.social/@{username}",
-      "detections": [{
-        "name": "mastodon",
-        "type": "shared"
-      }],
+      "detections": [
+        {
+          "name": "mastodon",
+          "type": "shared"
+        }
+      ],
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
+      "extract": [],
       "type": "unavailable"
     },
     {
       "url": "https://mastodon.technology/@{username}",
-      "detections": [{
-        "name": "mastodon",
-        "type": "shared"
-      }],
+      "detections": [
+        {
+          "name": "mastodon",
+          "type": "shared"
+        }
+      ],
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
+      "extract": [],
       "type": "unavailable"
     },
     {
       "url": "https://mastodon.xyz/@{username}",
-      "detections": [{
-        "name": "mastodon",
-        "type": "shared"
-      }],
+      "detections": [
+        {
+          "name": "mastodon",
+          "type": "shared"
+        }
+      ],
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
+      "extract": [],
       "type": "unavailable"
     },
     {
       "url": "https://medium.com/@{username}",
-      "detections": [{
+      "detections": [
+        {
           "return": "false",
           "string": "Out of nothing",
           "type": "advanced"
@@ -4097,11 +4521,13 @@
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
+      "extract": [],
       "type": "unavailable"
     },
     {
       "url": "https://memrise.com/user/{username}",
-      "detections": [{
+      "detections": [
+        {
           "return": "false",
           "string": "The page you are trying",
           "type": "advanced"
@@ -4125,11 +4551,13 @@
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
+      "extract": [],
       "type": "Privately held company"
     },
     {
       "url": "https://mercadolivre.com.br/perfil/{username}",
-      "detections": [{
+      "detections": [
+        {
           "return": "false",
           "string": "\"error\"",
           "type": "normal"
@@ -4143,22 +4571,27 @@
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
+      "extract": [],
       "type": "unavailable"
     },
     {
       "url": "https://meta.wikimedia.org/wiki/Special:CentralAuth/{username}",
-      "detections": [{
-        "name": "mediawiki",
-        "type": "shared"
-      }],
+      "detections": [
+        {
+          "name": "mediawiki",
+          "type": "shared"
+        }
+      ],
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
+      "extract": [],
       "type": "unavailable"
     },
     {
       "url": "https://metacritic.com/user/{username}",
-      "detections": [{
+      "detections": [
+        {
           "return": "false",
           "string": "User not found",
           "type": "advanced"
@@ -4177,35 +4610,43 @@
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
+      "extract": [],
       "type": "Review aggregator"
     },
     {
       "url": "https://mix.com/{username}",
-      "detections": [{
-        "return": "true",
-        "string": "UserProfile",
-        "type": "normal"
-      }],
+      "detections": [
+        {
+          "return": "true",
+          "string": "UserProfile",
+          "type": "normal"
+        }
+      ],
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
+      "extract": [],
       "type": "unavailable"
     },
     {
       "url": "https://mixcloud.com/{username}",
-      "detections": [{
-        "return": "false",
-        "string": "Page Not Found",
-        "type": "advanced"
-      }],
+      "detections": [
+        {
+          "return": "false",
+          "string": "Page Not Found",
+          "type": "advanced"
+        }
+      ],
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
+      "extract": [],
       "type": "Audio Streaming"
     },
     {
       "url": "https://mobile.twitter.com/{username}",
-      "detections": [{
+      "detections": [
+        {
           "return": "false",
           "string": "This account doesn’t exist",
           "type": "advanced"
@@ -4225,11 +4666,13 @@
       "top": "top10",
       "timeout": 0,
       "implicit": 0,
+      "extract": [],
       "type": "social networking service"
     },
     {
       "url": "https://moikrug.ru/{username}",
-      "detections": [{
+      "detections": [
+        {
           "return": "false",
           "string": "404<",
           "type": "normal"
@@ -4243,22 +4686,27 @@
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
+      "extract": [],
       "type": "unavailable"
     },
     {
       "url": "https://mstdn.io/@{username}",
-      "detections": [{
-        "name": "mastodon",
-        "type": "shared"
-      }],
+      "detections": [
+        {
+          "name": "mastodon",
+          "type": "shared"
+        }
+      ],
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
+      "extract": [],
       "type": "unavailable"
     },
     {
       "url": "https://munzee.com/m/{username}",
-      "detections": [{
+      "detections": [
+        {
           "return": "false",
           "string": "looks like the page is not found",
           "type": "advanced"
@@ -4277,11 +4725,13 @@
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
+      "extract": [],
       "type": "unavailable"
     },
     {
       "url": "https://my.flightradar24.com/{username}",
-      "detections": [{
+      "detections": [
+        {
           "return": "false",
           "string": "this page could not be found",
           "type": "advanced"
@@ -4300,11 +4750,13 @@
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
+      "extract": [],
       "type": "Aircraft tracking"
     },
     {
       "url": "https://myanimelist.net/profile/{username}",
-      "detections": [{
+      "detections": [
+        {
           "return": "false",
           "string": "This page doesn",
           "type": "advanced"
@@ -4323,11 +4775,13 @@
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
+      "extract": [],
       "type": "Anime and manga social networking and cataloging"
     },
     {
       "url": "https://myminifactory.com/users/{username}",
-      "detections": [{
+      "detections": [
+        {
           "return": "false",
           "string": "Something has gone wrong",
           "type": "advanced"
@@ -4351,11 +4805,13 @@
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
+      "extract": [],
       "type": "3D Design sharing platform"
     },
     {
       "url": "https://myspace.com/{username}",
-      "detections": [{
+      "detections": [
+        {
           "return": "false",
           "string": "Page Not Found",
           "type": "advanced"
@@ -4369,11 +4825,13 @@
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
+      "extract": [],
       "type": "Social media"
     },
     {
       "url": "https://nairaland.com/{username}",
-      "detections": [{
+      "detections": [
+        {
           "return": "false",
           "string": "Page Not Found",
           "type": "advanced"
@@ -4392,23 +4850,28 @@
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
+      "extract": [],
       "type": "Internet forum"
     },
     {
       "url": "https://namemc.com/profile/{username}",
-      "detections": [{
-        "return": "true",
-        "string": "Minecraft Profile",
-        "type": "normal"
-      }],
+      "detections": [
+        {
+          "return": "true",
+          "string": "Minecraft Profile",
+          "type": "normal"
+        }
+      ],
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
+      "extract": [],
       "type": "unavailable"
     },
     {
       "url": "https://nationstates.net/nation={username}",
-      "detections": [{
+      "detections": [
+        {
           "return": "false",
           "string": "does not exist",
           "type": "advanced"
@@ -4427,11 +4890,13 @@
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
+      "extract": [],
       "type": "Government simulation game"
     },
     {
       "url": "https://nationstates.net/{username}",
-      "detections": [{
+      "detections": [
+        {
           "return": "false",
           "string": "does not exist",
           "type": "advanced"
@@ -4450,11 +4915,13 @@
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
+      "extract": [],
       "type": "Government simulation game"
     },
     {
       "url": "https://native-instruments.com/forum/members?username={username}",
-      "detections": [{
+      "detections": [
+        {
           "return": "false",
           "string": "- Error",
           "type": "advanced"
@@ -4473,23 +4940,28 @@
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
+      "extract": [],
       "type": "unavailable"
     },
     {
       "url": "https://neogaf.com/members/{username}/",
-      "detections": [{
-        "return": "false",
-        "string": "content=\"Oops! We ran",
-        "type": "normal"
-      }],
+      "detections": [
+        {
+          "return": "false",
+          "string": "content=\"Oops! We ran",
+          "type": "normal"
+        }
+      ],
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
+      "extract": [],
       "type": "Internet forum"
     },
     {
       "url": "https://news.ycombinator.com/user?id={username}",
-      "detections": [{
+      "detections": [
+        {
           "return": "false",
           "string": "No such user",
           "type": "advanced"
@@ -4508,6 +4980,7 @@
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
+      "extract": [],
       "type": "unavailable"
     },
     {
@@ -4516,23 +4989,28 @@
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
+      "extract": [],
       "type": "unavailable"
     },
     {
       "url": "https://ninjakiwi.com/profile/{username}",
-      "detections": [{
-        "return": "true",
-        "string": "\"profile\"",
-        "type": "normal"
-      }],
+      "detections": [
+        {
+          "return": "true",
+          "string": "\"profile\"",
+          "type": "normal"
+        }
+      ],
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
+      "extract": [],
       "type": "Flash game website"
     },
     {
       "url": "https://notabug.org/{username}",
-      "detections": [{
+      "detections": [
+        {
           "return": "false",
           "string": "If you think this is an error",
           "type": "advanced"
@@ -4556,11 +5034,13 @@
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
+      "extract": [],
       "type": "unavailable"
     },
     {
       "url": "https://note.com/{username}",
-      "detections": [{
+      "detections": [
+        {
           "return": "true",
           "string": "username",
           "type": "normal"
@@ -4574,11 +5054,13 @@
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
+      "extract": [],
       "type": "Study guide"
     },
     {
       "url": "https://npmjs.com/~{username}",
-      "detections": [{
+      "detections": [
+        {
           "return": "false",
           "string": "Scope not found",
           "type": "advanced"
@@ -4597,11 +5079,13 @@
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
+      "extract": [],
       "type": "unavailable"
     },
     {
       "url": "https://ok.ru/{username}",
-      "detections": [{
+      "detections": [
+        {
           "return": "false",
           "string": "This page does not",
           "type": "advanced"
@@ -4620,11 +5104,13 @@
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
+      "extract": [],
       "type": "unavailable"
     },
     {
       "url": "https://open.spotify.com/user/{username}",
-      "detections": [{
+      "detections": [
+        {
           "return": "false",
           "string": "Search for something else",
           "type": "advanced"
@@ -4638,23 +5124,28 @@
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
+      "extract": [],
       "type": "Music streaming service"
     },
     {
       "url": "https://opencollective.com/{username}",
-      "detections": [{
-        "return": "false",
-        "string": "Not found<",
-        "type": "normal"
-      }],
+      "detections": [
+        {
+          "return": "false",
+          "string": "Not found<",
+          "type": "normal"
+        }
+      ],
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
+      "extract": [],
       "type": "unavailable"
     },
     {
       "url": "https://openhub.net/accounts/{username}",
-      "detections": [{
+      "detections": [
+        {
           "return": "false",
           "string": "Something seems wrong",
           "type": "advanced"
@@ -4673,23 +5164,28 @@
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
+      "extract": [],
       "type": "Public directory of free and open-source software (FOSS)"
     },
     {
       "url": "https://opennet.ru/~{username}",
-      "detections": [{
-        "return": "true",
-        "string": "show_user",
-        "type": "normal"
-      }],
+      "detections": [
+        {
+          "return": "true",
+          "string": "show_user",
+          "type": "normal"
+        }
+      ],
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
+      "extract": [],
       "type": "News and forum"
     },
     {
       "url": "https://opensource.com/users/{username}",
-      "detections": [{
+      "detections": [
+        {
           "return": "false",
           "string": "Unfortunately the page you",
           "type": "advanced"
@@ -4708,11 +5204,13 @@
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
+      "extract": [],
       "type": "unavailable"
     },
     {
       "url": "https://openstreetmap.org/user/{username}",
-      "detections": [{
+      "detections": [
+        {
           "return": "false",
           "string": "does not exist",
           "type": "advanced"
@@ -4736,11 +5234,13 @@
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
+      "extract": [],
       "type": "Collaborative mapping"
     },
     {
       "url": "https://osu.ppy.sh/users/{username}",
-      "detections": [{
+      "detections": [
+        {
           "return": "false",
           "string": "User not found",
           "type": "advanced"
@@ -4759,11 +5259,13 @@
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
+      "extract": [],
       "type": "unavailable"
     },
     {
       "url": "https://ourdjtalk.com/members?username={username}",
-      "detections": [{
+      "detections": [
+        {
           "return": "false",
           "string": "The specified member cannot be found",
           "type": "advanced"
@@ -4782,11 +5284,13 @@
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
+      "extract": [],
       "type": "unavailable"
     },
     {
       "url": "https://packagist.org/packages/{username}",
-      "detections": [{
+      "detections": [
+        {
           "return": "false",
           "string": "No packages found",
           "type": "advanced"
@@ -4800,11 +5304,13 @@
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
+      "extract": [],
       "type": "unavailable"
     },
     {
       "url": "https://pastebin.com/u/{username}",
-      "detections": [{
+      "detections": [
+        {
           "return": "false",
           "string": "The requested page does not exist",
           "type": "advanced"
@@ -4823,11 +5329,13 @@
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
+      "extract": [],
       "type": "Web application"
     },
     {
       "url": "https://patreon.com/{username}",
-      "detections": [{
+      "detections": [
+        {
           "return": "false",
           "string": "Looks like you got lost",
           "type": "advanced"
@@ -4846,11 +5354,13 @@
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
+      "extract": [],
       "type": "Membership platform"
     },
     {
       "url": "https://pcpartpicker.com/user/{username}",
-      "detections": [{
+      "detections": [
+        {
           "return": "false",
           "string": "The page you requested",
           "type": "advanced"
@@ -4869,11 +5379,13 @@
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
+      "extract": [],
       "type": "Comparison shopping"
     },
     {
       "url": "https://periscope.tv/{username}",
-      "detections": [{
+      "detections": [
+        {
           "return": "false",
           "string": "Sorry, this page",
           "type": "advanced"
@@ -4892,35 +5404,43 @@
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
+      "extract": [],
       "type": "unavailable"
     },
     {
       "url": "https://php.ru/forum/members/?username={username}",
-      "detections": [{
-        "return": "true",
-        "string": "\"profile\"",
-        "type": "normal"
-      }],
+      "detections": [
+        {
+          "return": "true",
+          "string": "\"profile\"",
+          "type": "normal"
+        }
+      ],
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
+      "extract": [],
       "type": "unavailable"
     },
     {
       "url": "https://pikabu.ru/@{username}",
-      "detections": [{
-        "return": "true",
-        "string": "data-profile",
-        "type": "normal"
-      }],
+      "detections": [
+        {
+          "return": "true",
+          "string": "data-profile",
+          "type": "normal"
+        }
+      ],
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
+      "extract": [],
       "type": "unavailable"
     },
     {
       "url": "https://pinkbike.com/u/{username}",
-      "detections": [{
+      "detections": [
+        {
           "return": "false",
           "string": "Could Not Find This Page",
           "type": "advanced"
@@ -4939,11 +5459,13 @@
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
+      "extract": [],
       "type": "unavailable"
     },
     {
       "url": "https://pinterest.com/{username}",
-      "detections": [{
+      "detections": [
+        {
           "return": "false",
           "string": "User not found",
           "type": "normal"
@@ -4963,6 +5485,7 @@
       "top": "top10",
       "timeout": 0,
       "implicit": 0,
+      "extract": [],
       "type": "Social media service"
     },
     {
@@ -4971,23 +5494,28 @@
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
+      "extract": [],
       "type": "Web search engine"
     },
     {
       "url": "https://pling.com/u/{username}",
-      "detections": [{
-        "return": "true",
-        "string": "about-title",
-        "type": "normal"
-      }],
+      "detections": [
+        {
+          "return": "true",
+          "string": "about-title",
+          "type": "normal"
+        }
+      ],
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
+      "extract": [],
       "type": "Libre services and content sharing"
     },
     {
       "url": "https://plug.dj/@/{username}",
-      "detections": [{
+      "detections": [
+        {
           "return": "false",
           "string": "s the party",
           "type": "advanced"
@@ -5011,11 +5539,13 @@
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
+      "extract": [],
       "type": "unavailable"
     },
     {
       "url": "https://pokemonshowdown.com/users/{username}",
-      "detections": [{
+      "detections": [
+        {
           "return": "true",
           "string": "Joined:",
           "type": "normal"
@@ -5029,23 +5559,28 @@
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
+      "extract": [],
       "type": "unavailable"
     },
     {
       "url": "https://polarsteps.com/{username}",
-      "detections": [{
-        "return": "true",
-        "string": "user-info",
-        "type": "normal"
-      }],
+      "detections": [
+        {
+          "return": "true",
+          "string": "user-info",
+          "type": "normal"
+        }
+      ],
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
+      "extract": [],
       "type": "unavailable"
     },
     {
       "url": "https://polygon.com/users/{username}",
-      "detections": [{
+      "detections": [
+        {
           "return": "false",
           "string": "404 Not found",
           "type": "advanced"
@@ -5064,6 +5599,7 @@
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
+      "extract": [],
       "type": "Gaming website"
     },
     {
@@ -5072,11 +5608,13 @@
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
+      "extract": [],
       "type": "unavailable"
     },
     {
       "url": "https://producthunt.com/@{username}",
-      "detections": [{
+      "detections": [
+        {
           "return": "false",
           "string": "Page Not Found",
           "type": "advanced"
@@ -5095,11 +5633,13 @@
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
+      "extract": [],
       "type": "unavailable"
     },
     {
       "url": "https://profil.chatujme.cz/{username}",
-      "detections": [{
+      "detections": [
+        {
           "return": "true",
           "string": "profilu",
           "type": "normal"
@@ -5113,11 +5653,13 @@
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
+      "extract": [],
       "type": "unavailable"
     },
     {
       "url": "https://profile.ameba.jp/ameba/{username}/",
-      "detections": [{
+      "detections": [
+        {
           "return": "false",
           "string": "\"info_",
           "type": "normal"
@@ -5131,11 +5673,13 @@
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
+      "extract": [],
       "type": "Social network service"
     },
     {
       "url": "https://profiles.wordpress.org/{username}",
-      "detections": [{
+      "detections": [
+        {
           "return": "false",
           "string": "User not found",
           "type": "advanced"
@@ -5159,24 +5703,29 @@
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
+      "extract": [],
       "type": "unavailable"
     },
     {
       "url": "https://prog.hu/azonosito/info/{username}",
-      "detections": [{
-        "return": "true",
-        "string": "userprofile",
-        "type": "normal"
-      }],
+      "detections": [
+        {
+          "return": "true",
+          "string": "userprofile",
+          "type": "normal"
+        }
+      ],
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
+      "extract": [],
       "type": "unavailable"
     },
     {
       "status": "bad",
       "url": "https://promodj.com/{username}",
-      "detections": [{
+      "detections": [
+        {
           "return": "false",
           "string": "Page not found",
           "type": "advanced"
@@ -5195,23 +5744,28 @@
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
+      "extract": [],
       "type": "unavailable"
     },
     {
       "url": "https://psnprofiles.com/{username}",
-      "detections": [{
-        "return": "true",
-        "string": "profile-",
-        "type": "normal"
-      }],
+      "detections": [
+        {
+          "return": "true",
+          "string": "profile-",
+          "type": "normal"
+        }
+      ],
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
+      "extract": [],
       "type": "unavailable"
     },
     {
       "url": "https://pypi.org/user/{username}",
-      "detections": [{
+      "detections": [
+        {
           "return": "false",
           "string": "We looked everywhere",
           "type": "advanced"
@@ -5230,11 +5784,13 @@
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
+      "extract": [],
       "type": "unavailable"
     },
     {
       "url": "https://quizlet.com/{username}",
-      "detections": [{
+      "detections": [
+        {
           "return": "false",
           "string": "We have no idea what to put here",
           "type": "advanced"
@@ -5253,11 +5809,13 @@
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
+      "extract": [],
       "type": "Education"
     },
     {
       "url": "https://quora.com/profile/{username}",
-      "detections": [{
+      "detections": [
+        {
           "return": "false",
           "string": "Page Not Found",
           "type": "advanced"
@@ -5276,11 +5834,13 @@
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
+      "extract": [],
       "type": "Question and answer"
     },
     {
       "url": "https://raidforums.com/User-{username}",
-      "detections": [{
+      "detections": [
+        {
           "return": "false",
           "string": "The member you specified is",
           "type": "advanced"
@@ -5299,11 +5859,13 @@
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
+      "extract": [],
       "type": "unavailable"
     },
     {
       "url": "https://rateyourmusic.com/~{username}",
-      "detections": [{
+      "detections": [
+        {
           "return": "false",
           "string": "File not found",
           "type": "advanced"
@@ -5322,11 +5884,13 @@
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
+      "extract": [],
       "type": "Database and community"
     },
     {
       "url": "https://realmeye.com/player/{username}",
-      "detections": [{
+      "detections": [
+        {
           "return": "false",
           "string": "but we either",
           "type": "advanced"
@@ -5345,11 +5909,13 @@
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
+      "extract": [],
       "type": "unavailable"
     },
     {
       "url": "https://redbubble.com/people/{username}",
-      "detections": [{
+      "detections": [
+        {
           "return": "false",
           "string": "This is a lost cause",
           "type": "advanced"
@@ -5368,11 +5934,13 @@
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
+      "extract": [],
       "type": "unavailable"
     },
     {
       "url": "https://reddit.com/user/{username}",
-      "detections": [{
+      "detections": [
+        {
           "return": "false",
           "string": "Sorry, nobody",
           "type": "advanced"
@@ -5392,11 +5960,13 @@
       "top": "top10",
       "timeout": 0,
       "implicit": 0,
+      "extract": [],
       "type": "Social news"
     },
     {
       "url": "https://repl.it/@{username}",
-      "detections": [{
+      "detections": [
+        {
           "return": "false",
           "string": "Not found",
           "type": "advanced"
@@ -5410,23 +5980,28 @@
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
+      "extract": [],
       "type": "unavailable"
     },
     {
       "url": "https://researchgate.net/profile/{username}",
-      "detections": [{
-        "return": "true",
-        "string": "profile:username",
-        "type": "normal"
-      }],
+      "detections": [
+        {
+          "return": "true",
+          "string": "profile:username",
+          "type": "normal"
+        }
+      ],
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
+      "extract": [],
       "type": "Social network service for scientists"
     },
     {
       "url": "https://reverbnation.com/{username}",
-      "detections": [{
+      "detections": [
+        {
           "return": "false",
           "string": "we couldn't find that page",
           "type": "advanced"
@@ -5445,11 +6020,13 @@
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
+      "extract": [],
       "type": "Music and Social Networking"
     },
     {
       "url": "https://rive.app/a/{username}",
-      "detections": [{
+      "detections": [
+        {
           "return": "false",
           "string": "Not Found",
           "type": "advanced"
@@ -5473,11 +6050,13 @@
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
+      "extract": [],
       "type": "unavailable"
     },
     {
       "url": "https://robertsspaceindustries.com/citizens/{username}",
-      "detections": [{
+      "detections": [
+        {
           "return": "false",
           "string": "No results for",
           "type": "advanced"
@@ -5496,6 +6075,7 @@
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
+      "extract": [],
       "type": "unavailable"
     },
     {
@@ -5504,11 +6084,13 @@
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
+      "extract": [],
       "type": "unavailable"
     },
     {
       "url": "https://rubygems.org/profiles/{username}",
-      "detections": [{
+      "detections": [
+        {
           "return": "false",
           "string": "Page not found",
           "type": "advanced"
@@ -5532,6 +6114,7 @@
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
+      "extract": [],
       "type": "unavailable"
     },
     {
@@ -5540,11 +6123,13 @@
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
+      "extract": [],
       "type": "unavailable"
     },
     {
       "url": "https://satsis.info/user/{username}",
-      "detections": [{
+      "detections": [
+        {
           "return": "false",
           "string": "berrors",
           "type": "normal"
@@ -5558,11 +6143,13 @@
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
+      "extract": [],
       "type": "unavailable"
     },
     {
       "url": "https://sbazar.cz/{username}",
-      "detections": [{
+      "detections": [
+        {
           "return": "false",
           "string": "error-box",
           "type": "normal"
@@ -5576,11 +6163,13 @@
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
+      "extract": [],
       "type": "Joint stock company"
     },
     {
       "url": "https://scratch.mit.edu/users/{username}",
-      "detections": [{
+      "detections": [
+        {
           "return": "false",
           "string": "Our server is Scratch",
           "type": "advanced"
@@ -5599,11 +6188,13 @@
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
+      "extract": [],
       "type": "unavailable"
     },
     {
       "url": "https://scribd.com/{username}",
-      "detections": [{
+      "detections": [
+        {
           "return": "false",
           "string": "Page not found",
           "type": "advanced"
@@ -5617,18 +6208,22 @@
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
+      "extract": [],
       "type": "unavailable"
     },
     {
       "url": "https://sharechat.com/profile/{username}",
-      "detections": [{
-        "return": "true",
-        "string": "profile/{username}/info",
-        "type": "normal"
-      }],
+      "detections": [
+        {
+          "return": "true",
+          "string": "profile/{username}/info",
+          "type": "normal"
+        }
+      ],
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
+      "extract": [],
       "type": "unavailable"
     },
     {
@@ -5637,11 +6232,13 @@
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
+      "extract": [],
       "type": "unavailable"
     },
     {
       "url": "https://slashdot.org/~{username}",
-      "detections": [{
+      "detections": [
+        {
           "return": "false",
           "string": "The user you requested does not exist",
           "type": "advanced"
@@ -5660,11 +6257,13 @@
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
+      "extract": [],
       "type": "Online newspapersocial news"
     },
     {
       "url": "https://slideshare.net/{username}",
-      "detections": [{
+      "detections": [
+        {
           "return": "false",
           "string": "This username",
           "type": "advanced"
@@ -5683,11 +6282,13 @@
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
+      "extract": [],
       "type": "Slide hosting service"
     },
     {
       "url": "https://smule.com/{username}",
-      "detections": [{
+      "detections": [
+        {
           "return": "false",
           "string": "The page you are looking",
           "type": "advanced"
@@ -5711,11 +6312,13 @@
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
+      "extract": [],
       "type": "unavailable"
     },
     {
       "url": "https://social.tchncs.de/@{username}",
-      "detections": [{
+      "detections": [
+        {
           "return": "false",
           "string": "The page you are looking",
           "type": "advanced"
@@ -5739,11 +6342,13 @@
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
+      "extract": [],
       "type": "unavailable"
     },
     {
       "url": "https://soundcloud.com/{username}",
-      "detections": [{
+      "detections": [
+        {
           "return": "false",
           "string": "We can’t find that user",
           "type": "advanced"
@@ -5757,11 +6362,13 @@
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
+      "extract": [],
       "type": "Music streaming"
     },
     {
       "url": "https://sourceforge.net/u/{username}",
-      "detections": [{
+      "detections": [
+        {
           "return": "false",
           "string": "t find that page",
           "type": "advanced"
@@ -5785,11 +6392,13 @@
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
+      "extract": [],
       "type": "Collaborative revision control"
     },
     {
       "url": "https://soylentnews.org/~{username}",
-      "detections": [{
+      "detections": [
+        {
           "return": "false",
           "string": "The user you requested does not exist",
           "type": "advanced"
@@ -5808,11 +6417,13 @@
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
+      "extract": [],
       "type": "unavailable"
     },
     {
       "url": "https://sparkpeople.com/mypage.asp?id={username}",
-      "detections": [{
+      "detections": [
+        {
           "return": "false",
           "string": "We couldn't find that user",
           "type": "advanced"
@@ -5831,11 +6442,13 @@
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
+      "extract": [],
       "type": "unavailable"
     },
     {
       "url": "https://speedrun.com/user/{username}",
-      "detections": [{
+      "detections": [
+        {
           "return": "false",
           "string": "not found.",
           "type": "advanced"
@@ -5854,11 +6467,13 @@
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
+      "extract": [],
       "type": "unavailable"
     },
     {
       "url": "https://spletnik.ru/user/{username}",
-      "detections": [{
+      "detections": [
+        {
           "return": "false",
           "string": "error-page",
           "type": "normal"
@@ -5872,11 +6487,13 @@
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
+      "extract": [],
       "type": "unavailable"
     },
     {
       "url": "https://splits.io/users/{username}",
-      "detections": [{
+      "detections": [
+        {
           "return": "false",
           "string": "This page doesn't exist",
           "type": "advanced"
@@ -5895,11 +6512,13 @@
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
+      "extract": [],
       "type": "unavailable"
     },
     {
       "url": "https://sporcle.com/user/{username}/people",
-      "detections": [{
+      "detections": [
+        {
           "return": "false",
           "string": "This Sporcle user cannot",
           "type": "advanced"
@@ -5918,23 +6537,28 @@
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
+      "extract": [],
       "type": "Quizzes"
     },
     {
       "url": "https://sports.ru/profile/{username}",
-      "detections": [{
-        "return": "true",
-        "string": "info-block",
-        "type": "normal"
-      }],
+      "detections": [
+        {
+          "return": "true",
+          "string": "info-block",
+          "type": "normal"
+        }
+      ],
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
+      "extract": [],
       "type": "unavailable"
     },
     {
       "url": "https://steamcommunity.com/id/{username}",
-      "detections": [{
+      "detections": [
+        {
           "return": "false",
           "string": "An error was encountered",
           "type": "advanced"
@@ -5953,11 +6577,13 @@
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
+      "extract": [],
       "type": "unavailable"
     },
     {
       "url": "https://steamid.uk/profile/{username}",
-      "detections": [{
+      "detections": [
+        {
           "return": "false",
           "string": "Profile not found",
           "type": "normal"
@@ -5971,11 +6597,13 @@
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
+      "extract": [],
       "type": "unavailable"
     },
     {
       "url": "https://steemit.com/@{username}",
-      "detections": [{
+      "detections": [
+        {
           "return": "false",
           "string": "This page doesn",
           "type": "advanced"
@@ -5994,27 +6622,33 @@
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
+      "extract": [],
       "type": "unavailable"
     },
     {
       "url": "https://strava.com/athletes/{username}",
-      "detections": [{
-        "return": "true",
-        "string": "media-body main",
-        "type": "normal"
-      }],
+      "detections": [
+        {
+          "return": "true",
+          "string": "media-body main",
+          "type": "normal"
+        }
+      ],
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
+      "extract": [],
       "type": "unavailable"
     },
     {
       "url": "https://svidbook.ru/user/{username}",
-      "detections": [{
-        "return": "true",
-        "string": "user_profile",
-        "type": "normal"
-      }],
+      "detections": [
+        {
+          "return": "true",
+          "string": "user_profile",
+          "type": "normal"
+        }
+      ],
       "selected": "false",
       "timeout": 10,
       "implicit": 10,
@@ -6022,7 +6656,8 @@
     },
     {
       "url": "https://t.me/{username}",
-      "detections": [{
+      "detections": [
+        {
           "return": "false",
           "string": "you can contact",
           "type": "advanced"
@@ -6047,23 +6682,28 @@
       "top": "top10",
       "timeout": 0,
       "implicit": 0,
+      "extract": [],
       "type": "unavailable"
     },
     {
       "url": "https://tellonym.me/{username}",
-      "detections": [{
-        "return": "true",
-        "string": "me/{username}",
-        "type": "normal"
-      }],
+      "detections": [
+        {
+          "return": "true",
+          "string": "me/{username}",
+          "type": "normal"
+        }
+      ],
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
+      "extract": [],
       "type": "unavailable"
     },
     {
       "url": "https://tenor.com/users/{username}",
-      "detections": [{
+      "detections": [
+        {
           "return": "false",
           "string": "We could not find the page",
           "type": "advanced"
@@ -6082,11 +6722,13 @@
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
+      "extract": [],
       "type": "unavailable"
     },
     {
       "url": "https://theverge.com/users/{username}",
-      "detections": [{
+      "detections": [
+        {
           "return": "false",
           "string": "404 Not found",
           "type": "advanced"
@@ -6105,11 +6747,13 @@
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
+      "extract": [],
       "type": "Technology news"
     },
     {
       "url": "https://tiktok.com/@{username}",
-      "detections": [{
+      "detections": [
+        {
           "return": "false",
           "string": "Couldn't find this account",
           "type": "advanced"
@@ -6129,23 +6773,28 @@
       "top": "top10",
       "timeout": 0,
       "implicit": 0,
+      "extract": [],
       "type": "unavailable"
     },
     {
       "url": "https://tldrlegal.com/users/{username}/",
-      "detections": [{
-        "return": "false",
-        "string": "404 Not Found",
-        "type": "normal"
-      }],
+      "detections": [
+        {
+          "return": "false",
+          "string": "404 Not Found",
+          "type": "normal"
+        }
+      ],
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
+      "extract": [],
       "type": "unavailable"
     },
     {
       "url": "https://tnaflix.com/profile/{username}",
-      "detections": [{
+      "detections": [
+        {
           "return": "false",
           "string": "looking for is lost somewhere",
           "type": "normal"
@@ -6159,11 +6808,13 @@
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
+      "extract": [],
       "type": "adult"
     },
     {
       "url": "https://tradingview.com/u/{username}",
-      "detections": [{
+      "detections": [
+        {
           "return": "false",
           "string": "that page doesn",
           "type": "advanced"
@@ -6182,11 +6833,13 @@
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
+      "extract": [],
       "type": "unavailable"
     },
     {
       "url": "https://trakt.tv/users/{username}",
-      "detections": [{
+      "detections": [
+        {
           "return": "false",
           "string": "(404)",
           "type": "normal"
@@ -6200,23 +6853,28 @@
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
+      "extract": [],
       "type": "unavailable"
     },
     {
       "url": "https://trashbox.ru/users/{username}",
-      "detections": [{
-        "return": "true",
-        "string": "frm_profile",
-        "type": "normal"
-      }],
+      "detections": [
+        {
+          "return": "true",
+          "string": "frm_profile",
+          "type": "normal"
+        }
+      ],
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
+      "extract": [],
       "type": "unavailable"
     },
     {
       "url": "https://travellerspoint.com/users/{username}",
-      "detections": [{
+      "detections": [
+        {
           "return": "false",
           "string": "404 Not Found",
           "type": "advanced"
@@ -6240,23 +6898,28 @@
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
+      "extract": [],
       "type": "Social network service"
     },
     {
       "url": "https://trello.com/{username}",
-      "detections": [{
-        "return": "false",
-        "string": "Page not found",
-        "type": "advanced"
-      }],
+      "detections": [
+        {
+          "return": "false",
+          "string": "Page not found",
+          "type": "advanced"
+        }
+      ],
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
+      "extract": [],
       "type": "unavailable"
     },
     {
       "url": "https://tripadvisor.com/members/{username}",
-      "detections": [{
+      "detections": [
+        {
           "return": "false",
           "string": "This page is on vacation",
           "type": "advanced"
@@ -6275,11 +6938,13 @@
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
+      "extract": [],
       "type": "unavailable"
     },
     {
       "url": "https://tryhackme.com/p/{username}",
-      "detections": [{
+      "detections": [
+        {
           "return": "false",
           "string": "An error occured",
           "type": "advanced"
@@ -6298,23 +6963,28 @@
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
+      "extract": [],
       "type": "unavailable"
     },
     {
       "url": "https://twitch.tv/{username}",
-      "detections": [{
-        "return": "false",
-        "string": "that content is unavailable",
-        "type": "advanced"
-      }],
+      "detections": [
+        {
+          "return": "false",
+          "string": "that content is unavailable",
+          "type": "advanced"
+        }
+      ],
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
+      "extract": [],
       "type": "Live streaming"
     },
     {
       "url": "https://udemy.com/user/{username}/",
-      "detections": [{
+      "detections": [
+        {
           "return": "true",
           "string": "-profile-",
           "type": "normal"
@@ -6328,11 +6998,13 @@
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
+      "extract": [],
       "type": "unavailable"
     },
     {
       "url": "https://uid.me/{username}",
-      "detections": [{
+      "detections": [
+        {
           "return": "false",
           "string": "Page not found",
           "type": "advanced"
@@ -6351,11 +7023,13 @@
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
+      "extract": [],
       "type": "unavailable"
     },
     {
       "url": "https://ultimate-guitar.com/u/{username}",
-      "detections": [{
+      "detections": [
+        {
           "return": "false",
           "string": "We couldn't find that page",
           "type": "advanced"
@@ -6379,11 +7053,13 @@
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
+      "extract": [],
       "type": "Tablature archive"
     },
     {
       "url": "https://unsplash.com/@{username}",
-      "detections": [{
+      "detections": [
+        {
           "return": "false",
           "string": "the page you were looking",
           "type": "advanced"
@@ -6407,11 +7083,13 @@
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
+      "extract": [],
       "type": "Stock photography"
     },
     {
       "url": "https://us.forums.blizzard.com/en/blizzard/u/{username}",
-      "detections": [{
+      "detections": [
+        {
           "return": "false",
           "string": "Page Not Found",
           "type": "normal"
@@ -6430,23 +7108,28 @@
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
+      "extract": [],
       "type": "unavailable"
     },
     {
       "url": "https://v2ex.com/member/{username}",
-      "detections": [{
-        "return": "true",
-        "string": "号会员，加入于",
-        "type": "normal"
-      }],
+      "detections": [
+        {
+          "return": "true",
+          "string": "号会员，加入于",
+          "type": "normal"
+        }
+      ],
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
+      "extract": [],
       "type": "Internet forum"
     },
     {
       "url": "https://venmo.com/{username}",
-      "detections": [{
+      "detections": [
+        {
           "return": "false",
           "string": "the page you requested does",
           "type": "advanced"
@@ -6470,11 +7153,13 @@
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
+      "extract": [],
       "type": "unavailable"
     },
     {
       "url": "https://vero.co/{username}",
-      "detections": [{
+      "detections": [
+        {
           "return": "false",
           "string": "The page you are looking",
           "type": "advanced"
@@ -6493,11 +7178,13 @@
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
+      "extract": [],
       "type": "unavailable"
     },
     {
       "url": "https://vgr.com/forum/profile/{username}",
-      "detections": [{
+      "detections": [
+        {
           "return": "false",
           "string": "The page you requested",
           "type": "normal"
@@ -6516,23 +7203,28 @@
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
+      "extract": [],
       "type": "unavailable"
     },
     {
       "url": "https://videogamer.com/forums/index.php?/profile/{username}/",
-      "detections": [{
-        "return": "true",
-        "string": "ProfilePhoto",
-        "type": "normal"
-      }],
+      "detections": [
+        {
+          "return": "true",
+          "string": "ProfilePhoto",
+          "type": "normal"
+        }
+      ],
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
+      "extract": [],
       "type": "unavailable"
     },
     {
       "url": "https://vimeo.com/{username}",
-      "detections": [{
+      "detections": [
+        {
           "return": "false",
           "string": "Make sure you’ve typed the URL correctly",
           "type": "normal"
@@ -6555,14 +7247,17 @@
     },
     {
       "url": "https://virgool.io/@{username}",
-      "detections": [{
-        "return": "true",
-        "string": "profile-",
-        "type": "normal"
-      }],
+      "detections": [
+        {
+          "return": "true",
+          "string": "profile-",
+          "type": "normal"
+        }
+      ],
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
+      "extract": [],
       "type": "unavailable"
     },
     {
@@ -6571,11 +7266,13 @@
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
+      "extract": [],
       "type": "Internet security"
     },
     {
       "url": "https://vk.com/{username}",
-      "detections": [{
+      "detections": [
+        {
           "return": "false",
           "string": "404 Not Found",
           "type": "normal"
@@ -6594,11 +7291,13 @@
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
+      "extract": [],
       "type": "Social networking service"
     },
     {
       "url": "https://voice.com/profile/{username}",
-      "detections": [{
+      "detections": [
+        {
           "return": "false",
           "string": "\"name\":\"Home",
           "type": "normal"
@@ -6617,11 +7316,13 @@
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
+      "extract": [],
       "type": "unavailable"
     },
     {
       "url": "https://vsco.co/{username}",
-      "detections": [{
+      "detections": [
+        {
           "return": "false",
           "string": "This page does not exist",
           "type": "advanced"
@@ -6635,11 +7336,13 @@
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
+      "extract": [],
       "type": "unavailable"
     },
     {
       "url": "https://warriorforum.com/members/{username}.html",
-      "detections": [{
+      "detections": [
+        {
           "return": "false",
           "string": "This user has not registered",
           "type": "normal"
@@ -6663,11 +7366,13 @@
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
+      "extract": [],
       "type": "unavailable"
     },
     {
       "url": "https://wattpad.com/user/{username}",
-      "detections": [{
+      "detections": [
+        {
           "return": "false",
           "string": "User not found",
           "type": "normal"
@@ -6686,11 +7391,13 @@
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
+      "extract": [],
       "type": "Reading app"
     },
     {
       "url": "https://weheartit.com/{username}",
-      "detections": [{
+      "detections": [
+        {
           "return": "false",
           "string": "landed on a moving target",
           "type": "normal"
@@ -6714,11 +7421,13 @@
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
+      "extract": [],
       "type": "unavailable"
     },
     {
       "url": "https://wikidot.com/user:info/{username}",
-      "detections": [{
+      "detections": [
+        {
           "return": "false",
           "string": "User Information",
           "type": "normal"
@@ -6737,34 +7446,42 @@
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
+      "extract": [],
       "type": "Online website builder"
     },
     {
       "url": "https://en.wikipedia.org/wiki/Special:CentralAuth/{username}",
-      "detections": [{
-        "name": "mediawiki",
-        "type": "shared"
-      }],
+      "detections": [
+        {
+          "name": "mediawiki",
+          "type": "shared"
+        }
+      ],
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
+      "extract": [],
       "type": "Online encyclopedia"
     },
     {
       "url": "https://wordnik.com/users/{username}",
-      "detections": [{
-        "return": "false",
-        "string": "You've found our 404 page",
-        "type": "normal"
-      }],
+      "detections": [
+        {
+          "return": "false",
+          "string": "You've found our 404 page",
+          "type": "normal"
+        }
+      ],
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
+      "extract": [],
       "type": "Digital dictionary"
     },
     {
       "url": "https://xboxgamertag.com/search/{username}",
-      "detections": [{
+      "detections": [
+        {
           "return": "false",
           "string": "Gamertag doesn",
           "type": "normal"
@@ -6778,11 +7495,13 @@
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
+      "extract": [],
       "type": "unavailable"
     },
     {
       "url": "https://xhamster.com/users/{username}",
-      "detections": [{
+      "detections": [
+        {
           "return": "false",
           "string": "User not found",
           "type": "normal"
@@ -6796,11 +7515,13 @@
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
+      "extract": [],
       "type": "adult"
     },
     {
       "url": "https://xrares.com/user/{username}",
-      "detections": [{
+      "detections": [
+        {
           "return": "false",
           "string": "This user does not exist",
           "type": "normal"
@@ -6814,11 +7535,13 @@
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
+      "extract": [],
       "type": "unavailable"
     },
     {
       "url": "https://xvideos.com/profiles/{username}",
-      "detections": [{
+      "detections": [
+        {
           "return": "false",
           "string": "THIS PROFILE DOESN",
           "type": "normal"
@@ -6832,11 +7555,13 @@
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
+      "extract": [],
       "type": "adult"
     },
     {
       "url": "https://xxxbunker.com/users/{username}",
-      "detections": [{
+      "detections": [
+        {
           "return": "false",
           "string": "FILE NOT FOUND",
           "type": "normal"
@@ -6850,11 +7575,13 @@
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
+      "extract": [],
       "type": "adult"
     },
     {
       "url": "https://youpic.com/photographer/{username}",
-      "detections": [{
+      "detections": [
+        {
           "return": "false",
           "string": "404 page",
           "type": "normal"
@@ -6873,11 +7600,13 @@
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
+      "extract": [],
       "type": "unavailable"
     },
     {
-      "url": "https://youtube.com/{username}",
-      "detections": [{
+      "url": "https://youtube.com/c/{username}/about",
+      "detections": [
+        {
           "return": "false",
           "string": "This page isn't available",
           "type": "advanced"
@@ -6902,11 +7631,18 @@
       "top": "top10",
       "timeout": 0,
       "implicit": 0,
+      "extract": [
+        {
+          "type": "link",
+          "regex": "{\"webCommandMetadata\":{\"url\":\"https://www.youtube.com/[^\"]+(http[^\"]+)"
+        }
+      ],
       "type": "Video hosting service"
     },
     {
       "url": "https://zhihu.com/people/{username}",
-      "detections": [{
+      "detections": [
+        {
           "return": "false",
           "string": ">404",
           "type": "normal"
@@ -6920,11 +7656,13 @@
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
+      "extract": [],
       "type": "Knowledge markets"
     },
     {
       "url": "https://{username}.blogspot.com",
-      "detections": [{
+      "detections": [
+        {
           "return": "false",
           "string": "the blog you were looking",
           "type": "advanced"
@@ -6948,6 +7686,7 @@
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
+      "extract": [],
       "type": "Blog host"
     },
     {
@@ -6956,11 +7695,13 @@
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
+      "extract": [],
       "type": "unavailable"
     },
     {
       "url": "https://{username}.carbonmade.com",
-      "detections": [{
+      "detections": [
+        {
           "return": "false",
           "string": "site not found",
           "type": "advanced"
@@ -6979,6 +7720,7 @@
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
+      "extract": [],
       "type": "unavailable"
     },
     {
@@ -6987,11 +7729,13 @@
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
+      "extract": [],
       "type": "unavailable"
     },
     {
       "url": "https://{username}.crevado.com",
-      "detections": [{
+      "detections": [
+        {
           "return": "false",
           "string": "Site not found",
           "type": "advanced"
@@ -7010,11 +7754,13 @@
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
+      "extract": [],
       "type": "unavailable"
     },
     {
       "url": "https://{username}.deviantart.com",
-      "detections": [{
+      "detections": [
+        {
           "return": "false",
           "string": "Page Not Found",
           "type": "advanced"
@@ -7038,11 +7784,13 @@
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
+      "extract": [],
       "type": "Art display/Social networking service"
     },
     {
       "url": "https://{username}.hatenablog.com/about",
-      "detections": [{
+      "detections": [
+        {
           "return": "false",
           "string": "Blog is not found",
           "type": "advanced"
@@ -7061,11 +7809,13 @@
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
+      "extract": [],
       "type": "unavailable"
     },
     {
       "url": "https://{username}.hubpages.com",
-      "detections": [{
+      "detections": [
+        {
           "return": "false",
           "string": "Page does not exist",
           "type": "advanced"
@@ -7084,11 +7834,13 @@
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
+      "extract": [],
       "type": "unavailable"
     },
     {
       "url": "https://{username}.itch.io",
-      "detections": [{
+      "detections": [
+        {
           "return": "false",
           "string": "t find your page",
           "type": "advanced"
@@ -7107,6 +7859,7 @@
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
+      "extract": [],
       "type": "unavailable"
     },
     {
@@ -7115,11 +7868,13 @@
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
+      "extract": [],
       "type": "unavailable"
     },
     {
       "url": "https://{username}.livejournal.com",
-      "detections": [{
+      "detections": [
+        {
           "return": "false",
           "string": "Use the links to access more options",
           "type": "advanced"
@@ -7143,11 +7898,13 @@
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
+      "extract": [],
       "type": "Blog hosting"
     },
     {
       "url": "https://{username}.newgrounds.com",
-      "detections": [{
+      "detections": [
+        {
           "return": "false",
           "string": "exists in our system",
           "type": "advanced"
@@ -7166,11 +7923,13 @@
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
+      "extract": [],
       "type": "Entertainment"
     },
     {
       "url": "https://{username}.rajce.idnes.cz",
-      "detections": [{
+      "detections": [
+        {
           "return": "false",
           "string": "err-site",
           "type": "normal"
@@ -7184,11 +7943,13 @@
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
+      "extract": [],
       "type": "unavailable"
     },
     {
       "url": "https://{username}.skyrock.com/profil",
-      "detections": [{
+      "detections": [
+        {
           "return": "false",
           "string": "Page not found",
           "type": "advanced"
@@ -7212,6 +7973,7 @@
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
+      "extract": [],
       "type": "unavailable"
     },
     {
@@ -7220,11 +7982,13 @@
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
+      "extract": [],
       "type": "unavailable"
     },
     {
       "url": "https://{username}.tumblr.com",
-      "detections": [{
+      "detections": [
+        {
           "return": "false",
           "string": "There's nothing here",
           "type": "advanced"
@@ -7249,11 +8013,13 @@
       "top": "top10",
       "timeout": 0,
       "implicit": 0,
+      "extract": [],
       "type": "unavailable"
     },
     {
       "url": "https://{username}.webnode.cz",
-      "detections": [{
+      "detections": [
+        {
           "return": "false",
           "string": "We are sorry",
           "type": "advanced"
@@ -7272,23 +8038,28 @@
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
+      "extract": [],
       "type": "unavailable"
     },
     {
       "url": "https://{username}.wix.com",
-      "detections": [{
-        "return": "false",
-        "string": "We Looked Everywhere",
-        "type": "advanced"
-      }],
+      "detections": [
+        {
+          "return": "false",
+          "string": "We Looked Everywhere",
+          "type": "advanced"
+        }
+      ],
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
+      "extract": [],
       "type": "unavailable"
     },
     {
       "url": "https://{username}.wordpress.com",
-      "detections": [{
+      "detections": [
+        {
           "return": "false",
           "string": "Do you want to register",
           "type": "advanced"
@@ -7312,11 +8083,13 @@
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
+      "extract": [],
       "type": "unavailable"
     },
     {
       "url": "https://{username}.www.nn.ru",
-      "detections": [{
+      "detections": [
+        {
           "return": "false",
           "string": "404<",
           "type": "normal"
@@ -7335,6 +8108,7 @@
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
+      "extract": [],
       "type": "unavailable"
     },
     {
@@ -7354,6 +8128,7 @@
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
+      "extract": [],
       "type": "unavailable"
     },
     {
@@ -7373,6 +8148,7 @@
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
+      "extract": [],
       "type": "unavailable"
     },
     {
@@ -7392,6 +8168,7 @@
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
+      "extract": [],
       "type": "unavailable"
     },
     {
@@ -7416,6 +8193,7 @@
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
+      "extract": [],
       "type": "unavailable"
     },
     {
@@ -7435,6 +8213,7 @@
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
+      "extract": [],
       "type": "unavailable"
     },
     {
@@ -7454,6 +8233,7 @@
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
+      "extract": [],
       "type": "unavailable"
     },
     {
@@ -7473,6 +8253,7 @@
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
+      "extract": [],
       "type": "unavailable"
     },
     {
@@ -7492,6 +8273,7 @@
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
+      "extract": [],
       "type": "unavailable"
     },
     {
@@ -7511,6 +8293,7 @@
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
+      "extract": [],
       "type": "unavailable"
     },
     {
@@ -7530,6 +8313,7 @@
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
+      "extract": [],
       "type": "unavailable"
     },
     {
@@ -7549,6 +8333,7 @@
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
+      "extract": [],
       "type": "unavailable"
     },
     {
@@ -7568,6 +8353,7 @@
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
+      "extract": [],
       "type": "unavailable"
     },
     {
@@ -7587,6 +8373,7 @@
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
+      "extract": [],
       "type": "unavailable"
     },
     {
@@ -7606,6 +8393,7 @@
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
+      "extract": [],
       "type": "unavailable"
     },
     {
@@ -7625,6 +8413,7 @@
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
+      "extract": [],
       "type": "unavailable"
     },
     {
@@ -7649,6 +8438,7 @@
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
+      "extract": [],
       "type": "unavailable"
     },
     {
@@ -7668,6 +8458,7 @@
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
+      "extract": [],
       "type": "unavailable"
     },
     {
@@ -7687,6 +8478,7 @@
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
+      "extract": [],
       "type": "unavailable"
     },
     {
@@ -7706,65 +8498,76 @@
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
+      "extract": [],
       "type": "unavailable"
     }
   ],
-  "shared_detections": [{
-    "name": "mastodon",
-    "detections": [{
-        "return": "false",
-        "string": "The page you are looking for isn",
-        "type": "advanced"
-      },
-      {
-        "return": "false",
-        "string": "The page you are looking for isn",
-        "type": "normal"
-      },
-      {
-        "return": "true",
-        "string": "profile:username",
-        "type": "normal"
-      },
-      {
-        "return": "true",
-        "string": "/@{username}",
-        "type": "normal"
-      }
-    ]
-  }, {
-    "name": "discourse",
-    "detections": [{
-        "return": "true",
-        "string": "og:title",
-        "type": "normal"
-      },
-      {
-        "return": "true",
-        "string": "\"{username}\"",
-        "type": "normal"
-      }
-    ]
-  }, {
-    "name": "gitlab",
-    "detections": [{
-      "return": "true",
-      "string": "user-profile",
-      "type": "normal"
-    }]
-  }, {
-    "name": "mediawiki",
-    "detections": [{
-        "return": "true",
-        "string": "Registered",
-        "type": "normal"
-      },
-      {
-        "return": "true",
-        "string": "Total edit count",
-        "type": "normal"
-      }
-    ]
-  }],
+  "shared_detections": [
+    {
+      "name": "mastodon",
+      "detections": [
+        {
+          "return": "false",
+          "string": "The page you are looking for isn",
+          "type": "advanced"
+        },
+        {
+          "return": "false",
+          "string": "The page you are looking for isn",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "profile:username",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "/@{username}",
+          "type": "normal"
+        }
+      ]
+    },
+    {
+      "name": "discourse",
+      "detections": [
+        {
+          "return": "true",
+          "string": "og:title",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "\"{username}\"",
+          "type": "normal"
+        }
+      ]
+    },
+    {
+      "name": "gitlab",
+      "detections": [
+        {
+          "return": "true",
+          "string": "user-profile",
+          "type": "normal"
+        }
+      ]
+    },
+    {
+      "name": "mediawiki",
+      "detections": [
+        {
+          "return": "true",
+          "string": "Registered",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "Total edit count",
+          "type": "normal"
+        }
+      ]
+    }
+  ],
   "generic_detection": []
 }
