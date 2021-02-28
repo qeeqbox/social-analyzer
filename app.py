@@ -25,6 +25,7 @@ from tld import get_fld
 from functools import wraps
 from bs4 import BeautifulSoup
 from re import sub as resub
+from re import findall
 from copy import deepcopy
 from contextlib import suppress
 from langdetect import detect
@@ -34,6 +35,7 @@ from random import randint
 from tempfile import mkdtemp
 from termcolor import colored
 from os import system
+from urllib.parse import unquote, urlparse
 
 if platform == "win32":
 	system("color")
@@ -205,7 +207,6 @@ def find_username_normal(req):
 			"User-Agent": "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:84.0) Gecko/20100101 Firefox/84.0",
 		}
 
-
 		try:
 			response = get(site["url"].replace("{username}", username), timeout=5, headers=headers, verify=False)
 			source = response.text
@@ -215,6 +216,13 @@ def find_username_normal(req):
 			temp_profile = {}
 			temp_detected = {}
 			detections_count = 0
+
+			def check_url(url):
+				with suppress(Exception):
+					result = urlparse(url)
+					if result.scheme == "http" or result.scheme == "https":
+						return all([result.scheme, result.netloc])
+				return False
 
 			def merge_dicts(temp_dict):
 				result = {}
@@ -240,6 +248,7 @@ def find_username_normal(req):
 				  "language": "unavailable",
 				  "text": "unavailable",
 				  "type": "unavailable",
+				  "extract":"unavailable",
 				  "good":"",
 				  "method":""
 				}
@@ -288,6 +297,23 @@ def find_username_normal(req):
 			with suppress(Exception):
 				temp_profile["title"] = BeautifulSoup(source, "html.parser").title.string
 				temp_profile["title"] = resub("\s\s+", " ", temp_profile["title"])
+
+			with suppress(Exception):
+				temp_matches = []
+				if "extract" in site:
+					for item in site["extract"]:
+						matches = findall(item["regex"],source)
+						for match in matches:
+							if item["type"] == "link":
+								if check_url(unquote(match)):
+									parsed ="{}:({})".format(item["type"],unquote(match))
+									if parsed not in temp_matches:
+										temp_matches.append(parsed)
+
+				if len(temp_matches) > 0:
+					temp_profile["extract"] = ", ".join(temp_matches)
+				else:
+					del temp_profile["extract"]
 
 			temp_profile["text"] = temp_profile["text"].replace("\n", "").replace("\t", "").replace("\r", "").strip()
 			temp_profile["title"] = temp_profile["title"].replace("\n", "").replace("\t", "").replace("\r", "").strip()
@@ -380,7 +406,7 @@ def check_user_cli(argv):
 					item = clean_up_item(item,argv.options)
 					temp_detected["detected"].append(item)
 				else:
-					item = delete_keys(item,["found","rate","status","method","good"])
+					item = delete_keys(item,["found","rate","status","method","good","extract"])
 					item = clean_up_item(item,argv.options)
 					temp_detected["unknown"].append(item)
 			elif item["method"] == "find":
@@ -389,11 +415,11 @@ def check_user_cli(argv):
 					item = clean_up_item(item,argv.options)
 					temp_detected["detected"].append(item)
 			elif item["method"] == "get":
-				item = delete_keys(item,["found","rate","status","method","good"])
+				item = delete_keys(item,["found","rate","status","method","good", "extract"])
 				item = clean_up_item(item,argv.options)
 				temp_detected["unknown"].append(item)
 			else:
-				item = delete_keys(item,["found","rate","status","method","good","text","title","language","rate"])
+				item = delete_keys(item,["found","rate","status","method","good","text","title","language","rate", "extract"])
 				item = clean_up_item(item,argv.options)
 				temp_detected["failed"].append(item)
 
