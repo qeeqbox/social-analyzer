@@ -40,6 +40,7 @@ Profile images **will not** be blurred. If you want them to be blurred, turn tha
 - String & name analysis
 - Find profile using multiple techniques (HTTPS library & Webdriver)
 - Multi layers detections (OCR, normal, advanced & special)
+- Metadata & Patterns extraction (Added from Qeeqbox osint project)
 - Search engine lookup (Google API - optional)
 - Custom search queries (Google API & DuckDuckGo API - optional)
 - Profile screenshot, title, info and website description
@@ -63,8 +64,8 @@ Profile images **will not** be blurred. If you want them to be blurred, turn tha
 # You can also scan all websites using --websites "all"
 # There will be status:good or rate:%100 for existing profiles
 
-pip install social-analyzer
-python -m social-analyzer --cli --mode "fast" --username "johndoe" --websites "youtube pinterest tumblr" --output "pretty"
+pip3 install social-analyzer
+python3 -m social-analyzer --cli --mode "fast" --username "johndoe" --websites "youtube pinterest tumblr" --output "pretty" --metadata --extract --trim
 ```
 
 ## Install and run as NodeJS Web App (Linux + NodeJS + NPM + Firefox)

@@ -12,8 +12,8 @@ Running Example
 ===============
 .. code:: bash
 
-    pip install social-analyzer
-    python -m social-analyzer --cli --mode "fast" --username "johndoe" --websites "youtube pinterest tumblr" --output "pretty"
+    pip3 install social-analyzer
+    python3 -m social-analyzer --cli --mode "fast" --username "johndoe" --websites "youtube pinterest tumblr" --output "pretty" --metadata --extract --trim
 
 Find Profile CLI (Fast)
 =======================
