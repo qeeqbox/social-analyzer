@@ -135,8 +135,8 @@ class CustomHandler(Handler):
 										for idx, _item in enumerate(value):
 											empty_string = ""
 											for _item_key, _item_value in _item.items():
-												if self.argv.trim and _item_key == "content":
-													empty_string += "{}: {} ".format(colored(_item_key, 'blue'),colored(_item_value[:50]+"...", 'yellow'))
+												if self.argv.trim and _item_key == "content" and len(_item_value) > 50:
+													empty_string += "{}: {} ".format(colored(_item_key, 'blue'),colored(_item_value[:50]+"..", 'yellow'))
 												else:
 													empty_string += "{}: {} ".format(colored(_item_key, 'blue'),colored(_item_value, 'yellow'))
 											if _item == value[0]:
