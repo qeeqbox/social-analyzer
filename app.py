@@ -26,7 +26,6 @@ from functools import wraps
 from bs4 import BeautifulSoup
 from re import sub as resub
 from re import findall
-from copy import deepcopy
 from contextlib import suppress
 from langdetect import detect
 from urllib3.exceptions import InsecureRequestWarning
@@ -51,6 +50,7 @@ LANGUAGES_PATH = path.join(path.dirname(__file__),"data","languages.json")
 LANGUAGES_JSON = {}
 WORKERS = 15
 CUSTOM_MESSAGE = 51
+OUTPUT_LEN = 100
 
 with open(LANGUAGES_PATH) as f:
 	LANGUAGES_JSON =  load(f)
@@ -108,28 +108,54 @@ def check_errors(on_off=None):
 	return decorator
 
 class CustomHandler(Handler):
-	def __init__(self):
+	def __init__(self, argv=None):
 		Handler.__init__(self)
+		self.argv = argv
 
 	def emit(self, record):
-		if record.levelname == "CUSTOM":
-			print_between = False
-			for item in record.msg:
-				with suppress(Exception):
-					if item == record.msg[0]:
+		if argv.output != "json":
+			if record.levelname == "CUSTOM":
+				print_between = False
+				for item in record.msg:
+					with suppress(Exception):
+						if item == record.msg[0]:
+							print("-----------------------")
+						for key, value in item.items():
+							if key == "extracted":
+								if self.argv.extract:
+									with suppress(Exception):
+										for idx, _item in enumerate(value):
+											if _item == value[0]:
+												print("{}: [{}] {}: {}".format(colored(key.ljust(10, ' '), 'blue'), colored(str(idx).rjust(2, '0'), 'blue') ,colored(_item["name"], 'blue'),colored(_item["value"], 'yellow')))
+											else:
+												print("{}: [{}] {}: {}".format(colored("".ljust(10, ' '), 'blue'), colored(str(idx).rjust(2, '0'), 'blue') ,colored(_item["name"], 'blue'),colored(_item["value"], 'yellow')))
+							elif key == "metadata":
+								if self.argv.metadata:
+									with suppress(Exception):
+										for idx, _item in enumerate(value):
+											empty_string = ""
+											for _item_key, _item_value in _item.items():
+												if self.argv.trim and _item_key == "content":
+													empty_string += "{}: {} ".format(colored(_item_key, 'blue'),colored(_item_value[:50]+"...", 'yellow'))
+												else:
+													empty_string += "{}: {} ".format(colored(_item_key, 'blue'),colored(_item_value, 'yellow'))
+											if _item == value[0]:
+												print("{}: [{}] {}".format(colored(key.ljust(10, ' '), 'blue'), colored(str(idx).rjust(2, '0'), 'blue') , empty_string[:-1]))
+											else:
+												print("{}: [{}] {}".format(colored("".ljust(10, ' '), 'blue'),  colored(str(idx).rjust(2, '0'), 'blue') ,empty_string[:-1]))
+							else:
+								print(colored(key.ljust(10, ' '), 'blue'),colored(value, 'yellow'),sep=": ")
 						print("-----------------------")
-					for key, value in item.items():
-						print(colored(key.ljust(9, ' '), 'blue'),colored(value, 'yellow'),sep=": ")
-					print("-----------------------")
-		else:
-			print(record.msg)
+			else:
+				print(record.msg)
 
 @check_errors(True)
-def setup_logger(uuid=None,file=False):
+def setup_logger(uuid=None,file=False, argv=None):
 	temp_folder = mkdtemp()
-	print('[!] Temporary Logs Directory {}'.format(temp_folder))
+	if argv.output != "json":
+		print('[!] Temporary Logs Directory {}'.format(temp_folder))
 	LOG.setLevel(DEBUG)
-	LOG.addHandler(CustomHandler())
+	LOG.addHandler(CustomHandler(argv))
 	addLevelName(CUSTOM_MESSAGE,"CUSTOM")
 	if file and uuid:
 		fh = RotatingFileHandler(path.join(temp_folder,uuid))
@@ -248,7 +274,8 @@ def find_username_normal(req):
 				  "language": "unavailable",
 				  "text": "unavailable",
 				  "type": "unavailable",
-				  "extract":"unavailable",
+				  "extracted":"unavailable",
+				  "metadata":"unavailable",
 				  "good":"",
 				  "method":""
 				}
@@ -285,8 +312,11 @@ def find_username_normal(req):
 			if temp_profile["found"] >= detection_level[detection_level["current"]]["found"] and detections_count >= detection_level[detection_level["current"]]["count"]:
 				temp_profile["good"] = "true"
 
+			soup = None
 			with suppress(Exception):
 				soup = BeautifulSoup(source, "html.parser")
+
+			with suppress(Exception):
 				[tag.extract() for tag in soup(["head", "title","style", "script", "[document]"])]
 				temp_profile["text"] = soup.getText()
 				temp_profile["text"] = resub("\s\s+", " ", temp_profile["text"])
@@ -300,6 +330,7 @@ def find_username_normal(req):
 
 			with suppress(Exception):
 				temp_matches = []
+				temp_matches_list = []
 				if "extract" in site:
 					for item in site["extract"]:
 						matches = findall(item["regex"],source)
@@ -309,11 +340,12 @@ def find_username_normal(req):
 									parsed ="{}:({})".format(item["type"],unquote(match))
 									if parsed not in temp_matches:
 										temp_matches.append(parsed)
+										temp_matches_list.append({"name":item["type"],"value":unquote(match)})
 
-				if len(temp_matches) > 0:
-					temp_profile["extract"] = ", ".join(temp_matches)
+				if len(temp_matches_list) > 0:
+					temp_profile["extracted"] = temp_matches_list
 				else:
-					del temp_profile["extract"]
+					del temp_profile["extracted"]
 
 			temp_profile["text"] = temp_profile["text"].replace("\n", "").replace("\t", "").replace("\r", "").strip()
 			temp_profile["title"] = temp_profile["title"].replace("\n", "").replace("\t", "").replace("\r", "").strip()
@@ -330,6 +362,52 @@ def find_username_normal(req):
 						temp_profile["status"] = "maybe"
 					else:
 						temp_profile["status"] = "bad"
+
+			#copied from qeeqbox osint (pypi) project (currently in-progress)
+
+			with suppress(Exception):
+				if temp_profile["status"] == "good":
+					temp_meta_list = []
+					temp_for_checking = []
+					for meta in soup.findAll('meta'):
+						if meta not in temp_for_checking:
+							temp_for_checking.append(meta)
+							temp_mata_item = {}
+							add = True
+							if meta.has_attr("property"):
+								temp_mata_item.update({"property":meta["property"]})
+							if meta.has_attr("content"):
+								temp_mata_item.update({"content":meta["content"].replace("\n", "").replace("\t", "").replace("\r", "").strip()})
+							if meta.has_attr("itemprop"):
+								temp_mata_item.update({"itemprop":meta["itemprop"]})
+							if meta.has_attr("name"):
+								temp_mata_item.update({"name":meta["name"]})
+
+							with suppress(Exception):
+								if "property" in temp_mata_item:
+									for i, item in enumerate(temp_meta_list.copy()):
+										if "property" in item:
+											if temp_mata_item["property"] == item["property"]:
+												temp_meta_list[i]["content"] += ", " +temp_mata_item["content"]
+												add = False
+								elif "name" in temp_mata_item:
+									for i, item in enumerate(temp_meta_list.copy()):
+										if "name" in item:
+											if temp_mata_item["name"] == item["name"]:
+												temp_meta_list[i]["content"] += ", " +temp_mata_item["content"]
+												add = False
+								elif "itemprop" in temp_mata_item:
+									for i, item in enumerate(temp_meta_list.copy()):
+										if "itemprop" in item:
+											if temp_mata_item["itemprop"] == item["itemprop"]:
+												temp_meta_list[i]["content"] += ", " +temp_mata_item["content"]
+												add = False
+
+							if len(temp_mata_item) > 0 and add:
+								temp_meta_list.append(temp_mata_item)
+
+				if len(temp_meta_list) > 0:
+					temp_profile["metadata"] = temp_meta_list
 
 			temp_profile["link"] = site["url"].replace("{username}", req["body"]["string"]);
 			temp_profile["type"] = site["type"]
@@ -385,7 +463,7 @@ def check_user_cli(argv):
 			temp_options = "GetUserProfilesFast"
 
 	req = {"body": {"uuid": str(uuid4()),"string": argv.username,"options": temp_options}}
-	setup_logger(req["body"]["uuid"],True)
+	setup_logger(uuid=req["body"]["uuid"],file=True,argv=argv)
 
 	if argv.websites == "all":
 		for site in WEBSITES_ENTRIES:
@@ -406,7 +484,7 @@ def check_user_cli(argv):
 					item = clean_up_item(item,argv.options)
 					temp_detected["detected"].append(item)
 				else:
-					item = delete_keys(item,["found","rate","status","method","good","extract"])
+					item = delete_keys(item,["found","rate","status","method","good","extracted","metadata"])
 					item = clean_up_item(item,argv.options)
 					temp_detected["unknown"].append(item)
 			elif item["method"] == "find":
@@ -415,11 +493,11 @@ def check_user_cli(argv):
 					item = clean_up_item(item,argv.options)
 					temp_detected["detected"].append(item)
 			elif item["method"] == "get":
-				item = delete_keys(item,["found","rate","status","method","good", "extract"])
+				item = delete_keys(item,["found","rate","status","method","good", "extracted","metadata"])
 				item = clean_up_item(item,argv.options)
 				temp_detected["unknown"].append(item)
 			else:
-				item = delete_keys(item,["found","rate","status","method","good","text","title","language","rate", "extract"])
+				item = delete_keys(item,["found","rate","status","method","good","text","title","language","rate", "extracted","metadata"])
 				item = clean_up_item(item,argv.options)
 				temp_detected["failed"].append(item)
 
@@ -469,12 +547,16 @@ arg_parser_optional = arg_parser.add_argument_group("Optional Arguments")
 arg_parser_optional.add_argument("--output", help="Show the output in the following format: json -> json output for integration or pretty -> prettify the output", metavar="", default="")
 arg_parser_optional.add_argument("--options", help="Show the following when a profile is found: link, rate, title or text", metavar="", default="")
 arg_parser_required.add_argument("--method", help="find -> show detected profiles, get -> show all profiles regardless detected or not, both -> combine find & get", metavar="", default="all")
+arg_parser_required.add_argument("--extract",action="store_true", help="Extract profiles, urls & patterns if possible", required=False)
+arg_parser_required.add_argument("--metadata",action="store_true", help="Extract metadata if possible (pypi QeeqBox OSINT)", required=False)
+arg_parser_required.add_argument("--trim",action="store_true", help="Trim long strings", required=False)
 arg_parser_list = arg_parser.add_argument_group("Listing websites & detections")
 arg_parser_list.add_argument("--list", action="store_true",  help="List all available websites")
 argv = arg_parser.parse_args()
 
 if __name__ == "__main__":
-	print("[!] Detections are updated very often, make sure to get the most up-to-date ones")
+	if argv.output != "json":
+		print("[!] Detections are updated very often, make sure to get the most up-to-date ones")
 	if argv.cli:
 		if argv.list:
 			setup_logger()
