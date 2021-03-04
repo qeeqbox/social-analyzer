@@ -3,7 +3,7 @@
 #
 [![Generic badge](https://img.shields.io/badge/dynamic/json.svg?url=https://raw.githubusercontent.com/qeeqbox/social-analyzer/main/info&label=version&query=$.version&colorB=blue&style=flat-square)](https://github.com/qeeqbox/social-analyzer/blob/main/info) [![Generic badge](https://img.shields.io/badge/dynamic/json.svg?url=https://raw.githubusercontent.com/qeeqbox/social-analyzer/main/info&label=verified%20sites&query=$.websites&colorB=blue&style=flat-square)](https://github.com/qeeqbox/social-analyzer/blob/main/info) [![Generic badge](https://img.shields.io/badge/dynamic/json.svg?url=https://raw.githubusercontent.com/qeeqbox/social-analyzer/main/info&label=verified%20detections&query=$.detections&colorB=blue&style=flat-square)](https://github.com/qeeqbox/social-analyzer/blob/main/info) [![Generic badge](https://img.shields.io/badge/dynamic/json.svg?url=https://raw.githubusercontent.com/qeeqbox/social-analyzer/main/info&label=build&query=$.build&colorB=green&style=flat-square)](https://github.com/qeeqbox/social-analyzer/blob/main/info) [![Generic badge](https://img.shields.io/badge/dynamic/json.svg?url=https://raw.githubusercontent.com/qeeqbox/social-analyzer/main/info&label=test&query=$.test&colorB=green&style=flat-square)](https://github.com/qeeqbox/social-analyzer/blob/main/info) [![Generic badge](https://img.shields.io/badge/dynamic/json.svg?url=https://raw.githubusercontent.com/qeeqbox/social-analyzer/main/info&label=docker&query=$.docker&colorB=green&style=flat-square)](https://github.com/qeeqbox/social-analyzer/blob/main/info) [![Generic badge](https://img.shields.io/static/v1?label=%F0%9F%91%8D&message=!&color=yellow&style=flat-square)](https://github.com/qeeqbox/social-analyzer/stargazers)
 
-Social Analyzer - API, CLI & Web App for analyzing & finding a person's profile across +350 social media websites. It includes different string analysis and detection modules, you can choose which combination of modules to use during the investigation process.
+Social Analyzer - API, CLI & Web App for analyzing & finding a person's profile across +350 social media \ websites. It includes different string analysis and detection modules, you can choose which combination of modules to use during the investigation process.
 
 The detection modules utilize a rating mechanism based on different detection techniques, which produces a rate value that starts from 0 to 100 (No-Maybe-Yes). This module intended to have less false positive and it's documented in this [Wiki](https://github.com/qeeqbox/social-analyzer/wiki) link
 
@@ -107,7 +107,7 @@ sudo apt-get install -y firefox-esr tesseract-ocr git
 git clone https://github.com/qeeqbox/social-analyzer.git
 cd social-analyzer
 npm install
-node app.js --cli --mode "fast" --username "johndoe" --websites "youtube pinterest tumblr" --output "pretty"
+node app.js --cli --mode "fast" --username "johndoe" --websites "youtube pinterest tumblr" --output "pretty" --metadata --extract --trim
 ```
 
 ## Install and run as NodeJS Web App with a grid (docker-compose)
@@ -148,4 +148,5 @@ docker build -t social-analyzer . && docker run -p 9005:9005 -it social-analyzer
 ## Disclaimer\Notes
 - Make sure to download this tool from GitHub
 - This is a security project (Treat it as a security project)
-- If you want your website to be excluded from this project list, please reach out
+- This tool meant to be used locally (It does not have any type of Access Control)
+- If you want your website to be excluded from this project list, please reach out to me
