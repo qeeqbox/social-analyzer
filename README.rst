@@ -24,6 +24,7 @@ Features
 - String & name analysis
 - Find profile using multiple techniques (HTTPS library & Webdriver)
 - Multi layers detections (OCR, normal, advanced & special)
+- Metadata & Patterns extraction (Added from Qeeqbox osint project)
 - Search engine lookup (Google API - optional)
 - Custom search queries (Google API & DuckDuckGo API - optional)
 - Profile screenshot, title, info and website description
@@ -42,6 +43,13 @@ Special Detections
 - Gmail (example@gmail.com)
 - Google (example@example.com)
 
+Running Issues
+==============
+- Remember that existing profiles show `status:good` or `rate:%100`
+- Some websites return `blocked` or `invalid` <- this is the intended behavior
+- Use Proxy, VPN, TOR or anything similar for periodic suspicious-profiles checking
+- Change the user-agent to most updated one or increase the random time between requests
+
 Resources
 =========
 - DuckDuckGo API, Google API, NodeJS, bootstrap, selectize, jQuery, Wikipedia, font-awesome, selenium-webdriver & tesseract.js
@@ -49,9 +57,9 @@ Resources
 
 Disclaimer\Notes
 ================
-- Make sure to download this tool from GitHub - (ONLY) ⚠️
-- If you want your website to be excluded from this project, please reach out
-- This tool meant to be used locally (It does not have any type of Access Control)
+- Make sure to download this tool from GitHub
+- This is a security project (Treat it as a security project)
+- If you want your website to be excluded from this project list, please reach out
 
 Interviews
 ==========

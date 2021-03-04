@@ -33,6 +33,8 @@ var profile_template = {
   "language": "unavailable",
   "text": "unavailable",
   "type": "unavailable",
+  "metadata": "unavailable",
+  "extracted": "unavailable",
   "good": "",
   "method": ""
 };
@@ -79,18 +81,46 @@ function get_log_file(uuid) {
   return _string
 }
 
-function log_to_file_queue(uuid, msg, table = false) {
+function log_to_file_queue(uuid, msg, table = false, argv = undefined) {
   logs_queue = logs_queue.then(function() {
     return new Promise(function(resolve) {
       temp_log_file = slash(path.join('logs', uuid + "_log.txt"))
       fs.appendFile(temp_log_file, msg + "\n", function(err, data) {
         if (table) {
-          msg.forEach((item,index) => {
-            if (index == 0){
+          msg.forEach((item, index) => {
+            if (index == 0) {
               console.log("-----------------------")
             }
             for (const [key, value] of Object.entries(item)) {
-              console.log(colors.blue(key.padEnd(9)) + " : " + colors.yellow(value));
+              if (key == "extracted" || key == "metadata") {
+                if ((key == "extracted" && argv.extract) || (key == "metadata" && argv.metadata)) {
+                  if (value != "unavailable")
+                  {
+                    try {
+                      value.forEach((metadata_item, i) => {
+                        var temp_string_meta = key + " " + i
+                        temp_string_meta = temp_string_meta.padEnd(13)
+                        temp_string_meta = colors.blue(temp_string_meta) + ": "
+                        for (const [metadata_key, metadata_value] of Object.entries(metadata_item)) {
+                          if (metadata_value.length > 80 && argv.trim) {
+                            temp_string_meta += colors.blue(metadata_key) + " : " + colors.yellow(metadata_value.substring(0, 80).replace(/\r?\n|\r/g, "") + "..") + " "
+                          } else {
+                            temp_string_meta += colors.blue(metadata_key) + " : " + colors.yellow(metadata_value.replace(/\r?\n|\r/g, "")) + " "
+                          }
+                        };
+                        console.log(temp_string_meta)
+                      });
+                    } catch (err) {
+
+                    }
+                  }
+                  else{
+                    console.log(colors.blue(key.padEnd(12)) + " : " + colors.yellow(value));
+                  }
+                }
+              } else {
+                console.log(colors.blue(key.padEnd(12)) + " : " + colors.yellow(value));
+              }
             }
             console.log("-----------------------")
           });
@@ -232,11 +262,10 @@ async function is_empty(file) {
   try {
     stats = fs.statSync(file);
     console.log(stats.size)
-    if (stats.size > 0 ){
+    if (stats.size > 0) {
       return true
     }
-  } catch (err) {
-  }
+  } catch (err) {}
 
   return false
 }
@@ -261,15 +290,14 @@ async function setup_tecert() {
 
     let get_eng = await http_promise
     if (get_eng == 1) {
-        if (fs.existsSync('eng.traineddata')) {
-            tecert_file = path.resolve(__dirname, 'eng.traineddata')
-        }
-    }
-  }
-  else{
-    if (tecert_file == ""){
       if (fs.existsSync('eng.traineddata')) {
-          tecert_file = path.resolve(__dirname, 'eng.traineddata')
+        tecert_file = path.resolve(__dirname, 'eng.traineddata')
+      }
+    }
+  } else {
+    if (tecert_file == "") {
+      if (fs.existsSync('eng.traineddata')) {
+        tecert_file = path.resolve(__dirname, 'eng.traineddata')
       }
     }
   }

@@ -1,4 +1,5 @@
 var helper = require('./helper.js')
+var extraction = require('./extraction.js')
 var async = require("async");
 var sanitizeHtml = require("sanitize-html");
 var {
@@ -140,8 +141,24 @@ async function find_username_site(uuid, username, options, site) {
             temp_profile.status = "bad"
           }
         }
+
         temp_profile.link = site.url.replace("{username}", username);
         temp_profile.type = site.type
+
+        if (temp_profile.status == "good"){
+          var temp_metadata_list = []
+          temp_metadata_list = await extraction.extract_metadata(site,source)
+          if (temp_metadata_list.length > 0)
+          {
+            temp_profile.metadata = temp_metadata_list
+          }
+          var temp_extracted_list = []
+          temp_extracted_list = await extraction.extract_patterns(site,source)
+          if (temp_extracted_list.length > 0)
+          {
+            temp_profile.extracted = temp_extracted_list
+          }
+        }
 
         if (options.includes("FindUserProfilesFast") && !options.includes("GetUserProfilesFast")) {
           temp_profile.method = "find"
