@@ -7187,29 +7187,6 @@
       "type": "unavailable"
     },
     {
-      "url": "https://{username}.hubpages.com",
-      "detections": [{
-          "return": "false",
-          "string": "Page does not exist",
-          "type": "ocr"
-        },
-        {
-          "return": "false",
-          "string": "Page does not exist",
-          "type": "normal"
-        },
-        {
-          "return": "true",
-          "string": "\"profile\"",
-          "type": "normal"
-        }
-      ],
-      "selected": "false",
-      "timeout": 0,
-      "implicit": 0,
-      "type": "unavailable"
-    },
-    {
       "url": "https://{username}.itch.io",
       "detections": [{
           "return": "false",
