@@ -121,30 +121,20 @@ class CustomHandler(Handler):
 						if item == record.msg[0]:
 							print("-----------------------")
 						for key, value in item.items():
-							if key == "extracted":
-								if self.argv.extract:
+							if key == "metadata" or key == "extracted":
+								if (self.argv.metadata and key == "metadata") or (self.argv.extract and key == "extracted") :
 									with suppress(Exception):
 										for idx, _item in enumerate(value):
-											if _item == value[0]:
-												print("{}: [{}] {}: {}".format(colored(key.ljust(10, ' '), 'blue'), colored(str(idx).rjust(2, '0'), 'blue') ,colored(_item["name"], 'blue'),colored(_item["value"], 'yellow')))
-											else:
-												print("{}: [{}] {}: {}".format(colored("".ljust(10, ' '), 'blue'), colored(str(idx).rjust(2, '0'), 'blue') ,colored(_item["name"], 'blue'),colored(_item["value"], 'yellow')))
-							elif key == "metadata":
-								if self.argv.metadata:
-									with suppress(Exception):
-										for idx, _item in enumerate(value):
-											empty_string = ""
+											empty_string = key + " " + str(idx)
+											empty_string = colored(empty_string.ljust(13, ' '), 'blue') + ": "
 											for _item_key, _item_value in _item.items():
 												if self.argv.trim and _item_key == "content" and len(_item_value) > 50:
-													empty_string += "{}: {} ".format(colored(_item_key, 'blue'),colored(_item_value[:50]+"..", 'yellow'))
+													empty_string += "{} : {} ".format(colored(_item_key, 'blue'),colored(_item_value[:50]+"..", 'yellow'))
 												else:
-													empty_string += "{}: {} ".format(colored(_item_key, 'blue'),colored(_item_value, 'yellow'))
-											if _item == value[0]:
-												print("{}: [{}] {}".format(colored(key.ljust(10, ' '), 'blue'), colored(str(idx).rjust(2, '0'), 'blue') , empty_string[:-1]))
-											else:
-												print("{}: [{}] {}".format(colored("".ljust(10, ' '), 'blue'),  colored(str(idx).rjust(2, '0'), 'blue') ,empty_string[:-1]))
+													empty_string += "{} : {} ".format(colored(_item_key, 'blue'),colored(_item_value, 'yellow'))
+											print("{}".format(empty_string))
 							else:
-								print(colored(key.ljust(10, ' '), 'blue'),colored(value, 'yellow'),sep=": ")
+								print(colored(key.ljust(13, ' '), 'blue'),colored(value, 'yellow'),sep=": ")
 						print("-----------------------")
 			else:
 				print(record.msg)
