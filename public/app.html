@@ -219,11 +219,11 @@
     padding-right: 2px;
   }
 
-  .selectize-dropdown .optgroup{
+  .selectize-dropdown .optgroup {
     border-top: 1px solid #666666;
   }
 
-  .optgroup-header{
+  .optgroup-header {
     border: none !important;
     background-color: #383939 !important;
     color: #d0d0d0 !important;
@@ -603,17 +603,16 @@
     opacity: 0.1 !important;
   }
 
-  #div-right-icon{
-    float:right;
+  #div-right-icon {
+    float: right;
     font-size: 16px;
   }
 
-  #logs-section pre{
+  #logs-section pre {
     color: #d0d0d0 !important;
     font-size: 12px !important;
     font-family: monospace !important;
   }
-
 </style>
 
 <body>
@@ -708,26 +707,30 @@
           <div class="cell-separator"></div>
           <select name="analyzed-options" placeholder="Choose some options..." id="analyzed-options" multiple="multiple">
             <optgroup label="Name Analysis">
-            <option value="WordInfo">WordInfo</option>
-            <option value="MostCommon">MostCommon</option>
-            <option value="FindOrigins">FindOrigins</option>
+              <option value="WordInfo">WordInfo</option>
+              <option value="MostCommon">MostCommon</option>
+              <option value="FindOrigins">FindOrigins</option>
             </optgroup>
             <optgroup label="Find Profiles">
-            <option value="LookUps">LookUps</option>
-            <option value="CustomSearch">CustomSearch</option>
-            <option value="FindUserProfilesFast,GetUserProfilesFast">FindUserProfilesFast</option>
-            <option value="FindUserProfilesSlow">FindUserProfilesSlow</option>
-            <option value="FindUserProfilesSpecial">FindUserProfilesSpecial</option>
+              <option value="LookUps">LookUps</option>
+              <option value="CustomSearch">CustomSearch</option>
+              <option value="FindUserProfilesFast,GetUserProfilesFast">FindUserProfilesFast</option>
+              <option value="FindUserProfilesSlow">FindUserProfilesSlow</option>
+              <option value="FindUserProfilesSpecial">FindUserProfilesSpecial</option>
             </optgroup>
             <optgroup label="Show Profiles">
-            <option value="ShowUserProfilesSlow">ShowUserProfilesSlow</option>
+              <option value="ShowUserProfilesSlow">ShowUserProfilesSlow</option>
+            </optgroup>
+            <optgroup label="Extract">
+              <option value="ExtractPatterns">ExtractPatterns</option>
+              <option value="ExtractMetadata">ExtractMetadata</option>
             </optgroup>
             <optgroup label="Other options">
-            <option value="FindNumbers">FindNumbers</option>
-            <option value="FindSymbols">FindSymbols</option>
-            <option value="ConvertNumbers">ConvertNumbers</option>
-            <option value="SplitWordsByAlphabet">SplitWordsByAlphabet</option>
-            <option value="SplitWordsByUpperCase">SplitWordsByUpperCase</option>
+              <option value="FindNumbers">FindNumbers</option>
+              <option value="FindSymbols">FindSymbols</option>
+              <option value="ConvertNumbers">ConvertNumbers</option>
+              <option value="SplitWordsByAlphabet">SplitWordsByAlphabet</option>
+              <option value="SplitWordsByUpperCase">SplitWordsByUpperCase</option>
             </optgroup>
           </select>
           <div class="cell-separator"></div>
@@ -839,8 +842,11 @@
     </div>
   </div>
   <script>
-
-    random_names = ["sophia","liam","riley","jackson","emma","aiden","ava","elijah","isabella","grayson","aria","lucas","aaliyah","oliver","amelia","caden","mia","mateo","layla","muhammad","zoe","mason","camilla","carter","charlotte","jayden","eliana","ethan","mila","sebastian","everly","james","luna","michael","avery","benjamin","evelyn","logan","harper","leo","lily","luca","ella","alexander","gianna","levi","chloe","daniel","adalyn","josiah","charlie","henry","isla","jayce","ellie","julian","leah","jack","nora","ryan","scarlett","jacob","maya","asher","abigail","wyatt","madison","william","aubrey","owen","emily","gabriel","kinsley","miles","elena","lincoln","paisley","ezra","madelyn","isaiah","aurora","luke","peyton","cameron","nova","caleb","emilia","isaac","hannah","carson","sarah","samuel","ariana","colton","penelope","maverick","lila","matthew"]
+    random_names = ["sophia", "liam", "riley", "jackson", "emma", "aiden", "ava", "elijah", "isabella", "grayson", "aria", "lucas", "aaliyah", "oliver", "amelia", "caden", "mia", "mateo", "layla", "muhammad", "zoe", "mason", "camilla", "carter",
+      "charlotte", "jayden", "eliana", "ethan", "mila", "sebastian", "everly", "james", "luna", "michael", "avery", "benjamin", "evelyn", "logan", "harper", "leo", "lily", "luca", "ella", "alexander", "gianna", "levi", "chloe", "daniel", "adalyn",
+      "josiah", "charlie", "henry", "isla", "jayce", "ellie", "julian", "leah", "jack", "nora", "ryan", "scarlett", "jacob", "maya", "asher", "abigail", "wyatt", "madison", "william", "aubrey", "owen", "emily", "gabriel", "kinsley", "miles",
+      "elena", "lincoln", "paisley", "ezra", "madelyn", "isaiah", "aurora", "luke", "peyton", "cameron", "nova", "caleb", "emilia", "isaac", "hannah", "carson", "sarah", "samuel", "ariana", "colton", "penelope", "maverick", "lila", "matthew"
+    ]
 
     //$("#string-to-analyze").attr("placeholder", random_names[(Math.random() * random_names.length) | 0]);
     $("#string-to-analyze").attr("placeholder", "johndoe");
@@ -927,6 +933,41 @@
           this.del_selected = [];
         }
       });
+    }
+
+    function add_extract(site) {
+      var temp_extracted_all = '<div>Extracted: ' + "unavailable" + '</div>'
+      var temp_metadata_all = '<div>Metadata: ' + "unavailable" + '</div>'
+      try {
+        if (site.extracted != "unavailable" && site.extracted != "") {
+          temp_extracted_all = ""
+          site.extracted.forEach(function(extracted, i) {
+            var temp_extracted = ""
+            Object.keys(extracted).forEach(function(key) {
+              temp_extracted += key + ' : ' + extracted[key] + ' '
+            });
+            temp_extracted_all += '<div>Extracted ' + i + ': ' + temp_extracted + '</div>'
+          });
+        }
+      } catch (err) {
+        temp_extracted_all = '<div>Extracted: ' + "unavailable" + '</div>'
+      }
+      try {
+        if (site.metadata != "unavailable" && site.metadata != "") {
+          temp_metadata_all = ""
+          site.metadata.forEach(function(extracted, i) {
+            var temp_metadata = ""
+            Object.keys(extracted).forEach(function(key) {
+              temp_metadata += key + ' : ' + extracted[key] + ' '
+            });
+            temp_metadata_all += '<div>Metadata ' + i + ': ' + temp_metadata + '</div>'
+          });
+        }
+      } catch (err) {
+        temp_metadata_all = '<div>Metadata: ' + "unavailable" + '</div>'
+      }
+
+      return temp_extracted_all + temp_metadata_all
     }
 
     function add_table(items) {
@@ -1019,8 +1060,10 @@
                   if (site.image != "") {
                     temp_image = '<img src=' + site.image + '>'
                   }
-                  temp_tr += '<div class="user-info-container"><div class="user-info-container-left"><div>Link: <a href="' + site.link + '">' + site.link + '</a></div><div>Rate: ' + site.rate + '</div><div>Status: ' + site.status + '</div><div>Title: ' + site.title +
-                    '</div><div>Language: ' + site.language + '</div><div>Description: ' + site.type + '</div><div>Text: ' + site.text + '</div></div><div class="user-info-container-right">' + temp_image + '</div></div>'
+                  var temp_extract = add_extract(site);
+                  temp_tr += '<div class="user-info-container"><div class="user-info-container-left"><div>Link: <a href="' + site.link + '">' + site.link + '</a></div><div>Rate: ' + site.rate + '</div><div>Status: ' + site.status +
+                    '</div><div>Title: ' + site.title +
+                    '</div><div>Language: ' + site.language + '</div><div>Description: ' + site.type + '</div><div>Text: ' + site.text + '</div>' + temp_extract + '</div><div class="user-info-container-right">' + temp_image + '</div></div>'
                 }
               });
 
@@ -1047,27 +1090,30 @@
 
             data.user_info_normal.data.forEach(function(site) {
               if (site.method == "all") {
-                if (site.good == "true"){
-                  temp_tr += '<div class="user-info-container"><div class="user-info-container-left"><div>Link: <a href="' + site.link + '">' + site.link + '</a></div><div>Rate: ' + site.rate + '</div><div>Status: ' + site.status + '</div><div>Title: ' + site.title +
-                    '</div><div>Language: ' + site.language + '</div><div>Description: ' + site.type + '</div><div>Text: ' + site.text + '</div></div><div class="user-info-container-right"></div></div>'
-                }
-                else{
+                var temp_extract = ""
+                if (site.good == "true") {
+                  var temp_extract = add_extract(site);
+                  temp_tr += '<div class="user-info-container"><div class="user-info-container-left"><div>Link: <a href="' + site.link + '">' + site.link + '</a></div><div>Rate: ' + site.rate + '</div><div>Status: ' + site.status +
+                    '</div><div>Title: ' + site.title +
+                    '</div><div>Language: ' + site.language + '</div><div>Description: ' + site.type + '</div><div>Text: ' + site.text + '</div>' + temp_extract + '</div><div class="user-info-container-right"></div></div>'
+                } else {
                   temp_tr += '<div class="user-info-container user-info-container-color-unknown"><div class="user-info-container-left"><div>Link: <a href="' + site.link + '">' + site.link + '</a></div><div>Title: ' + site.title +
                     '</div><div>Language: ' + site.language + '</div><div>Description: ' + site.type + '</div><div>Text: ' + site.text + '</div></div><div class="user-info-container-right"></div></div>'
                 }
-              }
-              else if (site.method == "find") {
-                if(site.good == "true"){
-                  temp_tr += '<div class="user-info-container"><div class="user-info-container-left"><div>Link: <a href="' + site.link + '">' + site.link + '</a></div><div>Rate: ' + site.rate + '</div><div>Status: ' + site.status + '</div><div>Title: ' + site.title +
-                    '</div><div>Language: ' + site.language + '</div><div>Description: ' + site.type + '</div><div>Text: ' + site.text + '</div></div><div class="user-info-container-right"></div></div>'
+              } else if (site.method == "find") {
+                if (site.good == "true") {
+                  var temp_extract = add_extract(site);
+                  temp_tr += '<div class="user-info-container"><div class="user-info-container-left"><div>Link: <a href="' + site.link + '">' + site.link + '</a></div><div>Rate: ' + site.rate + '</div><div>Status: ' + site.status +
+                    '</div><div>Title: ' + site.title +
+                    '</div><div>Language: ' + site.language + '</div><div>Description: ' + site.type + '</div><div>Text: ' + site.text + '</div>' + temp_extract + '</div><div class="user-info-container-right"></div></div>'
                 }
-              }
-              else if (site.method == "get") {
-                temp_tr += '<div class="user-info-container user-info-container-color-unknown"><div class="user-info-container-left"><div>Link: <a href="' + site.link + '">' + site.link + '</a></div><div>Rate: ' + site.rate + '</div><div>Status: ' + site.status + '</div><div>Title: ' + site.title +
-                    '</div><div>Language: ' + site.language + '</div><div>Description: ' + site.type + '</div><div>Text: ' + site.text + '</div></div><div class="user-info-container-right"></div></div>'
-              }
-              else if (site.method == "failed") {
-                temp_tr += '<div class="user-info-container user-info-container-color-failed"><div class="user-info-container-left"><div>Link: <a href="' + site.link + '">' + site.link + '</a></div></div><div class="user-info-container-right"></div></div>'
+              } else if (site.method == "get") {
+                temp_tr += '<div class="user-info-container user-info-container-color-unknown"><div class="user-info-container-left"><div>Link: <a href="' + site.link + '">' + site.link + '</a></div><div>Rate: ' + site.rate +
+                  '</div><div>Status: ' + site.status + '</div><div>Title: ' + site.title +
+                  '</div><div>Language: ' + site.language + '</div><div>Description: ' + site.type + '</div><div>Text: ' + site.text + '</div></div><div class="user-info-container-right"></div></div>'
+              } else if (site.method == "failed") {
+                temp_tr += '<div class="user-info-container user-info-container-color-failed"><div class="user-info-container-left"><div>Link: <a href="' + site.link + '">' + site.link +
+                  '</a></div></div><div class="user-info-container-right"></div></div>'
               }
             });
 
@@ -1080,7 +1126,8 @@
             data.user_info_special.data.forEach(function(site) {
               if (site.found > 0) {
                 temp_image = ""
-                temp_tr += '<div class="user-info-container"><div class="user-info-container-left"><div>Link: <a href="' + site.link + '">' + site.link + '</a></div><div>Rate: ' + site.rate + '</div><div>Status: ' + site.status + '</div><div>Title: ' + site.title +
+                temp_tr += '<div class="user-info-container"><div class="user-info-container-left"><div>Link: <a href="' + site.link + '">' + site.link + '</a></div><div>Rate: ' + site.rate + '</div><div>Status: ' + site.status +
+                  '</div><div>Title: ' + site.title +
                   '</div><div>Description: ' + site.type + '</div><div>Text: ' + site.text + '</div></div><div class="user-info-container-right">' + temp_image + '</div></div>'
               }
             });
@@ -1201,23 +1248,19 @@
     });
 
     $(function() {
-        $('.div-header').click(function() {
-            if (this.innerText != "Enter Profile Name"){
-              if ($(this).next().hasClass('show'))
-              {
-                 $(this).find('#div-right-icon').removeClass("fa-caret-down")
-                 $(this).find('#div-right-icon').addClass("fa-caret-right")
-              }
-              else
-              {
-                 $(this).find('#div-right-icon').removeClass("fa-caret-right")
-                 $(this).find('#div-right-icon').addClass("fa-caret-down")
-              }
-              $(this).next().collapse('toggle');
-            }
-        });
+      $('.div-header').click(function() {
+        if (this.innerText != "Enter Profile Name") {
+          if ($(this).next().hasClass('show')) {
+            $(this).find('#div-right-icon').removeClass("fa-caret-down")
+            $(this).find('#div-right-icon').addClass("fa-caret-right")
+          } else {
+            $(this).find('#div-right-icon').removeClass("fa-caret-right")
+            $(this).find('#div-right-icon').addClass("fa-caret-down")
+          }
+          $(this).next().collapse('toggle');
+        }
+      });
     });
-
   </script>
 </body>
 

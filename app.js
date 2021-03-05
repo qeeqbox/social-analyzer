@@ -426,12 +426,17 @@ async function check_user_cli(argv) {
   var temp_options = "GetUserProfilesFast,FindUserProfilesFast"
   if (argv.method != "") {
     if (argv.method == "find") {
-      temp_options = "FindUserProfilesFast"
+      temp_options = ",FindUserProfilesFast,"
     } else if (argv.method == "get") {
-      temp_options = "GetUserProfilesFast"
+      temp_options = ",GetUserProfilesFast,"
     }
   }
-
+  if (argv.extract){
+    temp_options += ",ExtractPatterns,"
+  }
+  if (argv.metadata){
+    temp_options += ",ExtractMetadata,"
+  }
   var req = {
     'body': {
       'uuid': random_string,
@@ -475,7 +480,7 @@ async function check_user_cli(argv) {
           item = clean_up_item(item,argv.options)
           temp_detected.detected.push(item)
         } else {
-          item = delete_keys(item,['found','rate','status','method','good'])
+          item = delete_keys(item,['found','rate','status','method','good','extracted','metadata'])
           item = clean_up_item(item,argv.options)
           temp_detected.unknown.push(item)
         }
@@ -486,11 +491,11 @@ async function check_user_cli(argv) {
           temp_detected.detected.push(item)
         }
       } else if (item.method == "get") {
-        item = delete_keys(item,['found','rate','status','method','good'])
+        item = delete_keys(item,['found','rate','status','method','good','extracted','metadata'])
         item = clean_up_item(item,argv.options)
         temp_detected.unknown.push(item)
       } else if (item.method == "failed") {
-        item = delete_keys(item,['found','rate','status','method','good','text','language','title','type'])
+        item = delete_keys(item,['found','rate','status','method','good','text','language','title','type','extracted','metadata'])
         item = clean_up_item(item,argv.options)
         temp_detected.failed.push(item)
       }
