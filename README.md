@@ -148,5 +148,5 @@ docker build -t social-analyzer . && docker run -p 9005:9005 -it social-analyzer
 ## Disclaimer\Notes
 - Make sure to download this tool from GitHub
 - This is a security project (Treat it as a security project)
-- This tool meant to be used locally (It does not have any type of Access Control)
 - If you want your website to be excluded from this project list, please reach out to me
+- This tool meant to be used locally not as a service (It does not have any type of Access Control)
