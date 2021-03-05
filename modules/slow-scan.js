@@ -141,6 +141,12 @@ async function find_username_site(uuid, username, options, site) {
           }
         }
 
+        ["title","language","text","type","metadata","extracted"].forEach((item) => {
+          if (temp_profile[item] == ""){
+            temp_profile[item] = "unavailable"
+          }
+        });
+
         temp_profile.link = site.url.replace("{username}", username);
         temp_profile.type = site.type
         resolve(temp_profile);
