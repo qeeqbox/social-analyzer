@@ -29,12 +29,12 @@ var profile_template = {
   "link": "",
   "rate": "",
   "status": "",
-  "title": "unavailable",
-  "language": "unavailable",
-  "text": "unavailable",
-  "type": "unavailable",
-  "metadata": "unavailable",
-  "extracted": "unavailable",
+  "title": "",
+  "language": "",
+  "text": "",
+  "type": "",
+  "metadata": "",
+  "extracted": "",
   "good": "",
   "method": ""
 };

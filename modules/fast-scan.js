@@ -162,6 +162,12 @@ async function find_username_site(uuid, username, options, site) {
           }
         }
 
+        ["title","language","text","type","metadata","extracted"].forEach((item) => {
+          if (temp_profile[item] == ""){
+            temp_profile[item] = "unavailable"
+          }
+        });
+
         if (options.includes("FindUserProfilesFast") && !options.includes("GetUserProfilesFast")) {
           temp_profile.method = "find"
         } else if (options.includes("GetUserProfilesFast") && !options.includes("FindUserProfilesFast")) {
