@@ -1,4 +1,4 @@
-var helper = require('./helper.js')
+var helper = require('./helper.js');
 var {
   findWord
 } = require("most-common-words-by-language");

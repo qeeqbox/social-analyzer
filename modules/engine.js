@@ -1,8 +1,10 @@
 var helper = require('./helper.js')
 var tesseract = require("tesseract.js")
-const { createWorker } = require('tesseract.js');
+const {
+  createWorker
+} = require('tesseract.js');
 
-function merge_dicts(temp_dict){
+function merge_dicts(temp_dict) {
   result = {}
   temp_dict.forEach(item => {
     for (const [key, value] of Object.entries(item)) {
@@ -41,7 +43,7 @@ async function detect(type, uuid, username, options, site, source = "", text_onl
   temp_detected.push(val2)
   detections_count += val3
   //console.log(temp_profile,merge_dicts(temp_detected),detections_count)
-  return [merge_dicts(temp_profile),merge_dicts(temp_detected),detections_count]
+  return [merge_dicts(temp_profile), merge_dicts(temp_detected), detections_count]
 }
 
 async function detect_logic(type, uuid, username, options, site, source = "", text_only = "", screen_shot = "") {
@@ -57,11 +59,15 @@ async function detect_logic(type, uuid, username, options, site, source = "", te
         if (detection.type == "ocr" && screen_shot != "" && options.includes("FindUserProfilesSlow")) {
           const temp_buffer_image = Buffer.from(screen_shot, "base64")
           const ocr_worker = createWorker();
-          try{
+          try {
             await ocr_worker.load();
             await ocr_worker.loadLanguage('eng');
             await ocr_worker.initialize('eng');
-            const { data: { text } } = await ocr_worker.recognize(temp_buffer_image);
+            const {
+              data: {
+                text
+              }
+            } = await ocr_worker.recognize(temp_buffer_image);
             await ocr_worker.terminate();
             if (text != "") {
               if (text.toLowerCase().includes(detection.string.toLowerCase())) {
@@ -76,13 +82,11 @@ async function detect_logic(type, uuid, username, options, site, source = "", te
                   temp_detected.false += 1
                 }
               }
-            }
-            else{
+            } else {
               detections_count -= 1
               temp_detected.count -= 1
             }
-          }
-          catch(err){
+          } catch (err) {
             detections_count -= 1
             temp_detected.count -= 1
           }

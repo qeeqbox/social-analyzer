@@ -1,4 +1,4 @@
-var helper = require('./helper.js')
+var helper = require('./helper.js');
 var cheerio = require('cheerio');
 
 async function extract_metadata(site, source) {

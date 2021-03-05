@@ -1,4 +1,4 @@
-var helper = require('./helper.js')
+var helper = require('./helper.js');
 var fs = require("fs");
 var stringSimilarity = require("string-similarity");
 async function find_origins(req) {
