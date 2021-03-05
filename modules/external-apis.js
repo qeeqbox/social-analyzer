@@ -1,4 +1,4 @@
-var helper = require('./helper.js')
+var helper = require('./helper.js');
 var async = require("async");
 
 async function get_words_info(all_words, words_info) {

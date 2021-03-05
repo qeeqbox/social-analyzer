@@ -1,5 +1,5 @@
-var helper = require('./helper.js')
-var extraction = require('./extraction.js')
+var helper = require('./helper.js');
+var extraction = require('./extraction.js');
 var async = require("async");
 var sanitizeHtml = require("sanitize-html");
 var {
@@ -162,8 +162,8 @@ async function find_username_site(uuid, username, options, site) {
           }
         }
 
-        ["title","language","text","type","metadata","extracted"].forEach((item) => {
-          if (temp_profile[item] == ""){
+        ["title", "language", "text", "type", "metadata", "extracted"].forEach((item) => {
+          if (temp_profile[item] == "") {
             temp_profile[item] = "unavailable"
           }
         });

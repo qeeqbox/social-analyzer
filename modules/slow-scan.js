@@ -1,5 +1,5 @@
 var helper = require('./helper.js');
-var extraction = require('./extraction.js')
+var extraction = require('./extraction.js');
 var async = require("async");
 var sanitizeHtml = require("sanitize-html");
 var sanitizeHtml = require("sanitize-html");
@@ -12,8 +12,8 @@ var {
 var path = require('path');
 var engine = require('./engine.js')
 
-if (process.platform == 'win32'){
-  var package_path = path.join(path.dirname(require.resolve("geckodriver")),'..')
+if (process.platform == 'win32') {
+  var package_path = path.join(path.dirname(require.resolve("geckodriver")), '..')
   process.env['PATH'] = process.env['PATH'] + ';' + package_path
 }
 
@@ -34,7 +34,9 @@ async function find_username_advanced(req) {
   var results = await async.parallelLimit(functions, 8);
   helper.verbose && console.log(`Total time ${new Date() - time}`);
   results = results.filter(item => item)
-  return results.sort((first, second) => {return helper.compare_objects(first, second, 'rate')})
+  return results.sort((first, second) => {
+    return helper.compare_objects(first, second, 'rate')
+  })
 }
 
 async function find_username_site(uuid, username, options, site) {
@@ -92,11 +94,11 @@ async function find_username_site(uuid, username, options, site) {
       title = await driver.getTitle();
       text_only = await driver.findElement(By.tagName("body")).getText();
       await driver.quit()
-      var [temp_profile, temp_detected, detections_count] = await engine.detect("slow", uuid, username, options, site ,source, text_only, screen_shot)
+      var [temp_profile, temp_detected, detections_count] = await engine.detect("slow", uuid, username, options, site, source, text_only, screen_shot)
       if (options.includes("ShowUserProfilesSlow")) {
         temp_profile["image"] = "data:image/png;base64,{image}".replace("{image}", screen_shot);
       }
-      if (temp_profile.found >= helper.detection_level[helper.detection_level.current].found && detections_count >= helper.detection_level[helper.detection_level.current].count){
+      if (temp_profile.found >= helper.detection_level[helper.detection_level.current].found && detections_count >= helper.detection_level[helper.detection_level.current].count) {
         temp_profile.good = "true"
         try {
           language = helper.get_language_by_parsing(source)
@@ -113,13 +115,11 @@ async function find_username_site(uuid, username, options, site) {
         if (temp_profile.good == "true") {
           var temp_value = ((temp_profile["found"] / detections_count) * 100).toFixed(2)
           temp_profile.rate = "%" + temp_value;
-          if (temp_value >= 100.00){
+          if (temp_value >= 100.00) {
             temp_profile.status = "good"
-          }
-          else if (temp_value >= 50.00 && temp_value < 100.00){
+          } else if (temp_value >= 50.00 && temp_value < 100.00) {
             temp_profile.status = "maybe"
-          }
-          else{
+          } else {
             temp_profile.status = "bad"
           }
         }
@@ -141,8 +141,8 @@ async function find_username_site(uuid, username, options, site) {
           }
         }
 
-        ["title","language","text","type","metadata","extracted"].forEach((item) => {
-          if (temp_profile[item] == ""){
+        ["title", "language", "text", "type", "metadata", "extracted"].forEach((item) => {
+          if (temp_profile[item] == "") {
             temp_profile[item] = "unavailable"
           }
         });
@@ -150,8 +150,7 @@ async function find_username_site(uuid, username, options, site) {
         temp_profile.link = site.url.replace("{username}", username);
         temp_profile.type = site.type
         resolve(temp_profile);
-      }
-      else if (temp_profile.image != ""){
+      } else if (temp_profile.image != "") {
         temp_profile.text = "unavailable";
         temp_profile.title = "unavailable";
         temp_profile.language = "unavailable"
@@ -159,8 +158,7 @@ async function find_username_site(uuid, username, options, site) {
         temp_profile.link = site.url.replace("{username}", username);
         temp_profile.type = site.type
         resolve(temp_profile);
-      }
-      else {
+      } else {
         resolve(undefined)
       }
     } catch (err) {

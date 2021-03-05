@@ -94,8 +94,7 @@ function log_to_file_queue(uuid, msg, table = false, argv = undefined) {
             for (const [key, value] of Object.entries(item)) {
               if (key == "extracted" || key == "metadata") {
                 if ((key == "extracted" && argv.extract) || (key == "metadata" && argv.metadata)) {
-                  if (value != "unavailable")
-                  {
+                  if (value != "unavailable") {
                     try {
                       value.forEach((metadata_item, i) => {
                         var temp_string_meta = key + " " + i
@@ -113,8 +112,7 @@ function log_to_file_queue(uuid, msg, table = false, argv = undefined) {
                     } catch (err) {
 
                     }
-                  }
-                  else{
+                  } else {
                     console.log(colors.blue(key.padEnd(12)) + " : " + colors.yellow(value));
                   }
                 }
