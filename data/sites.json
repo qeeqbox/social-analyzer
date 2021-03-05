@@ -7887,26 +7887,7 @@
       "type": "unavailable"
     },
     {
-      "url": "http://chictopia.com/{username}",
-      "detections": [{
-          "return": "true",
-          "string": "profile_photo_hover",
-          "type": "normal"
-        },
-        {
-          "return": "true",
-          "string": "hidden_about",
-          "type": "normal"
-        }
-      ],
-      "selected": "false",
-      "timeout": 0,
-      "implicit": 0,
-      "extract": [],
-      "type": "unavailable"
-    },
-    {
-      "url": "http://chictopia.com/{username}",
+      "url": "https://chictopia.com/{username}",
       "detections": [{
           "return": "true",
           "string": "profile_photo_hover",
@@ -8025,7 +8006,7 @@
       "type": "unavailable"
     },
     {
-      "url": "http://gametz.com/user/{username}.html",
+      "url": "https://gametz.com/user/{username}.html",
       "detections": [{
           "return": "true",
           "string": "itemprop=\"name\"",
@@ -8034,6 +8015,120 @@
         {
           "return": "true",
           "string": "/user/{username}",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "unavailable"
+    },
+    {
+      "url": "https://inaturalist.org/people/{username}",
+      "detections": [{
+          "return": "true",
+          "string": ":username",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "people/{username}",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "unavailable"
+    },
+    {
+      "url": "https://irc-galleria.net/user/{username}",
+      "detections": [{
+          "return": "true",
+          "string": "leaderboard",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "submenu-profile",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "unavailable"
+    },
+    {
+      "url": "https://kizlarsoruyor.com/uye/{username}",
+      "detections": [{
+          "return": "true",
+          "string": "profile-username",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "profile-tab-section",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "unavailable"
+    },
+    {
+      "url": "https://docsity.com/en/users/profile/{username}",
+      "detections": [{
+          "return": "true",
+          "string": "docsity-profile",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "\"harveymatbagan\"",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "unavailable"
+    },
+    {
+      "url": "https://{username}.kroogi.com/",
+      "detections": [{
+          "return": "true",
+          "string": "profile_content",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "main_account_header",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "unavailable"
+    },
+    {
+      "url": "https://labroots.com/profile/{username}",
+      "detections": [{
+          "return": "true",
+          "string": "profile-header",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "class=\"user ",
           "type": "normal"
         }
       ],
