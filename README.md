@@ -73,9 +73,10 @@ python3 -m social-analyzer --cli --mode "fast" --username "johndoe" --websites "
 ```bash
 # There will be status:good or rate:%100 for existing profiles
 
-sudo add-apt-repository ppa:mozillateam/ppa
-sudo apt-get update
-sudo apt-get install -y firefox-esr tesseract-ocr git
+apt-get update
+DEBIAN_FRONTEND=noninteractive apt-get install -y software-properties-common
+add-apt-repository ppa:mozillateam/ppa -y
+apt-get install -y firefox-esr tesseract-ocr git nodejs npm
 git clone https://github.com/qeeqbox/social-analyzer.git
 cd social-analyzer
 npm install
@@ -101,9 +102,10 @@ npm start
 # You can also scan all websites using --websites "all"
 # There will be status:good or rate:%100 for existing profiles
 
-sudo add-apt-repository ppa:mozillateam/ppa
-sudo apt-get update
-sudo apt-get install -y firefox-esr tesseract-ocr git
+apt-get update
+DEBIAN_FRONTEND=noninteractive apt-get install -y software-properties-common
+add-apt-repository ppa:mozillateam/ppa -y
+apt-get install -y firefox-esr tesseract-ocr git nodejs npm
 git clone https://github.com/qeeqbox/social-analyzer.git
 cd social-analyzer
 npm install
