@@ -2154,6 +2154,26 @@
       "type": "unavailable"
     },
     {
+      "url": "https://ebid.net/us/users/{username}",
+      "detections": [
+        {
+          "return": "true",
+          "string": "theirmain",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "users/{username}",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "unavailable"
+    },
+    {
       "url": "https://echo.msk.ru/users/{username}",
       "detections": [
         {
@@ -3237,6 +3257,26 @@
       "implicit": 0,
       "extract": [],
       "type": "Video game journalism"
+    },
+    {
+      "url": "https://gamepedia.com/members/{username}",
+      "detections": [
+        {
+          "return": "true",
+          "string": "username",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "user-details",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "unavailable"
     },
     {
       "url": "https://gamespot.com/profile/{username}",
@@ -5857,6 +5897,26 @@
       "type": "Web application"
     },
     {
+      "url": "https://pathofexile.com/account/view-profile/{username}",
+      "detections": [
+        {
+          "return": "true",
+          "string": "profile-details",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "details-",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "unavailable"
+    },
+    {
       "url": "https://patreon.com/{username}",
       "detections": [
         {
@@ -6186,6 +6246,26 @@
       "type": "unavailable"
     },
     {
+      "url": "https://premium.chat/{username}",
+      "detections": [
+        {
+          "return": "true",
+          "string": "chat/{username}",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "(@{username})",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "unavailable"
+    },
+    {
       "url": "https://producthunt.com/@{username}",
       "detections": [
         {
@@ -6357,6 +6437,26 @@
       "type": "unavailable"
     },
     {
+      "url": "https://pttweb.cc/user/{username}",
+      "detections": [
+        {
+          "return": "true",
+          "string": "userName:c",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "/user/{username}?",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "unavailable"
+    },
+    {
       "url": "https://pypi.org/user/{username}",
       "detections": [
         {
@@ -6372,6 +6472,26 @@
         {
           "return": "true",
           "string": "author-profile",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "unavailable"
+    },
+    {
+      "url": "https://qiita.com/{username}",
+      "detections": [
+        {
+          "return": "true",
+          "string": "UserMainPage",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "@{username}",
           "type": "normal"
         }
       ],
@@ -8127,6 +8247,26 @@
       "implicit": 0,
       "extract": [],
       "type": "Digital dictionary"
+    },
+    {
+      "url": "https://wowhead.com/user={username}",
+      "detections": [
+        {
+          "return": "true",
+          "string": "tab-achievements",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "\"description\"",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "unavailable"
     },
     {
       "url": "https://wykop.pl/ludzie/{username}/",
