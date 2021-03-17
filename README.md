@@ -59,16 +59,6 @@ Profile images **will not** be blurred. If you want them to be blurred, turn tha
 - Gmail (example@gmail.com)
 - Google (example@example.com)
 
-## Install and run as Python CLI (Windows, Linux, MacOS, Raspberry pi..)
-```bash
-# Remember the following runs as FindUserProfilesFast
-# You can also scan all websites using --websites "all"
-# There will be status:good or rate:%100 for existing profiles
-
-pip3 install social-analyzer
-python3 -m social-analyzer --cli --mode "fast" --username "johndoe" --websites "youtube pinterest tumblr" --output "pretty" --metadata --extract --trim
-```
-
 ## Install and run as NodeJS Web App (Linux + NodeJS + NPM + Firefox)
 ```bash
 # There will be status:good or rate:%100 for existing profiles
@@ -93,6 +83,16 @@ Download & Extract https://github.com/qeeqbox/social-analyzer/archive/main.zip
 cd social-analyzer
 npm install
 npm start
+```
+
+## Install and run as Python CLI (Windows, Linux, MacOS, Raspberry pi..)
+```bash
+# Remember the following runs as FindUserProfilesFast
+# You can also scan all websites using --websites "all"
+# There will be status:good or rate:%100 for existing profiles
+
+pip3 install social-analyzer
+python3 -m social-analyzer --cli --mode "fast" --username "johndoe" --websites "youtube pinterest tumblr" --output "pretty" --metadata --extract --trim
 ```
 
 ## Install and run as NodeJS CLI (Linux + NodeJS + NPM + Firefox)
