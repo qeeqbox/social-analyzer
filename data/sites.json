@@ -13,7 +13,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "Photo Sharing"
+      "type": "Internet"
     },
     {
       "url": "https://7cups.com/@{username}",
@@ -43,7 +43,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "Online Therapy"
+      "type": "Health"
     },
     {
       "url": "https://8tracks.com/{username}",
@@ -63,7 +63,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "unavailable"
+      "type": "Internet"
     },
     {
       "url": "https://9gag.com/u/{username}",
@@ -88,7 +88,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "Art & Entertainment"
+      "type": "Entertainment"
     },
     {
       "url": "https://about.me/{username}",
@@ -113,7 +113,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "Directory Hosting"
+      "type": "Internet"
     },
     {
       "status": "bad",
@@ -134,7 +134,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "Books and Literature"
+      "type": "Books"
     },
     {
       "url": "https://alik.cz/u/{username}",
@@ -149,7 +149,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "Art & Entertainment"
+      "type": "Internet"
     },
     {
       "url": "https://alimero.ru/profile/{username}",
@@ -169,7 +169,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "unavailable"
+      "type": "Internet"
     },
     {
       "url": "https://allmylinks.com/{username}",
@@ -199,7 +199,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "Directory Hosting"
+      "type": "Internet"
     },
     {
       "url": "https://alltrails.com/members/{username}",
@@ -229,7 +229,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "Recreation & Hobbies"
+      "type": "Recreation"
     },
     {
       "url": "https://aminoapps.com/u/{username}",
@@ -254,7 +254,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "Computers & Technology"
+      "type": "Internet"
     },
     {
       "url": "https://angel.co/{username}",
@@ -284,7 +284,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "Job Search"
+      "type": "Jobs"
     },
     {
       "url": "https://anilist.co/user/{username}/",
@@ -299,7 +299,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "Recreation & Hobbies"
+      "type": "Internet"
     },
     {
       "url": "https://anobii.com/{username}/profile",
@@ -324,7 +324,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "Books & Literature"
+      "type": "Books"
     },
     {
       "url": "https://anphabe.com/profile/{username}",
@@ -344,7 +344,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "unavailable"
+      "type": "Internet"
     },
     {
       "url": "https://archive.org/details/@{username}",
@@ -374,7 +374,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "Digital Library"
+      "type": "Internet"
     },
     {
       "url": "https://artstation.com/{username}",
@@ -389,7 +389,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "Art & Entertainment"
+      "type": "Arts"
     },
     {
       "url": "https://asciinema.org/~{username}",
@@ -414,7 +414,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "Computer & electronics"
+      "type": "Internet"
     },
     {
       "url": "https://ask.fedoraproject.org/u/{username}",
@@ -428,7 +428,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "Computer & electronics"
+      "type": "Internet"
     },
     {
       "url": "https://ask.fm/{username}",
@@ -458,7 +458,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "Social Networking"
+      "type": "Internet"
     },
     {
       "url": "https://audiojungle.net/user/{username}",
@@ -488,7 +488,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "Internet & Telecom"
+      "type": "Internet"
     },
     {
       "url": "https://authorstream.com/{username}",
@@ -513,7 +513,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "Presentations Hosting"
+      "type": "Internet"
     },
     {
       "url": "https://avforums.com/members/{username}",
@@ -528,7 +528,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "Internet & Telecom"
+      "type": "Computers"
     },
     {
       "url": "https://baby.ru/u/{username}",
@@ -548,7 +548,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "adult"
+      "type": "Internet"
     },
     {
       "url": "https://babyblog.ru/user/info/{username}",
@@ -563,7 +563,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "Internet & Telecom"
+      "type": "Internet"
     },
     {
       "url": "https://bandcamp.com/{username}",
@@ -593,7 +593,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "Arts & Entertainment"
+      "type": "Arts"
     },
     {
       "url": "https://beeg.com/people/{username}",
@@ -613,7 +613,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "unavailable"
+      "type": "Internet"
     },
     {
       "url": "https://behance.net/{username}",
@@ -648,7 +648,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "Internet & Telecom"
+      "type": "Internet"
     },
     {
       "url": "https://beta.cent.co/@{username}",
@@ -657,7 +657,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "unavailable"
+      "type": "Internet"
     },
     {
       "url": "https://binarysearch.io/@/{username}",
@@ -672,7 +672,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "Computer & electronics"
+      "type": "Internet"
     },
     {
       "url": "https://bintray.com/{username}",
@@ -687,7 +687,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "Computer & electronics"
+      "type": "Internet"
     },
     {
       "url": "https://bitbucket.org/{username}",
@@ -712,7 +712,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "Computer & electronics"
+      "type": "Computers"
     },
     {
       "url": "https://bitcoinforum.com/profile/{username}",
@@ -737,7 +737,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "Computer & electronics"
+      "type": "Internet"
     },
     {
       "url": "https://blip.fm/{username}",
@@ -767,7 +767,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "Arts & Entertainment"
+      "type": "Internet"
     },
     {
       "url": "https://blog.naver.com/{username}",
@@ -787,7 +787,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "Internet & Telecom"
+      "type": "Internet"
     },
     {
       "url": "https://bodyspace.bodybuilding.com/{username}",
@@ -807,7 +807,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "Recreation & Hobbies"
+      "type": "Recreation"
     },
     {
       "url": "https://bookcrossing.com/mybookshelf/{username}",
@@ -832,7 +832,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "Books and Literature"
+      "type": "Books"
     },
     {
       "url": "https://buymeacoffee.com/{username}",
@@ -857,7 +857,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "Arts and Entertainment"
+      "type": "Entertainment"
     },
     {
       "url": "https://buzzfeed.com/{username}",
@@ -887,7 +887,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "Arts and Entertainment"
+      "type": "Entertainment"
     },
     {
       "url": "https://canva.com/{username}",
@@ -896,7 +896,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "unavailable"
+      "type": "Internet"
     },
     {
       "url": "https://capfriendly.com/users/{username}",
@@ -931,7 +931,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "Job Search"
+      "type": "Jobs"
     },
     {
       "url": "https://caringbridge.org/visit/{username}",
@@ -951,7 +951,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "unavailable"
+      "type": "Internet"
     },
     {
       "url": "https://carswap.me/{username}",
@@ -971,7 +971,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "unavailable"
+      "type": "Internet"
     },
     {
       "url": "https://cash.me/{username}",
@@ -1001,7 +1001,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "Finance"
+      "type": "Internet"
     },
     {
       "url": "https://championat.com/user/{username}",
@@ -1021,7 +1021,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "Sports"
+      "type": "Internet"
     },
     {
       "url": "https://chaos.social/@{username}",
@@ -1046,7 +1046,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "Internet & Telecom"
+      "type": "Internet"
     },
     {
       "url": "https://chess.com/member/{username}",
@@ -1096,7 +1096,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "unavailable"
+      "type": "Internet"
     },
     {
       "url": "https://cloob.com/name/{username}",
@@ -1116,7 +1116,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "Internet and Telecom"
+      "type": "Internet"
     },
     {
       "url": "https://cnet.com/profiles/{username}",
@@ -1146,7 +1146,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "Internet and Telecom"
+      "type": "Computers"
     },
     {
       "url": "https://codeberg.com/{username}",
@@ -1166,7 +1166,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "Projects Archive"
+      "type": "Computers"
     },
     {
       "url": "https://codechef.com/users/{username}",
@@ -1180,33 +1180,18 @@
           "return": "true",
           "string": "user-profile",
           "type": "normal"
-        }
-      ],
-      "selected": "false",
-      "timeout": 0,
-      "implicit": 0,
-      "extract": [],
-      "type": "Computer & electronics"
-    },
-    {
-      "url": "https://codechef.com/users/{username}",
-      "detections": [
+        },
         {
           "return": "true",
           "string": "user-details",
           "type": "normal"
-        },
-        {
-          "return": "true",
-          "string": "/users/{username}",
-          "type": "normal"
         }
       ],
       "selected": "false",
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "unavailable"
+      "type": "Computers"
     },
     {
       "url": "https://codeforces.com/profile/{username}",
@@ -1226,7 +1211,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "unavailable"
+      "type": "Internet"
     },
     {
       "url": "https://codementor.io/{username}",
@@ -1251,7 +1236,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "Job Search"
+      "type": "Jobs"
     },
     {
       "url": "https://codepen.io/{username}",
@@ -1281,7 +1266,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "Computer & electronics"
+      "type": "Computers"
     },
     {
       "url": "https://codewars.com/users/{username}",
@@ -1306,7 +1291,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "Computer & electronics"
+      "type": "Internet"
     },
     {
       "url": "https://colourlovers.com/lover/{username}",
@@ -1331,7 +1316,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "Art & Entertainment"
+      "type": "Arts"
     },
     {
       "url": "https://community.cloudflare.com/u/{username}",
@@ -1345,7 +1330,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "Internet and Telecom"
+      "type": "Computers"
     },
     {
       "url": "https://community.eintracht.de/fans/{username}",
@@ -1385,7 +1370,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "Computer and electronics"
+      "type": "Computers"
     },
     {
       "url": "https://community.signalusers.org/u/{username}",
@@ -1399,7 +1384,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "Computer and electronics"
+      "type": "Computers"
     },
     {
       "url": "https://community.windy.com/user/{username}",
@@ -1429,7 +1414,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "Internet and Telecom"
+      "type": "Computers"
     },
     {
       "url": "https://connect.opensuse.org/pg/profile/{username}",
@@ -1454,7 +1439,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "Computer and electronics"
+      "type": "Computers"
     },
     {
       "url": "https://coroflot.com/{username}",
@@ -1479,7 +1464,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "Job Search"
+      "type": "Jobs"
     },
     {
       "url": "https://couchsurfing.com/people/{username}",
@@ -1499,7 +1484,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "unavailable"
+      "type": "Internet"
     },
     {
       "url": "https://countable.us/{username}",
@@ -1524,7 +1509,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "News"
+      "type": "Internet"
     },
     {
       "url": "https://cracked.com/members/{username}",
@@ -1539,7 +1524,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "Art & Entertainment"
+      "type": "Internet"
     },
     {
       "url": "https://create.arduino.cc/projecthub/{username}",
@@ -1554,7 +1539,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "Computer and electronics"
+      "type": "Internet"
     },
     {
       "url": "https://creativemarket.com/{username}",
@@ -1609,7 +1594,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "Internet and Telecom"
+      "type": "Internet"
     },
     {
       "url": "https://crunchyroll.com/user/{username}",
@@ -1629,7 +1614,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "Arts and Entertainment"
+      "type": "Entertainment"
     },
     {
       "url": "https://d3.ru/user/{username}/posts",
@@ -1644,7 +1629,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "Computer and electronics"
+      "type": "Internet"
     },
     {
       "url": "https://dailykos.com/user/{username}",
@@ -1699,7 +1684,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "Video Hosting"
+      "type": "News"
     },
     {
       "url": "https://data.typeracer.com/pit/profile?user={username}",
@@ -1774,7 +1759,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "Shopping"
+      "type": "Music"
     },
     {
       "url": "https://designspiration.net/{username}",
@@ -1804,7 +1789,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "unavailable"
+      "type": "Arts"
     },
     {
       "url": "https://dev.to/{username}",
@@ -1834,7 +1819,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "Computer and electronics"
+      "type": "Computers"
     },
     {
       "url": "https://devrant.com/users/{username}",
@@ -1854,7 +1839,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "Computer and electronics"
+      "type": "Computers"
     },
     {
       "url": "https://discogs.com/user/{username}",
@@ -1893,7 +1878,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "Computer and electronics"
+      "type": "Computers"
     },
     {
       "url": "https://discuss.elastic.co/u/{username}",
@@ -1907,7 +1892,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "Computer and electronics"
+      "type": "Computers"
     },
     {
       "url": "https://discussions.apple.com/profile/{username}",
@@ -1937,7 +1922,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "Computer and electronics"
+      "type": "Computers"
     },
     {
       "url": "https://displate.com/{username}/profile",
@@ -1952,7 +1937,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "unavailable"
+      "type": "Arts"
     },
     {
       "url": "https://disqus.com/{username}",
@@ -1982,7 +1967,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "unavailable"
+      "type": "Internet"
     },
     {
       "url": "https://docsity.com/en/users/profile/{username}",
@@ -2002,7 +1987,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "unavailable"
+      "type": "Internet"
     },
     {
       "url": "https://douban.com/people/{username}/",
@@ -2022,7 +2007,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "movie and book database"
+      "type": "Internet"
     },
     {
       "url": "https://douban.com/people/{username}/",
@@ -2042,7 +2027,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "unavailable"
+      "type": "Internet"
     },
     {
       "url": "https://dribbble.com/{username}",
@@ -2072,7 +2057,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "unavailable"
+      "type": "Internet"
     },
     {
       "url": "https://drive2.ru/users/{username}",
@@ -2097,7 +2082,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "unavailable"
+      "type": "Cars"
     },
     {
       "url": "https://duolingo.com/profile/{username}",
@@ -2116,7 +2101,7 @@
       "selected": "false",
       "timeout": 0,
       "implicit": 5,
-      "type": "unavailable"
+      "type": "Internet"
     },
     {
       "url": "https://ebay.com/usr/{username}",
@@ -2151,7 +2136,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "unavailable"
+      "type": "Shopping"
     },
     {
       "url": "https://ebid.net/us/users/{username}",
@@ -2171,7 +2156,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "unavailable"
+      "type": "Internet"
     },
     {
       "url": "https://echo.msk.ru/users/{username}",
@@ -2186,7 +2171,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "unavailable"
+      "type": "Internet"
     },
     {
       "url": "https://egpu.io/forums/profile/{username}",
@@ -2211,7 +2196,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "unavailable"
+      "type": "Computers"
     },
     {
       "url": "https://ello.co/{username}",
@@ -2246,7 +2231,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "Social network"
+      "type": "Arts"
     },
     {
       "url": "https://en.gravatar.com/{username}",
@@ -2271,7 +2256,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "Avatar hosting"
+      "type": "Computers"
     },
     {
       "url": "https://en.tm-ladder.com/{username}_rech.php",
@@ -2280,7 +2265,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "unavailable"
+      "type": "Internet"
     },
     {
       "url": "https://en.wikipedia.org/wiki/Special:CentralAuth/{username}",
@@ -2294,7 +2279,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "Online encyclopedia"
+      "type": "Games"
     },
     {
       "url": "https://escapistmagazine.com/profiles/view/{username}",
@@ -2319,7 +2304,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "Video game website"
+      "type": "Games"
     },
     {
       "url": "https://etsy.com/shop/{username}",
@@ -2354,7 +2339,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "unavailable"
+      "type": "Shopping"
     },
     {
       "url": "https://eurogamer.net/profiles/{username}",
@@ -2379,7 +2364,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "Video game journalism"
+      "type": "Games"
     },
     {
       "url": "https://euw.op.gg/summoner/userName={username}",
@@ -2409,7 +2394,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "unavailable"
+      "type": "Internet"
     },
     {
       "url": "https://expo.io/@{username}",
@@ -2429,7 +2414,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "unavailable"
+      "type": "Computers"
     },
     {
       "url": "https://eyeem.com/u/{username}",
@@ -2454,7 +2439,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "Photo sharing / Social Networking"
+      "type": "Arts"
     },
     {
       "url": "https://f3.cool/{username}",
@@ -2469,7 +2454,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "unavailable"
+      "type": "Internet"
     },
     {
       "url": "https://facebook.com/{username}",
@@ -2499,7 +2484,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "Social networking service"
+      "type": "Internet"
     },
     {
       "url": "https://facenama.com/{username}",
@@ -2524,7 +2509,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "unavailable"
+      "type": "Internet"
     },
     {
       "url": "https://fandalism.com/{username}",
@@ -2544,7 +2529,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "unavailable"
+      "type": "Music"
     },
     {
       "url": "https://fandom.com/u/{username}",
@@ -2574,7 +2559,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "Wiki hosting service"
+      "type": "News"
     },
     {
       "url": "https://fark.com/users/{username}",
@@ -2594,7 +2579,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "unavailable"
+      "type": "News"
     },
     {
       "url": "https://filmow.com/usuario/{username}",
@@ -2619,7 +2604,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "unavailable"
+      "type": "News"
     },
     {
       "url": "https://fiverr.com/{username}",
@@ -2634,7 +2619,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "Sales of services"
+      "type": "Internet"
     },
     {
       "url": "https://fixya.com/users/{username}",
@@ -2643,7 +2628,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "unavailable"
+      "type": "Internet"
     },
     {
       "url": "https://fl.ru/users/{username}/portfolio",
@@ -2663,7 +2648,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "unavailable"
+      "type": "Internet"
     },
     {
       "url": "https://flickr.com/people/{username}",
@@ -2693,7 +2678,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "Image/Video hosting service"
+      "type": "Arts"
     },
     {
       "url": "https://flipboard.com/@{username}",
@@ -2723,7 +2708,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "unavailable"
+      "type": "News"
     },
     {
       "url": "https://fortnitetracker.com/profile/all/{username}",
@@ -2753,7 +2738,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "unavailable"
+      "type": "Internet"
     },
     {
       "url": "https://forum.3dnews.ru/member.php?username={username}",
@@ -2762,7 +2747,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "Torrent index"
+      "type": "News"
     },
     {
       "url": "https://forum.guns.ru/forummisc/blog/{username}",
@@ -2777,7 +2762,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "unavailable"
+      "type": "Internet"
     },
     {
       "url": "https://forum.hackthebox.eu/profile/{username}",
@@ -2807,7 +2792,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "unavailable"
+      "type": "Computers"
     },
     {
       "url": "https://forum.igromania.ru/member.php?username={username}",
@@ -2816,7 +2801,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "unavailable"
+      "type": "Internet"
     },
     {
       "url": "https://forum.leasehackr.com/u/{username}/summary",
@@ -2830,7 +2815,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "unavailable"
+      "type": "Internet"
     },
     {
       "url": "https://forum.sublimetext.com/u/{username}",
@@ -2844,7 +2829,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "unavailable"
+      "type": "Internet"
     },
     {
       "url": "https://forum.velomania.ru/member.php?username={username}",
@@ -2864,7 +2849,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "unavailable"
+      "type": "Internet"
     },
     {
       "url": "https://forumhouse.ru/members/?username={username}",
@@ -2884,7 +2869,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "unavailable"
+      "type": "Internet"
     },
     {
       "url": "https://forumophilia.com/profile.php?mode=viewprofile&u={username}",
@@ -2905,7 +2890,7 @@
           "type": "normal"
         }
       ],
-      "type": "adult",
+      "type": "Adult",
       "selected": "false",
       "timeout": 0,
       "implicit": 0
@@ -2938,7 +2923,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "unavailable"
+      "type": "Internet"
     },
     {
       "url": "https://forums.kali.org/member.php?username={username}",
@@ -2963,7 +2948,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "unavailable"
+      "type": "Computers"
     },
     {
       "url": "https://forums.mmorpg.com/profile/{username}",
@@ -2993,7 +2978,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "unavailable"
+      "type": "Games"
     },
     {
       "url": "https://forums.pcgamer.com/members/?username={username}",
@@ -3018,7 +3003,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "unavailable"
+      "type": "Games"
     },
     {
       "url": "https://forums.penny-arcade.com/profile/discussions/{username}",
@@ -3038,7 +3023,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "unavailable"
+      "type": "Games"
     },
     {
       "url": "https://forums.whonix.org/u/{username}",
@@ -3052,7 +3037,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "unavailable"
+      "type": "Internet"
     },
     {
       "url": "https://fosstodon.org/@{username}",
@@ -3066,7 +3051,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "unavailable"
+      "type": "Internet"
     },
     {
       "url": "https://fotolog.com/author/{username}",
@@ -3096,7 +3081,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "social network"
+      "type": "Internet"
     },
     {
       "url": "https://freelance.habr.com/freelancers/{username}",
@@ -3116,7 +3101,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "Web search engine"
+      "type": "Internet"
     },
     {
       "url": "https://freelancer.com/u/{username}",
@@ -3146,7 +3131,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "Freelance marketplace"
+      "type": "Internet"
     },
     {
       "url": "https://freesound.org/people/{username}",
@@ -3176,7 +3161,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "Audio clip sharing"
+      "type": "Internet"
     },
     {
       "url": "https://gab.com/{username}",
@@ -3196,7 +3181,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "unavailable"
+      "type": "Internet"
     },
     {
       "url": "https://gaiaonline.com/profiles/{username}",
@@ -3226,7 +3211,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "unavailable"
+      "type": "Internet"
     },
     {
       "url": "https://gamefaqs.gamespot.com/community/{username}",
@@ -3256,7 +3241,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "Video game journalism"
+      "type": "Games"
     },
     {
       "url": "https://gamepedia.com/members/{username}",
@@ -3276,7 +3261,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "unavailable"
+      "type": "Games"
     },
     {
       "url": "https://gamespot.com/profile/{username}",
@@ -3306,7 +3291,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "Video game journalism"
+      "type": "Games"
     },
     {
       "url": "https://gametz.com/user/{username}.html",
@@ -3326,7 +3311,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "unavailable"
+      "type": "Games"
     },
     {
       "url": "https://gaminglatest.com/members/{username}",
@@ -3346,7 +3331,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "unavailable"
+      "type": "Internet"
     },
     {
       "url": "https://gdprofiles.com/{username}",
@@ -3355,7 +3340,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "unavailable"
+      "type": "Internet"
     },
     {
       "url": "https://geocaching.com/p/default.aspx?u={username}",
@@ -3380,7 +3365,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "unavailable"
+      "type": "Internet"
     },
     {
       "url": "https://getmyuni.com/user/{username}",
@@ -3389,7 +3374,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "unavailable"
+      "type": "Internet"
     },
     {
       "url": "https://gfycat.com/@{username}",
@@ -3419,7 +3404,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "unavailable"
+      "type": "Internet"
     },
     {
       "url": "https://giantbomb.com/profile/{username}",
@@ -3444,7 +3429,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "Gaming wiki"
+      "type": "Internet"
     },
     {
       "url": "https://giphy.com/{username}",
@@ -3474,7 +3459,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "Subsidiary"
+      "type": "Internet"
     },
     {
       "url": "https://gitee.com/{username}",
@@ -3499,7 +3484,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "unavailable"
+      "type": "Internet"
     },
     {
       "url": "https://github.com/{username}",
@@ -3524,7 +3509,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "Collaborative version control"
+      "type": "Internet"
     },
     {
       "url": "https://gitlab.com/{username}",
@@ -3543,7 +3528,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "Git-repository hosting service"
+      "type": "Internet"
     },
     {
       "url": "https://gitlab.gnome.org/{username}",
@@ -3562,7 +3547,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "GitLab instance"
+      "type": "Internet"
     },
     {
       "url": "https://gitmemory.com/{username}",
@@ -3582,7 +3567,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "Projects Archive"
+      "type": "Internet"
     },
     {
       "url": "https://gmail.com/{username}",
@@ -3596,7 +3581,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "Social networking service"
+      "type": "Internet"
     },
     {
       "url": "https://goodreads.com/{username}",
@@ -3616,7 +3601,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "Book"
+      "type": "Internet"
     },
     {
       "url": "https://google.com/{username}",
@@ -3630,7 +3615,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "Social networking service"
+      "type": "Internet"
     },
     {
       "url": "https://gotinder.com/@{username}",
@@ -3645,7 +3630,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "unavailable"
+      "type": "Internet"
     },
     {
       "url": "https://gumroad.com/{username}",
@@ -3675,7 +3660,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "unavailable"
+      "type": "Internet"
     },
     {
       "url": "https://gurushots.com/{username}/photos",
@@ -3684,7 +3669,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "unavailable"
+      "type": "Internet"
     },
     {
       "url": "https://habr.com/ru/users/{username}",
@@ -3699,7 +3684,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "Web search engine"
+      "type": "Internet"
     },
     {
       "url": "https://hackaday.io/{username}",
@@ -3729,7 +3714,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "Weblog"
+      "type": "Internet"
     },
     {
       "url": "https://hackernoon.com/u/{username}",
@@ -3749,7 +3734,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "unavailable"
+      "type": "Internet"
     },
     {
       "url": "https://hackerone.com/{username}",
@@ -3774,7 +3759,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "unavailable"
+      "type": "Computers"
     },
     {
       "url": "https://hackerrank.com/{username}",
@@ -3794,7 +3779,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "unavailable"
+      "type": "Computers"
     },
     {
       "url": "https://hackster.io/{username}",
@@ -3824,7 +3809,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "unavailable"
+      "type": "Computers"
     },
     {
       "url": "https://hackthissite.org/user/view/{username}",
@@ -3845,7 +3830,7 @@
           "type": "normal"
         }
       ],
-      "type": "ethical hacking",
+      "type": "Computers",
       "selected": "false",
       "timeout": 0,
       "implicit": 0
@@ -3868,7 +3853,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "unavailable"
+      "type": "Adult"
     },
     {
       "url": "https://hellboundhackers.org/user/{username}.html",
@@ -3884,7 +3869,7 @@
           "type": "normal"
         }
       ],
-      "type": "ethical hacking",
+      "type": "Computers",
       "selected": "false",
       "timeout": 0,
       "implicit": 0
@@ -3917,7 +3902,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "unavailable"
+      "type": "Music"
     },
     {
       "url": "https://houzz.com/user/{username}",
@@ -3942,7 +3927,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "unavailable"
+      "type": "Society"
     },
     {
       "url": "https://hub.docker.com/u/{username}",
@@ -3961,7 +3946,7 @@
       "selected": "false",
       "timeout": 0,
       "implicit": 10,
-      "type": "unavailable"
+      "type": "Computers"
     },
     {
       "url": "https://hubpages.com/@{username}",
@@ -3986,7 +3971,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "unavailable"
+      "type": "Reference"
     },
     {
       "url": "https://hubski.com/user/{username}",
@@ -4016,7 +4001,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "Social news"
+      "type": "Reference"
     },
     {
       "url": "https://hunting.ru/forum/members/?username={username}",
@@ -4031,7 +4016,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "unavailable"
+      "type": "Internet"
     },
     {
       "url": "https://icq.im/{username}",
@@ -4056,7 +4041,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "unavailable"
+      "type": "Internet"
     },
     {
       "url": "https://ifttt.com/p/{username}",
@@ -4086,7 +4071,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "unavailable"
+      "type": "Internet"
     },
     {
       "url": "https://imagefap.com/profile/{username}",
@@ -4111,7 +4096,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "unavailable"
+      "type": "Adult"
     },
     {
       "url": "https://imgsrc.ru/main/user.php?user={username}",
@@ -4120,7 +4105,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "unavailable"
+      "type": "Arts"
     },
     {
       "url": "https://imgup.cz/{username}",
@@ -4150,7 +4135,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "unavailable"
+      "type": "Arts"
     },
     {
       "url": "https://imgur.com/user/{username}",
@@ -4165,7 +4150,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "hosting"
+      "type": "Arts"
     },
     {
       "url": "https://inaturalist.org/people/{username}",
@@ -4185,7 +4170,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "unavailable"
+      "type": "Science"
     },
     {
       "url": "https://independent.academia.edu/{username}",
@@ -4215,7 +4200,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "Platform for sharing research papers"
+      "type": "Books"
     },
     {
       "url": "https://indiblogger.in/{username}",
@@ -4240,7 +4225,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "unavailable"
+      "type": "Internet"
     },
     {
       "url": "https://influenster.com/{username}",
@@ -4265,7 +4250,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "unavailable"
+      "type": "Internet"
     },
     {
       "url": "https://instagram.com/{username}",
@@ -4296,7 +4281,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "unavailable"
+      "type": "Internet"
     },
     {
       "url": "https://instructables.com/member/{username}",
@@ -4326,7 +4311,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "Informational"
+      "type": "Internet"
     },
     {
       "url": "https://interpals.net/{username}",
@@ -4351,7 +4336,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "unavailable"
+      "type": "Internet"
     },
     {
       "url": "https://irc-galleria.net/user/{username}",
@@ -4371,7 +4356,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "unavailable"
+      "type": "Internet"
     },
     {
       "url": "https://irecommend.ru/users/{username}",
@@ -4386,7 +4371,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "unavailable"
+      "type": "Internet"
     },
     {
       "url": "https://irl.com/{username}",
@@ -4406,7 +4391,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "unavailable"
+      "type": "Internet"
     },
     {
       "url": "https://issuu.com/{username}",
@@ -4436,7 +4421,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "Electronic publishing"
+      "type": "Internet"
     },
     {
       "url": "https://jbzd.com.pl/uzytkownik/{username}",
@@ -4456,7 +4441,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "unavailable"
+      "type": "Internet"
     },
     {
       "url": "https://jeuxvideo.com/profil/{username}?mode=infos",
@@ -4476,7 +4461,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "Video game journalism"
+      "type": "Adult"
     },
     {
       "url": "https://kaggle.com/{username}",
@@ -4506,7 +4491,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "unavailable"
+      "type": "Computers"
     },
     {
       "url": "https://keybase.io/{username}",
@@ -4536,7 +4521,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "Encrypted social networking service"
+      "type": "Internet"
     },
     {
       "url": "https://kik.me/{username}",
@@ -4545,7 +4530,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "unavailable"
+      "type": "Internet"
     },
     {
       "url": "https://kizlarsoruyor.com/uye/{username}",
@@ -4565,7 +4550,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "unavailable"
+      "type": "Internet"
     },
     {
       "url": "https://ko-fi.com/{username}",
@@ -4580,7 +4565,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "unavailable"
+      "type": "Internet"
     },
     {
       "url": "https://kongregate.com/accounts/{username}",
@@ -4605,7 +4590,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "Online gaming website and/or social network"
+      "type": "Games"
     },
     {
       "url": "https://kwork.ru/user/{username}",
@@ -4630,7 +4615,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "unavailable"
+      "type": "Internet"
     },
     {
       "url": "https://lab.pentestit.ru/profile/{username}",
@@ -4645,7 +4630,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "unavailable"
+      "type": "Internet"
     },
     {
       "url": "https://labroots.com/profile/{username}",
@@ -4665,7 +4650,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "unavailable"
+      "type": "Internet"
     },
     {
       "url": "https://last.fm/user/{username}",
@@ -4690,7 +4675,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "Online music database"
+      "type": "Music"
     },
     {
       "url": "https://launchpad.net/~{username}",
@@ -4715,7 +4700,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "Project Hosting Server"
+      "type": "Computers"
     },
     {
       "url": "https://leetcode.com/{username}",
@@ -4740,7 +4725,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "Competitive programming"
+      "type": "Computers"
     },
     {
       "url": "https://letterboxd.com/{username}",
@@ -4770,7 +4755,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "Social networking service for films"
+      "type": "Internet"
     },
     {
       "url": "https://lichess.org/@/{username}",
@@ -4795,7 +4780,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "Internet chess server"
+      "type": "Game"
     },
     {
       "url": "https://linkedin.com/in/{username}/",
@@ -4815,7 +4800,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "Social media platform"
+      "type": "Jobs"
     },
     {
       "url": "https://linux.org.ru/people/{username}/profile",
@@ -4830,7 +4815,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "unavailable"
+      "type": "Computers"
     },
     {
       "url": "https://listography.com/{username}",
@@ -4850,7 +4835,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "unavailable"
+      "type": "Internet"
     },
     {
       "url": "https://liveleak.com/c/{username}",
@@ -4875,7 +4860,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "Video sharing"
+      "type": "Videos"
     },
     {
       "url": "https://livelib.ru/reader/{username}",
@@ -4895,7 +4880,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "unavailable"
+      "type": "Books"
     },
     {
       "url": "https://lobste.rs/u/{username}",
@@ -4920,7 +4905,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "unavailable"
+      "type": "Internet"
     },
     {
       "url": "https://lolchess.gg/profile/na/{username}",
@@ -4945,7 +4930,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "unavailable"
+      "type": "Internet"
     },
     {
       "url": "https://mastodon.cloud/@{username}",
@@ -4959,7 +4944,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "unavailable"
+      "type": "Internet"
     },
     {
       "url": "https://mastodon.social/@{username}",
@@ -4973,7 +4958,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "unavailable"
+      "type": "Internet"
     },
     {
       "url": "https://mastodon.technology/@{username}",
@@ -4987,7 +4972,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "unavailable"
+      "type": "Internet"
     },
     {
       "url": "https://mastodon.xyz/@{username}",
@@ -5001,7 +4986,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "unavailable"
+      "type": "Internet"
     },
     {
       "url": "https://medium.com/@{username}",
@@ -5026,7 +5011,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "unavailable"
+      "type": "Internet"
     },
     {
       "url": "https://members.fotki.com/{username}/about/",
@@ -5046,7 +5031,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "unavailable"
+      "type": "Internet"
     },
     {
       "url": "https://memrise.com/user/{username}",
@@ -5076,7 +5061,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "Privately held company"
+      "type": "Internet"
     },
     {
       "url": "https://mercadolivre.com.br/perfil/{username}",
@@ -5096,7 +5081,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "unavailable"
+      "type": "Internet"
     },
     {
       "url": "https://meta.wikimedia.org/wiki/Special:CentralAuth/{username}",
@@ -5110,7 +5095,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "unavailable"
+      "type": "Internet"
     },
     {
       "url": "https://metacritic.com/user/{username}",
@@ -5135,7 +5120,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "Review aggregator"
+      "type": "Internet"
     },
     {
       "url": "https://micro.blog/{username}",
@@ -5155,7 +5140,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "unavailable"
+      "type": "Society"
     },
     {
       "url": "https://mix.com/{username}",
@@ -5170,7 +5155,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "unavailable"
+      "type": "Internet"
     },
     {
       "url": "https://mixcloud.com/{username}",
@@ -5185,7 +5170,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "Audio Streaming"
+      "type": "Music"
     },
     {
       "url": "https://mobile.twitter.com/{username}",
@@ -5211,7 +5196,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "social networking service"
+      "type": "Internet"
     },
     {
       "url": "https://moikrug.ru/{username}",
@@ -5231,7 +5216,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "unavailable"
+      "type": "Internet"
     },
     {
       "url": "https://mouthshut.com/{username}",
@@ -5251,7 +5236,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "unavailable"
+      "type": "Internet"
     },
     {
       "url": "https://mstdn.io/@{username}",
@@ -5265,7 +5250,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "unavailable"
+      "type": "Internet"
     },
     {
       "url": "https://munzee.com/m/{username}",
@@ -5290,7 +5275,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "unavailable"
+      "type": "Internet"
     },
     {
       "url": "https://my.flightradar24.com/{username}",
@@ -5315,7 +5300,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "Aircraft tracking"
+      "type": "Internet"
     },
     {
       "url": "https://myanimelist.net/profile/{username}",
@@ -5340,7 +5325,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "Anime and manga social networking and cataloging"
+      "type": "Internet"
     },
     {
       "url": "https://myminifactory.com/users/{username}",
@@ -5370,7 +5355,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "3D Design sharing platform"
+      "type": "Internet"
     },
     {
       "url": "https://myspace.com/{username}",
@@ -5390,7 +5375,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "Social media"
+      "type": "Society"
     },
     {
       "url": "https://nairaland.com/{username}",
@@ -5415,7 +5400,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "Internet forum"
+      "type": "Internet"
     },
     {
       "url": "https://namemc.com/profile/{username}",
@@ -5430,32 +5415,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "unavailable"
-    },
-    {
-      "url": "https://nationstates.net/nation={username}",
-      "detections": [
-        {
-          "return": "false",
-          "string": "does not exist",
-          "type": "advanced"
-        },
-        {
-          "return": "false",
-          "string": "does not exist",
-          "type": "normal"
-        },
-        {
-          "return": "true",
-          "string": "nationsummary",
-          "type": "normal"
-        }
-      ],
-      "selected": "false",
-      "timeout": 0,
-      "implicit": 0,
-      "extract": [],
-      "type": "Government simulation game"
+      "type": "Games"
     },
     {
       "url": "https://nationstates.net/{username}",
@@ -5480,7 +5440,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "Government simulation game"
+      "type": "Games"
     },
     {
       "url": "https://native-instruments.com/forum/members?username={username}",
@@ -5505,7 +5465,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "unavailable"
+      "type": "Music"
     },
     {
       "url": "https://neogaf.com/members/{username}/",
@@ -5520,7 +5480,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "Internet forum"
+      "type": "Internet"
     },
     {
       "url": "https://news.ycombinator.com/user?id={username}",
@@ -5545,7 +5505,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "unavailable"
+      "type": "Internet"
     },
     {
       "url": "https://nightbot.tv/t/{username}/commands",
@@ -5554,7 +5514,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "unavailable"
+      "type": "Internet"
     },
     {
       "url": "https://ninjakiwi.com/profile/{username}",
@@ -5569,7 +5529,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "Flash game website"
+      "type": "Game"
     },
     {
       "url": "https://notabug.org/{username}",
@@ -5599,7 +5559,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "unavailable"
+      "type": "Internet"
     },
     {
       "url": "https://note.com/{username}",
@@ -5619,7 +5579,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "Study guide"
+      "type": "Society"
     },
     {
       "url": "https://npmjs.com/~{username}",
@@ -5644,7 +5604,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "unavailable"
+      "type": "Computers"
     },
     {
       "url": "https://ok.ru/{username}",
@@ -5669,7 +5629,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "unavailable"
+      "type": "Internet"
     },
     {
       "url": "https://open.spotify.com/user/{username}",
@@ -5689,7 +5649,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "Music streaming service"
+      "type": "Music"
     },
     {
       "url": "https://opencollective.com/{username}",
@@ -5704,7 +5664,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "unavailable"
+      "type": "Computers"
     },
     {
       "url": "https://openhub.net/accounts/{username}",
@@ -5729,7 +5689,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "Public directory of free and open-source software (FOSS)"
+      "type": "Computers"
     },
     {
       "url": "https://opennet.ru/~{username}",
@@ -5744,7 +5704,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "News and forum"
+      "type": "Internet"
     },
     {
       "url": "https://opensource.com/users/{username}",
@@ -5769,7 +5729,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "unavailable"
+      "type": "Computers"
     },
     {
       "url": "https://openstreetmap.org/user/{username}",
@@ -5799,7 +5759,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "Collaborative mapping"
+      "type": "Internet"
     },
     {
       "url": "https://osu.ppy.sh/users/{username}",
@@ -5824,7 +5784,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "unavailable"
+      "type": "Internet"
     },
     {
       "url": "https://ourdjtalk.com/members?username={username}",
@@ -5849,7 +5809,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "unavailable"
+      "type": "Internet"
     },
     {
       "url": "https://packagist.org/packages/{username}",
@@ -5869,7 +5829,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "unavailable"
+      "type": "Computers"
     },
     {
       "url": "https://pastebin.com/u/{username}",
@@ -5894,7 +5854,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "Web application"
+      "type": "Computers"
     },
     {
       "url": "https://pathofexile.com/account/view-profile/{username}",
@@ -5914,7 +5874,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "unavailable"
+      "type": "Internet"
     },
     {
       "url": "https://patreon.com/{username}",
@@ -5939,7 +5899,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "Membership platform"
+      "type": "Internet"
     },
     {
       "url": "https://pcpartpicker.com/user/{username}",
@@ -5964,7 +5924,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "Comparison shopping"
+      "type": "Shopping"
     },
     {
       "url": "https://periscope.tv/{username}",
@@ -5989,7 +5949,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "unavailable"
+      "type": "Internet"
     },
     {
       "url": "https://php.ru/forum/members/?username={username}",
@@ -6004,7 +5964,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "unavailable"
+      "type": "Internet"
     },
     {
       "url": "https://pikabu.ru/@{username}",
@@ -6019,7 +5979,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "unavailable"
+      "type": "Internet"
     },
     {
       "url": "https://pinkbike.com/u/{username}",
@@ -6044,7 +6004,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "unavailable"
+      "type": "Internet"
     },
     {
       "url": "https://pinterest.com/{username}",
@@ -6070,7 +6030,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "Social media service"
+      "type": "Internet"
     },
     {
       "url": "https://play.google.com/store/apps/developer?id={username}",
@@ -6079,7 +6039,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "Web search engine"
+      "type": "Shopping"
     },
     {
       "url": "https://pling.com/u/{username}",
@@ -6094,7 +6054,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "Libre services and content sharing"
+      "type": "Computers"
     },
     {
       "url": "https://plug.dj/@/{username}",
@@ -6124,7 +6084,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "unavailable"
+      "type": "Music"
     },
     {
       "url": "https://plurk.com/{username}",
@@ -6149,7 +6109,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "unavailable"
+      "type": "Internet"
     },
     {
       "url": "https://pokemonshowdown.com/users/{username}",
@@ -6169,7 +6129,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "unavailable"
+      "type": "Internet"
     },
     {
       "url": "https://polarsteps.com/{username}",
@@ -6184,7 +6144,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "unavailable"
+      "type": "Internet"
     },
     {
       "url": "https://polygon.com/users/{username}",
@@ -6209,7 +6169,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "Gaming website"
+      "type": "Games"
     },
     {
       "url": "https://postcrossing.com/user/{username}",
@@ -6234,7 +6194,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "unavailable"
+      "type": "Internet"
     },
     {
       "url": "https://pr0gramm.com/user/{username}",
@@ -6243,7 +6203,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "unavailable"
+      "type": "Internet"
     },
     {
       "url": "https://premium.chat/{username}",
@@ -6263,7 +6223,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "unavailable"
+      "type": "Internet"
     },
     {
       "url": "https://producthunt.com/@{username}",
@@ -6288,7 +6248,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "unavailable"
+      "type": "Internet"
     },
     {
       "url": "https://profil.chatujme.cz/{username}",
@@ -6308,7 +6268,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "unavailable"
+      "type": "Internet"
     },
     {
       "url": "https://profile.ameba.jp/ameba/{username}/",
@@ -6328,7 +6288,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "Social network service"
+      "type": "Internet"
     },
     {
       "url": "https://profiles.wordpress.org/{username}",
@@ -6358,7 +6318,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "unavailable"
+      "type": "Internet"
     },
     {
       "url": "https://prog.hu/azonosito/info/{username}",
@@ -6373,7 +6333,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "unavailable"
+      "type": "Internet"
     },
     {
       "status": "bad",
@@ -6399,7 +6359,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "unavailable"
+      "type": "Internet"
     },
     {
       "url": "https://psnprofiles.com/{username}",
@@ -6414,7 +6374,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "unavailable"
+      "type": "Internet"
     },
     {
       "url": "https://ptt.cc/bbs/C_Chat/search?q=author%3A{username}",
@@ -6434,7 +6394,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "unavailable"
+      "type": "Internet"
     },
     {
       "url": "https://pttweb.cc/user/{username}",
@@ -6454,7 +6414,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "unavailable"
+      "type": "Internet"
     },
     {
       "url": "https://pypi.org/user/{username}",
@@ -6479,7 +6439,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "unavailable"
+      "type": "Internet"
     },
     {
       "url": "https://qiita.com/{username}",
@@ -6499,7 +6459,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "unavailable"
+      "type": "Internet"
     },
     {
       "url": "https://quizlet.com/{username}",
@@ -6524,7 +6484,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "Education"
+      "type": "Internet"
     },
     {
       "url": "https://quora.com/profile/{username}",
@@ -6549,7 +6509,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "Question and answer"
+      "type": "Internet"
     },
     {
       "url": "https://raidforums.com/User-{username}",
@@ -6574,7 +6534,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "unavailable"
+      "type": "Internet"
     },
     {
       "url": "https://rateyourmusic.com/~{username}",
@@ -6599,7 +6559,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "Database and community"
+      "type": "Music"
     },
     {
       "url": "https://realmeye.com/player/{username}",
@@ -6624,7 +6584,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "unavailable"
+      "type": "Games"
     },
     {
       "url": "https://redbubble.com/people/{username}",
@@ -6649,7 +6609,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "unavailable"
+      "type": "Internet"
     },
     {
       "url": "https://reddit.com/user/{username}",
@@ -6675,7 +6635,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "Social news"
+      "type": "Internet"
     },
     {
       "url": "https://redtube.com/users/{username}",
@@ -6695,7 +6655,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "unavailable"
+      "type": "Adult"
     },
     {
       "url": "https://repl.it/@{username}",
@@ -6715,7 +6675,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "unavailable"
+      "type": "Computers"
     },
     {
       "url": "https://researchgate.net/profile/{username}",
@@ -6730,7 +6690,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "Social network service for scientists"
+      "type": "Computers"
     },
     {
       "url": "https://reverbnation.com/{username}",
@@ -6755,7 +6715,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "Music and Social Networking"
+      "type": "Music"
     },
     {
       "url": "https://rive.app/a/{username}",
@@ -6785,7 +6745,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "unavailable"
+      "type": "Internet"
     },
     {
       "url": "https://robertsspaceindustries.com/citizens/{username}",
@@ -6810,7 +6770,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "unavailable"
+      "type": "Internet"
     },
     {
       "url": "https://roblox.com/user.aspx?username={username}",
@@ -6819,7 +6779,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "unavailable"
+      "type": "Games"
     },
     {
       "url": "https://rubygems.org/profiles/{username}",
@@ -6849,7 +6809,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "unavailable"
+      "type": "Computers"
     },
     {
       "url": "https://rusfootball.info/user/{username}",
@@ -6858,7 +6818,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "unavailable"
+      "type": "Sports"
     },
     {
       "url": "https://satsis.info/user/{username}",
@@ -6878,7 +6838,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "unavailable"
+      "type": "Internet"
     },
     {
       "url": "https://sbazar.cz/{username}",
@@ -6898,7 +6858,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "Joint stock company"
+      "type": "Shopping"
     },
     {
       "url": "https://scratch.mit.edu/users/{username}",
@@ -6923,7 +6883,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "unavailable"
+      "type": "Internet"
     },
     {
       "url": "https://scribd.com/{username}",
@@ -6943,7 +6903,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "unavailable"
+      "type": "Internet"
     },
     {
       "url": "https://sharechat.com/profile/{username}",
@@ -6958,7 +6918,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "unavailable"
+      "type": "Internet"
     },
     {
       "url": "https://shitpostbot.com/user/{username}",
@@ -6967,7 +6927,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "unavailable"
+      "type": "Internet"
     },
     {
       "url": "https://slashdot.org/~{username}",
@@ -6992,7 +6952,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "Online newspapersocial news"
+      "type": "News"
     },
     {
       "url": "https://slideshare.net/{username}",
@@ -7017,7 +6977,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "Slide hosting service"
+      "type": "Internet"
     },
     {
       "url": "https://smule.com/{username}",
@@ -7047,7 +7007,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "unavailable"
+      "type": "Internet"
     },
     {
       "url": "https://social.tchncs.de/@{username}",
@@ -7077,7 +7037,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "unavailable"
+      "type": "Internet"
     },
     {
       "url": "https://soundcloud.com/{username}",
@@ -7097,7 +7057,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "Music streaming"
+      "type": "Music"
     },
     {
       "url": "https://sourceforge.net/u/{username}",
@@ -7127,7 +7087,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "Collaborative revision control"
+      "type": "Computers"
     },
     {
       "url": "https://soylentnews.org/~{username}",
@@ -7152,7 +7112,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "unavailable"
+      "type": "Internet"
     },
     {
       "url": "https://sparkpeople.com/mypage.asp?id={username}",
@@ -7177,7 +7137,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "unavailable"
+      "type": "Internet"
     },
     {
       "url": "https://speedrun.com/user/{username}",
@@ -7202,7 +7162,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "unavailable"
+      "type": "Games"
     },
     {
       "url": "https://spletnik.ru/user/{username}",
@@ -7222,7 +7182,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "unavailable"
+      "type": "Internet"
     },
     {
       "url": "https://splits.io/users/{username}",
@@ -7247,7 +7207,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "unavailable"
+      "type": "Internet"
     },
     {
       "url": "https://sporcle.com/user/{username}/people",
@@ -7272,7 +7232,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "Quizzes"
+      "type": "Internet"
     },
     {
       "url": "https://sports.ru/profile/{username}",
@@ -7287,7 +7247,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "unavailable"
+      "type": "Sports"
     },
     {
       "url": "https://steamcommunity.com/id/{username}",
@@ -7312,7 +7272,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "unavailable"
+      "type": "Games"
     },
     {
       "url": "https://steamid.uk/profile/{username}",
@@ -7332,7 +7292,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "unavailable"
+      "type": "Games"
     },
     {
       "url": "https://steemit.com/@{username}",
@@ -7357,7 +7317,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "unavailable"
+      "type": "Internet"
     },
     {
       "url": "https://strava.com/athletes/{username}",
@@ -7372,7 +7332,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "unavailable"
+      "type": "Internet"
     },
     {
       "url": "https://svidbook.ru/user/{username}",
@@ -7386,7 +7346,7 @@
       "selected": "false",
       "timeout": 10,
       "implicit": 10,
-      "type": "unavailable"
+      "type": "Books"
     },
     {
       "url": "https://t.me/{username}",
@@ -7417,7 +7377,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "unavailable"
+      "type": "Internet"
     },
     {
       "url": "https://taringa.net/{username}",
@@ -7442,7 +7402,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "unavailable"
+      "type": "Internet"
     },
     {
       "url": "https://tellonym.me/{username}",
@@ -7457,7 +7417,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "unavailable"
+      "type": "Internet"
     },
     {
       "url": "https://tenor.com/users/{username}",
@@ -7482,7 +7442,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "unavailable"
+      "type": "Internet"
     },
     {
       "url": "https://theverge.com/users/{username}",
@@ -7507,7 +7467,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "Technology news"
+      "type": "News"
     },
     {
       "url": "https://tiktok.com/@{username}",
@@ -7533,7 +7493,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "unavailable"
+      "type": "Internet"
     },
     {
       "url": "https://tldrlegal.com/users/{username}/",
@@ -7548,7 +7508,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "unavailable"
+      "type": "Internet"
     },
     {
       "url": "https://tnaflix.com/profile/{username}",
@@ -7568,7 +7528,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "adult"
+      "type": "Internet"
     },
     {
       "url": "https://tradingview.com/u/{username}",
@@ -7593,7 +7553,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "unavailable"
+      "type": "Business"
     },
     {
       "url": "https://trakt.tv/users/{username}",
@@ -7613,7 +7573,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "unavailable"
+      "type": "Internet"
     },
     {
       "url": "https://trashbox.ru/users/{username}",
@@ -7628,7 +7588,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "unavailable"
+      "type": "Internet"
     },
     {
       "url": "https://travellerspoint.com/users/{username}",
@@ -7658,7 +7618,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "Social network service"
+      "type": "Internet"
     },
     {
       "url": "https://trello.com/{username}",
@@ -7673,7 +7633,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "unavailable"
+      "type": "Internet"
     },
     {
       "url": "https://tripadvisor.com/members/{username}",
@@ -7698,7 +7658,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "unavailable"
+      "type": "Society"
     },
     {
       "url": "https://tryhackme.com/p/{username}",
@@ -7723,7 +7683,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "unavailable"
+      "type": "Computers"
     },
     {
       "url": "https://twitch.tv/{username}",
@@ -7738,7 +7698,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "Live streaming"
+      "type": "Internet"
     },
     {
       "url": "https://udemy.com/user/{username}/",
@@ -7758,7 +7718,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "unavailable"
+      "type": "Computers"
     },
     {
       "url": "https://uid.me/{username}",
@@ -7783,7 +7743,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "unavailable"
+      "type": "Computers"
     },
     {
       "url": "https://ultimate-guitar.com/u/{username}",
@@ -7813,7 +7773,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "Tablature archive"
+      "type": "Music"
     },
     {
       "url": "https://unsplash.com/@{username}",
@@ -7843,7 +7803,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "Stock photography"
+      "type": "Arts"
     },
     {
       "url": "https://us.forums.blizzard.com/en/blizzard/u/{username}",
@@ -7868,7 +7828,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "unavailable"
+      "type": "Internet"
     },
     {
       "url": "https://v2ex.com/member/{username}",
@@ -7883,7 +7843,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "Internet forum"
+      "type": "Internet"
     },
     {
       "url": "https://venmo.com/{username}",
@@ -7913,7 +7873,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "unavailable"
+      "type": "Internet"
     },
     {
       "url": "https://vero.co/{username}",
@@ -7938,7 +7898,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "unavailable"
+      "type": "Internet"
     },
     {
       "url": "https://vgr.com/forum/profile/{username}",
@@ -7963,7 +7923,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "unavailable"
+      "type": "Internet"
     },
     {
       "url": "https://videogamer.com/forums/index.php?/profile/{username}/",
@@ -7978,7 +7938,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "unavailable"
+      "type": "Internet"
     },
     {
       "url": "https://vimeo.com/{username}",
@@ -8002,7 +7962,7 @@
       "selected": "false",
       "timeout": 0,
       "implicit": 10,
-      "type": "Video hosting service"
+      "type": "Videos"
     },
     {
       "url": "https://vingle.net/{username}",
@@ -8027,7 +7987,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "unavailable"
+      "type": "Internet"
     },
     {
       "url": "https://virgool.io/@{username}",
@@ -8042,7 +8002,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "unavailable"
+      "type": "Internet"
     },
     {
       "url": "https://virustotal.com/ui/users/{username}/trusted_users",
@@ -8051,7 +8011,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "Internet security"
+      "type": "Internet"
     },
     {
       "url": "https://vk.com/{username}",
@@ -8076,7 +8036,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "Social networking service"
+      "type": "Internet"
     },
     {
       "url": "https://voice.com/profile/{username}",
@@ -8101,7 +8061,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "unavailable"
+      "type": "Society"
     },
     {
       "url": "https://vsco.co/{username}",
@@ -8121,7 +8081,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "unavailable"
+      "type": "Arts"
     },
     {
       "url": "https://warriorforum.com/members/{username}.html",
@@ -8151,7 +8111,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "unavailable"
+      "type": "Internet"
     },
     {
       "url": "https://wattpad.com/user/{username}",
@@ -8176,7 +8136,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "Reading app"
+      "type": "Internet"
     },
     {
       "url": "https://weheartit.com/{username}",
@@ -8206,7 +8166,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "unavailable"
+      "type": "Internet"
     },
     {
       "url": "https://wikidot.com/user:info/{username}",
@@ -8231,7 +8191,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "Online website builder"
+      "type": "Internet"
     },
     {
       "url": "https://wordnik.com/users/{username}",
@@ -8246,7 +8206,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "Digital dictionary"
+      "type": "Internet"
     },
     {
       "url": "https://wowhead.com/user={username}",
@@ -8266,7 +8226,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "unavailable"
+      "type": "Internet"
     },
     {
       "url": "https://wykop.pl/ludzie/{username}/",
@@ -8291,7 +8251,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "unavailable"
+      "type": "News"
     },
     {
       "url": "https://xboxgamertag.com/search/{username}",
@@ -8311,7 +8271,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "unavailable"
+      "type": "Games"
     },
     {
       "url": "https://xhamster.com/users/{username}",
@@ -8331,7 +8291,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "adult"
+      "type": "Adult"
     },
     {
       "url": "https://xrares.com/user/{username}",
@@ -8351,7 +8311,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "unavailable"
+      "type": "Adult"
     },
     {
       "url": "https://xvideos.com/profiles/{username}",
@@ -8371,7 +8331,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "adult"
+      "type": "Adult"
     },
     {
       "url": "https://xxxbunker.com/users/{username}",
@@ -8391,7 +8351,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "adult"
+      "type": "Adult"
     },
     {
       "url": "https://youpic.com/photographer/{username}",
@@ -8416,7 +8376,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "unavailable"
+      "type": "Arts"
     },
     {
       "url": "https://youtube.com/c/{username}/about",
@@ -8452,7 +8412,7 @@
           "regex": "{\"webCommandMetadata\":{\"url\":\"https://www.youtube.com/[^\"]+(http[^\"]+)"
         }
       ],
-      "type": "Video hosting service"
+      "type": "Videos"
     },
     {
       "url": "https://ytmnd.com/users/{username}/",
@@ -8472,7 +8432,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "unavailable"
+      "type": "Internet"
     },
     {
       "url": "https://zhihu.com/people/{username}",
@@ -8492,7 +8452,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "Knowledge markets"
+      "type": "Internet"
     },
     {
       "url": "https://{username}.blogspot.com",
@@ -8522,7 +8482,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "Blog host"
+      "type": "Internet"
     },
     {
       "url": "https://{username}.booth.pm",
@@ -8531,7 +8491,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "unavailable"
+      "type": "Internet"
     },
     {
       "url": "https://{username}.carbonmade.com",
@@ -8556,7 +8516,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "unavailable"
+      "type": "Internet"
     },
     {
       "url": "https://{username}.contently.com",
@@ -8565,7 +8525,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "unavailable"
+      "type": "Internet"
     },
     {
       "url": "https://{username}.crevado.com",
@@ -8590,7 +8550,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "unavailable"
+      "type": "Internet"
     },
     {
       "url": "https://{username}.deviantart.com",
@@ -8620,7 +8580,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "Art display/Social networking service"
+      "type": "Internet"
     },
     {
       "url": "https://{username}.hatenablog.com/about",
@@ -8645,7 +8605,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "unavailable"
+      "type": "Internet"
     },
     {
       "url": "https://{username}.itch.io",
@@ -8670,7 +8630,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "unavailable"
+      "type": "Internet"
     },
     {
       "url": "https://{username}.jimdosite.com",
@@ -8679,7 +8639,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "unavailable"
+      "type": "Internet"
     },
     {
       "url": "https://{username}.kroogi.com/",
@@ -8699,7 +8659,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "unavailable"
+      "type": "Internet"
     },
     {
       "url": "https://{username}.livejournal.com",
@@ -8729,7 +8689,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "Blog hosting"
+      "type": "Internet"
     },
     {
       "url": "https://{username}.newgrounds.com",
@@ -8759,7 +8719,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "Entertainment"
+      "type": "Internet"
     },
     {
       "url": "https://{username}.rajce.idnes.cz",
@@ -8779,7 +8739,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "unavailable"
+      "type": "Internet"
     },
     {
       "url": "https://{username}.skyrock.com/",
@@ -8804,7 +8764,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "unavailable"
+      "type": "Internet"
     },
     {
       "url": "https://{username}.slack.com",
@@ -8813,7 +8773,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "unavailable"
+      "type": "Internet"
     },
     {
       "url": "https://{username}.tumblr.com",
@@ -8844,7 +8804,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "unavailable"
+      "type": "Internet"
     },
     {
       "url": "https://{username}.webnode.cz",
@@ -8869,7 +8829,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "unavailable"
+      "type": "Internet"
     },
     {
       "url": "https://{username}.wix.com",
@@ -8884,7 +8844,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "unavailable"
+      "type": "Internet"
     },
     {
       "url": "https://{username}.wordpress.com",
@@ -8914,7 +8874,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "unavailable"
+      "type": "Internet"
     },
     {
       "url": "https://{username}.www.nn.ru",
@@ -8939,7 +8899,7 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "unavailable"
+      "type": "Internet"
     }
   ],
   "shared_detections": [
