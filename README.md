@@ -52,6 +52,7 @@ Profile images **will not** be blurred. If you want them to be blurred, turn tha
 - Dump logs to folder or terminal (prettified)
 - Adjust finding\getting profile workers (default 15)
 - Re-checking option for failed profiles
+- Filter profiles by good, maybe, and bad
 - [Wiki](https://github.com/qeeqbox/social-analyzer/wiki)
 
 ## Special Detections
