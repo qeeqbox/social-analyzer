@@ -42,6 +42,10 @@ var argv = require('yargs')
   .describe('trim', 'Trim long strings')
   .default("trim", false)
   .boolean('trim')
+  .describe('filter', 'filter detected profiles by good, maybe or bad, you can do combine them with comma (good,bad) or use all')
+  .default("filter", "all")
+  .describe('profiles', 'filter profiles by detected, unknown or failed, you can do combine them with comma (detected,failed) or use all')
+  .default("profiles", "all")
   .help('help')
   .argv;
 
@@ -247,11 +251,11 @@ app.post("/analyze_string", async function(req, res, next) {
     }
 
     if (req.body.option.includes("FindUserProfilesSpecial")) {
-      if(!fast){
+      if (!fast) {
         helper.log_to_file_queue(req.body.uuid, "[Starting] Checking user profiles special")
         user_info_special.data = await specialScan.find_username_special(req);
         helper.log_to_file_queue(req.body.uuid, "[Done] Checking user profiles special")
-      }else {
+      } else {
         helper.log_to_file_queue(req.body.uuid, "[Warning] FindUserProfilesFast with FindUserProfilesSpecial")
         helper.log_to_file_queue(req.body.uuid, "[Skipping] FindUserProfilesSpecial")
       }
@@ -397,24 +401,22 @@ function delete_keys(object, temp_keys) {
   temp_keys.forEach((key) => {
     try {
       delete object[key]
-    } catch (err) {
-    }
+    } catch (err) {}
   });
   return object
 }
 
-function clean_up_item(object,temp_keys_str){
+function clean_up_item(object, temp_keys_str) {
   delete object['image']
   if (temp_keys_str == "") {
     delete object['text']
   } else {
     Object.keys(object).forEach((key) => {
       try {
-        if (!temp_keys_str.includes(key)){
+        if (!temp_keys_str.includes(key)) {
           delete object[key]
         }
-      } catch (err) {
-      }
+      } catch (err) {}
     });
   }
   return object
@@ -431,10 +433,10 @@ async function check_user_cli(argv) {
       temp_options = ",GetUserProfilesFast,"
     }
   }
-  if (argv.extract){
+  if (argv.extract) {
     temp_options += ",ExtractPatterns,"
   }
-  if (argv.metadata){
+  if (argv.metadata) {
     temp_options += ",ExtractMetadata,"
   }
   var req = {
@@ -476,41 +478,67 @@ async function check_user_cli(argv) {
 
       if (item.method == "all") {
         if (item.good == "true") {
-          item = delete_keys(item,['method','good'])
-          item = clean_up_item(item,argv.options)
+          item = delete_keys(item, ['method', 'good'])
+          item = clean_up_item(item, argv.options)
           temp_detected.detected.push(item)
         } else {
-          item = delete_keys(item,['found','rate','status','method','good','extracted','metadata'])
-          item = clean_up_item(item,argv.options)
+          item = delete_keys(item, ['found', 'rate', 'status', 'method', 'good', 'extracted', 'metadata'])
+          item = clean_up_item(item, argv.options)
           temp_detected.unknown.push(item)
         }
       } else if (item.method == "find") {
         if (item.good == "true") {
-          item = delete_keys(item,['method','good'])
-          item = clean_up_item(item,argv.options)
+          item = delete_keys(item, ['method', 'good'])
+          item = clean_up_item(item, argv.options)
           temp_detected.detected.push(item)
         }
       } else if (item.method == "get") {
-        item = delete_keys(item,['found','rate','status','method','good','extracted','metadata'])
-        item = clean_up_item(item,argv.options)
+        item = delete_keys(item, ['found', 'rate', 'status', 'method', 'good', 'extracted', 'metadata'])
+        item = clean_up_item(item, argv.options)
         temp_detected.unknown.push(item)
       } else if (item.method == "failed") {
-        item = delete_keys(item,['found','rate','status','method','good','text','language','title','type','extracted','metadata'])
-        item = clean_up_item(item,argv.options)
+        item = delete_keys(item, ['found', 'rate', 'status', 'method', 'good', 'text', 'language', 'title', 'type', 'extracted', 'metadata'])
+        item = clean_up_item(item, argv.options)
         temp_detected.failed.push(item)
       }
     });
 
     if (temp_detected.detected.length == 0) {
       delete temp_detected["detected"];
+    } else {
+      if (argv.profiles.includes("all") || argv.profiles.includes("detected")) {
+        if (argv.filter.includes("all")) {
+
+        } else {
+          temp_detected["detected"] = temp_detected["detected"].filter(item => argv.filter.includes(item.status))
+        }
+
+        if (temp_detected.detected.length == 0) {
+          delete temp_detected["detected"];
+        }
+      } else {
+        delete temp_detected["detected"];
+      }
     }
 
     if (temp_detected.unknown.length == 0) {
       delete temp_detected["unknown"];
+    } else {
+      if (argv.profiles.includes("all") || argv.profiles.includes("unknown")) {
+
+      } else {
+        delete temp_detected["unknown"];
+      }
     }
 
     if (temp_detected.failed.length == 0) {
       delete temp_detected["failed"];
+    } else {
+      if (argv.profiles.includes("all") || argv.profiles.includes("failed")) {
+
+      } else {
+        delete temp_detected["failed"];
+      }
     }
 
     if (argv.output == "pretty" || argv.output == "") {

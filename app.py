@@ -491,16 +491,37 @@ def check_user_cli(argv):
 				item = clean_up_item(item,argv.options)
 				temp_detected["failed"].append(item)
 
-	if len(temp_detected["detected"]) == 0:
-		del temp_detected["detected"]
-	else:
-		temp_detected["detected"] = sorted(temp_detected["detected"], key=lambda k: float(k['rate'].strip('%')),reverse=True)
+	with suppress(Exception):
+		if len(temp_detected["detected"]) == 0:
+			del temp_detected["detected"]
+		else:
+			if "all" in argv.profiles or "detected" in argv.profiles:
+				if argv.filter == "all":
+					pass
+				else:
+					temp_detected["detected"] = [item for item in temp_detected["detected"] if item['status'] in argv.filter]
+				if len(temp_detected["detected"]) > 0:
+					temp_detected["detected"] = sorted(temp_detected["detected"], key=lambda k: float(k['rate'].strip('%')),reverse=True)
+				else:
+					del temp_detected["detected"]
+			else:
+				del temp_detected["detected"]
 
-	if len(temp_detected["unknown"]) == 0:
-	   del temp_detected["unknown"];
+		if len(temp_detected["unknown"]) == 0:
+			del temp_detected["unknown"];
+		else:
+			if "all" in argv.profiles or "unknown" in argv.profiles:
+				pass
+			else:
+				del temp_detected["unknown"];
 
-	if len(temp_detected["failed"]) == 0:
-	   del temp_detected["failed"];
+		if len(temp_detected["failed"]) == 0:
+			del temp_detected["failed"];
+		else:
+			if "all" in argv.profiles or "failed" in argv.profiles:
+				pass
+			else:
+				del temp_detected["failed"];
 
 	if argv.output == "pretty" or argv.output == "":
 		if 'detected' in temp_detected:
@@ -537,6 +558,8 @@ arg_parser_optional = arg_parser.add_argument_group("Optional Arguments")
 arg_parser_optional.add_argument("--output", help="Show the output in the following format: json -> json output for integration or pretty -> prettify the output", metavar="", default="")
 arg_parser_optional.add_argument("--options", help="Show the following when a profile is found: link, rate, title or text", metavar="", default="")
 arg_parser_required.add_argument("--method", help="find -> show detected profiles, get -> show all profiles regardless detected or not, both -> combine find & get", metavar="", default="all")
+arg_parser_required.add_argument("--filter", help="filter detected profiles by good, maybe or bad, you can do combine them with comma (good,bad) or use all", metavar="", default="all")
+arg_parser_required.add_argument("--profiles", help="filter profiles by detected, unknown or failed, you can do combine them with comma (detected,failed) or use all", metavar="", default="all")
 arg_parser_required.add_argument("--extract",action="store_true", help="Extract profiles, urls & patterns if possible", required=False)
 arg_parser_required.add_argument("--metadata",action="store_true", help="Extract metadata if possible (pypi QeeqBox OSINT)", required=False)
 arg_parser_required.add_argument("--trim",action="store_true", help="Trim long strings", required=False)
