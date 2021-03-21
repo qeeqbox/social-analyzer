@@ -27,11 +27,12 @@ websites and applications that enable users to create and share content or to pa
 ```
 
 ## Find Profile WEB APP (Fast)
-Standard localhost WEB APP url: http://127.0.0.1:9005/app.html
+Standard localhost WEB APP url: http://0.0.0.0:9005/app.html
 
 <img src="https://raw.githubusercontent.com/qeeqbox/social-analyzer/main/readme/intro_fast.gif" style="max-width:768px"/>
 
 ## Find Profile WEB APP (Slow)
+Standard localhost WEB APP url: http://0.0.0.0:9005/app.html
 <img src="https://raw.githubusercontent.com/qeeqbox/social-analyzer/main/readme/intro_slow.gif" style="max-width:768px"/>
 
 Profile images **will not** be blurred. If you want them to be blurred, turn that option on
