@@ -33,6 +33,7 @@ Standard localhost WEB APP url: http://0.0.0.0:9005/app.html
 
 ## Find Profile WEB APP (Slow)
 Standard localhost WEB APP url: http://0.0.0.0:9005/app.html
+
 <img src="https://raw.githubusercontent.com/qeeqbox/social-analyzer/main/readme/intro_slow.gif" style="max-width:768px"/>
 
 Profile images **will not** be blurred. If you want them to be blurred, turn that option on
