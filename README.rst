@@ -1,6 +1,6 @@
 .. image:: https://raw.githubusercontent.com/qeeqbox/social-analyzer/main/readme/socialanalyzerlogo_.png
 
-Social-Analyzer - API, CLI & Web App for analyzing & finding a person's profile across +300 social media websites. It includes different string analysis and detection modules, you can choose which combination of modules to use during the investigation process.
+Social-Analyzer - API, CLI & Web App for analyzing & finding a person's profile across +400 social media websites. It includes different string analysis and detection modules, you can choose which combination of modules to use during the investigation process.
 
 The detection modules utilize a rating mechanism based on different detection techniques, which produces a rate value that starts from 0 to 100 (No-Maybe-Yes). This module intended to have less false positive and it's documented in this `Wiki <https://github.com/qeeqbox/social-analyzer/wiki>`_ link
 
