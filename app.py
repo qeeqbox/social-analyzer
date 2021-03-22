@@ -48,8 +48,8 @@ GENERIC_DETECTION = []
 LOG = getLogger("social-analyzer")
 SITES_PATH = path.join(path.dirname(__file__), "data", "sites.json")
 LANGUAGES_PATH = path.join(path.dirname(__file__), "data", "languages.json")
-STRINGS_PAGES = recompile('captcha-info|Please enable cookies', IGNORECASE)
-STRINGS_TITLES = recompile('found|attention required|cloudflare', IGNORECASE)
+STRINGS_PAGES = recompile('captcha-info|Please enable cookies|Completing the CAPTCHA', IGNORECASE)
+STRINGS_TITLES = recompile('not found|blocked|attention required|cloudflare', IGNORECASE)
 LANGUAGES_JSON = {}
 WORKERS = 15
 CUSTOM_MESSAGE = 51
@@ -60,8 +60,8 @@ with open(LANGUAGES_PATH) as f:
 
 
 def delete_keys(in_object, keys):
-    ''' 
-    delete specific keys from object 
+    '''
+    delete specific keys from object
     '''
 
     for key in keys:
@@ -71,7 +71,7 @@ def delete_keys(in_object, keys):
 
 
 def clean_up_item(in_object, keys_str):
-    ''' 
+    '''
     delete specific keys from object (user input)
     '''
 
@@ -89,7 +89,7 @@ def clean_up_item(in_object, keys_str):
 
 
 def get_language_by_guessing(text):
-    ''' 
+    '''
     guess language by text, this needs long text
     '''
 
@@ -101,7 +101,7 @@ def get_language_by_guessing(text):
 
 
 def get_language_by_parsing(source):
-    ''' 
+    '''
     guess language by parsing the lang tag
     '''
 
@@ -113,7 +113,7 @@ def get_language_by_parsing(source):
 
 
 def check_errors(on_off=None):
-    ''' 
+    '''
     wrapper function for debugging
     '''
 
@@ -133,12 +133,12 @@ def check_errors(on_off=None):
 
 
 class CustomHandler(Handler):
-    ''' 
+    '''
     custom stream handler
     '''
 
     def __init__(self, argv=None):
-        ''' 
+        '''
         int, user choices needed
         '''
 
@@ -146,7 +146,7 @@ class CustomHandler(Handler):
         self.argv = argv
 
     def emit(self, record):
-        ''' 
+        '''
         emit, based on user choices
         '''
 
@@ -178,7 +178,7 @@ class CustomHandler(Handler):
 
 @check_errors(True)
 def setup_logger(uuid=None, file=False, argv=None):
-    ''' 
+    '''
     setup a logger for logs in the temp folder
     '''
 
@@ -196,7 +196,7 @@ def setup_logger(uuid=None, file=False, argv=None):
 
 @check_errors(True)
 def init_detections(detections):
-    ''' 
+    '''
     load websites_entries, shared_detections and generic_detection
     '''
 
@@ -209,7 +209,7 @@ def init_detections(detections):
 
 
 def get_website(site):
-    ''' 
+    '''
     extract domain from website
     '''
 
@@ -219,7 +219,7 @@ def get_website(site):
 
 
 def list_all_websites():
-    ''' 
+    '''
     list all the available websites' entries
     '''
 
@@ -232,14 +232,14 @@ def list_all_websites():
 
 @check_errors(True)
 def find_username_normal(req):
-    ''' 
+    '''
     main find usernames logic using ThreadPoolExecutor
     '''
 
     resutls = []
 
     def fetch_url(site, username, options):
-        ''' 
+        '''
         this runs for every website entry
         '''
 
@@ -279,7 +279,7 @@ def find_username_normal(req):
             detections_count = 0
 
             def check_url(url):
-                ''' 
+                '''
                 check if url is okay
                 '''
 
@@ -290,7 +290,7 @@ def find_username_normal(req):
                 return False
 
             def merge_dicts(temp_dict):
-                ''' 
+                '''
                 '''
 
                 result = {}
@@ -303,7 +303,7 @@ def find_username_normal(req):
                 return result
 
             def detect_logic(detections):
-                ''' 
+                '''
                 check for detections in website entry
                 '''
 
@@ -336,7 +336,7 @@ def find_username_normal(req):
                 return temp_profile, temp_detected, detections_count
 
             def detect():
-                ''' 
+                '''
                 main detect logic
                 '''
 
@@ -417,7 +417,9 @@ def find_username_normal(req):
                             temp_profile["title"] = "filtered"
                     if research(STRINGS_PAGES, temp_profile["text"]):
                         temp_profile["text"] = "filtered"
+                        temp_profile["title"] = "filtered"
                     if research(STRINGS_TITLES, temp_profile["title"]):
+                        temp_profile["text"] = "filtered"
                         temp_profile["title"] = "filtered"
 
             with suppress(Exception):
@@ -517,7 +519,7 @@ def find_username_normal(req):
 
 @check_errors(True)
 def check_user_cli(argv):
-    ''' 
+    '''
     main cli logic
     '''
 
@@ -616,7 +618,7 @@ def check_user_cli(argv):
 
 
 def msg():
-    ''' 
+    '''
     welcome message
     '''
 

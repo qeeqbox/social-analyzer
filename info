@@ -2,8 +2,8 @@
  "build":"pass",
  "test":"pass",
  "grid_test":"pass",
- "websites":"368",
- "detections":"946",
+ "websites":"402",
+ "detections":"1011",
  "special":"3",
  "linux":"pass",
  "windows":"pass",
@@ -11,4 +11,4 @@
  "full_scan":"15 workers < 23secs",
  "max_retries":"3",
  "awaiting_verification":"22",
- "auto_testing":"4779f35e-c96f-4691-a56d-c119901082ee"}
+ "auto_testing":"ab595dd8-fc1b-416d-9a0f-0b06e3471812"}

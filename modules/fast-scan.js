@@ -128,8 +128,15 @@ async function find_username_site(uuid, username, options, site) {
           helper.verbose && console.log(err);
         }
 
-        temp_profile.title = title;
+        temp_profile.text = temp_profile.text.replace(/(\r\n|\n|\r)/gm, "");
+        temp_profile.title = title.replace(/(\r\n|\n|\r)/gm, "");
         temp_profile.language = language;
+
+        if (helper.strings_titles.test(temp_profile.title) || helper.strings_pages.test(temp_profile.text)){
+          temp_profile.title = "filtered"
+          temp_profile.text = "filtered"
+        }
+
         if (temp_profile.good == "true") {
           var temp_value = ((temp_profile["found"] / detections_count) * 100).toFixed(2)
           temp_profile.rate = "%" + temp_value;

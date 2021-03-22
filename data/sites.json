@@ -347,6 +347,26 @@
       "type": "Internet"
     },
     {
+      "url": "https://app.intigriti.com/profile/{username}",
+      "detections": [
+        {
+          "return": "true",
+          "string": "user-name",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "profile/{username}",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Business"
+    },
+    {
       "url": "https://archive.org/details/@{username}",
       "detections": [
         {
@@ -690,6 +710,26 @@
       "type": "Internet"
     },
     {
+      "url": "https://bit.dev/{username}",
+      "detections": [
+        {
+          "return": "true",
+          "string": "\">{username}",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "FOLLOWERS",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Computers"
+    },
+    {
       "url": "https://bitbucket.org/{username}",
       "detections": [
         {
@@ -952,6 +992,26 @@
       "implicit": 0,
       "extract": [],
       "type": "Internet"
+    },
+    {
+      "url": "https://carousell.sg/{username}",
+      "detections": [
+        {
+          "return": "true",
+          "string": "photos/profiles",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "@{username}",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Videos"
     },
     {
       "url": "https://carswap.me/{username}",
@@ -1269,6 +1329,26 @@
       "type": "Computers"
     },
     {
+      "url": "https://coderwall.com/{username}",
+      "detections": [
+        {
+          "return": "true",
+          "string": "content=\"/{username}\"",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "overflow-hidden",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Computers"
+    },
+    {
       "url": "https://codewars.com/users/{username}",
       "detections": [
         {
@@ -1510,6 +1590,31 @@
       "implicit": 0,
       "extract": [],
       "type": "Internet"
+    },
+    {
+      "url": "https://cplusplus.com/user/{username}/",
+      "detections": [
+        {
+          "return": "false",
+          "string": "Not Found",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "/user/{username}/",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "I_content",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Computers"
     },
     {
       "url": "https://cracked.com/members/{username}",
@@ -1840,6 +1945,26 @@
       "implicit": 0,
       "extract": [],
       "type": "Computers"
+    },
+    {
+      "url": "https://digitalocean.com/community/users/{username}",
+      "detections": [
+        {
+          "return": "true",
+          "string": "\"description\"",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "users/{username}",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Jobs"
     },
     {
       "url": "https://discogs.com/user/{username}",
@@ -2282,6 +2407,26 @@
       "type": "Games"
     },
     {
+      "url": "https://erome.com/{username}",
+      "detections": [
+        {
+          "return": "true",
+          "string": "user-profile",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "user-info",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Adult"
+    },
+    {
       "url": "https://escapistmagazine.com/profiles/view/{username}",
       "detections": [
         {
@@ -2455,6 +2600,26 @@
       "implicit": 0,
       "extract": [],
       "type": "Internet"
+    },
+    {
+      "url": "https://f6s.com/{username}",
+      "detections": [
+        {
+          "return": "true",
+          "string": "profile-picture",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "profile-details",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Business"
     },
     {
       "url": "https://facebook.com/{username}",
@@ -3663,6 +3828,26 @@
       "type": "Internet"
     },
     {
+      "url": "https://guru.com/freelancers/{username}",
+      "detections": [
+        {
+          "return": "true",
+          "string": "profile__",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "freelancer-details",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Jobs"
+    },
+    {
       "url": "https://gurushots.com/{username}/photos",
       "detections": [],
       "selected": "false",
@@ -3715,6 +3900,26 @@
       "implicit": 0,
       "extract": [],
       "type": "Internet"
+    },
+    {
+      "url": "https://hackerearth.com/@{username}",
+      "detections": [
+        {
+          "return": "true",
+          "string": "profile-card",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "profile-detail",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Computers"
     },
     {
       "url": "https://hackernoon.com/u/{username}",
@@ -4072,6 +4277,26 @@
       "implicit": 0,
       "extract": [],
       "type": "Internet"
+    },
+    {
+      "url": "https://ifunny.co/user/{username}",
+      "detections": [
+        {
+          "return": "true",
+          "string": "user/{username}",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "\"nick\":\"{username}\"",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Entertainment"
     },
     {
       "url": "https://imagefap.com/profile/{username}",
@@ -4728,6 +4953,26 @@
       "type": "Computers"
     },
     {
+      "url": "https://legiit.com/{username}",
+      "detections": [
+        {
+          "return": "true",
+          "string": "user-avatar",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "category-box",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Shopping"
+    },
+    {
       "url": "https://letterboxd.com/{username}",
       "detections": [
         {
@@ -5098,6 +5343,26 @@
       "type": "Internet"
     },
     {
+      "url": "https://metacafe.com/channels/{username}/",
+      "detections": [
+        {
+          "return": "true",
+          "string": "og:url",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "channels/{username}/",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Videos"
+    },
+    {
       "url": "https://metacritic.com/user/{username}",
       "detections": [
         {
@@ -5251,6 +5516,31 @@
       "implicit": 0,
       "extract": [],
       "type": "Internet"
+    },
+    {
+      "url": "https://muckrack.com/{username}",
+      "detections": [
+        {
+          "return": "true",
+          "string": "profile-details",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "profile-bio",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "com/{username}",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Adult"
     },
     {
       "url": "https://munzee.com/m/{username}",
@@ -5515,6 +5805,26 @@
       "implicit": 0,
       "extract": [],
       "type": "Internet"
+    },
+    {
+      "url": "https://nimo.tv/{username}",
+      "detections": [
+        {
+          "return": "true",
+          "string": "og:description",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "\"alise\"",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Videos"
     },
     {
       "url": "https://ninjakiwi.com/profile/{username}",
@@ -6678,6 +6988,26 @@
       "type": "Computers"
     },
     {
+      "url": "https://republic.co/{username}",
+      "detections": [
+        {
+          "return": "true",
+          "string": "user_profile",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "\"{username}\"",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Internet"
+    },
+    {
       "url": "https://researchgate.net/profile/{username}",
       "detections": [
         {
@@ -7636,6 +7966,26 @@
       "type": "Internet"
     },
     {
+      "url": "https://trepup.com/{username}",
+      "detections": [
+        {
+          "return": "true",
+          "string": "businessName",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "BusinessAbout",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Business"
+    },
+    {
       "url": "https://tripadvisor.com/members/{username}",
       "detections": [
         {
@@ -7676,6 +8026,26 @@
         {
           "return": "true",
           "string": "profile-social",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Computers"
+    },
+    {
+      "url": "https://tutsplus.com/authors/{username}",
+      "detections": [
+        {
+          "return": "true",
+          "string": "profile__",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "\"/authors/{username}",
           "type": "normal"
         }
       ],

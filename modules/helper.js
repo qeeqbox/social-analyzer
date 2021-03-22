@@ -75,6 +75,9 @@ var parsed_json = JSON.parse(fs.readFileSync(dict_json_path));
 
 var logs_queue = Promise.resolve();
 
+var strings_pages = new RegExp('captcha-info|Please enable cookies|Completing the CAPTCHA', 'i')
+var strings_titles = new RegExp('not found|blocked|attention required|cloudflare', 'i')
+
 function get_log_file(uuid) {
   _uuid = uuid.replace(/[^a-zA-Z0-9\-]+/g, '');
   _string = slash(path.join('logs', _uuid + "_log.txt"))
@@ -302,6 +305,8 @@ async function setup_tecert() {
 }
 
 module.exports = {
+  strings_pages,
+  strings_titles,
   tecert_file,
   setup_tecert,
   compare_objects,
