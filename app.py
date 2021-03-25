@@ -77,7 +77,7 @@ def clean_up_item(in_object, keys_str):
 
     with suppress(Exception):
         del in_object["image"]
-    if keys_str == "" or keys_str == None:
+    if keys_str == "" or keys_str is None:
         with suppress(Exception):
             del in_object["text"]
     else:
@@ -165,7 +165,7 @@ class CustomHandler(Handler):
                                             empty_string = colored(empty_string.ljust(13, ' '), 'blue') + ": "
                                             for _item_key, _item_value in _item.items():
                                                 if self.argv.trim and _item_key == "content" and len(_item_value) > 50:
-                                                    empty_string += "{} : {} ".format(colored(_item_key, 'blue'), colored(_item_value[:50]+"..", 'yellow'))
+                                                    empty_string += "{} : {} ".format(colored(_item_key, 'blue'), colored(_item_value[:50] + "..", 'yellow'))
                                                 else:
                                                     empty_string += "{} : {} ".format(colored(_item_key, 'blue'), colored(_item_value, 'yellow'))
                                             print("{}".format(empty_string))
@@ -370,14 +370,14 @@ def find_username_normal(req):
             with suppress(Exception):
                 [tag.extract() for tag in soup(["head", "title", "style", "script", "[document]"])]
                 temp_profile["text"] = soup.getText()
-                temp_profile["text"] = resub("\s\s+", " ", temp_profile["text"])
+                temp_profile["text"] = resub(r"\s\s+", " ", temp_profile["text"])
             with suppress(Exception):
                 temp_profile["language"] = get_language_by_parsing(source)
                 if temp_profile["language"] == "unavailable":
                     temp_profile["language"] = get_language_by_guessing(temp_profile["text"])
             with suppress(Exception):
                 temp_profile["title"] = BeautifulSoup(source, "html.parser").title.string
-                temp_profile["title"] = resub("\s\s+", " ", temp_profile["title"])
+                temp_profile["title"] = resub(r"\s\s+", " ", temp_profile["title"])
 
             with suppress(Exception):
                 temp_matches = []
@@ -546,7 +546,7 @@ def check_user_cli(argv):
     resutls = find_username_normal(req)
 
     for item in resutls:
-        if item != None:
+        if item is not None:
             if item["method"] == "all":
                 if item["good"] == "true":
                     item = delete_keys(item, ["method", "good"])

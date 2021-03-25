@@ -21,4 +21,4 @@ setup(
     install_requires=['BeautifulSoup4', 'tld', 'termcolor', 'langdetect', 'requests'],
     package_data={'social-analyzer': ['data/*']},
     python_requires='>=3',
-    )
+)
