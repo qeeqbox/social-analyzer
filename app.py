@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 
 """
-//  ------------------------------------------------------------- 
+//  -------------------------------------------------------------
 //  author        Giga
 //  project       qeeqbox/social-analyzer
 //  email         gigaqeeq@gmail.com
@@ -46,7 +46,7 @@ WEBSITES_ENTRIES = []
 SHARED_DETECTIONS = []
 GENERIC_DETECTION = []
 LOG = getLogger("social-analyzer")
-SITES_PATH = path.join(path.dirname(__file__),"data", "sites.json")
+SITES_PATH = path.join(path.dirname(__file__), "data", "sites.json")
 LANGUAGES_PATH = path.join(path.dirname(__file__), "data", "languages.json")
 STRINGS_PAGES = recompile('captcha-info|Please enable cookies|Completing the CAPTCHA', IGNORECASE)
 STRINGS_TITLES = recompile('not found|blocked|attention required|cloudflare', IGNORECASE)
