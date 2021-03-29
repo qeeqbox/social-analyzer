@@ -65,11 +65,12 @@ Profile images **will not** be blurred. If you want them to be blurred, turn tha
 - Google (example@example.com)
 
 ## Open in Cloud Shell
-[![Open in Cloud Shell](https://gstatic.com/cloudssh/images/open-btn.svg)](https://ssh.cloud.google.com/cloudshell/editor?cloudshell_git_repo=https://github.com/qeeqbox/social-analyzer&tutorial=README.md)
+[![Open in Cloud Shell](https://img.shields.io/static/v1?label=%3E_&message=Open%20in%20Cloud%20Shell&color=3267d6&style=flat-square)](https://ssh.cloud.google.com/cloudshell/editor?cloudshell_git_repo=https://github.com/qeeqbox/social-analyzer&tutorial=README.md)
 
 ## Install and run as NodeJS Web App (Linux + NodeJS + NPM + Firefox)
 ```bash
 # There will be status:good or rate:%100 for existing profiles
+# Do not mix FindUserProfilesSlow, with FindUserProfilesSlow and ShowUserProfilesSlow
 
 apt-get update
 DEBIAN_FRONTEND=noninteractive apt-get install -y software-properties-common
@@ -84,6 +85,7 @@ npm start
 ## Install and run as NodeJS Web App (Windows + NodeJS + NPM + Firefox)
 ```bash
 # There will be status:good or rate:%100 for existing profiles
+# Do not mix FindUserProfilesSlow, with FindUserProfilesSlow and ShowUserProfilesSlow
 
 Download & Install firefox esr (Extended Support Release) from https://www.mozilla.org/en-US/firefox/enterprise/#download
 Download & Install https://nodejs.org/en/download/
@@ -95,20 +97,26 @@ npm start
 
 ## Install and run as Python CLI (Windows, Linux, MacOS, Raspberry pi..)
 ```bash
+# You can scan all websites using --websites "all"
 # Remember the following runs as FindUserProfilesFast
-# You can also scan all websites using --websites "all"
 # There will be status:good or rate:%100 for existing profiles
+# If you want to list all websites use python3 -m social-analyzer --cli --list
 
+# Finding detected, unknown, and failed with their metadata and linked profiles
 pip3 install social-analyzer
 python3 -m social-analyzer --cli --mode "fast" --username "johndoe" --websites "youtube pinterest tumblr" --output "pretty" --metadata --extract --trim
+
+# Finding good profiles only with their metadata and linked profiles
+pip3 install social-analyzer
+python3 -m social-analyzer --cli --mode "fast" --username "johndoe" --websites "all" --output "pretty" --metadata --extract --trim --filter "good" --profile "detected"
 ```
 
-## Install and run as NodeJS CLI (Linux + NodeJS + NPM + Firefox)
+## Install and run as NodeJS CLI (Linux + NodeJS + NPM + Firefox) <- Preferred!
 ```bash
-# If you want to list all websites use node app.js --cli --list
+# You can scan all websites using --websites "all"
 # Remember the following runs as FindUserProfilesFast
-# You can also scan all websites using --websites "all"
 # There will be status:good or rate:%100 for existing profiles
+# If you want to list all websites use app.js --cli --list
 
 apt-get update
 DEBIAN_FRONTEND=noninteractive apt-get install -y software-properties-common
@@ -117,7 +125,12 @@ apt-get install -y firefox-esr tesseract-ocr git nodejs npm
 git clone https://github.com/qeeqbox/social-analyzer.git
 cd social-analyzer
 npm install
+
+# Finding detected, unknown, and failed with their metadata and linked profiles
 node app.js --cli --mode "fast" --username "johndoe" --websites "youtube pinterest tumblr" --output "pretty" --metadata --extract --trim
+
+# Finding good profiles only with their metadata and linked profiles
+node app.js --cli --mode "fast" --username "johndoe" --websites "all" --output "pretty" --metadata --extract --trim --filter "good" --profile "detected"
 ```
 
 ## Install and run as NodeJS Web App with a grid (docker-compose)
