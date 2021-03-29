@@ -64,6 +64,9 @@ Profile images **will not** be blurred. If you want them to be blurred, turn tha
 - Gmail (example@gmail.com)
 - Google (example@example.com)
 
+## Open in Cloud Shell
+[![Open in Cloud Shell](https://gstatic.com/cloudssh/images/open-btn.svg)](https://ssh.cloud.google.com/cloudshell/editor?cloudshell_git_repo=https://github.com/qeeqbox/social-analyzer&tutorial=README.md)
+
 ## Install and run as NodeJS Web App (Linux + NodeJS + NPM + Firefox)
 ```bash
 # There will be status:good or rate:%100 for existing profiles
