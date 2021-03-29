@@ -70,7 +70,7 @@ Profile images **will not** be blurred. If you want them to be blurred, turn tha
 ## Install and run as NodeJS Web App (Linux + NodeJS + NPM + Firefox)
 ```bash
 # There will be status:good or rate:%100 for existing profiles
-# Do not mix FindUserProfilesSlow, with FindUserProfilesSlow and ShowUserProfilesSlow
+# Do not mix FindUserProfilesFast, with FindUserProfilesSlow and ShowUserProfilesSlow
 
 apt-get update
 DEBIAN_FRONTEND=noninteractive apt-get install -y software-properties-common
@@ -85,7 +85,7 @@ npm start
 ## Install and run as NodeJS Web App (Windows + NodeJS + NPM + Firefox)
 ```bash
 # There will be status:good or rate:%100 for existing profiles
-# Do not mix FindUserProfilesSlow, with FindUserProfilesSlow and ShowUserProfilesSlow
+# Do not mix FindUserProfilesFast, with FindUserProfilesSlow and ShowUserProfilesSlow
 
 Download & Install firefox esr (Extended Support Release) from https://www.mozilla.org/en-US/firefox/enterprise/#download
 Download & Install https://nodejs.org/en/download/
