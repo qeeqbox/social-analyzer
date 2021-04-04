@@ -67,7 +67,7 @@ Profile images **will not** be blurred. If you want them to be blurred, turn tha
 ## Open in Cloud Shell
 [![Open in Cloud Shell](https://img.shields.io/static/v1?label=%3E_&message=Open%20in%20Cloud%20Shell&color=3267d6&style=flat-square)](https://ssh.cloud.google.com/cloudshell/editor?cloudshell_git_repo=https://github.com/qeeqbox/social-analyzer&tutorial=README.md)
 
-## Install and run as NodeJS Web App (Linux + NodeJS + NPM + Firefox)
+## Install and run as NodeJS Web App (Linux + NodeJS + NPM + Firefox) <- preferred
 ```bash
 # There will be status:good or rate:%100 for existing profiles
 # Do not mix FindUserProfilesFast, with FindUserProfilesSlow and ShowUserProfilesSlow
@@ -102,16 +102,20 @@ npm start
 # There will be status:good or rate:%100 for existing profiles
 # If you want to list all websites use python3 -m social-analyzer --cli --list
 
-# Finding detected, unknown, and failed with their metadata and linked profiles
+#install social-analyzer
 pip3 install social-analyzer
-python3 -m social-analyzer --cli --mode "fast" --username "johndoe" --websites "youtube pinterest tumblr" --output "pretty" --metadata --extract --trim
 
-# Finding good profiles only with their metadata and linked profiles
-pip3 install social-analyzer
-python3 -m social-analyzer --cli --mode "fast" --username "johndoe" --websites "all" --output "pretty" --metadata --extract --trim --filter "good" --profile "detected"
+#specific websites
+python3 -m social-analyzer --cli --mode "fast" --username "johndoe" --websites "youtube pinterest tumblr"
+
+#specific websites with metadata and extraction
+python3 -m social-analyzer --cli --mode "fast" --username "johndoe" --websites "youtube pinterest tumblr" --metadata --extract --trim
+
+#all websites with metadata, extraction, filter only existing profiles with status good
+python3 -m social-analyzer --cli --mode "fast" --username "johndoe" --websites "all" --metadata --extract --trim --filter "good" --profile "detected"
 ```
 
-## Install and run as NodeJS CLI (Linux + NodeJS + NPM + Firefox) <- Preferred!
+## Install and run as NodeJS CLI (Linux + NodeJS + NPM + Firefox)
 ```bash
 # You can scan all websites using --websites "all"
 # Remember the following runs as FindUserProfilesFast
@@ -126,11 +130,14 @@ git clone https://github.com/qeeqbox/social-analyzer.git
 cd social-analyzer
 npm install
 
-# Finding detected, unknown, and failed with their metadata and linked profiles
-node app.js --cli --mode "fast" --username "johndoe" --websites "youtube pinterest tumblr" --output "pretty" --metadata --extract --trim
+#specific websites
+app.js --cli --mode "fast" --username "johndoe" --websites "youtube pinterest tumblr"
 
-# Finding good profiles only with their metadata and linked profiles
-node app.js --cli --mode "fast" --username "johndoe" --websites "all" --output "pretty" --metadata --extract --trim --filter "good" --profile "detected"
+#specific websites with metadata and extraction
+app.js --cli --mode "fast" --username "johndoe" --websites "youtube pinterest tumblr" --metadata --extract --trim
+
+#all websites with metadata, extraction, filter only existing profiles with status good
+app.js --cli --mode "fast" --username "johndoe" --websites "all" --metadata --extract --trim --filter "good" --profile "detected"
 ```
 
 ## Install and run as NodeJS Web App with a grid (docker-compose)
@@ -149,6 +156,28 @@ docker-compose -f docker-compose.yml up --build
 git clone https://github.com/qeeqbox/social-analyzer.git
 cd social-analyzer
 docker build -t social-analyzer . && docker run -p 9005:9005 -it social-analyzer
+```
+
+## social-analyzer --h
+```bash
+Required Arguments:
+  --cli        Turn this CLI on
+  --username   E.g. johndoe, john_doe or johndoe9999
+
+Optional Arguments:
+  --websites   Website or websites separated by space E.g. youtube, tiktok or tumblr
+  --mode       Analysis mode E.g.fast -> FindUserProfilesFast, slow -> FindUserProfilesSlow or special -> FindUserProfilesSpecial
+  --output     Show the output in the following format: json -> json output for integration or pretty -> prettify the output
+  --options    Show the following when a profile is found: link, rate, titleor text
+  --method     find -> show detected profiles, get -> show all profiles regardless detected or not, both -> combine find & get
+  --filter     filter detected profiles by good, maybe or bad, you can do combine them with comma (good,bad) or use all
+  --profiles   filter profiles by detected, unknown or failed, you can do combine them with comma (detected,failed) or use all
+  --extract    Extract profiles, urls & patterns if possible
+  --metadata   Extract metadata if possible (pypi QeeqBox OSINT)
+  --trim       Trim long strings
+
+Listing websites & detections:
+  --list       List all available websites
 ```
 
 ## Running Issues
@@ -173,6 +202,7 @@ docker build -t social-analyzer . && docker run -p 9005:9005 -it social-analyzer
 - This is a security project (Treat it as a security project)
 - If you want your website to be excluded from this project list, please reach out to me
 - This tool meant to be used locally not as a service (It does not have any type of Access Control)
+- For issues related to modules that end with -private, reach out directly to me (do not open an issue on GitHub)
 
 ## Other Projects
 [![](https://github.com/qeeqbox/.github/blob/main/data/analyzer.png)](https://github.com/qeeqbox/analyzer) [![](https://github.com/qeeqbox/.github/blob/main/data/chameleon.png)](https://github.com/qeeqbox/chameleon) [![](https://github.com/qeeqbox/.github/blob/main/data/honeypots.png)](https://github.com/qeeqbox/honeypots) [![](https://github.com/qeeqbox/.github/blob/main/data/url-sandbox.png)](https://github.com/qeeqbox/url-sandbox) [![](https://github.com/qeeqbox/.github/blob/main/data/mitre-visualizer.png)](https://github.com/qeeqbox/mitre-visualizer) [![](https://github.com/qeeqbox/.github/blob/main/data/woodpecker.png)](https://github.com/qeeqbox/woodpecker) [![](https://github.com/qeeqbox/.github/blob/main/data/docker-images.png)](https://github.com/qeeqbox/docker-images) [![](https://github.com/qeeqbox/.github/blob/main/data/seahorse.png)](https://github.com/qeeqbox/seahorse) [![](https://github.com/qeeqbox/.github/blob/main/data/rhino.png)](https://github.com/qeeqbox/rhino)
