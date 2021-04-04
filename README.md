@@ -140,24 +140,6 @@ app.js --cli --mode "fast" --username "johndoe" --websites "youtube pinterest tu
 app.js --cli --mode "fast" --username "johndoe" --websites "all" --metadata --extract --trim --filter "good" --profile "detected"
 ```
 
-## Install and run as NodeJS Web App with a grid (docker-compose)
-```bash
-# There will be status:good or rate:%100 for existing profiles
-
-git clone https://github.com/qeeqbox/social-analyzer.git
-cd social-analyzer
-docker-compose -f docker-compose.yml up --build
-```
-
-## Install and run as NodeJS Web App (docker)
-```bash
-# There will be status:good or rate:%100 for existing profiles
-
-git clone https://github.com/qeeqbox/social-analyzer.git
-cd social-analyzer
-docker build -t social-analyzer . && docker run -p 9005:9005 -it social-analyzer
-```
-
 ## social-analyzer --h
 ```bash
 Required Arguments:
@@ -178,6 +160,24 @@ Optional Arguments:
 
 Listing websites & detections:
   --list       List all available websites
+```
+
+## Install and run as NodeJS Web App with a grid (docker-compose)
+```bash
+# There will be status:good or rate:%100 for existing profiles
+
+git clone https://github.com/qeeqbox/social-analyzer.git
+cd social-analyzer
+docker-compose -f docker-compose.yml up --build
+```
+
+## Install and run as NodeJS Web App (docker)
+```bash
+# There will be status:good or rate:%100 for existing profiles
+
+git clone https://github.com/qeeqbox/social-analyzer.git
+cd social-analyzer
+docker build -t social-analyzer . && docker run -p 9005:9005 -it social-analyzer
 ```
 
 ## Running Issues
