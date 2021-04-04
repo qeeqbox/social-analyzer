@@ -105,6 +105,9 @@ npm start
 #install social-analyzer
 pip3 install social-analyzer
 
+#simple
+python3 -m social-analyzer --cli --username "johndoe"
+
 #specific websites
 python3 -m social-analyzer --cli --mode "fast" --username "johndoe" --websites "youtube pinterest tumblr"
 
@@ -129,6 +132,9 @@ apt-get install -y firefox-esr tesseract-ocr git nodejs npm
 git clone https://github.com/qeeqbox/social-analyzer.git
 cd social-analyzer
 npm install
+
+#simple
+app.js --cli --username "johndoe"
 
 #specific websites
 app.js --cli --mode "fast" --username "johndoe" --websites "youtube pinterest tumblr"
