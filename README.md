@@ -11,8 +11,8 @@ The analysis and extracted social media information from this OSINT tool could h
 
 This project is *"currently used by some law enforcement agencies in countries where resources are limited"*.
 
-## so·cial me·di·a
-websites and applications that enable users to create and share content or to participate in social networking - Oxford Dictionary
+## So·cial Me·di·a
+Websites and applications that enable users to create and share content or to participate in social networking - Oxford Dictionary
 
 ## Security Testing
 
@@ -64,9 +64,6 @@ Profile images **will not** be blurred. If you want them to be blurred, turn tha
 - Gmail (example@gmail.com)
 - Google (example@example.com)
 
-## Open in Cloud Shell
-[![Open in Cloud Shell](https://img.shields.io/static/v1?label=%3E_&message=Open%20in%20Cloud%20Shell&color=3267d6&style=flat-square)](https://ssh.cloud.google.com/cloudshell/editor?cloudshell_git_repo=https://github.com/qeeqbox/social-analyzer&tutorial=README.md)
-
 ## Install and run as NodeJS Web App (Linux + NodeJS + NPM + Firefox) <- preferred
 ```bash
 # There will be status:good or rate:%100 for existing profiles
@@ -95,6 +92,24 @@ npm install
 npm start
 ```
 
+## Install and run as NodeJS Web App with a grid (docker-compose)
+```bash
+# There will be status:good or rate:%100 for existing profiles
+
+git clone https://github.com/qeeqbox/social-analyzer.git
+cd social-analyzer
+docker-compose -f docker-compose.yml up --build
+```
+
+## Install and run as NodeJS Web App (docker)
+```bash
+# There will be status:good or rate:%100 for existing profiles
+
+git clone https://github.com/qeeqbox/social-analyzer.git
+cd social-analyzer
+docker build -t social-analyzer . && docker run -p 9005:9005 -it social-analyzer
+```
+
 ## Install and run as Python CLI (Windows, Linux, MacOS, Raspberry pi..)
 ```bash
 # You can scan all websites using --websites "all"
@@ -105,15 +120,12 @@ npm start
 #install social-analyzer
 pip3 install social-analyzer
 
-#simple
-python3 -m social-analyzer --cli --username "johndoe"
-
-#specific websites
+#all websites with metadata and extraction
+python3 -m social-analyzer --cli --username "johndoe" --metadata --extract --trim
+#specific websites without metadata and extraction
 python3 -m social-analyzer --cli --mode "fast" --username "johndoe" --websites "youtube pinterest tumblr"
-
 #specific websites with metadata and extraction
 python3 -m social-analyzer --cli --mode "fast" --username "johndoe" --websites "youtube pinterest tumblr" --metadata --extract --trim
-
 #all websites with metadata, extraction, filter only existing profiles with status good
 python3 -m social-analyzer --cli --mode "fast" --username "johndoe" --websites "all" --metadata --extract --trim --filter "good" --profile "detected"
 ```
@@ -133,17 +145,14 @@ git clone https://github.com/qeeqbox/social-analyzer.git
 cd social-analyzer
 npm install
 
-#simple
-app.js --cli --username "johndoe"
-
-#specific websites
-app.js --cli --mode "fast" --username "johndoe" --websites "youtube pinterest tumblr"
-
+#all websites with metadata and extraction
+nodejs app.js --cli --username "johndoe" --metadata --extract --trim
+#specific websites without metadata
+nodejs app.js --cli --mode "fast" --username "johndoe" --websites "youtube pinterest tumblr"
 #specific websites with metadata and extraction
-app.js --cli --mode "fast" --username "johndoe" --websites "youtube pinterest tumblr" --metadata --extract --trim
-
+nodejs app.js --cli --mode "fast" --username "johndoe" --websites "youtube pinterest tumblr" --metadata --extract --trim
 #all websites with metadata, extraction, filter only existing profiles with status good
-app.js --cli --mode "fast" --username "johndoe" --websites "all" --metadata --extract --trim --filter "good" --profile "detected"
+nodejs app.js --cli --mode "fast" --username "johndoe" --websites "all" --metadata --extract --trim --filter "good" --profile "detected"
 ```
 
 ## social-analyzer --h
@@ -168,23 +177,8 @@ Listing websites & detections:
   --list       List all available websites
 ```
 
-## Install and run as NodeJS Web App with a grid (docker-compose)
-```bash
-# There will be status:good or rate:%100 for existing profiles
-
-git clone https://github.com/qeeqbox/social-analyzer.git
-cd social-analyzer
-docker-compose -f docker-compose.yml up --build
-```
-
-## Install and run as NodeJS Web App (docker)
-```bash
-# There will be status:good or rate:%100 for existing profiles
-
-git clone https://github.com/qeeqbox/social-analyzer.git
-cd social-analyzer
-docker build -t social-analyzer . && docker run -p 9005:9005 -it social-analyzer
-```
+## Open in Cloud Shell
+[![Open in Cloud Shell](https://img.shields.io/static/v1?label=%3E_&message=Open%20in%20Cloud%20Shell&color=3267d6&style=flat-square)](https://ssh.cloud.google.com/cloudshell/editor?cloudshell_git_repo=https://github.com/qeeqbox/social-analyzer&tutorial=README.md)
 
 ## Running Issues
 - Remember that existing profiles show `status:good` or `rate:%100`
