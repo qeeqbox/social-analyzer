@@ -1,6 +1,6 @@
 var helper = require('./helper.js');
 var cheerio = require('cheerio');
-
+var strings_meta = new RegExp('regionsAllowed|width|height|color|rgba\\(', 'i')
 async function extract_metadata(site, source) {
   try {
     var $ = cheerio.load(source);
@@ -9,10 +9,11 @@ async function extract_metadata(site, source) {
     var temp_metadata_for_checking = []
     Object.keys(meta).forEach(function(key) {
       if (meta[key].attribs) {
-        if (!temp_metadata_for_checking.includes(meta[key].attribs)) {
+        if (!temp_metadata_for_checking.includes(meta[key].attribs) && !strings_meta.test(JSON.stringify(meta[key].attribs))) {
           temp_metadata_for_checking.push(meta[key].attribs)
           var temp_dict = {}
           var add = true
+
           if (meta[key].attribs.property) {
             temp_dict["property"] = meta[key].attribs.property
           }

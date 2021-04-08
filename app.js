@@ -86,9 +86,10 @@ var specialScan = require("./modules/special-scan.js")
 var externalApis = require("./modules/external-apis.js")
 var stringAnalysis = require("./modules/string-analysis.js")
 var nameAnalysis = require("./modules/name-analysis.js")
+var visualize = require("./modules/visualize.js")
 
 var app = express();
-
+app.set('etag', false)
 app.use(express.urlencoded({
   extended: true
 }));
@@ -239,10 +240,17 @@ app.post("/analyze_string", async function(req, res, next) {
   var custom_search = []
   var logs = ""
   var fast = false
+  var graph = {
+    "nodes": [],
+    "links": []
+  }
+
   if (req.body.string == null || req.body.string == "") {
     res.json("Error");
   } else {
     req.body.uuid = req.body.uuid.replace(/[^a-zA-Z0-9\-]+/g, '');
+    helper.log_to_file_queue(req.body.uuid, "[Setting] Log file name: " + req.body.uuid)
+    helper.log_to_file_queue(req.body.uuid, "[Setting] Username: " + req.body.string)
     if (req.body.option.includes("FindUserProfilesFast") || req.body.option.includes("GetUserProfilesFast")) {
       fast = true
       helper.log_to_file_queue(req.body.uuid, "[Starting] Checking user profiles normal")
@@ -363,7 +371,27 @@ app.post("/analyze_string", async function(req, res, next) {
       Object.keys(all_words).forEach((key) => (all_words[key].length == 0) && delete all_words[key]);
     }
 
-    logs = fs.readFileSync(helper.get_log_file(req.body.uuid), 'utf8');
+    if (req.body.option.includes("NetworkGraph")) {
+      if ('data' in user_info_normal) {
+        if (user_info_normal.data.length > 0) {
+          if (req.body.option.includes("ExtractMetadata"))
+          {
+            helper.log_to_file_queue(req.body.uuid, "[Starting] Network Graph")
+            graph = await visualize.visualize_force_graph(req.body.string, user_info_normal.data, "fast")
+            helper.log_to_file_queue(req.body.uuid, "[Done] Network Graph")
+          }
+          else{
+            helper.log_to_file_queue(req.body.uuid, "[Warning] NetworkGraph needs ExtractMetadata")
+          }
+        }
+      }
+    }
+
+    try {
+      logs = fs.readFileSync(helper.get_log_file(req.body.uuid), 'utf8');
+    } catch {
+
+    }
 
     res.json({
       info,
@@ -375,6 +403,7 @@ app.post("/analyze_string", async function(req, res, next) {
       user_info_special: user_info_special,
       names_origins: names_origins,
       custom_search: custom_search,
+      graph: graph,
       logs: logs
     });
   }
@@ -386,11 +415,15 @@ app.use((err, req, res, next) => {
   res.json("Error");
 });
 
+app.use((req, res, next) => {
+  res.set('Cache-Control', 'no-store')
+  next()
+})
+
 process.on('uncaughtException', function(err) {
   helper.verbose && console.log(" --- Uncaught Error ---")
   helper.verbose && console.log(pe.render(err));
 })
-
 
 process.on('unhandledRejection', function(err) {
   helper.verbose && console.log(" --- Uncaught Rejection ---")
@@ -584,7 +617,7 @@ if (argv.cli) {
   if (argv.list) {
     list_all_websites();
   } else if (argv.mode == "fast") {
-    if (argv.usernmae != "" && argv.websites != "") {
+    if (argv.username != "" && argv.websites != "") {
       check_user_cli(argv)
     }
   }

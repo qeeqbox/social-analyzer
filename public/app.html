@@ -19,7 +19,7 @@
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.bundle.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/selectize.js/0.12.1/js/standalone/selectize.min.js"></script>
-
+<script src="//unpkg.com/force-graph"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <style>
   html,
@@ -239,6 +239,7 @@
   #output-section-3,
   #output-section-4,
   #output-section-5,
+  #force-graph-section,
   #logs-section,
   #most-common-words-section,
   #words-info-section,
@@ -622,7 +623,7 @@
       <svg class="hex-spinner" viewBox="0 -5 100 110">
         <polygon stroke-width="7" stroke="#aa6400" fill-opacity="0" id="hex" points="50 1 95 25 95 75 50 99 5 75 5 25" />
       </svg>
-      <div class="logs" id="logs">logsfsddsfsdf</div>
+      <div class="logs" id="logs">None</div>
     </div>
   </div>
 
@@ -724,6 +725,9 @@
             <optgroup label="Extract">
               <option value="ExtractPatterns">ExtractPatterns</option>
               <option value="ExtractMetadata">ExtractMetadata</option>
+            </optgroup>
+            <optgroup label="Visualize">
+              <option value="NetworkGraph">NetworkGraph</option>
             </optgroup>
             <optgroup label="Other options">
               <option value="FindNumbers">FindNumbers</option>
@@ -832,6 +836,14 @@
         </div>
         <div id="output-table-4" class="collapse show"></div>
       </div>
+      <div class="box-border-style" id="force-graph-section">
+        <div class="div-header">
+          <div class="div-left">Graph</div>
+          <div class="div-right"><i id="div-right-icon" class="fa fa-caret-down"></i></div>
+        </div>
+        <div id="force-graph-canvas" class="collapse show">
+        </div>
+      </div>
       <div class="box-border-style" id="logs-section">
         <div class="div-header">
           <div class="div-left">Logs</div>
@@ -883,6 +895,8 @@
         if (data != "nothinghere" && data != "") {
           $('#logs').text(data)
         }
+      }).fail(function(jqXHR, textStatus, errorThrown) {
+        //clearInterval(interval_logs);
       })
     }
 
@@ -906,6 +920,8 @@
       $('#output-table-3').html("");
       $('#output-section-4').hide();
       $('#output-table-4').html("");
+      $('#force-graph-section').hide();
+      $('#force-graph-canvas').html("");
       $('#logs-section').hide();
       $('#logs-pre').html("");
       $('#names-origins-section').hide();
@@ -933,6 +949,40 @@
           this.del_selected = [];
         }
       });
+    }
+
+    function draw_graph(data) {
+      const Graph = ForceGraph()
+        (document.getElementById('force-graph-canvas-inside'))
+        .graphData(data)
+        .width(document.getElementById("string-section").offsetWidth - 30)
+        .nodeId('id')
+        .cooldownTicks(100)
+        .nodeAutoColorBy('group')
+        .linkColor(() => 'rgba(255,255,255,0.2)')
+        .nodeCanvasObject((node, ctx, global_scale) => {
+          const fontSize = 10 / global_scale;
+          ctx.font = `${fontSize}px Sans-Serif`;
+          const text_width = ctx.measureText(node.id).width;
+          const background_size = [text_width, fontSize].map(n => n + fontSize * 0.2);
+          ctx.fillStyle = 'rgba(44, 44, 44, 0.8)';
+          ctx.fillRect(node.x - background_size[0] / 2, node.y - background_size[1] / 2, ...background_size);
+          ctx.fillStyle = '#d0d0d0';
+          ctx.textBaseline = 'middle';
+          ctx.textAlign = 'center';
+          ctx.fillText(node.id, node.x, node.y);
+          node.background_size = background_size;
+        })
+        .onNodeDragEnd(node => {
+          node.fx = node.x;
+          node.fy = node.y;
+        })
+        .nodePointerAreaPaint((node, color, ctx) => {
+          ctx.fillStyle = color;
+          node.background_size && ctx.fillRect(node.x - node.background_size[0] / 2, node.y - node.background_size[1] / 2, ...node.background_size);
+        });
+      Graph.d3Force('center', null);
+      Graph.onEngineStop(() => Graph.zoomToFit(500));
     }
 
     function add_extract(site) {
@@ -999,167 +1049,178 @@
       spinner_on_off(true)
       random_string = Math.random().toString(36).substring(2);
       interval_logs = setInterval(get_logs.bind(null, random_string), 1000);
-      list_of_options = []
-      $('.selectize-input .item').each(function() {
-        list_of_options.push($(this).attr('data-value'))
-      });
+      try{
+        list_of_options = []
+        $('.selectize-input .item').each(function() {
+          list_of_options.push($(this).attr('data-value'))
+        });
 
-      await $.ajax({
-        type: "POST",
-        url: "/analyze_string",
-        data: {
-          'string': $('#string-to-analyze').val(),
-          'option': list_of_options.join(","),
-          'uuid': random_string
-        },
-      }).done(function(data) {
-        if (data != "Error") {
-          if (data.common.length > 0) {
-            var temp_tr = ""
-            Object.keys(data.common).forEach(function(item) {
-              temp_tr += '<tr><td>' + data.common[item].word + '</td><td>' + data.common[item].languages + '</td></tr>'
-            });
-
-            $("#most-common-words-table").last().append('<table><tr><th>word</th><th>languages</th></tr>' + temp_tr + '</table>')
-            $('#most-common-words-section').show();
-          }
-          if ((data.info.checking.indexOf('with no lookups') === -1)) {
-            $("#lookups-checking-info").html(data.info.checking);
-            if (data.info.items.length > 0) {
+        await $.ajax({
+          type: "POST",
+          url: "/analyze_string",
+          data: {
+            'string': $('#string-to-analyze').val(),
+            'option': list_of_options.join(","),
+            'uuid': random_string
+          },
+        }).done(function(data) {
+          if (data != "Error") {
+            if (data.common.length > 0) {
               var temp_tr = ""
-              Object.keys(data.info.items).forEach(function(item) {
-                temp_tr += '<tr><td>' + data.info.items[item].title + '</td><td>' + data.info.items[item].snippet + '</td></tr>'
+              Object.keys(data.common).forEach(function(item) {
+                temp_tr += '<tr><td>' + data.common[item].word + '</td><td>' + data.common[item].languages + '</td></tr>'
               });
-              $("#lookups-table").last().append('<table><tr><th>title</th><th>snippet</th></tr>' + temp_tr + '</table>')
-              $('#lookups-table').show();
-            }
 
-            $('#lookups-section').show();
-          }
-          if (data.words_info.length > 0) {
-            data.words_info.forEach(function(item) {
-              var temp_tr = '<tr><td>' + item.word + '</td><td>definition</td><td>' + item.text + '</td></tr>'
-              if (item.results.length > 0) {
-                item.results.forEach(function(result) {
-                  temp_tr += '<tr><td>' + item.word + '</td><td>' + result.type + '</td><td>' + result.text + '</td></tr>'
+              $("#most-common-words-table").last().append('<table><tr><th>word</th><th>languages</th></tr>' + temp_tr + '</table>')
+              $('#most-common-words-section').show();
+            }
+            if ((data.info.checking.indexOf('with no lookups') === -1)) {
+              $("#lookups-checking-info").html(data.info.checking);
+              if (data.info.items.length > 0) {
+                var temp_tr = ""
+                Object.keys(data.info.items).forEach(function(item) {
+                  temp_tr += '<tr><td>' + data.info.items[item].title + '</td><td>' + data.info.items[item].snippet + '</td></tr>'
                 });
+                $("#lookups-table").last().append('<table><tr><th>title</th><th>snippet</th></tr>' + temp_tr + '</table>')
+                $('#lookups-table').show();
               }
-              $("#words-info-tables").last().append('<table><tr><th>word</th><th>type</th><th>text</th></tr>' + temp_tr + '</table>')
-            });
-            $('#words-info-section').show();
-          }
 
-          add_table(data.table)
+              $('#lookups-section').show();
+            }
+            if (data.words_info.length > 0) {
+              data.words_info.forEach(function(item) {
+                var temp_tr = '<tr><td>' + item.word + '</td><td>definition</td><td>' + item.text + '</td></tr>'
+                if (item.results.length > 0) {
+                  item.results.forEach(function(result) {
+                    temp_tr += '<tr><td>' + item.word + '</td><td>' + result.type + '</td><td>' + result.text + '</td></tr>'
+                  });
+                }
+                $("#words-info-tables").last().append('<table><tr><th>word</th><th>type</th><th>text</th></tr>' + temp_tr + '</table>')
+              });
+              $('#words-info-section').show();
+            }
 
-          if (data.user_info_advanced.data.length > 0) {
-            var temp_tr = ""
-            if (data.user_info_advanced.type == "all" || data.user_info_advanced.type == "noshow") {
-              data.user_info_advanced.data.forEach(function(site) {
-                if (site.found > 0 || site.image != "") {
-                  temp_image = ""
-                  if (site.image != "") {
-                    temp_image = '<img src=' + site.image + '>'
+            add_table(data.table)
+
+            if (data.user_info_advanced.data.length > 0) {
+              var temp_tr = ""
+              if (data.user_info_advanced.type == "all" || data.user_info_advanced.type == "noshow") {
+                data.user_info_advanced.data.forEach(function(site) {
+                  if (site.found > 0 || site.image != "") {
+                    temp_image = ""
+                    if (site.image != "") {
+                      temp_image = '<img src=' + site.image + '>'
+                    }
+                    var temp_extract = add_extract(site);
+                    temp_tr += '<div class="user-info-container"><div class="user-info-container-left"><div>Link: <a href="' + site.link + '">' + site.link + '</a></div><div>Rate: ' + site.rate + '</div><div>Status: ' + site.status +
+                      '</div><div>Title: ' + site.title +
+                      '</div><div>Language: ' + site.language + '</div><div>Description: ' + site.type + '</div><div>Text: ' + site.text + '</div>' + temp_extract + '</div><div class="user-info-container-right">' + temp_image + '</div></div>'
                   }
-                  var temp_extract = add_extract(site);
+                });
+
+                $("#output-table-2").html(temp_tr)
+                $('#output-section-2').show();
+              } else if (data.user_info_advanced.type == "show") {
+                data.user_info_advanced.data.forEach(function(site) {
+                  if (site.found > 0 || site.image != "") {
+                    temp_image = ""
+                    if (site.image != "") {
+                      temp_image = '<img src=' + site.image + '>'
+                    }
+                    temp_tr += '<div class="profile-card"><div class="profile-card-text">Link: <a href="' + site.link + '">' + site.link + '</a></div>' + temp_image + ' </div>'
+                  }
+                });
+
+                $("#output-table-1").html(temp_tr)
+                $('#output-section-1').show();
+              }
+            }
+
+            if (data.user_info_normal.data.length > 0) {
+              var temp_tr = ""
+
+              data.user_info_normal.data.forEach(function(site) {
+                if (site.method == "all") {
+                  var temp_extract = ""
+                  if (site.good == "true") {
+                    var temp_extract = add_extract(site);
+                    temp_tr += '<div class="user-info-container"><div class="user-info-container-left"><div>Link: <a href="' + site.link + '">' + site.link + '</a></div><div>Rate: ' + site.rate + '</div><div>Status: ' + site.status +
+                      '</div><div>Title: ' + site.title +
+                      '</div><div>Language: ' + site.language + '</div><div>Description: ' + site.type + '</div><div>Text: ' + site.text + '</div>' + temp_extract + '</div><div class="user-info-container-right"></div></div>'
+                  } else {
+                    temp_tr += '<div class="user-info-container user-info-container-color-unknown"><div class="user-info-container-left"><div>Link: <a href="' + site.link + '">' + site.link + '</a></div><div>Title: ' + site.title +
+                      '</div><div>Language: ' + site.language + '</div><div>Description: ' + site.type + '</div><div>Text: ' + site.text + '</div></div><div class="user-info-container-right"></div></div>'
+                  }
+                } else if (site.method == "find") {
+                  if (site.good == "true") {
+                    var temp_extract = add_extract(site);
+                    temp_tr += '<div class="user-info-container"><div class="user-info-container-left"><div>Link: <a href="' + site.link + '">' + site.link + '</a></div><div>Rate: ' + site.rate + '</div><div>Status: ' + site.status +
+                      '</div><div>Title: ' + site.title +
+                      '</div><div>Language: ' + site.language + '</div><div>Description: ' + site.type + '</div><div>Text: ' + site.text + '</div>' + temp_extract + '</div><div class="user-info-container-right"></div></div>'
+                  }
+                } else if (site.method == "get") {
+                  temp_tr += '<div class="user-info-container user-info-container-color-unknown"><div class="user-info-container-left"><div>Link: <a href="' + site.link + '">' + site.link + '</a></div><div>Rate: ' + site.rate +
+                    '</div><div>Status: ' + site.status + '</div><div>Title: ' + site.title +
+                    '</div><div>Language: ' + site.language + '</div><div>Description: ' + site.type + '</div><div>Text: ' + site.text + '</div></div><div class="user-info-container-right"></div></div>'
+                } else if (site.method == "failed") {
+                  temp_tr += '<div class="user-info-container user-info-container-color-failed"><div class="user-info-container-left"><div>Link: <a href="' + site.link + '">' + site.link +
+                    '</a></div></div><div class="user-info-container-right"></div></div>'
+                }
+              });
+
+              $("#output-table-3").html(temp_tr)
+              $('#output-section-3').show();
+            }
+
+            if (data.user_info_special.data.length > 0) {
+              var temp_tr = ""
+              data.user_info_special.data.forEach(function(site) {
+                if (site.found > 0) {
+                  temp_image = ""
                   temp_tr += '<div class="user-info-container"><div class="user-info-container-left"><div>Link: <a href="' + site.link + '">' + site.link + '</a></div><div>Rate: ' + site.rate + '</div><div>Status: ' + site.status +
                     '</div><div>Title: ' + site.title +
-                    '</div><div>Language: ' + site.language + '</div><div>Description: ' + site.type + '</div><div>Text: ' + site.text + '</div>' + temp_extract + '</div><div class="user-info-container-right">' + temp_image + '</div></div>'
+                    '</div><div>Description: ' + site.type + '</div><div>Text: ' + site.text + '</div></div><div class="user-info-container-right">' + temp_image + '</div></div>'
                 }
               });
 
-              $("#output-table-2").html(temp_tr)
-              $('#output-section-2').show();
-            } else if (data.user_info_advanced.type == "show") {
-              data.user_info_advanced.data.forEach(function(site) {
-                if (site.found > 0 || site.image != "") {
-                  temp_image = ""
-                  if (site.image != "") {
-                    temp_image = '<img src=' + site.image + '>'
-                  }
-                  temp_tr += '<div class="profile-card"><div class="profile-card-text">Link: <a href="' + site.link + '">' + site.link + '</a></div>' + temp_image + ' </div>'
-                }
+              $("#output-table-4").html(temp_tr)
+              $('#output-section-4').show();
+            }
+            if (data.names_origins.length > 0) {
+              var temp_tr = ""
+              Object.keys(data.names_origins).forEach(function(item) {
+                temp_tr += '<tr><td>' + data.names_origins[item].origin + '</td><td>' + data.names_origins[item].name + '</td><td>' + data.names_origins[item].matched + '</td><td>' + data.names_origins[item].similar + '</td><td>' + data
+                  .names_origins[item].gender + '</td></tr>'
               });
+              $("#names-origins-table").last().append('<table><tr><th>origin</th><th>name</th><th>matched</th><th>similar</th><th>gender</th></tr>' + temp_tr + '</table>')
+              $('#names-origins-section').show();
+            }
+            if (data.custom_search.length > 0) {
+              var temp_tr = ""
+              Object.keys(data.custom_search).forEach(function(item) {
+                temp_tr += '<tr><td>' + data.custom_search[item].site + '</td><td><a href="' + data.custom_search[item].link + '">' + data.custom_search[item].link + '</a></td><td>' + data.custom_search[item].snippet + '</td></tr>'
+              });
+              $("#custom-search-table").last().append('<table><tr><th>site</th><th>link</th><th>snippet</th></tr>' + temp_tr + '</table>')
+              $('#custom-search-section').show();
+            }
 
-              $("#output-table-1").html(temp_tr)
-              $('#output-section-1').show();
+            if (data.logs.length > 0) {
+              $("#logs-pre").html('<pre>' + data.logs + '</pre>')
+              $('#logs-section').show();
+            }
+
+            if ((data.graph.nodes.length > 0) && (data.graph.links.length > 0)) {
+              $("#force-graph-canvas").html('<div id="force-graph-canvas-inside"></div>')
+              draw_graph(data.graph)
+              $('#force-graph-section').show();
             }
           }
+        });
 
-          if (data.user_info_normal.data.length > 0) {
-            var temp_tr = ""
+      }
+      catch(err){
 
-            data.user_info_normal.data.forEach(function(site) {
-              if (site.method == "all") {
-                var temp_extract = ""
-                if (site.good == "true") {
-                  var temp_extract = add_extract(site);
-                  temp_tr += '<div class="user-info-container"><div class="user-info-container-left"><div>Link: <a href="' + site.link + '">' + site.link + '</a></div><div>Rate: ' + site.rate + '</div><div>Status: ' + site.status +
-                    '</div><div>Title: ' + site.title +
-                    '</div><div>Language: ' + site.language + '</div><div>Description: ' + site.type + '</div><div>Text: ' + site.text + '</div>' + temp_extract + '</div><div class="user-info-container-right"></div></div>'
-                } else {
-                  temp_tr += '<div class="user-info-container user-info-container-color-unknown"><div class="user-info-container-left"><div>Link: <a href="' + site.link + '">' + site.link + '</a></div><div>Title: ' + site.title +
-                    '</div><div>Language: ' + site.language + '</div><div>Description: ' + site.type + '</div><div>Text: ' + site.text + '</div></div><div class="user-info-container-right"></div></div>'
-                }
-              } else if (site.method == "find") {
-                if (site.good == "true") {
-                  var temp_extract = add_extract(site);
-                  temp_tr += '<div class="user-info-container"><div class="user-info-container-left"><div>Link: <a href="' + site.link + '">' + site.link + '</a></div><div>Rate: ' + site.rate + '</div><div>Status: ' + site.status +
-                    '</div><div>Title: ' + site.title +
-                    '</div><div>Language: ' + site.language + '</div><div>Description: ' + site.type + '</div><div>Text: ' + site.text + '</div>' + temp_extract + '</div><div class="user-info-container-right"></div></div>'
-                }
-              } else if (site.method == "get") {
-                temp_tr += '<div class="user-info-container user-info-container-color-unknown"><div class="user-info-container-left"><div>Link: <a href="' + site.link + '">' + site.link + '</a></div><div>Rate: ' + site.rate +
-                  '</div><div>Status: ' + site.status + '</div><div>Title: ' + site.title +
-                  '</div><div>Language: ' + site.language + '</div><div>Description: ' + site.type + '</div><div>Text: ' + site.text + '</div></div><div class="user-info-container-right"></div></div>'
-              } else if (site.method == "failed") {
-                temp_tr += '<div class="user-info-container user-info-container-color-failed"><div class="user-info-container-left"><div>Link: <a href="' + site.link + '">' + site.link +
-                  '</a></div></div><div class="user-info-container-right"></div></div>'
-              }
-            });
-
-            $("#output-table-3").html(temp_tr)
-            $('#output-section-3').show();
-          }
-
-          if (data.user_info_special.data.length > 0) {
-            var temp_tr = ""
-            data.user_info_special.data.forEach(function(site) {
-              if (site.found > 0) {
-                temp_image = ""
-                temp_tr += '<div class="user-info-container"><div class="user-info-container-left"><div>Link: <a href="' + site.link + '">' + site.link + '</a></div><div>Rate: ' + site.rate + '</div><div>Status: ' + site.status +
-                  '</div><div>Title: ' + site.title +
-                  '</div><div>Description: ' + site.type + '</div><div>Text: ' + site.text + '</div></div><div class="user-info-container-right">' + temp_image + '</div></div>'
-              }
-            });
-
-            $("#output-table-4").html(temp_tr)
-            $('#output-section-4').show();
-          }
-          if (data.names_origins.length > 0) {
-            var temp_tr = ""
-            Object.keys(data.names_origins).forEach(function(item) {
-              temp_tr += '<tr><td>' + data.names_origins[item].origin + '</td><td>' + data.names_origins[item].name + '</td><td>' + data.names_origins[item].matched + '</td><td>' + data.names_origins[item].similar + '</td><td>' + data
-                .names_origins[item].gender + '</td></tr>'
-            });
-            $("#names-origins-table").last().append('<table><tr><th>origin</th><th>name</th><th>matched</th><th>similar</th><th>gender</th></tr>' + temp_tr + '</table>')
-            $('#names-origins-section').show();
-          }
-          if (data.custom_search.length > 0) {
-            var temp_tr = ""
-            Object.keys(data.custom_search).forEach(function(item) {
-              temp_tr += '<tr><td>' + data.custom_search[item].site + '</td><td><a href="' + data.custom_search[item].link + '">' + data.custom_search[item].link + '</a></td><td>' + data.custom_search[item].snippet + '</td></tr>'
-            });
-            $("#custom-search-table").last().append('<table><tr><th>site</th><th>link</th><th>snippet</th></tr>' + temp_tr + '</table>')
-            $('#custom-search-section').show();
-          }
-
-          if (data.logs.length > 0) {
-            $("#logs-pre").html('<pre>' + data.logs + '</pre>')
-            $('#logs-section').show();
-          }
-
-        }
-      });
+      }
 
       clearInterval(interval_logs);
       spinner_on_off(false)

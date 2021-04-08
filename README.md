@@ -46,6 +46,8 @@ Profile images **will not** be blurred. If you want them to be blurred, turn tha
 - Find profile using multiple techniques (HTTPS library & Webdriver)
 - Multi layers detections (OCR, normal, advanced & special)
 - Metadata & Patterns extraction (Added from Qeeqbox osint project)
+- Force-directed Graph for Metadata (Needs ExtractPatterns)
+- Auto-flirtation to unnecessary output
 - Search engine lookup (Google API - optional)
 - Custom search queries (Google API & DuckDuckGo API - optional)
 - Profile screenshot, title, info and website description
