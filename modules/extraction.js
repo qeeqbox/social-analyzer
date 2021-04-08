@@ -1,6 +1,6 @@
 var helper = require('./helper.js');
 var cheerio = require('cheerio');
-var strings_meta = new RegExp('regionsAllowed|width|height|color|rgba\\(', 'i')
+var strings_meta = new RegExp('regionsAllowed|width|height|color|rgba\\(|charset|viewport|refresh|equiv', 'i')
 async function extract_metadata(site, source) {
   try {
     var $ = cheerio.load(source);
