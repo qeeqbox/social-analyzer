@@ -272,7 +272,7 @@ def find_username_normal(req):
         with suppress(Exception):
             session = Session()
             session.headers.update(headers)
-            response = session.get(site["url"].replace("{username}", username),timeout=5, verify=False)
+            response = session.get(site["url"].replace("{username}", username), timeout=5, verify=False)
             source = response.text
             content = response.content
             answer = dict((k.lower(), v.lower()) for k, v in response.headers.items())
