@@ -50,7 +50,7 @@ SITES_PATH = path.join(path.dirname(__file__), "data", "sites.json")
 LANGUAGES_PATH = path.join(path.dirname(__file__), "data", "languages.json")
 STRINGS_PAGES = recompile('captcha-info|Please enable cookies|Completing the CAPTCHA', IGNORECASE)
 STRINGS_TITLES = recompile('not found|blocked|attention required|cloudflare', IGNORECASE)
-STRINGS_META = recompile('regionsAllowed|width|height|color|rgba\(|charset|viewport|refresh|equiv', IGNORECASE)
+STRINGS_META = recompile(r'regionsAllowed|width|height|color|rgba\(|charset|viewport|refresh|equiv', IGNORECASE)
 LANGUAGES_JSON = {}
 WORKERS = 15
 CUSTOM_MESSAGE = 51
@@ -273,7 +273,7 @@ def find_username_normal(req):
         with suppress(Exception):
             session = Session()
             session.headers.update(headers)
-            response = session.get(site["url"].replace("{username}", username),timeout=5, verify=False)
+            response = session.get(site["url"].replace("{username}", username), timeout=5, verify=False)
             source = response.text
             content = response.content
             answer = dict((k.lower(), v.lower()) for k, v in response.headers.items())
