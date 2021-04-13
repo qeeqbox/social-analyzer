@@ -33,7 +33,7 @@ from urllib.parse import unquote, urlparse
 from urllib3.exceptions import InsecureRequestWarning
 from bs4 import BeautifulSoup
 from tld import get_fld
-from requests import get, packages
+from requests import get, packages, Session
 from termcolor import colored
 from langdetect import detect
 
@@ -270,10 +270,13 @@ def find_username_normal(req):
         }
 
         with suppress(Exception):
-            response = get(site["url"].replace("{username}", username), timeout=5, headers=headers, verify=False)
+            session = Session()
+            session.headers.update(headers)
+            response = session.get(site["url"].replace("{username}", username),timeout=5, verify=False)
             source = response.text
+            content = response.content
             answer = dict((k.lower(), v.lower()) for k, v in response.headers.items())
-            response.close()
+            session.close()
             temp_profile = {}
             temp_detected = {}
             detections_count = 0
@@ -365,7 +368,7 @@ def find_username_normal(req):
             soup = None
 
             with suppress(Exception):
-                soup = BeautifulSoup(source, "html.parser")
+                soup = BeautifulSoup(content, "html.parser")
 
             with suppress(Exception):
                 [tag.extract() for tag in soup(["head", "title", "style", "script", "[document]"])]
@@ -439,7 +442,8 @@ def find_username_normal(req):
                 if temp_profile["status"] == "good":
                     temp_meta_list = []
                     temp_for_checking = []
-                    for meta in soup.findAll('meta'):
+                    soup = BeautifulSoup(content, "lxml")
+                    for meta in soup.find_all('meta'):
                         if meta not in temp_for_checking:
                             temp_for_checking.append(meta)
                             temp_mata_item = {}
