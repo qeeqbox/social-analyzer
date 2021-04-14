@@ -112,7 +112,7 @@ cd social-analyzer
 docker build -t social-analyzer . && docker run -p 9005:9005 -it social-analyzer
 ```
 
-## Install and run as Python CLI (Windows, Linux, MacOS, Raspberry pi..)
+## Install and run as Python CLI (Windows, Linux, MacOS, Raspberry pi..) method 1
 ```bash
 # You can scan all websites using --websites "all"
 # Remember the following runs as FindUserProfilesFast
@@ -124,12 +124,27 @@ pip3 install social-analyzer
 
 #all websites with metadata and extraction
 python3 -m social-analyzer --cli --username "johndoe" --metadata --extract --trim
-#specific websites without metadata and extraction
-python3 -m social-analyzer --cli --mode "fast" --username "johndoe" --websites "youtube pinterest tumblr"
-#specific websites with metadata and extraction
-python3 -m social-analyzer --cli --mode "fast" --username "johndoe" --websites "youtube pinterest tumblr" --metadata --extract --trim
+
 #all websites with metadata, extraction, filter only existing profiles with status good
 python3 -m social-analyzer --cli --mode "fast" --username "johndoe" --websites "all" --metadata --extract --trim --filter "good" --profile "detected"
+```
+
+## Install and run as Python CLI (Windows, Linux, MacOS, Raspberry pi..) method 2
+```bash
+# You can scan all websites using --websites "all"
+# Remember the following runs as FindUserProfilesFast
+# There will be status:good or rate:%100 for existing profiles
+# If you want to list all websites use python3 -m social-analyzer --cli --list
+
+#install social-analyzer
+git clone https://github.com/qeeqbox/social-analyzer.git
+cd social-analyzer
+
+#all websites with metadata and extraction
+python3 app.py --cli --username "johndoe" --metadata --extract --trim
+
+#all websites with metadata, extraction, filter only existing profiles with status good
+python3 app.py --cli --mode "fast" --username "johndoe" --websites "all" --metadata --extract --trim --filter "good" --profile "detected"
 ```
 
 ## Install and run as NodeJS CLI (Linux + NodeJS + NPM + Firefox)
@@ -149,10 +164,7 @@ npm install
 
 #all websites with metadata and extraction
 nodejs app.js --cli --username "johndoe" --metadata --extract --trim
-#specific websites without metadata
-nodejs app.js --cli --mode "fast" --username "johndoe" --websites "youtube pinterest tumblr"
-#specific websites with metadata and extraction
-nodejs app.js --cli --mode "fast" --username "johndoe" --websites "youtube pinterest tumblr" --metadata --extract --trim
+
 #all websites with metadata, extraction, filter only existing profiles with status good
 nodejs app.js --cli --mode "fast" --username "johndoe" --websites "all" --metadata --extract --trim --filter "good" --profile "detected"
 ```
