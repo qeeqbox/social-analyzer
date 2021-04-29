@@ -50,7 +50,7 @@ SITES_PATH = path.join(path.dirname(__file__), "data", "sites.json")
 LANGUAGES_PATH = path.join(path.dirname(__file__), "data", "languages.json")
 STRINGS_PAGES = recompile('captcha-info|Please enable cookies|Completing the CAPTCHA', IGNORECASE)
 STRINGS_TITLES = recompile('not found|blocked|attention required|cloudflare', IGNORECASE)
-STRINGS_META = recompile(r'regionsAllowed|width|height|color|rgba\(|charset|viewport|refresh|equiv', IGNORECASE)
+STRINGS_META = recompile('regionsAllowed|width|height|color|rgba\(|charset|viewport|refresh|equiv', IGNORECASE)
 LANGUAGES_JSON = {}
 WORKERS = 15
 CUSTOM_MESSAGE = 51
@@ -80,7 +80,7 @@ def clean_up_item(in_object, keys_str):
         del in_object["image"]
     if keys_str == "" or keys_str is None:
         with suppress(Exception):
-            del in_object["text"]
+            pass
     else:
         for key in in_object.copy():
             if key not in keys_str:
@@ -273,7 +273,7 @@ def find_username_normal(req):
         with suppress(Exception):
             session = Session()
             session.headers.update(headers)
-            response = session.get(site["url"].replace("{username}", username), timeout=5, verify=False)
+            response = session.get(site["url"].replace("{username}", username),timeout=5, verify=False)
             source = response.text
             content = response.content
             answer = dict((k.lower(), v.lower()) for k, v in response.headers.items())
@@ -372,8 +372,14 @@ def find_username_normal(req):
                 soup = BeautifulSoup(content, "html.parser")
 
             with suppress(Exception):
-                [tag.extract() for tag in soup(["head", "title", "style", "script", "[document]"])]
-                temp_profile["text"] = soup.getText()
+                temp_text_arr = []
+                temp_text_list = []
+                soup = BeautifulSoup(content, "html.parser")
+                for item in soup.stripped_strings:
+                    if item not in temp_text_list:
+                        temp_text_list.append(item)
+                        temp_text_arr.append(repr(item).replace("'", ""))
+                temp_profile["text"] = " ".join(temp_text_arr)
                 temp_profile["text"] = resub(r"\s\s+", " ", temp_profile["text"])
             with suppress(Exception):
                 temp_profile["language"] = get_language_by_parsing(source)
@@ -558,7 +564,7 @@ def check_user_cli(argv):
                     item = clean_up_item(item, argv.options)
                     temp_detected["detected"].append(item)
                 else:
-                    item = delete_keys(item, ["found", "rate", "status", "method", "good", "extracted", "metadata"])
+                    item = delete_keys(item, ["found", "rate", "status", "method", "good", "text","extracted", "metadata"])
                     item = clean_up_item(item, argv.options)
                     temp_detected["unknown"].append(item)
             elif item["method"] == "find":
@@ -567,7 +573,7 @@ def check_user_cli(argv):
                     item = clean_up_item(item, argv.options)
                     temp_detected["detected"].append(item)
             elif item["method"] == "get":
-                item = delete_keys(item, ["found", "rate", "status", "method", "good", "extracted", "metadata"])
+                item = delete_keys(item, ["found", "rate", "status", "method", "good", "text","extracted", "metadata"])
                 item = clean_up_item(item, argv.options)
                 temp_detected["unknown"].append(item)
             else:
