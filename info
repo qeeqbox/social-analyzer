@@ -4,6 +4,7 @@
  "grid_test":"pass",
  "websites":"402",
  "detections":"1011",
+ "pending":"~2307",
  "special":"3",
  "linux":"pass",
  "windows":"pass",
