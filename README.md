@@ -42,7 +42,7 @@ Profile images **will not** be blurred. If you want them to be blurred, turn tha
 <img src="https://raw.githubusercontent.com/qeeqbox/social-analyzer/main/readme/cli.gif" style="max-width:768px"/>
 
 ## Features
-- String & name analysis
+- String & name analysis (Permutations and Combinations)
 - Find profile using multiple techniques (HTTPS library & Webdriver)
 - Multi layers detections (OCR, normal, advanced & special)
 - Metadata & Patterns extraction (Added from Qeeqbox osint project)
@@ -115,7 +115,6 @@ docker build -t social-analyzer . && docker run -p 9005:9005 -it social-analyzer
 ## Install and run as Python Module CLI (Windows, Linux, MacOS, Raspberry pi..)
 ```bash
 # You can scan all websites using --websites "all"
-# Remember the following runs as FindUserProfilesFast
 # There will be status:good or rate:%100 for existing profiles
 # If you want to list all websites use python3 -m social-analyzer --cli --list
 
@@ -132,7 +131,6 @@ python3 -m social-analyzer --cli --mode "fast" --username "johndoe" --websites "
 ## Install and run as Python CLI (Windows, Linux, MacOS, Raspberry pi..)
 ```bash
 # You can scan all websites using --websites "all"
-# Remember the following runs as FindUserProfilesFast
 # There will be status:good or rate:%100 for existing profiles
 # If you want to list all websites use python3 -m social-analyzer --cli --list
 
@@ -209,7 +207,10 @@ Listing websites & detections:
 - Let me know if I missed a reference or resource!
 
 ## Interviews
-[Console 37](https://console.substack.com/p/console-37)
+- [Console 37](https://console.substack.com/p/console-37)
+
+## Some News\Articles
+- [5 Open-Source Intelligence (OSINT) GitHub Repositories For Every Security Analyst (Cyber Security)](https://twitter.com/GithubProjects/status/1395205156581613568)
 
 ## Disclaimer\Notes
 - Make sure to download this tool from GitHub
