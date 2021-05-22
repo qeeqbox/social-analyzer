@@ -1,12 +1,21 @@
 .. image:: https://raw.githubusercontent.com/qeeqbox/social-analyzer/main/readme/socialanalyzerlogo_.png
 
-Social-Analyzer - API, CLI & Web App for analyzing & finding a person's profile across +400 social media websites. It includes different string analysis and detection modules, you can choose which combination of modules to use during the investigation process.
+Social-Analyzer - API, CLI & Web App for analyzing & finding a person's profile across social media websites. It includes different string analysis and detection modules, you can choose which combination of modules to use during the investigation process.
 
 The detection modules utilize a rating mechanism based on different detection techniques, which produces a rate value that starts from 0 to 100 (No-Maybe-Yes). This module intended to have less false positive and it's documented in this `Wiki <https://github.com/qeeqbox/social-analyzer/wiki>`_ link
 
-The analysis and extracted social media information from this OSINT tool could help in investigating profiles related to suspicious or malicious activities such as `cyberbullying <https://en.wikipedia.org/wiki/Wikipedia:Cyberbullying>`_, `cybergrooming <https://de.wikipedia.org/wiki/Cyber-Grooming>`_, `cyberstalking <https://en.wikipedia.org/wiki/Cyberstalking>`_, and `spreading misinformation <https://en.wikipedia.org/wiki/Misinformation>`_.
+The analysis and public extracted information from this OSINT tool could help in investigating profiles related to suspicious or malicious activities such as `cyberbullying <https://en.wikipedia.org/wiki/Wikipedia:Cyberbullying>`_, `cybergrooming <https://de.wikipedia.org/wiki/Cyber-Grooming>`_, `cyberstalking <https://en.wikipedia.org/wiki/Cyberstalking>`_, and `spreading misinformation <https://en.wikipedia.org/wiki/Misinformation>`_.
 
 This project is *"currently used by some law enforcement agencies in countries where resources are limited"*.
+
+Update
+======
+- Save the GUI analysis \ output as JSON file has been implemented (Users request)
+- For issues and questions related to the private modules, email me directly
+
+So·cial Me·di·a
+===============
+Websites and applications that enable users to create and share content or to participate in social networking - Oxford Dictionary
 
 Running Example (Simple)
 ========================
@@ -83,6 +92,7 @@ Features
 - Adjust finding\getting profile workers (default 15)
 - Re-checking option for failed profiles
 - Filter profiles by good, maybe, and bad
+- Save the analysis as JSON file
 - [Wiki](https://github.com/qeeqbox/social-analyzer/wiki)
 
 Special Detections
@@ -114,6 +124,10 @@ Disclaimer\Notes
 Interviews
 ==========
 `Console 37 <https://console.substack.com/p/console-37>`_
+
+Some News\Articles
+==================
+`5 Open-Source Intelligence (OSINT) GitHub Repositories For Every Security Analyst (Cyber Security) <https://twitter.com/GithubProjects/status/1395205169617547266>`_
 
 Articles
 ========
