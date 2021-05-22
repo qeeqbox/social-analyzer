@@ -207,6 +207,8 @@ app.get("/generate", async function(req, res, next) {
 
 app.post("/analyze_string", async function(req, res, next) {
 
+  var username = "";
+  var temp_uuid = "";
   var info = {
     "items": [],
     "original": "",
@@ -248,7 +250,9 @@ app.post("/analyze_string", async function(req, res, next) {
   if (req.body.string == null || req.body.string == "") {
     res.json("Error");
   } else {
+    username = req.body.string
     req.body.uuid = req.body.uuid.replace(/[^a-zA-Z0-9\-]+/g, '');
+    temp_uuid = req.body.uuid
     helper.log_to_file_queue(req.body.uuid, "[Setting] Log file name: " + req.body.uuid)
     helper.log_to_file_queue(req.body.uuid, "[Setting] Username: " + req.body.string)
     if (req.body.option.includes("FindUserProfilesFast") || req.body.option.includes("GetUserProfilesFast")) {
@@ -394,6 +398,8 @@ app.post("/analyze_string", async function(req, res, next) {
     }
 
     res.json({
+      username: username,
+      uuid: temp_uuid,
       info,
       table: all_words,
       common: temp_words,

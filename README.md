@@ -7,9 +7,13 @@ Social Analyzer - API, CLI & Web App for analyzing & finding a person's profile 
 
 The detection modules utilize a rating mechanism based on different detection techniques, which produces a rate value that starts from 0 to 100 (No-Maybe-Yes). This module intended to have less false positive and it's documented in this [Wiki](https://github.com/qeeqbox/social-analyzer/wiki) link
 
-The analysis and extracted social media information from this OSINT tool could help in investigating profiles related to suspicious or malicious activities such as [cyberbullying](https://en.wikipedia.org/wiki/Wikipedia:Cyberbullying), [cybergrooming](https://de.wikipedia.org/wiki/Cyber-Grooming), [cyberstalking](https://en.wikipedia.org/wiki/Cyberstalking), and [spreading misinformation](https://en.wikipedia.org/wiki/Misinformation).
+The analysis and public extracted information from this OSINT tool could help in investigating profiles related to suspicious or malicious activities such as [cyberbullying](https://en.wikipedia.org/wiki/Wikipedia:Cyberbullying), [cybergrooming](https://de.wikipedia.org/wiki/Cyber-Grooming), [cyberstalking](https://en.wikipedia.org/wiki/Cyberstalking), and [spreading misinformation](https://en.wikipedia.org/wiki/Misinformation).
 
 This project is *"currently used by some law enforcement agencies in countries where resources are limited"*.
+
+## Update
+- Save the GUI analysis \ output as JSON file has been implemented (Users request)
+- For issues and questions related to the private modules, email me directly
 
 ## So·cial Me·di·a
 Websites and applications that enable users to create and share content or to participate in social networking - Oxford Dictionary
@@ -59,6 +63,7 @@ Profile images **will not** be blurred. If you want them to be blurred, turn tha
 - Adjust finding\getting profile workers (default 15)
 - Re-checking option for failed profiles
 - Filter profiles by good, maybe, and bad
+- Save the analysis as JSON file
 - [Wiki](https://github.com/qeeqbox/social-analyzer/wiki)
 
 ## Special Detections
@@ -210,7 +215,7 @@ Listing websites & detections:
 - [Console 37](https://console.substack.com/p/console-37)
 
 ## Some News\Articles
-- [5 Open-Source Intelligence (OSINT) GitHub Repositories For Every Security Analyst (Cyber Security)](https://twitter.com/GithubProjects/status/1395205156581613568)
+- [5 Open-Source Intelligence (OSINT) GitHub Repositories For Every Security Analyst (Cyber Security)](https://twitter.com/GithubProjects/status/1395205169617547266)
 
 ## Disclaimer\Notes
 - Make sure to download this tool from GitHub
