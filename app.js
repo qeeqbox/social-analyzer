@@ -205,6 +205,18 @@ app.get("/generate", async function(req, res, next) {
   });
 });
 
+app.post("/cancel", async function(req, res, next) {
+  if (req.body.option == "on" && req.body.uuid != "") {
+    temp_uuid = req.body.uuid.replace(/[^a-zA-Z0-9\-]+/g, '')
+    if (!helper.global_lock.includes(temp_uuid))
+    {
+      helper.log_to_file_queue(req.body.uuid, "[Canceling] task: " + req.body.uuid)
+      helper.global_lock.push(temp_uuid)
+    }
+  }
+  res.json("Done");
+});
+
 app.post("/analyze_string", async function(req, res, next) {
 
   var username = "";
