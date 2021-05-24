@@ -10,6 +10,7 @@ This project is *"currently used by some law enforcement agencies in countries w
 
 Update
 ======
+- Cancel task has been implemented (Users request)
 - Save the GUI analysis \ output as JSON file has been implemented (Users request)
 - For issues and questions related to the private modules, email me directly
 

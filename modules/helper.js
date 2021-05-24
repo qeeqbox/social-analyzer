@@ -1,4 +1,5 @@
 var verbose = false;
+var global_lock = [];
 var google_api_key = "";
 var google_api_cs = "";
 var grid_url = "";
@@ -50,7 +51,7 @@ var detected_websites = {
 
 var header_options = {
   headers: {
-    'User-Agent': 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:84.0) Gecko/20100101 Firefox/84.0',
+    'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:88.0) Gecko/20100101 Firefox/88.0',
   }
 };
 
@@ -321,6 +322,7 @@ module.exports = {
   parsed_names_origins,
   parsed_json,
   verbose,
+  global_lock,
   google_api_key,
   google_api_cs,
   grid_url,

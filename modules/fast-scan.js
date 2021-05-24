@@ -56,7 +56,7 @@ async function find_username_normal_wrapper(req, sites) {
     var temp_sites = sites.filter(site => site.selected == "true")
     if (temp_sites.length > 0) {
       await temp_sites.forEach(site => {
-        if (site.detections.length > 0) {
+        if (site.detections.length > 0 && !helper.global_lock.includes(req.body.uuid)) {
           functions.push(find_username_site.bind(null, req.body.uuid, req.body.string, req.body.option, site));
         }
       });
@@ -80,121 +80,126 @@ async function find_username_normal_wrapper(req, sites) {
 
 async function find_username_site(uuid, username, options, site) {
   return new Promise(async (resolve, reject) => {
-    try {
-      if (!options.includes('json')) {
-        helper.log_to_file_queue(uuid, "[Checking] " + helper.get_site_from_url(site.url))
-      }
-      var source = await helper.get_url_wrapper_text(site.url.replace("{username}", username));
-      if (source != "error-get-url") {
-        var detections_count = 0;
-        var text_only = "unavailable";
-        var title = "unavailable";
-        var language = "unavailable"
-        var good_or_bad = "false"
-        var [
-          temp_profile,
-          temp_detected,
-          detections_count
-        ] = await engine.detect("fast", uuid, username, options, site, source)
-        if (temp_profile.found >= helper.detection_level[helper.detection_level.current].found && detections_count >= helper.detection_level[helper.detection_level.current].count) {
-          temp_profile.good = "true"
+    if (!helper.global_lock.includes(uuid)) {
+      try {
+        if (!options.includes('json')) {
+          helper.log_to_file_queue(uuid, "[Checking] " + helper.get_site_from_url(site.url))
         }
-        temp_profile.text = sanitizeHtml(htmlToText(source, {
-          wordwrap: false,
-          hideLinkHrefIfSameAsText: true,
-          ignoreHref: true,
-          ignoreImage: true
-        }));
-        if (temp_profile.text == "") {
-          temp_profile.text = "unavailable"
-        }
-
-        try {
-          var $ = cheerio.load(source);
-          title = sanitizeHtml($("title").text())
-          if (title.length == 0) {
-            title = "unavailable"
+        var source = await helper.get_url_wrapper_text(site.url.replace("{username}", username));
+        if (source != "error-get-url") {
+          var detections_count = 0;
+          var text_only = "unavailable";
+          var title = "unavailable";
+          var language = "unavailable"
+          var good_or_bad = "false"
+          var [
+            temp_profile,
+            temp_detected,
+            detections_count
+          ] = await engine.detect("fast", uuid, username, options, site, source)
+          if (temp_profile.found >= helper.detection_level[helper.detection_level.current].found && detections_count >= helper.detection_level[helper.detection_level.current].count) {
+            temp_profile.good = "true"
           }
-        } catch (err) {
-          helper.verbose && console.log(err);
-        }
-
-        try {
-          language = helper.get_language_by_parsing(source)
-          if (language == "unavailable") {
-            language = helper.get_language_by_guessing(temp_profile.text)
+          temp_profile.text = sanitizeHtml(htmlToText(source, {
+            wordwrap: false,
+            hideLinkHrefIfSameAsText: true,
+            ignoreHref: true,
+            ignoreImage: true
+          }));
+          if (temp_profile.text == "") {
+            temp_profile.text = "unavailable"
           }
-        } catch (err) {
-          helper.verbose && console.log(err);
-        }
 
-        temp_profile.text = temp_profile.text.replace(/(\r\n|\n|\r)/gm, "");
-        temp_profile.title = title.replace(/(\r\n|\n|\r)/gm, "");
-        temp_profile.language = language;
-
-        if (helper.strings_titles.test(temp_profile.title) || helper.strings_pages.test(temp_profile.text)){
-          temp_profile.title = "filtered"
-          temp_profile.text = "filtered"
-        }
-
-        if (temp_profile.good == "true") {
-          var temp_value = ((temp_profile["found"] / detections_count) * 100).toFixed(2)
-          temp_profile.rate = "%" + temp_value;
-          if (temp_value >= 100.00) {
-            temp_profile.status = "good"
-          } else if (temp_value >= 50.00 && temp_value < 100.00) {
-            temp_profile.status = "maybe"
-          } else {
-            temp_profile.status = "bad"
+          try {
+            var $ = cheerio.load(source);
+            title = sanitizeHtml($("title").text())
+            if (title.length == 0) {
+              title = "unavailable"
+            }
+          } catch (err) {
+            helper.verbose && console.log(err);
           }
-        }
 
-        temp_profile.link = site.url.replace("{username}", username);
-        temp_profile.type = site.type
+          try {
+            language = helper.get_language_by_parsing(source)
+            if (language == "unavailable") {
+              language = helper.get_language_by_guessing(temp_profile.text)
+            }
+          } catch (err) {
+            helper.verbose && console.log(err);
+          }
 
-        if (temp_profile.status == "good") {
-          if (options.includes("ExtractPatterns")) {
-            var temp_extracted_list = []
-            temp_extracted_list = await extraction.extract_patterns(site, source)
-            if (temp_extracted_list.length > 0) {
-              temp_profile.extracted = temp_extracted_list
+          temp_profile.text = temp_profile.text.replace(/(\r\n|\n|\r)/gm, "");
+          temp_profile.title = title.replace(/(\r\n|\n|\r)/gm, "");
+          temp_profile.language = language;
+
+          if (helper.strings_titles.test(temp_profile.title) || helper.strings_pages.test(temp_profile.text)){
+            temp_profile.title = "filtered"
+            temp_profile.text = "filtered"
+          }
+
+          if (temp_profile.good == "true") {
+            var temp_value = ((temp_profile["found"] / detections_count) * 100).toFixed(2)
+            temp_profile.rate = "%" + temp_value;
+            if (temp_value >= 100.00) {
+              temp_profile.status = "good"
+            } else if (temp_value >= 50.00 && temp_value < 100.00) {
+              temp_profile.status = "maybe"
+            } else {
+              temp_profile.status = "bad"
             }
           }
-          if (options.includes("ExtractMetadata")) {
-            var temp_metadata_list = []
-            temp_metadata_list = await extraction.extract_metadata(site, source)
-            if (temp_metadata_list.length > 0) {
-              temp_profile.metadata = temp_metadata_list
+
+          temp_profile.link = site.url.replace("{username}", username);
+          temp_profile.type = site.type
+
+          if (temp_profile.status == "good") {
+            if (options.includes("ExtractPatterns")) {
+              var temp_extracted_list = []
+              temp_extracted_list = await extraction.extract_patterns(site, source)
+              if (temp_extracted_list.length > 0) {
+                temp_profile.extracted = temp_extracted_list
+              }
+            }
+            if (options.includes("ExtractMetadata")) {
+              var temp_metadata_list = []
+              temp_metadata_list = await extraction.extract_metadata(site, source)
+              if (temp_metadata_list.length > 0) {
+                temp_profile.metadata = temp_metadata_list
+              }
             }
           }
-        }
 
-        ["title", "language", "text", "type", "metadata", "extracted"].forEach((item) => {
-          if (temp_profile[item] == "") {
-            temp_profile[item] = "unavailable"
+          ["title", "language", "text", "type", "metadata", "extracted"].forEach((item) => {
+            if (temp_profile[item] == "") {
+              temp_profile[item] = "unavailable"
+            }
+          });
+
+          if (options.includes("FindUserProfilesFast") && !options.includes("GetUserProfilesFast")) {
+            temp_profile.method = "find"
+          } else if (options.includes("GetUserProfilesFast") && !options.includes("FindUserProfilesFast")) {
+            temp_profile.method = "get"
+          } else if (options.includes("GetUserProfilesFast") && options.includes("FindUserProfilesFast")) {
+            temp_profile.method = "all"
           }
-        });
-
-        if (options.includes("FindUserProfilesFast") && !options.includes("GetUserProfilesFast")) {
-          temp_profile.method = "find"
-        } else if (options.includes("GetUserProfilesFast") && !options.includes("FindUserProfilesFast")) {
-          temp_profile.method = "get"
-        } else if (options.includes("GetUserProfilesFast") && options.includes("FindUserProfilesFast")) {
-          temp_profile.method = "all"
+          resolve({
+            return: 1,
+            site: site,
+            profile: temp_profile
+          });
+        } else {
+          resolve({
+            return: 0,
+            site: site,
+            profile: []
+          });
         }
-        resolve({
-          return: 1,
-          site: site,
-          profile: temp_profile
-        });
-      } else {
-        resolve({
-          return: 0,
-          site: site,
-          profile: []
-        });
+      } catch (err) {
+        resolve(undefined)
       }
-    } catch (err) {
+    }
+    else {
       resolve(undefined)
     }
   });
