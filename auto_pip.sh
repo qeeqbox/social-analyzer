@@ -6,6 +6,7 @@ echo "[x] Making pip-social-analyzer"
 mkdir -p pip-social-analyzer/social-analyzer
 echo "[x] Copying app.py, setup.py, README.rst & README.rst"
 cp app.py pip-social-analyzer/social-analyzer/__main__.py
+touch app.py pip-social-analyzer/social-analyzer/__init__.py
 cp setup.py pip-social-analyzer/setup.py
 cp README.rst pip-social-analyzer/README.rst
 echo "[x] Copying data folder"
