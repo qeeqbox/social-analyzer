@@ -6,7 +6,17 @@ echo "[x] Making pip-social-analyzer"
 mkdir -p pip-social-analyzer/social-analyzer
 echo "[x] Copying app.py, setup.py, README.rst & README.rst"
 cp app.py pip-social-analyzer/social-analyzer/__main__.py
-touch app.py pip-social-analyzer/social-analyzer/__init__.py
+cat >>pip-social-analyzer/social-analyzer/__init__.py <<EOL
+#!/usr/bin/env python
+from .__main__ import main_logic
+EOL
+cat >>pip-social-analyzer/social-analyzer/social-analyzer <<EOL
+#!/usr/bin/env python
+from importlib import import_module
+if __name__ == '__main__':
+	module = import_module("social-analyzer")
+	module.main_logic()
+EOL
 cp setup.py pip-social-analyzer/setup.py
 cp README.rst pip-social-analyzer/README.rst
 echo "[x] Copying data folder"
