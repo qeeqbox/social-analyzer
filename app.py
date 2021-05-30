@@ -17,7 +17,7 @@ from logging.handlers import RotatingFileHandler
 from sys import platform
 from os import path, system, makedirs
 from time import time, sleep
-from argparse import ArgumentParser,SUPPRESS
+from argparse import ArgumentParser, SUPPRESS
 from json import load, dumps
 from uuid import uuid4
 from functools import wraps
@@ -656,6 +656,7 @@ class ArgumentParser(ArgumentParser):
     def error(self, message):
         self.exit(2, 'Error: %s\n' % (message))
 
+
 def parse_args():
     ARGV = None
     ARG_PARSER = ArgumentParser(description="Qeeqbox/social-analyzer - API and Web App for analyzing & finding a person's profile across 300+ social media websites (Detections are updated regularly)", usage=SUPPRESS)
@@ -693,6 +694,7 @@ def init_logic():
     WEBSITES_ENTRIES = init_detections("websites_entries")
     SHARED_DETECTIONS = init_detections("shared_detections")
     GENERIC_DETECTION = init_detections("generic_detection")
+
 
 def main_logic(ARGV=None):
     global LANGUAGES_JSON
