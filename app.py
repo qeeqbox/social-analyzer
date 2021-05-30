@@ -15,7 +15,7 @@
 from logging import getLogger, DEBUG, Formatter, Handler, addLevelName
 from logging.handlers import RotatingFileHandler
 from sys import platform
-from os import path, system
+from os import path, system, makedirs
 from time import time, sleep
 from argparse import ArgumentParser
 from json import load, dumps
@@ -36,11 +36,13 @@ from tld import get_fld
 from requests import get, packages, Session
 from termcolor import colored
 from langdetect import detect
+from warnings import filterwarnings
+
+filterwarnings('ignore', category=RuntimeWarning, module='runpy')
+packages.urllib3.disable_warnings(category=InsecureRequestWarning)
 
 if platform == "win32":
     system("color")
-
-packages.urllib3.disable_warnings(category=InsecureRequestWarning)
 
 WEBSITES_ENTRIES = []
 SHARED_DETECTIONS = []
@@ -55,10 +57,6 @@ LANGUAGES_JSON = {}
 WORKERS = 15
 CUSTOM_MESSAGE = 51
 WAF = True
-
-with open(LANGUAGES_PATH) as f:
-    LANGUAGES_JSON = load(f)
-
 
 def delete_keys(in_object, keys):
     '''
@@ -185,7 +183,7 @@ def setup_logger(uuid=None, file=False, argv=None):
 
     temp_folder = mkdtemp()
     if argv.output != "json":
-        print('[!] Temporary Logs Directory {}'.format(temp_folder))
+        print('[init] Temporary Logs Directory {}'.format(temp_folder))
     LOG.setLevel(DEBUG)
     LOG.addHandler(CustomHandler(argv))
     addLevelName(CUSTOM_MESSAGE, "CUSTOM")
@@ -627,6 +625,21 @@ def check_user_cli(argv):
     if argv.output == "json":
         print(dumps(temp_detected, sort_keys=True, indent=None))
 
+def load_file(name,path_to_check, url_download):
+    ret = None
+    try:
+        if path.exists(path_to_check) == False:
+            print("[init] Downloading {} from {}".format(name, url_download))
+            file = get(url_download, allow_redirects=True)
+            with open(path_to_check, 'wb') as f:
+                f.write(file.content)
+        if path.exists(path_to_check) == True:
+            print("[init] {} looks good!".format(name))
+            with open(path_to_check) as f:
+                ret = load(f)
+    except Exception as e:
+        print("[!] {} Does not exist! cannot be downloaded...".format(name))
+    return ret
 
 def msg():
     '''
@@ -637,38 +650,53 @@ def msg():
         return """python -m social-analyzer --cli --mode 'fast' --username 'johndoe' --websites 'youtube pinterest tumblr' --output 'pretty'"""
     return """python3 app.py --cli --mode 'fast' --username 'johndoe' --websites 'youtube pinterest tumblr' --output 'pretty'"""
 
+def parse_args():
+    ARGV = None
+    ARG_PARSER = ArgumentParser(description="Qeeqbox/social-analyzer - API and Web App for analyzing & finding a person's profile across 300+ social media websites (Detections are updated regularly)", usage=msg())
+    ARG_PARSER._action_groups.pop()
+    ARG_PARSER_REQUIRED = ARG_PARSER.add_argument_group("Required Arguments")
+    ARG_PARSER_REQUIRED.add_argument("--cli", action="store_true", help="Turn this CLI on", required=True)
+    ARG_PARSER_REQUIRED.add_argument("--username", help="E.g. johndoe, john_doe or johndoe9999", metavar="", required=True)
+    ARG_PARSER_OPTIONAL = ARG_PARSER.add_argument_group("Optional Arguments")
+    ARG_PARSER_OPTIONAL.add_argument("--websites", help="Website or websites separated by space E.g. youtube, tiktok or tumblr", metavar="", default="all")
+    ARG_PARSER_OPTIONAL.add_argument("--mode", help="Analysis mode E.g.fast -> FindUserProfilesFast, slow -> FindUserProfilesSlow or special -> FindUserProfilesSpecial", metavar="", default="fast")
+    ARG_PARSER_OPTIONAL.add_argument("--output", help="Show the output in the following format: json -> json output for integration or pretty -> prettify the output", metavar="", default="pretty")
+    ARG_PARSER_OPTIONAL.add_argument("--options", help="Show the following when a profile is found: link, rate, title or text", metavar="", default="")
+    ARG_PARSER_OPTIONAL.add_argument("--method", help="find -> show detected profiles, get -> show all profiles regardless detected or not, both -> combine find & get", metavar="", default="all")
+    ARG_PARSER_OPTIONAL.add_argument("--filter", help="filter detected profiles by good, maybe or bad, you can do combine them with comma (good,bad) or use all", metavar="", default="good")
+    ARG_PARSER_OPTIONAL.add_argument("--profiles", help="filter profiles by detected, unknown or failed, you can do combine them with comma (detected,failed) or use all", metavar="", default="detected")
+    ARG_PARSER_OPTIONAL.add_argument("--extract", action="store_true", help="Extract profiles, urls & patterns if possible", required=False)
+    ARG_PARSER_OPTIONAL.add_argument("--metadata", action="store_true", help="Extract metadata if possible (pypi QeeqBox OSINT)", required=False)
+    ARG_PARSER_OPTIONAL.add_argument("--trim", action="store_true", help="Trim long strings", required=False)
+    ARG_PARSER_LIST = ARG_PARSER.add_argument_group("Listing websites & detections")
+    ARG_PARSER_LIST.add_argument("--list", action="store_true", help="List all available websites")
+    ARGV = ARG_PARSER.parse_args()
+    return ARGV
 
-WEBSITES_ENTRIES = init_detections("websites_entries")
-SHARED_DETECTIONS = init_detections("shared_detections")
-GENERIC_DETECTION = init_detections("generic_detection")
+def main_logic(ARGV=None):
+    global LANGUAGES_JSON
+    global SITES_DUMMY
+    global WEBSITES_ENTRIES
+    global SHARED_DETECTIONS
+    global GENERIC_DETECTION
+    print("[!] Detections are updated very often, make sure to get the most up-to-date ones")
+    makedirs(path.join(path.dirname(__file__), "data"), exist_ok=True)
+    LANGUAGES_JSON = load_file("languages.json",LANGUAGES_PATH,"https://raw.githubusercontent.com/qeeqbox/social-analyzer/main/data/languages.json")
+    SITES_DUMMY = load_file("sites.json",SITES_PATH,"https://raw.githubusercontent.com/qeeqbox/social-analyzer/main/data/sites.json")
+    WEBSITES_ENTRIES = init_detections("websites_entries")
+    SHARED_DETECTIONS = init_detections("shared_detections")
+    GENERIC_DETECTION = init_detections("generic_detection")
 
-ARG_PARSER = ArgumentParser(description="Qeeqbox/social-analyzer - API and Web App for analyzing & finding a person's profile across 300+ social media websites (Detections are updated regularly)", usage=msg())
-ARG_PARSER._action_groups.pop()
-ARG_PARSER_REQUIRED = ARG_PARSER.add_argument_group("Required Arguments")
-ARG_PARSER_REQUIRED.add_argument("--cli", action="store_true", help="Turn this CLI on", required=True)
-ARG_PARSER_REQUIRED.add_argument("--username", help="E.g. johndoe, john_doe or johndoe9999", metavar="", required=True)
-ARG_PARSER_OPTIONAL = ARG_PARSER.add_argument_group("Optional Arguments")
-ARG_PARSER_OPTIONAL.add_argument("--websites", help="Website or websites separated by space E.g. youtube, tiktok or tumblr", metavar="", default="all")
-ARG_PARSER_OPTIONAL.add_argument("--mode", help="Analysis mode E.g.fast -> FindUserProfilesFast, slow -> FindUserProfilesSlow or special -> FindUserProfilesSpecial", metavar="", default="fast")
-ARG_PARSER_OPTIONAL.add_argument("--output", help="Show the output in the following format: json -> json output for integration or pretty -> prettify the output", metavar="", default="pretty")
-ARG_PARSER_OPTIONAL.add_argument("--options", help="Show the following when a profile is found: link, rate, title or text", metavar="", default="")
-ARG_PARSER_OPTIONAL.add_argument("--method", help="find -> show detected profiles, get -> show all profiles regardless detected or not, both -> combine find & get", metavar="", default="all")
-ARG_PARSER_OPTIONAL.add_argument("--filter", help="filter detected profiles by good, maybe or bad, you can do combine them with comma (good,bad) or use all", metavar="", default="good")
-ARG_PARSER_OPTIONAL.add_argument("--profiles", help="filter profiles by detected, unknown or failed, you can do combine them with comma (detected,failed) or use all", metavar="", default="detected")
-ARG_PARSER_OPTIONAL.add_argument("--extract", action="store_true", help="Extract profiles, urls & patterns if possible", required=False)
-ARG_PARSER_OPTIONAL.add_argument("--metadata", action="store_true", help="Extract metadata if possible (pypi QeeqBox OSINT)", required=False)
-ARG_PARSER_OPTIONAL.add_argument("--trim", action="store_true", help="Trim long strings", required=False)
-ARG_PARSER_LIST = ARG_PARSER.add_argument_group("Listing websites & detections")
-ARG_PARSER_LIST.add_argument("--list", action="store_true", help="List all available websites")
-ARGV = ARG_PARSER.parse_args()
+    if ARGV == None:
+        ARGV = parse_args()
+    if ARGV != None and LANGUAGES_JSON != None and SITES_DUMMY != None:
+        if ARGV.cli:
+            if ARGV.list:
+                setup_logger()
+                list_all_websites()
+            elif ARGV.mode == "fast":
+                if ARGV.username != "" and ARGV.websites != "":
+                    check_user_cli(ARGV)
 
 if __name__ == "__main__":
-    if ARGV.output != "json":
-        print("[!] Detections are updated very often, make sure to get the most up-to-date ones")
-    if ARGV.cli:
-        if ARGV.list:
-            setup_logger()
-            list_all_websites()
-        elif ARGV.mode == "fast":
-            if ARGV.username != "" and ARGV.websites != "":
-                check_user_cli(ARGV)
+    main_logic()
