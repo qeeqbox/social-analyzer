@@ -58,6 +58,7 @@ WORKERS = 15
 CUSTOM_MESSAGE = 51
 WAF = True
 
+
 def delete_keys(in_object, keys):
     '''
     delete specific keys from object
@@ -625,7 +626,8 @@ def check_user_cli(argv):
     if argv.output == "json":
         print(dumps(temp_detected, sort_keys=True, indent=None))
 
-def load_file(name,path_to_check, url_download):
+
+def load_file(name, path_to_check, url_download):
     ret = None
     try:
         if path.exists(path_to_check) == False:
@@ -641,6 +643,7 @@ def load_file(name,path_to_check, url_download):
         print("[!] {} Does not exist! cannot be downloaded...".format(name))
     return ret
 
+
 def msg():
     '''
     welcome message
@@ -649,6 +652,7 @@ def msg():
     if path.basename(__file__) == "__main__.py":
         return """python -m social-analyzer --cli --mode 'fast' --username 'johndoe' --websites 'youtube pinterest tumblr' --output 'pretty'"""
     return """python3 app.py --cli --mode 'fast' --username 'johndoe' --websites 'youtube pinterest tumblr' --output 'pretty'"""
+
 
 def parse_args():
     ARGV = None
@@ -673,6 +677,7 @@ def parse_args():
     ARGV = ARG_PARSER.parse_args()
     return ARGV
 
+
 def main_logic(ARGV=None):
     global LANGUAGES_JSON
     global SITES_DUMMY
@@ -681,15 +686,15 @@ def main_logic(ARGV=None):
     global GENERIC_DETECTION
     print("[!] Detections are updated very often, make sure to get the most up-to-date ones")
     makedirs(path.join(path.dirname(__file__), "data"), exist_ok=True)
-    LANGUAGES_JSON = load_file("languages.json",LANGUAGES_PATH,"https://raw.githubusercontent.com/qeeqbox/social-analyzer/main/data/languages.json")
-    SITES_DUMMY = load_file("sites.json",SITES_PATH,"https://raw.githubusercontent.com/qeeqbox/social-analyzer/main/data/sites.json")
+    LANGUAGES_JSON = load_file("languages.json", LANGUAGES_PATH, "https://raw.githubusercontent.com/qeeqbox/social-analyzer/main/data/languages.json")
+    SITES_DUMMY = load_file("sites.json", SITES_PATH, "https://raw.githubusercontent.com/qeeqbox/social-analyzer/main/data/sites.json")
     WEBSITES_ENTRIES = init_detections("websites_entries")
     SHARED_DETECTIONS = init_detections("shared_detections")
     GENERIC_DETECTION = init_detections("generic_detection")
 
-    if ARGV == None:
+    if ARGV is None:
         ARGV = parse_args()
-    if ARGV != None and LANGUAGES_JSON != None and SITES_DUMMY != None:
+    if ARGV is not None and LANGUAGES_JSON is not None and SITES_DUMMY is not None:
         if ARGV.cli:
             if ARGV.list:
                 setup_logger()
@@ -697,6 +702,7 @@ def main_logic(ARGV=None):
             elif ARGV.mode == "fast":
                 if ARGV.username != "" and ARGV.websites != "":
                     check_user_cli(ARGV)
+
 
 if __name__ == "__main__":
     main_logic()
