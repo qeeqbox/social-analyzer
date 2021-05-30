@@ -17,7 +17,7 @@ from logging.handlers import RotatingFileHandler
 from sys import platform
 from os import path, system, makedirs
 from time import time, sleep
-from argparse import ArgumentParser
+from argparse import ArgumentParser,SUPPRESS
 from json import load, dumps
 from uuid import uuid4
 from functools import wraps
@@ -53,7 +53,8 @@ LANGUAGES_PATH = path.join(path.dirname(__file__), "data", "languages.json")
 STRINGS_PAGES = recompile('captcha-info|Please enable cookies|Completing the CAPTCHA', IGNORECASE)
 STRINGS_TITLES = recompile('not found|blocked|attention required|cloudflare', IGNORECASE)
 STRINGS_META = recompile(r'regionsAllowed|width|height|color|rgba\(|charset|viewport|refresh|equiv', IGNORECASE)
-LANGUAGES_JSON = {}
+LANGUAGES_JSON = None
+SITES_DUMMY = None
 WORKERS = 15
 CUSTOM_MESSAGE = 51
 WAF = True
@@ -222,7 +223,6 @@ def list_all_websites():
     '''
     list all the available websites' entries
     '''
-
     if len(WEBSITES_ENTRIES) > 0:
         for site in WEBSITES_ENTRIES:
             temp_value = get_fld(site["url"], fix_protocol=True)
@@ -649,14 +649,16 @@ def msg():
     welcome message
     '''
 
-    if path.basename(__file__) == "__main__.py":
-        return """python -m social-analyzer --cli --mode 'fast' --username 'johndoe' --websites 'youtube pinterest tumblr' --output 'pretty'"""
-    return """python3 app.py --cli --mode 'fast' --username 'johndoe' --websites 'youtube pinterest tumblr' --output 'pretty'"""
+    return "\n[social-analyzer]"
 
+
+class ArgumentParser(ArgumentParser):
+    def error(self, message):
+        self.exit(2, 'Error: %s\n' % (message))
 
 def parse_args():
     ARGV = None
-    ARG_PARSER = ArgumentParser(description="Qeeqbox/social-analyzer - API and Web App for analyzing & finding a person's profile across 300+ social media websites (Detections are updated regularly)", usage=msg())
+    ARG_PARSER = ArgumentParser(description="Qeeqbox/social-analyzer - API and Web App for analyzing & finding a person's profile across 300+ social media websites (Detections are updated regularly)", usage=SUPPRESS)
     ARG_PARSER._action_groups.pop()
     ARG_PARSER_REQUIRED = ARG_PARSER.add_argument_group("Required Arguments")
     ARG_PARSER_REQUIRED.add_argument("--cli", action="store_true", help="Turn this CLI on", required=True)
@@ -678,13 +680,13 @@ def parse_args():
     return ARGV
 
 
-def main_logic(ARGV=None):
+def init_logic():
     global LANGUAGES_JSON
     global SITES_DUMMY
     global WEBSITES_ENTRIES
     global SHARED_DETECTIONS
     global GENERIC_DETECTION
-    print("[!] Detections are updated very often, make sure to get the most up-to-date ones")
+    print("[init] Detections are updated very often, make sure to get the most up-to-date ones")
     makedirs(path.join(path.dirname(__file__), "data"), exist_ok=True)
     LANGUAGES_JSON = load_file("languages.json", LANGUAGES_PATH, "https://raw.githubusercontent.com/qeeqbox/social-analyzer/main/data/languages.json")
     SITES_DUMMY = load_file("sites.json", SITES_PATH, "https://raw.githubusercontent.com/qeeqbox/social-analyzer/main/data/sites.json")
@@ -692,16 +694,21 @@ def main_logic(ARGV=None):
     SHARED_DETECTIONS = init_detections("shared_detections")
     GENERIC_DETECTION = init_detections("generic_detection")
 
+def main_logic(ARGV=None):
+    global LANGUAGES_JSON
+    global SITES_DUMMY
     if ARGV is None:
         ARGV = parse_args()
-    if ARGV is not None and LANGUAGES_JSON is not None and SITES_DUMMY is not None:
+    if ARGV is not None:
         if ARGV.cli:
-            if ARGV.list:
-                setup_logger()
-                list_all_websites()
-            elif ARGV.mode == "fast":
-                if ARGV.username != "" and ARGV.websites != "":
-                    check_user_cli(ARGV)
+            init_logic()
+            if LANGUAGES_JSON is not None and SITES_DUMMY is not None:
+                if ARGV.list:
+                    setup_logger(argv=ARGV)
+                    list_all_websites()
+                elif ARGV.mode == "fast":
+                    if ARGV.username != "" and ARGV.websites != "":
+                        check_user_cli(ARGV)
 
 
 if __name__ == "__main__":
