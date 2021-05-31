@@ -38,8 +38,9 @@ from termcolor import colored
 from langdetect import detect
 from warnings import filterwarnings
 
+
 class SocialAnalyzer():
-    def __init__(self, silent = False):
+    def __init__(self, silent=False):
         self.websites_entries = []
         self.shared_detections = []
         self.generic_detection = []
@@ -725,9 +726,11 @@ class SocialAnalyzer():
                 ret = self.check_user_cli(ARGV)
         return ret
 
+
 def main_logic():
     sa = SocialAnalyzer()
     sa.run_as_cli()
+
 
 if __name__ == "__main__":
     main_logic()
