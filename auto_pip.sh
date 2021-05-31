@@ -9,6 +9,7 @@ cp app.py pip-social-analyzer/social-analyzer/__main__.py
 cat >>pip-social-analyzer/social-analyzer/__init__.py <<EOL
 #!/usr/bin/env python
 from .__main__ import main_logic
+from .__main__ import SocialAnalyzer
 EOL
 cat >>pip-social-analyzer/social-analyzer/social-analyzer <<EOL
 #!/usr/bin/env python
