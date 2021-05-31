@@ -231,16 +231,16 @@ class SocialAnalyzer():
 
         resutls = []
 
-        def fetch_url(sa_object, site, username, options):
+        def fetch_url(self, site, username, options):
             '''
             this runs for every website entry
             '''
-            if sa_object.timeout:
-                sleep(sa_object.timeout)
+            if self.timeout:
+                sleep(self.timeout)
             else:
                 sleep(randint(1, 99) / 100)
 
-            sa_object.log.info("[Checking] " + get_fld(site["url"]))
+            self.log.info("[Checking] " + get_fld(site["url"]))
             source = ""
 
             detection_level = {
@@ -263,7 +263,7 @@ class SocialAnalyzer():
 
             with suppress(Exception):
                 session = Session()
-                session.headers.update(sa_object.headers)
+                session.headers.update(self.headers)
                 response = session.get(site["url"].replace("{username}", username), timeout=5, verify=False)
                 source = response.text
                 content = response.content
