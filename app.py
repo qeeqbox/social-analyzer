@@ -41,6 +41,7 @@ from warnings import filterwarnings
 filterwarnings('ignore', category=RuntimeWarning, module='runpy')
 packages.urllib3.disable_warnings(category=InsecureRequestWarning)
 
+
 class SocialAnalyzer():
     def __init__(self, silent=False):
         self.websites_entries = []
