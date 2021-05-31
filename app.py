@@ -38,6 +38,8 @@ from termcolor import colored
 from langdetect import detect
 from warnings import filterwarnings
 
+filterwarnings('ignore', category=RuntimeWarning, module='runpy')
+packages.urllib3.disable_warnings(category=InsecureRequestWarning)
 
 class SocialAnalyzer():
     def __init__(self, silent=False):
@@ -49,7 +51,7 @@ class SocialAnalyzer():
         self.languages_path = path.join(path.dirname(__file__), "data", "languages.json")
         self.strings_pages = recompile('captcha-info|Please enable cookies|Completing the CAPTCHA', IGNORECASE)
         self.strings_titles = recompile('not found|blocked|attention required|cloudflare', IGNORECASE)
-        self.strings_meta = recompile(r'regionsAllowed|width|height|color|rgba\(|charset|viewport|refresh|equiv', IGNORECASE)
+        self.strings_meta = recompile(r'regionsAllowed|width|height|color|rgba\(|charset|viewport|refresh|equiv|robots', IGNORECASE)
         self.languages_json = None
         self.sites_dummy = None
         self.workers = 15
@@ -640,8 +642,6 @@ class SocialAnalyzer():
 
     def init_logic(self):
         self.print_wrapper("[init] Detections are updated very often, make sure to get the most up-to-date ones")
-        filterwarnings('ignore', category=RuntimeWarning, module='runpy')
-        packages.urllib3.disable_warnings(category=InsecureRequestWarning)
         if platform == "win32":
             system("color")
         makedirs(path.join(path.dirname(__file__), "data"), exist_ok=True)
