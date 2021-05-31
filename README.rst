@@ -10,6 +10,7 @@ This project is *"currently used by some law enforcement agencies in countries w
 
 Update
 ======
+- You can import SocialAnalyzer object from the python package (Users request)
 - Cancel task has been implemented (Users request)
 - Save the GUI analysis \ output as JSON file has been implemented (Users request)
 - For issues and questions related to the private modules, email me directly
@@ -40,6 +41,24 @@ Running Example (Custom)
 
     #all websites with metadata, extraction, filter only existing profiles with status good
     python3 -m social-analyzer --cli --mode "fast" --username "johndoe" --websites "all" --metadata --extract --trim --filter "good" --profile "detected"
+
+Running Example (as object)
+===========================
+.. code:: bash
+
+	from importlib import import_module
+	SocialAnalyzer = import_module("social-analyzer").SocialAnalyzer(silent=True)
+	results = SocialAnalyzer.run_as_object(username="johndoe",silent=True)
+	print(results)
+
+Running Example (as object with specific websites, metadata and extraction)
+===========================================================================
+.. code:: bash
+
+	from importlib import import_module
+	SocialAnalyzer = import_module("social-analyzer").SocialAnalyzer(silent=True)
+	results = SocialAnalyzer.run_as_object(username="johndoe", websites="youtube pinterest tumblr", metadata=True, extract=True, silent=True)
+	print(results)
 
 Help (python3 -m social-analyzer --h)
 =====================================
