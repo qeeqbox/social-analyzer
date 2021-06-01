@@ -66,7 +66,6 @@ Profile images **will not** be blurred. If you want them to be blurred, turn tha
 - Re-checking option for failed profiles
 - Filter profiles by good, maybe, and bad
 - Save the analysis as JSON file
-- [Wiki](https://github.com/qeeqbox/social-analyzer/wiki)
 
 ## Special Detections
 - Facebook (Phone number, name or profile name)
@@ -77,11 +76,9 @@ Profile images **will not** be blurred. If you want them to be blurred, turn tha
 ### Linux (As Node WebApp)
 ```bash
 sudo apt-get update
-
 #Depedning on your Linux distro, you may or may not need these 2 lines
 sudo DEBIAN_FRONTEND=noninteractive apt-get install -y software-properties-common
 sudo add-apt-repository ppa:mozillateam/ppa -y
-
 sudo apt-get install -y firefox-esr tesseract-ocr git nodejs npm
 git clone https://github.com/qeeqbox/social-analyzer.git
 cd social-analyzer
@@ -117,7 +114,7 @@ print(results)
 
 ### Linux, Windows, MacOS, Raspberry pi..
 - check this [wiki](https://github.com/qeeqbox/social-analyzer/wiki/install) for all possible installation methods
-- check thos [wiki](https://github.com/qeeqbox/social-analyzer/wiki/integration) for running integration
+- check this [wiki](https://github.com/qeeqbox/social-analyzer/wiki/integration) for integrating social-analyzer with your OSINT tools, feeds, etc..
 
 ## social-analyzer --h
 ```
