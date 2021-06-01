@@ -100,9 +100,10 @@ python3 -m social-analyzer --cli --username "johndoe" --metadata
 ### Linux (As python script)
 ```bash
 sudo apt-get update
-sudo apt-get install git
+sudo apt-get install git python3 python3-pip
 git clone https://github.com/qeeqbox/social-analyzer
 cd social-analyzer
+pip3 install –r reqs.txt
 python3 app.py social-analyzer --cli --username "johndoe" --metadata
 ```
 
