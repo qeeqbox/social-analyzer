@@ -22,7 +22,7 @@ Websites and applications that enable users to create and share content or to pa
 
 ## Security Testing
 
-```bash
+```
 -------------------------------------              ---------------------------------
 |        Security Testing           |              |        Social-Analyzer        |
 -------------------------------------              ---------------------------------
@@ -73,109 +73,53 @@ Profile images **will not** be blurred. If you want them to be blurred, turn tha
 - Gmail (example@gmail.com)
 - Google (example@example.com)
 
-## Install and run as NodeJS Web App (Linux + NodeJS + NPM + Firefox)
+## Install & Run
+### Linux (As Node WebApp)
 ```bash
-# There will be status:good or rate:%100 for existing profiles
-# Do not mix FindUserProfilesFast, with FindUserProfilesSlow and ShowUserProfilesSlow
+sudo apt-get update
 
-apt-get update
-DEBIAN_FRONTEND=noninteractive apt-get install -y software-properties-common
-add-apt-repository ppa:mozillateam/ppa -y
-apt-get install -y firefox-esr tesseract-ocr git nodejs npm
+#Depedning on your Linux distro, you may or may not need these 2 lines
+sudo DEBIAN_FRONTEND=noninteractive apt-get install -y software-properties-common
+sudo add-apt-repository ppa:mozillateam/ppa -y
+
+sudo apt-get install -y firefox-esr tesseract-ocr git nodejs npm
 git clone https://github.com/qeeqbox/social-analyzer.git
 cd social-analyzer
 npm install
 npm start
 ```
 
-## Install and run as NodeJS Web App (Windows + NodeJS + NPM + Firefox)
+### Linux (As python package)
 ```bash
-# There will be status:good or rate:%100 for existing profiles
-# Do not mix FindUserProfilesFast, with FindUserProfilesSlow and ShowUserProfilesSlow
-
-Download & Install firefox esr (Extended Support Release) from https://www.mozilla.org/en-US/firefox/enterprise/#download
-Download & Install https://nodejs.org/en/download/
-Download & Extract https://github.com/qeeqbox/social-analyzer/archive/main.zip
-cd social-analyzer
-npm install
-npm start
-```
-
-## Install and run as NodeJS Web App with a grid (docker-compose)
-```bash
-# There will be status:good or rate:%100 for existing profiles
-
-git clone https://github.com/qeeqbox/social-analyzer.git
-cd social-analyzer
-docker-compose -f docker-compose.yml up --build
-```
-
-## Install and run as NodeJS Web App (docker)
-```bash
-# There will be status:good or rate:%100 for existing profiles
-
-git clone https://github.com/qeeqbox/social-analyzer.git
-cd social-analyzer
-docker build -t social-analyzer . && docker run -p 9005:9005 -it social-analyzer
-```
-
-## Install and run as Python Module CLI (Windows, Linux, MacOS, Raspberry pi..)
-```bash
-# You can scan all websites using --websites "all"
-# There will be status:good or rate:%100 for existing profiles
-# If you want to list all websites use python3 -m social-analyzer --cli --list
-
-#install social-analyzer
+sudo apt-get update
+sudo apt-get install python3 python3-pip
 pip3 install social-analyzer
-
-#all websites with metadata and extraction
-python3 -m social-analyzer --cli --username "johndoe" --metadata --extract --trim
-
-#all websites with metadata, extraction, filter only existing profiles with status good
-python3 -m social-analyzer --cli --mode "fast" --username "johndoe" --websites "all" --metadata --extract --trim --filter "good" --profile "detected"
+python3 -m social-analyzer --cli --username "johndoe" --metadata
 ```
 
-## Install and run as Python CLI (Windows, Linux, MacOS, Raspberry pi..)
+### Linux (As python script)
 ```bash
-# You can scan all websites using --websites "all"
-# There will be status:good or rate:%100 for existing profiles
-# If you want to list all websites use python3 -m social-analyzer --cli --list
-
-#install social-analyzer
-git clone https://github.com/qeeqbox/social-analyzer.git
+sudo apt-get update
+sudo apt-get install git
+git clone https://github.com/qeeqbox/social-analyzer
 cd social-analyzer
-
-#all websites with metadata and extraction
-python3 app.py --cli --username "johndoe" --metadata --extract --trim
-
-#all websites with metadata, extraction, filter only existing profiles with status good
-python3 app.py --cli --mode "fast" --username "johndoe" --websites "all" --metadata --extract --trim --filter "good" --profile "detected"
+python3 app.py social-analyzer --cli --username "johndoe" --metadata
 ```
 
-## Install and run as NodeJS CLI (Linux + NodeJS + NPM + Firefox)
-```bash
-# You can scan all websites using --websites "all"
-# Remember the following runs as FindUserProfilesFast
-# There will be status:good or rate:%100 for existing profiles
-# If you want to list all websites use app.js --cli --list
-
-apt-get update
-DEBIAN_FRONTEND=noninteractive apt-get install -y software-properties-common
-add-apt-repository ppa:mozillateam/ppa -y
-apt-get install -y firefox-esr tesseract-ocr git nodejs npm
-git clone https://github.com/qeeqbox/social-analyzer.git
-cd social-analyzer
-npm install
-
-#all websites with metadata and extraction
-nodejs app.js --cli --username "johndoe" --metadata --extract --trim
-
-#all websites with metadata, extraction, filter only existing profiles with status good
-nodejs app.js --cli --mode "fast" --username "johndoe" --websites "all" --metadata --extract --trim --filter "good" --profile "detected"
+### Importing as object (python)
+```python
+from importlib import import_module
+SocialAnalyzer = import_module("social-analyzer").SocialAnalyzer(silent=True)
+results = SocialAnalyzer.run_as_object(username="johndoe",silent=True)
+print(results)
 ```
+
+### Linux, Windows, MacOS, Raspberry pi..
+- check this [wiki](https://github.com/qeeqbox/social-analyzer/wiki/install) for all possible installation methods
+- check thos [wiki](https://github.com/qeeqbox/social-analyzer/wiki/integration) for running integration
 
 ## social-analyzer --h
-```bash
+```
 Required Arguments:
   --cli        Turn this CLI on
   --username   E.g. johndoe, john_doe or johndoe9999
@@ -184,16 +128,22 @@ Optional Arguments:
   --websites   Website or websites separated by space E.g. youtube, tiktok or tumblr
   --mode       Analysis mode E.g.fast -> FindUserProfilesFast, slow -> FindUserProfilesSlow or special -> FindUserProfilesSpecial
   --output     Show the output in the following format: json -> json output for integration or pretty -> prettify the output
-  --options    Show the following when a profile is found: link, rate, titleor text
+  --options    Show the following when a profile is found: link, rate, title or text
   --method     find -> show detected profiles, get -> show all profiles regardless detected or not, both -> combine find & get
-  --filter     filter detected profiles by good, maybe or bad, you can do combine them with comma (good,bad) or use all
-  --profiles   filter profiles by detected, unknown or failed, you can do combine them with comma (detected,failed) or use all
+  --filter     Filter detected profiles by good, maybe or bad, you can do combine them with comma (good,bad) or use all
+  --profiles   Filter profiles by detected, unknown or failed, you can do combine them with comma (detected,failed) or use all
   --extract    Extract profiles, urls & patterns if possible
   --metadata   Extract metadata if possible (pypi QeeqBox OSINT)
   --trim       Trim long strings
 
 Listing websites & detections:
   --list       List all available websites
+
+Setting:
+  --headers    Headers as dict
+  --logs_dir   Change logs directory
+  --timeout    Change timeout between each request
+  --silent     Disable output to screen
 ```
 
 ## Open in Cloud Shell
@@ -203,6 +153,7 @@ Listing websites & detections:
 - Remember that existing profiles show `status:good` or `rate:%100`
 - Some websites return `blocked` or `invalid` <- this is the intended behavior
 - Use Proxy, VPN, TOR or anything similar for periodic suspicious-profiles checking
+- Do not mix FindUserProfilesFast, with FindUserProfilesSlow and ShowUserProfilesSlow
 - Change the user-agent to most updated one or increase the random time between requests
 - Use the slow mode (Not available in the CLIs) to avoid running into blocking\results issue
 
@@ -218,6 +169,7 @@ Listing websites & detections:
 
 ## Some News\Articles
 - [5 Open-Source Intelligence (OSINT) GitHub Repositories For Every Security Analyst (Cyber Security)](https://twitter.com/GithubProjects/status/1395205169617547266)
+- You can use social-analyzer in the [BlackArch](https://blackarch.org/) penetration testing distribution by installing [blackarch-social](https://blackarch.org/tools.html)
 
 ## Disclaimer\Notes
 - Make sure to download this tool from GitHub
