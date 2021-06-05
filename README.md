@@ -143,7 +143,7 @@ Setting:
 
 ## Some News\Articles
 - [5 Open-Source Intelligence (OSINT) GitHub Repositories For Every Security Analyst (Cyber Security)](https://twitter.com/GithubProjects/status/1395205169617547266)
-- You can use social-analyzer in the [BlackArch](https://blackarch.org/) penetration testing distribution by installing [blackarch-social](https://blackarch.org/tools.html)
+- You can use social-analyzer in the [BlackArch](https://blackarch.org/) penetration testing distribution by installing [blackarch-social](https://blackarch.org/social.html)
 
 ## Disclaimer\Notes
 - Make sure to download this tool from GitHub
