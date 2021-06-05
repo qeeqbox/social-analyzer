@@ -11,41 +11,15 @@ The analysis and public extracted information from this OSINT tool could help in
 
 This project is *"currently used by some law enforcement agencies in countries where resources are limited"*.
 
-## Updates
-- You can import SocialAnalyzer object from the python package (Users request)
-- Cancel task has been implemented (Users request)
-- Save the GUI analysis \ output as JSON file has been implemented (Users request)
-- For issues and questions related to the private modules, email me directly
-- If you want to create your own detections, check out this [wiki](https://github.com/qeeqbox/social-analyzer/wiki/detections#detections-model) (Do not hardcode names)
-
 ## So·cial Me·di·a
 Websites and applications that enable users to create and share content or to participate in social networking - Oxford Dictionary
 
-## Security Testing
-
-```
--------------------------------------              ---------------------------------
-|        Security Testing           |              |        Social-Analyzer        |
--------------------------------------              ---------------------------------
-|   Passive Information Gathering   |     <-->     |   Find Social Media Profiles  |
-|                                   |              |                               |
-|    Active Information Gathering   |     <-->     |    Post Analysis Activities   |
--------------------------------------              ---------------------------------
-```
-
-## Find Profile WEB APP (Fast)
+## Web APP
 Standard localhost WEB APP url: http://0.0.0.0:9005/app.html
 
 <img src="https://raw.githubusercontent.com/qeeqbox/social-analyzer/main/readme/intro_fast.gif" style="max-width:768px"/>
 
-## Find Profile WEB APP (Slow)
-Standard localhost WEB APP url: http://0.0.0.0:9005/app.html
-
-<img src="https://raw.githubusercontent.com/qeeqbox/social-analyzer/main/readme/intro_slow.gif" style="max-width:768px"/>
-
-Profile images **will not** be blurred. If you want them to be blurred, turn that option on
-
-## (New) Find Profile CLI (Fast)
+## CLI
 <img src="https://raw.githubusercontent.com/qeeqbox/social-analyzer/main/readme/cli.gif" style="max-width:768px"/>
 
 ## Features
@@ -67,6 +41,7 @@ Profile images **will not** be blurred. If you want them to be blurred, turn tha
 - Re-checking option for failed profiles
 - Filter profiles by good, maybe, and bad
 - Save the analysis as JSON file
+- Simplified web interface
 
 ## Special Detections
 - Facebook (Phone number, name or profile name)
