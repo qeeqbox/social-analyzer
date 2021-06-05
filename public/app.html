@@ -14,11 +14,11 @@
 <meta charset="utf-8" />
 <title>QeeqBox - Social Analyzer</title>
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/selectize.js/0.12.1/css/selectize.default.css" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/selectize.js/0.12.6/css/selectize.default.css" />
 <script src="https://code.jquery.com/jquery-2.1.1.js"></script>
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.bundle.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/selectize.js/0.12.1/js/standalone/selectize.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/selectize.js/0.12.6/js/standalone/selectize.js"></script>
 <script src="//unpkg.com/force-graph"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <style>
@@ -522,7 +522,10 @@
   .selectize-control {
     position: static !important;
     background-color: #383939 !important;
-    min-width: 300px;
+    min-width: 500px;
+    min-height: 20px;
+    line-height: 20px;
+    color: #d0d0d0 !important;
   }
 
   .selectize-input {
@@ -530,6 +533,15 @@
     padding: 0px;
     background-color: #383939 !important;
     border: none !important;
+    min-width: 500px;
+    min-height: 20px;
+    line-height: 20px;
+    font-size: 10px;
+  }
+
+  #analyzed-options-selectized {
+    color: #d0d0d0 !important;
+    padding: 3px 6px 3px 6px !important;
   }
 
   .selectize-dropdown {
@@ -713,39 +725,12 @@
         <div class="div-100" class="collapse show">
           <input type="text" id="string-to-analyze" placeholder="Joe" />
           <div class="cell-separator"></div>
-          <select name="analyzed-options" placeholder="Choose some options..." id="analyzed-options" multiple="multiple">
-            <optgroup label="Name Analysis">
-              <option value="WordInfo">WordInfo</option>
-              <option value="MostCommon">MostCommon</option>
-              <option value="FindOrigins">FindOrigins</option>
-            </optgroup>
-            <optgroup label="Find Profiles">
-              <option value="LookUps">LookUps</option>
-              <option value="CustomSearch">CustomSearch</option>
-              <option value="FindUserProfilesFast,GetUserProfilesFast">FindUserProfilesFast</option>
-              <option value="FindUserProfilesSlow">FindUserProfilesSlow</option>
-              <option value="FindUserProfilesSpecial">FindUserProfilesSpecial</option>
-            </optgroup>
-            <optgroup label="Show Profiles">
-              <option value="ShowUserProfilesSlow">ShowUserProfilesSlow</option>
-            </optgroup>
-            <optgroup label="Extract">
-              <option value="ExtractPatterns">ExtractPatterns</option>
-              <option value="ExtractMetadata">ExtractMetadata</option>
-            </optgroup>
-            <optgroup label="Visualize">
-              <option value="NetworkGraph">NetworkGraph</option>
-            </optgroup>
-            <optgroup label="Other options">
-              <option value="FindNumbers">FindNumbers</option>
-              <option value="FindSymbols">FindSymbols</option>
-              <option value="ConvertNumbers">ConvertNumbers</option>
-              <option value="SplitWordsByAlphabet">SplitWordsByAlphabet</option>
-              <option value="SplitWordsByUpperCase">SplitWordsByUpperCase</option>
-            </optgroup>
-          </select>
+          <div name="analyzed-options" placeholder="Choose some options..." id="analyzed-options" multiple="multiple">
+          </div>
           <div class="cell-separator"></div>
           <input type="button" id="analyze-normal" value="Analyze" />
+          <div class="cell-separator"></div>
+          <input type="button" id="fast-options" value="Fast Options" />
           <div class="cell-separator"></div>
           <input type="button" id="clear-options" value="Clear" />
           <div class="cell-separator"></div>
@@ -870,6 +855,130 @@
     </div>
   </div>
   <script>
+    const analyzed_options_options = [{
+        group: 'Name Analysis',
+        value: 'WordInfo',
+        name: 'Get names or words information',
+        disable: false
+      },
+      {
+        group: 'Name Analysis',
+        value: 'MostCommon',
+        name: 'Find common names or words by language',
+        disable: false
+      },
+      {
+        group: 'Name Analysis',
+        value: 'FindOrigins',
+        name: 'Find origins of names or words',
+        disable: false
+      },
+      {
+        group: 'Find Profiles',
+        value: 'LookUps',
+        name: 'Perform normal search queries',
+        disable: false
+      },
+      {
+        group: 'Find Profiles',
+        value: 'CustomSearch',
+        name: 'Perform custom search queries',
+        disable: false
+      },
+      {
+        group: 'Find Profiles',
+        value: 'FindUserProfilesFast,GetUserProfilesFast',
+        name: 'Find profiles in fast mode (Recommendecddd)',
+        disable: false
+      },
+      {
+        group: 'Find Profiles',
+        value: 'FindUserProfilesSlow',
+        name: 'Find profiles in slow mode',
+        disable: false
+      },
+      {
+        group: 'Find Profiles',
+        value: 'FindUserProfilesSpecial',
+        name: 'Find profiles in slow mode using customized actions',
+        disable: false
+      },
+      {
+        group: 'Show Profiles',
+        value: 'ShowUserProfilesSlow',
+        name: 'Show screenshots of profiles in slow mode',
+        disable: false
+      },
+      {
+        group: 'Extract Information',
+        value: 'ExtractMetadata',
+        name: 'Extract metadata of profiles',
+        disable: false
+      },
+      {
+        group: 'Extract Information',
+        value: 'ExtractPatterns',
+        name: 'Extract defined patterns',
+        disable: false
+      },
+      {
+        group: 'Visualize Information',
+        value: 'NetworkGraph',
+        name: 'Show a visualized map based on the extracted metadata',
+        disable: false
+      },
+      {
+        group: 'Other options',
+        value: 'FindNumbers',
+        name: 'Find numbers in names or words before analyzing',
+        disable: false
+      },
+      {
+        group: 'Other options',
+        value: 'FindSymbols',
+        name: 'Find symbols in names or words before analyzing',
+        disable: false
+      },
+      {
+        group: 'Other options',
+        value: 'ConvertNumbers',
+        name: 'Convert numbers to letters before analyzing',
+        disable: false
+      },
+      {
+        group: 'Other options',
+        value: 'SplitWordsByAlphabet',
+        name: 'Split word or name by alphabet before analyzing',
+        disable: false
+      },
+      {
+        group: 'Other options',
+        value: 'SplitWordsByUpperCase',
+        name: 'Split word or name by upper case before analyzing',
+        disable: false
+      }
+    ];
+
+    const analyzed_options_groups = [{
+        group: 'Name Analysis'
+      },
+      {
+        group: 'Find Profiles'
+      },
+      {
+        group: 'Show Profiles'
+      },
+      {
+        group: 'Extract Information'
+      },
+      {
+        group: 'Visualize Information'
+      },
+      {
+        group: 'Other options'
+      }
+    ]
+
     random_names = ["sophia", "liam", "riley", "jackson", "emma", "aiden", "ava", "elijah", "isabella", "grayson", "aria", "lucas", "aaliyah", "oliver", "amelia", "caden", "mia", "mateo", "layla", "muhammad", "zoe", "mason", "camilla", "carter",
       "charlotte", "jayden", "eliana", "ethan", "mila", "sebastian", "everly", "james", "luna", "michael", "avery", "benjamin", "evelyn", "logan", "harper", "leo", "lily", "luca", "ella", "alexander", "gianna", "levi", "chloe", "daniel", "adalyn",
       "josiah", "charlie", "henry", "isla", "jayce", "ellie", "julian", "leah", "jack", "nora", "ryan", "scarlett", "jacob", "maya", "asher", "abigail", "wyatt", "madison", "william", "aubrey", "owen", "emily", "gabriel", "kinsley", "miles",
@@ -883,8 +992,42 @@
     var output_json = {};
     var global_uuid = ""
 
-    $('#analyzed-options').selectize({
+
+    function change_analyzed_option(string, key, value) {
+      let obj = analyzed_options_options.find(o => o.value === string);
+      obj[key] = value
+      return obj
+    }
+
+    const sel = $('#analyzed-options').selectize({
+      options: analyzed_options_options,
+      optgroups: analyzed_options_groups,
+      optgroupField: 'group',
+      optgroupLabelField: 'group',
+      optgroupValueField: 'group',
+      valueField: 'value',
+      labelField: 'name',
+      disabledField: 'disable',
+      searchField: ['group', 'value'],
       plugins: ['remove_button'],
+      onChange: function(value, isOnInitialize) {
+        var sel = $('#analyzed-options')[0].selectize
+        if (sel.items.includes("FindUserProfilesFast,GetUserProfilesFast")) {
+          sel.updateOption('FindUserProfilesSlow', change_analyzed_option("FindUserProfilesSlow", "disable", true));
+          sel.updateOption('FindUserProfilesSpecial', change_analyzed_option("FindUserProfilesSpecial", "disable", true));
+          sel.updateOption('ShowUserProfilesSlow', change_analyzed_option("ShowUserProfilesSlow", "disable", true));
+        } else {
+          sel.updateOption('FindUserProfilesSlow', change_analyzed_option("FindUserProfilesSlow", "disable", false));
+          sel.updateOption('FindUserProfilesSpecial', change_analyzed_option("FindUserProfilesSpecial", "disable", false));
+          sel.updateOption('ShowUserProfilesSlow', change_analyzed_option("ShowUserProfilesSlow", "disable", false));
+        }
+        if (sel.items.includes("FindUserProfilesSlow") || sel.items.includes("FindUserProfilesSpecial") || sel.items.includes(
+            "ShowUserProfilesSlow")) {
+          sel.updateOption('FindUserProfilesFast,GetUserProfilesFast', change_analyzed_option("FindUserProfilesFast,GetUserProfilesFast", "disable", true));
+        } else {
+          sel.updateOption('FindUserProfilesFast,GetUserProfilesFast', change_analyzed_option("FindUserProfilesFast,GetUserProfilesFast", "disable", false));
+        }
+      }
     });
 
     setup_selectable('#analyzed-options')
@@ -894,7 +1037,7 @@
         $('#logs').text(text)
         $('.waiting').show();
         $('.waiting-box').show();
-        if (cancel == true){
+        if (cancel == true) {
           $('.logs_cancel').show();
         }
       } else {
@@ -930,8 +1073,7 @@
           'option': 'on',
           'uuid': uuid
         },
-      }).done(function(data) {
-      }).fail(function(jqXHR, textStatus, errorThrown) {
+      }).done(function(data) {}).fail(function(jqXHR, textStatus, errorThrown) {
         //clearInterval(interval_logs);
       })
     }
@@ -1100,7 +1242,7 @@
 
     async function analyze_string() {
       reset_everything()
-      spinner_on_off(true,"Retrieving logs",true)
+      spinner_on_off(true, "Retrieving logs", true)
       output_json = {};
       random_string = Math.random().toString(36).substring(2);
       global_uuid = random_string
@@ -1385,6 +1527,12 @@
       $('#analyzed-options')[0].selectize.clear()
     });
 
+    $('#fast-options').click(function(e) {
+      e.preventDefault();
+      $('#analyzed-options')[0].selectize.clear()
+      $('#analyzed-options')[0].selectize.setValue(['WordInfo','MostCommon','FindOrigins','LookUps','CustomSearch','FindUserProfilesFast,GetUserProfilesFast','ExtractMetadata','ExtractPatterns','NetworkGraph','FindNumbers','FindSymbols','ConvertNumbers','SplitWordsByAlphabet','SplitWordsByUpperCase']);
+    });
+
     $("#download-json").click(function(e) {
       e.preventDefault();
       save_to_file_as(output_json);
@@ -1392,7 +1540,7 @@
 
     $("#cancel_task").click(function(e) {
       e.preventDefault();
-      if (global_uuid != ""){
+      if (global_uuid != "") {
         cancel_task(global_uuid)
       }
     });
@@ -1411,7 +1559,6 @@
         }
       });
     });
-
   </script>
 </body>
 
