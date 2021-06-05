@@ -116,6 +116,26 @@
       "type": "Internet"
     },
     {
+      "url": "https://adultism.com/profile/{username}",
+      "detections": [
+        {
+          "return": "true",
+          "string": "profile-info",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "\"nick\"",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Internet"
+    },
+    {
       "status": "bad",
       "url": "https://akniga.org/profile/{username}",
       "detections": [
@@ -481,6 +501,26 @@
       "type": "Internet"
     },
     {
+      "url": "https://asquero.com/user/dashboard/{username}",
+      "detections": [
+        {
+          "return": "true",
+          "string": "profile/{username}",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "post-title",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Internet"
+    },
+    {
       "url": "https://audiojungle.net/user/{username}",
       "detections": [
         {
@@ -616,6 +656,26 @@
       "type": "Arts"
     },
     {
+      "url": "https://bbpress.org/forums/profile/{username}/",
+      "detections": [
+        {
+          "return": "true",
+          "string": "bbpress-user",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "bbp-user",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Internet"
+    },
+    {
       "url": "https://beeg.com/people/{username}",
       "detections": [
         {
@@ -700,6 +760,16 @@
         {
           "return": "false",
           "string": "Page not found",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "profile-name",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "titlebar-details",
           "type": "normal"
         }
       ],
@@ -1169,6 +1239,26 @@
         {
           "return": "true",
           "string": "userHeader",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Internet"
+    },
+    {
+      "url": "https://cloudromance.com/{username}",
+      "detections": [
+        {
+          "return": "true",
+          "string": "\"username\"",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "papapap",
           "type": "normal"
         }
       ],
@@ -1927,6 +2017,26 @@
       "type": "Computers"
     },
     {
+      "url": "https://devpost.com/{username}",
+      "detections": [
+        {
+          "return": "true",
+          "string": "com/{username}",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "user-photo",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Internet"
+    },
+    {
       "url": "https://devrant.com/users/{username}",
       "detections": [
         {
@@ -2289,6 +2399,26 @@
         {
           "return": "false",
           "string": "404<",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Internet"
+    },
+    {
+      "url": "https://edugeek.net/members/{username}.html",
+      "detections": [
+        {
+          "return": "true",
+          "string": "member_username",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "userinfo",
           "type": "normal"
         }
       ],
@@ -3987,6 +4117,26 @@
       "type": "Computers"
     },
     {
+      "url": "https://hacking-lab.com/user/profile/{username}/?__cookie_try=1",
+      "detections": [
+        {
+          "return": "true",
+          "string": "Rank:",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "Profile of {username}",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Internet"
+    },
+    {
       "url": "https://hackster.io/{username}",
       "detections": [
         {
@@ -4039,6 +4189,26 @@
       "selected": "false",
       "timeout": 0,
       "implicit": 0
+    },
+    {
+      "url": "https://hashnode.com/@{username}",
+      "detections": [
+        {
+          "return": "true",
+          "string": "com/@{username}",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "og:title",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Internet"
     },
     {
       "url": "https://heavy-r.com/user/{username}",
@@ -4590,6 +4760,11 @@
           "return": "true",
           "string": "profile",
           "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "user-name",
+          "type": "normal"
         }
       ],
       "selected": "false",
@@ -4973,6 +5148,26 @@
       "type": "Shopping"
     },
     {
+      "url": "https://lesswrong.com/users/{username}",
+      "detections": [
+        {
+          "return": "true",
+          "string": "users-profile",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "UsersProfile-meta",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Internet"
+    },
+    {
       "url": "https://letterboxd.com/{username}",
       "detections": [
         {
@@ -5026,6 +5221,26 @@
       "implicit": 0,
       "extract": [],
       "type": "Game"
+    },
+    {
+      "url": "https://likee.video/@{username}",
+      "detections": [
+        {
+          "return": "true",
+          "string": "og:title",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "(@{username})",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Internet"
     },
     {
       "url": "https://linkedin.com/in/{username}/",
@@ -5429,6 +5644,16 @@
           "return": "false",
           "string": "Page Not Found",
           "type": "advanced"
+        },
+        {
+          "return": "true",
+          "string": "profile-username",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "profile-header",
+          "type": "normal"
         }
       ],
       "selected": "false",
@@ -6142,6 +6367,26 @@
       "type": "Computers"
     },
     {
+      "url": "https://padlet.com/{username}",
+      "detections": [
+        {
+          "return": "true",
+          "string": "\"@type\": \"Person\"",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "\"name\": \"{username}\"",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Internet"
+    },
+    {
       "url": "https://pastebin.com/u/{username}",
       "detections": [
         {
@@ -6357,6 +6602,11 @@
         {
           "return": "true",
           "string": "about-title",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "about-footer",
           "type": "normal"
         }
       ],
@@ -6897,6 +7147,26 @@
       "type": "Games"
     },
     {
+      "url": "https://rec.net/user/{username}",
+      "detections": [
+        {
+          "return": "true",
+          "string": "@{username}",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "user/{username}",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Internet"
+    },
+    {
       "url": "https://redbubble.com/people/{username}",
       "detections": [
         {
@@ -7260,6 +7530,26 @@
       "type": "Internet"
     },
     {
+      "url": "https://sketchfab.com/{username}",
+      "detections": [
+        {
+          "return": "true",
+          "string": "user-name",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "@{username}",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Internet"
+    },
+    {
       "url": "https://slashdot.org/~{username}",
       "detections": [
         {
@@ -7330,6 +7620,26 @@
         {
           "return": "true",
           "string": "username:",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Internet"
+    },
+    {
+      "url": "https://snipplr.com/users/{username}",
+      "detections": [
+        {
+          "return": "true",
+          "string": "profile views",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "snippets",
           "type": "normal"
         }
       ],
@@ -7580,6 +7890,26 @@
       "type": "Sports"
     },
     {
+      "url": "https://stackshare.io/{username}",
+      "detections": [
+        {
+          "return": "true",
+          "string": "profile-name",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "review-author",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Internet"
+    },
+    {
       "url": "https://steamcommunity.com/id/{username}",
       "detections": [
         {
@@ -7640,6 +7970,26 @@
         {
           "return": "true",
           "string": "UserProfile",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Internet"
+    },
+    {
+      "url": "https://stereo.com/{username}",
+      "detections": [
+        {
+          "return": "true",
+          "string": "user-avatars",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "@{username}",
           "type": "normal"
         }
       ],
@@ -7861,6 +8211,26 @@
       "type": "Internet"
     },
     {
+      "url": "https://tokopedia.com/{username}",
+      "detections": [
+        {
+          "return": "true",
+          "string": "com/{username}",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "\"{username}\"",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Internet"
+    },
+    {
       "url": "https://tradingview.com/u/{username}",
       "detections": [
         {
@@ -8034,6 +8404,26 @@
       "implicit": 0,
       "extract": [],
       "type": "Computers"
+    },
+    {
+      "url": "https://tumbral.com/blog/{username}",
+      "detections": [
+        {
+          "return": "true",
+          "string": "profile-info",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "profile-name",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Internet"
     },
     {
       "url": "https://tutsplus.com/authors/{username}",
@@ -8432,6 +8822,26 @@
       "implicit": 0,
       "extract": [],
       "type": "Society"
+    },
+    {
+      "url": "https://voices.com/profile/{username}",
+      "detections": [
+        {
+          "return": "true",
+          "string": "profile-name",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "profile-info",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Internet"
     },
     {
       "url": "https://vsco.co/{username}",
@@ -9146,6 +9556,26 @@
       "type": "Internet"
     },
     {
+      "url": "https://{username}.svbtle.com/",
+      "detections": [
+        {
+          "return": "true",
+          "string": "user_links",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "user_logo",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Internet"
+    },
+    {
       "url": "https://{username}.tumblr.com",
       "detections": [
         {
@@ -9192,6 +9622,26 @@
         {
           "return": "true",
           "string": "\"name\":",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Internet"
+    },
+    {
+      "url": "https://{username}.weebly.com/",
+      "detections": [
+        {
+          "return": "false",
+          "string": "Page Not Found",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "wsite-logo",
           "type": "normal"
         }
       ],
