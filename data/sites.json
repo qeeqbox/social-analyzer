@@ -116,6 +116,26 @@
       "type": "Internet"
     },
     {
+      "url": "https://adultism.com/profile/{username}",
+      "detections": [
+        {
+          "return": "true",
+          "string": "profile-info",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "\"nick\"",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Internet"
+    },
+    {
       "status": "bad",
       "url": "https://akniga.org/profile/{username}",
       "detections": [
@@ -471,6 +491,26 @@
         {
           "return": "true",
           "string": "fm/{username}",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Internet"
+    },
+    {
+      "url": "https://asquero.com/user/dashboard/{username}",
+      "detections": [
+        {
+          "return": "true",
+          "string": "profile/{username}",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "post-title",
           "type": "normal"
         }
       ],
@@ -1199,6 +1239,26 @@
         {
           "return": "true",
           "string": "userHeader",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Internet"
+    },
+    {
+      "url": "https://cloudromance.com/{username}",
+      "detections": [
+        {
+          "return": "true",
+          "string": "\"username\"",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "papapap",
           "type": "normal"
         }
       ],
@@ -2339,6 +2399,26 @@
         {
           "return": "false",
           "string": "404<",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Internet"
+    },
+    {
+      "url": "https://edugeek.net/members/{username}.html",
+      "detections": [
+        {
+          "return": "true",
+          "string": "member_username",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "userinfo",
           "type": "normal"
         }
       ],
@@ -4037,6 +4117,26 @@
       "type": "Computers"
     },
     {
+      "url": "https://hacking-lab.com/user/profile/{username}/?__cookie_try=1",
+      "detections": [
+        {
+          "return": "true",
+          "string": "Rank:",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "Profile of {username}",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Internet"
+    },
+    {
       "url": "https://hackster.io/{username}",
       "detections": [
         {
@@ -5046,6 +5146,26 @@
       "implicit": 0,
       "extract": [],
       "type": "Shopping"
+    },
+    {
+      "url": "https://lesswrong.com/users/{username}",
+      "detections": [
+        {
+          "return": "true",
+          "string": "users-profile",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "UsersProfile-meta",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Internet"
     },
     {
       "url": "https://letterboxd.com/{username}",
@@ -8091,6 +8211,26 @@
       "type": "Internet"
     },
     {
+      "url": "https://tokopedia.com/{username}",
+      "detections": [
+        {
+          "return": "true",
+          "string": "com/{username}",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "\"{username}\"",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Internet"
+    },
+    {
       "url": "https://tradingview.com/u/{username}",
       "detections": [
         {
@@ -8264,6 +8404,26 @@
       "implicit": 0,
       "extract": [],
       "type": "Computers"
+    },
+    {
+      "url": "https://tumbral.com/blog/{username}",
+      "detections": [
+        {
+          "return": "true",
+          "string": "profile-info",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "profile-name",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Internet"
     },
     {
       "url": "https://tutsplus.com/authors/{username}",
@@ -8664,6 +8824,26 @@
       "type": "Society"
     },
     {
+      "url": "https://voices.com/profile/{username}",
+      "detections": [
+        {
+          "return": "true",
+          "string": "profile-name",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "profile-info",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Internet"
+    },
+    {
       "url": "https://vsco.co/{username}",
       "detections": [
         {
@@ -8819,186 +8999,6 @@
         {
           "return": "true",
           "string": "\"description\"",
-          "type": "normal"
-        }
-      ],
-      "selected": "false",
-      "timeout": 0,
-      "implicit": 0,
-      "extract": [],
-      "type": "Internet"
-    },
-    {
-      "url": "https://adultism.com/profile/{username}",
-      "detections": [
-        {
-          "return": "true",
-          "string": "profile-info",
-          "type": "normal"
-        },
-        {
-          "return": "true",
-          "string": "\"nick\"",
-          "type": "normal"
-        }
-      ],
-      "selected": "false",
-      "timeout": 0,
-      "implicit": 0,
-      "extract": [],
-      "type": "Internet"
-    },
-    {
-      "url": "https://asquero.com/user/dashboard/{username}",
-      "detections": [
-        {
-          "return": "true",
-          "string": "profile/{username}",
-          "type": "normal"
-        },
-        {
-          "return": "true",
-          "string": "post-title",
-          "type": "normal"
-        }
-      ],
-      "selected": "false",
-      "timeout": 0,
-      "implicit": 0,
-      "extract": [],
-      "type": "Internet"
-    },
-    {
-      "url": "https://cloudromance.com/{username}",
-      "detections": [
-        {
-          "return": "true",
-          "string": "\"username\"",
-          "type": "normal"
-        },
-        {
-          "return": "true",
-          "string": "papapap",
-          "type": "normal"
-        }
-      ],
-      "selected": "false",
-      "timeout": 0,
-      "implicit": 0,
-      "extract": [],
-      "type": "Internet"
-    },
-    {
-      "url": "https://edugeek.net/members/{username}.html",
-      "detections": [
-        {
-          "return": "true",
-          "string": "member_username",
-          "type": "normal"
-        },
-        {
-          "return": "true",
-          "string": "userinfo",
-          "type": "normal"
-        }
-      ],
-      "selected": "false",
-      "timeout": 0,
-      "implicit": 0,
-      "extract": [],
-      "type": "Internet"
-    },
-    {
-      "url": "https://hacking-lab.com/user/profile/{username}/?__cookie_try=1",
-      "detections": [
-        {
-          "return": "true",
-          "string": "Rank:",
-          "type": "normal"
-        },
-        {
-          "return": "true",
-          "string": "Profile of {username}",
-          "type": "normal"
-        }
-      ],
-      "selected": "false",
-      "timeout": 0,
-      "implicit": 0,
-      "extract": [],
-      "type": "Internet"
-    },
-    {
-      "url": "https://lesswrong.com/users/{username}",
-      "detections": [
-        {
-          "return": "true",
-          "string": "users-profile",
-          "type": "normal"
-        },
-        {
-          "return": "true",
-          "string": "UsersProfile-meta",
-          "type": "normal"
-        }
-      ],
-      "selected": "false",
-      "timeout": 0,
-      "implicit": 0,
-      "extract": [],
-      "type": "Internet"
-    },
-    {
-      "url": "https://tokopedia.com/{username}",
-      "detections": [
-        {
-          "return": "true",
-          "string": "com/{username}",
-          "type": "normal"
-        },
-        {
-          "return": "true",
-          "string": "\"{username}\"",
-          "type": "normal"
-        }
-      ],
-      "selected": "false",
-      "timeout": 0,
-      "implicit": 0,
-      "extract": [],
-      "type": "Internet"
-    },
-    {
-      "url": "https://tumbral.com/blog/{username}",
-      "detections": [
-        {
-          "return": "true",
-          "string": "profile-info",
-          "type": "normal"
-        },
-        {
-          "return": "true",
-          "string": "profile-name",
-          "type": "normal"
-        }
-      ],
-      "selected": "false",
-      "timeout": 0,
-      "implicit": 0,
-      "extract": [],
-      "type": "Internet"
-    },
-    {
-      "url": "https://voices.com/profile/{username}",
-      "detections": [
-        {
-          "return": "true",
-          "string": "profile-name",
-          "type": "normal"
-        },
-        {
-          "return": "true",
-          "string": "profile-info",
           "type": "normal"
         }
       ],
