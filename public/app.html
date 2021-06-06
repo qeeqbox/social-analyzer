@@ -147,6 +147,14 @@
     width: 15px;
   }
 
+  .cell-separator-line {
+    width: 2px;
+    margin-left: 12px;
+    margin-right: 12px;
+    height: 26px;
+    background-color: #383939 !important
+  }
+
   .separator {
     height: 1px;
     margin-bottom: 20px;
@@ -208,6 +216,13 @@
     display: flex;
     margin-bottom: 20px;
     align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .div-100 > * {
+      margin-top: 5px;
+      margin-bottom: 5px;
   }
 
   #analyzed-options li {
@@ -522,7 +537,7 @@
   .selectize-control {
     position: static !important;
     background-color: #383939 !important;
-    min-width: 500px;
+    min-width: 400px;
     min-height: 20px;
     line-height: 20px;
     color: #d0d0d0 !important;
@@ -533,7 +548,7 @@
     padding: 0px;
     background-color: #383939 !important;
     border: none !important;
-    min-width: 500px;
+    min-width: 400px;
     min-height: 20px;
     line-height: 20px;
     font-size: 10px;
@@ -728,9 +743,11 @@
           <div name="analyzed-options" placeholder="Choose some options..." id="analyzed-options" multiple="multiple">
           </div>
           <div class="cell-separator"></div>
-          <input type="button" id="analyze-normal" value="Analyze" />
+          <div>or</div>
           <div class="cell-separator"></div>
           <input type="button" id="fast-options" value="Fast Options" />
+          <div class="cell-separator-line"></div>
+          <input type="button" id="analyze-normal" value="Analyze" />
           <div class="cell-separator"></div>
           <input type="button" id="clear-options" value="Clear" />
           <div class="cell-separator"></div>
