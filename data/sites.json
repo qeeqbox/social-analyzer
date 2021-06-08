@@ -1,6 +1,20 @@
 {
   "websites_entries": [
     {
+      "url": "https://24.wikia.com/wiki/User:{username}",
+      "detections": [
+        {
+          "name": "mediawiki",
+          "type": "shared"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Wiki"
+    },
+    {
       "url": "https://500px.com/p/{username}",
       "detections": [
         {
@@ -155,6 +169,20 @@
       "implicit": 0,
       "extract": [],
       "type": "Books"
+    },
+    {
+      "url": "https://algowiki-project.org/en/User:{username}",
+      "detections": [
+        {
+          "name": "mediawiki",
+          "type": "shared"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Wiki"
     },
     {
       "url": "https://alik.cz/u/{username}",
@@ -367,6 +395,20 @@
       "type": "Internet"
     },
     {
+      "url": "https://antwiki.org/wiki/User:{username}",
+      "detections": [
+        {
+          "name": "mediawiki",
+          "type": "shared"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Wiki"
+    },
+    {
       "url": "https://app.intigriti.com/profile/{username}",
       "detections": [
         {
@@ -385,6 +427,62 @@
       "implicit": 0,
       "extract": [],
       "type": "Business"
+    },
+    {
+      "url": "https://apple2games.com/wiki/User:{username}",
+      "detections": [
+        {
+          "name": "mediawiki",
+          "type": "shared"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Wiki"
+    },
+    {
+      "url": "https://appropedia.org/User:{username}",
+      "detections": [
+        {
+          "name": "mediawiki",
+          "type": "shared"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Wiki"
+    },
+    {
+      "url": "https://aqworldswiki.com/w/User:{username}",
+      "detections": [
+        {
+          "name": "mediawiki",
+          "type": "shared"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Wiki"
+    },
+    {
+      "url": "https://aqworldswiki.com/w/User:{username}",
+      "detections": [
+        {
+          "name": "mediawiki",
+          "type": "shared"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Wiki"
     },
     {
       "url": "https://archive.org/details/@{username}",
@@ -417,6 +515,20 @@
       "type": "Internet"
     },
     {
+      "url": "https://archives.bulbagarden.net/wiki/User:{username}",
+      "detections": [
+        {
+          "name": "mediawiki",
+          "type": "shared"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Wiki"
+    },
+    {
       "url": "https://artstation.com/{username}",
       "detections": [
         {
@@ -430,6 +542,20 @@
       "implicit": 0,
       "extract": [],
       "type": "Arts"
+    },
+    {
+      "url": "https://ascend4.org/User:{username}",
+      "detections": [
+        {
+          "name": "mediawiki",
+          "type": "shared"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Wiki"
     },
     {
       "url": "https://asciinema.org/~{username}",
@@ -455,6 +581,20 @@
       "implicit": 0,
       "extract": [],
       "type": "Internet"
+    },
+    {
+      "url": "https://asianwiki.com/User:{username}",
+      "detections": [
+        {
+          "name": "mediawiki",
+          "type": "shared"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Wiki"
     },
     {
       "url": "https://ask.fedoraproject.org/u/{username}",
@@ -626,6 +766,34 @@
       "type": "Internet"
     },
     {
+      "url": "https://bahaipedia.org/Wiki/User:{username}",
+      "detections": [
+        {
+          "name": "mediawiki",
+          "type": "shared"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Wiki"
+    },
+    {
+      "url": "https://bahaipedia.org/wiki/User:{username}",
+      "detections": [
+        {
+          "name": "mediawiki",
+          "type": "shared"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Wiki"
+    },
+    {
       "url": "https://bandcamp.com/{username}",
       "detections": [
         {
@@ -654,6 +822,34 @@
       "implicit": 0,
       "extract": [],
       "type": "Arts"
+    },
+    {
+      "url": "https://baseball-reference.com/bullpen/User:{username}",
+      "detections": [
+        {
+          "name": "mediawiki",
+          "type": "shared"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Wiki"
+    },
+    {
+      "url": "https://bash.cyberciti.biz/guide/User:{username}",
+      "detections": [
+        {
+          "name": "mediawiki",
+          "type": "shared"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Wiki"
     },
     {
       "url": "https://bbpress.org/forums/profile/{username}/",
@@ -740,6 +936,20 @@
       "type": "Internet"
     },
     {
+      "url": "https://betawiki.net/wiki/User:{username}",
+      "detections": [
+        {
+          "name": "mediawiki",
+          "type": "shared"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Wiki"
+    },
+    {
       "url": "https://binarysearch.io/@/{username}",
       "detections": [
         {
@@ -778,6 +988,20 @@
       "implicit": 0,
       "extract": [],
       "type": "Internet"
+    },
+    {
+      "url": "https://biosector01.com/wiki/User:{username}",
+      "detections": [
+        {
+          "name": "mediawiki",
+          "type": "shared"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Wiki"
     },
     {
       "url": "https://bit.dev/{username}",
@@ -825,6 +1049,20 @@
       "type": "Computers"
     },
     {
+      "url": "https://bitcoin.it/wiki/User:{username}",
+      "detections": [
+        {
+          "name": "mediawiki",
+          "type": "shared"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Wiki"
+    },
+    {
       "url": "https://bitcoinforum.com/profile/{username}",
       "detections": [
         {
@@ -848,6 +1086,20 @@
       "implicit": 0,
       "extract": [],
       "type": "Internet"
+    },
+    {
+      "url": "https://blazemonger.com/GG/User:{username}",
+      "detections": [
+        {
+          "name": "mediawiki",
+          "type": "shared"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Wiki"
     },
     {
       "url": "https://blip.fm/{username}",
@@ -900,6 +1152,34 @@
       "type": "Internet"
     },
     {
+      "url": "https://blokcity.com/wiki/User:{username}",
+      "detections": [
+        {
+          "name": "mediawiki",
+          "type": "shared"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Wiki"
+    },
+    {
+      "url": "https://bluevies.miraheze.org/wiki/User:{username}",
+      "detections": [
+        {
+          "name": "mediawiki",
+          "type": "shared"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Wiki"
+    },
+    {
       "url": "https://bodyspace.bodybuilding.com/{username}",
       "detections": [
         {
@@ -918,6 +1198,34 @@
       "implicit": 0,
       "extract": [],
       "type": "Recreation"
+    },
+    {
+      "url": "https://bogleheads.org/wiki/User:{username}",
+      "detections": [
+        {
+          "name": "mediawiki",
+          "type": "shared"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Wiki"
+    },
+    {
+      "url": "https://boi.alt-starfleet-rpg.net/User:{username}",
+      "detections": [
+        {
+          "name": "mediawiki",
+          "type": "shared"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Wiki"
     },
     {
       "url": "https://bookcrossing.com/mybookshelf/{username}",
@@ -943,6 +1251,34 @@
       "implicit": 0,
       "extract": [],
       "type": "Books"
+    },
+    {
+      "url": "https://bulbanews.bulbagarden.net/wiki/User:{username}",
+      "detections": [
+        {
+          "name": "mediawiki",
+          "type": "shared"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Wiki"
+    },
+    {
+      "url": "https://bulbapedia.bulbagarden.net/wiki/User:{username}",
+      "detections": [
+        {
+          "name": "mediawiki",
+          "type": "shared"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Wiki"
     },
     {
       "url": "https://buymeacoffee.com/{username}",
@@ -1229,6 +1565,20 @@
       "type": "Internet"
     },
     {
+      "url": "https://childrensbooks.wikia.com/User:{username}",
+      "detections": [
+        {
+          "name": "mediawiki",
+          "type": "shared"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Wiki"
+    },
+    {
       "url": "https://cloob.com/name/{username}",
       "detections": [
         {
@@ -1267,6 +1617,20 @@
       "implicit": 0,
       "extract": [],
       "type": "Internet"
+    },
+    {
+      "url": "https://clouds.wikia.com/wiki/User:{username}",
+      "detections": [
+        {
+          "name": "mediawiki",
+          "type": "shared"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Wiki"
     },
     {
       "url": "https://cnet.com/profiles/{username}",
@@ -1439,6 +1803,20 @@
       "type": "Computers"
     },
     {
+      "url": "https://codesnippets.wikia.com/wiki/User:{username}",
+      "detections": [
+        {
+          "name": "mediawiki",
+          "type": "shared"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Wiki"
+    },
+    {
       "url": "https://codewars.com/users/{username}",
       "detections": [
         {
@@ -1464,6 +1842,20 @@
       "type": "Internet"
     },
     {
+      "url": "https://codex.wordpress.org/wiki/User:{username}",
+      "detections": [
+        {
+          "name": "mediawiki",
+          "type": "shared"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Wiki"
+    },
+    {
       "url": "https://colourlovers.com/lover/{username}",
       "detections": [
         {
@@ -1487,6 +1879,20 @@
       "implicit": 0,
       "extract": [],
       "type": "Arts"
+    },
+    {
+      "url": "https://combineoverwiki.net/wiki/User:{username}",
+      "detections": [
+        {
+          "name": "mediawiki",
+          "type": "shared"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Wiki"
     },
     {
       "url": "https://community.cloudflare.com/u/{username}",
@@ -1610,6 +2016,20 @@
       "implicit": 0,
       "extract": [],
       "type": "Computers"
+    },
+    {
+      "url": "https://conwaylife.com/wiki/User:{username}",
+      "detections": [
+        {
+          "name": "mediawiki",
+          "type": "shared"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Wiki"
     },
     {
       "url": "https://coroflot.com/{username}",
@@ -1737,6 +2157,20 @@
       "type": "Internet"
     },
     {
+      "url": "https://creationwiki.org/User:{username}",
+      "detections": [
+        {
+          "name": "mediawiki",
+          "type": "shared"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Wiki"
+    },
+    {
       "url": "https://creativemarket.com/{username}",
       "detections": [
         {
@@ -1760,6 +2194,20 @@
       "implicit": 0,
       "extract": [],
       "type": "Shopping"
+    },
+    {
+      "url": "https://cruiserswiki.org/wiki/User:{username}",
+      "detections": [
+        {
+          "name": "mediawiki",
+          "type": "shared"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Wiki"
     },
     {
       "url": "https://crunchbase.com/person/{username}",
@@ -1810,6 +2258,20 @@
       "implicit": 0,
       "extract": [],
       "type": "Entertainment"
+    },
+    {
+      "url": "https://cyclechaos.com/wiki/User:{username}",
+      "detections": [
+        {
+          "name": "mediawiki",
+          "type": "shared"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Wiki"
     },
     {
       "url": "https://d3.ru/user/{username}/posts",
@@ -1880,6 +2342,34 @@
       "implicit": 0,
       "extract": [],
       "type": "News"
+    },
+    {
+      "url": "https://dandwiki.com/wiki/User:{username}",
+      "detections": [
+        {
+          "name": "mediawiki",
+          "type": "shared"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Wiki"
+    },
+    {
+      "url": "https://dariawiki.org/wiki/User:{username}",
+      "detections": [
+        {
+          "name": "mediawiki",
+          "type": "shared"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Wiki"
     },
     {
       "url": "https://data.typeracer.com/pit/profile?user={username}",
@@ -1987,6 +2477,34 @@
       "type": "Arts"
     },
     {
+      "url": "https://deskthority.net/wiki/User:{username}",
+      "detections": [
+        {
+          "name": "mediawiki",
+          "type": "shared"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Wiki"
+    },
+    {
+      "url": "https://detectiveconanworld.com/wiki/User:{username}",
+      "detections": [
+        {
+          "name": "mediawiki",
+          "type": "shared"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Wiki"
+    },
+    {
       "url": "https://dev.to/{username}",
       "detections": [
         {
@@ -2015,6 +2533,20 @@
       "implicit": 0,
       "extract": [],
       "type": "Computers"
+    },
+    {
+      "url": "https://develop.consumerium.org/wiki/User:{username}",
+      "detections": [
+        {
+          "name": "mediawiki",
+          "type": "shared"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Wiki"
     },
     {
       "url": "https://devpost.com/{username}",
@@ -2057,6 +2589,34 @@
       "type": "Computers"
     },
     {
+      "url": "https://dfwiki.com/wiki/User:{username}",
+      "detections": [
+        {
+          "name": "mediawiki",
+          "type": "shared"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Wiki"
+    },
+    {
+      "url": "https://diatessaron.ir/wiki/User:{username}",
+      "detections": [
+        {
+          "name": "mediawiki",
+          "type": "shared"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Wiki"
+    },
+    {
       "url": "https://digitalocean.com/community/users/{username}",
       "detections": [
         {
@@ -2075,6 +2635,20 @@
       "implicit": 0,
       "extract": [],
       "type": "Jobs"
+    },
+    {
+      "url": "https://digitaltibetan.org/wiki/User:{username}",
+      "detections": [
+        {
+          "name": "mediawiki",
+          "type": "shared"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Wiki"
     },
     {
       "url": "https://discogs.com/user/{username}",
@@ -2100,6 +2674,20 @@
       "implicit": 0,
       "extract": [],
       "type": "Music"
+    },
+    {
+      "url": "https://discoursedb.org/wiki/User:{username}",
+      "detections": [
+        {
+          "name": "mediawiki",
+          "type": "shared"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Wiki"
     },
     {
       "url": "https://discuss.atom.io/u/{username}/summary",
@@ -2205,6 +2793,90 @@
       "type": "Internet"
     },
     {
+      "url": "https://dissociative-identity-disorder.net/wiki/User:{username}",
+      "detections": [
+        {
+          "name": "mediawiki",
+          "type": "shared"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Wiki"
+    },
+    {
+      "url": "https://dkwiki.com/wiki/User:{username}",
+      "detections": [
+        {
+          "name": "mediawiki",
+          "type": "shared"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Wiki"
+    },
+    {
+      "url": "https://dnd-wiki.org/wiki/User:{username}",
+      "detections": [
+        {
+          "name": "mediawiki",
+          "type": "shared"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Wiki"
+    },
+    {
+      "url": "https://docs.comics.org/wiki/User:{username}",
+      "detections": [
+        {
+          "name": "mediawiki",
+          "type": "shared"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Wiki"
+    },
+    {
+      "url": "https://docs.joomla.org/wiki/User:{username}",
+      "detections": [
+        {
+          "name": "mediawiki",
+          "type": "shared"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Wiki"
+    },
+    {
+      "url": "https://docs.routexl.com/wiki/User:{username}",
+      "detections": [
+        {
+          "name": "mediawiki",
+          "type": "shared"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Wiki"
+    },
+    {
       "url": "https://docsity.com/en/users/profile/{username}",
       "detections": [
         {
@@ -2223,6 +2895,20 @@
       "implicit": 0,
       "extract": [],
       "type": "Internet"
+    },
+    {
+      "url": "https://dogcraft.net/wiki/User:{username}",
+      "detections": [
+        {
+          "name": "mediawiki",
+          "type": "shared"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Wiki"
     },
     {
       "url": "https://douban.com/people/{username}/",
@@ -2339,6 +3025,20 @@
       "type": "Internet"
     },
     {
+      "url": "https://eamon.wiki/wiki/User:{username}",
+      "detections": [
+        {
+          "name": "mediawiki",
+          "type": "shared"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Wiki"
+    },
+    {
       "url": "https://ebay.com/usr/{username}",
       "detections": [
         {
@@ -2429,6 +3129,20 @@
       "type": "Internet"
     },
     {
+      "url": "https://edutechwiki.unige.ch/en/wiki/User:{username}",
+      "detections": [
+        {
+          "name": "mediawiki",
+          "type": "shared"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Wiki"
+    },
+    {
       "url": "https://egpu.io/forums/profile/{username}",
       "detections": [
         {
@@ -2452,6 +3166,34 @@
       "implicit": 0,
       "extract": [],
       "type": "Computers"
+    },
+    {
+      "url": "https://electoralreform.wikia.com/wiki/User:{username}",
+      "detections": [
+        {
+          "name": "mediawiki",
+          "type": "shared"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Wiki"
+    },
+    {
+      "url": "https://elinux.org/wiki/User:{username}",
+      "detections": [
+        {
+          "name": "mediawiki",
+          "type": "shared"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Wiki"
     },
     {
       "url": "https://ello.co/{username}",
@@ -2489,6 +3231,48 @@
       "type": "Arts"
     },
     {
+      "url": "https://en.brickimedia.org/wiki/User:{username}",
+      "detections": [
+        {
+          "name": "mediawiki",
+          "type": "shared"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Wiki"
+    },
+    {
+      "url": "https://en.citizendium.org/wiki/User:{username}",
+      "detections": [
+        {
+          "name": "mediawiki",
+          "type": "shared"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Wiki"
+    },
+    {
+      "url": "https://en.crystalls.info/User:{username}",
+      "detections": [
+        {
+          "name": "mediawiki",
+          "type": "shared"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Wiki"
+    },
+    {
       "url": "https://en.gravatar.com/{username}",
       "detections": [
         {
@@ -2514,6 +3298,76 @@
       "type": "Computers"
     },
     {
+      "url": "https://en.illogicopedia.org/wiki/User:{username}",
+      "detections": [
+        {
+          "name": "mediawiki",
+          "type": "shared"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Wiki"
+    },
+    {
+      "url": "https://en.pornopedia.com/wiki/User:{username}",
+      "detections": [
+        {
+          "name": "mediawiki",
+          "type": "shared"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Wiki"
+    },
+    {
+      "url": "https://en.scoutwiki.org/User:{username}",
+      "detections": [
+        {
+          "name": "mediawiki",
+          "type": "shared"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Wiki"
+    },
+    {
+      "url": "https://en.scratch-wiki.info/User:{username}",
+      "detections": [
+        {
+          "name": "mediawiki",
+          "type": "shared"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Wiki"
+    },
+    {
+      "url": "https://en.stargatewiki.noip.me/wiki/User:{username}",
+      "detections": [
+        {
+          "name": "mediawiki",
+          "type": "shared"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Wiki"
+    },
+    {
       "url": "https://en.tm-ladder.com/{username}_rech.php",
       "detections": [],
       "selected": "false",
@@ -2521,6 +3375,76 @@
       "implicit": 0,
       "extract": [],
       "type": "Internet"
+    },
+    {
+      "url": "https://en.uncyclopedia.co/wiki/User:{username}",
+      "detections": [
+        {
+          "name": "mediawiki",
+          "type": "shared"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Wiki"
+    },
+    {
+      "url": "https://en.wikichip.org/wiki/User:{username}",
+      "detections": [
+        {
+          "name": "mediawiki",
+          "type": "shared"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Wiki"
+    },
+    {
+      "url": "https://en.wikifur.com/wiki/User:{username}",
+      "detections": [
+        {
+          "name": "mediawiki",
+          "type": "shared"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Wiki"
+    },
+    {
+      "url": "https://en.wikigta.org/wiki/User:{username}",
+      "detections": [
+        {
+          "name": "mediawiki",
+          "type": "shared"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Wiki"
+    },
+    {
+      "url": "https://en.wikimannia.org/User:{username}",
+      "detections": [
+        {
+          "name": "mediawiki",
+          "type": "shared"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Wiki"
     },
     {
       "url": "https://en.wikipedia.org/wiki/Special:CentralAuth/{username}",
@@ -2535,6 +3459,20 @@
       "implicit": 0,
       "extract": [],
       "type": "Games"
+    },
+    {
+      "url": "https://encyc.org/wiki/User:{username}",
+      "detections": [
+        {
+          "name": "mediawiki",
+          "type": "shared"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Wiki"
     },
     {
       "url": "https://erome.com/{username}",
@@ -2580,6 +3518,20 @@
       "implicit": 0,
       "extract": [],
       "type": "Games"
+    },
+    {
+      "url": "https://esolangs.org/wiki/User:{username}",
+      "detections": [
+        {
+          "name": "mediawiki",
+          "type": "shared"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Wiki"
     },
     {
       "url": "https://etsy.com/shop/{username}",
@@ -2670,6 +3622,20 @@
       "implicit": 0,
       "extract": [],
       "type": "Internet"
+    },
+    {
+      "url": "https://everybodywiki.com/wiki/User:{username}",
+      "detections": [
+        {
+          "name": "mediawiki",
+          "type": "shared"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Wiki"
     },
     {
       "url": "https://expo.io/@{username}",
@@ -2875,6 +3841,20 @@
       "implicit": 0,
       "extract": [],
       "type": "News"
+    },
+    {
+      "url": "https://festipedia.org.uk/wiki/User:{username}",
+      "detections": [
+        {
+          "name": "mediawiki",
+          "type": "shared"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Wiki"
     },
     {
       "url": "https://filmow.com/usuario/{username}",
@@ -3459,6 +4439,20 @@
       "type": "Internet"
     },
     {
+      "url": "https://funtoo.org/wiki/Welcome/User:{username}",
+      "detections": [
+        {
+          "name": "mediawiki",
+          "type": "shared"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Wiki"
+    },
+    {
       "url": "https://gab.com/{username}",
       "detections": [
         {
@@ -3477,6 +4471,20 @@
       "implicit": 0,
       "extract": [],
       "type": "Internet"
+    },
+    {
+      "url": "https://gaia.wikia.com/User:{username}",
+      "detections": [
+        {
+          "name": "mediawiki",
+          "type": "shared"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Wiki"
     },
     {
       "url": "https://gaiaonline.com/profiles/{username}",
@@ -3537,6 +4545,20 @@
       "implicit": 0,
       "extract": [],
       "type": "Games"
+    },
+    {
+      "url": "https://gameideas.wikia.com/wiki/User:{username}",
+      "detections": [
+        {
+          "name": "mediawiki",
+          "type": "shared"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Wiki"
     },
     {
       "url": "https://gamepedia.com/members/{username}",
@@ -3636,6 +4658,20 @@
       "implicit": 0,
       "extract": [],
       "type": "Internet"
+    },
+    {
+      "url": "https://gearheadwiki.com/wiki/User:{username}",
+      "detections": [
+        {
+          "name": "mediawiki",
+          "type": "shared"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Wiki"
     },
     {
       "url": "https://geocaching.com/p/default.aspx?u={username}",
@@ -3865,6 +4901,20 @@
       "type": "Internet"
     },
     {
+      "url": "https://globulation2.org/wiki/User:{username}",
+      "detections": [
+        {
+          "name": "mediawiki",
+          "type": "shared"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Wiki"
+    },
+    {
       "url": "https://gmail.com/{username}",
       "detections": [
         {
@@ -3926,6 +4976,34 @@
       "implicit": 0,
       "extract": [],
       "type": "Internet"
+    },
+    {
+      "url": "https://gridpp.ac.uk/wiki/User:{username}",
+      "detections": [
+        {
+          "name": "mediawiki",
+          "type": "shared"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Wiki"
+    },
+    {
+      "url": "https://guildwiki.org/User:{username}",
+      "detections": [
+        {
+          "name": "mediawiki",
+          "type": "shared"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Wiki"
     },
     {
       "url": "https://gumroad.com/{username}",
@@ -4191,6 +5269,34 @@
       "implicit": 0
     },
     {
+      "url": "https://harddrop.com/wiki/Tetris_Wiki/User:{username}",
+      "detections": [
+        {
+          "name": "mediawiki",
+          "type": "shared"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Wiki"
+    },
+    {
+      "url": "https://hardwarebook.info/User:{username}",
+      "detections": [
+        {
+          "name": "mediawiki",
+          "type": "shared"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Wiki"
+    },
+    {
       "url": "https://hashnode.com/@{username}",
       "detections": [
         {
@@ -4209,6 +5315,20 @@
       "implicit": 0,
       "extract": [],
       "type": "Internet"
+    },
+    {
+      "url": "https://health-and-medicine.wikia.com/wiki/User:{username}",
+      "detections": [
+        {
+          "name": "mediawiki",
+          "type": "shared"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Wiki"
     },
     {
       "url": "https://heavy-r.com/user/{username}",
@@ -4248,6 +5368,20 @@
       "selected": "false",
       "timeout": 0,
       "implicit": 0
+    },
+    {
+      "url": "https://hiddenpalace.org/wiki/User:{username}",
+      "detections": [
+        {
+          "name": "mediawiki",
+          "type": "shared"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Wiki"
     },
     {
       "url": "https://house-mixes.com/profile/{username}",
@@ -4394,6 +5528,34 @@
       "type": "Internet"
     },
     {
+      "url": "https://hydrodictyon.eeb.uconn.edu/eebedia/wiki/User:{username}",
+      "detections": [
+        {
+          "name": "mediawiki",
+          "type": "shared"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Wiki"
+    },
+    {
+      "url": "https://icannwiki.com/wiki/User:{username}",
+      "detections": [
+        {
+          "name": "mediawiki",
+          "type": "shared"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Wiki"
+    },
+    {
       "url": "https://icq.im/{username}",
       "detections": [
         {
@@ -4469,6 +5631,20 @@
       "type": "Entertainment"
     },
     {
+      "url": "https://iiwiki.us/wiki/User:{username}",
+      "detections": [
+        {
+          "name": "mediawiki",
+          "type": "shared"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Wiki"
+    },
+    {
       "url": "https://imagefap.com/profile/{username}",
       "detections": [
         {
@@ -4492,6 +5668,20 @@
       "implicit": 0,
       "extract": [],
       "type": "Adult"
+    },
+    {
+      "url": "https://imfdb.org/wiki/User:{username}",
+      "detections": [
+        {
+          "name": "mediawiki",
+          "type": "shared"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Wiki"
     },
     {
       "url": "https://imgsrc.ru/main/user.php?user={username}",
@@ -4546,6 +5736,20 @@
       "implicit": 0,
       "extract": [],
       "type": "Arts"
+    },
+    {
+      "url": "https://imslp.org/wiki/User:{username}",
+      "detections": [
+        {
+          "name": "mediawiki",
+          "type": "shared"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Wiki"
     },
     {
       "url": "https://inaturalist.org/people/{username}",
@@ -4646,6 +5850,34 @@
       "implicit": 0,
       "extract": [],
       "type": "Internet"
+    },
+    {
+      "url": "https://info.sonicretro.org/wiki/User:{username}",
+      "detections": [
+        {
+          "name": "mediawiki",
+          "type": "shared"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Wiki"
+    },
+    {
+      "url": "https://infogalactic.com/User:{username}",
+      "detections": [
+        {
+          "name": "mediawiki",
+          "type": "shared"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Wiki"
     },
     {
       "url": "https://instagram.com/{username}",
@@ -4794,6 +6026,34 @@
       "type": "Internet"
     },
     {
+      "url": "https://is.theorizeit.org/wiki/User:{username}",
+      "detections": [
+        {
+          "name": "mediawiki",
+          "type": "shared"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Wiki"
+    },
+    {
+      "url": "https://isogg.org/wiki/User:{username}",
+      "detections": [
+        {
+          "name": "mediawiki",
+          "type": "shared"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Wiki"
+    },
+    {
       "url": "https://issuu.com/{username}",
       "detections": [
         {
@@ -4822,6 +6082,20 @@
       "implicit": 0,
       "extract": [],
       "type": "Internet"
+    },
+    {
+      "url": "https://javascript.wikia.com/wiki/User:{username}",
+      "detections": [
+        {
+          "name": "mediawiki",
+          "type": "shared"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Wiki"
     },
     {
       "url": "https://jbzd.com.pl/uzytkownik/{username}",
@@ -4922,6 +6196,20 @@
       "implicit": 0,
       "extract": [],
       "type": "Internet"
+    },
+    {
+      "url": "https://kidicaruswiki.org/wiki/User:{username}",
+      "detections": [
+        {
+          "name": "mediawiki",
+          "type": "shared"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Wiki"
     },
     {
       "url": "https://kik.me/{username}",
@@ -5198,6 +6486,20 @@
       "type": "Internet"
     },
     {
+      "url": "https://libregamewiki.org/User:{username}",
+      "detections": [
+        {
+          "name": "mediawiki",
+          "type": "shared"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Wiki"
+    },
+    {
       "url": "https://lichess.org/@/{username}",
       "detections": [
         {
@@ -5241,6 +6543,34 @@
       "implicit": 0,
       "extract": [],
       "type": "Internet"
+    },
+    {
+      "url": "https://limswiki.org/wiki/User:{username}",
+      "detections": [
+        {
+          "name": "mediawiki",
+          "type": "shared"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Wiki"
+    },
+    {
+      "url": "https://linguaveritas.com/User:{username}",
+      "detections": [
+        {
+          "name": "mediawiki",
+          "type": "shared"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Wiki"
     },
     {
       "url": "https://linkedin.com/in/{username}/",
@@ -5391,6 +6721,76 @@
       "implicit": 0,
       "extract": [],
       "type": "Internet"
+    },
+    {
+      "url": "https://lostpedia.com/User:{username}",
+      "detections": [
+        {
+          "name": "mediawiki",
+          "type": "shared"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Wiki"
+    },
+    {
+      "url": "https://love2d.org/wiki/User:{username}",
+      "detections": [
+        {
+          "name": "mediawiki",
+          "type": "shared"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Wiki"
+    },
+    {
+      "url": "https://mansonwiki.com/wiki/User:{username}",
+      "detections": [
+        {
+          "name": "mediawiki",
+          "type": "shared"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Wiki"
+    },
+    {
+      "url": "https://mariowiki.com/User:{username}",
+      "detections": [
+        {
+          "name": "mediawiki",
+          "type": "shared"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Wiki"
+    },
+    {
+      "url": "https://marvel.wikia.com/User:{username}",
+      "detections": [
+        {
+          "name": "mediawiki",
+          "type": "shared"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Wiki"
     },
     {
       "url": "https://mastodon.cloud/@{username}",
@@ -5544,6 +6944,34 @@
       "type": "Internet"
     },
     {
+      "url": "https://mercuryrisingmoviefiction.wikia.com/wiki/User:{username}",
+      "detections": [
+        {
+          "name": "mediawiki",
+          "type": "shared"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Wiki"
+    },
+    {
+      "url": "https://meta.miraheze.org/wiki/User:{username}",
+      "detections": [
+        {
+          "name": "mediawiki",
+          "type": "shared"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Wiki"
+    },
+    {
       "url": "https://meta.wikimedia.org/wiki/Special:CentralAuth/{username}",
       "detections": [
         {
@@ -5603,6 +7031,48 @@
       "type": "Internet"
     },
     {
+      "url": "https://metroidwiki.org/wiki/User:{username}",
+      "detections": [
+        {
+          "name": "mediawiki",
+          "type": "shared"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Wiki"
+    },
+    {
+      "url": "https://metwiki.com/wiki/User:{username}",
+      "detections": [
+        {
+          "name": "mediawiki",
+          "type": "shared"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Wiki"
+    },
+    {
+      "url": "https://mfbwiki.org/wiki/User:{username}",
+      "detections": [
+        {
+          "name": "mediawiki",
+          "type": "shared"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Wiki"
+    },
+    {
       "url": "https://micro.blog/{username}",
       "detections": [
         {
@@ -5621,6 +7091,34 @@
       "implicit": 0,
       "extract": [],
       "type": "Society"
+    },
+    {
+      "url": "https://micronations.wiki/User:{username}",
+      "detections": [
+        {
+          "name": "mediawiki",
+          "type": "shared"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Wiki"
+    },
+    {
+      "url": "https://minecraft.gamepedia.com/Minecraft_Wiki/User:{username}",
+      "detections": [
+        {
+          "name": "mediawiki",
+          "type": "shared"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Wiki"
     },
     {
       "url": "https://mix.com/{username}",
@@ -5709,6 +7207,20 @@
       "type": "Internet"
     },
     {
+      "url": "https://monoskop.org/User:{username}",
+      "detections": [
+        {
+          "name": "mediawiki",
+          "type": "shared"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Wiki"
+    },
+    {
       "url": "https://mouthshut.com/{username}",
       "detections": [
         {
@@ -5793,6 +7305,34 @@
       "type": "Internet"
     },
     {
+      "url": "https://mutecity.org/wiki/F-Zero_Wiki/User:{username}",
+      "detections": [
+        {
+          "name": "mediawiki",
+          "type": "shared"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Wiki"
+    },
+    {
+      "url": "https://my.bzflag.org/w/wiki/User:{username}",
+      "detections": [
+        {
+          "name": "mediawiki",
+          "type": "shared"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Wiki"
+    },
+    {
       "url": "https://my.flightradar24.com/{username}",
       "detections": [
         {
@@ -5871,6 +7411,20 @@
       "implicit": 0,
       "extract": [],
       "type": "Internet"
+    },
+    {
+      "url": "https://myra.wikia.com/wiki/MainPage-EN/User:{username}",
+      "detections": [
+        {
+          "name": "mediawiki",
+          "type": "shared"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Wiki"
     },
     {
       "url": "https://myspace.com/{username}",
@@ -5983,6 +7537,20 @@
       "type": "Music"
     },
     {
+      "url": "https://nausicaa.net/wiki/User:{username}",
+      "detections": [
+        {
+          "name": "mediawiki",
+          "type": "shared"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Wiki"
+    },
+    {
       "url": "https://neogaf.com/members/{username}/",
       "detections": [
         {
@@ -6067,6 +7635,48 @@
       "type": "Game"
     },
     {
+      "url": "https://ninwiki.com/User:{username}",
+      "detections": [
+        {
+          "name": "mediawiki",
+          "type": "shared"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Wiki"
+    },
+    {
+      "url": "https://nookipedia.com/wiki/User:{username}",
+      "detections": [
+        {
+          "name": "mediawiki",
+          "type": "shared"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Wiki"
+    },
+    {
+      "url": "https://nordicnames.de/wiki/User:{username}",
+      "detections": [
+        {
+          "name": "mediawiki",
+          "type": "shared"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Wiki"
+    },
+    {
       "url": "https://notabug.org/{username}",
       "detections": [
         {
@@ -6142,6 +7752,62 @@
       "type": "Computers"
     },
     {
+      "url": "https://nsindex.net/wiki/User:{username}",
+      "detections": [
+        {
+          "name": "mediawiki",
+          "type": "shared"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Wiki"
+    },
+    {
+      "url": "https://nwn.wikia.com/User:{username}",
+      "detections": [
+        {
+          "name": "mediawiki",
+          "type": "shared"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Wiki"
+    },
+    {
+      "url": "https://nycanals.com/User:{username}",
+      "detections": [
+        {
+          "name": "mediawiki",
+          "type": "shared"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Wiki"
+    },
+    {
+      "url": "https://oeis.org/wiki/OeisWiki:About/User:{username}",
+      "detections": [
+        {
+          "name": "mediawiki",
+          "type": "shared"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Wiki"
+    },
+    {
       "url": "https://ok.ru/{username}",
       "detections": [
         {
@@ -6167,6 +7833,20 @@
       "type": "Internet"
     },
     {
+      "url": "https://oldschool.runescape.wiki/wiki/User:{username}",
+      "detections": [
+        {
+          "name": "mediawiki",
+          "type": "shared"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Wiki"
+    },
+    {
       "url": "https://open.spotify.com/user/{username}",
       "detections": [
         {
@@ -6185,6 +7865,20 @@
       "implicit": 0,
       "extract": [],
       "type": "Music"
+    },
+    {
+      "url": "https://openbox.org/wiki/User:{username}",
+      "detections": [
+        {
+          "name": "mediawiki",
+          "type": "shared"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Wiki"
     },
     {
       "url": "https://opencollective.com/{username}",
@@ -6242,6 +7936,20 @@
       "type": "Internet"
     },
     {
+      "url": "https://openriskmanual.org/wiki/User:{username}",
+      "detections": [
+        {
+          "name": "mediawiki",
+          "type": "shared"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Wiki"
+    },
+    {
       "url": "https://opensource.com/users/{username}",
       "detections": [
         {
@@ -6295,6 +8003,48 @@
       "implicit": 0,
       "extract": [],
       "type": "Internet"
+    },
+    {
+      "url": "https://openwetware.org/wiki/User:{username}",
+      "detections": [
+        {
+          "name": "mediawiki",
+          "type": "shared"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Wiki"
+    },
+    {
+      "url": "https://organicdesign.co.nz/wiki/User:{username}",
+      "detections": [
+        {
+          "name": "mediawiki",
+          "type": "shared"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Wiki"
+    },
+    {
+      "url": "https://orthodoxwiki.org/wiki/User:{username}",
+      "detections": [
+        {
+          "name": "mediawiki",
+          "type": "shared"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Wiki"
     },
     {
       "url": "https://osu.ppy.sh/users/{username}",
@@ -6457,6 +8207,20 @@
       "type": "Internet"
     },
     {
+      "url": "https://pcgamingwiki.com/wiki/User:{username}",
+      "detections": [
+        {
+          "name": "mediawiki",
+          "type": "shared"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Wiki"
+    },
+    {
       "url": "https://pcpartpicker.com/user/{username}",
       "detections": [
         {
@@ -6507,6 +8271,34 @@
       "type": "Internet"
     },
     {
+      "url": "https://petrowiki.org/User:{username}",
+      "detections": [
+        {
+          "name": "mediawiki",
+          "type": "shared"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Wiki"
+    },
+    {
+      "url": "https://pgdp.net/wiki/User:{username}",
+      "detections": [
+        {
+          "name": "mediawiki",
+          "type": "shared"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Wiki"
+    },
+    {
       "url": "https://php.ru/forum/members/?username={username}",
       "detections": [
         {
@@ -6522,6 +8314,34 @@
       "type": "Internet"
     },
     {
+      "url": "https://phyphox.org/wiki/User:{username}",
+      "detections": [
+        {
+          "name": "mediawiki",
+          "type": "shared"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Wiki"
+    },
+    {
+      "url": "https://pidgi.net/wiki/User:{username}",
+      "detections": [
+        {
+          "name": "mediawiki",
+          "type": "shared"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Wiki"
+    },
+    {
       "url": "https://pikabu.ru/@{username}",
       "detections": [
         {
@@ -6535,6 +8355,20 @@
       "implicit": 0,
       "extract": [],
       "type": "Internet"
+    },
+    {
+      "url": "https://pinataisland.info/viva/User:{username}",
+      "detections": [
+        {
+          "name": "mediawiki",
+          "type": "shared"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Wiki"
     },
     {
       "url": "https://pinkbike.com/u/{username}",
@@ -6732,6 +8566,48 @@
       "type": "Games"
     },
     {
+      "url": "https://ponywiki.com/User:{username}",
+      "detections": [
+        {
+          "name": "mediawiki",
+          "type": "shared"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Wiki"
+    },
+    {
+      "url": "https://portlandwiki.org/wiki/User:{username}",
+      "detections": [
+        {
+          "name": "mediawiki",
+          "type": "shared"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Wiki"
+    },
+    {
+      "url": "https://poserdazfreebies.miraheze.org/wiki/User:{username}",
+      "detections": [
+        {
+          "name": "mediawiki",
+          "type": "shared"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Wiki"
+    },
+    {
       "url": "https://postcrossing.com/user/{username}",
       "detections": [
         {
@@ -6784,6 +8660,20 @@
       "implicit": 0,
       "extract": [],
       "type": "Internet"
+    },
+    {
+      "url": "https://prevueguide.com/wiki/User:{username}",
+      "detections": [
+        {
+          "name": "mediawiki",
+          "type": "shared"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Wiki"
     },
     {
       "url": "https://producthunt.com/@{username}",
@@ -6922,6 +8812,34 @@
       "type": "Internet"
     },
     {
+      "url": "https://proofwiki.org/wiki/User:{username}",
+      "detections": [
+        {
+          "name": "mediawiki",
+          "type": "shared"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Wiki"
+    },
+    {
+      "url": "https://proteopedia.org/User:{username}",
+      "detections": [
+        {
+          "name": "mediawiki",
+          "type": "shared"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Wiki"
+    },
+    {
       "url": "https://psnprofiles.com/{username}",
       "detections": [
         {
@@ -6977,6 +8895,20 @@
       "type": "Internet"
     },
     {
+      "url": "https://pubnight.org.uk/User:{username}",
+      "detections": [
+        {
+          "name": "mediawiki",
+          "type": "shared"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Wiki"
+    },
+    {
       "url": "https://pypi.org/user/{username}",
       "detections": [
         {
@@ -7002,6 +8934,20 @@
       "type": "Internet"
     },
     {
+      "url": "https://pzwiki.net/wiki/User:{username}",
+      "detections": [
+        {
+          "name": "mediawiki",
+          "type": "shared"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Wiki"
+    },
+    {
       "url": "https://qiita.com/{username}",
       "detections": [
         {
@@ -7020,6 +8966,20 @@
       "implicit": 0,
       "extract": [],
       "type": "Internet"
+    },
+    {
+      "url": "https://quirc.miraheze.org/wiki/User:{username}",
+      "detections": [
+        {
+          "name": "mediawiki",
+          "type": "shared"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Wiki"
     },
     {
       "url": "https://quizlet.com/{username}",
@@ -7120,6 +9080,62 @@
       "implicit": 0,
       "extract": [],
       "type": "Music"
+    },
+    {
+      "url": "https://rationalwiki.org/wiki/User:{username}",
+      "detections": [
+        {
+          "name": "mediawiki",
+          "type": "shared"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Wiki"
+    },
+    {
+      "url": "https://raymanpc.com/wiki/en/User:{username}",
+      "detections": [
+        {
+          "name": "mediawiki",
+          "type": "shared"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Wiki"
+    },
+    {
+      "url": "https://reactos.org/wiki/User:{username}",
+      "detections": [
+        {
+          "name": "mediawiki",
+          "type": "shared"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Wiki"
+    },
+    {
+      "url": "https://realcty.org/wiki/User:{username}",
+      "detections": [
+        {
+          "name": "mediawiki",
+          "type": "shared"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Wiki"
     },
     {
       "url": "https://realmeye.com/player/{username}",
@@ -7238,6 +9254,20 @@
       "type": "Adult"
     },
     {
+      "url": "https://remywiki.com/wiki/User:{username}",
+      "detections": [
+        {
+          "name": "mediawiki",
+          "type": "shared"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Wiki"
+    },
+    {
       "url": "https://repl.it/@{username}",
       "detections": [
         {
@@ -7291,6 +9321,34 @@
       "implicit": 0,
       "extract": [],
       "type": "Computers"
+    },
+    {
+      "url": "https://resources.allsetlearning.com/chinese/grammar/User:{username}",
+      "detections": [
+        {
+          "name": "mediawiki",
+          "type": "shared"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Wiki"
+    },
+    {
+      "url": "https://retirewiki.jp/wiki/User:{username}",
+      "detections": [
+        {
+          "name": "mediawiki",
+          "type": "shared"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Wiki"
     },
     {
       "url": "https://reverbnation.com/{username}",
@@ -7412,6 +9470,20 @@
       "type": "Computers"
     },
     {
+      "url": "https://runescape.wiki/wiki/User:{username}",
+      "detections": [
+        {
+          "name": "mediawiki",
+          "type": "shared"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Wiki"
+    },
+    {
       "url": "https://rusfootball.info/user/{username}",
       "detections": [],
       "selected": "false",
@@ -7506,6 +9578,62 @@
       "type": "Internet"
     },
     {
+      "url": "https://sdiy.info/wiki/User:{username}",
+      "detections": [
+        {
+          "name": "mediawiki",
+          "type": "shared"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Wiki"
+    },
+    {
+      "url": "https://segaretro.org/wiki/User:{username}",
+      "detections": [
+        {
+          "name": "mediawiki",
+          "type": "shared"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Wiki"
+    },
+    {
+      "url": "https://sgwiki.com/wiki/User:{username}",
+      "detections": [
+        {
+          "name": "mediawiki",
+          "type": "shared"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Wiki"
+    },
+    {
+      "url": "https://shadowlack.com/wiki/User:{username}",
+      "detections": [
+        {
+          "name": "mediawiki",
+          "type": "shared"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Wiki"
+    },
+    {
       "url": "https://sharechat.com/profile/{username}",
       "detections": [
         {
@@ -7530,6 +9658,34 @@
       "type": "Internet"
     },
     {
+      "url": "https://shoutwiki.com/wiki/User:{username}",
+      "detections": [
+        {
+          "name": "mediawiki",
+          "type": "shared"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Wiki"
+    },
+    {
+      "url": "https://sikhiwiki.org/User:{username}",
+      "detections": [
+        {
+          "name": "mediawiki",
+          "type": "shared"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Wiki"
+    },
+    {
       "url": "https://sketchfab.com/{username}",
       "detections": [
         {
@@ -7548,6 +9704,20 @@
       "implicit": 0,
       "extract": [],
       "type": "Internet"
+    },
+    {
+      "url": "https://skybrary.aero/wiki/User:{username}",
+      "detections": [
+        {
+          "name": "mediawiki",
+          "type": "shared"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Wiki"
     },
     {
       "url": "https://slashdot.org/~{username}",
@@ -7600,6 +9770,20 @@
       "type": "Internet"
     },
     {
+      "url": "https://smite.gamepedia.com/wiki/User:{username}",
+      "detections": [
+        {
+          "name": "mediawiki",
+          "type": "shared"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Wiki"
+    },
+    {
       "url": "https://smule.com/{username}",
       "detections": [
         {
@@ -7628,6 +9812,20 @@
       "implicit": 0,
       "extract": [],
       "type": "Internet"
+    },
+    {
+      "url": "https://snicket.wikia.com/wiki/User:{username}",
+      "detections": [
+        {
+          "name": "mediawiki",
+          "type": "shared"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Wiki"
     },
     {
       "url": "https://snipplr.com/users/{username}",
@@ -7805,6 +10003,20 @@
       "type": "Games"
     },
     {
+      "url": "https://splatoonwiki.org/wiki/User:{username}",
+      "detections": [
+        {
+          "name": "mediawiki",
+          "type": "shared"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Wiki"
+    },
+    {
       "url": "https://spletnik.ru/user/{username}",
       "detections": [
         {
@@ -7875,6 +10087,20 @@
       "type": "Internet"
     },
     {
+      "url": "https://sporewiki.com/wiki/User:{username}",
+      "detections": [
+        {
+          "name": "mediawiki",
+          "type": "shared"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Wiki"
+    },
+    {
       "url": "https://sports.ru/profile/{username}",
       "detections": [
         {
@@ -7888,6 +10114,20 @@
       "implicit": 0,
       "extract": [],
       "type": "Sports"
+    },
+    {
+      "url": "https://ssbwiki.com/User:{username}",
+      "detections": [
+        {
+          "name": "mediawiki",
+          "type": "shared"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Wiki"
     },
     {
       "url": "https://stackshare.io/{username}",
@@ -7908,6 +10148,48 @@
       "implicit": 0,
       "extract": [],
       "type": "Internet"
+    },
+    {
+      "url": "https://starcitizen.tools/wiki/User:{username}",
+      "detections": [
+        {
+          "name": "mediawiki",
+          "type": "shared"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Wiki"
+    },
+    {
+      "url": "https://starfywiki.org/wiki/User:{username}",
+      "detections": [
+        {
+          "name": "mediawiki",
+          "type": "shared"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Wiki"
+    },
+    {
+      "url": "https://starwars.wikia.com/User:{username}",
+      "detections": [
+        {
+          "name": "mediawiki",
+          "type": "shared"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Wiki"
     },
     {
       "url": "https://steamcommunity.com/id/{username}",
@@ -8000,6 +10282,20 @@
       "type": "Internet"
     },
     {
+      "url": "https://strategywiki.org/wiki/User:{username}",
+      "detections": [
+        {
+          "name": "mediawiki",
+          "type": "shared"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Wiki"
+    },
+    {
       "url": "https://strava.com/athletes/{username}",
       "detections": [
         {
@@ -8013,6 +10309,20 @@
       "implicit": 0,
       "extract": [],
       "type": "Internet"
+    },
+    {
+      "url": "https://supernaturalwiki.com/User:{username}",
+      "detections": [
+        {
+          "name": "mediawiki",
+          "type": "shared"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Wiki"
     },
     {
       "url": "https://svidbook.ru/user/{username}",
@@ -8085,6 +10395,76 @@
       "type": "Internet"
     },
     {
+      "url": "https://tcrf.net/The_Cutting_Room_Floor/User:{username}",
+      "detections": [
+        {
+          "name": "mediawiki",
+          "type": "shared"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Wiki"
+    },
+    {
+      "url": "https://tddft.org/programs/octopus/wiki/User:{username}",
+      "detections": [
+        {
+          "name": "mediawiki",
+          "type": "shared"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Wiki"
+    },
+    {
+      "url": "https://teampedia.net/wiki/User:{username}",
+      "detections": [
+        {
+          "name": "mediawiki",
+          "type": "shared"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Wiki"
+    },
+    {
+      "url": "https://techotopia.com/wiki/User:{username}",
+      "detections": [
+        {
+          "name": "mediawiki",
+          "type": "shared"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Wiki"
+    },
+    {
+      "url": "https://teflpedia.com/User:{username}",
+      "detections": [
+        {
+          "name": "mediawiki",
+          "type": "shared"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Wiki"
+    },
+    {
       "url": "https://tellonym.me/{username}",
       "detections": [
         {
@@ -8125,6 +10505,76 @@
       "type": "Internet"
     },
     {
+      "url": "https://testwiki.wiki/wiki/User:{username}",
+      "detections": [
+        {
+          "name": "mediawiki",
+          "type": "shared"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Wiki"
+    },
+    {
+      "url": "https://tfwiki.net/wiki/User:{username}",
+      "detections": [
+        {
+          "name": "mediawiki",
+          "type": "shared"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Wiki"
+    },
+    {
+      "url": "https://theaquariumwiki.com/User:{username}",
+      "detections": [
+        {
+          "name": "mediawiki",
+          "type": "shared"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Wiki"
+    },
+    {
+      "url": "https://theinfosphere.org/User:{username}",
+      "detections": [
+        {
+          "name": "mediawiki",
+          "type": "shared"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Wiki"
+    },
+    {
+      "url": "https://theplenty.net/wiki/User:{username}",
+      "detections": [
+        {
+          "name": "mediawiki",
+          "type": "shared"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Wiki"
+    },
+    {
       "url": "https://theverge.com/users/{username}",
       "detections": [
         {
@@ -8148,6 +10598,20 @@
       "implicit": 0,
       "extract": [],
       "type": "News"
+    },
+    {
+      "url": "https://thinkwiki.org/wiki/User:{username}",
+      "detections": [
+        {
+          "name": "mediawiki",
+          "type": "shared"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Wiki"
     },
     {
       "url": "https://tiktok.com/@{username}",
@@ -8191,6 +10655,20 @@
       "type": "Internet"
     },
     {
+      "url": "https://tmbw.net/User:{username}",
+      "detections": [
+        {
+          "name": "mediawiki",
+          "type": "shared"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Wiki"
+    },
+    {
       "url": "https://tnaflix.com/profile/{username}",
       "detections": [
         {
@@ -8231,6 +10709,20 @@
       "type": "Internet"
     },
     {
+      "url": "https://tolkiengateway.net/User:{username}",
+      "detections": [
+        {
+          "name": "mediawiki",
+          "type": "shared"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Wiki"
+    },
+    {
       "url": "https://tradingview.com/u/{username}",
       "detections": [
         {
@@ -8254,6 +10746,20 @@
       "implicit": 0,
       "extract": [],
       "type": "Business"
+    },
+    {
+      "url": "https://trailville.com/wiki/User:{username}",
+      "detections": [
+        {
+          "name": "mediawiki",
+          "type": "shared"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Wiki"
     },
     {
       "url": "https://trakt.tv/users/{username}",
@@ -8481,6 +10987,20 @@
       "type": "Computers"
     },
     {
+      "url": "https://uesp.net/User:{username}",
+      "detections": [
+        {
+          "name": "mediawiki",
+          "type": "shared"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Wiki"
+    },
+    {
       "url": "https://uid.me/{username}",
       "detections": [
         {
@@ -8504,6 +11024,20 @@
       "implicit": 0,
       "extract": [],
       "type": "Computers"
+    },
+    {
+      "url": "https://ukgameshows.com/User:{username}",
+      "detections": [
+        {
+          "name": "mediawiki",
+          "type": "shared"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Wiki"
     },
     {
       "url": "https://ultimate-guitar.com/u/{username}",
@@ -8536,6 +11070,20 @@
       "type": "Music"
     },
     {
+      "url": "https://uncyclomedia.org/wiki/User:{username}",
+      "detections": [
+        {
+          "name": "mediawiki",
+          "type": "shared"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Wiki"
+    },
+    {
       "url": "https://unsplash.com/@{username}",
       "detections": [
         {
@@ -8566,6 +11114,20 @@
       "type": "Arts"
     },
     {
+      "url": "https://uoguide.com/wiki/User:{username}",
+      "detections": [
+        {
+          "name": "mediawiki",
+          "type": "shared"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Wiki"
+    },
+    {
       "url": "https://us.forums.blizzard.com/en/blizzard/u/{username}",
       "detections": [
         {
@@ -8589,6 +11151,20 @@
       "implicit": 0,
       "extract": [],
       "type": "Internet"
+    },
+    {
+      "url": "https://uses.plantnet-project.org/en/User:{username}",
+      "detections": [
+        {
+          "name": "mediawiki",
+          "type": "shared"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Wiki"
     },
     {
       "url": "https://v2ex.com/member/{username}",
@@ -8636,6 +11212,20 @@
       "type": "Internet"
     },
     {
+      "url": "https://verifiedhandles.com/vhid/VHID/User:{username}",
+      "detections": [
+        {
+          "name": "mediawiki",
+          "type": "shared"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Wiki"
+    },
+    {
       "url": "https://vero.co/{username}",
       "detections": [
         {
@@ -8659,6 +11249,20 @@
       "implicit": 0,
       "extract": [],
       "type": "Internet"
+    },
+    {
+      "url": "https://vgmpf.com/wiki/User:{username}",
+      "detections": [
+        {
+          "name": "mediawiki",
+          "type": "shared"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Wiki"
     },
     {
       "url": "https://vgr.com/forum/profile/{username}",
@@ -8686,6 +11290,20 @@
       "type": "Internet"
     },
     {
+      "url": "https://video-game-music-covers.wikia.com/User:{username}",
+      "detections": [
+        {
+          "name": "mediawiki",
+          "type": "shared"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Wiki"
+    },
+    {
       "url": "https://videogamer.com/forums/index.php?/profile/{username}/",
       "detections": [
         {
@@ -8699,6 +11317,20 @@
       "implicit": 0,
       "extract": [],
       "type": "Internet"
+    },
+    {
+      "url": "https://vim.wikia.com/User:{username}",
+      "detections": [
+        {
+          "name": "mediawiki",
+          "type": "shared"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Wiki"
     },
     {
       "url": "https://vimeo.com/{username}",
@@ -8864,6 +11496,20 @@
       "type": "Arts"
     },
     {
+      "url": "https://wackypedia.risteq.net/User:{username}",
+      "detections": [
+        {
+          "name": "mediawiki",
+          "type": "shared"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Wiki"
+    },
+    {
       "url": "https://warriorforum.com/members/{username}.html",
       "detections": [
         {
@@ -8949,6 +11595,566 @@
       "type": "Internet"
     },
     {
+      "url": "https://werelate.org/wiki/User:{username}",
+      "detections": [
+        {
+          "name": "mediawiki",
+          "type": "shared"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Wiki"
+    },
+    {
+      "url": "https://wheretosee.org/wildlife/User:{username}",
+      "detections": [
+        {
+          "name": "mediawiki",
+          "type": "shared"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Wiki"
+    },
+    {
+      "url": "https://wiki.bytecode.club/User:{username}",
+      "detections": [
+        {
+          "name": "mediawiki",
+          "type": "shared"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Wiki"
+    },
+    {
+      "url": "https://wiki.clicklaw.bc.ca/wiki/User:{username}",
+      "detections": [
+        {
+          "name": "mediawiki",
+          "type": "shared"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Wiki"
+    },
+    {
+      "url": "https://wiki.contribs.org/User:{username}",
+      "detections": [
+        {
+          "name": "mediawiki",
+          "type": "shared"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Wiki"
+    },
+    {
+      "url": "https://wiki.creativecommons.org/wiki/User:{username}",
+      "detections": [
+        {
+          "name": "mediawiki",
+          "type": "shared"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Wiki"
+    },
+    {
+      "url": "https://wiki.eclipse.org/wiki/User:{username}",
+      "detections": [
+        {
+          "name": "mediawiki",
+          "type": "shared"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Wiki"
+    },
+    {
+      "url": "https://wiki.edgertronic.com/wiki/User:{username}",
+      "detections": [
+        {
+          "name": "mediawiki",
+          "type": "shared"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Wiki"
+    },
+    {
+      "url": "https://wiki.factorio.com/wiki/User:{username}",
+      "detections": [
+        {
+          "name": "mediawiki",
+          "type": "shared"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Wiki"
+    },
+    {
+      "url": "https://wiki.freephile.org/wiki/User:{username}",
+      "detections": [
+        {
+          "name": "mediawiki",
+          "type": "shared"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Wiki"
+    },
+    {
+      "url": "https://wiki.geni.com/wiki/User:{username}",
+      "detections": [
+        {
+          "name": "mediawiki",
+          "type": "shared"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Wiki"
+    },
+    {
+      "url": "https://wiki.gentoo.org/wiki/User:{username}",
+      "detections": [
+        {
+          "name": "mediawiki",
+          "type": "shared"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Wiki"
+    },
+    {
+      "url": "https://wiki.hostelmanagement.com/wiki/User:{username}",
+      "detections": [
+        {
+          "name": "mediawiki",
+          "type": "shared"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Wiki"
+    },
+    {
+      "url": "https://wiki.linuxquestions.org/wiki/User:{username}",
+      "detections": [
+        {
+          "name": "mediawiki",
+          "type": "shared"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Wiki"
+    },
+    {
+      "url": "https://wiki.lostsouls.org/wiki/User:{username}",
+      "detections": [
+        {
+          "name": "mediawiki",
+          "type": "shared"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Wiki"
+    },
+    {
+      "url": "https://wiki.mozilla.org/wiki/User:{username}",
+      "detections": [
+        {
+          "name": "mediawiki",
+          "type": "shared"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Wiki"
+    },
+    {
+      "url": "https://wiki.mtasa.com/User:{username}",
+      "detections": [
+        {
+          "name": "mediawiki",
+          "type": "shared"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Wiki"
+    },
+    {
+      "url": "https://wiki.openmw.org/User:{username}",
+      "detections": [
+        {
+          "name": "mediawiki",
+          "type": "shared"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Wiki"
+    },
+    {
+      "url": "https://wiki.openvz.org/wiki/User:{username}",
+      "detections": [
+        {
+          "name": "mediawiki",
+          "type": "shared"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Wiki"
+    },
+    {
+      "url": "https://wiki.osdev.org/User:{username}",
+      "detections": [
+        {
+          "name": "mediawiki",
+          "type": "shared"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Wiki"
+    },
+    {
+      "url": "https://wiki.robojackets.org/wiki/User:{username}",
+      "detections": [
+        {
+          "name": "mediawiki",
+          "type": "shared"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Wiki"
+    },
+    {
+      "url": "https://wiki.secondlife.com/wiki/User:{username}",
+      "detections": [
+        {
+          "name": "mediawiki",
+          "type": "shared"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Wiki"
+    },
+    {
+      "url": "https://wiki.shartak.com/User:{username}",
+      "detections": [
+        {
+          "name": "mediawiki",
+          "type": "shared"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Wiki"
+    },
+    {
+      "url": "https://wiki.spacesim.org/wiki/User:{username}",
+      "detections": [
+        {
+          "name": "mediawiki",
+          "type": "shared"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Wiki"
+    },
+    {
+      "url": "https://wiki.teamfortress.com/wiki/User:{username}",
+      "detections": [
+        {
+          "name": "mediawiki",
+          "type": "shared"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Wiki"
+    },
+    {
+      "url": "https://wiki.tfes.org/User:{username}",
+      "detections": [
+        {
+          "name": "mediawiki",
+          "type": "shared"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Wiki"
+    },
+    {
+      "url": "https://wiki.themanaworld.org/wiki/User:{username}",
+      "detections": [
+        {
+          "name": "mediawiki",
+          "type": "shared"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Wiki"
+    },
+    {
+      "url": "https://wiki.therofl98.co/wiki/User:{username}",
+      "detections": [
+        {
+          "name": "mediawiki",
+          "type": "shared"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Wiki"
+    },
+    {
+      "url": "https://wiki.ubc.ca/User:{username}",
+      "detections": [
+        {
+          "name": "mediawiki",
+          "type": "shared"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Wiki"
+    },
+    {
+      "url": "https://wiki.urbandead.com/User:{username}",
+      "detections": [
+        {
+          "name": "mediawiki",
+          "type": "shared"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Wiki"
+    },
+    {
+      "url": "https://wiki.vtiger.com/User:{username}",
+      "detections": [
+        {
+          "name": "mediawiki",
+          "type": "shared"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Wiki"
+    },
+    {
+      "url": "https://wiki.wesnoth.org/wiki/User:{username}",
+      "detections": [
+        {
+          "name": "mediawiki",
+          "type": "shared"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Wiki"
+    },
+    {
+      "url": "https://wiki.xentax.com/wiki/User:{username}",
+      "detections": [
+        {
+          "name": "mediawiki",
+          "type": "shared"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Wiki"
+    },
+    {
+      "url": "https://wiki.xiph.org/wiki/User:{username}",
+      "detections": [
+        {
+          "name": "mediawiki",
+          "type": "shared"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Wiki"
+    },
+    {
+      "url": "https://wiki.xkcd.com/geohashing/User:{username}",
+      "detections": [
+        {
+          "name": "mediawiki",
+          "type": "shared"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Wiki"
+    },
+    {
+      "url": "https://wikiMSK.org/wiki/User:{username}",
+      "detections": [
+        {
+          "name": "mediawiki",
+          "type": "shared"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Wiki"
+    },
+    {
+      "url": "https://wikialpha.org/wiki/User:{username}",
+      "detections": [
+        {
+          "name": "mediawiki",
+          "type": "shared"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Wiki"
+    },
+    {
+      "url": "https://wikiapiary.com/wiki/User:{username}",
+      "detections": [
+        {
+          "name": "mediawiki",
+          "type": "shared"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Wiki"
+    },
+    {
+      "url": "https://wikicu.com/wiki/User:{username}",
+      "detections": [
+        {
+          "name": "mediawiki",
+          "type": "shared"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Wiki"
+    },
+    {
+      "url": "https://wikidifferences.com/User:{username}",
+      "detections": [
+        {
+          "name": "mediawiki",
+          "type": "shared"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Wiki"
+    },
+    {
       "url": "https://wikidot.com/user:info/{username}",
       "detections": [
         {
@@ -8974,6 +12180,160 @@
       "type": "Internet"
     },
     {
+      "url": "https://wikidr.net/wiki/User:{username}",
+      "detections": [
+        {
+          "name": "mediawiki",
+          "type": "shared"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Wiki"
+    },
+    {
+      "url": "https://wikifarming.org/wiki/User:{username}",
+      "detections": [
+        {
+          "name": "mediawiki",
+          "type": "shared"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Wiki"
+    },
+    {
+      "url": "https://wikiislam.net/wiki/User:{username}",
+      "detections": [
+        {
+          "name": "mediawiki",
+          "type": "shared"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Wiki"
+    },
+    {
+      "url": "https://wikipathways.org/User:{username}",
+      "detections": [
+        {
+          "name": "mediawiki",
+          "type": "shared"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Wiki"
+    },
+    {
+      "url": "https://wikipediaquality.com/wiki/User:{username}",
+      "detections": [
+        {
+          "name": "mediawiki",
+          "type": "shared"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Wiki"
+    },
+    {
+      "url": "https://wikipunch.com/wiki/User:{username}",
+      "detections": [
+        {
+          "name": "mediawiki",
+          "type": "shared"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Wiki"
+    },
+    {
+      "url": "https://wikiquiz.org/revision-notes/wiki/User:{username}",
+      "detections": [
+        {
+          "name": "mediawiki",
+          "type": "shared"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Wiki"
+    },
+    {
+      "url": "https://wikishire.co.uk/wiki/User:{username}",
+      "detections": [
+        {
+          "name": "mediawiki",
+          "type": "shared"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Wiki"
+    },
+    {
+      "url": "https://wikiwrimo.org/wiki/User:{username}",
+      "detections": [
+        {
+          "name": "mediawiki",
+          "type": "shared"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Wiki"
+    },
+    {
+      "url": "https://wikizilla.org/wiki/User:{username}",
+      "detections": [
+        {
+          "name": "mediawiki",
+          "type": "shared"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Wiki"
+    },
+    {
+      "url": "https://withoutvowels.org/wiki/User:{username}",
+      "detections": [
+        {
+          "name": "mediawiki",
+          "type": "shared"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Wiki"
+    },
+    {
       "url": "https://wordnik.com/users/{username}",
       "detections": [
         {
@@ -8987,6 +12347,20 @@
       "implicit": 0,
       "extract": [],
       "type": "Internet"
+    },
+    {
+      "url": "https://worldwindcentral.com/wiki/User:{username}",
+      "detections": [
+        {
+          "name": "mediawiki",
+          "type": "shared"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Wiki"
     },
     {
       "url": "https://wowhead.com/user={username}",
@@ -9007,6 +12381,20 @@
       "implicit": 0,
       "extract": [],
       "type": "Internet"
+    },
+    {
+      "url": "https://wowpedia.org/User:{username}",
+      "detections": [
+        {
+          "name": "mediawiki",
+          "type": "shared"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Wiki"
     },
     {
       "url": "https://wykop.pl/ludzie/{username}/",
@@ -9072,6 +12460,20 @@
       "implicit": 0,
       "extract": [],
       "type": "Adult"
+    },
+    {
+      "url": "https://xmswiki.com/wiki/User:{username}",
+      "detections": [
+        {
+          "name": "mediawiki",
+          "type": "shared"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Wiki"
     },
     {
       "url": "https://xrares.com/user/{username}",
@@ -9213,6 +12615,34 @@
       "implicit": 0,
       "extract": [],
       "type": "Internet"
+    },
+    {
+      "url": "https://zeldadungeon.net/wiki/User:{username}",
+      "detections": [
+        {
+          "name": "mediawiki",
+          "type": "shared"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Wiki"
+    },
+    {
+      "url": "https://zeldawiki.org/User:{username}",
+      "detections": [
+        {
+          "name": "mediawiki",
+          "type": "shared"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Wiki"
     },
     {
       "url": "https://zhihu.com/people/{username}",
@@ -9777,13 +13207,13 @@
       "name": "mediawiki",
       "detections": [
         {
-          "return": "true",
-          "string": "Registered",
+          "return": "false",
+          "string": "is not registered",
           "type": "normal"
         },
         {
           "return": "true",
-          "string": "Total edit count",
+          "string": "User:",
           "type": "normal"
         }
       ]
