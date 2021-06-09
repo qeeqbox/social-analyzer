@@ -9,7 +9,7 @@
  "linux":"pass",
  "windows":"pass",
  "docker":"pass",
- "full_scan":"15 workers < 20secs",
+ "full_scan":"15 workers < 30secs",
  "max_retries":"3",
  "awaiting_verification":"?",
  "auto_testing":"969fcc94-fef3-4056-8314-998f0bbe6303"}
