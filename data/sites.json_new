@@ -1,4 +1,7 @@
 {
+  "project": {
+    "name": "social-analyzer"
+  },
   "websites_entries": [
     {
       "url": "https://24.wikia.com/wiki/User:{username}",
