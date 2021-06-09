@@ -150,6 +150,20 @@
       "type": "Internet"
     },
     {
+      "url": "https://airlinepilot.life/u/{username}",
+      "detections": [
+        {
+          "name": "discourse",
+          "type": "shared"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Forums"
+    },
+    {
       "status": "bad",
       "url": "https://akniga.org/profile/{username}",
       "detections": [
@@ -444,20 +458,6 @@
     },
     {
       "url": "https://appropedia.org/User:{username}",
-      "detections": [
-        {
-          "name": "mediawiki",
-          "type": "shared"
-        }
-      ],
-      "selected": "false",
-      "timeout": 0,
-      "implicit": 0,
-      "extract": [],
-      "type": "Wiki"
-    },
-    {
-      "url": "https://aqworldswiki.com/w/User:{username}",
       "detections": [
         {
           "name": "mediawiki",
@@ -1336,6 +1336,20 @@
       "type": "Entertainment"
     },
     {
+      "url": "https://caddy.community/u/{username}",
+      "detections": [
+        {
+          "name": "discourse",
+          "type": "shared"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Forums"
+    },
+    {
       "url": "https://canva.com/{username}",
       "detections": [],
       "selected": "false",
@@ -1565,6 +1579,20 @@
       "type": "Internet"
     },
     {
+      "url": "https://chiefdelphi.com/u/{username}",
+      "detections": [
+        {
+          "name": "discourse",
+          "type": "shared"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Forums"
+    },
+    {
       "url": "https://childrensbooks.wikia.com/User:{username}",
       "detections": [
         {
@@ -1577,6 +1605,20 @@
       "implicit": 0,
       "extract": [],
       "type": "Wiki"
+    },
+    {
+      "url": "https://choice.community/u/{username}",
+      "detections": [
+        {
+          "name": "discourse",
+          "type": "shared"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Forums"
     },
     {
       "url": "https://cloob.com/name/{username}",
@@ -1631,6 +1673,20 @@
       "implicit": 0,
       "extract": [],
       "type": "Wiki"
+    },
+    {
+      "url": "https://club.myce.com/u/{username}",
+      "detections": [
+        {
+          "name": "discourse",
+          "type": "shared"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Forums"
     },
     {
       "url": "https://cnet.com/profiles/{username}",
@@ -1895,7 +1951,7 @@
       "type": "Wiki"
     },
     {
-      "url": "https://community.cloudflare.com/u/{username}",
+      "url": "https://commons.commondreams.org/u/{username}",
       "detections": [
         {
           "name": "discourse",
@@ -1906,7 +1962,49 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "Computers"
+      "type": "Forums"
+    },
+    {
+      "url": "https://community.bnz.co.nz/u/{username}",
+      "detections": [
+        {
+          "name": "discourse",
+          "type": "shared"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Forums"
+    },
+    {
+      "url": "https://community.cartalk.com/u/{username}",
+      "detections": [
+        {
+          "name": "discourse",
+          "type": "shared"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Forums"
+    },
+    {
+      "url": "https://community.drownedinsound.com/u/{username}",
+      "detections": [
+        {
+          "name": "discourse",
+          "type": "shared"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Forums"
     },
     {
       "url": "https://community.eintracht.de/fans/{username}",
@@ -1929,6 +2027,202 @@
       "type": "Sports"
     },
     {
+      "url": "https://community.endlessos.com/u/{username}",
+      "detections": [
+        {
+          "name": "discourse",
+          "type": "shared"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Forums"
+    },
+    {
+      "url": "https://community.gamedev.tv/u/{username}",
+      "detections": [
+        {
+          "name": "discourse",
+          "type": "shared"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Forums"
+    },
+    {
+      "url": "https://community.gemsofwar.com/u/{username}",
+      "detections": [
+        {
+          "name": "discourse",
+          "type": "shared"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Forums"
+    },
+    {
+      "url": "https://community.glowforge.com/u/{username}",
+      "detections": [
+        {
+          "name": "discourse",
+          "type": "shared"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Forums"
+    },
+    {
+      "url": "https://community.home-assistant.io/u/{username}",
+      "detections": [
+        {
+          "name": "discourse",
+          "type": "shared"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Forums"
+    },
+    {
+      "url": "https://community.hubitat.com/u/{username}",
+      "detections": [
+        {
+          "name": "discourse",
+          "type": "shared"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Forums"
+    },
+    {
+      "url": "https://community.icons8.com/u/{username}",
+      "detections": [
+        {
+          "name": "discourse",
+          "type": "shared"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Forums"
+    },
+    {
+      "url": "https://community.ifit.com/u/{username}",
+      "detections": [
+        {
+          "name": "discourse",
+          "type": "shared"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Forums"
+    },
+    {
+      "url": "https://community.infiniteflight.com/u/{username}",
+      "detections": [
+        {
+          "name": "discourse",
+          "type": "shared"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Forums"
+    },
+    {
+      "url": "https://community.kodular.io/u/{username}",
+      "detections": [
+        {
+          "name": "discourse",
+          "type": "shared"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Forums"
+    },
+    {
+      "url": "https://community.letsencrypt.org/u/{username}",
+      "detections": [
+        {
+          "name": "discourse",
+          "type": "shared"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Forums"
+    },
+    {
+      "url": "https://community.mycroft.ai/u/{username}",
+      "detections": [
+        {
+          "name": "discourse",
+          "type": "shared"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Forums"
+    },
+    {
+      "url": "https://community.mydevices.com/u/{username}",
+      "detections": [
+        {
+          "name": "discourse",
+          "type": "shared"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Forums"
+    },
+    {
+      "url": "https://community.mypaint.org/u/{username}",
+      "detections": [
+        {
+          "name": "discourse",
+          "type": "shared"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Forums"
+    },
+    {
       "url": "https://community.oracle.com/people/{username}",
       "detections": [
         {
@@ -1949,6 +2243,62 @@
       "type": "Computers"
     },
     {
+      "url": "https://community.quickfile.co.uk/u/{username}",
+      "detections": [
+        {
+          "name": "discourse",
+          "type": "shared"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Forums"
+    },
+    {
+      "url": "https://community.revolut.com/u/{username}",
+      "detections": [
+        {
+          "name": "discourse",
+          "type": "shared"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Forums"
+    },
+    {
+      "url": "https://community.roonlabs.com/u/{username}",
+      "detections": [
+        {
+          "name": "discourse",
+          "type": "shared"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Forums"
+    },
+    {
+      "url": "https://community.rstudio.com/u/{username}",
+      "detections": [
+        {
+          "name": "discourse",
+          "type": "shared"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Forums"
+    },
+    {
       "url": "https://community.signalusers.org/u/{username}",
       "detections": [
         {
@@ -1961,6 +2311,62 @@
       "implicit": 0,
       "extract": [],
       "type": "Computers"
+    },
+    {
+      "url": "https://community.smartthings.com/u/{username}",
+      "detections": [
+        {
+          "name": "discourse",
+          "type": "shared"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Forums"
+    },
+    {
+      "url": "https://community.sphero.com/u/{username}",
+      "detections": [
+        {
+          "name": "discourse",
+          "type": "shared"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Forums"
+    },
+    {
+      "url": "https://community.sweatco.in/u/{username}",
+      "detections": [
+        {
+          "name": "discourse",
+          "type": "shared"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Forums"
+    },
+    {
+      "url": "https://community.unbounce.com/u/{username}",
+      "detections": [
+        {
+          "name": "discourse",
+          "type": "shared"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Forums"
     },
     {
       "url": "https://community.windy.com/user/{username}",
@@ -2549,6 +2955,20 @@
       "type": "Wiki"
     },
     {
+      "url": "https://devforum.zoom.us/u/{username}",
+      "detections": [
+        {
+          "name": "discourse",
+          "type": "shared"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Forums"
+    },
+    {
       "url": "https://devpost.com/{username}",
       "detections": [
         {
@@ -2676,6 +3096,174 @@
       "type": "Music"
     },
     {
+      "url": "https://discourse.brew.sh/u/{username}",
+      "detections": [
+        {
+          "name": "discourse",
+          "type": "shared"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Forums"
+    },
+    {
+      "url": "https://discourse.chef.io/u/{username}",
+      "detections": [
+        {
+          "name": "discourse",
+          "type": "shared"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Forums"
+    },
+    {
+      "url": "https://discourse.codecombat.com/u/{username}",
+      "detections": [
+        {
+          "name": "discourse",
+          "type": "shared"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Forums"
+    },
+    {
+      "url": "https://discourse.gohugo.io/u/{username}",
+      "detections": [
+        {
+          "name": "discourse",
+          "type": "shared"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Forums"
+    },
+    {
+      "url": "https://discourse.huel.com/u/{username}",
+      "detections": [
+        {
+          "name": "discourse",
+          "type": "shared"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Forums"
+    },
+    {
+      "url": "https://discourse.julialang.org/u/{username}",
+      "detections": [
+        {
+          "name": "discourse",
+          "type": "shared"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Forums"
+    },
+    {
+      "url": "https://discourse.jupyter.org/u/{username}",
+      "detections": [
+        {
+          "name": "discourse",
+          "type": "shared"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Forums"
+    },
+    {
+      "url": "https://discourse.mc-stan.org/u/{username}",
+      "detections": [
+        {
+          "name": "discourse",
+          "type": "shared"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Forums"
+    },
+    {
+      "url": "https://discourse.mozilla.org/u/{username}",
+      "detections": [
+        {
+          "name": "discourse",
+          "type": "shared"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Forums"
+    },
+    {
+      "url": "https://discourse.nodered.org/u/{username}",
+      "detections": [
+        {
+          "name": "discourse",
+          "type": "shared"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Forums"
+    },
+    {
+      "url": "https://discourse.saylor.org/u/{username}",
+      "detections": [
+        {
+          "name": "discourse",
+          "type": "shared"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Forums"
+    },
+    {
+      "url": "https://discourse.snowplowanalytics.com/u/{username}",
+      "detections": [
+        {
+          "name": "discourse",
+          "type": "shared"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Forums"
+    },
+    {
       "url": "https://discoursedb.org/wiki/User:{username}",
       "detections": [
         {
@@ -2688,6 +3276,20 @@
       "implicit": 0,
       "extract": [],
       "type": "Wiki"
+    },
+    {
+      "url": "https://discuss.atom.io/u/{username}",
+      "detections": [
+        {
+          "name": "discourse",
+          "type": "shared"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Forums"
     },
     {
       "url": "https://discuss.atom.io/u/{username}/summary",
@@ -2704,6 +3306,34 @@
       "type": "Computers"
     },
     {
+      "url": "https://discuss.circleci.com/u/{username}",
+      "detections": [
+        {
+          "name": "discourse",
+          "type": "shared"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Forums"
+    },
+    {
+      "url": "https://discuss.codecademy.com/u/{username}",
+      "detections": [
+        {
+          "name": "discourse",
+          "type": "shared"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Forums"
+    },
+    {
       "url": "https://discuss.elastic.co/u/{username}",
       "detections": [
         {
@@ -2715,7 +3345,161 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "Computers"
+      "type": "Forums"
+    },
+    {
+      "url": "https://discuss.emberjs.com/u/{username}",
+      "detections": [
+        {
+          "name": "discourse",
+          "type": "shared"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Forums"
+    },
+    {
+      "url": "https://discuss.huel.com/u/{username}",
+      "detections": [
+        {
+          "name": "discourse",
+          "type": "shared"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Forums"
+    },
+    {
+      "url": "https://discuss.inventables.com/u/{username}",
+      "detections": [
+        {
+          "name": "discourse",
+          "type": "shared"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Forums"
+    },
+    {
+      "url": "https://discuss.ipfs.io/u/{username}",
+      "detections": [
+        {
+          "name": "discourse",
+          "type": "shared"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Forums"
+    },
+    {
+      "url": "https://discuss.kotlinlang.org/u/{username}",
+      "detections": [
+        {
+          "name": "discourse",
+          "type": "shared"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Forums"
+    },
+    {
+      "url": "https://discuss.kubernetes.io/u/{username}",
+      "detections": [
+        {
+          "name": "discourse",
+          "type": "shared"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Forums"
+    },
+    {
+      "url": "https://discuss.newrelic.com/u/{username}",
+      "detections": [
+        {
+          "name": "discourse",
+          "type": "shared"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Forums"
+    },
+    {
+      "url": "https://discuss.pixls.us/u/{username}",
+      "detections": [
+        {
+          "name": "discourse",
+          "type": "shared"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Forums"
+    },
+    {
+      "url": "https://discuss.prosemirror.net/u/{username}",
+      "detections": [
+        {
+          "name": "discourse",
+          "type": "shared"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Forums"
+    },
+    {
+      "url": "https://discuss.pytorch.org/u/{username}",
+      "detections": [
+        {
+          "name": "discourse",
+          "type": "shared"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Forums"
+    },
+    {
+      "url": "https://discussion.dreamhost.com/u/{username}",
+      "detections": [
+        {
+          "name": "discourse",
+          "type": "shared"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Forums"
     },
     {
       "url": "https://discussions.apple.com/profile/{username}",
@@ -2909,26 +3693,6 @@
       "implicit": 0,
       "extract": [],
       "type": "Wiki"
-    },
-    {
-      "url": "https://douban.com/people/{username}/",
-      "detections": [
-        {
-          "return": "true",
-          "string": "error.",
-          "type": "normal"
-        },
-        {
-          "return": "true",
-          "string": "-profile-",
-          "type": "normal"
-        }
-      ],
-      "selected": "false",
-      "timeout": 0,
-      "implicit": 0,
-      "extract": [],
-      "type": "Internet"
     },
     {
       "url": "https://douban.com/people/{username}/",
@@ -3194,6 +3958,20 @@
       "implicit": 0,
       "extract": [],
       "type": "Wiki"
+    },
+    {
+      "url": "https://elixirforum.com/u/{username}",
+      "detections": [
+        {
+          "name": "discourse",
+          "type": "shared"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Forums"
     },
     {
       "url": "https://ello.co/{username}",
@@ -3624,6 +4402,20 @@
       "type": "Internet"
     },
     {
+      "url": "https://eve.community/u/{username}",
+      "detections": [
+        {
+          "name": "discourse",
+          "type": "shared"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Forums"
+    },
+    {
       "url": "https://everybodywiki.com/wiki/User:{username}",
       "detections": [
         {
@@ -4025,6 +4817,132 @@
       "type": "News"
     },
     {
+      "url": "https://forum.banana-pi.org/u/{username}",
+      "detections": [
+        {
+          "name": "discourse",
+          "type": "shared"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Forums"
+    },
+    {
+      "url": "https://forum.bonsaimirai.com/u/{username}",
+      "detections": [
+        {
+          "name": "discourse",
+          "type": "shared"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Forums"
+    },
+    {
+      "url": "https://forum.cfx.re/u/{username}",
+      "detections": [
+        {
+          "name": "discourse",
+          "type": "shared"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Forums"
+    },
+    {
+      "url": "https://forum.cockroachlabs.com/u/{username}",
+      "detections": [
+        {
+          "name": "discourse",
+          "type": "shared"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Forums"
+    },
+    {
+      "url": "https://forum.core-electronics.com.au/u/{username}",
+      "detections": [
+        {
+          "name": "discourse",
+          "type": "shared"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Forums"
+    },
+    {
+      "url": "https://forum.fractalfuture.net/u/{username}",
+      "detections": [
+        {
+          "name": "discourse",
+          "type": "shared"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Forums"
+    },
+    {
+      "url": "https://forum.freecodecamp.org/u/{username}",
+      "detections": [
+        {
+          "name": "discourse",
+          "type": "shared"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Forums"
+    },
+    {
+      "url": "https://forum.gitlab.com/u/{username}",
+      "detections": [
+        {
+          "name": "discourse",
+          "type": "shared"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Forums"
+    },
+    {
+      "url": "https://forum.golangbridge.org/u/{username}",
+      "detections": [
+        {
+          "name": "discourse",
+          "type": "shared"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Forums"
+    },
+    {
       "url": "https://forum.guns.ru/forummisc/blog/{username}",
       "detections": [
         {
@@ -4079,6 +4997,48 @@
       "type": "Internet"
     },
     {
+      "url": "https://forum.inaturalist.org/u/{username}",
+      "detections": [
+        {
+          "name": "discourse",
+          "type": "shared"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Forums"
+    },
+    {
+      "url": "https://forum.ionicframework.com/u/{username}",
+      "detections": [
+        {
+          "name": "discourse",
+          "type": "shared"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Forums"
+    },
+    {
+      "url": "https://forum.juce.com/u/{username}",
+      "detections": [
+        {
+          "name": "discourse",
+          "type": "shared"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Forums"
+    },
+    {
       "url": "https://forum.leasehackr.com/u/{username}/summary",
       "detections": [
         {
@@ -4093,6 +5053,202 @@
       "type": "Internet"
     },
     {
+      "url": "https://forum.level1techs.com/u/{username}",
+      "detections": [
+        {
+          "name": "discourse",
+          "type": "shared"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Forums"
+    },
+    {
+      "url": "https://forum.mangoh.io/u/{username}",
+      "detections": [
+        {
+          "name": "discourse",
+          "type": "shared"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Forums"
+    },
+    {
+      "url": "https://forum.manjaro.org/u/{username}",
+      "detections": [
+        {
+          "name": "discourse",
+          "type": "shared"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Forums"
+    },
+    {
+      "url": "https://forum.mattermost.org/u/{username}",
+      "detections": [
+        {
+          "name": "discourse",
+          "type": "shared"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Forums"
+    },
+    {
+      "url": "https://forum.obsidian.md/u/{username}",
+      "detections": [
+        {
+          "name": "discourse",
+          "type": "shared"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Forums"
+    },
+    {
+      "url": "https://forum.opennebula.io/u/{username}",
+      "detections": [
+        {
+          "name": "discourse",
+          "type": "shared"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Forums"
+    },
+    {
+      "url": "https://forum.openwrt.org/u/{username}",
+      "detections": [
+        {
+          "name": "discourse",
+          "type": "shared"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Forums"
+    },
+    {
+      "url": "https://forum.pkp.sfu.ca/u/{username}",
+      "detections": [
+        {
+          "name": "discourse",
+          "type": "shared"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Forums"
+    },
+    {
+      "url": "https://forum.pokemongohub.net/u/{username}",
+      "detections": [
+        {
+          "name": "discourse",
+          "type": "shared"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Forums"
+    },
+    {
+      "url": "https://forum.schizophrenia.com/u/{username}",
+      "detections": [
+        {
+          "name": "discourse",
+          "type": "shared"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Forums"
+    },
+    {
+      "url": "https://forum.seeedstudio.com/u/{username}",
+      "detections": [
+        {
+          "name": "discourse",
+          "type": "shared"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Forums"
+    },
+    {
+      "url": "https://forum.slots.lv/u/{username}",
+      "detections": [
+        {
+          "name": "discourse",
+          "type": "shared"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Forums"
+    },
+    {
+      "url": "https://forum.snapcraft.io/u/{username}",
+      "detections": [
+        {
+          "name": "discourse",
+          "type": "shared"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Forums"
+    },
+    {
+      "url": "https://forum.storj.io/u/{username}",
+      "detections": [
+        {
+          "name": "discourse",
+          "type": "shared"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Forums"
+    },
+    {
       "url": "https://forum.sublimetext.com/u/{username}",
       "detections": [
         {
@@ -4104,7 +5260,35 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "Internet"
+      "type": "Forums"
+    },
+    {
+      "url": "https://forum.tudiabetes.org/u/{username}",
+      "detections": [
+        {
+          "name": "discourse",
+          "type": "shared"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Forums"
+    },
+    {
+      "url": "https://forum.uipath.com/u/{username}",
+      "detections": [
+        {
+          "name": "discourse",
+          "type": "shared"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Forums"
     },
     {
       "url": "https://forum.velomania.ru/member.php?username={username}",
@@ -4125,6 +5309,34 @@
       "implicit": 0,
       "extract": [],
       "type": "Internet"
+    },
+    {
+      "url": "https://forum.vuejs.org/u/{username}",
+      "detections": [
+        {
+          "name": "discourse",
+          "type": "shared"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Forums"
+    },
+    {
+      "url": "https://forum.webflow.com/u/{username}",
+      "detections": [
+        {
+          "name": "discourse",
+          "type": "shared"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Forums"
     },
     {
       "url": "https://forumhouse.ru/members/?username={username}",
@@ -4169,6 +5381,90 @@
       "selected": "false",
       "timeout": 0,
       "implicit": 0
+    },
+    {
+      "url": "https://forums.balena.io/u/{username}",
+      "detections": [
+        {
+          "name": "discourse",
+          "type": "shared"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Forums"
+    },
+    {
+      "url": "https://forums.bignerdranch.com/u/{username}",
+      "detections": [
+        {
+          "name": "discourse",
+          "type": "shared"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Forums"
+    },
+    {
+      "url": "https://forums.cgsociety.org/u/{username}",
+      "detections": [
+        {
+          "name": "discourse",
+          "type": "shared"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Forums"
+    },
+    {
+      "url": "https://forums.developer.nvidia.com/u/{username}",
+      "detections": [
+        {
+          "name": "discourse",
+          "type": "shared"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Forums"
+    },
+    {
+      "url": "https://forums.episodeinteractive.com/u/{username}",
+      "detections": [
+        {
+          "name": "discourse",
+          "type": "shared"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Forums"
+    },
+    {
+      "url": "https://forums.gearboxsoftware.com/u/{username}",
+      "detections": [
+        {
+          "name": "discourse",
+          "type": "shared"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Forums"
     },
     {
       "url": "https://forums.gunsandammo.com/profile/{username}",
@@ -4224,6 +5520,20 @@
       "implicit": 0,
       "extract": [],
       "type": "Computers"
+    },
+    {
+      "url": "https://forums.lawrencesystems.com/u/{username}",
+      "detections": [
+        {
+          "name": "discourse",
+          "type": "shared"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Forums"
     },
     {
       "url": "https://forums.mmorpg.com/profile/{username}",
@@ -4301,6 +5611,160 @@
       "type": "Games"
     },
     {
+      "url": "https://forums.pimoroni.com/u/{username}",
+      "detections": [
+        {
+          "name": "discourse",
+          "type": "shared"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Forums"
+    },
+    {
+      "url": "https://forums.sandisk.com/u/{username}",
+      "detections": [
+        {
+          "name": "discourse",
+          "type": "shared"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Forums"
+    },
+    {
+      "url": "https://forums.serverbuilds.net/u/{username}",
+      "detections": [
+        {
+          "name": "discourse",
+          "type": "shared"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Forums"
+    },
+    {
+      "url": "https://forums.sketchup.com/u/{username}",
+      "detections": [
+        {
+          "name": "discourse",
+          "type": "shared"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Forums"
+    },
+    {
+      "url": "https://forums.spongepowered.org/u/{username}",
+      "detections": [
+        {
+          "name": "discourse",
+          "type": "shared"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Forums"
+    },
+    {
+      "url": "https://forums.steinberg.net/u/{username}",
+      "detections": [
+        {
+          "name": "discourse",
+          "type": "shared"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Forums"
+    },
+    {
+      "url": "https://forums.swanlibraries.net/u/{username}",
+      "detections": [
+        {
+          "name": "discourse",
+          "type": "shared"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Forums"
+    },
+    {
+      "url": "https://forums.t-nation.com/u/{username}",
+      "detections": [
+        {
+          "name": "discourse",
+          "type": "shared"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Forums"
+    },
+    {
+      "url": "https://forums.theanimenetwork.com/u/{username}",
+      "detections": [
+        {
+          "name": "discourse",
+          "type": "shared"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Forums"
+    },
+    {
+      "url": "https://forums.urbackup.org/u/{username}",
+      "detections": [
+        {
+          "name": "discourse",
+          "type": "shared"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Forums"
+    },
+    {
+      "url": "https://forums.visual-paradigm.com/u/{username}",
+      "detections": [
+        {
+          "name": "discourse",
+          "type": "shared"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Forums"
+    },
+    {
       "url": "https://forums.whonix.org/u/{username}",
       "detections": [
         {
@@ -4313,6 +5777,20 @@
       "implicit": 0,
       "extract": [],
       "type": "Internet"
+    },
+    {
+      "url": "https://forums.wyzecam.com/u/{username}",
+      "detections": [
+        {
+          "name": "discourse",
+          "type": "shared"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Forums"
     },
     {
       "url": "https://fosstodon.org/@{username}",
@@ -4559,6 +6037,20 @@
       "implicit": 0,
       "extract": [],
       "type": "Wiki"
+    },
+    {
+      "url": "https://gamekult.com/forum/u/{username}",
+      "detections": [
+        {
+          "name": "discourse",
+          "type": "shared"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Forums"
     },
     {
       "url": "https://gamepedia.com/members/{username}",
@@ -5368,6 +6860,20 @@
       "selected": "false",
       "timeout": 0,
       "implicit": 0
+    },
+    {
+      "url": "https://help.nextcloud.com/u/{username}",
+      "detections": [
+        {
+          "name": "discourse",
+          "type": "shared"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Forums"
     },
     {
       "url": "https://hiddenpalace.org/wiki/User:{username}",
@@ -6593,6 +8099,20 @@
       "type": "Jobs"
     },
     {
+      "url": "https://linux-tips.com/u/{username}",
+      "detections": [
+        {
+          "name": "discourse",
+          "type": "shared"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Forums"
+    },
+    {
       "url": "https://linux.org.ru/people/{username}/profile",
       "detections": [
         {
@@ -6956,6 +8476,20 @@
       "implicit": 0,
       "extract": [],
       "type": "Wiki"
+    },
+    {
+      "url": "https://meta.discourse.org/u/{username}",
+      "detections": [
+        {
+          "name": "discourse",
+          "type": "shared"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Forums"
     },
     {
       "url": "https://meta.miraheze.org/wiki/User:{username}",
@@ -7847,6 +9381,20 @@
       "type": "Wiki"
     },
     {
+      "url": "https://onehack.us/u/{username}",
+      "detections": [
+        {
+          "name": "discourse",
+          "type": "shared"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Forums"
+    },
+    {
       "url": "https://open.spotify.com/user/{username}",
       "detections": [
         {
@@ -7934,6 +9482,20 @@
       "implicit": 0,
       "extract": [],
       "type": "Internet"
+    },
+    {
+      "url": "https://opennms.discourse.group/u/{username}",
+      "detections": [
+        {
+          "name": "discourse",
+          "type": "shared"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Forums"
     },
     {
       "url": "https://openriskmanual.org/wiki/User:{username}",
@@ -9686,6 +11248,34 @@
       "type": "Wiki"
     },
     {
+      "url": "https://sitepoint.com/community/u/{username}",
+      "detections": [
+        {
+          "name": "discourse",
+          "type": "shared"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Forums"
+    },
+    {
+      "url": "https://sitepoint.com/u/{username}",
+      "detections": [
+        {
+          "name": "discourse",
+          "type": "shared"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Forums"
+    },
+    {
       "url": "https://sketchfab.com/{username}",
       "detections": [
         {
@@ -10325,6 +11915,34 @@
       "type": "Wiki"
     },
     {
+      "url": "https://support.ilovegrowingmarijuana.com/u/{username}",
+      "detections": [
+        {
+          "name": "discourse",
+          "type": "shared"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Forums"
+    },
+    {
+      "url": "https://survivefrance.com/u/{username}",
+      "detections": [
+        {
+          "name": "discourse",
+          "type": "shared"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Forums"
+    },
+    {
       "url": "https://svidbook.ru/user/{username}",
       "detections": [
         {
@@ -10368,6 +11986,76 @@
       "implicit": 0,
       "extract": [],
       "type": "Internet"
+    },
+    {
+      "url": "https://talk.commonmark.org/u/{username}",
+      "detections": [
+        {
+          "name": "discourse",
+          "type": "shared"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Forums"
+    },
+    {
+      "url": "https://talk.jekyllrb.com/u/{username}",
+      "detections": [
+        {
+          "name": "discourse",
+          "type": "shared"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Forums"
+    },
+    {
+      "url": "https://talk.macpowerusers.com/u/{username}",
+      "detections": [
+        {
+          "name": "discourse",
+          "type": "shared"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Forums"
+    },
+    {
+      "url": "https://talk.manvfat.com/u/{username}",
+      "detections": [
+        {
+          "name": "discourse",
+          "type": "shared"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Forums"
+    },
+    {
+      "url": "https://talk.sleepapnea.org/u/{username}",
+      "detections": [
+        {
+          "name": "discourse",
+          "type": "shared"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Forums"
     },
     {
       "url": "https://taringa.net/{username}",
@@ -10952,6 +12640,20 @@
       "type": "Computers"
     },
     {
+      "url": "https://twit.community/u/{username}",
+      "detections": [
+        {
+          "name": "discourse",
+          "type": "shared"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Forums"
+    },
+    {
       "url": "https://twitch.tv/{username}",
       "detections": [
         {
@@ -10965,6 +12667,34 @@
       "implicit": 0,
       "extract": [],
       "type": "Internet"
+    },
+    {
+      "url": "https://twittercommunity.com/u/{username}",
+      "detections": [
+        {
+          "name": "discourse",
+          "type": "shared"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Forums"
+    },
+    {
+      "url": "https://ubuntu-mate.community/u/{username}",
+      "detections": [
+        {
+          "name": "discourse",
+          "type": "shared"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Forums"
     },
     {
       "url": "https://udemy.com/user/{username}/",
@@ -11151,6 +12881,20 @@
       "implicit": 0,
       "extract": [],
       "type": "Internet"
+    },
+    {
+      "url": "https://users.rust-lang.org/u/{username}",
+      "detections": [
+        {
+          "name": "discourse",
+          "type": "shared"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Forums"
     },
     {
       "url": "https://uses.plantnet-project.org/en/User:{username}",
@@ -12591,7 +14335,7 @@
       "extract": [
         {
           "type": "link",
-          "regex": "{\"webCommandMetadata\":{\"url\":\"https://www.youtube.com/[^\"]+(http[^\"]+)"
+          "regex": "{\"webCommandMetadata\":{\"url\":\"https://youtube.com/[^\"]+(http[^\"]+)"
         }
       ],
       "type": "Videos"
