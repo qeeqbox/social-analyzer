@@ -4,6 +4,211 @@
   },
   "websites_entries": [
     {
+      "url": "https://ph.casino/user/{username}",
+      "detections": [
+        {
+          "return": "true",
+          "string": "coverPicture",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "avatarPicture",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Games"
+    },
+    {
+      "url": "https://seneporno.com/user/{username}",
+      "detections": [
+        {
+          "return": "true",
+          "string": "user-info",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "user-username",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Adult"
+    },
+    {
+      "url": "https://thatpervert.com/user/{username}",
+      "detections": [
+        {
+          "return": "true",
+          "string": "user/{username}",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "Rating: ",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Adult"
+    },
+    {
+      "url": "https://xpaja.net/user/{username}",
+      "detections": [
+        {
+          "return": "true",
+          "string": "profile-details",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "header-channel",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Adult"
+    },
+    {
+      "url": "https://babepedia.com/user/{username}",
+      "detections": [
+        {
+          "return": "true",
+          "string": "about-content",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "Username:",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Adult"
+    },
+    {
+      "url": "https://fantasti.cc/user/{username}/",
+      "detections": [
+        {
+          "return": "true",
+          "string": "user/{username}",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "user-profile-info",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "title_user",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Adult"
+    },
+    {
+      "url": "https://shemalestube.com/user/{username}/",
+      "detections": [
+        {
+          "return": "true",
+          "string": "user-profile",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "profile-username",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Adult"
+    },
+    {
+      "url": "https://lovehomeporn.com/user/{username}",
+      "detections": [
+        {
+          "return": "true",
+          "string": "profile-box",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "profile-nav",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Adult"
+    },
+    {
+      "url": "https://rockettube.com/user/{username}",
+      "detections": [
+        {
+          "return": "true",
+          "string": "user/{username}",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "memProf",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Adult"
+    },
+    {
+      "url": "https://nonktube.com/user/{username}",
+      "detections": [
+        {
+          "return": "true",
+          "string": "user/{username}",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "vote-box",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Adult"
+    },
+    {
       "url": "https://24.wikia.com/wiki/User:{username}",
       "detections": [
         {
