@@ -734,6 +734,26 @@
       "type": "Computers"
     },
     {
+      "url": "https://babepedia.com/user/{username}",
+      "detections": [
+        {
+          "return": "true",
+          "string": "about-content",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "Username:",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Adult"
+    },
+    {
       "url": "https://baby.ru/u/{username}",
       "detections": [
         {
@@ -4618,6 +4638,31 @@
       "type": "News"
     },
     {
+      "url": "https://fantasti.cc/user/{username}/",
+      "detections": [
+        {
+          "return": "true",
+          "string": "user/{username}",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "user-profile-info",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "title_user",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Adult"
+    },
+    {
       "url": "https://fark.com/users/{username}",
       "detections": [
         {
@@ -8274,6 +8319,26 @@
       "type": "Wiki"
     },
     {
+      "url": "https://lovehomeporn.com/user/{username}",
+      "detections": [
+        {
+          "return": "true",
+          "string": "profile-box",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "profile-nav",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Adult"
+    },
+    {
       "url": "https://mansonwiki.com/wiki/User:{username}",
       "detections": [
         {
@@ -9186,6 +9251,26 @@
       "type": "Wiki"
     },
     {
+      "url": "https://nonktube.com/user/{username}",
+      "detections": [
+        {
+          "return": "true",
+          "string": "user/{username}",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "vote-box",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Adult"
+    },
+    {
       "url": "https://nookipedia.com/wiki/User:{username}",
       "detections": [
         {
@@ -9862,6 +9947,26 @@
       "implicit": 0,
       "extract": [],
       "type": "Wiki"
+    },
+    {
+      "url": "https://ph.casino/user/{username}",
+      "detections": [
+        {
+          "return": "true",
+          "string": "coverPicture",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "avatarPicture",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Games"
     },
     {
       "url": "https://php.ru/forum/members/?username={username}",
@@ -11005,6 +11110,26 @@
       "type": "Games"
     },
     {
+      "url": "https://rockettube.com/user/{username}",
+      "detections": [
+        {
+          "return": "true",
+          "string": "user/{username}",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "memProf",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Adult"
+    },
+    {
       "url": "https://rubygems.org/profiles/{username}",
       "detections": [
         {
@@ -11171,6 +11296,26 @@
       "type": "Wiki"
     },
     {
+      "url": "https://seneporno.com/user/{username}",
+      "detections": [
+        {
+          "return": "true",
+          "string": "user-info",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "user-username",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Adult"
+    },
+    {
       "url": "https://sgwiki.com/wiki/User:{username}",
       "detections": [
         {
@@ -11212,6 +11357,26 @@
       "implicit": 0,
       "extract": [],
       "type": "Internet"
+    },
+    {
+      "url": "https://shemalestube.com/user/{username}/",
+      "detections": [
+        {
+          "return": "true",
+          "string": "user-profile",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "profile-username",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Adult"
     },
     {
       "url": "https://shitpostbot.com/user/{username}",
@@ -12222,6 +12387,26 @@
       "implicit": 0,
       "extract": [],
       "type": "Wiki"
+    },
+    {
+      "url": "https://thatpervert.com/user/{username}",
+      "detections": [
+        {
+          "return": "true",
+          "string": "user/{username}",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "Rating: ",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Adult"
     },
     {
       "url": "https://theaquariumwiki.com/User:{username}",
@@ -14221,6 +14406,26 @@
       "implicit": 0,
       "extract": [],
       "type": "Wiki"
+    },
+    {
+      "url": "https://xpaja.net/user/{username}",
+      "detections": [
+        {
+          "return": "true",
+          "string": "profile-details",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "header-channel",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Adult"
     },
     {
       "url": "https://xrares.com/user/{username}",
