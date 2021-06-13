@@ -148,12 +148,46 @@ Disclaimer\Notes
 
 Interviews
 ==========
-`Console 37 <https://console.substack.com/p/console-37>`_
+- `Console 37 <https://console.substack.com/p/console-37>`_
 
 Some News\Articles
 ==================
-`5 Open-Source Intelligence (OSINT) GitHub Repositories For Every Security Analyst (Cyber Security) <https://twitter.com/GithubProjects/status/1395205169617547266>`_
+- `5 Open-Source Intelligence (OSINT) GitHub Repositories For Every Security Analyst (Cyber Security) <https://twitter.com/GithubProjects/status/1395205169617547266>`_
+
+- You can use social-analyzer in the `BlackArch <https://blackarch.org/>`_ penetration testing distribution by installing `blackarch-social <https://blackarch.org/social.html>`_
 
 Articles
 ========
-`kitploit professionalhackers secnhack meethackers raidforums redpacketsecurity hacking reviews hacking land securityonline skynettools luca-mercatanti pentesttools  anonymousmedia ddosi tenochtitlan-sec modernnetsec haktechs haxf4rall hacker-gadgets mrhacker sector035`
+`kitploit professionalhackers secnhack meethackers raidforums redpacketsecurity hacking reviews hacking land securityonline skynettools luca-mercatanti pentesttools anonymousmedia ddosi tenochtitlan-sec modernnetsec haktechs haxf4rall hacker-gadgets mrhacker sector035`
+
+Other projects
+==============
+.. image:: https://raw.githubusercontent.com/qeeqbox/.github/main/data//chameleon.png
+    :target: https://github.com/qeeqbox/chameleon
+
+.. image:: https://raw.githubusercontent.com/qeeqbox/.github/main/data//honeypots.png
+    :target: https://github.com/qeeqbox/honeypots
+
+.. image:: https://raw.githubusercontent.com/qeeqbox/.github/main/data//analyzer.png
+    :target: https://github.com/qeeqbox/analyzer
+
+.. image:: https://raw.githubusercontent.com/qeeqbox/.github/main/data//osint.png
+    :target: https://github.com/qeeqbox/osint
+
+.. image:: https://raw.githubusercontent.com/qeeqbox/.github/main/data//url-sandbox.png
+    :target: https://github.com/qeeqbox/url-sandbox
+
+.. image:: https://raw.githubusercontent.com/qeeqbox/.github/main/data//mitre-visualizer.png
+    :target: https://github.com/qeeqbox/mitre-visualizer
+
+.. image:: https://raw.githubusercontent.com/qeeqbox/.github/main/data//woodpecker.png
+    :target: https://github.com/qeeqbox/woodpecker
+
+.. image:: https://raw.githubusercontent.com/qeeqbox/.github/main/data//docker-images.png
+    :target: https://github.com/qeeqbox/docker-images
+
+.. image:: https://raw.githubusercontent.com/qeeqbox/.github/main/data//seahorse.png
+    :target: https://github.com/qeeqbox/seahorse
+
+.. image:: https://raw.githubusercontent.com/qeeqbox/.github/main/data//rhino.png
+    :target: https://github.com/qeeqbox/rhino
