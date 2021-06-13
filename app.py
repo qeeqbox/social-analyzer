@@ -41,6 +41,7 @@ from warnings import filterwarnings
 filterwarnings('ignore', category=RuntimeWarning, module='runpy')
 packages.urllib3.disable_warnings(category=InsecureRequestWarning)
 
+
 class SocialAnalyzer():
     def __init__(self, silent=False):
         self.websites_entries = []
@@ -492,14 +493,12 @@ class SocialAnalyzer():
             return 1, site["url"], copy_temp_profile
         return None, site["url"], []
 
-
     def find_username_normal(self, req):
         '''
         main find usernames logic using ThreadPoolExecutor
         '''
 
         resutls = []
-
 
         for i in range(3):
             self.websites_entries[:] = [d for d in self.websites_entries if d.get('selected') == "true"]
