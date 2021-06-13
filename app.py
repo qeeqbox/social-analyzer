@@ -41,7 +41,6 @@ from warnings import filterwarnings
 filterwarnings('ignore', category=RuntimeWarning, module='runpy')
 packages.urllib3.disable_warnings(category=InsecureRequestWarning)
 
-
 class SocialAnalyzer():
     def __init__(self, silent=False):
         self.websites_entries = []
@@ -227,6 +226,273 @@ class SocialAnalyzer():
                 temp_value = temp_value.replace(".{username}", "").replace("{username}.", "")
                 self.log.info(temp_value)
 
+    def fetch_url(self, site, username, options):
+        '''
+        this runs for every website entry
+        '''
+
+        if self.timeout:
+            sleep(self.timeout)
+        else:
+            sleep(randint(1, 99) / 100)
+
+        self.log.info("[Checking] " + get_fld(site["url"]))
+        source = ""
+
+        detection_level = {
+            "extreme": {
+                "fast": "normal",
+                "slow": "normal,advanced,ocr",
+                "detections": "true",
+                "count": 1,
+                "found": 2
+            },
+            "high": {
+                "fast": "normal",
+                "slow": "normal,advanced,ocr",
+                "detections": "true,false",
+                "count": 2,
+                "found": 1
+            },
+            "current": "high"
+        }
+
+        with suppress(Exception):
+            session = Session()
+            session.headers.update(self.headers)
+            response = session.get(site["url"].replace("{username}", username), timeout=5, verify=False)
+            source = response.text
+            content = response.content
+            answer = dict((k.lower(), v.lower()) for k, v in response.headers.items())
+            session.close()
+            temp_profile = {}
+            temp_detected = {}
+            detections_count = 0
+
+            def check_url(url):
+                '''
+                check if url is okay
+                '''
+
+                with suppress(Exception):
+                    result = urlparse(url)
+                    if result.scheme == "http" or result.scheme == "https":
+                        return all([result.scheme, result.netloc])
+                return False
+
+            def merge_dicts(temp_dict):
+                '''
+                '''
+
+                result = {}
+                for item in temp_dict:
+                    for key, value in item.items():
+                        if key in result:
+                            result[key] += value
+                        else:
+                            result[key] = value
+                return result
+
+            def detect_logic(detections):
+                '''
+                check for detections in website entry
+                '''
+
+                detections_count = 0
+                temp_detected = []
+                temp_found = "false"
+                temp_profile = {
+                    "found": 0,
+                    "image": "",
+                    "link": "",
+                    "rate": "",
+                    "status": "",
+                    "title": "unavailable",
+                    "language": "unavailable",
+                    "text": "unavailable",
+                    "type": "unavailable",
+                    "extracted": "unavailable",
+                    "metadata": "unavailable",
+                    "good": "",
+                    "method": ""
+                }
+
+                for detection in detections:
+                    temp_found = "false"
+                    if detection["type"] in detection_level[detection_level["current"]]["fast"] and source != "":
+                        detections_count += 1
+                        if detection["string"].replace("{username}", username).lower() in source.lower():
+                            temp_found = "true"
+                        if detection["return"] == temp_found:
+                            temp_profile["found"] += 1
+                return temp_profile, temp_detected, detections_count
+
+            def detect():
+                '''
+                main detect logic
+                '''
+
+                temp_profile_all = []
+                temp_detected_all = []
+                detections_count_all = 0
+                for detection in site["detections"]:
+                    detections_ = []
+                    if detection["type"] == "shared":
+                        detections_ = next(item for item in self.shared_detections if item["name"] == detection['name'])
+                        if len(detections_) > 0:
+                            val1, val2, val3 = detect_logic(detections_["detections"])
+                            temp_profile_all.append(val1)
+                            detections_count_all += val3
+
+                val1, val2, val3 = detect_logic(site["detections"])
+                temp_profile_all.append(val1)
+                detections_count_all += val3
+                return merge_dicts(temp_profile_all), temp_detected_all, detections_count_all
+
+            temp_profile, temp_detected, detections_count = detect()
+
+            if temp_profile["found"] >= detection_level[detection_level["current"]]["found"] and detections_count >= detection_level[detection_level["current"]]["count"]:
+                temp_profile["good"] = "true"
+
+            soup = None
+
+            with suppress(Exception):
+                soup = BeautifulSoup(content, "html.parser")
+
+            with suppress(Exception):
+                temp_text_arr = []
+                temp_text_list = []
+                soup = BeautifulSoup(content, "html.parser")
+                for item in soup.stripped_strings:
+                    if item not in temp_text_list:
+                        temp_text_list.append(item)
+                        temp_text_arr.append(repr(item).replace("'", ""))
+                temp_profile["text"] = " ".join(temp_text_arr)
+                temp_profile["text"] = resub(r"\s\s+", " ", temp_profile["text"])
+            with suppress(Exception):
+                temp_profile["language"] = self.get_language_by_parsing(source)
+                if temp_profile["language"] == "unavailable":
+                    temp_profile["language"] = self.get_language_by_guessing(temp_profile["text"])
+            with suppress(Exception):
+                temp_profile["title"] = BeautifulSoup(source, "html.parser").title.string
+                temp_profile["title"] = resub(r"\s\s+", " ", temp_profile["title"])
+
+            with suppress(Exception):
+                temp_matches = []
+                temp_matches_list = []
+                if "extract" in site:
+                    for item in site["extract"]:
+                        matches = findall(item["regex"], source)
+                        for match in matches:
+                            if item["type"] == "link":
+                                if check_url(unquote(match)):
+                                    parsed = "{}:({})".format(item["type"], unquote(match))
+                                    if parsed not in temp_matches:
+                                        temp_matches.append(parsed)
+                                        temp_matches_list.append({"name": item["type"], "value": unquote(match)})
+
+                if len(temp_matches_list) > 0:
+                    temp_profile["extracted"] = temp_matches_list
+                else:
+                    del temp_profile["extracted"]
+
+            temp_profile["text"] = temp_profile["text"].replace("\n", "").replace("\t", "").replace("\r", "").strip()
+            temp_profile["title"] = temp_profile["title"].replace("\n", "").replace("\t", "").replace("\r", "").strip()
+
+            if temp_profile["text"] == "":
+                temp_profile["text"] = "unavailable"
+            if temp_profile["title"] == "":
+                temp_profile["title"] = "unavailable"
+
+            if self.waf:
+                with suppress(Exception):
+                    if 'cf-ray' in answer:
+                        temp_profile["text"] = "filtered"
+                        temp_profile["title"] = "filtered"
+                    elif "server" in answer:
+                        if "cloudflare" in answer["server"]:
+                            temp_profile["text"] = "filtered"
+                            temp_profile["title"] = "filtered"
+                    if research(self.strings_pages, temp_profile["text"]):
+                        temp_profile["text"] = "filtered"
+                        temp_profile["title"] = "filtered"
+                    if research(self.strings_titles, temp_profile["title"]):
+                        temp_profile["text"] = "filtered"
+                        temp_profile["title"] = "filtered"
+
+            with suppress(Exception):
+                if detections_count != 0:
+                    temp_value = round(((temp_profile["found"] / detections_count) * 100), 2)
+                    temp_profile["rate"] = "%" + str(temp_value)
+                    if temp_value >= 100.00:
+                        temp_profile["status"] = "good"
+                    elif temp_value >= 50.00 and temp_value < 100.00:
+                        temp_profile["status"] = "maybe"
+                    else:
+                        temp_profile["status"] = "bad"
+
+            # copied from qeeqbox osint (pypi) project (currently in-progress)
+
+            with suppress(Exception):
+                if temp_profile["status"] == "good":
+                    temp_meta_list = []
+                    temp_for_checking = []
+                    soup = BeautifulSoup(content, "lxml")
+                    for meta in soup.find_all('meta'):
+                        if meta not in temp_for_checking and not research(self.strings_meta, str(meta)):
+                            temp_for_checking.append(meta)
+                            temp_mata_item = {}
+                            add = True
+                            if meta.has_attr("property"):
+                                temp_mata_item.update({"property": meta["property"]})
+                            if meta.has_attr("content"):
+                                temp_mata_item.update({"content": meta["content"].replace("\n", "").replace("\t", "").replace("\r", "").strip()})
+                            if meta.has_attr("itemprop"):
+                                temp_mata_item.update({"itemprop": meta["itemprop"]})
+                            if meta.has_attr("name"):
+                                temp_mata_item.update({"name": meta["name"]})
+
+                            with suppress(Exception):
+                                if "property" in temp_mata_item:
+                                    for i, item in enumerate(temp_meta_list.copy()):
+                                        if "property" in item:
+                                            if temp_mata_item["property"] == item["property"]:
+                                                temp_meta_list[i]["content"] += ", " + temp_mata_item["content"]
+                                                add = False
+                                elif "name" in temp_mata_item:
+                                    for i, item in enumerate(temp_meta_list.copy()):
+                                        if "name" in item:
+                                            if temp_mata_item["name"] == item["name"]:
+                                                temp_meta_list[i]["content"] += ", " + temp_mata_item["content"]
+                                                add = False
+                                elif "itemprop" in temp_mata_item:
+                                    for i, item in enumerate(temp_meta_list.copy()):
+                                        if "itemprop" in item:
+                                            if temp_mata_item["itemprop"] == item["itemprop"]:
+                                                temp_meta_list[i]["content"] += ", " + temp_mata_item["content"]
+                                                add = False
+
+                            if len(temp_mata_item) > 0 and add:
+                                temp_meta_list.append(temp_mata_item)
+
+                if len(temp_meta_list) > 0:
+                    temp_profile["metadata"] = temp_meta_list
+
+            temp_profile["link"] = site["url"].replace("{username}", username)
+            temp_profile["type"] = site["type"]
+
+            if "FindUserProfilesFast" in options and "GetUserProfilesFast" not in options:
+                temp_profile["method"] = "find"
+            elif "GetUserProfilesFast" in options and "FindUserProfilesFast" not in options:
+                temp_profile["method"] = "get"
+            elif "FindUserProfilesFast" in options and "GetUserProfilesFast" in options:
+                temp_profile["method"] = "all"
+
+            copy_temp_profile = temp_profile.copy()
+            return 1, site["url"], copy_temp_profile
+        return None, site["url"], []
+
+
     def find_username_normal(self, req):
         '''
         main find usernames logic using ThreadPoolExecutor
@@ -234,275 +500,12 @@ class SocialAnalyzer():
 
         resutls = []
 
-        def fetch_url(self, site, username, options):
-            '''
-            this runs for every website entry
-            '''
-            if self.timeout:
-                sleep(self.timeout)
-            else:
-                sleep(randint(1, 99) / 100)
-
-            self.log.info("[Checking] " + get_fld(site["url"]))
-            source = ""
-
-            detection_level = {
-                "extreme": {
-                    "fast": "normal",
-                    "slow": "normal,advanced,ocr",
-                    "detections": "true",
-                    "count": 1,
-                    "found": 2
-                },
-                "high": {
-                    "fast": "normal",
-                    "slow": "normal,advanced,ocr",
-                    "detections": "true,false",
-                    "count": 2,
-                    "found": 1
-                },
-                "current": "high"
-            }
-
-            with suppress(Exception):
-                session = Session()
-                session.headers.update(self.headers)
-                response = session.get(site["url"].replace("{username}", username), timeout=5, verify=False)
-                source = response.text
-                content = response.content
-                answer = dict((k.lower(), v.lower()) for k, v in response.headers.items())
-                session.close()
-                temp_profile = {}
-                temp_detected = {}
-                detections_count = 0
-
-                def check_url(url):
-                    '''
-                    check if url is okay
-                    '''
-
-                    with suppress(Exception):
-                        result = urlparse(url)
-                        if result.scheme == "http" or result.scheme == "https":
-                            return all([result.scheme, result.netloc])
-                    return False
-
-                def merge_dicts(temp_dict):
-                    '''
-                    '''
-
-                    result = {}
-                    for item in temp_dict:
-                        for key, value in item.items():
-                            if key in result:
-                                result[key] += value
-                            else:
-                                result[key] = value
-                    return result
-
-                def detect_logic(detections):
-                    '''
-                    check for detections in website entry
-                    '''
-
-                    detections_count = 0
-                    temp_detected = []
-                    temp_found = "false"
-                    temp_profile = {
-                        "found": 0,
-                        "image": "",
-                        "link": "",
-                        "rate": "",
-                        "status": "",
-                        "title": "unavailable",
-                        "language": "unavailable",
-                        "text": "unavailable",
-                        "type": "unavailable",
-                        "extracted": "unavailable",
-                        "metadata": "unavailable",
-                        "good": "",
-                        "method": ""
-                    }
-                    for detection in detections:
-                        temp_found = "false"
-                        if detection["type"] in detection_level[detection_level["current"]]["fast"] and source != "":
-                            detections_count += 1
-                            if detection["string"].replace("{username}", username).lower() in source.lower():
-                                temp_found = "true"
-                            if detection["return"] == temp_found:
-                                temp_profile["found"] += 1
-                    return temp_profile, temp_detected, detections_count
-
-                def detect():
-                    '''
-                    main detect logic
-                    '''
-
-                    temp_profile_all = []
-                    temp_detected_all = []
-                    detections_count_all = 0
-                    for detection in site["detections"]:
-                        detections_ = []
-                        if detection["type"] == "shared":
-                            detections_ = next(item for item in self.shared_detections if item["name"] == detection['name'])
-                            if len(detections_) > 0:
-                                val1, val2, val3 = detect_logic(detections_["detections"])
-                                temp_profile_all.append(val1)
-                                detections_count_all += val3
-
-                    val1, val2, val3 = detect_logic(site["detections"])
-                    temp_profile_all.append(val1)
-                    detections_count_all += val3
-                    return merge_dicts(temp_profile_all), temp_detected_all, detections_count_all
-
-                temp_profile, temp_detected, detections_count = detect()
-
-                if temp_profile["found"] >= detection_level[detection_level["current"]]["found"] and detections_count >= detection_level[detection_level["current"]]["count"]:
-                    temp_profile["good"] = "true"
-
-                soup = None
-
-                with suppress(Exception):
-                    soup = BeautifulSoup(content, "html.parser")
-
-                with suppress(Exception):
-                    temp_text_arr = []
-                    temp_text_list = []
-                    soup = BeautifulSoup(content, "html.parser")
-                    for item in soup.stripped_strings:
-                        if item not in temp_text_list:
-                            temp_text_list.append(item)
-                            temp_text_arr.append(repr(item).replace("'", ""))
-                    temp_profile["text"] = " ".join(temp_text_arr)
-                    temp_profile["text"] = resub(r"\s\s+", " ", temp_profile["text"])
-                with suppress(Exception):
-                    temp_profile["language"] = self.get_language_by_parsing(source)
-                    if temp_profile["language"] == "unavailable":
-                        temp_profile["language"] = self.get_language_by_guessing(temp_profile["text"])
-                with suppress(Exception):
-                    temp_profile["title"] = BeautifulSoup(source, "html.parser").title.string
-                    temp_profile["title"] = resub(r"\s\s+", " ", temp_profile["title"])
-
-                with suppress(Exception):
-                    temp_matches = []
-                    temp_matches_list = []
-                    if "extract" in site:
-                        for item in site["extract"]:
-                            matches = findall(item["regex"], source)
-                            for match in matches:
-                                if item["type"] == "link":
-                                    if check_url(unquote(match)):
-                                        parsed = "{}:({})".format(item["type"], unquote(match))
-                                        if parsed not in temp_matches:
-                                            temp_matches.append(parsed)
-                                            temp_matches_list.append({"name": item["type"], "value": unquote(match)})
-
-                    if len(temp_matches_list) > 0:
-                        temp_profile["extracted"] = temp_matches_list
-                    else:
-                        del temp_profile["extracted"]
-
-                temp_profile["text"] = temp_profile["text"].replace("\n", "").replace("\t", "").replace("\r", "").strip()
-                temp_profile["title"] = temp_profile["title"].replace("\n", "").replace("\t", "").replace("\r", "").strip()
-
-                if temp_profile["text"] == "":
-                    temp_profile["text"] = "unavailable"
-                if temp_profile["title"] == "":
-                    temp_profile["title"] = "unavailable"
-
-                if self.waf:
-                    with suppress(Exception):
-                        if 'cf-ray' in answer:
-                            temp_profile["text"] = "filtered"
-                            temp_profile["title"] = "filtered"
-                        elif "server" in answer:
-                            if "cloudflare" in answer["server"]:
-                                temp_profile["text"] = "filtered"
-                                temp_profile["title"] = "filtered"
-                        if research(self.strings_pages, temp_profile["text"]):
-                            temp_profile["text"] = "filtered"
-                            temp_profile["title"] = "filtered"
-                        if research(self.strings_titles, temp_profile["title"]):
-                            temp_profile["text"] = "filtered"
-                            temp_profile["title"] = "filtered"
-
-                with suppress(Exception):
-                    if detections_count != 0:
-                        temp_value = round(((temp_profile["found"] / detections_count) * 100), 2)
-                        temp_profile["rate"] = "%" + str(temp_value)
-                        if temp_value >= 100.00:
-                            temp_profile["status"] = "good"
-                        elif temp_value >= 50.00 and temp_value < 100.00:
-                            temp_profile["status"] = "maybe"
-                        else:
-                            temp_profile["status"] = "bad"
-
-                # copied from qeeqbox osint (pypi) project (currently in-progress)
-
-                with suppress(Exception):
-                    if temp_profile["status"] == "good":
-                        temp_meta_list = []
-                        temp_for_checking = []
-                        soup = BeautifulSoup(content, "lxml")
-                        for meta in soup.find_all('meta'):
-                            if meta not in temp_for_checking and not research(self.strings_meta, str(meta)):
-                                temp_for_checking.append(meta)
-                                temp_mata_item = {}
-                                add = True
-                                if meta.has_attr("property"):
-                                    temp_mata_item.update({"property": meta["property"]})
-                                if meta.has_attr("content"):
-                                    temp_mata_item.update({"content": meta["content"].replace("\n", "").replace("\t", "").replace("\r", "").strip()})
-                                if meta.has_attr("itemprop"):
-                                    temp_mata_item.update({"itemprop": meta["itemprop"]})
-                                if meta.has_attr("name"):
-                                    temp_mata_item.update({"name": meta["name"]})
-
-                                with suppress(Exception):
-                                    if "property" in temp_mata_item:
-                                        for i, item in enumerate(temp_meta_list.copy()):
-                                            if "property" in item:
-                                                if temp_mata_item["property"] == item["property"]:
-                                                    temp_meta_list[i]["content"] += ", " + temp_mata_item["content"]
-                                                    add = False
-                                    elif "name" in temp_mata_item:
-                                        for i, item in enumerate(temp_meta_list.copy()):
-                                            if "name" in item:
-                                                if temp_mata_item["name"] == item["name"]:
-                                                    temp_meta_list[i]["content"] += ", " + temp_mata_item["content"]
-                                                    add = False
-                                    elif "itemprop" in temp_mata_item:
-                                        for i, item in enumerate(temp_meta_list.copy()):
-                                            if "itemprop" in item:
-                                                if temp_mata_item["itemprop"] == item["itemprop"]:
-                                                    temp_meta_list[i]["content"] += ", " + temp_mata_item["content"]
-                                                    add = False
-
-                                if len(temp_mata_item) > 0 and add:
-                                    temp_meta_list.append(temp_mata_item)
-
-                    if len(temp_meta_list) > 0:
-                        temp_profile["metadata"] = temp_meta_list
-
-                temp_profile["link"] = site["url"].replace("{username}", req["body"]["string"])
-                temp_profile["type"] = site["type"]
-
-                if "FindUserProfilesFast" in options and "GetUserProfilesFast" not in options:
-                    temp_profile["method"] = "find"
-                elif "GetUserProfilesFast" in options and "FindUserProfilesFast" not in options:
-                    temp_profile["method"] = "get"
-                elif "FindUserProfilesFast" in options and "GetUserProfilesFast" in options:
-                    temp_profile["method"] = "all"
-
-                copy_temp_profile = temp_profile.copy()
-                return 1, site["url"], copy_temp_profile
-            return None, site["url"], []
 
         for i in range(3):
             self.websites_entries[:] = [d for d in self.websites_entries if d.get('selected') == "true"]
             if len(self.websites_entries) > 0:
                 with ThreadPoolExecutor(max_workers=self.workers) as executor:
-                    future_fetch_url = (executor.submit(fetch_url, self, site, req["body"]["string"], req["body"]["options"]) for site in self.websites_entries)
+                    future_fetch_url = (executor.submit(self.fetch_url, site, req["body"]["string"], req["body"]["options"]) for site in self.websites_entries)
                     for future in as_completed(future_fetch_url):
                         with suppress(Exception):
                             good, site, data = future.result()
@@ -536,6 +539,9 @@ class SocialAnalyzer():
 
         req = {"body": {"uuid": str(uuid4()), "string": argv.username, "options": temp_options}}
         self.setup_logger(uuid=req["body"]["uuid"], file=True, argv=argv)
+
+        if argv.cli:
+            self.log.info("[Warning] --cli is not needed and will be removed later on")
 
         if argv.websites == "all":
             for site in self.websites_entries:
@@ -657,7 +663,7 @@ class SocialAnalyzer():
             self.print_wrapper("[init] languages.json & sites.json did not load, exiting..")
             exit()
 
-    def run_as_object(self, cli=True, logs_dir='', extract=False, filter='good', headers={}, list=False, metadata=False, method='all', mode='fast', options='', output='pretty', profiles='detected', ret=False, silent=False, timeout=0, trim=False, username='', websites='all'):
+    def run_as_object(self, cli=False, gui=False, logs_dir='', extract=False, filter='good', headers={}, list=False, metadata=False, method='all', mode='fast', options='', output='pretty', profiles='detected', ret=False, silent=False, timeout=0, trim=False, username='', websites='all'):
         ret = {}
         if logs_dir != '':
             self.logs_dir = logs_dir
@@ -688,20 +694,20 @@ class SocialAnalyzer():
         ARGV = None
         ARG_PARSER = _ArgumentParser(description="Qeeqbox/social-analyzer - API and Web App for analyzing & finding a person's profile across 300+ social media websites (Detections are updated regularly)", usage=SUPPRESS)
         ARG_PARSER._action_groups.pop()
-        ARG_PARSER_REQUIRED = ARG_PARSER.add_argument_group("Required Arguments")
-        ARG_PARSER_REQUIRED.add_argument("--cli", help="Turn this CLI on", action="store_true", required=True)
-        ARG_PARSER_REQUIRED.add_argument("--username", help="E.g. johndoe, john_doe or johndoe9999", metavar="", required=True)
-        ARG_PARSER_OPTIONAL = ARG_PARSER.add_argument_group("Optional Arguments")
+        ARG_PARSER_OPTIONAL = ARG_PARSER.add_argument_group("Arguments")
+        ARG_PARSER_OPTIONAL.add_argument("--username", help="E.g. johndoe, john_doe or johndoe9999", metavar="", default="")
         ARG_PARSER_OPTIONAL.add_argument("--websites", help="Website or websites separated by space E.g. youtube, tiktok or tumblr", metavar="", default="all")
         ARG_PARSER_OPTIONAL.add_argument("--mode", help="Analysis mode E.g.fast -> FindUserProfilesFast, slow -> FindUserProfilesSlow or special -> FindUserProfilesSpecial", metavar="", default="fast")
         ARG_PARSER_OPTIONAL.add_argument("--output", help="Show the output in the following format: json -> json output for integration or pretty -> prettify the output", metavar="", default="pretty")
         ARG_PARSER_OPTIONAL.add_argument("--options", help="Show the following when a profile is found: link, rate, title or text", metavar="", default="")
-        ARG_PARSER_OPTIONAL.add_argument("--method", help="find -> show detected profiles, get -> show all profiles regardless detected or not, both -> combine find & get", metavar="", default="all")
+        ARG_PARSER_OPTIONAL.add_argument("--method", help="find -> show detected profiles, get -> show all profiles regardless detected or not, all -> combine find & get", metavar="", default="all")
         ARG_PARSER_OPTIONAL.add_argument("--filter", help="Filter detected profiles by good, maybe or bad, you can do combine them with comma (good,bad) or use all", metavar="", default="good")
         ARG_PARSER_OPTIONAL.add_argument("--profiles", help="Filter profiles by detected, unknown or failed, you can do combine them with comma (detected,failed) or use all", metavar="", default="detected")
         ARG_PARSER_OPTIONAL.add_argument("--extract", help="Extract profiles, urls & patterns if possible", action="store_true")
         ARG_PARSER_OPTIONAL.add_argument("--metadata", help="Extract metadata if possible (pypi QeeqBox OSINT)", action="store_true")
         ARG_PARSER_OPTIONAL.add_argument("--trim", help="Trim long strings", action="store_true")
+        ARG_PARSER_OPTIONAL.add_argument("--gui", help="Reserved for a gui (Not implemented)", action="store_true")
+        ARG_PARSER_OPTIONAL.add_argument("--cli", help="Reserved for a cli (Not needed)", action="store_true")
         ARG_PARSER_LIST = ARG_PARSER.add_argument_group("Listing websites & detections")
         ARG_PARSER_LIST.add_argument("--list", help="List all available websites", action="store_true")
         ARG_PARSER_SETTINGS = ARG_PARSER.add_argument_group("Setting")

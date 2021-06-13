@@ -8,23 +8,28 @@ The analysis and public extracted information from this OSINT tool could help in
 
 This project is *"currently used by some law enforcement agencies in countries where resources are limited"*.
 
-Update
-======
-- You can import SocialAnalyzer object from the python package (Users request)
-- Cancel task has been implemented (Users request)
-- Save the GUI analysis \ output as JSON file has been implemented (Users request)
-- For issues and questions related to the private modules, email me directly
-
 So·cial Me·di·a
 ===============
 Websites and applications that enable users to create and share content or to participate in social networking - Oxford Dictionary
+
+Security Testing
+================
+.. code:: bash
+
+    -------------------------------------              ---------------------------------
+    |        Security Testing           |              |        Social-Analyzer        |
+    -------------------------------------              ---------------------------------
+    |   Passive Information Gathering   |     <-->     |   Find Social Media Profiles  |
+    |                                   |              |                               |
+    |    Active Information Gathering   |     <-->     |    Post Analysis Activities   |
+    -------------------------------------              ---------------------------------
 
 Running Example (Simple)
 ========================
 .. code:: bash
 
     pip3 install social-analyzer
-    python3 -m social-analyzer --cli --username "johndoe"
+    python3 -m social-analyzer --username "johndoe" --metadata
 
 Running Example (Custom)
 ========================
@@ -34,13 +39,13 @@ Running Example (Custom)
     pip3 install social-analyzer
 
     #specific websites
-    python3 -m social-analyzer --cli --mode "fast" --username "johndoe" --websites "youtube pinterest tumblr"
+    python3 -m social-analyzer --username "johndoe" --websites "youtube pinterest tumblr"
 
     #specific websites with metadata and extraction
-    python3 -m social-analyzer --cli --mode "fast" --username "johndoe" --websites "youtube pinterest tumblr" --metadata --extract --trim
+    python3 -m social-analyzer --username "johndoe" --websites "youtube pinterest tumblr" --metadata --extract --trim
 
-    #all websites with metadata, extraction, filter only existing profiles with status good
-    python3 -m social-analyzer --cli --mode "fast" --username "johndoe" --websites "all" --metadata --extract --trim --filter "good" --profile "detected"
+    #all websites with metadata, extraction, filter all profiles with all status
+    python3 -m social-analyzer --username "johndoe" --websites "all" --metadata --extract --trim --filter "all" --profile "all"
 
 Running Example (as object)
 ===========================
@@ -68,7 +73,6 @@ Help (python3 -m social-analyzer --h)
 	profile across 300+ social media websites (Detections are updated regularly)
 
 	Required Arguments:
-	  --cli        Turn this CLI on
 	  --username   E.g. johndoe, john_doe or johndoe9999
 
 	Optional Arguments:
@@ -113,6 +117,7 @@ Features
 - Re-checking option for failed profiles
 - Filter profiles by good, maybe, and bad
 - Save the analysis as JSON file
+- Simplified web interface and cli
 - [Wiki](https://github.com/qeeqbox/social-analyzer/wiki)
 
 Special Detections

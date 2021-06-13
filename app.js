@@ -9,8 +9,11 @@
 //  -------------------------------------------------------------
 
 var argv = require('yargs')
-  .usage('Usage: $0 --cli --mode "fast" --username "johndoe" --websites "youtube tiktok"\nUsage: $0 --cli --mode "fast" --username "johndoe"')
-  .describe('cli', 'enable this cli')
+  .usage('Usage: $0 --username "johndoe" --websites "youtube tiktok"\nUsage: $0 "fast" --username "johndoe"')
+  .describe('gui', 'Reserved for a gui')
+  .default("gui", false)
+  .boolean('gui')
+  .describe('cli', 'Reserved for a cli (Not needed)')
   .default("cli", false)
   .boolean('cli')
   .describe('username', 'E.g. johndoe, john_doe or johndoe9999')
@@ -29,7 +32,7 @@ var argv = require('yargs')
   .describe('docker', 'allow docker')
   .default("docker", false)
   .boolean('docker')
-  .describe('method', 'find -> show detected profiles, get -> show all profiles regardless detected or not, both -> combine find & get')
+  .describe('method', 'find -> show detected profiles, get -> show all profiles regardless detected or not, all -> combine find & get')
   .default("method", "all")
   .describe('grid', 'grid option, not for CLI')
   .default("grid", "")
@@ -43,9 +46,9 @@ var argv = require('yargs')
   .default("trim", false)
   .boolean('trim')
   .describe('filter', 'filter detected profiles by good, maybe or bad, you can do combine them with comma (good,bad) or use all')
-  .default("filter", "all")
+  .default("filter", "good")
   .describe('profiles', 'filter profiles by detected, unknown or failed, you can do combine them with comma (detected,failed) or use all')
-  .default("profiles", "all")
+  .default("profiles", "detected")
   .help('help')
   .argv;
 
@@ -208,8 +211,7 @@ app.get("/generate", async function(req, res, next) {
 app.post("/cancel", async function(req, res, next) {
   if (req.body.option == "on" && req.body.uuid != "") {
     temp_uuid = req.body.uuid.replace(/[^a-zA-Z0-9\-]+/g, '')
-    if (!helper.global_lock.includes(temp_uuid))
-    {
+    if (!helper.global_lock.includes(temp_uuid)) {
       helper.log_to_file_queue(req.body.uuid, "[Canceling] task: " + req.body.uuid)
       helper.global_lock.push(temp_uuid)
     }
@@ -390,13 +392,11 @@ app.post("/analyze_string", async function(req, res, next) {
     if (req.body.option.includes("NetworkGraph")) {
       if ('data' in user_info_normal) {
         if (user_info_normal.data.length > 0) {
-          if (req.body.option.includes("ExtractMetadata"))
-          {
+          if (req.body.option.includes("ExtractMetadata")) {
             helper.log_to_file_queue(req.body.uuid, "[Starting] Network Graph")
             graph = await visualize.visualize_force_graph(req.body.string, user_info_normal.data, "fast")
             helper.log_to_file_queue(req.body.uuid, "[Done] Network Graph")
-          }
-          else{
+          } else {
             helper.log_to_file_queue(req.body.uuid, "[Warning] NetworkGraph needs ExtractMetadata")
           }
         }
@@ -631,17 +631,20 @@ if (argv.grid != "") {
 if (argv.docker) {
   server_host = '0.0.0.0'
 }
-if (argv.cli) {
-  if (argv.list) {
-    list_all_websites();
-  } else if (argv.mode == "fast") {
-    if (argv.username != "" && argv.websites != "") {
-      check_user_cli(argv)
-    }
-  }
-} else {
+if (argv.gui) {
   var server = app.listen(server_port, server_host, function() {
     //helper.setup_tecert()
     console.log("Server started at http://%s:%s/app.html", server_host, server_port);
   });
+} else {
+  if (argv.list) {
+    list_all_websites();
+  } else if (argv.mode == "fast") {
+    if (argv.cli) {
+      console.log("[Warning] --cli is not needed and will be removed later on");
+    }
+    if (argv.username != "" && argv.websites != "") {
+      check_user_cli(argv)
+    }
+  }
 }
