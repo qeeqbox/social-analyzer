@@ -14,6 +14,17 @@ This project is *"currently used by some law enforcement agencies in countries w
 ## So·cial Me·di·a
 Websites and applications that enable users to create and share content or to participate in social networking - Oxford Dictionary
 
+## Security Testing
+```bash
+-------------------------------------              ---------------------------------
+|        Security Testing           |              |        Social-Analyzer        |
+-------------------------------------              ---------------------------------
+|   Passive Information Gathering   |     <-->     |   Find Social Media Profiles  |
+|                                   |              |                               |
+|    Active Information Gathering   |     <-->     |    Post Analysis Activities   |
+-------------------------------------              ---------------------------------
+```
+
 ## APP
 Standard localhost WEB APP url: http://0.0.0.0:9005/app.html
 
@@ -41,7 +52,7 @@ Standard localhost WEB APP url: http://0.0.0.0:9005/app.html
 - Re-checking option for failed profiles
 - Filter profiles by good, maybe, and bad
 - Save the analysis as JSON file
-- Simplified web interface
+- Simplified web interface and cli
 
 ## Special Detections
 - Facebook (Phone number, name or profile name)
@@ -67,7 +78,7 @@ npm start
 sudo apt-get update
 sudo apt-get install python3 python3-pip
 pip3 install social-analyzer
-python3 -m social-analyzer --cli --username "johndoe" --metadata
+python3 -m social-analyzer --username "johndoe" --metadata
 ```
 
 ### Linux (As python script)
@@ -76,8 +87,8 @@ sudo apt-get update
 sudo apt-get install git python3 python3-pip
 git clone https://github.com/qeeqbox/social-analyzer
 cd social-analyzer
-pip3 install –r reqs.txt
-python3 app.py social-analyzer --cli --username "johndoe" --metadata
+pip3 install –r requirements.txt
+python3 app.py social-analyzer --username "johndoe" --metadata
 ```
 
 ### Importing as object (python)
@@ -95,7 +106,6 @@ print(results)
 ## social-analyzer --h
 ```
 Required Arguments:
-  --cli        Turn this CLI on
   --username   E.g. johndoe, john_doe or johndoe9999
 
 Optional Arguments:
