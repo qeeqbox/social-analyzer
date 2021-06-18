@@ -308,12 +308,14 @@ class SocialAnalyzer():
                     "link": "",
                     "rate": "",
                     "status": "",
-                    "title": "unavailable",
-                    "language": "unavailable",
-                    "text": "unavailable",
-                    "type": "unavailable",
-                    "extracted": "unavailable",
-                    "metadata": "unavailable",
+                    "title": "",
+                    "language": "",
+                    "country": "",
+                    "rank": "",
+                    "text": "",
+                    "type": "",
+                    "extracted": "",
+                    "metadata": "",
                     "good": "",
                     "method": ""
                 }
@@ -394,16 +396,9 @@ class SocialAnalyzer():
 
                 if len(temp_matches_list) > 0:
                     temp_profile["extracted"] = temp_matches_list
-                else:
-                    del temp_profile["extracted"]
 
             temp_profile["text"] = temp_profile["text"].replace("\n", "").replace("\t", "").replace("\r", "").strip()
             temp_profile["title"] = temp_profile["title"].replace("\n", "").replace("\t", "").replace("\r", "").strip()
-
-            if temp_profile["text"] == "":
-                temp_profile["text"] = "unavailable"
-            if temp_profile["title"] == "":
-                temp_profile["title"] = "unavailable"
 
             if self.waf:
                 with suppress(Exception):
@@ -447,7 +442,8 @@ class SocialAnalyzer():
                             if meta.has_attr("property"):
                                 temp_mata_item.update({"property": meta["property"]})
                             if meta.has_attr("content"):
-                                temp_mata_item.update({"content": meta["content"].replace("\n", "").replace("\t", "").replace("\r", "").strip()})
+                                if meta["content"].replace("\n", "").replace("\t", "").replace("\r", "").strip() != "":
+                                    temp_mata_item.update({"content": meta["content"].replace("\n", "").replace("\t", "").replace("\r", "").strip()})
                             if meta.has_attr("itemprop"):
                                 temp_mata_item.update({"itemprop": meta["itemprop"]})
                             if meta.has_attr("name"):
@@ -481,6 +477,16 @@ class SocialAnalyzer():
 
             temp_profile["link"] = site["url"].replace("{username}", username)
             temp_profile["type"] = site["type"]
+            temp_profile["country"] = site["country"]
+            temp_profile["rank"] = site["global_rank"]
+
+            if temp_profile["rank"] == 0:
+                temp_profile["rank"] = "unavailable"
+
+            for _item in ["title", "language", "text", "type", "metadata", "extracted","country"]:
+                with suppress(Exception):
+                    if temp_profile[_item] == "":
+                        temp_profile[_item] = "unavailable"
 
             if "FindUserProfilesFast" in options and "GetUserProfilesFast" not in options:
                 temp_profile["method"] = "find"

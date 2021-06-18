@@ -32,6 +32,8 @@ var profile_template = {
   "status": "",
   "title": "",
   "language": "",
+  "country": "",
+  "rank": "",
   "text": "",
   "type": "",
   "metadata": "",

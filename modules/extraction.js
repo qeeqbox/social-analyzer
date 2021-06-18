@@ -24,7 +24,9 @@ async function extract_metadata(site, source) {
             temp_dict["itemprop"] = meta[key].attribs.itemprop
           }
           if (meta[key].attribs.content) {
-            temp_dict["content"] = meta[key].attribs.content
+            if (meta[key].attribs.content.replace("\n", "").replace("\t", "").replace("\r", "").trim() != ""){
+              temp_dict["content"] = meta[key].attribs.content
+            }
           }
 
           ["property", "name", "itemprop"].forEach((item, i) => {

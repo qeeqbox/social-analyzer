@@ -152,6 +152,13 @@ async function find_username_site(uuid, username, options, site) {
 
           temp_profile.link = site.url.replace("{username}", username);
           temp_profile.type = site.type
+          temp_profile.rank = site.global_rank
+          temp_profile.country = site.country
+
+          if (temp_profile.rank == 0){
+            temp_profile.rank = "unavailable"
+          }
+
 
           if (temp_profile.status == "good") {
             if (options.includes("ExtractPatterns")) {
@@ -170,7 +177,7 @@ async function find_username_site(uuid, username, options, site) {
             }
           }
 
-          ["title", "language", "text", "type", "metadata", "extracted"].forEach((item) => {
+          ["title", "language", "text", "type", "metadata", "extracted","country"].forEach((item) => {
             if (temp_profile[item] == "") {
               temp_profile[item] = "unavailable"
             }
