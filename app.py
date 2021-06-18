@@ -649,7 +649,6 @@ class SocialAnalyzer():
                 with open(path_to_check,encoding="utf-8") as f:
                     ret = load(f)
         except Exception as e:
-            print(e)
             self.print_wrapper("[!] {} Does not exist! cannot be downloaded...".format(name))
         return ret
 
