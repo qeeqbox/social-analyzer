@@ -646,7 +646,7 @@ class SocialAnalyzer():
                     f.write(file.content)
             if path.exists(path_to_check) == True:
                 self.print_wrapper("[init] {} looks good!".format(name))
-                with open(path_to_check,encoding="utf-8") as f:
+                with open(path_to_check, encoding="utf-8") as f:
                     ret = load(f)
         except Exception as e:
             self.print_wrapper("[!] {} Does not exist! cannot be downloaded...".format(name))
