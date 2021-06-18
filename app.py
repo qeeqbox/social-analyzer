@@ -483,7 +483,7 @@ class SocialAnalyzer():
             if temp_profile["rank"] == 0:
                 temp_profile["rank"] = "unavailable"
 
-            for _item in ["title", "language", "text", "type", "metadata", "extracted","country"]:
+            for _item in ["title", "language", "text", "type", "metadata", "extracted", "country"]:
                 with suppress(Exception):
                     if temp_profile[_item] == "":
                         temp_profile[_item] = "unavailable"
