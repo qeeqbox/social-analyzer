@@ -156,7 +156,7 @@ Setting:
 - [Console 37](https://console.substack.com/p/console-37)
 
 ## Some News\Articles
-- [5 Advance Open-Source Intelligence (OSINT) Tools](https://twitter.com/GithubProjects/status/1405754360659779597)
+- [5 Advance Open-Source Intelligence (OSINT) Tools](https://twitter.com/GithubProjects/status/1405754390586085376)
 - [5 Open-Source Intelligence (OSINT) GitHub Repositories For Every Security Analyst (Cyber Security)](https://twitter.com/GithubProjects/status/1395205169617547266)
 - You can use social-analyzer in the [BlackArch](https://blackarch.org/) penetration testing distribution by installing [blackarch-social](https://blackarch.org/social.html)
 
