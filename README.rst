@@ -8,6 +8,8 @@ The analysis and public extracted information from this OSINT tool could help in
 
 This project is *"currently used by some law enforcement agencies in countries where resources are limited"*.
 
+I have been getting many public & private requests to add static websites' info to the detection db, this is being implemented and +400 detections should have that. If you have any -private module, and you are not able to see the static websites' info, download the latest version or email me for details for instructions)
+
 So·cial Me·di·a
 ===============
 Websites and applications that enable users to create and share content or to participate in social networking - Oxford Dictionary
