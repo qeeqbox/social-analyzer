@@ -11,7 +11,7 @@ The analysis and public extracted information from this OSINT tool could help in
 
 This project is *"currently used by some law enforcement agencies in countries where resources are limited"*.
 
-`Social Analyzer is in a league of its own and is a very impressive tool that I thoroughly recommend for Digital Investigators and OSINT practitioners.` by [Joseph Jones, Founder of OS2INT](https://os2int.com/toolbox/investigating-usernames-with-social-analyzer/)
+`Social Analyzer is in a league of its own and is a very impressive tool that I thoroughly recommend for Digital Investigators and OSINT practitioners.` by [Joseph Jones, Founder of Strategy Nord, Unita Insight and OS2INT](https://os2int.com/toolbox/investigating-usernames-with-social-analyzer/)
 
 ## Updates
 - I have been getting many public & private requests to add static websites' info to the detection db, this is being implemented and +400 detections should have that. If you have any -private module, and you are not able to see the static websites' info, download the latest version or email me for details
