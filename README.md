@@ -11,9 +11,10 @@ The analysis and public extracted information from this OSINT tool could help in
 
 This project is *"currently used by some law enforcement agencies in countries where resources are limited"*.
 
-I have been getting many public & private requests to add static websites' info to the detection db, this is being implemented and +400 detections should have that. If you have any -private module, and you are not able to see the static websites' info, download the latest version or email me for details
+`Social Analyzer is in a league of its own and is a very impressive tool that I thoroughly recommend for Digital Investigators and OSINT practitioners.` by [Joseph Jones, Founder of OS2INT](https://os2int.com/toolbox/investigating-usernames-with-social-analyzer/)
 
-`Social Analyzer is in a league of its own and is a very impressive tool that I thoroughly recommend for Digital Investigators and OSINT practitioners.` by [os2int](https://os2int.com/toolbox/investigating-usernames-with-social-analyzer/)
+## Updates
+- I have been getting many public & private requests to add static websites' info to the detection db, this is being implemented and +400 detections should have that. If you have any -private module, and you are not able to see the static websites' info, download the latest version or email me for details
 
 ## So·cial Me·di·a
 Websites and applications that enable users to create and share content or to participate in social networking - Oxford Dictionary
@@ -158,6 +159,7 @@ Setting:
 - [Console 37](https://console.substack.com/p/console-37)
 
 ## Some News\Articles
+- [INVESTIGATING USERNAMES WITH SOCIAL ANALYZER](https://os2int.com/toolbox/investigating-usernames-with-social-analyzer/#)
 - [5 Advance Open-Source Intelligence (OSINT) Tools](https://twitter.com/GithubProjects/status/1405754390586085376)
 - [5 Open-Source Intelligence (OSINT) GitHub Repositories For Every Security Analyst (Cyber Security)](https://twitter.com/GithubProjects/status/1395205169617547266)
 - You can use social-analyzer in the [BlackArch](https://blackarch.org/) penetration testing distribution by installing [blackarch-social](https://blackarch.org/social.html)
