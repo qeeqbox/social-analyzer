@@ -1,85 +1,72 @@
+var ixora = require('ixora').QBIxora
 var helper = require('./helper.js');
 
 async function visualize_force_graph(username, detected, type) {
-  graph = {
-    "nodes": [],
-    "links": []
-  }
+  try{
+    var graph = new ixora('Social-Analyzer',false);
+      filter_items = "good"
+      temp_filtered = []
+      temp_filtered = detected.filter(item => filter_items.includes(item.status))
+      if (temp_filtered.length > 0) {
 
-  try {
-    filter_items = "good"
-    temp_filtered = []
-    temp_filtered = detected.filter(item => filter_items.includes(item.status))
-    if (temp_filtered.length > 0) {
-      graph.nodes.push({
-        "id": username
-      })
-      temp_filtered.forEach(site => {
-        graph.nodes.push({
-          "id": site.link
+        graph.add_node(username, search = username, _set = {
+          'header': username
         })
-        graph.links.push({
-          "source": username,
-          "target": site.link
-        })
-        if ("metadata" in site){
-          if (site.metadata.length > 0) {
-            site.metadata.forEach(meta => {
-              if ("content" in meta) {
-                temp_string = ""
-                if ("name" in meta) {
-                  temp_string = meta.name + " -> " + meta.content
-                } else if ("itemprop" in meta) {
-                  temp_string = meta.itemprop + " -> " + meta.content
-                } else if ("property" in meta) {
-                  temp_string = meta.property + " -> " + meta.content
-                }
 
-                if (temp_string.length > 50) {
-                  temp_string = temp_string.substring(0, 50).replace(/\r?\n|\r/g, "") + ".."
-                } else {
-                  temp_string = temp_string.replace(/\r?\n|\r/g, "")
-                }
+        temp_filtered.forEach(site => {
 
-                if (temp_string != "" && temp_string.length > 0) {
-                  var index = undefined;
-                  graph.nodes.some(function(item, i) {
-                    if (item.id == temp_string) {
-                      index = i;
-                      return true;
-                    }
-                  });
+          graph.add_node(site.link, search = site.link, _set = {
+            'header': site.link
+          })
 
-                  if (index != undefined) {
-
-                  } else {
-                    graph.nodes.push({
-                      "id": temp_string
-                    })
+          graph.add_edge(username, site.link, {
+            'width': 1
+          })
+          if ("metadata" in site) {
+            if (site.metadata != "unavailable" && site.metadata.length > 0) {
+              site.metadata.forEach(meta => {
+                if ("content" in meta) {
+                  temp_string = ""
+                  if ("name" in meta) {
+                    temp_string = meta.name + " -> " + meta.content
+                  } else if ("itemprop" in meta) {
+                    temp_string = meta.itemprop + " -> " + meta.content
+                  } else if ("property" in meta) {
+                    temp_string = meta.property + " -> " + meta.content
                   }
 
-                  if (graph.links.some(v => v.source == temp_string && v.target == site.link) || graph.links.some(v => v.source == site.link && v.target == temp_string)) {
-
+                  if (temp_string.length > 50) {
+                    temp_string = temp_string.substring(0, 50).replace(/\r?\n|\r/g, "") + ".."
                   } else {
-                    graph.links.push({
-                      "source": site.link,
-                      "target": temp_string
+                    temp_string = temp_string.replace(/\r?\n|\r/g, "")
+                  }
+
+                  if (temp_string != "" && temp_string.length > 0) {
+                    graph.add_node(temp_string, search = temp_string, _set = {
+                      'header': temp_string,
+                    })
+
+                    graph.add_edge(site.link, temp_string, {
+                      'width': 1
                     })
                   }
                 }
-              }
-            })
+              })
+            }
           }
-        }
-      });
-    }
-  } catch {
+        });
+      }
 
+      x = graph.create_graph("#ixora-graph", window_title="Ixora random nodes exmaple", search_title="Search Box",search_msg="Search in extracted metadata\websites", copyright_link="Qeeqbox-ixora",copyright_msg="https://github.com/qeeqbox/ixora",tools=['search','tooltip'], collide=10,distance=100, data=graph.graph,method='object',save_to=undefined, open_file=undefined)
+      return x
+  }
+  catch (err){
+    helper.verbose && console.log(err)
   }
 
-  return graph
-}
+  return {"graph":{"nodes": [],"links": []}}
 
+}
 module.exports = {
   visualize_force_graph
 }
