@@ -70,6 +70,7 @@ if (semver.satisfies(process.version, '>13 || <13')) {
 
 var express = require("express");
 var fs = require("fs");
+var path = require("path");
 var tokenizer = require("wink-tokenizer");
 var generatorics = require("generatorics");
 var HttpsProxyAgent = require('https-proxy-agent');
@@ -103,9 +104,14 @@ app.post("/get_logs", async function(req, res, next) {
   var last_line = "nothinghere"
   if (req.body.uuid != "") {
     temp_log_file = helper.get_log_file(req.body.uuid)
-    var data = fs.readFileSync(temp_log_file).toString();
-    if (typeof data !== 'undefined' && data) {
-      last_line = data.split('\n').slice(-2)[0];
+    if (fs.existsSync(temp_log_file)) {
+      var data = fs.readFileSync(temp_log_file).toString();
+      if (typeof data !== 'undefined' && data) {
+        last_line = data.split('\n').slice(-2)[0];
+      }
+    }
+    else{
+      last_line = "nothing_here_error"
     }
     res.send(last_line)
   }
@@ -256,12 +262,18 @@ app.post("/analyze_string", async function(req, res, next) {
   var custom_search = []
   var logs = ""
   var fast = false
-  var graph = {
-    "nodes": [],
-    "links": []
-  }
+  var graph = {"graph":{"nodes": [],"links": []}}
 
-  if (req.body.string == null || req.body.string == "") {
+  if (req.body.string == "test_user_2021_2022_"){
+      if (fs.existsSync('test.json')) {
+        var obj = JSON.parse(fs.readFileSync('test.json', 'utf8'));
+        res.json(obj);
+      }
+      else{
+        res.json("Error");
+      }
+  }
+  else if (req.body.string == null || req.body.string == "") {
     res.json("Error");
   } else {
     username = req.body.string
@@ -408,6 +420,26 @@ app.post("/analyze_string", async function(req, res, next) {
     } catch {
 
     }
+
+    helper.log_to_file_queue(req.body.uuid, "[Finished] Analyzing: " + req.body.string + " Task: " + req.body.uuid)
+
+    /*
+    fs.writeFileSync('./test.json', JSON.stringify({
+      username: username,
+      uuid: temp_uuid,
+      info,
+      table: all_words,
+      common: temp_words,
+      words_info: words_info,
+      user_info_normal: user_info_normal,
+      user_info_advanced: user_info_advanced,
+      user_info_special: user_info_special,
+      names_origins: names_origins,
+      custom_search: custom_search,
+      graph: graph,
+      logs: logs
+    }, null, 2) , 'utf-8');
+    */
 
     res.json({
       username: username,

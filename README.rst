@@ -8,7 +8,13 @@ The analysis and public extracted information from this OSINT tool could help in
 
 This project is *"currently used by some law enforcement agencies in countries where resources are limited"*.
 
-I have been getting many public & private requests to add static websites' info to the detection db, this is being implemented and +400 detections should have that. If you have any -private module, and you are not able to see the static websites' info, download the latest version or email me for details for instructions)
+`Social Analyzer is in a league of its own and is a very impressive tool that I thoroughly recommend for Digital Investigators and OSINT practitioners` - by `Joseph Jones, Founder of Strategy Nord, Unita Insight and OS2INT <https://os2int.com/toolbox/investigating-usernames-with-social-analyzer>`_.
+
+Updates
+=======
+- Social-Analyzer uses it's own automated d3.js graph visualization called Ixora (This is a modification of Hydrangea)
+- A new force-directed graph public module is being tested for the Web App (This new module will enhance the post-analysis phase) <- Implemented
+- I have been getting many public & private requests to add static websites' info to the detection db, this is being implemented and +400 detections should have that. If you have any -private module, and you are not able to see the static websites' info, download the latest version or email me for details
 
 So·cial Me·di·a
 ===============
@@ -103,10 +109,13 @@ Find Profile CLI (Fast)
 
 Features
 ========
-- String & name analysis
+- String & name analysis (Permutations and Combinations)
 - Find profile using multiple techniques (HTTPS library & Webdriver)
 - Multi layers detections (OCR, normal, advanced & special)
+- Visualized profile information using Ixora (Metadata & Patterns)
 - Metadata & Patterns extraction (Added from Qeeqbox osint project)
+- Force-directed Graph for Metadata (Needs ExtractPatterns)
+- Auto-flirtation to unnecessary output
 - Search engine lookup (Google API - optional)
 - Custom search queries (Google API & DuckDuckGo API - optional)
 - Profile screenshot, title, info and website description
@@ -120,7 +129,6 @@ Features
 - Filter profiles by good, maybe, and bad
 - Save the analysis as JSON file
 - Simplified web interface and cli
-- [Wiki](https://github.com/qeeqbox/social-analyzer/wiki)
 
 Special Detections
 ==================

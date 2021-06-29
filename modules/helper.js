@@ -66,10 +66,16 @@ var cheerio = require('cheerio');
 var path = require('path');
 var slash = require('slash');
 var colors = require('colors/safe');
+var ixora = require('ixora').QBIxora
 
 var sites_json_path = slash(path.join(__dirname, '..', 'data', 'sites.json'))
 var names_json_path = slash(path.join(__dirname, '..', 'data', 'names.json'))
 var dict_json_path = slash(path.join(__dirname, '..', 'data', 'dict.json'))
+var public_graph_path = slash(path.join(__dirname, '..', 'public','graph.html'))
+
+temp_ixora = new ixora('Social-Analyzer',false);
+temp_ixora.save_base_html(public_graph_path)
+temp_ixora = null
 
 var websites_entries = JSON.parse(fs.readFileSync(sites_json_path))['websites_entries'];
 var shared_detections = JSON.parse(fs.readFileSync(sites_json_path))['shared_detections'];

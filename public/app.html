@@ -647,6 +647,13 @@
     font-size: 12px !important;
     font-family: monospace !important;
   }
+
+  #ixora-graph-iframe{
+    width: 100%;
+    height: 100%;
+    border: none !important;
+  }
+
 </style>
 
 <body>
@@ -1104,8 +1111,11 @@
           'uuid': uuid
         },
       }).done(function(data) {
-        if (data != "nothinghere" && data != "") {
+        if (data != "Error" && data != "nothinghere" && data != "nothing_here_error" && data != "") {
           $('#logs').text(data)
+        }
+        else if (data == "nothing_here_error" || data == "Error"){
+          clearInterval(interval_logs)
         }
       }).fail(function(jqXHR, textStatus, errorThrown) {
         //clearInterval(interval_logs);
@@ -1162,40 +1172,6 @@
           this.del_selected = [];
         }
       });
-    }
-
-    function draw_graph(data) {
-      const Graph = ForceGraph()
-        (document.getElementById('force-graph-canvas-inside'))
-        .graphData(data)
-        .width(document.getElementById("string-section").offsetWidth - 30)
-        .nodeId('id')
-        .cooldownTicks(100)
-        .nodeAutoColorBy('group')
-        .linkColor(() => 'rgba(255,255,255,0.2)')
-        .nodeCanvasObject((node, ctx, global_scale) => {
-          const fontSize = 10 / global_scale;
-          ctx.font = `${fontSize}px Sans-Serif`;
-          const text_width = ctx.measureText(node.id).width;
-          const background_size = [text_width, fontSize].map(n => n + fontSize * 0.2);
-          ctx.fillStyle = 'rgba(44, 44, 44, 0.8)';
-          ctx.fillRect(node.x - background_size[0] / 2, node.y - background_size[1] / 2, ...background_size);
-          ctx.fillStyle = '#d0d0d0';
-          ctx.textBaseline = 'middle';
-          ctx.textAlign = 'center';
-          ctx.fillText(node.id, node.x, node.y);
-          node.background_size = background_size;
-        })
-        .onNodeDragEnd(node => {
-          node.fx = node.x;
-          node.fy = node.y;
-        })
-        .nodePointerAreaPaint((node, color, ctx) => {
-          ctx.fillStyle = color;
-          node.background_size && ctx.fillRect(node.x - node.background_size[0] / 2, node.y - node.background_size[1] / 2, ...node.background_size);
-        });
-      Graph.d3Force('center', null);
-      Graph.onEngineStop(() => Graph.zoomToFit(500));
     }
 
     function add_extract(site) {
@@ -1426,9 +1402,11 @@
               $('#logs-section').show();
             }
 
-            if ((data.graph.nodes.length > 0) && (data.graph.links.length > 0)) {
-              $("#force-graph-canvas").html('<div id="force-graph-canvas-inside"></div>')
-              draw_graph(data.graph)
+            if ((data.graph.graph.nodes.length > 0) && (data.graph.graph.links.length > 0)) {
+              $("#force-graph-canvas").html('<iframe id="ixora-graph-iframe" src="/graph.html"></iframe>')
+              $('#ixora-graph-iframe').load(function(){
+                  document.getElementById("ixora-graph-iframe").contentWindow.ixora_wrapper(data.graph,true);
+              });
               $('#force-graph-section').show();
             }
 
