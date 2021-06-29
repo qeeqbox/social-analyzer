@@ -14,8 +14,7 @@ This project is *"currently used by some law enforcement agencies in countries w
 `Social Analyzer is in a league of its own and is a very impressive tool that I thoroughly recommend for Digital Investigators and OSINT practitioners` - by [Joseph Jones, Founder of Strategy Nord, Unita Insight and OS2INT](https://os2int.com/toolbox/investigating-usernames-with-social-analyzer/)
 
 ## Updates
-- Social-Analyzer uses it's own automated d3.js graph visualization called Ixora (This is a modification of Hydrangea)
-- ~~A new force-directed graph public module is being tested for the Web App (This new module will enhance the post-analysis phase)~~ Implemented
+- The new Social-Analyzer version uses it's own automated graph visualization called Ixora
 - I have been getting many public & private requests to add static websites' info to the detection db, this is being implemented and +400 detections should have that. If you have any -private module, and you are not able to see the static websites' info, download the latest version or email me for details
 
 ## So·cial Me·di·a
