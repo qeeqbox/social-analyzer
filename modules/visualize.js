@@ -57,7 +57,7 @@ async function visualize_force_graph(username, detected, type) {
         });
       }
 
-      x = graph.create_graph("#ixora-graph", window_title="Ixora random nodes exmaple", search_title="Search Box",search_msg="Search in extracted metadata\websites", copyright_link="Qeeqbox-ixora",copyright_msg="https://github.com/qeeqbox/ixora",tools=['search','tooltip'], collide=10,distance=100, data=graph.graph,method='object',save_to=undefined, open_file=undefined)
+      x = graph.create_graph("#ixora-graph", window_title="Ixora random nodes exmaple", search_title="Search Box",search_msg="Search in extracted patterns", copyright_link="Qeeqbox-ixora",copyright_msg="https://github.com/qeeqbox/ixora",tools=['search','tooltip'], collide=10,distance=100, data=graph.graph,method='object',save_to=undefined, open_file=undefined)
       return x
   }
   catch (err){
