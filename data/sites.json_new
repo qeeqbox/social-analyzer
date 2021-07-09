@@ -15,10 +15,10 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "Wiki",
-      "global_rank": 0,
-      "country": "",
-      "country_code": 0
+      "type": "Games > Games",
+      "global_rank": 25368,
+      "country": "United States",
+      "country_code": 840
     },
     {
       "url": "https://500px.com/p/{username}",
@@ -412,10 +412,10 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "Internet",
-      "global_rank": 0,
-      "country": "",
-      "country_code": 0
+      "type": "Arts and Entertainment > Arts and Entertainment",
+      "global_rank": 5019,
+      "country": "United States",
+      "country_code": 840
     },
     {
       "url": "https://anobii.com/{username}/profile",
@@ -790,10 +790,10 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "Internet",
-      "global_rank": 0,
-      "country": "",
-      "country_code": 0
+      "type": "Arts and Entertainment > Music",
+      "global_rank": 21305,
+      "country": "Russian Federation",
+      "country_code": 643
     },
     {
       "url": "https://authorstream.com/{username}",
@@ -900,10 +900,10 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "Internet",
-      "global_rank": 0,
-      "country": "",
-      "country_code": 0
+      "type": "Health > Childrens Health",
+      "global_rank": 11669,
+      "country": "Russian Federation",
+      "country_code": 643
     },
     {
       "url": "https://bahaipedia.org/Wiki/User:{username}",
@@ -1024,10 +1024,10 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "Internet",
-      "global_rank": 0,
-      "country": "",
-      "country_code": 0
+      "type": "Computers Electronics and Technology > Programming and Developer Software",
+      "global_rank": 563970,
+      "country": "United States",
+      "country_code": 840
     },
     {
       "url": "https://beeg.com/people/{username}",
@@ -1200,10 +1200,10 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "Computers",
-      "global_rank": 0,
-      "country": "",
-      "country_code": 0
+      "type": "Computers Electronics and Technology > Programming and Developer Software",
+      "global_rank": 118697,
+      "country": "United States",
+      "country_code": 840
     },
     {
       "url": "https://bitbucket.org/{username}",
@@ -2427,10 +2427,10 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "Forums",
-      "global_rank": 0,
-      "country": "",
-      "country_code": 0
+      "type": "Computers Electronics and Technology > Computers Electronics and Technology",
+      "global_rank": 30940,
+      "country": "United States",
+      "country_code": 840
     },
     {
       "url": "https://community.home-assistant.io/u/{username}",
@@ -2495,10 +2495,10 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "Forums",
-      "global_rank": 0,
-      "country": "",
-      "country_code": 0
+      "type": "Health > Nutrition Diets and Fitness",
+      "global_rank": 59996,
+      "country": "United States",
+      "country_code": 840
     },
     {
       "url": "https://community.infiniteflight.com/u/{username}",
@@ -2580,10 +2580,10 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "Forums",
-      "global_rank": 0,
-      "country": "",
-      "country_code": 0
+      "type": "Computers Electronics and Technology > Programming and Developer Software",
+      "global_rank": 245643,
+      "country": "Turkey",
+      "country_code": 792
     },
     {
       "url": "https://community.mypaint.org/u/{username}",
@@ -2654,10 +2654,10 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "Forums",
-      "global_rank": 0,
-      "country": "",
-      "country_code": 0
+      "type": "Finance > Financial Planning and Management",
+      "global_rank": 10516,
+      "country": "United Kingdom",
+      "country_code": 826
     },
     {
       "url": "https://community.roonlabs.com/u/{username}",
@@ -2756,10 +2756,10 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "Forums",
-      "global_rank": 0,
-      "country": "",
-      "country_code": 0
+      "type": "Games > Games",
+      "global_rank": 70897,
+      "country": "United States",
+      "country_code": 840
     },
     {
       "url": "https://community.unbounce.com/u/{username}",
@@ -2773,10 +2773,10 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "Forums",
-      "global_rank": 0,
-      "country": "",
-      "country_code": 0
+      "type": "Computers Electronics and Technology > Programming and Developer Software",
+      "global_rank": 37637,
+      "country": "United States",
+      "country_code": 840
     },
     {
       "url": "https://community.windy.com/user/{username}",
@@ -2806,10 +2806,10 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "Computers",
-      "global_rank": 0,
-      "country": "",
-      "country_code": 0
+      "type": "Vehicles > Aviation",
+      "global_rank": 498,
+      "country": "India",
+      "country_code": 356
     },
     {
       "url": "https://connect.opensuse.org/pg/profile/{username}",
@@ -3208,10 +3208,10 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "News",
-      "global_rank": 0,
-      "country": "",
-      "country_code": 0
+      "type": "Arts and Entertainment > TV Movies and Streaming",
+      "global_rank": 275,
+      "country": "United States",
+      "country_code": 840
     },
     {
       "url": "https://dandwiki.com/wiki/User:{username}",
@@ -3326,10 +3326,10 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "Music",
-      "global_rank": 0,
-      "country": "",
-      "country_code": 0
+      "type": "Lifestyle > Fashion and Apparel",
+      "global_rank": 3339,
+      "country": "United States",
+      "country_code": 840
     },
     {
       "url": "https://designspiration.net/{username}",
@@ -3426,10 +3426,10 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "Computers",
-      "global_rank": 0,
-      "country": "",
-      "country_code": 0
+      "type": "Computers Electronics and Technology > Programming and Developer Software",
+      "global_rank": 6823,
+      "country": "India",
+      "country_code": 356
     },
     {
       "url": "https://develop.consumerium.org/wiki/User:{username}",
@@ -3642,10 +3642,10 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "Forums",
-      "global_rank": 0,
-      "country": "",
-      "country_code": 0
+      "type": "Computers Electronics and Technology > Programming and Developer Software",
+      "global_rank": 179981,
+      "country": "United States",
+      "country_code": 840
     },
     {
       "url": "https://discourse.codecombat.com/u/{username}",
@@ -3659,10 +3659,10 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "Forums",
-      "global_rank": 0,
-      "country": "",
-      "country_code": 0
+      "type": "Computers Electronics and Technology > Programming and Developer Software",
+      "global_rank": 52091,
+      "country": "United States",
+      "country_code": 840
     },
     {
       "url": "https://discourse.gohugo.io/u/{username}",
@@ -3727,10 +3727,10 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "Forums",
-      "global_rank": 0,
-      "country": "",
-      "country_code": 0
+      "type": "Computers Electronics and Technology > Programming and Developer Software",
+      "global_rank": 56024,
+      "country": "United States",
+      "country_code": 840
     },
     {
       "url": "https://discourse.mc-stan.org/u/{username}",
@@ -4488,10 +4488,10 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "Shopping",
-      "global_rank": 0,
-      "country": "",
-      "country_code": 0
+      "type": "E-commerce and Shopping > Marketplace",
+      "global_rank": 29,
+      "country": "United States",
+      "country_code": 840
     },
     {
       "url": "https://ebid.net/us/users/{username}",
@@ -4703,10 +4703,10 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "Wiki",
-      "global_rank": 0,
-      "country": "",
-      "country_code": 0
+      "type": "Games > Games",
+      "global_rank": 318935,
+      "country": "United States",
+      "country_code": 840
     },
     {
       "url": "https://en.citizendium.org/wiki/User:{username}",
@@ -4913,10 +4913,10 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "Wiki",
-      "global_rank": 0,
-      "country": "",
-      "country_code": 0
+      "type": "Arts and Entertainment > Animation and Comics",
+      "global_rank": 83118,
+      "country": "United States",
+      "country_code": 840
     },
     {
       "url": "https://en.wikigta.org/wiki/User:{username}",
@@ -4930,10 +4930,10 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "Wiki",
-      "global_rank": 0,
-      "country": "",
-      "country_code": 0
+      "type": "Games > Video Games Consoles and Accessories",
+      "global_rank": 214616,
+      "country": "Canada",
+      "country_code": 124
     },
     {
       "url": "https://en.wikimannia.org/User:{username}",
@@ -5032,10 +5032,10 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "Games",
-      "global_rank": 0,
-      "country": "",
-      "country_code": 0
+      "type": "Games > Video Games Consoles and Accessories",
+      "global_rank": 54556,
+      "country": "United States",
+      "country_code": 840
     },
     {
       "url": "https://esolangs.org/wiki/User:{username}",
@@ -5205,10 +5205,10 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "Computers",
-      "global_rank": 0,
-      "country": "",
-      "country_code": 0
+      "type": "Computers Electronics and Technology > Computers Electronics and Technology",
+      "global_rank": 30761,
+      "country": "United States",
+      "country_code": 840
     },
     {
       "url": "https://eyeem.com/u/{username}",
@@ -5651,10 +5651,10 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "News",
-      "global_rank": 0,
-      "country": "",
-      "country_code": 0
+      "type": "Computers Electronics and Technology > Computer Hardware",
+      "global_rank": 7117,
+      "country": "Russian Federation",
+      "country_code": 643
     },
     {
       "url": "https://forum.banana-pi.org/u/{username}",
@@ -5935,10 +5935,10 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "Internet",
-      "global_rank": 0,
-      "country": "",
-      "country_code": 0
+      "type": "Vehicles > Vehicles",
+      "global_rank": 33295,
+      "country": "United States",
+      "country_code": 840
     },
     {
       "url": "https://forum.level1techs.com/u/{username}",
@@ -6173,10 +6173,10 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "Forums",
-      "global_rank": 0,
-      "country": "",
-      "country_code": 0
+      "type": "Finance > Finance",
+      "global_rank": 188338,
+      "country": "United States",
+      "country_code": 840
     },
     {
       "url": "https://forum.sublimetext.com/u/{username}",
@@ -6399,10 +6399,10 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "Forums",
-      "global_rank": 0,
-      "country": "",
-      "country_code": 0
+      "type": "Computers Electronics and Technology > Computer Hardware",
+      "global_rank": 1143,
+      "country": "United States",
+      "country_code": 840
     },
     {
       "url": "https://forums.episodeinteractive.com/u/{username}",
@@ -6433,10 +6433,10 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "Forums",
-      "global_rank": 0,
-      "country": "",
-      "country_code": 0
+      "type": "Games > Video Games Consoles and Accessories",
+      "global_rank": 34984,
+      "country": "United States",
+      "country_code": 840
     },
     {
       "url": "https://forums.gunsandammo.com/profile/{username}",
@@ -6612,10 +6612,10 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "Forums",
-      "global_rank": 0,
-      "country": "",
-      "country_code": 0
+      "type": "Computers Electronics and Technology > Computers Electronics and Technology",
+      "global_rank": 121628,
+      "country": "United Kingdom",
+      "country_code": 826
     },
     {
       "url": "https://forums.sandisk.com/u/{username}",
@@ -7078,10 +7078,10 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "Games",
-      "global_rank": 0,
-      "country": "",
-      "country_code": 0
+      "type": "Games > Video Games Consoles and Accessories",
+      "global_rank": 650,
+      "country": "United States",
+      "country_code": 840
     },
     {
       "url": "https://gameideas.wikia.com/wiki/User:{username}",
@@ -7095,10 +7095,10 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "Wiki",
-      "global_rank": 0,
-      "country": "",
-      "country_code": 0
+      "type": "Games > Games",
+      "global_rank": 25368,
+      "country": "United States",
+      "country_code": 840
     },
     {
       "url": "https://gamekult.com/forum/u/{username}",
@@ -7191,10 +7191,10 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "Games",
-      "global_rank": 0,
-      "country": "",
-      "country_code": 0
+      "type": "Games > Games",
+      "global_rank": 278142,
+      "country": "United States",
+      "country_code": 840
     },
     {
       "url": "https://gaminglatest.com/members/{username}",
@@ -7405,10 +7405,10 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "Internet",
-      "global_rank": 0,
-      "country": "",
-      "country_code": 0
+      "type": "Computers Electronics and Technology > Programming and Developer Software",
+      "global_rank": 3565,
+      "country": "China",
+      "country_code": 156
     },
     {
       "url": "https://github.com/{username}",
@@ -7659,10 +7659,10 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "Internet",
-      "global_rank": 0,
-      "country": "",
-      "country_code": 0
+      "type": "Computers Electronics and Technology > Computers Electronics and Technology",
+      "global_rank": 3468,
+      "country": "United States",
+      "country_code": 840
     },
     {
       "url": "https://guru.com/freelancers/{username}",
@@ -8061,10 +8061,10 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "Forums",
-      "global_rank": 0,
-      "country": "",
-      "country_code": 0
+      "type": "Computers Electronics and Technology > Programming and Developer Software",
+      "global_rank": 36680,
+      "country": "Germany",
+      "country_code": 276
     },
     {
       "url": "https://hiddenpalace.org/wiki/User:{username}",
@@ -8139,10 +8139,10 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "Society",
-      "global_rank": 0,
-      "country": "",
-      "country_code": 0
+      "type": "Home and Garden > Home Improvement and Maintenance",
+      "global_rank": 1905,
+      "country": "United States",
+      "country_code": 840
     },
     {
       "url": "https://hub.docker.com/u/{username}",
@@ -8877,10 +8877,10 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "Internet",
-      "global_rank": 0,
-      "country": "",
-      "country_code": 0
+      "type": "Arts and Entertainment > Books and Literature",
+      "global_rank": 1521,
+      "country": "United States",
+      "country_code": 840
     },
     {
       "url": "https://javascript.wikia.com/wiki/User:{username}",
@@ -9035,10 +9035,10 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "Internet",
-      "global_rank": 0,
-      "country": "",
-      "country_code": 0
+      "type": "Computers Electronics and Technology",
+      "global_rank": 92640,
+      "country": "United States",
+      "country_code": 840
     },
     {
       "url": "https://kizlarsoruyor.com/uye/{username}",
@@ -9132,10 +9132,10 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "Internet",
-      "global_rank": 0,
-      "country": "",
-      "country_code": 0
+      "type": "Computers Electronics and Technology > Computers Electronics and Technology",
+      "global_rank": 12988,
+      "country": "Russian Federation",
+      "country_code": 643
     },
     {
       "url": "https://lab.pentestit.ru/profile/{username}",
@@ -9173,10 +9173,10 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "Internet",
-      "global_rank": 0,
-      "country": "",
-      "country_code": 0
+      "type": "Science and Education > Science and Education",
+      "global_rank": 127266,
+      "country": "United States",
+      "country_code": 840
     },
     {
       "url": "https://last.fm/user/{username}",
@@ -9977,10 +9977,10 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "Internet",
-      "global_rank": 0,
-      "country": "",
-      "country_code": 0
+      "type": "Reference Materials > Reference Materials",
+      "global_rank": 645,
+      "country": "United States",
+      "country_code": 840
     },
     {
       "url": "https://metacafe.com/channels/{username}/",
@@ -10028,10 +10028,10 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "Internet",
-      "global_rank": 0,
-      "country": "",
-      "country_code": 0
+      "type": "Arts and Entertainment > TV Movies and Streaming",
+      "global_rank": 3847,
+      "country": "United States",
+      "country_code": 840
     },
     {
       "url": "https://metroidwiki.org/wiki/User:{username}",
@@ -10437,10 +10437,10 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "Internet",
-      "global_rank": 0,
-      "country": "",
-      "country_code": 0
+      "type": "Arts and Entertainment > Arts and Entertainment",
+      "global_rank": 548,
+      "country": "United States",
+      "country_code": 840
     },
     {
       "url": "https://myminifactory.com/users/{username}",
@@ -10920,10 +10920,10 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "Wiki",
-      "global_rank": 0,
-      "country": "",
-      "country_code": 0
+      "type": "Games > Games",
+      "global_rank": 25368,
+      "country": "United States",
+      "country_code": 840
     },
     {
       "url": "https://nycanals.com/User:{username}",
@@ -11074,10 +11074,10 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "Computers",
-      "global_rank": 0,
-      "country": "",
-      "country_code": 0
+      "type": "Computers Electronics and Technology > Programming and Developer Software",
+      "global_rank": 73197,
+      "country": "China",
+      "country_code": 156
     },
     {
       "url": "https://openhub.net/accounts/{username}",
@@ -11577,10 +11577,10 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "Games",
-      "global_rank": 0,
-      "country": "",
-      "country_code": 0
+      "type": "Adult",
+      "global_rank": 924994,
+      "country": "United States",
+      "country_code": 840
     },
     {
       "url": "https://php.ru/forum/members/?username={username}",
@@ -11647,10 +11647,10 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "Internet",
-      "global_rank": 0,
-      "country": "",
-      "country_code": 0
+      "type": "Arts and Entertainment > Humor",
+      "global_rank": 761,
+      "country": "Russian Federation",
+      "country_code": 643
     },
     {
       "url": "https://pinataisland.info/viva/User:{username}",
@@ -11789,10 +11789,10 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "Music",
-      "global_rank": 0,
-      "country": "",
-      "country_code": 0
+      "type": "Arts and Entertainment > Music",
+      "global_rank": 774116,
+      "country": "United States",
+      "country_code": 840
     },
     {
       "url": "https://plurk.com/{username}",
@@ -11858,10 +11858,10 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "Internet",
-      "global_rank": 0,
-      "country": "",
-      "country_code": 0
+      "type": "Travel and Tourism > Travel and Tourism",
+      "global_rank": 111005,
+      "country": "Germany",
+      "country_code": 276
     },
     {
       "url": "https://polygon.com/users/{username}",
@@ -12045,10 +12045,10 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "Internet",
-      "global_rank": 0,
-      "country": "",
-      "country_code": 0
+      "type": "Computers Electronics and Technology > Computers Electronics and Technology",
+      "global_rank": 14631,
+      "country": "United States",
+      "country_code": 840
     },
     {
       "url": "https://profil.chatujme.cz/{username}",
@@ -12091,10 +12091,10 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "Internet",
-      "global_rank": 0,
-      "country": "",
-      "country_code": 0
+      "type": "Computers Electronics and Technology > Social Networks and Online Communities",
+      "global_rank": 484,
+      "country": "Japan",
+      "country_code": 392
     },
     {
       "url": "https://profiles.wordpress.org/{username}",
@@ -12763,10 +12763,10 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "Computers",
-      "global_rank": 0,
-      "country": "",
-      "country_code": 0
+      "type": "Science and Education > Science and Education",
+      "global_rank": 358,
+      "country": "United States",
+      "country_code": 840
     },
     {
       "url": "https://resources.allsetlearning.com/chinese/grammar/User:{username}",
@@ -13924,10 +13924,10 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "Games",
-      "global_rank": 0,
-      "country": "",
-      "country_code": 0
+      "type": "Games > Video Games Consoles and Accessories",
+      "global_rank": 144493,
+      "country": "United States",
+      "country_code": 840
     },
     {
       "url": "https://steemit.com/@{username}",
@@ -13992,10 +13992,10 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "Wiki",
-      "global_rank": 0,
-      "country": "",
-      "country_code": 0
+      "type": "Games > Video Games Consoles and Accessories",
+      "global_rank": 24974,
+      "country": "United States",
+      "country_code": 840
     },
     {
       "url": "https://strava.com/athletes/{username}",
@@ -14044,10 +14044,10 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "Forums",
-      "global_rank": 0,
-      "country": "",
-      "country_code": 0
+      "type": "Health > Addictions",
+      "global_rank": 44456,
+      "country": "United States",
+      "country_code": 840
     },
     {
       "url": "https://survivefrance.com/u/{username}",
@@ -15197,10 +15197,10 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "Forums",
-      "global_rank": 0,
-      "country": "",
-      "country_code": 0
+      "type": "Computers Electronics and Technology > Programming and Developer Software",
+      "global_rank": 38108,
+      "country": "United States",
+      "country_code": 840
     },
     {
       "url": "https://uses.plantnet-project.org/en/User:{username}",
@@ -15355,10 +15355,10 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "Internet",
-      "global_rank": 0,
-      "country": "",
-      "country_code": 0
+      "type": "Games > Video Games Consoles and Accessories",
+      "global_rank": 232093,
+      "country": "United States",
+      "country_code": 840
     },
     {
       "url": "https://video-game-music-covers.wikia.com/User:{username}",
@@ -15372,10 +15372,10 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "Wiki",
-      "global_rank": 0,
-      "country": "",
-      "country_code": 0
+      "type": "Games > Games",
+      "global_rank": 25368,
+      "country": "United States",
+      "country_code": 840
     },
     {
       "url": "https://videogamer.com/forums/index.php?/profile/{username}/",
@@ -15434,10 +15434,10 @@
       "selected": "false",
       "timeout": 0,
       "implicit": 10,
-      "type": "Videos",
-      "global_rank": 0,
-      "country": "",
-      "country_code": 0
+      "type": "Arts and Entertainment > TV Movies and Streaming",
+      "global_rank": 419,
+      "country": "United States",
+      "country_code": 840
     },
     {
       "url": "https://vingle.net/{username}",
@@ -15892,10 +15892,10 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "Wiki",
-      "global_rank": 0,
-      "country": "",
-      "country_code": 0
+      "type": "Hobbies and Leisure > Ancestry and Genealogy",
+      "global_rank": 8055,
+      "country": "United States",
+      "country_code": 840
     },
     {
       "url": "https://wiki.gentoo.org/wiki/User:{username}",
@@ -16618,10 +16618,10 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "Internet",
-      "global_rank": 0,
-      "country": "",
-      "country_code": 0
+      "type": "Reference Materials > Dictionaries and Encyclopedias",
+      "global_rank": 60947,
+      "country": "United States",
+      "country_code": 840
     },
     {
       "url": "https://worldwindcentral.com/wiki/User:{username}",
@@ -16658,10 +16658,10 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "Internet",
-      "global_rank": 0,
-      "country": "",
-      "country_code": 0
+      "type": "Games > Video Games Consoles and Accessories",
+      "global_rank": 775,
+      "country": "United States",
+      "country_code": 840
     },
     {
       "url": "https://wowpedia.org/User:{username}",
@@ -17371,10 +17371,10 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "Internet",
-      "global_rank": 0,
-      "country": "",
-      "country_code": 0
+      "type": "Computers Electronics and Technology > Social Networks and Online Communities",
+      "global_rank": 293,
+      "country": "United States",
+      "country_code": 840
     },
     {
       "url": "https://{username}.svbtle.com/",
@@ -17428,10 +17428,10 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "Internet",
-      "global_rank": 0,
-      "country": "",
-      "country_code": 0
+      "type": "Computers Electronics and Technology > Social Networks and Online Communities",
+      "global_rank": 100,
+      "country": "United States",
+      "country_code": 840
     },
     {
       "url": "https://{username}.webnode.cz",
