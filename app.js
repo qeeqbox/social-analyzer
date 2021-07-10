@@ -554,6 +554,10 @@ async function check_user_cli(argv) {
     }
   }
 
+  await helper.websites_entries.forEach(async function(value, i) {
+      helper.websites_entries[i].selected = "false"
+  });
+
   if (argv.websites == "all") {
     await helper.websites_entries.forEach(async function(value, i) {
       helper.websites_entries[i].selected = "true"
