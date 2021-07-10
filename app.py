@@ -40,7 +40,7 @@ from warnings import filterwarnings
 
 filterwarnings('ignore', category=RuntimeWarning, module='runpy')
 packages.urllib3.disable_warnings(category=InsecureRequestWarning)
-
+filterwarnings("ignore", category=UserWarning, module='bs4')
 
 class SocialAnalyzer():
     def __init__(self, silent=False):
@@ -53,6 +53,7 @@ class SocialAnalyzer():
         self.strings_pages = recompile('captcha-info|Please enable cookies|Completing the CAPTCHA', IGNORECASE)
         self.strings_titles = recompile('not found|blocked|attention required|cloudflare', IGNORECASE)
         self.strings_meta = recompile(r'regionsAllowed|width|height|color|rgba\(|charset|viewport|refresh|equiv|robots', IGNORECASE)
+        self.top_pattern = recompile('^top([0-9]+)$', IGNORECASE)
         self.languages_json = None
         self.sites_dummy = None
         self.workers = 15
@@ -103,13 +104,13 @@ class SocialAnalyzer():
                 return self.languages_json[lang] + " (Maybe)"
         return "unavailable"
 
-    def get_language_by_parsing(self, source):
+    def get_language_by_parsing(self, source, encoding):
         '''
         guess language by parsing the lang tag
         '''
 
         with suppress(Exception):
-            lang = BeautifulSoup(source, "html.parser").find("html", attrs={"lang": True})["lang"]
+            lang = BeautifulSoup(source, "html.parser", from_encoding=encoding).find("html", attrs={"lang": True})["lang"]
             if lang and lang != "":
                 return self.languages_json[lang]
         return "unavailable"
@@ -208,7 +209,7 @@ class SocialAnalyzer():
                 temp_list.append(item)
         return temp_list
 
-    def sget_website(self, site):
+    def get_website(self, site):
         '''
         extract domain from website
         '''
@@ -216,6 +217,23 @@ class SocialAnalyzer():
         temp_value = get_fld(site, fix_protocol=True)
         temp_value = temp_value.replace(".{username}", "").replace("{username}.", "")
         return temp_value
+
+    def search_and_change(self, site,_dict):
+        with suppress(Exception):
+            if site in self.websites_entries:
+                item = self.websites_entries.index(site)
+                self.websites_entries[item].update(_dict)
+
+    def top_websites(self,top_number):
+        with suppress(Exception):
+            top_websites = research(self.top_pattern, top_number)
+            if top_websites:
+                sites = ([d for d in self.websites_entries if d.get('global_rank') != 0])
+                sites = sorted(sites, key=lambda x: x['global_rank'])
+                for site in sites[:int(top_websites.group(1))]:
+                    self.search_and_change(site,{"selected":"true"})
+                return True
+        return False
 
     def list_all_websites(self):
         '''
@@ -264,6 +282,7 @@ class SocialAnalyzer():
             response = session.get(site["url"].replace("{username}", username), timeout=5, verify=False)
             source = response.text
             content = response.content
+            encoding = response.encoding
             answer = dict((k.lower(), v.lower()) for k, v in response.headers.items())
             session.close()
             temp_profile = {}
@@ -360,12 +379,12 @@ class SocialAnalyzer():
             soup = None
 
             with suppress(Exception):
-                soup = BeautifulSoup(content, "html.parser")
+                soup = BeautifulSoup(content, "html.parser", from_encoding=encoding)
 
             with suppress(Exception):
                 temp_text_arr = []
                 temp_text_list = []
-                soup = BeautifulSoup(content, "html.parser")
+                soup = BeautifulSoup(content, "html.parser", from_encoding=encoding)
                 for item in soup.stripped_strings:
                     if item not in temp_text_list:
                         temp_text_list.append(item)
@@ -373,11 +392,11 @@ class SocialAnalyzer():
                 temp_profile["text"] = " ".join(temp_text_arr)
                 temp_profile["text"] = resub(r"\s\s+", " ", temp_profile["text"])
             with suppress(Exception):
-                temp_profile["language"] = self.get_language_by_parsing(source)
+                temp_profile["language"] = self.get_language_by_parsing(source,encoding)
                 if temp_profile["language"] == "unavailable":
                     temp_profile["language"] = self.get_language_by_guessing(temp_profile["text"])
             with suppress(Exception):
-                temp_profile["title"] = BeautifulSoup(source, "html.parser").title.string
+                temp_profile["title"] = BeautifulSoup(source, "html.parser", from_encoding=encoding).title.string
                 temp_profile["title"] = resub(r"\s\s+", " ", temp_profile["title"])
 
             with suppress(Exception):
@@ -433,7 +452,7 @@ class SocialAnalyzer():
                 if temp_profile["status"] == "good":
                     temp_meta_list = []
                     temp_for_checking = []
-                    soup = BeautifulSoup(content, "lxml")
+                    soup = BeautifulSoup(content, "lxml", from_encoding=encoding)
                     for meta in soup.find_all('meta'):
                         if meta not in temp_for_checking and not research(self.strings_meta, str(meta)):
                             temp_for_checking.append(meta)
@@ -552,10 +571,11 @@ class SocialAnalyzer():
             for site in self.websites_entries:
                 site["selected"] = "true"
         else:
-            for site in self.websites_entries:
-                for temp in argv.websites.split(" "):
-                    if temp in site["url"]:
-                        site["selected"] = "true"
+            if not self.top_websites(argv.websites):
+                for site in self.websites_entries:
+                    for temp in argv.websites.split(" "):
+                        if temp in site["url"]:
+                            site["selected"] = "true"
 
         resutls = self.find_username_normal(req)
 
@@ -701,7 +721,7 @@ class SocialAnalyzer():
         ARG_PARSER._action_groups.pop()
         ARG_PARSER_OPTIONAL = ARG_PARSER.add_argument_group("Arguments")
         ARG_PARSER_OPTIONAL.add_argument("--username", help="E.g. johndoe, john_doe or johndoe9999", metavar="", default="")
-        ARG_PARSER_OPTIONAL.add_argument("--websites", help="Website or websites separated by space E.g. youtube, tiktok or tumblr", metavar="", default="all")
+        ARG_PARSER_OPTIONAL.add_argument("--websites", help="A website or websites separated by space E.g. youtube, tiktok or tumblr. Also, you can use top10, or top105 which will select websites by their global rank. Or, use all for selecting all websites. The default is top100", metavar="", default="top100")
         ARG_PARSER_OPTIONAL.add_argument("--mode", help="Analysis mode E.g.fast -> FindUserProfilesFast, slow -> FindUserProfilesSlow or special -> FindUserProfilesSpecial", metavar="", default="fast")
         ARG_PARSER_OPTIONAL.add_argument("--output", help="Show the output in the following format: json -> json output for integration or pretty -> prettify the output", metavar="", default="pretty")
         ARG_PARSER_OPTIONAL.add_argument("--options", help="Show the following when a profile is found: link, rate, title or text", metavar="", default="")

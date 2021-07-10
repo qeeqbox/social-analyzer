@@ -19,7 +19,7 @@ var argv = require('yargs')
   .describe('username', 'E.g. johndoe, john_doe or johndoe9999')
   .default("username", "")
   .describe('websites', 'Website or websites separated by space E.g. youtube, tiktok or tumblr')
-  .default("websites", "all")
+  .default("websites", "top100")
   .describe('mode', 'Analysis mode E.g.fast -> FindUserProfilesFast, slow -> FindUserProfilesSlow or special -> FindUserProfilesSpecial')
   .default("mode", "fast")
   .describe('output', 'Show the output in the following format: json -> json output for integration or pretty -> prettify the output')
@@ -492,7 +492,6 @@ function delete_keys(object, temp_keys) {
 function clean_up_item(object, temp_keys_str) {
   delete object['image']
   if (temp_keys_str == "") {
-    delete object['text']
   } else {
     Object.keys(object).forEach((key) => {
       try {
@@ -503,6 +502,31 @@ function clean_up_item(object, temp_keys_str) {
     });
   }
   return object
+}
+
+function search_and_change(site,_dict){
+  if (helper.websites_entries.includes(site)){
+    var item = helper.websites_entries.indexOf(site)
+    if (item != -1){
+      helper.websites_entries[item] = Object.assign({}, helper.websites_entries[item], _dict);
+    }
+  }
+}
+
+async function top_websites(top_number){
+  var matched = top_number.match(helper.top_websites)
+  if (typeof matched !== 'undefined' && matched != null) {
+    websites_entries_filtered = helper.websites_entries.filter((item) => item.global_rank != 0)
+    websites_entries_filtered.sort(function(a,b) {return b.global_rank - a.global_rank});
+    websites_entries_filtered.reverse()
+    for (let i = 0; i < matched[1]; i++) {
+      await search_and_change(websites_entries_filtered[i],{selected: 'true'})
+    } 
+
+    return true
+  }
+
+  return false
 }
 
 async function check_user_cli(argv) {
@@ -535,16 +559,18 @@ async function check_user_cli(argv) {
       helper.websites_entries[i].selected = "true"
     });
   } else {
-    await helper.websites_entries.forEach(async function(value, i) {
-      helper.websites_entries[i].selected = "false"
-      if (argv.websites.length > 0) {
-        await argv.websites.split(' ').forEach(item => {
-          if (helper.websites_entries[i].url.toLowerCase().includes(item.toLowerCase())) {
-            helper.websites_entries[i].selected = "true"
-          }
-        });
-      }
-    });
+    var is_top = await top_websites(argv.websites)
+    if (!is_top){
+      await helper.websites_entries.forEach(async function(value, i) {
+        if (argv.websites.length > 0) {
+          await argv.websites.split(' ').forEach(item => {
+            if (helper.websites_entries[i].url.toLowerCase().includes(item.toLowerCase())) {
+              helper.websites_entries[i].selected = "true"
+            }
+          });
+        }
+      });
+    }
   }
 
   ret = await fastScan.find_username_normal(req)
@@ -558,14 +584,13 @@ async function check_user_cli(argv) {
     }
     await ret.forEach(item => {
       var temp_keys = Object.assign({}, helper.profile_template);
-
       if (item.method == "all") {
         if (item.good == "true") {
           item = delete_keys(item, ['method', 'good'])
           item = clean_up_item(item, argv.options)
           temp_detected.detected.push(item)
         } else {
-          item = delete_keys(item, ['found', 'rate', 'status', 'method', 'good', 'extracted', 'metadata'])
+          item = delete_keys(item, ['found', 'rate', 'status', 'method', 'good', 'text', 'extracted', 'metadata'])
           item = clean_up_item(item, argv.options)
           temp_detected.unknown.push(item)
         }
@@ -576,7 +601,7 @@ async function check_user_cli(argv) {
           temp_detected.detected.push(item)
         }
       } else if (item.method == "get") {
-        item = delete_keys(item, ['found', 'rate', 'status', 'method', 'good', 'extracted', 'metadata'])
+        item = delete_keys(item, ['found', 'rate', 'status', 'method', 'good', 'text','extracted', 'metadata'])
         item = clean_up_item(item, argv.options)
         temp_detected.unknown.push(item)
       } else if (item.method == "failed") {
