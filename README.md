@@ -15,7 +15,7 @@ This project is *"currently used by some law enforcement agencies in countries w
 
 
 ## Updates
-- New updates for the CLIs - You can select websites by their global ranking as --websiste top10, --websiste top123 etc..
+- New updates for the CLIs - You can select websites by their global ranking as --websites top10, --websites top123 etc..
 - The new Social-Analyzer version uses it's own automated graph visualization called Ixora
 - I have been getting many public & private requests to add static websites' info to the detection db, this is being implemented and +400 detections should have that. If you have any -private module, and you are not able to see the static websites' info, download the latest version or email me for details
 
