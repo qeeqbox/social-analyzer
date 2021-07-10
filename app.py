@@ -42,6 +42,7 @@ filterwarnings('ignore', category=RuntimeWarning, module='runpy')
 packages.urllib3.disable_warnings(category=InsecureRequestWarning)
 filterwarnings("ignore", category=UserWarning, module='bs4')
 
+
 class SocialAnalyzer():
     def __init__(self, silent=False):
         self.websites_entries = []
@@ -218,20 +219,20 @@ class SocialAnalyzer():
         temp_value = temp_value.replace(".{username}", "").replace("{username}.", "")
         return temp_value
 
-    def search_and_change(self, site,_dict):
+    def search_and_change(self, site, _dict):
         with suppress(Exception):
             if site in self.websites_entries:
                 item = self.websites_entries.index(site)
                 self.websites_entries[item].update(_dict)
 
-    def top_websites(self,top_number):
+    def top_websites(self, top_number):
         with suppress(Exception):
             top_websites = research(self.top_pattern, top_number)
             if top_websites:
                 sites = ([d for d in self.websites_entries if d.get('global_rank') != 0])
                 sites = sorted(sites, key=lambda x: x['global_rank'])
                 for site in sites[:int(top_websites.group(1))]:
-                    self.search_and_change(site,{"selected":"true"})
+                    self.search_and_change(site, {"selected": "true"})
                 return True
         return False
 
@@ -392,7 +393,7 @@ class SocialAnalyzer():
                 temp_profile["text"] = " ".join(temp_text_arr)
                 temp_profile["text"] = resub(r"\s\s+", " ", temp_profile["text"])
             with suppress(Exception):
-                temp_profile["language"] = self.get_language_by_parsing(source,encoding)
+                temp_profile["language"] = self.get_language_by_parsing(source, encoding)
                 if temp_profile["language"] == "unavailable":
                     temp_profile["language"] = self.get_language_by_guessing(temp_profile["text"])
             with suppress(Exception):
