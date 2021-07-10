@@ -86,6 +86,7 @@ var logs_queue = Promise.resolve();
 
 var strings_pages = new RegExp('captcha-info|Please enable cookies|Completing the CAPTCHA', 'i')
 var strings_titles = new RegExp('not found|blocked|attention required|cloudflare', 'i')
+var top_websites = new RegExp('^top([0-9]+)$', 'i')
 
 function get_log_file(uuid) {
   _uuid = uuid.replace(/[^a-zA-Z0-9\-]+/g, '');
@@ -316,6 +317,7 @@ async function setup_tecert() {
 module.exports = {
   strings_pages,
   strings_titles,
+  top_websites,
   tecert_file,
   setup_tecert,
   compare_objects,
