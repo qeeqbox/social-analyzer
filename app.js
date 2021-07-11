@@ -91,6 +91,7 @@ var externalApis = require("./modules/external-apis.js")
 var stringAnalysis = require("./modules/string-analysis.js")
 var nameAnalysis = require("./modules/name-analysis.js")
 var visualize = require("./modules/visualize.js")
+var stats = require("./modules/stats.js")
 
 var app = express();
 app.set('etag', false)
@@ -109,8 +110,7 @@ app.post("/get_logs", async function(req, res, next) {
       if (typeof data !== 'undefined' && data) {
         last_line = data.split('\n').slice(-2)[0];
       }
-    }
-    else{
+    } else {
       last_line = "nothing_here_error"
     }
     res.send(last_line)
@@ -138,7 +138,8 @@ app.get("/get_settings", async function(req, res, next) {
         return Promise.resolve({
           "index": index,
           "url": temp_url,
-          "selected": temp_selected
+          "selected": temp_selected,
+          "global_rank":site["global_rank"]
         });
       }
     }
@@ -262,18 +263,27 @@ app.post("/analyze_string", async function(req, res, next) {
   var custom_search = []
   var logs = ""
   var fast = false
-  var graph = {"graph":{"nodes": [],"links": []}}
-
-  if (req.body.string == "test_user_2021_2022_"){
-      if (fs.existsSync('test.json')) {
-        var obj = JSON.parse(fs.readFileSync('test.json', 'utf8'));
-        res.json(obj);
-      }
-      else{
-        res.json("Error");
-      }
+  var graph = {
+    "graph": {
+      "nodes": [],
+      "links": []
+    }
   }
-  else if (req.body.string == null || req.body.string == "") {
+
+  var stats_default = {
+    "good": [],
+    "maybe": [],
+    "bad": [],
+    "all": []
+  }
+
+  if (req.body.string == "test_user_2021_2022_") {
+    if (fs.existsSync('test.json')) {
+      res.json(JSON.parse(fs.readFileSync('test.json', 'utf8')));
+    } else {
+      res.json("Error");
+    }
+  } else if (req.body.string == null || req.body.string == "") {
     res.json("Error");
   } else {
     username = req.body.string
@@ -286,6 +296,11 @@ app.post("/analyze_string", async function(req, res, next) {
       helper.log_to_file_queue(req.body.uuid, "[Starting] Checking user profiles normal")
       user_info_normal.data = await fastScan.find_username_normal(req);
       helper.log_to_file_queue(req.body.uuid, "[Done] Checking user profiles normal")
+      if (req.body.option.includes("CategoriesStats")) {
+        helper.log_to_file_queue(req.body.uuid, "[Starting] Generate stats")
+        stats_default = await stats.get_stats(user_info_normal.data);
+        helper.log_to_file_queue(req.body.uuid, "[Done] Generate stats")
+      }
     }
 
     if (req.body.option.includes("FindUserProfilesSpecial")) {
@@ -423,8 +438,8 @@ app.post("/analyze_string", async function(req, res, next) {
 
     helper.log_to_file_queue(req.body.uuid, "[Finished] Analyzing: " + req.body.string + " Task: " + req.body.uuid)
 
-    /*
-    fs.writeFileSync('./test.json', JSON.stringify({
+
+    /*fs.writeFileSync('./test.json', JSON.stringify({
       username: username,
       uuid: temp_uuid,
       info,
@@ -438,8 +453,8 @@ app.post("/analyze_string", async function(req, res, next) {
       custom_search: custom_search,
       graph: graph,
       logs: logs
-    }, null, 2) , 'utf-8');
-    */
+    }, null, 2) , 'utf-8');*/
+
 
     res.json({
       username: username,
@@ -454,6 +469,7 @@ app.post("/analyze_string", async function(req, res, next) {
       names_origins: names_origins,
       custom_search: custom_search,
       graph: graph,
+      stats:stats_default,
       logs: logs
     });
   }
@@ -491,8 +507,7 @@ function delete_keys(object, temp_keys) {
 
 function clean_up_item(object, temp_keys_str) {
   delete object['image']
-  if (temp_keys_str == "") {
-  } else {
+  if (temp_keys_str == "") {} else {
     Object.keys(object).forEach((key) => {
       try {
         if (!temp_keys_str.includes(key)) {
@@ -504,24 +519,25 @@ function clean_up_item(object, temp_keys_str) {
   return object
 }
 
-function search_and_change(site,_dict){
-  if (helper.websites_entries.includes(site)){
+function search_and_change(site, _dict) {
+  if (helper.websites_entries.includes(site)) {
     var item = helper.websites_entries.indexOf(site)
-    if (item != -1){
+    if (item != -1) {
       helper.websites_entries[item] = Object.assign({}, helper.websites_entries[item], _dict);
     }
   }
 }
 
-async function top_websites(top_number){
+async function top_websites(top_number) {
   var matched = top_number.match(helper.top_websites)
   if (typeof matched !== 'undefined' && matched != null) {
     websites_entries_filtered = helper.websites_entries.filter((item) => item.global_rank != 0)
-    websites_entries_filtered.sort(function(a,b) {return b.global_rank - a.global_rank});
-    websites_entries_filtered.reverse()
+    websites_entries_filtered.sort(function(a, b) {return a.global_rank - b.global_rank});
     for (let i = 0; i < matched[1]; i++) {
-      await search_and_change(websites_entries_filtered[i],{selected: 'true'})
-    } 
+      await search_and_change(websites_entries_filtered[i], {
+        selected: 'true'
+      })
+    }
 
     return true
   }
@@ -555,7 +571,7 @@ async function check_user_cli(argv) {
   }
 
   await helper.websites_entries.forEach(async function(value, i) {
-      helper.websites_entries[i].selected = "false"
+    helper.websites_entries[i].selected = "false"
   });
 
   if (argv.websites == "all") {
@@ -564,7 +580,7 @@ async function check_user_cli(argv) {
     });
   } else {
     var is_top = await top_websites(argv.websites)
-    if (!is_top){
+    if (!is_top) {
       await helper.websites_entries.forEach(async function(value, i) {
         if (argv.websites.length > 0) {
           await argv.websites.split(' ').forEach(item => {
@@ -605,7 +621,7 @@ async function check_user_cli(argv) {
           temp_detected.detected.push(item)
         }
       } else if (item.method == "get") {
-        item = delete_keys(item, ['found', 'rate', 'status', 'method', 'good', 'text','extracted', 'metadata'])
+        item = delete_keys(item, ['found', 'rate', 'status', 'method', 'good', 'text', 'extracted', 'metadata'])
         item = clean_up_item(item, argv.options)
         temp_detected.unknown.push(item)
       } else if (item.method == "failed") {

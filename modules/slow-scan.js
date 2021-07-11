@@ -154,12 +154,12 @@ async function find_username_site(uuid, username, options, site) {
           temp_profile.rank = site.global_rank
           temp_profile.country = site.country
 
-          if (temp_profile.rank == 0){
+          if (temp_profile.rank == 0) {
             temp_profile.rank = "unavailable"
           }
 
 
-          ["title", "language", "text", "type", "metadata", "extracted","country"].forEach((item) => {
+          ["title", "language", "text", "type", "metadata", "extracted", "country"].forEach((item) => {
             if (temp_profile[item] == "") {
               temp_profile[item] = "unavailable"
             }
@@ -189,8 +189,7 @@ async function find_username_site(uuid, username, options, site) {
         }
         resolve(undefined)
       }
-    }
-    else{
+    } else {
       resolve(undefined)
     }
   });
