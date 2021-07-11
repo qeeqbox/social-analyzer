@@ -133,7 +133,7 @@ async function find_username_site(uuid, username, options, site) {
           temp_profile.title = title.replace(/(\r\n|\n|\r)/gm, "");
           temp_profile.language = language;
 
-          if (helper.strings_titles.test(temp_profile.title) || helper.strings_pages.test(temp_profile.text)){
+          if (helper.strings_titles.test(temp_profile.title) || helper.strings_pages.test(temp_profile.text)) {
             temp_profile.title = "filtered"
             temp_profile.text = "filtered"
           }
@@ -155,7 +155,7 @@ async function find_username_site(uuid, username, options, site) {
           temp_profile.rank = site.global_rank
           temp_profile.country = site.country
 
-          if (temp_profile.rank == 0){
+          if (temp_profile.rank == 0) {
             temp_profile.rank = "unavailable"
           }
 
@@ -177,7 +177,7 @@ async function find_username_site(uuid, username, options, site) {
             }
           }
 
-          ["title", "language", "text", "type", "metadata", "extracted","country"].forEach((item) => {
+          ["title", "language", "text", "type", "metadata", "extracted", "country"].forEach((item) => {
             if (temp_profile[item] == "") {
               temp_profile[item] = "unavailable"
             }
@@ -205,8 +205,7 @@ async function find_username_site(uuid, username, options, site) {
       } catch (err) {
         resolve(undefined)
       }
-    }
-    else {
+    } else {
       resolve(undefined)
     }
   });

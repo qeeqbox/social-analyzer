@@ -220,9 +220,9 @@
     flex-wrap: wrap;
   }
 
-  .div-100 > * {
-      margin-top: 5px;
-      margin-bottom: 5px;
+  .div-100>* {
+    margin-top: 5px;
+    margin-bottom: 5px;
   }
 
   #analyzed-options li {
@@ -259,6 +259,7 @@
   #save-to-file-section,
   #most-common-words-section,
   #words-info-section,
+  #stats-section,
   #custom-search-section,
   #names-origins-section {
     display: none;
@@ -648,12 +649,11 @@
     font-family: monospace !important;
   }
 
-  #ixora-graph-iframe{
+  #ixora-graph-iframe {
     width: 100%;
     height: 100%;
     border: none !important;
   }
-
 </style>
 
 <body>
@@ -729,6 +729,12 @@
                   <input type="button" id="settings-select-all" value="Select All" />
                   <div class="cell-separator"></div>
                   <input type="button" id='de-settings-select-all' value="De-Select All" />
+                  <div class="cell-separator"></div>
+                  <input type="button" id='select-top-10' value="Top 10" />
+                  <div class="cell-separator"></div>
+                  <input type="button" id='select-top-50' value="Top 50" />
+                  <div class="cell-separator"></div>
+                  <input type="button" id='select-top-100' value="Top 100" />
                 </div>
               </div>
             </div>
@@ -860,6 +866,14 @@
         <div id="force-graph-canvas" class="collapse show">
         </div>
       </div>
+      <div class="box-border-style" id="stats-section">
+        <div class="div-header">
+          <div class="div-left">Stats</div>
+          <div class="div-right"><i id="div-right-icon" class="fa fa-caret-up"></i></div>
+        </div>
+        <div id="stats-tables" class="collapse show">
+        </div>
+      </div>
       <div class="box-border-style" id="logs-section">
         <div class="div-header">
           <div class="div-left">Logs</div>
@@ -912,7 +926,7 @@
       {
         group: 'Find Profiles',
         value: 'FindUserProfilesFast,GetUserProfilesFast',
-        name: 'Find profiles in fast mode (Recommendecddd)',
+        name: 'Find profiles in fast mode (Recommended)',
         disable: false
       },
       {
@@ -949,6 +963,12 @@
         group: 'Visualize Information',
         value: 'NetworkGraph',
         name: 'Show a visualized map based on the extracted metadata',
+        disable: false
+      },
+      {
+        group: 'Stats',
+        value: 'CategoriesStats',
+        name: 'Generate stats of categories',
         disable: false
       },
       {
@@ -999,6 +1019,9 @@
         group: 'Visualize Information'
       },
       {
+        group: 'Stats'
+      },
+      {
         group: 'Other options'
       }
     ]
@@ -1015,7 +1038,7 @@
     var interval_logs;
     var output_json = {};
     var global_uuid = ""
-
+    var current_settings = []
 
     function change_analyzed_option(string, key, value) {
       let obj = analyzed_options_options.find(o => o.value === string);
@@ -1113,8 +1136,7 @@
       }).done(function(data) {
         if (data != "Error" && data != "nothinghere" && data != "nothing_here_error" && data != "") {
           $('#logs').text(data)
-        }
-        else if (data == "nothing_here_error" || data == "Error"){
+        } else if (data == "nothing_here_error" || data == "Error") {
           clearInterval(interval_logs)
         }
       }).fail(function(jqXHR, textStatus, errorThrown) {
@@ -1152,6 +1174,8 @@
       $('#custom-search-section').hide();
       $('#custom-search-table').html("");
       $('#logs').html("");
+      $('#stats-tables').html("");
+      $('#stats-section').hide();
       clearInterval(interval_logs);
     }
 
@@ -1306,7 +1330,8 @@
                     var temp_extract = add_extract(site);
                     temp_tr += '<div class="user-info-container"><div class="user-info-container-left"><div>Link: <a href="' + site.link + '">' + site.link + '</a></div><div>Rate: ' + site.rate + '</div><div>Status: ' + site.status +
                       '</div><div>Title: ' + site.title +
-                      '</div><div>Language: ' + site.language + '</div><div>Country: ' + site.country + '</div><div>Rank: ' + site.rank + '</div><div>Description: ' + site.type + '</div><div>Text: ' + site.text + '</div>' + temp_extract + '</div><div class="user-info-container-right">' + temp_image +
+                      '</div><div>Language: ' + site.language + '</div><div>Country: ' + site.country + '</div><div>Rank: ' + site.rank + '</div><div>Description: ' + site.type + '</div><div>Text: ' + site.text + '</div>' + temp_extract +
+                      '</div><div class="user-info-container-right">' + temp_image +
                       '</div></div>'
                   }
                 });
@@ -1339,22 +1364,26 @@
                     var temp_extract = add_extract(site);
                     temp_tr += '<div class="user-info-container"><div class="user-info-container-left"><div>Link: <a href="' + site.link + '">' + site.link + '</a></div><div>Rate: ' + site.rate + '</div><div>Status: ' + site.status +
                       '</div><div>Title: ' + site.title +
-                      '</div><div>Language: ' + site.language + '</div><div>Country: ' + site.country + '</div><div>Rank: ' + site.rank + '</div><div>Description: ' + site.type + '</div><div>Text: ' + site.text + '</div>' + temp_extract + '</div><div class="user-info-container-right"></div></div>'
+                      '</div><div>Language: ' + site.language + '</div><div>Country: ' + site.country + '</div><div>Rank: ' + site.rank + '</div><div>Description: ' + site.type + '</div><div>Text: ' + site.text + '</div>' + temp_extract +
+                      '</div><div class="user-info-container-right"></div></div>'
                   } else {
                     temp_tr += '<div class="user-info-container user-info-container-color-unknown"><div class="user-info-container-left"><div>Link: <a href="' + site.link + '">' + site.link + '</a></div><div>Title: ' + site.title +
-                      '</div><div>Language: ' + site.language + '</div><div>Country: ' + site.country + '</div><div>Rank: ' + site.rank + '</div><div>Description: ' + site.type + '</div><div>Text: ' + site.text + '</div></div><div class="user-info-container-right"></div></div>'
+                      '</div><div>Language: ' + site.language + '</div><div>Country: ' + site.country + '</div><div>Rank: ' + site.rank + '</div><div>Description: ' + site.type + '</div><div>Text: ' + site.text +
+                      '</div></div><div class="user-info-container-right"></div></div>'
                   }
                 } else if (site.method == "find") {
                   if (site.good == "true") {
                     var temp_extract = add_extract(site);
                     temp_tr += '<div class="user-info-container"><div class="user-info-container-left"><div>Link: <a href="' + site.link + '">' + site.link + '</a></div><div>Rate: ' + site.rate + '</div><div>Status: ' + site.status +
                       '</div><div>Title: ' + site.title +
-                      '</div><div>Language: ' + site.language + '</div><div>Country: ' + site.country + '</div><div>Rank: ' + site.rank + '</div><div>Description: ' + site.type + '</div><div>Text: ' + site.text + '</div>' + temp_extract + '</div><div class="user-info-container-right"></div></div>'
+                      '</div><div>Language: ' + site.language + '</div><div>Country: ' + site.country + '</div><div>Rank: ' + site.rank + '</div><div>Description: ' + site.type + '</div><div>Text: ' + site.text + '</div>' + temp_extract +
+                      '</div><div class="user-info-container-right"></div></div>'
                   }
                 } else if (site.method == "get") {
                   temp_tr += '<div class="user-info-container user-info-container-color-unknown"><div class="user-info-container-left"><div>Link: <a href="' + site.link + '">' + site.link + '</a></div><div>Rate: ' + site.rate +
                     '</div><div>Status: ' + site.status + '</div><div>Title: ' + site.title +
-                    '</div><div>Language: ' + site.language + '</div><div>Country: ' + site.country + '</div><div>Rank: ' + site.rank + '</div><div>Description: ' + site.type + '</div><div>Text: ' + site.text + '</div></div><div class="user-info-container-right"></div></div>'
+                    '</div><div>Language: ' + site.language + '</div><div>Country: ' + site.country + '</div><div>Rank: ' + site.rank + '</div><div>Description: ' + site.type + '</div><div>Text: ' + site.text +
+                    '</div></div><div class="user-info-container-right"></div></div>'
                 } else if (site.method == "failed") {
                   temp_tr += '<div class="user-info-container user-info-container-color-failed"><div class="user-info-container-left"><div>Link: <a href="' + site.link + '">' + site.link +
                     '</a></div></div><div class="user-info-container-right"></div></div>'
@@ -1397,17 +1426,30 @@
               $('#custom-search-section').show();
             }
 
+            if ((data.graph.graph.nodes.length > 0) && (data.graph.graph.links.length > 0)) {
+              $("#force-graph-canvas").html('<iframe id="ixora-graph-iframe" src="/graph.html"></iframe>')
+              $('#ixora-graph-iframe').load(function() {
+                document.getElementById("ixora-graph-iframe").contentWindow.ixora_wrapper(data.graph, true);
+              });
+              $('#force-graph-section').show();
+            }
+
+            if (data.stats["good"].length > 0 || data.stats["maybe"].length > 0 || data.stats["bad"].length > 0 || data.stats["all"].length > 0) {
+              Object.keys(data.stats).forEach(function(key) {
+                var temp_tr = ''
+                data.stats[key].forEach(function(item) {
+                  temp_tr += '<tr><td>' + item[0] + '</td><td>%' + item[1] + '</td></tr>'
+                });
+                if (temp_tr.length > 0) {
+                  $("#stats-tables").last().append('<table><tr><th>[' + key + '] Profiles</th><th>Percentage</th></tr>' + temp_tr + '</table>')
+                }
+              });
+              $('#stats-section').show();
+            }
+
             if (data.logs.length > 0) {
               $("#logs-pre").html('<pre>' + data.logs + '</pre>')
               $('#logs-section').show();
-            }
-
-            if ((data.graph.graph.nodes.length > 0) && (data.graph.graph.links.length > 0)) {
-              $("#force-graph-canvas").html('<iframe id="ixora-graph-iframe" src="/graph.html"></iframe>')
-              $('#ixora-graph-iframe').load(function(){
-                  document.getElementById("ixora-graph-iframe").contentWindow.ixora_wrapper(data.graph,true);
-              });
-              $('#force-graph-section').show();
             }
 
             if ((data.common.length > 0) || (data.info.checking.indexOf('with no lookups') === -1) || (data.words_info.length > 0) || (data.user_info_advanced.data.length > 0) || (data.user_info_normal.data.length > 0) || (data
@@ -1439,8 +1481,10 @@
           type: "GET",
           url: "/get_settings"
         }).done(function(data) {
+          current_sites = []
           if (data != "Error") {
             if (data.websites.length > 0) {
+              current_settings = data
               var temp_tr = ""
               data.websites.forEach(function(site) {
                 var temp_selected = ""
@@ -1490,6 +1534,26 @@
       $('#detection-options-list input:checkbox').prop('checked', true);
     });
 
+    $('[id^=select-top-]').click(function(e) {
+      e.preventDefault();
+      if ("websites" in current_settings) {
+        if (current_settings.websites.length > 0) {
+          websites_entries_filtered = current_settings.websites.filter((item) => item.global_rank != 0)
+          websites_entries_filtered.sort(function(a, b) {
+            return a.global_rank - b.global_rank
+          });
+          var top_websites = new RegExp('^select-top-([0-9]+)$', 'i')
+          var matched = $(this).attr('id').match(top_websites)
+          if (typeof matched !== 'undefined' && matched != null) {
+            $('#detection-options-list input:checkbox').prop('checked', false);
+            for (let i = 0; i < matched[1]; i++) {
+              $('#detection-options-list input:checkbox[name="url_' + websites_entries_filtered[i].index + '"]').prop('checked', true);
+            }
+          }
+        }
+      }
+    });
+
     $('#analyze-normal').click(function(e) {
       e.preventDefault();
       analyze_string();
@@ -1525,7 +1589,10 @@
     $('#fast-options').click(function(e) {
       e.preventDefault();
       $('#analyzed-options')[0].selectize.clear()
-      $('#analyzed-options')[0].selectize.setValue(['WordInfo','MostCommon','FindOrigins','LookUps','CustomSearch','FindUserProfilesFast,GetUserProfilesFast','ExtractMetadata','ExtractPatterns','NetworkGraph','FindNumbers','FindSymbols','ConvertNumbers','SplitWordsByAlphabet','SplitWordsByUpperCase']);
+      $('#analyzed-options')[0].selectize.setValue(['WordInfo', 'MostCommon', 'FindOrigins', 'LookUps', 'CustomSearch', 'FindUserProfilesFast,GetUserProfilesFast', 'ExtractMetadata', 'ExtractPatterns', 'NetworkGraph', 'FindNumbers',
+        'CategoriesStats',
+        'FindSymbols', 'ConvertNumbers', 'SplitWordsByAlphabet', 'SplitWordsByUpperCase'
+      ]);
     });
 
     $("#download-json").click(function(e) {
