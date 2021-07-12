@@ -569,7 +569,6 @@ class SocialAnalyzer():
         if argv.cli:
             self.log.info("[Warning] --cli is not needed and will be removed later on")
 
-
         websites = True if "--websites" in " ".join(sargv[1:]) else False
         top = True if "--top" in " ".join(sargv[1:]) else False
         countries = True if "--countries" in " ".join(sargv[1:]) else False
