@@ -18,8 +18,8 @@ var argv = require('yargs')
   .boolean('cli')
   .describe('username', 'E.g. johndoe, john_doe or johndoe9999')
   .default("username", "")
-  .describe('websites', 'A website or websites separated by space E.g. youtube, tiktok or tumblr. Also, you can use top10, or top105 which will select websites by their global rank. Or, use all for selecting all websites. The default is top100')
-  .default("websites", "top100")
+  .describe('websites', 'A website or websites separated by space E.g. youtube, tiktok or tumblr')
+  .default("websites", "all")
   .describe('mode', 'Analysis mode E.g.fast -> FindUserProfilesFast, slow -> FindUserProfilesSlow or special -> FindUserProfilesSpecial')
   .default("mode", "fast")
   .describe('output', 'Show the output in the following format: json -> json output for integration or pretty -> prettify the output')
@@ -48,18 +48,22 @@ var argv = require('yargs')
   .describe('filter', 'filter detected profiles by good, maybe or bad, you can do combine them with comma (good,bad) or use all')
   .default("filter", "good")
   .describe('profiles', 'filter profiles by detected, unknown or failed, you can do combine them with comma (detected,failed) or use all')
-  .default("profiles", "detected")
+  .default('profiles', 'detected')
+  .describe('top', 'select top websites as 10, 50 etc...[--websites is not needed]')
+  .default('top', '25')
+  .describe('countries', 'select websites by country or countries separated by space as: us br ru')
+  .default('countries', "all")
   .help('help')
   .argv;
 
 if (argv.output != "json") {
-  console.log('[!] Detections are updated very often, make sure to get the most up-to-date ones');
+  console.log('[init] Detections are updated very often, make sure to get the most up-to-date ones');
 }
 
 var semver = require('semver');
 if (semver.satisfies(process.version, '>13 || <13')) {
   if (argv.output != "json") {
-    console.log('[Good] NodeJS Version Check');
+    console.log('[init] NodeJS Version Check');
   }
 } else {
   if (argv.output != "json") {
@@ -139,7 +143,7 @@ app.get("/get_settings", async function(req, res, next) {
           "index": index,
           "url": temp_url,
           "selected": temp_selected,
-          "global_rank":site["global_rank"]
+          "global_rank": site["global_rank"]
         });
       }
     }
@@ -469,7 +473,7 @@ app.post("/analyze_string", async function(req, res, next) {
       names_origins: names_origins,
       custom_search: custom_search,
       graph: graph,
-      stats:stats_default,
+      stats: stats_default,
       logs: logs
     });
   }
@@ -528,23 +532,6 @@ function search_and_change(site, _dict) {
   }
 }
 
-async function top_websites(top_number) {
-  var matched = top_number.match(helper.top_websites)
-  if (typeof matched !== 'undefined' && matched != null) {
-    websites_entries_filtered = helper.websites_entries.filter((item) => item.global_rank != 0)
-    websites_entries_filtered.sort(function(a, b) {return a.global_rank - b.global_rank});
-    for (let i = 0; i < matched[1]; i++) {
-      await search_and_change(websites_entries_filtered[i], {
-        selected: 'true'
-      })
-    }
-
-    return true
-  }
-
-  return false
-}
-
 async function check_user_cli(argv) {
   var ret = []
   var random_string = Math.random().toString(36).substring(2);
@@ -570,27 +557,59 @@ async function check_user_cli(argv) {
     }
   }
 
+  websites = Boolean(process.argv.indexOf("--websites") > -1)
+  top = Boolean(process.argv.indexOf("--top") > -1)
+  countries = Boolean(process.argv.indexOf("--countries") > -1)
+
   await helper.websites_entries.forEach(async function(value, i) {
     helper.websites_entries[i].selected = "false"
   });
 
   if (argv.websites == "all") {
-    await helper.websites_entries.forEach(async function(value, i) {
-      helper.websites_entries[i].selected = "true"
-    });
-  } else {
-    var is_top = await top_websites(argv.websites)
-    if (!is_top) {
+    if (countries) {
+      list_of_countries = argv.countries.toLowerCase().split(" ");
       await helper.websites_entries.forEach(async function(value, i) {
-        if (argv.websites.length > 0) {
-          await argv.websites.split(' ').forEach(item => {
-            if (helper.websites_entries[i].url.toLowerCase().includes(item.toLowerCase())) {
-              helper.websites_entries[i].selected = "true"
-            }
-          });
+        if (helper.websites_entries[i].country.toLowerCase() != "" && list_of_countries.includes(helper.websites_entries[i].country.toLowerCase())) {
+          helper.websites_entries[i].selected = "true"
+        } else {
+          helper.websites_entries[i].selected = "false"
+        }
+      });
+    } else {
+      await helper.websites_entries.forEach(async function(value, i) {
+        helper.websites_entries[i].selected = "true"
+      });
+    }
+
+    if (top) {
+      websites_entries_filtered = helper.websites_entries.filter((item) => item.selected == 'true')
+      websites_entries_filtered = websites_entries_filtered.filter((item) => item.global_rank != 0)
+      websites_entries_filtered.sort(function(a, b) {
+        return a.global_rank - b.global_rank
+      });
+      for (let i = 0; i < argv.top; i++) {
+        await search_and_change(websites_entries_filtered[i], {
+          selected: 'pendding'
+        })
+      }
+      await helper.websites_entries.forEach(async function(value, i) {
+        if (helper.websites_entries[i].selected == "pendding") {
+          helper.websites_entries[i].selected = "true"
+        } else {
+          helper.websites_entries[i].selected = "false"
         }
       });
     }
+  } else {
+    await helper.websites_entries.forEach(async function(value, i) {
+      if (argv.websites.length > 0) {
+        await argv.websites.split(' ').forEach(item => {
+          if (helper.websites_entries[i].url.toLowerCase().includes(item.toLowerCase())) {
+            helper.websites_entries[i].selected = "true"
+          }
+        });
+      }
+    });
   }
 
   ret = await fastScan.find_username_normal(req)

@@ -18,6 +18,7 @@ if (process.platform == 'win32') {
 }
 
 async function find_username_advanced(req) {
+  helper.log_to_file_queue(req.body.uuid, "[init] Selected websites: " + helper.websites_entries.filter((item) => item.selected == 'true').length)
   const time = new Date();
   const functions = [];
   var all_results = []
