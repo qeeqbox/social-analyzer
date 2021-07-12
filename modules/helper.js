@@ -71,9 +71,10 @@ var ixora = require('ixora').QBIxora
 var sites_json_path = slash(path.join(__dirname, '..', 'data', 'sites.json'))
 var names_json_path = slash(path.join(__dirname, '..', 'data', 'names.json'))
 var dict_json_path = slash(path.join(__dirname, '..', 'data', 'dict.json'))
-var public_graph_path = slash(path.join(__dirname, '..', 'public','graph.html'))
+var countries_json_path = slash(path.join(__dirname, '..', 'data', 'names.json'))
+var public_graph_path = slash(path.join(__dirname, '..', 'public', 'graph.html'))
 
-temp_ixora = new ixora('Social-Analyzer',false);
+temp_ixora = new ixora('Social-Analyzer', false);
 temp_ixora.save_base_html(public_graph_path)
 temp_ixora = null
 
@@ -81,6 +82,7 @@ var websites_entries = JSON.parse(fs.readFileSync(sites_json_path))['websites_en
 var shared_detections = JSON.parse(fs.readFileSync(sites_json_path))['shared_detections'];
 var parsed_names_origins = JSON.parse(fs.readFileSync(names_json_path));
 var parsed_json = JSON.parse(fs.readFileSync(dict_json_path));
+var parsed_countries = JSON.parse(fs.readFileSync(names_json_path));
 
 var logs_queue = Promise.resolve();
 
@@ -269,6 +271,18 @@ function compare_objects(object1, object2, key) {
   }
 }
 
+function find_country(code) {
+  var ctr = ""
+  try {
+    if (code.toUpperCase() in parsed_countries) {
+      ctr = parsed_countries[code.toUpperCase()]
+    }
+  } catch (error) {
+
+  }
+  return ctr
+}
+
 async function is_empty(file) {
   try {
     stats = fs.statSync(file);
@@ -322,6 +336,7 @@ module.exports = {
   setup_tecert,
   compare_objects,
   get_log_file,
+  find_country,
   profile_template,
   detection_level,
   detected_websites,

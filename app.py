@@ -15,6 +15,7 @@
 from logging import getLogger, DEBUG, Formatter, Handler, addLevelName
 from logging.handlers import RotatingFileHandler
 from sys import platform, version_info
+from sys import argv as sargv
 from os import path, system, makedirs
 from time import time, sleep
 from argparse import ArgumentParser, SUPPRESS, Namespace
@@ -568,16 +569,45 @@ class SocialAnalyzer():
         if argv.cli:
             self.log.info("[Warning] --cli is not needed and will be removed later on")
 
-        if argv.websites == "all":
-            for site in self.websites_entries:
-                site["selected"] = "true"
-        else:
-            if not self.top_websites(argv.websites):
-                for site in self.websites_entries:
-                    for temp in argv.websites.split(" "):
-                        if temp in site["url"]:
-                            site["selected"] = "true"
 
+        websites = True if "--websites" in " ".join(sargv[1:]) else False
+        top = True if "--top" in " ".join(sargv[1:]) else False
+        countries = True if "--countries" in " ".join(sargv[1:]) else False
+
+        for site in self.websites_entries:
+            site["selected"] = "false"
+
+        if argv.websites == "all":
+            list_of_countries = []
+            if countries:
+                list_of_countries = argv.countries.split(" ")
+                for site in self.websites_entries:
+                    if site["country"] != "" and site["country"].lower() in list_of_countries:
+                        site["selected"] = "true"
+                    else:
+                        site["selected"] = "false"
+            else:
+                for site in self.websites_entries:
+                    site["selected"] = "true"
+
+            if top:
+                sites = ([d for d in self.websites_entries if d.get('selected') == "true"])
+                sites = ([d for d in sites if d.get('global_rank') != 0])
+                sites = sorted(sites, key=lambda x: x['global_rank'])
+                for site in sites[:int(argv.top)]:
+                    self.search_and_change(site, {"selected": "pendding"})
+                for site in self.websites_entries:
+                    if site["selected"] == "pendding":
+                        site["selected"] = "true"
+                    else:
+                        site["selected"] = "false"
+        else:
+            for site in self.websites_entries:
+                for temp in argv.websites.split(" "):
+                    if temp in site["url"]:
+                        site["selected"] = "true"
+
+        self.log.info("[Init] Selected websites: {}".format(len(self.websites_entries)))
         resutls = self.find_username_normal(req)
 
         for item in resutls:
@@ -722,13 +752,15 @@ class SocialAnalyzer():
         ARG_PARSER._action_groups.pop()
         ARG_PARSER_OPTIONAL = ARG_PARSER.add_argument_group("Arguments")
         ARG_PARSER_OPTIONAL.add_argument("--username", help="E.g. johndoe, john_doe or johndoe9999", metavar="", default="")
-        ARG_PARSER_OPTIONAL.add_argument("--websites", help="A website or websites separated by space E.g. youtube, tiktok or tumblr. Also, you can use top10, or top105 which will select websites by their global rank. Or, use all for selecting all websites. The default is top100", metavar="", default="top100")
+        ARG_PARSER_OPTIONAL.add_argument("--websites", help="A website or websites separated by space E.g. youtube, tiktok or tumblr", metavar="", default="all")
         ARG_PARSER_OPTIONAL.add_argument("--mode", help="Analysis mode E.g.fast -> FindUserProfilesFast, slow -> FindUserProfilesSlow or special -> FindUserProfilesSpecial", metavar="", default="fast")
         ARG_PARSER_OPTIONAL.add_argument("--output", help="Show the output in the following format: json -> json output for integration or pretty -> prettify the output", metavar="", default="pretty")
         ARG_PARSER_OPTIONAL.add_argument("--options", help="Show the following when a profile is found: link, rate, title or text", metavar="", default="")
         ARG_PARSER_OPTIONAL.add_argument("--method", help="find -> show detected profiles, get -> show all profiles regardless detected or not, all -> combine find & get", metavar="", default="all")
         ARG_PARSER_OPTIONAL.add_argument("--filter", help="Filter detected profiles by good, maybe or bad, you can do combine them with comma (good,bad) or use all", metavar="", default="good")
         ARG_PARSER_OPTIONAL.add_argument("--profiles", help="Filter profiles by detected, unknown or failed, you can do combine them with comma (detected,failed) or use all", metavar="", default="detected")
+        ARG_PARSER_OPTIONAL.add_argument("--countries", help="select websites by country or countries separated by space as: us br ru", metavar="", default="all")
+        ARG_PARSER_OPTIONAL.add_argument("--top", help="select top websites as 10, 50 etc...[--websites is not needed]", metavar="", default="10")
         ARG_PARSER_OPTIONAL.add_argument("--extract", help="Extract profiles, urls & patterns if possible", action="store_true")
         ARG_PARSER_OPTIONAL.add_argument("--metadata", help="Extract metadata if possible (pypi QeeqBox OSINT)", action="store_true")
         ARG_PARSER_OPTIONAL.add_argument("--trim", help="Trim long strings", action="store_true")

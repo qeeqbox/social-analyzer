@@ -9,6 +9,7 @@ var cheerio = require('cheerio');
 var engine = require('./engine.js')
 
 async function find_username_normal(req) {
+  helper.log_to_file_queue(req.body.uuid, "[init] Selected websites: " + helper.websites_entries.filter((item) => item.selected == 'true').length)
   const time = new Date();
   var all_results = []
   var [first_re_try, first_profiles] = await find_username_normal_wrapper(req, helper.websites_entries);
