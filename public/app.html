@@ -638,6 +638,11 @@
     opacity: 0.1 !important;
   }
 
+  #stats-tables tr td:nth-child(2),
+  #stats-tables tr th:nth-child(2) { 
+     text-align: right;
+  }
+
   #div-right-icon {
     float: right;
     font-size: 16px;
@@ -1434,18 +1439,22 @@
               $('#force-graph-section').show();
             }
 
-            if (data.stats["good"].length > 0 || data.stats["maybe"].length > 0 || data.stats["bad"].length > 0 || data.stats["all"].length > 0) {
-              Object.keys(data.stats).forEach(function(key) {
-                var temp_tr = ''
-                data.stats[key].forEach(function(item) {
-                  temp_tr += '<tr><td>' + item[0] + '</td><td>%' + item[1] + '</td></tr>'
+            Object.keys(data.stats).forEach(function(type_key) {
+              if (Object.keys(data.stats[type_key]).length > 0) {
+                Object.keys(data.stats[type_key]).forEach(function(status_key) {
+                  var temp_tr = ''
+                  data.stats[type_key][status_key].forEach(function(item) {
+                    temp_tr += '<tr><td>' + item[0] + '</td><td>%' + item[1] + '</td></tr>'
+                  });
+                  if (temp_tr.length > 0) {
+                    $("#stats-tables").last().append('<table><tr><th>[' + status_key + '] '+ type_key +'</th><th>Percentage</th></tr>' + temp_tr + '</table>')
+                  }
                 });
-                if (temp_tr.length > 0) {
-                  $("#stats-tables").last().append('<table><tr><th>[' + key + '] Profiles</th><th>Percentage</th></tr>' + temp_tr + '</table>')
-                }
-              });
-              $('#stats-section').show();
-            }
+
+                $('#stats-section').show();
+              }
+            });
+
 
             if (data.logs.length > 0) {
               $("#logs-pre").html('<pre>' + data.logs + '</pre>')
