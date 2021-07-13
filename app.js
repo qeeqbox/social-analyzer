@@ -275,15 +275,14 @@ app.post("/analyze_string", async function(req, res, next) {
   }
 
   var stats_default = {
-    "good": [],
-    "maybe": [],
-    "bad": [],
-    "all": []
+    categories: {},
+    countries: {}
   }
 
   if (req.body.string == "test_user_2021_2022_") {
     if (fs.existsSync('test.json')) {
-      res.json(JSON.parse(fs.readFileSync('test.json', 'utf8')));
+      obj = JSON.parse(fs.readFileSync('test.json', 'utf8'))
+      res.json(obj);
     } else {
       res.json("Error");
     }
@@ -442,7 +441,6 @@ app.post("/analyze_string", async function(req, res, next) {
 
     helper.log_to_file_queue(req.body.uuid, "[Finished] Analyzing: " + req.body.string + " Task: " + req.body.uuid)
 
-
     /*fs.writeFileSync('./test.json', JSON.stringify({
       username: username,
       uuid: temp_uuid,
@@ -456,6 +454,7 @@ app.post("/analyze_string", async function(req, res, next) {
       names_origins: names_origins,
       custom_search: custom_search,
       graph: graph,
+      stats: stats_default,
       logs: logs
     }, null, 2) , 'utf-8');*/
 

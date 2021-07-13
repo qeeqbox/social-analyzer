@@ -1,48 +1,63 @@
 var helper = require('./helper.js');
 
-async function get_stats(data) {
-  var temp_found = {
-    "good": {},
-    "maybe": {},
-    "bad": {},
-    "all": {}
-  }
-  var found = {
-    "good": [],
-    "maybe": [],
-    "bad": [],
-    "all": []
-  }
-  try {
-    await data.forEach(async function(site, index) {
-      if (site.status == "good") {
-        temp_found["good"][site.type] = (temp_found["good"][site.type] || 0) + 1
-      } else if (site.status == "maybe") {
-        temp_found["maybe"][site.type] = (temp_found["maybe"][site.type] || 0) + 1
-      } else {
-        temp_found["bad"][site.type] = (temp_found["bad"][site.type] || 0) + 1
-      }
-      temp_found["all"][site.type] = (temp_found["all"][site.type] || 0) + 1
-    });
+function group_by_value(list, key) {
+  return list.reduce(function(x, y) {
+    (x[y[key]] = x[y[key]] || []).push(y);
+    return x;
+  }, {});
+};
 
-    await ["good", "maybe", "bad", "all"].forEach(async function(item, index) {
-      const sum = Object.values(temp_found[item]).reduce((a, b) => a + b, 0);
-      await Object.keys(temp_found[item]).forEach(async function(key) {
-        found[item].push([key, ((temp_found[item][key] / sum) * 100).toFixed(2)])
+async function get_stats_by_value(data, value) {
+  var temp_array = {}
+  try {
+    var grouped = group_by_value(data, value);
+    var temp_found = {
+      "good": 0,
+      "maybe": 0,
+      "bad": 0,
+      "all": 0
+    }
+    await Object.keys(grouped).forEach(async function(key) {
+      await ["good", "maybe", "bad", "all"].forEach(async function(item, index) {
+        if (Object.keys(grouped[key]).length > 0) {
+          len = grouped[key].filter((_item) => _item.status == item).length
+          if (len > 0) {
+            temp_found[item] += len;
+            if (item in temp_array) {
+              temp_array[item].push([key, len])
+            } else {
+              temp_array[item] = [
+                [key, len]
+              ]
+            }
+          }
+        }
       });
     });
 
-    await ["good", "maybe", "bad", "all"].forEach(async function(item, index) {
-      found[item].sort(function compare(a, b) {
-        return b[1] - a[1]
-      })
+    await Object.keys(temp_array).forEach(async function(key) {
+      await temp_array[key].forEach(async function(item, index) {
+        temp_array[key][index][1] = ((temp_array[key][index][1] / temp_found[key]) * 100).toFixed(2)
+      });
     });
 
   } catch (error) {
     helper.verbose && console.log(error);
   }
+  return temp_array
+}
 
-  return found
+async function get_stats(data) {
+  var categories = {}
+  var countries = {}
+  try {
+    categories = await get_stats_by_value(data, "type")
+    countries = await get_stats_by_value(data, "country")
+  } catch (error) {
+    helper.verbose && console.log(error);
+  }
+
+  return {categories:categories,countries:countries}
 }
 
 module.exports = {
