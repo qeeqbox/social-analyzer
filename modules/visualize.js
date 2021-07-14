@@ -4,9 +4,8 @@ var helper = require('./helper.js');
 async function visualize_force_graph(username, detected, type) {
   try {
     var graph = new ixora('Social-Analyzer', false);
-    filter_items = "good"
     temp_filtered = []
-    temp_filtered = detected.filter(item => filter_items.includes(item.status))
+    temp_filtered = detected.filter(item => item.status == "good")
     if (temp_filtered.length > 0) {
 
       graph.add_node(username, search = username, _set = {
