@@ -2,7 +2,7 @@
 
 Social-Analyzer - API, CLI & Web App for analyzing & finding a person's profile across social media websites. It includes different string analysis and detection modules, you can choose which combination of modules to use during the investigation process.
 
-The detection modules utilize a rating mechanism based on different detection techniques, which produces a rate value that starts from 0 to 100 (No-Maybe-Yes). This module intended to have less false positive and it's documented in this `Wiki <https://github.com/qeeqbox/social-analyzer/wiki>`_ link
+The detection modules utilize a rating mechanism based on different detection techniques, which produces a rate value that starts from 0 to 100 (No-Maybe-Yes). This module intended to have less false positive, and it's documented in this `Wiki <https://github.com/qeeqbox/social-analyzer/wiki>`_ link
 
 The analysis and public extracted information from this OSINT tool could help in investigating profiles related to suspicious or malicious activities such as `cyberbullying <https://en.wikipedia.org/wiki/Wikipedia:Cyberbullying>`_, `cybergrooming <https://de.wikipedia.org/wiki/Cyber-Grooming>`_, `cyberstalking <https://en.wikipedia.org/wiki/Cyberstalking>`_, and `spreading misinformation <https://en.wikipedia.org/wiki/Misinformation>`_.
 
@@ -26,12 +26,41 @@ Security Testing
     |    Active Information Gathering   |     <-->     |    Post Analysis Activities   |
     -------------------------------------              ---------------------------------
 
+Find Profile CLI (Fast)
+=======================
+.. image:: https://raw.githubusercontent.com/qeeqbox/social-analyzer/main/readme/cli.gif
+
+Features
+========
+- String & name analysis (Permutations and Combinations)
+- Find profile using multiple techniques (HTTPS library & Webdriver)
+- Multi layers detections (OCR, normal, advanced & special)
+- Visualized profile information using Ixora (Metadata & Patterns)
+- Metadata & Patterns extraction (Added from Qeeqbox osint project)
+- Force-directed Graph for Metadata (Needs ExtractPatterns)
+- Search by top ranking, or by country (Alexa Ranking)
+- Profiles stats and static info (Category country)
+- Auto-flirtation to unnecessary output
+- Search engine lookup (Google API - optional)
+- Custom search queries (Google API & DuckDuckGo API - optional)
+- Profile screenshot, title, info and website description
+- Find name origins, name similarity & common words by language
+- Custom user-agent, proxy, timeout & implicit wait
+- Python CLI & NodeJS CLI (limited to FindUserProfilesFast option)
+- Grid option for faster checking (limited to docker-compose)
+- Dump logs to folder or terminal (prettified)
+- Adjust finding\getting profile workers (default 15)
+- Re-checking option for failed profiles
+- Filter profiles by good, maybe, and bad
+- Save the analysis as JSON file
+- Simplified web interface and CLI
+
 Running Example (Simple)
 ========================
 .. code:: bash
 
     pip3 install social-analyzer
-    python3 -m social-analyzer --username "johndoe" --metadata
+    python3 -m social-analyzer --username "johndoe" --metadata --top 100
 
 Running Example (Custom)
 ========================
@@ -71,58 +100,38 @@ Help (python3 -m social-analyzer --h)
 =====================================
 .. code:: bash
 
-	Qeeqbox/social-analyzer - API and Web App for analyzing & finding a person's
-	profile across 300+ social media websites (Detections are updated regularly)
+  Required Arguments:
+    --username   E.g. johndoe, john_doe or johndoe9999
 
-	Required Arguments:
-	  --username   E.g. johndoe, john_doe or johndoe9999
+  Optional Arguments:
+    --websites    A website or websites separated by space E.g. youtube, tiktokor tumblr
+    --mode        Analysis mode E.g.fast -> FindUserProfilesFast, slow -> FindUserProfilesSlow or special -> FindUserProfilesSpecial
+    --output      Show the output in the following format: json -> json outputfor integration or pretty -> prettify the output
+    --options     Show the following when a profile is found: link, rate, titleor text
+    --method      find -> show detected profiles, get -> show all profiles regardless detected or not, all -> combine find & get
+    --filter      Filter detected profiles by good, maybe or bad, you can do combine them with comma (good,bad) or use all
+    --profiles    Filter profiles by detected, unknown or failed, you can do combine them with comma (detected,failed) or use all
+    --countries   select websites by country or countries separated by space as: us br ru
+    --top         select top websites as 10, 50 etc...[--websites is not needed]
+    --extract     Extract profiles, urls & patterns if possible
+    --metadata    Extract metadata if possible (pypi QeeqBox OSINT)
+    --trim        Trim long strings
+    --gui         Reserved for a gui (Not implemented)
+    --cli         Reserved for a cli (Not needed)
 
-	Optional Arguments:
-	  --websites   Website or websites separated by space E.g. youtube, tiktok or tumblr
-	  --mode       Analysis mode E.g.fast -> FindUserProfilesFast, slow -> FindUserProfilesSlow or special -> FindUserProfilesSpecial
-	  --output     Show the output in the following format: json -> json output for integration or pretty -> prettify the output
-	  --options    Show the following when a profile is found: link, rate, titleor text
-	  --method     find -> show detected profiles, get -> show all profiles regardless detected or not, both -> combine find & get
-	  --filter     filter detected profiles by good, maybe or bad, you can do combine them with comma (good,bad) or use all
-	  --profiles   filter profiles by detected, unknown or failed, you can do combine them with comma (detected,failed) or use all
-	  --extract    Extract profiles, urls & patterns if possible
-	  --metadata   Extract metadata if possible (pypi QeeqBox OSINT)
-	  --trim       Trim long strings
+  Listing websites & detections:
+    --list        List all available websites
 
-	Listing websites & detections:
-	  --list       List all available websites
+  Setting:
+    --headers     Headers as dict
+    --logs_dir    Change logs directory
+    --timeout     Change timeout between each request
+    --silent      Disable output to screen
 
 Open in Cloud Shell
 ===================
 .. image:: https://img.shields.io/static/v1?label=%3E_&message=Open%20in%20Cloud%20Shell&color=3267d6&style=flat-square
    :target: https://ssh.cloud.google.com/cloudshell/editor?cloudshell_git_repo=https://github.com/qeeqbox/social-analyzer&tutorial=README.md
-
-Find Profile CLI (Fast)
-=======================
-.. image:: https://raw.githubusercontent.com/qeeqbox/social-analyzer/main/readme/cli.gif
-
-Features
-========
-- String & name analysis (Permutations and Combinations)
-- Find profile using multiple techniques (HTTPS library & Webdriver)
-- Multi layers detections (OCR, normal, advanced & special)
-- Visualized profile information using Ixora (Metadata & Patterns)
-- Metadata & Patterns extraction (Added from Qeeqbox osint project)
-- Force-directed Graph for Metadata (Needs ExtractPatterns)
-- Auto-flirtation to unnecessary output
-- Search engine lookup (Google API - optional)
-- Custom search queries (Google API & DuckDuckGo API - optional)
-- Profile screenshot, title, info and website description
-- Find name origins, name similarity & common words by language
-- Custom user-agent, proxy, timeout & implicit wait
-- Python CLI & NodeJS CLI (limited to FindUserProfilesFast option)
-- Grid option for faster checking (limited to docker-compose)
-- Dump logs to folder or terminal (prettified)
-- Adjust finding\getting profile workers (default 15)
-- Re-checking option for failed profiles
-- Filter profiles by good, maybe, and bad
-- Save the analysis as JSON file
-- Simplified web interface and cli
 
 Special Detections
 ==================
@@ -135,7 +144,9 @@ Running Issues
 - Remember that existing profiles show `status:good` or `rate:%100`
 - Some websites return `blocked` or `invalid` <- this is the intended behavior
 - Use Proxy, VPN, TOR or anything similar for periodic suspicious-profiles checking
+- Do not mix FindUserProfilesFast, with FindUserProfilesSlow and ShowUserProfilesSlow
 - Change the user-agent to most updated one or increase the random time between requests
+- Use the slow mode (Not available in the CLIs) to avoid running into blocking\results issue
 
 Resources
 =========
@@ -148,7 +159,7 @@ Disclaimer\Notes
 - This is a security project (Treat it as a security project)
 - If you want your website to be excluded from this project list, please reach out to me
 - This tool meant to be used locally not as a service (It does not have any type of Access Control)
-- For issues related to modules that end with -private, reach out directly to me (do not open an issue on GitHub)
+- For issues related to modules that end with -private or under the private group, reach out directly to me (do not open an issue on GitHub)
 
 Interviews
 ==========
