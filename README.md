@@ -42,6 +42,8 @@ Standard localhost WEB APP url: http://0.0.0.0:9005/app.html
 - Visualized profile information using Ixora (Metadata & Patterns)
 - Metadata & Patterns extraction (Added from Qeeqbox osint project)
 - Force-directed Graph for Metadata (Needs ExtractPatterns)
+- Search by top ranking, or by country (Alexa Ranking)
+- Profiles stats and static info (Category country)
 - Auto-flirtation to unnecessary output
 - Search engine lookup (Google API - optional)
 - Custom search queries (Google API & DuckDuckGo API - optional)
@@ -55,7 +57,7 @@ Standard localhost WEB APP url: http://0.0.0.0:9005/app.html
 - Re-checking option for failed profiles
 - Filter profiles by good, maybe, and bad
 - Save the analysis as JSON file
-- Simplified web interface and cli
+- Simplified web interface and CLI
 
 ## Special Detections
 - Facebook (Phone number, name or profile name)
@@ -81,9 +83,9 @@ npm start
 sudo apt-get update
 sudo apt-get install python3 python3-pip
 pip3 install social-analyzer
-social-analyzer --username "johndoe" --metadata
+social-analyzer --username "johndoe" --metadata --top 100
 #or
-python3 -m social-analyzer --username "johndoe" --metadata
+python3 -m social-analyzer --username "johndoe" --metadata --top 100
 ```
 
 ### Linux (As python script)
@@ -93,7 +95,7 @@ sudo apt-get install git python3 python3-pip
 git clone https://github.com/qeeqbox/social-analyzer
 cd social-analyzer
 pip3 install –r requirements.txt
-python3 app.py social-analyzer --username "johndoe" --metadata
+python3 app.py social-analyzer --username "johndoe" --metadata --top 100
 ```
 
 ### Importing as object (python)
@@ -114,25 +116,29 @@ Required Arguments:
   --username   E.g. johndoe, john_doe or johndoe9999
 
 Optional Arguments:
-  --websites   Website or websites separated by space E.g. youtube, tiktok or tumblr
-  --mode       Analysis mode E.g.fast -> FindUserProfilesFast, slow -> FindUserProfilesSlow or special -> FindUserProfilesSpecial
-  --output     Show the output in the following format: json -> json output for integration or pretty -> prettify the output
-  --options    Show the following when a profile is found: link, rate, title or text
-  --method     find -> show detected profiles, get -> show all profiles regardless detected or not, both -> combine find & get
-  --filter     Filter detected profiles by good, maybe or bad, you can do combine them with comma (good,bad) or use all
-  --profiles   Filter profiles by detected, unknown or failed, you can do combine them with comma (detected,failed) or use all
-  --extract    Extract profiles, urls & patterns if possible
-  --metadata   Extract metadata if possible (pypi QeeqBox OSINT)
-  --trim       Trim long strings
+  --websites    A website or websites separated by space E.g. youtube, tiktokor tumblr
+  --mode        Analysis mode E.g.fast -> FindUserProfilesFast, slow -> FindUserProfilesSlow or special -> FindUserProfilesSpecial
+  --output      Show the output in the following format: json -> json outputfor integration or pretty -> prettify the output
+  --options     Show the following when a profile is found: link, rate, titleor text
+  --method      find -> show detected profiles, get -> show all profiles regardless detected or not, all -> combine find & get
+  --filter      Filter detected profiles by good, maybe or bad, you can do combine them with comma (good,bad) or use all
+  --profiles    Filter profiles by detected, unknown or failed, you can do combine them with comma (detected,failed) or use all
+  --countries   select websites by country or countries separated by space as: us br ru
+  --top         select top websites as 10, 50 etc...[--websites is not needed]
+  --extract     Extract profiles, urls & patterns if possible
+  --metadata    Extract metadata if possible (pypi QeeqBox OSINT)
+  --trim        Trim long strings
+  --gui         Reserved for a gui (Not implemented)
+  --cli         Reserved for a cli (Not needed)
 
 Listing websites & detections:
-  --list       List all available websites
+  --list        List all available websites
 
 Setting:
-  --headers    Headers as dict
-  --logs_dir   Change logs directory
-  --timeout    Change timeout between each request
-  --silent     Disable output to screen
+  --headers     Headers as dict
+  --logs_dir    Change logs directory
+  --timeout     Change timeout between each request
+  --silent      Disable output to screen
 ```
 
 ## Open Shell
@@ -167,7 +173,7 @@ Setting:
 - This is a security project (Treat it as a security project)
 - If you want your website to be excluded from this project list, please reach out to me
 - This tool meant to be used locally not as a service (It does not have any type of Access Control)
-- For issues related to modules that end with -private, reach out directly to me (do not open an issue on GitHub)
+- For issues related to modules that end with -private or under the private group ![](https://raw.githubusercontent.com/qeeqbox/social-analyzer/main/readme/modules.png), reach out directly to me (do not open an issue on GitHub)
 
 ## Other Projects
 [![](https://github.com/qeeqbox/.github/blob/main/data/analyzer.png)](https://github.com/qeeqbox/analyzer) [![](https://github.com/qeeqbox/.github/blob/main/data/chameleon.png)](https://github.com/qeeqbox/chameleon) [![](https://github.com/qeeqbox/.github/blob/main/data/honeypots.png)](https://github.com/qeeqbox/honeypots) [![](https://github.com/qeeqbox/.github/blob/main/data/osint.png)](https://github.com/qeeqbox/osint) [![](https://github.com/qeeqbox/.github/blob/main/data/url-sandbox.png)](https://github.com/qeeqbox/url-sandbox) [![](https://github.com/qeeqbox/.github/blob/main/data/mitre-visualizer.png)](https://github.com/qeeqbox/mitre-visualizer) [![](https://github.com/qeeqbox/.github/blob/main/data/woodpecker.png)](https://github.com/qeeqbox/woodpecker) [![](https://github.com/qeeqbox/.github/blob/main/data/docker-images.png)](https://github.com/qeeqbox/docker-images) [![](https://github.com/qeeqbox/.github/blob/main/data/seahorse.png)](https://github.com/qeeqbox/seahorse) [![](https://github.com/qeeqbox/.github/blob/main/data/rhino.png)](https://github.com/qeeqbox/rhino)
