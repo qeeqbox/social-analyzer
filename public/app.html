@@ -640,7 +640,7 @@
 
   #stats-tables tr td:nth-child(2),
   #stats-tables tr th:nth-child(2) {
-     text-align: right;
+    text-align: right;
   }
 
   .div-right-icon {
@@ -898,160 +898,156 @@
     </div>
   </div>
   <script>
+    /* eslint-disable camelcase */
+    const verbose = true
     const analyzed_options_options = [{
         group: 'Name Analysis',
         value: 'WordInfo',
         name: 'Get names or words information',
-        disable: false
+        disable: false,
       },
       {
         group: 'Name Analysis',
         value: 'MostCommon',
         name: 'Find common names or words by language',
-        disable: false
+        disable: false,
       },
       {
         group: 'Name Analysis',
         value: 'FindOrigins',
         name: 'Find origins of names or words',
-        disable: false
+        disable: false,
       },
       {
         group: 'Find Profiles',
         value: 'LookUps',
         name: 'Perform normal search queries',
-        disable: false
+        disable: false,
       },
       {
         group: 'Find Profiles',
         value: 'CustomSearch',
         name: 'Perform custom search queries',
-        disable: false
+        disable: false,
       },
       {
         group: 'Find Profiles',
         value: 'FindUserProfilesFast,GetUserProfilesFast',
         name: 'Find profiles in fast mode (Recommended)',
-        disable: false
+        disable: false,
       },
       {
         group: 'Find Profiles',
         value: 'FindUserProfilesSlow',
         name: 'Find profiles in slow mode',
-        disable: false
+        disable: false,
       },
       {
         group: 'Find Profiles',
         value: 'FindUserProfilesSpecial',
         name: 'Find profiles in slow mode using customized actions',
-        disable: false
+        disable: false,
       },
       {
         group: 'Show Profiles',
         value: 'ShowUserProfilesSlow',
         name: 'Show screenshots of profiles in slow mode',
-        disable: false
+        disable: false,
       },
       {
         group: 'Extract Information',
         value: 'ExtractMetadata',
         name: 'Extract metadata of profiles',
-        disable: false
+        disable: false,
       },
       {
         group: 'Extract Information',
         value: 'ExtractPatterns',
         name: 'Extract defined patterns',
-        disable: false
+        disable: false,
       },
       {
         group: 'Visualize Information',
         value: 'NetworkGraph',
         name: 'Show a visualized map based on the extracted metadata',
-        disable: false
+        disable: false,
       },
       {
         group: 'Stats',
         value: 'CategoriesStats',
         name: 'Generate stats of categories',
-        disable: false
+        disable: false,
       },
       {
         group: 'Other options',
         value: 'FindNumbers',
         name: 'Find numbers in names or words before analyzing',
-        disable: false
+        disable: false,
       },
       {
         group: 'Other options',
         value: 'FindSymbols',
         name: 'Find symbols in names or words before analyzing',
-        disable: false
+        disable: false,
       },
       {
         group: 'Other options',
         value: 'ConvertNumbers',
         name: 'Convert numbers to letters before analyzing',
-        disable: false
+        disable: false,
       },
       {
         group: 'Other options',
         value: 'SplitWordsByAlphabet',
         name: 'Split word or name by alphabet before analyzing',
-        disable: false
+        disable: false,
       },
       {
         group: 'Other options',
         value: 'SplitWordsByUpperCase',
         name: 'Split word or name by upper case before analyzing',
-        disable: false
-      }
+        disable: false,
+      },
     ];
 
     const analyzed_options_groups = [{
-        group: 'Name Analysis'
+        group: 'Name Analysis',
       },
       {
-        group: 'Find Profiles'
+        group: 'Find Profiles',
       },
       {
-        group: 'Show Profiles'
+        group: 'Show Profiles',
       },
       {
-        group: 'Extract Information'
+        group: 'Extract Information',
       },
       {
-        group: 'Visualize Information'
+        group: 'Visualize Information',
       },
       {
-        group: 'Stats'
+        group: 'Stats',
       },
       {
-        group: 'Other options'
-      }
-    ]
+        group: 'Other options',
+      },
+    ];
 
-    random_names = ["sophia", "liam", "riley", "jackson", "emma", "aiden", "ava", "elijah", "isabella", "grayson", "aria", "lucas", "aaliyah", "oliver", "amelia", "caden", "mia", "mateo", "layla", "muhammad", "zoe", "mason", "camilla", "carter",
-      "charlotte", "jayden", "eliana", "ethan", "mila", "sebastian", "everly", "james", "luna", "michael", "avery", "benjamin", "evelyn", "logan", "harper", "leo", "lily", "luca", "ella", "alexander", "gianna", "levi", "chloe", "daniel", "adalyn",
-      "josiah", "charlie", "henry", "isla", "jayce", "ellie", "julian", "leah", "jack", "nora", "ryan", "scarlett", "jacob", "maya", "asher", "abigail", "wyatt", "madison", "william", "aubrey", "owen", "emily", "gabriel", "kinsley", "miles",
-      "elena", "lincoln", "paisley", "ezra", "madelyn", "isaiah", "aurora", "luke", "peyton", "cameron", "nova", "caleb", "emilia", "isaac", "hannah", "carson", "sarah", "samuel", "ariana", "colton", "penelope", "maverick", "lila", "matthew"
-    ]
+    // $("#string-to-analyze").attr("placeholder", random_names[(Math.random() * random_names.length) | 0]);
+    $('#string-to-analyze').attr('placeholder', 'johndoe');
 
-    //$("#string-to-analyze").attr("placeholder", random_names[(Math.random() * random_names.length) | 0]);
-    $("#string-to-analyze").attr("placeholder", "johndoe");
-
-    var interval_logs;
-    var output_json = {};
-    var global_uuid = ""
-    var current_settings = []
+    let interval_logs;
+    let output_json = {};
+    let global_uuid = '';
+    let current_settings = [];
 
     function change_analyzed_option(string, key, value) {
-      let obj = analyzed_options_options.find(o => o.value === string);
-      obj[key] = value
-      return obj
+      const obj = analyzed_options_options.find((o) => o.value === string);
+      obj[key] = value;
+      return obj;
     }
 
-    const sel = $('#analyzed-options').selectize({
+    $('#analyzed-options').selectize({
       options: analyzed_options_options,
       optgroups: analyzed_options_groups,
       optgroupField: 'group',
@@ -1062,38 +1058,37 @@
       disabledField: 'disable',
       searchField: ['group', 'value'],
       plugins: ['remove_button'],
-      onChange: function(value, isOnInitialize) {
-        var sel = $('#analyzed-options')[0].selectize
-        if (sel.items.includes("FindUserProfilesFast,GetUserProfilesFast")) {
-          sel.updateOption('FindUserProfilesSlow', change_analyzed_option("FindUserProfilesSlow", "disable", true));
-          sel.updateOption('FindUserProfilesSpecial', change_analyzed_option("FindUserProfilesSpecial", "disable", true));
-          sel.updateOption('ShowUserProfilesSlow', change_analyzed_option("ShowUserProfilesSlow", "disable", true));
+      onChange(value, isOnInitialize) {
+        const sel = $('#analyzed-options')[0].selectize;
+        if (sel.items.includes('FindUserProfilesFast,GetUserProfilesFast')) {
+          sel.updateOption('FindUserProfilesSlow', change_analyzed_option('FindUserProfilesSlow', 'disable', true));
+          sel.updateOption('FindUserProfilesSpecial', change_analyzed_option('FindUserProfilesSpecial', 'disable', true));
+          sel.updateOption('ShowUserProfilesSlow', change_analyzed_option('ShowUserProfilesSlow', 'disable', true));
         } else {
-          sel.updateOption('FindUserProfilesSlow', change_analyzed_option("FindUserProfilesSlow", "disable", false));
-          sel.updateOption('FindUserProfilesSpecial', change_analyzed_option("FindUserProfilesSpecial", "disable", false));
-          sel.updateOption('ShowUserProfilesSlow', change_analyzed_option("ShowUserProfilesSlow", "disable", false));
+          sel.updateOption('FindUserProfilesSlow', change_analyzed_option('FindUserProfilesSlow', 'disable', false));
+          sel.updateOption('FindUserProfilesSpecial', change_analyzed_option('FindUserProfilesSpecial', 'disable', false));
+          sel.updateOption('ShowUserProfilesSlow', change_analyzed_option('ShowUserProfilesSlow', 'disable', false));
         }
-        if (sel.items.includes("FindUserProfilesSlow") || sel.items.includes("FindUserProfilesSpecial") || sel.items.includes(
-            "ShowUserProfilesSlow")) {
-          sel.updateOption('FindUserProfilesFast,GetUserProfilesFast', change_analyzed_option("FindUserProfilesFast,GetUserProfilesFast", "disable", true));
+        if (sel.items.includes('FindUserProfilesSlow') || sel.items.includes('FindUserProfilesSpecial') || sel.items.includes(
+            'ShowUserProfilesSlow',
+          )) {
+          sel.updateOption('FindUserProfilesFast,GetUserProfilesFast', change_analyzed_option('FindUserProfilesFast,GetUserProfilesFast', 'disable', true));
         } else {
-          sel.updateOption('FindUserProfilesFast,GetUserProfilesFast', change_analyzed_option("FindUserProfilesFast,GetUserProfilesFast", "disable", false));
+          sel.updateOption('FindUserProfilesFast,GetUserProfilesFast', change_analyzed_option('FindUserProfilesFast,GetUserProfilesFast', 'disable', false));
         }
-      }
+      },
     });
 
-    setup_selectable('#analyzed-options')
-
-    function spinner_on_off(on_off, text = "", cancel = false) {
+    function spinner_on_off(on_off, text = '', cancel = false) {
       if (on_off) {
-        $('#logs').text(text)
+        $('#logs').text(text);
         $('.waiting').show();
         $('.waiting-box').show();
-        if (cancel == true) {
+        if (cancel === true) {
           $('.logs_cancel').show();
         }
       } else {
-        $('#logs').text("")
+        $('#logs').text('');
         $('.waiting').hide();
         $('.waiting-box').hide();
         $('.logs_cancel').hide();
@@ -1102,353 +1097,352 @@
 
     function save_to_file_as(output_json) {
       try {
-        delete output_json["graph"];
+        delete output_json.graph;
         window.URL = window.URL || window.webkitURL;
-        var a = document.createElement("a");
-        a.download = output_json.username.replace(/[^a-z0-9 ]/gi, '_').toLowerCase() + ".json";
-        a.innerHTML = "Download File";
+        const a = document.createElement('a');
+        a.download = `${output_json.username.replace(/[^a-z0-9 ]/gi, '_').toLowerCase()}.json`;
+        a.innerHTML = 'Download File';
         a.href = window.URL.createObjectURL(new Blob([JSON.stringify(output_json)], {
-          type: 'application/json'
+          type: 'application/json',
         }));
-        a.style.display = "none";
+        a.style.display = 'none';
         document.body.appendChild(a);
         a.click();
         document.body.removeChild(a);
-      } catch (err) {}
+      } catch (err) {
+        verbose && console.log(err);
+      }
     }
 
     function cancel_task(uuid) {
       $.ajax({
-        type: "POST",
-        url: "/cancel",
+        type: 'POST',
+        url: '/cancel',
         data: {
-          'option': 'on',
-          'uuid': uuid
+          option: 'on',
+          uuid,
         },
-      }).done(function(data) {}).fail(function(jqXHR, textStatus, errorThrown) {
-        //clearInterval(interval_logs);
-      })
+      }).done((data) => {}).fail((jqXHR, textStatus, errorThrown) => {
+        // clearInterval(interval_logs);
+      });
     }
 
     function get_logs(uuid) {
       $.ajax({
-        type: "POST",
-        url: "/get_logs",
+        type: 'POST',
+        url: '/get_logs',
         data: {
-          'last_line': $('#logs').text(),
-          'uuid': uuid
+          last_line: $('#logs').text(),
+          uuid,
         },
-      }).done(function(data) {
-        if (data != "Error" && data != "nothinghere" && data != "nothing_here_error" && data != "") {
-          $('#logs').text(data)
-        } else if (data == "nothing_here_error" || data == "Error") {
-          clearInterval(interval_logs)
+      }).done((data) => {
+        if (data !== 'Error' && data !== 'nothinghere' && data !== 'nothing_here_error' && data !== '') {
+          $('#logs').text(data);
+        } else if (data === 'nothing_here_error' || data === 'Error') {
+          clearInterval(interval_logs);
         }
-      }).fail(function(jqXHR, textStatus, errorThrown) {
-        //clearInterval(interval_logs);
-      })
+      }).fail((jqXHR, textStatus, errorThrown) => {
+        // clearInterval(interval_logs);
+      });
     }
 
     function reset_everything() {
-      //$('#analyzed-options')[0].selectize.clear()
-      $("#lookups-checking-info").html("");
-      $("#lookups-table").html("");
+      // $('#analyzed-options')[0].selectize.clear()
+      $('#lookups-checking-info').html('');
+      $('#lookups-table').html('');
       $('#lookups-section').hide();
-      $("#most-common-words-table").html("")
+      $('#most-common-words-table').html('');
       $('#most-common-words-section').hide();
-      $("#words-info-tables").html("");
+      $('#words-info-tables').html('');
       $('#words-info-section').hide();
       $('#possible-words-section').hide();
-      $('#possible-words-section-table').html("");
+      $('#possible-words-section-table').html('');
       $('#combinations-section').hide();
       $('#output-section-1').hide();
-      $('#output-table-1').html("");
+      $('#output-table-1').html('');
       $('#output-section-2').hide();
-      $('#output-table-2').html("");
+      $('#output-table-2').html('');
       $('#output-section-3').hide();
-      $('#output-table-3').html("");
+      $('#output-table-3').html('');
       $('#output-section-4').hide();
-      $('#output-table-4').html("");
+      $('#output-table-4').html('');
       $('#force-graph-section').hide();
-      $('#force-graph-canvas').html("");
+      $('#force-graph-canvas').html('');
       $('#logs-section').hide();
-      $('#logs-pre').html("");
+      $('#logs-pre').html('');
       $('#save-to-file-section').hide();
       $('#names-origins-section').hide();
-      $('#names-origins-table').html("");
+      $('#names-origins-table').html('');
       $('#custom-search-section').hide();
-      $('#custom-search-table').html("");
-      $('#logs').html("");
-      $('#stats-tables').html("");
+      $('#custom-search-table').html('');
+      $('#logs').html('');
+      $('#stats-tables').html('');
       $('#stats-section').hide();
       clearInterval(interval_logs);
     }
 
     function setup_selectable(tag) {
       $(tag).selectable({
-        selecting: function(event, ui) {
+        selecting(event, ui) {
           if ($(ui.selecting).hasClass('ui-selected')) {
             this.del_selected.push(ui.selecting);
           }
         },
-        unselecting: function(event, ui) {
+        unselecting(event, ui) {
           $(ui.unselecting).addClass('ui-selected');
         },
-        stop: function() {
-          $.each(this.del_selected, function(ix, de) {
+        stop() {
+          $.each(this.del_selected, (ix, de) => {
             $(de).removeClass('ui-selecting').removeClass('ui-selected');
           });
           this.del_selected = [];
-        }
+        },
       });
     }
 
     function add_extract(site) {
-      var temp_extracted_all = '<div>Extracted: ' + "unavailable" + '</div>'
-      var temp_metadata_all = '<div>Metadata: ' + "unavailable" + '</div>'
+      let temp_extracted_all = '<div>Extracted: unavailable</div>';
+      let temp_metadata_all = '<div>Metadata: unavailable</div>';
       try {
-        if (site.extracted != "unavailable" && site.extracted != "") {
-          temp_extracted_all = ""
-          site.extracted.forEach(function(extracted, i) {
-            var temp_extracted = ""
-            Object.keys(extracted).forEach(function(key) {
-              temp_extracted += key + ' : ' + extracted[key] + ' '
+        if (site.extracted !== 'unavailable' && site.extracted !== '') {
+          temp_extracted_all = '';
+          site.extracted.forEach((extracted, i) => {
+            let temp_extracted = '';
+            Object.keys(extracted).forEach((key) => {
+              temp_extracted += `${key} : ${extracted[key]} `;
             });
-            temp_extracted_all += '<div>Extracted ' + i + ': ' + temp_extracted + '</div>'
+            temp_extracted_all += `<div>Extracted ${i}: ${temp_extracted}</div>`;
           });
         }
       } catch (err) {
-        temp_extracted_all = '<div>Extracted: ' + "unavailable" + '</div>'
+        temp_extracted_all = '<div>Extracted: unavailable</div>';
       }
       try {
-        if (site.metadata != "unavailable" && site.metadata != "") {
-          temp_metadata_all = ""
-          site.metadata.forEach(function(extracted, i) {
-            var temp_metadata = ""
-            Object.keys(extracted).forEach(function(key) {
-              temp_metadata += key + ' : ' + extracted[key] + ' '
+        if (site.metadata !== 'unavailable' && site.metadata !== '') {
+          temp_metadata_all = '';
+          site.metadata.forEach((extracted, i) => {
+            let temp_metadata = '';
+            Object.keys(extracted).forEach((key) => {
+              temp_metadata += `${key} : ${extracted[key]} `;
             });
-            temp_metadata_all += '<div>Metadata ' + i + ': ' + temp_metadata + '</div>'
+            temp_metadata_all += `<div>Metadata ${i}: ${temp_metadata}</div>`;
           });
         }
       } catch (err) {
-        temp_metadata_all = '<div>Metadata: ' + "unavailable" + '</div>'
+        temp_metadata_all = '<div>Metadata: unavailable</div>';
       }
 
-      return temp_extracted_all + temp_metadata_all
+      return temp_extracted_all + temp_metadata_all;
     }
 
     function add_table(items) {
+      let temp_th = '';
+      let temp_td = '';
 
-      var temp_th = ""
-      var temp_td = ""
-
-      Object.keys(items).forEach(function(key) {
+      Object.keys(items).forEach((key) => {
         if (items[key].length > 0) {
-          temp_th += '<th>' + key + '</th>'
-          temp_ul = ""
-          items[key].forEach(function(item) {
-            temp_ul += "<li>" + item + "</li>";
+          temp_th += `<th>${key}</th>`;
+          let temp_ul = '';
+          items[key].forEach((item) => {
+            temp_ul += `<li>${item}</li>`;
           });
-          temp_td += '<td id="selectable"><ul id="' + key + '-prefix-search-box">' + temp_ul + '</ul></td>';
-
+          temp_td += `<td id="selectable"><ul id="${key}-prefix-search-box">${temp_ul}</ul></td>`;
         }
       });
 
-      if (temp_th != "" && temp_td != "") {
-        $('#possible-words-section-table').html('<table><tr>' + temp_th + '</tr>' + '<tr>' + temp_td + '</tr>' + '</table>')
+      if (temp_th !== '' && temp_td !== '') {
+        $('#possible-words-section-table').html(`<table><tr>${temp_th}</tr>` + `<tr>${temp_td}</tr>` + '</table>');
         $('#possible-words-section').show();
       }
-
     }
 
     async function analyze_string() {
-      reset_everything()
-      spinner_on_off(true, "Retrieving logs", true)
+      reset_everything();
+      spinner_on_off(true, 'Retrieving logs', true);
       output_json = {};
-      random_string = Math.random().toString(36).substring(2);
-      global_uuid = random_string
+      const random_string = Math.random().toString(36).substring(2);
+      global_uuid = random_string;
       interval_logs = setInterval(get_logs.bind(null, random_string), 1000);
       try {
-        list_of_options = []
+        const list_of_options = [];
         $('.selectize-input .item').each(function() {
-          list_of_options.push($(this).attr('data-value'))
+          list_of_options.push($(this).attr('data-value'));
         });
 
         await $.ajax({
-          type: "POST",
-          url: "/analyze_string",
+          type: 'POST',
+          url: '/analyze_string',
           data: {
-            'string': $('#string-to-analyze').val(),
-            'group':false,
-            'option': list_of_options.join(","),
-            'uuid': random_string
+            string: $('#string-to-analyze').val(),
+            group: false,
+            option: list_of_options.join(','),
+            uuid: random_string,
           },
-        }).done(function(data) {
-          if (data != "Error") {
+        }).done((data) => {
+          if (data !== 'Error') {
+            let temp_tr = '';
             output_json = data;
             if (data.common.length > 0) {
-              var temp_tr = ""
-              Object.keys(data.common).forEach(function(item) {
-                temp_tr += '<tr><td>' + data.common[item].word + '</td><td>' + data.common[item].languages + '</td></tr>'
+              temp_tr = '';
+              Object.keys(data.common).forEach((item) => {
+                temp_tr += `<tr><td>${data.common[item].word}</td><td>${data.common[item].languages}</td></tr>`;
               });
 
-              $("#most-common-words-table").last().append('<table><tr><th>word</th><th>languages</th></tr>' + temp_tr + '</table>')
+              $('#most-common-words-table').last().append(`<table><tr><th>word</th><th>languages</th></tr>${temp_tr}</table>`);
               $('#most-common-words-section').show();
             }
             if ((data.info.checking.indexOf('with no lookups') === -1)) {
-              $("#lookups-checking-info").html(data.info.checking);
+              $('#lookups-checking-info').html(data.info.checking);
               if (data.info.items.length > 0) {
-                var temp_tr = ""
-                Object.keys(data.info.items).forEach(function(item) {
-                  temp_tr += '<tr><td>' + data.info.items[item].title + '</td><td>' + data.info.items[item].snippet + '</td></tr>'
+                temp_tr = '';
+                Object.keys(data.info.items).forEach((item) => {
+                  temp_tr += `<tr><td>${data.info.items[item].title}</td><td>${data.info.items[item].snippet}</td></tr>`;
                 });
-                $("#lookups-table").last().append('<table><tr><th>title</th><th>snippet</th></tr>' + temp_tr + '</table>')
+                $('#lookups-table').last().append(`<table><tr><th>title</th><th>snippet</th></tr>${temp_tr}</table>`);
                 $('#lookups-table').show();
               }
 
               $('#lookups-section').show();
             }
             if (data.words_info.length > 0) {
-              data.words_info.forEach(function(item) {
-                var temp_tr = '<tr><td>' + item.word + '</td><td>definition</td><td>' + item.text + '</td></tr>'
+              data.words_info.forEach((item) => {
+                temp_tr = `<tr><td>${item.word}</td><td>definition</td><td>${item.text}</td></tr>`;
                 if (item.results.length > 0) {
-                  item.results.forEach(function(result) {
-                    temp_tr += '<tr><td>' + item.word + '</td><td>' + result.type + '</td><td>' + result.text + '</td></tr>'
+                  item.results.forEach((result) => {
+                    temp_tr += `<tr><td>${item.word}</td><td>${result.type}</td><td>${result.text}</td></tr>`;
                   });
                 }
-                $("#words-info-tables").last().append('<table><tr><th>word</th><th>type</th><th>text</th></tr>' + temp_tr + '</table>')
+                $('#words-info-tables').last().append(`<table><tr><th>word</th><th>type</th><th>text</th></tr>${temp_tr}</table>`);
               });
               $('#words-info-section').show();
             }
 
-            add_table(data.table)
+            add_table(data.table);
 
             if (data.user_info_advanced.data.length > 0) {
-              var temp_tr = ""
-              if (data.user_info_advanced.type == "all" || data.user_info_advanced.type == "noshow") {
-                data.user_info_advanced.data.forEach(function(site) {
-                  if (site.found > 0 || site.image != "") {
-                    temp_image = ""
-                    if (site.image != "") {
-                      temp_image = '<img src=' + site.image + '>'
+              temp_tr = '';
+              if (data.user_info_advanced.type === 'all' || data.user_info_advanced.type === 'noshow') {
+                data.user_info_advanced.data.forEach((site) => {
+                  if (site.found > 0 || site.image !== '') {
+                    let temp_image = '';
+                    if (site.image !== '') {
+                      temp_image = `<img src=${site.image}>`;
                     }
-                    var temp_extract = add_extract(site);
-                    temp_tr += '<div class="user-info-container"><div class="user-info-container-left"><div>Link: <a href="' + site.link + '">' + site.link + '</a></div><div>Username: ' + site.username + '</div><div>Rate: ' + site.rate + '</div><div>Status: ' + site.status +
-                      '</div><div>Title: ' + site.title +
-                      '</div><div>Language: ' + site.language + '</div><div>Country: ' + site.country + '</div><div>Rank: ' + site.rank + '</div><div>Description: ' + site.type + '</div><div>Text: ' + site.text + '</div>' + temp_extract +
-                      '</div><div class="user-info-container-right">' + temp_image +
-                      '</div></div>'
+                    const temp_extract_adv = add_extract(site);
+                    temp_tr += `<div class="user-info-container"><div class="user-info-container-left"><div>Link: <a href="${site.link}">${site.link}</a></div><div>Username: ${site.username}</div><div>Rate: ${site.rate}</div><div>Status: ${site.status
+                }</div><div>Title: ${site.title
+                }</div><div>Language: ${site.language}</div><div>Country: ${site.country}</div><div>Rank: ${site.rank}</div><div>Description: ${site.type}</div><div>Text: ${site.text}</div>${temp_extract_adv
+                }</div><div class="user-info-container-right">${temp_image
+                }</div></div>`;
                   }
                 });
 
-                $("#output-table-2").html(temp_tr)
+                $('#output-table-2').html(temp_tr);
                 $('#output-section-2').show();
-              } else if (data.user_info_advanced.type == "show") {
-                data.user_info_advanced.data.forEach(function(site) {
-                  if (site.found > 0 || site.image != "") {
-                    temp_image = ""
-                    if (site.image != "") {
-                      temp_image = '<img src=' + site.image + '>'
+              } else if (data.user_info_advanced.type === 'show') {
+                data.user_info_advanced.data.forEach((site) => {
+                  if (site.found > 0 || site.image !== '') {
+                    let temp_image = '';
+                    if (site.image !== '') {
+                      temp_image = `<img src=${site.image}>`;
                     }
-                    temp_tr += '<div class="profile-card"><div class="profile-card-text">Link: <a href="' + site.link + '">' + site.link + '</a></div>' + temp_image + ' </div>'
+                    temp_tr += `<div class="profile-card"><div class="profile-card-text">Link: <a href="${site.link}">${site.link}</a></div>${temp_image} </div>`;
                   }
                 });
 
-                $("#output-table-1").html(temp_tr)
+                $('#output-table-1').html(temp_tr);
                 $('#output-section-1').show();
               }
             }
 
             if (data.user_info_normal.data.length > 0) {
-              var temp_tr = ""
+              temp_tr = '';
 
-              data.user_info_normal.data.forEach(function(site) {
-                if (site.method == "all") {
-                  var temp_extract = ""
-                  if (site.good == "true") {
-                    var temp_extract = add_extract(site);
-                    temp_tr += '<div class="user-info-container"><div class="user-info-container-left"><div>Link: <a href="' + site.link + '">' + site.link + '</a></div><div>Username: ' + site.username + '</div><div>Rate: ' + site.rate + '</div><div>Status: ' + site.status +
-                      '</div><div>Title: ' + site.title +
-                      '</div><div>Language: ' + site.language + '</div><div>Country: ' + site.country + '</div><div>Rank: ' + site.rank + '</div><div>Description: ' + site.type + '</div><div>Text: ' + site.text + '</div>' + temp_extract +
-                      '</div><div class="user-info-container-right"></div></div>'
+              data.user_info_normal.data.forEach((site) => {
+                if (site.method === 'all') {
+                  if (site.good === 'true') {
+                    const temp_extract_normal_all = add_extract(site);
+                    temp_tr += `<div class="user-info-container"><div class="user-info-container-left"><div>Link: <a href="${site.link}">${site.link}</a></div><div>Username: ${site.username}</div><div>Rate: ${site.rate}</div><div>Status: ${site.status
+                }</div><div>Title: ${site.title
+                }</div><div>Language: ${site.language}</div><div>Country: ${site.country}</div><div>Rank: ${site.rank}</div><div>Description: ${site.type}</div><div>Text: ${site.text}</div>${temp_extract_normal_all
+                }</div><div class="user-info-container-right"></div></div>`;
                   } else {
-                    temp_tr += '<div class="user-info-container user-info-container-color-unknown"><div class="user-info-container-left"><div>Link: <a href="' + site.link + '">' + site.link + '</a></div><div>Username: ' + site.username + '</div><div>Title: ' + site.title +
-                      '</div><div>Language: ' + site.language + '</div><div>Country: ' + site.country + '</div><div>Rank: ' + site.rank + '</div><div>Description: ' + site.type + '</div><div>Text: ' + site.text +
-                      '</div></div><div class="user-info-container-right"></div></div>'
+                    temp_tr += `<div class="user-info-container user-info-container-color-unknown"><div class="user-info-container-left"><div>Link: <a href="${site.link}">${site.link}</a></div><div>Username: ${site.username}</div><div>Title: ${site.title
+                }</div><div>Language: ${site.language}</div><div>Country: ${site.country}</div><div>Rank: ${site.rank}</div><div>Description: ${site.type}</div><div>Text: ${site.text
+                }</div></div><div class="user-info-container-right"></div></div>`;
                   }
-                } else if (site.method == "find") {
-                  if (site.good == "true") {
-                    var temp_extract = add_extract(site);
-                    temp_tr += '<div class="user-info-container"><div class="user-info-container-left"><div>Link: <a href="' + site.link + '">' + site.link + '</a></div><div>Username: ' + site.username + '</div><div>Rate: ' + site.rate + '</div><div>Status: ' + site.status +
-                      '</div><div>Title: ' + site.title +
-                      '</div><div>Language: ' + site.language + '</div><div>Country: ' + site.country + '</div><div>Rank: ' + site.rank + '</div><div>Description: ' + site.type + '</div><div>Text: ' + site.text + '</div>' + temp_extract +
-                      '</div><div class="user-info-container-right"></div></div>'
+                } else if (site.method === 'find') {
+                  if (site.good === 'true') {
+                    const temp_extract_normal_find = add_extract(site);
+                    temp_tr += `<div class="user-info-container"><div class="user-info-container-left"><div>Link: <a href="${site.link}">${site.link}</a></div><div>Username: ${site.username}</div><div>Rate: ${site.rate}</div><div>Status: ${site.status
+                }</div><div>Title: ${site.title
+                }</div><div>Language: ${site.language}</div><div>Country: ${site.country}</div><div>Rank: ${site.rank}</div><div>Description: ${site.type}</div><div>Text: ${site.text}</div>${temp_extract_normal_find
+                }</div><div class="user-info-container-right"></div></div>`;
                   }
-                } else if (site.method == "get") {
-                  temp_tr += '<div class="user-info-container user-info-container-color-unknown"><div class="user-info-container-left"><div>Link: <a href="' + site.link + '">' + site.link + '</a></div><div>Username: ' + site.username + '</div><div>Rate: ' + site.rate +
-                    '</div><div>Status: ' + site.status + '</div><div>Title: ' + site.title +
-                    '</div><div>Language: ' + site.language + '</div><div>Country: ' + site.country + '</div><div>Rank: ' + site.rank + '</div><div>Description: ' + site.type + '</div><div>Text: ' + site.text +
-                    '</div></div><div class="user-info-container-right"></div></div>'
-                } else if (site.method == "failed") {
-                  temp_tr += '<div class="user-info-container user-info-container-color-failed"><div class="user-info-container-left"><div>Link: <a href="' + site.link + '">' + site.link +
-                    '</a></div><div>Username: ' + site.username + '</div></div><div class="user-info-container-right"></div></div>'
+                } else if (site.method === 'get') {
+                  temp_tr += `<div class="user-info-container user-info-container-color-unknown"><div class="user-info-container-left"><div>Link: <a href="${site.link}">${site.link}</a></div><div>Username: ${site.username}</div><div>Rate: ${site.rate
+              }</div><div>Status: ${site.status}</div><div>Title: ${site.title
+              }</div><div>Language: ${site.language}</div><div>Country: ${site.country}</div><div>Rank: ${site.rank}</div><div>Description: ${site.type}</div><div>Text: ${site.text
+              }</div></div><div class="user-info-container-right"></div></div>`;
+                } else if (site.method === 'failed') {
+                  temp_tr += `<div class="user-info-container user-info-container-color-failed"><div class="user-info-container-left"><div>Link: <a href="${site.link}">${site.link
+              }</a></div><div>Username: ${site.username}</div></div><div class="user-info-container-right"></div></div>`;
                 }
               });
 
-              $("#output-table-3").html(temp_tr)
+              $('#output-table-3').html(temp_tr);
               $('#output-section-3').show();
             }
 
             if (data.user_info_special.data.length > 0) {
-              var temp_tr = ""
-              data.user_info_special.data.forEach(function(site) {
+              temp_tr = '';
+              data.user_info_special.data.forEach((site) => {
                 if (site.found > 0) {
-                  temp_image = ""
-                  temp_tr += '<div class="user-info-container"><div class="user-info-container-left"><div>Link: <a href="' + site.link + '">' + site.link + '</a></div><div>Username: ' + site.username + '</div><div>Rate: ' + site.rate + '</div><div>Status: ' + site.status +
-                    '</div><div>Title: ' + site.title +
-                    '</div><div>Description: ' + site.type + '</div><div>Text: ' + site.text + '</div></div><div class="user-info-container-right">' + temp_image + '</div></div>'
+                  const temp_image = '';
+                  temp_tr += `<div class="user-info-container"><div class="user-info-container-left"><div>Link: <a href="${site.link}">${site.link}</a></div><div>Username: ${site.username}</div><div>Rate: ${site.rate}</div><div>Status: ${site.status
+              }</div><div>Title: ${site.title
+              }</div><div>Description: ${site.type}</div><div>Text: ${site.text}</div></div><div class="user-info-container-right">${temp_image}</div></div>`;
                 }
               });
 
-              $("#output-table-4").html(temp_tr)
+              $('#output-table-4').html(temp_tr);
               $('#output-section-4').show();
             }
             if (data.names_origins.length > 0) {
-              var temp_tr = ""
-              Object.keys(data.names_origins).forEach(function(item) {
-                temp_tr += '<tr><td>' + data.names_origins[item].origin + '</td><td>' + data.names_origins[item].name + '</td><td>' + data.names_origins[item].matched + '</td><td>' + data.names_origins[item].similar + '</td><td>' + data
-                  .names_origins[item].gender + '</td></tr>'
+              temp_tr = '';
+              Object.keys(data.names_origins).forEach((item) => {
+                temp_tr += `<tr><td>${data.names_origins[item].origin}</td><td>${data.names_origins[item].name}</td><td>${data.names_origins[item].matched}</td><td>${data.names_origins[item].similar}</td><td>${data
+              .names_origins[item].gender}</td></tr>`;
               });
-              $("#names-origins-table").last().append('<table><tr><th>origin</th><th>name</th><th>matched</th><th>similar</th><th>gender</th></tr>' + temp_tr + '</table>')
+              $('#names-origins-table').last().append(`<table><tr><th>origin</th><th>name</th><th>matched</th><th>similar</th><th>gender</th></tr>${temp_tr}</table>`);
               $('#names-origins-section').show();
             }
             if (data.custom_search.length > 0) {
-              var temp_tr = ""
-              Object.keys(data.custom_search).forEach(function(item) {
-                temp_tr += '<tr><td>' + data.custom_search[item].site + '</td><td><a href="' + data.custom_search[item].link + '">' + data.custom_search[item].link + '</a></td><td>' + data.custom_search[item].snippet + '</td></tr>'
+              temp_tr = '';
+              Object.keys(data.custom_search).forEach((item) => {
+                temp_tr += `<tr><td>${data.custom_search[item].site}</td><td><a href="${data.custom_search[item].link}">${data.custom_search[item].link}</a></td><td>${data.custom_search[item].snippet}</td></tr>`;
               });
-              $("#custom-search-table").last().append('<table><tr><th>site</th><th>link</th><th>snippet</th></tr>' + temp_tr + '</table>')
+              $('#custom-search-table').last().append(`<table><tr><th>site</th><th>link</th><th>snippet</th></tr>${temp_tr}</table>`);
               $('#custom-search-section').show();
             }
 
             if ((data.graph.graph.nodes.length > 0) && (data.graph.graph.links.length > 0)) {
-              $("#force-graph-canvas").html('<iframe id="ixora-graph-iframe" src="/graph.html"></iframe>')
+              $('#force-graph-canvas').html('<iframe id="ixora-graph-iframe" src="/graph.html"></iframe>');
               $('#ixora-graph-iframe').load(function() {
-                document.getElementById("ixora-graph-iframe").contentWindow.ixora_wrapper(data.graph, true);
+                document.getElementById('ixora-graph-iframe').contentWindow.ixora_wrapper(data.graph, true);
               });
               $('#force-graph-section').show();
             }
 
-            Object.keys(data.stats).forEach(function(type_key) {
+            Object.keys(data.stats).forEach((type_key) => {
               if (Object.keys(data.stats[type_key]).length > 0) {
-                Object.keys(data.stats[type_key]).forEach(function(status_key) {
-                  var temp_tr = ''
-                  data.stats[type_key][status_key].forEach(function(item) {
-                    temp_tr += '<tr><td>' + item[0] + '</td><td>%' + item[1] + '</td></tr>'
+                Object.keys(data.stats[type_key]).forEach((status_key) => {
+                  temp_tr = '';
+                  data.stats[type_key][status_key].forEach((item) => {
+                    temp_tr += `<tr><td>${item[0]}</td><td>%${item[1]}</td></tr>`;
                   });
                   if (temp_tr.length > 0) {
-                    $("#stats-tables").last().append('<table><tr><th>[' + status_key + ' profiles] '+ type_key +'</th><th>Percentage</th></tr>' + temp_tr + '</table>')
+                    $('#stats-tables').last().append(`<table><tr><th>[${status_key} profiles] ${type_key}</th><th>Percentage</th></tr>${temp_tr}</table>`);
                   }
                 });
 
@@ -1456,9 +1450,8 @@
               }
             });
 
-
             if (data.logs.length > 0) {
-              $("#logs-pre").html('<pre>' + data.logs + '</pre>')
+              $('#logs-pre').html(`<pre>${data.logs}</pre>`);
               $('#logs-section').show();
             }
 
@@ -1475,157 +1468,155 @@
             }
           }
         });
-
       } catch (err) {
-
+        verbose && console.log(err);
       }
 
       clearInterval(interval_logs);
-      spinner_on_off(false)
+      spinner_on_off(false);
     }
 
     async function settings_modal(option) {
-      spinner_on_off(true)
-      if (option == 'get_settings') {
+      spinner_on_off(true);
+      if (option === 'get_settings') {
         await $.ajax({
-          type: "GET",
-          url: "/get_settings"
-        }).done(function(data) {
-          current_sites = []
-          if (data != "Error") {
+          type: 'GET',
+          url: '/get_settings',
+        }).done((data) => {
+          if (data !== 'Error') {
             if (data.websites.length > 0) {
-              current_settings = data
-              var temp_tr = ""
-              data.websites.forEach(function(site) {
-                var temp_selected = ""
-                if (site.selected == "true") {
-                  temp_selected = "checked"
+              current_settings = data;
+              let temp_tr = '';
+              data.websites.forEach((site) => {
+                let temp_selected = '';
+                if (site.selected === 'true') {
+                  temp_selected = 'checked';
                 }
-                temp_tr += '<li><input type="checkbox" name=url_' + site.index + ' ' + temp_selected + '>' + '<label for=url_' + site.index + '>' + site.url + '</label></li>'
+                temp_tr += `<li><input type="checkbox" name=url_${site.index} ${temp_selected}><label for=url_${site.index}>${site.url}</label></li>`;
               });
 
-              $("#detection-options-list").html(temp_tr)
+              $('#detection-options-list').html(temp_tr);
             }
-            $("#user-agent-string").val(data.user_agent)
-            $("#google-api-key").val(data.google[0])
-            $("#google-api-cs").val(data.google[1])
+            $('#user-agent-string').val(data.user_agent);
+            $('#google-api-key').val(data.google[0]);
+            $('#google-api-cs').val(data.google[1]);
           }
         });
-      } else if (option == 'save_settings') {
-        temp_checked = []
-        $("#detection-options-list :checked").each(function() {
-          temp_checked.push(Number(this.name.substring('url_'.length)))
+      } else if (option === 'save_settings') {
+        const temp_checked = [];
+        $('#detection-options-list :checked').each(function() {
+          temp_checked.push(Number(this.name.substring('url_'.length)));
         });
         await $.ajax({
-          type: "POST",
-          url: "/save_settings",
+          type: 'POST',
+          url: '/save_settings',
           data: {
-            'websites': temp_checked.join(","),
-            'user_agent': $("#user-agent-string").val(),
-            'proxy': $("#proxy-string").val(),
-            'google_key': $("#google-api-key").val(),
-            'google_cv': $("#google-api-cs").val()
-          }
-        }).done(function(data) {
-          if (data != "Error") {}
+            websites: temp_checked.join(','),
+            user_agent: $('#user-agent-string').val(),
+            proxy: $('#proxy-string').val(),
+            google_key: $('#google-api-key').val(),
+            google_cv: $('#google-api-cs').val(),
+          },
+        }).done((data) => {
+          if (data !== 'Error') {}
         });
       }
 
-      spinner_on_off(false)
+      spinner_on_off(false);
     }
 
-    $('#de-settings-select-all').click(function(e) {
+    $('#de-settings-select-all').click((e) => {
       e.preventDefault();
       $('#detection-options-list input:checkbox').prop('checked', false);
     });
 
-    $('#settings-select-all').click(function(e) {
+    $('#settings-select-all').click((e) => {
       e.preventDefault();
       $('#detection-options-list input:checkbox').prop('checked', true);
     });
 
     $('[id^=select-top-]').click(function(e) {
       e.preventDefault();
-      if ("websites" in current_settings) {
+      if ('websites' in current_settings) {
         if (current_settings.websites.length > 0) {
-          websites_entries_filtered = current_settings.websites.filter((item) => item.global_rank != 0)
-          websites_entries_filtered.sort(function(a, b) {
-            return a.global_rank - b.global_rank
-          });
-          var top_websites = new RegExp('^select-top-([0-9]+)$', 'i')
-          var matched = $(this).attr('id').match(top_websites)
-          if (typeof matched !== 'undefined' && matched != null) {
+          const websites_entries_filtered = current_settings.websites.filter((item) => item.global_rank !== 0);
+          websites_entries_filtered.sort((a, b) => a.global_rank - b.global_rank);
+          const top_websites = new RegExp('^select-top-([0-9]+)$', 'i');
+          const matched = $(this).attr('id').match(top_websites);
+          if (typeof matched !== 'undefined' && matched !== null) {
             $('#detection-options-list input:checkbox').prop('checked', false);
             for (let i = 0; i < matched[1]; i++) {
-              $('#detection-options-list input:checkbox[name="url_' + websites_entries_filtered[i].index + '"]').prop('checked', true);
+              $(`#detection-options-list input:checkbox[name="url_${websites_entries_filtered[i].index}"]`).prop('checked', true);
             }
           }
         }
       }
     });
 
-    $('#analyze-normal').click(function(e) {
+    setup_selectable('#analyzed-options');
+
+    $('#analyze-normal').click((e) => {
       e.preventDefault();
       analyze_string();
     });
 
-    $('.generate').click(function(e) {
+    $('.generate').click((e) => {
       e.preventDefault();
-      generate_combinations('Generate');
+      // generate_combinations('Generate');
     });
 
-    $('#reset-everything').click(function(e) {
+    $('#reset-everything').click((e) => {
       e.preventDefault();
       reset_everything();
     });
 
-    $('#save-settings').click(function(e) {
+    $('#save-settings').click((e) => {
       e.preventDefault();
-      settings_modal("save_settings")
-      $("#settings-modal").modal("toggle")
+      settings_modal('save_settings');
+      $('#settings-modal').modal('toggle');
     });
 
-    $('#open-settings').click(function(e) {
+    $('#open-settings').click((e) => {
       e.preventDefault();
-      settings_modal("get_settings")
-      $("#settings-modal").modal();
+      settings_modal('get_settings');
+      $('#settings-modal').modal();
     });
 
-    $('#clear-options').click(function(e) {
+    $('#clear-options').click((e) => {
       e.preventDefault();
-      $('#analyzed-options')[0].selectize.clear()
+      $('#analyzed-options')[0].selectize.clear();
     });
 
-    $('#fast-options').click(function(e) {
+    $('#fast-options').click((e) => {
       e.preventDefault();
-      $('#analyzed-options')[0].selectize.clear()
+      $('#analyzed-options')[0].selectize.clear();
       $('#analyzed-options')[0].selectize.setValue(['WordInfo', 'MostCommon', 'FindOrigins', 'LookUps', 'CustomSearch', 'FindUserProfilesFast,GetUserProfilesFast', 'ExtractMetadata', 'ExtractPatterns', 'NetworkGraph', 'FindNumbers',
         'CategoriesStats',
-        'FindSymbols', 'SplitWordsByAlphabet', 'SplitWordsByUpperCase'
+        'FindSymbols', 'SplitWordsByAlphabet', 'SplitWordsByUpperCase',
       ]);
     });
 
-    $("#download-json").click(function(e) {
+    $('#download-json').click((e) => {
       e.preventDefault();
       save_to_file_as(output_json);
     });
 
-    $("#cancel_task").click(function(e) {
+    $('#cancel_task').click((e) => {
       e.preventDefault();
-      if (global_uuid != "") {
-        cancel_task(global_uuid)
+      if (global_uuid !== '') {
+        cancel_task(global_uuid);
       }
     });
 
     $(function() {
       $('.div-header').click(function() {
-        if (this.innerText != "Enter Profile Name") {
+        if (this.innerText !== 'Enter Profile Name') {
           if ($(this).next().hasClass('show')) {
-            $(this).find('.div-right-icon').removeClass("fa-caret-up")
-            $(this).find('.div-right-icon').addClass("fa-caret-down")
+            $(this).find('.div-right-icon').removeClass('fa-caret-up');
+            $(this).find('.div-right-icon').addClass('fa-caret-down');
           } else {
-            $(this).find('.div-right-icon').removeClass("fa-caret-down")
-            $(this).find('.div-right-icon').addClass("fa-caret-up")
+            $(this).find('.div-right-icon').removeClass('fa-caret-down');
+            $(this).find('.div-right-icon').addClass('fa-caret-up');
           }
           $(this).next().collapse('toggle');
         }
