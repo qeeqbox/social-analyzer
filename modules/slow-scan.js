@@ -18,7 +18,7 @@ if (process.platform == 'win32') {
 }
 
 async function find_username_advanced(req) {
-  helper.log_to_file_queue(req.body.uuid, "[init] Selected websites: " + helper.websites_entries.filter((item) => item.selected == 'true').length)
+  helper.log_to_file_queue(req.body.uuid, "[init] Selected websites: " + helper.websites_entries.filter((item) => item.selected == 'true').length + " for username: " + req.body.string)
   const time = new Date();
   const functions = [];
   var all_results = []
@@ -111,6 +111,7 @@ async function find_username_site(uuid, username, options, site) {
             helper.verbose && console.log(err);
           }
 
+          temp_profile.username = username
           temp_profile.text = sanitizeHtml(text_only);
           temp_profile.title = sanitizeHtml(title);
           temp_profile.language = language
@@ -170,6 +171,7 @@ async function find_username_site(uuid, username, options, site) {
           temp_profile.type = site.type
           resolve(temp_profile);
         } else if (temp_profile.image != "") {
+          temp_profile.username = username
           temp_profile.text = "unavailable";
           temp_profile.title = "unavailable";
           temp_profile.language = "unavailable"

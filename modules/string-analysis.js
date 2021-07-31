@@ -143,6 +143,16 @@ async function analyze_string(req, all_words) {
   helper.log_to_file_queue(req.body.uuid, "[Done] String analysis")
 }
 
+async function split_comma(req, all_words) {
+  try {
+    req.body.string.split(",").forEach((item) => {
+      if (item.length > 1 && !all_words.unknown.includes(item) && !all_words.maybe.includes(item)) {
+        all_words.unknown.push(item.toLowerCase());
+      }
+    });
+  } catch (err) {}
+}
+
 async function split_upper_case(req, all_words) {
   try {
     req.body.string.match(/[A-Z][a-z]+/g).forEach((item) => {
@@ -221,6 +231,7 @@ module.exports = {
   find_symbols,
   find_numbers,
   convert_numbers,
+  split_comma,
   split_upper_case,
   split_alphabet_case,
   most_common,

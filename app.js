@@ -242,15 +242,15 @@ app.post("/analyze_string", async function(req, res, next) {
     "checking": "Using " + req.body.string + " with no lookups"
   }
   var user_info_normal = {
-    data: {},
+    data: [],
     type: "all"
   }
   var user_info_advanced = {
-    data: {},
+    data: [],
     type: "all"
   }
   var user_info_special = {
-    data: {},
+    data: [],
     type: "all"
   }
   var all_words = {
@@ -292,12 +292,34 @@ app.post("/analyze_string", async function(req, res, next) {
     username = req.body.string
     req.body.uuid = req.body.uuid.replace(/[^a-zA-Z0-9\-]+/g, '');
     temp_uuid = req.body.uuid
+
     helper.log_to_file_queue(req.body.uuid, "[Setting] Log file name: " + req.body.uuid)
-    helper.log_to_file_queue(req.body.uuid, "[Setting] Username: " + req.body.string)
+
+    if (req.body.string.includes(",")){
+      req.body.group = true
+      helper.log_to_file_queue(req.body.uuid, "[Setting] Multiple usernames: " + req.body.string)
+    }
+    else{
+      helper.log_to_file_queue(req.body.uuid, "[Setting] Username: " + req.body.string)
+    }
+
     if (req.body.option.includes("FindUserProfilesFast") || req.body.option.includes("GetUserProfilesFast")) {
       fast = true
       helper.log_to_file_queue(req.body.uuid, "[Starting] Checking user profiles normal")
-      user_info_normal.data = await fastScan.find_username_normal(req);
+      if(req.body.group){
+        var old_string = req.body.string
+        const all_usernames = req.body.string.split(",").map( async item => {
+          req.body.string = item
+          var temp_arr = await fastScan.find_username_normal(req)
+          user_info_normal.data.push(...temp_arr)
+        })
+        await Promise.all(all_usernames);
+        req.body.string = old_string
+      }
+      else{
+        user_info_normal.data = await fastScan.find_username_normal(req);
+      }
+
       helper.log_to_file_queue(req.body.uuid, "[Done] Checking user profiles normal")
       if (req.body.option.includes("CategoriesStats")) {
         helper.log_to_file_queue(req.body.uuid, "[Starting] Generate stats")
@@ -334,25 +356,45 @@ app.post("/analyze_string", async function(req, res, next) {
         user_info_advanced.type = "noshow"
       }
       helper.log_to_file_queue(req.body.uuid, "[Starting] Checking user profiles advanced")
-      user_info_advanced.data = await slowScan.find_username_advanced(req);
+
+      if(req.body.group){
+        var old_string = req.body.string
+        const all_usernames = req.body.string.split(",").map( async item => {
+          req.body.string = item
+          var temp_arr = await slowScan.find_username_advanced(req);
+          user_info_advanced.data.push(...temp_arr)
+        })
+        await Promise.all(all_usernames);
+        req.body.string = old_string
+      }
+      else{
+        user_info_advanced.data = await slowScan.find_username_advanced(req);
+      }
+
       helper.log_to_file_queue(req.body.uuid, "[Done] Checking user profiles advanced")
     }
 
-    if (req.body.option.includes("LookUps")) {
-      helper.log_to_file_queue(req.body.uuid, "[Starting] Lookup")
-      await externalApis.check_engines(req, info);
-      helper.log_to_file_queue(req.body.uuid, "[Done] Lookup")
+    if (!req.body.group){
+      if (req.body.option.includes("LookUps")) {
+        helper.log_to_file_queue(req.body.uuid, "[Starting] Lookup")
+        await externalApis.check_engines(req, info);
+        helper.log_to_file_queue(req.body.uuid, "[Done] Lookup")
+      }
+      if (req.body.option.includes("CustomSearch")) {
+        helper.log_to_file_queue(req.body.uuid, "[Starting] Custom Search")
+        custom_search = await externalApis.custom_search_ouputs(req);
+        helper.log_to_file_queue(req.body.uuid, "[Done] Custom Search")
+      }
+      if (req.body.option.includes("FindOrigins")) {
+        helper.log_to_file_queue(req.body.uuid, "[Starting] Finding Origins")
+        names_origins = await nameAnalysis.find_origins(req);
+        helper.log_to_file_queue(req.body.uuid, "[Done] Finding Origins")
+      }
     }
-    if (req.body.option.includes("CustomSearch")) {
-      helper.log_to_file_queue(req.body.uuid, "[Starting] Custom Search")
-      custom_search = await externalApis.custom_search_ouputs(req);
-      helper.log_to_file_queue(req.body.uuid, "[Done] Custom Search")
+    else{
+      await stringAnalysis.split_comma(req, all_words)
     }
-    if (req.body.option.includes("FindOrigins")) {
-      helper.log_to_file_queue(req.body.uuid, "[Starting] Finding Origins")
-      names_origins = await nameAnalysis.find_origins(req);
-      helper.log_to_file_queue(req.body.uuid, "[Done] Finding Origins")
-    }
+
     if (req.body.option.includes("SplitWordsByUpperCase")) {
       helper.log_to_file_queue(req.body.uuid, "[Starting] Split by UpperCase")
       await stringAnalysis.split_upper_case(req, all_words)
@@ -424,7 +466,7 @@ app.post("/analyze_string", async function(req, res, next) {
         if (user_info_normal.data.length > 0) {
           if (req.body.option.includes("ExtractMetadata")) {
             helper.log_to_file_queue(req.body.uuid, "[Starting] Network Graph")
-            graph = await visualize.visualize_force_graph(req.body.string, user_info_normal.data, "fast")
+            graph = await visualize.visualize_force_graph(req, user_info_normal.data, "fast")
             helper.log_to_file_queue(req.body.uuid, "[Done] Network Graph")
           } else {
             helper.log_to_file_queue(req.body.uuid, "[Warning] NetworkGraph needs ExtractMetadata")
@@ -441,7 +483,8 @@ app.post("/analyze_string", async function(req, res, next) {
 
     helper.log_to_file_queue(req.body.uuid, "[Finished] Analyzing: " + req.body.string + " Task: " + req.body.uuid)
 
-    /*fs.writeFileSync('./test.json', JSON.stringify({
+
+      /*fs.writeFileSync('./test.json', JSON.stringify({
       username: username,
       uuid: temp_uuid,
       info,
