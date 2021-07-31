@@ -9,7 +9,7 @@ var cheerio = require('cheerio');
 var engine = require('./engine.js')
 
 async function find_username_normal(req) {
-  helper.log_to_file_queue(req.body.uuid, "[init] Selected websites: " + helper.websites_entries.filter((item) => item.selected == 'true').length)
+  helper.log_to_file_queue(req.body.uuid, "[init] Selected websites: " + helper.websites_entries.filter((item) => item.selected == 'true').length + " for username: " + req.body.string)
   const time = new Date();
   var all_results = []
   var [first_re_try, first_profiles] = await find_username_normal_wrapper(req, helper.websites_entries);
@@ -40,6 +40,7 @@ async function get_failed(req, failed) {
         "method": ""
       };
       temp_profile.method = "failed"
+      temp_profile.username = req.body.string
       temp_profile.link = site.url.replace("{username}", req.body.string)
       temp_result.push(temp_profile)
     });
@@ -151,6 +152,7 @@ async function find_username_site(uuid, username, options, site) {
             }
           }
 
+          temp_profile.username = username
           temp_profile.link = site.url.replace("{username}", username);
           temp_profile.type = site.type
           temp_profile.rank = site.global_rank

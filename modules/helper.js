@@ -26,6 +26,7 @@ var detection_level = {
 
 var profile_template = {
   "found": 0,
+  "username":"",
   "image": "",
   "link": "",
   "rate": "",
