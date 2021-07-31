@@ -1,4 +1,4 @@
-const verbose = true
+const verbose = false
 const global_lock = []
 const google_api_key = ''
 const google_api_cs = ''

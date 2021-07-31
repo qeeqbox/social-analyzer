@@ -379,18 +379,23 @@ app.post('/analyze_string', async function (req, res, next) {
         custom_search = await externalApis.custom_search_ouputs(req)
         helper.log_to_file_queue(req.body.uuid, '[Done] Custom Search')
       }
+      if (req.body.option.includes("FindOrigins")) {
+        helper.log_to_file_queue(req.body.uuid, "[Starting] Finding Origins")
+        names_origins = await nameAnalysis.find_origins(req);
+        helper.log_to_file_queue(req.body.uuid, "[Done] Finding Origins")
+      }
     } else {
       if (req.body.option.includes('FindOrigins')) {
-        helper.log_to_file_queue(req.body.uuid, '[Starting] Finding Origins')
         const old_string_2 = req.body.string
         const all_usernames = req.body.string.split(',').map(async item => {
+          helper.log_to_file_queue(req.body.uuid, '[Starting] Finding Origins: ' + item)
           req.body.string = item
           const temp_arr = await nameAnalysis.find_origins(req)
           names_origins.push(...temp_arr)
+          helper.log_to_file_queue(req.body.uuid, '[Done] Finding Origins: ' + item)
         })
         await Promise.all(all_usernames)
         req.body.string = old_string_2
-        helper.log_to_file_queue(req.body.uuid, '[Done] Finding Origins')
       }
 
       await stringAnalysis.split_comma(req, all_words)
