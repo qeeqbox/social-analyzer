@@ -14,6 +14,7 @@ This project is *"currently used by some law enforcement agencies in countries w
 `Social Analyzer is in a league of its own and is a very impressive tool that I thoroughly recommend for Digital Investigators and OSINT practitioners` - by [Joseph Jones, Founder of Strategy Nord, Unita Insight and OS2INT](https://os2int.com/toolbox/investigating-usernames-with-social-analyzer/)
 
 ## Updates
+- Pending detections are queued for testing
 - Multi-profile search stats logic is queued for testing
 - Multi-profile search for CLI is queued for testing
 - Multi-profile search is finally here (GUI version)! And, most of the public & private modules are compatible with this new search option - E.g. johndoe,janedoe <- any group of usernames separated by commas with no spaces 🔥🔥🔥
