@@ -123,6 +123,29 @@
       "country_code": 0
     },
     {
+      "url": "https://aahachat.org/profile/{username}/",
+      "detections": [
+        {
+          "return": "true",
+          "string": "\"name\"",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "full-profile",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Internet",
+      "global_rank": 0,
+      "country": "",
+      "country_code": 0
+    },
+    {
       "url": "https://about.me/{username}",
       "detections": [
         {
@@ -148,6 +171,29 @@
       "type": "Computers Electronics and Technology > Computers Electronics and Technology",
       "global_rank": 4103,
       "country": "IN",
+      "country_code": 0
+    },
+    {
+      "url": "https://adore.one/en/users/{username}",
+      "detections": [
+        {
+          "return": "true",
+          "string": "\"profile\"",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "profile-images",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Internet",
+      "global_rank": 0,
+      "country": "",
       "country_code": 0
     },
     {
@@ -188,6 +234,52 @@
       "type": "Business and Consumer Services > Shipping and Logistics",
       "global_rank": 385248,
       "country": "US",
+      "country_code": 0
+    },
+    {
+      "url": "https://airliners.net/user/{username}/profile/photos",
+      "detections": [
+        {
+          "return": "true",
+          "string": "user-profile-header",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "user-follower-button",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Internet",
+      "global_rank": 0,
+      "country": "",
+      "country_code": 0
+    },
+    {
+      "url": "https://akbrny.com/{username}",
+      "detections": [
+        {
+          "return": "true",
+          "string": "profile-info",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "profile-social",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Internet",
+      "global_rank": 0,
+      "country": "",
       "country_code": 0
     },
     {
@@ -367,6 +459,29 @@
       "country_code": 0
     },
     {
+      "url": "https://anar.biz/{username}",
+      "detections": [
+        {
+          "return": "true",
+          "string": "\"slug\":\"",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "\"name\"",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Internet",
+      "global_rank": 0,
+      "country": "",
+      "country_code": 0
+    },
+    {
       "url": "https://angel.co/{username}",
       "detections": [
         {
@@ -486,6 +601,29 @@
       "country_code": 0
     },
     {
+      "url": "https://apne.co/member/{username}",
+      "detections": [
+        {
+          "return": "true",
+          "string": "profile-header",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "userdetails",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Internet",
+      "global_rank": 0,
+      "country": "",
+      "country_code": 0
+    },
+    {
       "url": "https://app.intigriti.com/profile/{username}",
       "detections": [
         {
@@ -556,6 +694,29 @@
       "extract": [],
       "type": "Wiki",
       "global_rank": 1835940,
+      "country": "",
+      "country_code": 0
+    },
+    {
+      "url": "https://architizer.com/users/{username}",
+      "detections": [
+        {
+          "return": "true",
+          "string": "\"profile\"",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "profpic",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Internet",
+      "global_rank": 0,
       "country": "",
       "country_code": 0
     },
@@ -973,6 +1134,29 @@
       "country_code": 0
     },
     {
+      "url": "https://bandlab.com/{username}",
+      "detections": [
+        {
+          "return": "true",
+          "string": "profile-card",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "profile-header",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Internet",
+      "global_rank": 0,
+      "country": "",
+      "country_code": 0
+    },
+    {
       "url": "https://baseball-reference.com/bullpen/User:{username}",
       "detections": [
         {
@@ -1117,6 +1301,29 @@
       "type": "Wiki",
       "global_rank": 221785,
       "country": "AU",
+      "country_code": 0
+    },
+    {
+      "url": "https://biggerpockets.com/users/{username}",
+      "detections": [
+        {
+          "return": "true",
+          "string": "profile-header",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "header-info",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Internet",
+      "global_rank": 0,
+      "country": "",
       "country_code": 0
     },
     {
@@ -1443,6 +1650,57 @@
       "country_code": 0
     },
     {
+      "url": "https://bonanza.com/booths/{username}",
+      "detections": [
+        {
+          "return": "true",
+          "string": "booth_title_bar",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "booth_header_container",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Internet",
+      "global_rank": 0,
+      "country": "",
+      "country_code": 0
+    },
+    {
+      "url": "https://bookafly.com/users/{username}",
+      "detections": [
+        {
+          "return": "true",
+          "string": "c__followers",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "c__following",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "users/{username}\">",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Internet",
+      "global_rank": 0,
+      "country": "",
+      "country_code": 0
+    },
+    {
       "url": "https://bookcrossing.com/mybookshelf/{username}",
       "detections": [
         {
@@ -1502,6 +1760,29 @@
       "type": "Games > Video Games Consoles and Accessories",
       "global_rank": 4565,
       "country": "US",
+      "country_code": 0
+    },
+    {
+      "url": "https://bulbapp.com/{username}",
+      "detections": [
+        {
+          "return": "true",
+          "string": "/{username}",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "og:title",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Internet",
+      "global_rank": 0,
+      "country": "",
       "country_code": 0
     },
     {
@@ -1580,6 +1861,29 @@
       "type": "Computers Electronics and Technology > Programming and Developer Software",
       "global_rank": 141742,
       "country": "CH",
+      "country_code": 0
+    },
+    {
+      "url": "https://camsoda.com/{username}",
+      "detections": [
+        {
+          "return": "true",
+          "string": "Public Chat Channel",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "My Media",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Internet",
+      "global_rank": 0,
+      "country": "",
       "country_code": 0
     },
     {
@@ -1785,6 +2089,29 @@
       "extract": [],
       "type": "Internet",
       "global_rank": 2876376,
+      "country": "",
+      "country_code": 0
+    },
+    {
+      "url": "https://chatbazaar.com/profile/{username}",
+      "detections": [
+        {
+          "return": "true",
+          "string": "\"members\"",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "profile/{username}",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Internet",
+      "global_rank": 0,
       "country": "",
       "country_code": 0
     },
@@ -2288,6 +2615,29 @@
       "type": "News and Media",
       "global_rank": 31954,
       "country": "US",
+      "country_code": 0
+    },
+    {
+      "url": "https://community.articulate.com/users/{username}",
+      "detections": [
+        {
+          "return": "true",
+          "string": "user__profile",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "profile__name",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Internet",
+      "global_rank": 0,
+      "country": "",
       "country_code": 0
     },
     {
@@ -3045,6 +3395,29 @@
       "country_code": 0
     },
     {
+      "url": "https://credly.com/users/{username}",
+      "detections": [
+        {
+          "return": "true",
+          "string": "c-profile-header",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "c-user-layout",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Internet",
+      "global_rank": 0,
+      "country": "",
+      "country_code": 0
+    },
+    {
       "url": "https://cruiserswiki.org/wiki/User:{username}",
       "detections": [
         {
@@ -3301,6 +3674,29 @@
       "type": "Community and Society > Romance and Relationships",
       "global_rank": 64487,
       "country": "US",
+      "country_code": 0
+    },
+    {
+      "url": "https://demotywatory.pl/user/{username}",
+      "detections": [
+        {
+          "return": "true",
+          "string": "username",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "profileinfobox",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Internet",
+      "global_rank": 0,
+      "country": "",
       "country_code": 0
     },
     {
@@ -4517,6 +4913,29 @@
       "country_code": 0
     },
     {
+      "url": "https://ecency.com/@{username}",
+      "detections": [
+        {
+          "return": "true",
+          "string": "profile-card",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "basic-info",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Internet",
+      "global_rank": 0,
+      "country": "",
+      "country_code": 0
+    },
+    {
       "url": "https://echo.msk.ru/users/{username}",
       "detections": [
         {
@@ -4987,6 +5406,29 @@
       "country_code": 0
     },
     {
+      "url": "https://erdos.sdslabs.co/users/{username}",
+      "detections": [
+        {
+          "return": "true",
+          "string": "nickname",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "users/{username}",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Internet",
+      "global_rank": 0,
+      "country": "",
+      "country_code": 0
+    },
+    {
       "url": "https://erome.com/{username}",
       "detections": [
         {
@@ -5007,6 +5449,29 @@
       "type": "Computers Electronics and Technology",
       "global_rank": 8703,
       "country": "US",
+      "country_code": 0
+    },
+    {
+      "url": "https://es.pixilart.com/{username}",
+      "detections": [
+        {
+          "return": "true",
+          "string": "user-header",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "user-profile-details",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Internet",
+      "global_rank": 0,
+      "country": "",
       "country_code": 0
     },
     {
@@ -5188,6 +5653,29 @@
       "country_code": 0
     },
     {
+      "url": "https://exploretalent.com/{username}",
+      "detections": [
+        {
+          "return": "true",
+          "string": "profile-info",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "pic_canvas",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Internet",
+      "global_rank": 0,
+      "country": "",
+      "country_code": 0
+    },
+    {
       "url": "https://expo.io/@{username}",
       "detections": [
         {
@@ -5341,6 +5829,29 @@
       "country_code": 0
     },
     {
+      "url": "https://fancentro.com/{username}",
+      "detections": [
+        {
+          "return": "true",
+          "string": ">Follow me<",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": ">Message me<",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Internet",
+      "global_rank": 0,
+      "country": "",
+      "country_code": 0
+    },
+    {
       "url": "https://fandalism.com/{username}",
       "detections": [
         {
@@ -5394,6 +5905,52 @@
       "type": "Arts and Entertainment > Arts and Entertainment",
       "global_rank": 80,
       "country": "US",
+      "country_code": 0
+    },
+    {
+      "url": "https://fanfiktion.de/u/{username}",
+      "detections": [
+        {
+          "return": "true",
+          "string": "Profil von",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "u/{username}",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Internet",
+      "global_rank": 0,
+      "country": "",
+      "country_code": 0
+    },
+    {
+      "url": "https://fanpop.com/fans/{username}",
+      "detections": [
+        {
+          "return": "true",
+          "string": "profile-head",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "\"profile\"",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Internet",
+      "global_rank": 0,
+      "country": "",
       "country_code": 0
     },
     {
@@ -5546,6 +6103,29 @@
       "country_code": 0
     },
     {
+      "url": "https://flattr.com/@{username}",
+      "detections": [
+        {
+          "return": "true",
+          "string": "@{username}",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "og:title",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Internet",
+      "global_rank": 0,
+      "country": "",
+      "country_code": 0
+    },
+    {
       "url": "https://flickr.com/people/{username}",
       "detections": [
         {
@@ -5609,6 +6189,75 @@
       "type": "Computers Electronics and Technology > Computers Electronics and Technology",
       "global_rank": 2838,
       "country": "IN",
+      "country_code": 0
+    },
+    {
+      "url": "https://flipsnack.com/{username}",
+      "detections": [
+        {
+          "return": "true",
+          "string": "followCount",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "com/{username}",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Internet",
+      "global_rank": 0,
+      "country": "",
+      "country_code": 0
+    },
+    {
+      "url": "https://flirtic.ee/{username}",
+      "detections": [
+        {
+          "return": "true",
+          "string": "user_main",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "profile_",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Internet",
+      "global_rank": 0,
+      "country": "",
+      "country_code": 0
+    },
+    {
+      "url": "https://fluther.com/users/{username}/",
+      "detections": [
+        {
+          "return": "true",
+          "string": "ext-profile",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "usersummary",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Internet",
+      "global_rank": 0,
+      "country": "",
       "country_code": 0
     },
     {
@@ -6961,6 +7610,29 @@
       "country_code": 0
     },
     {
+      "url": "https://frontendmentor.io/profile/{username}/",
+      "detections": [
+        {
+          "return": "true",
+          "string": "Header__Name",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "profile/{username}/",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Internet",
+      "global_rank": 0,
+      "country": "",
+      "country_code": 0
+    },
+    {
       "url": "https://funtoo.org/wiki/Welcome/User:{username}",
       "detections": [
         {
@@ -7506,6 +8178,29 @@
       "country_code": 0
     },
     {
+      "url": "https://globalgamejam.org/users/{username}",
+      "detections": [
+        {
+          "return": "true",
+          "string": "user-full-name",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "user-picture",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Internet",
+      "global_rank": 0,
+      "country": "",
+      "country_code": 0
+    },
+    {
       "url": "https://globulation2.org/wiki/User:{username}",
       "detections": [
         {
@@ -7931,6 +8626,29 @@
       "country_code": 0
     },
     {
+      "url": "https://hamkhone.ir/{username}",
+      "detections": [
+        {
+          "return": "true",
+          "string": "name_user_profile ",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "user_section",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Internet",
+      "global_rank": 0,
+      "country": "",
+      "country_code": 0
+    },
+    {
       "url": "https://harddrop.com/wiki/Tetris_Wiki/User:{username}",
       "detections": [
         {
@@ -8080,6 +8798,29 @@
       "extract": [],
       "type": "Wiki",
       "global_rank": 383081,
+      "country": "",
+      "country_code": 0
+    },
+    {
+      "url": "https://hiveblocks.com/@{username}",
+      "detections": [
+        {
+          "return": "true",
+          "string": "@{username}",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "\"lead\"",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Internet",
+      "global_rank": 0,
       "country": "",
       "country_code": 0
     },
@@ -8506,6 +9247,29 @@
       "country_code": 0
     },
     {
+      "url": "https://inaturalist.nz/people/{username}",
+      "detections": [
+        {
+          "return": "true",
+          "string": "user-subnav",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "Joined: ",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Internet",
+      "global_rank": 0,
+      "country": "",
+      "country_code": 0
+    },
+    {
       "url": "https://inaturalist.org/people/{username}",
       "detections": [
         {
@@ -8883,6 +9647,29 @@
       "country_code": 0
     },
     {
+      "url": "https://it.memedroid.com/user/view/{username}",
+      "detections": [
+        {
+          "return": "true",
+          "string": "user-profile",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "Ranked: ",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Internet",
+      "global_rank": 0,
+      "country": "",
+      "country_code": 0
+    },
+    {
       "url": "https://javascript.wikia.com/wiki/User:{username}",
       "detections": [
         {
@@ -8979,6 +9766,52 @@
       "country_code": 0
     },
     {
+      "url": "https://karak.ir/user/{username}",
+      "detections": [
+        {
+          "return": "true",
+          "string": "userProfileItems",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "favUserProf",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Internet",
+      "global_rank": 0,
+      "country": "",
+      "country_code": 0
+    },
+    {
+      "url": "https://kaufmich.com/p/{username}",
+      "detections": [
+        {
+          "return": "true",
+          "string": "profile__main",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "profile__card",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Internet",
+      "global_rank": 0,
+      "country": "",
+      "country_code": 0
+    },
+    {
       "url": "https://keybase.io/{username}",
       "detections": [
         {
@@ -9009,6 +9842,29 @@
       "type": "Computers Electronics and Technology > Computers Electronics and Technology",
       "global_rank": 64280,
       "country": "US",
+      "country_code": 0
+    },
+    {
+      "url": "https://khamsat.com/user/{username}",
+      "detections": [
+        {
+          "return": "true",
+          "string": "user-profile",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "user/{username}",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Internet",
+      "global_rank": 0,
+      "country": "",
       "country_code": 0
     },
     {
@@ -9235,6 +10091,29 @@
       "country_code": 0
     },
     {
+      "url": "https://lazada.sg/shop/{username}",
+      "detections": [
+        {
+          "return": "true",
+          "string": "Last active",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "Main Category",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Internet",
+      "global_rank": 0,
+      "country": "",
+      "country_code": 0
+    },
+    {
       "url": "https://leetcode.com/{username}",
       "detections": [
         {
@@ -9283,6 +10162,29 @@
       "type": "Shopping",
       "global_rank": 12363,
       "country": "US",
+      "country_code": 0
+    },
+    {
+      "url": "https://leofinance.io/@{username}/followers",
+      "detections": [
+        {
+          "return": "true",
+          "string": "profile",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "io/@{username}",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Internet",
+      "global_rank": 0,
+      "country": "",
       "country_code": 0
     },
     {
@@ -9576,6 +10478,29 @@
       "country_code": 0
     },
     {
+      "url": "https://liveworksheets.com/user/{username}",
+      "detections": [
+        {
+          "return": "true",
+          "string": "Worksheets by",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "Shared worksheets",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Internet",
+      "global_rank": 0,
+      "country": "",
+      "country_code": 0
+    },
+    {
       "url": "https://lobste.rs/u/{username}",
       "detections": [
         {
@@ -9628,6 +10553,29 @@
       "extract": [],
       "type": "Games > Video Games Consoles and Accessories",
       "global_rank": 4922,
+      "country": "",
+      "country_code": 0
+    },
+    {
+      "url": "https://lordsmobilemaps.com/en/player/{username}",
+      "detections": [
+        {
+          "return": "true",
+          "string": "History/Graphs",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": ">Stats<",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Internet",
+      "global_rank": 0,
       "country": "",
       "country_code": 0
     },
@@ -9685,6 +10633,52 @@
       "extract": [],
       "type": "Adult",
       "global_rank": 132630,
+      "country": "",
+      "country_code": 0
+    },
+    {
+      "url": "https://lushstories.com/{username}",
+      "detections": [
+        {
+          "return": "true",
+          "string": "headers-inner",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "report-link",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Internet",
+      "global_rank": 0,
+      "country": "",
+      "country_code": 0
+    },
+    {
+      "url": "https://m.naijapals.com/profile.php?id={username}",
+      "detections": [
+        {
+          "return": "true",
+          "string": "usercard_menu",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "id={username}",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Internet",
+      "global_rank": 0,
       "country": "",
       "country_code": 0
     },
@@ -9856,6 +10850,29 @@
       "type": "Hobbies and Leisure > Photography",
       "global_rank": 39417,
       "country": "US",
+      "country_code": 0
+    },
+    {
+      "url": "https://memes.co/@{username}",
+      "detections": [
+        {
+          "return": "true",
+          "string": "profile-info",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "profile-name",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Internet",
+      "global_rank": 0,
+      "country": "",
       "country_code": 0
     },
     {
@@ -10051,6 +11068,29 @@
       "country_code": 0
     },
     {
+      "url": "https://metside.com/{username}",
+      "detections": [
+        {
+          "return": "true",
+          "string": "user-avatar",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "profile-container",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Internet",
+      "global_rank": 0,
+      "country": "",
+      "country_code": 0
+    },
+    {
       "url": "https://metwiki.com/wiki/User:{username}",
       "detections": [
         {
@@ -10142,6 +11182,29 @@
       "country_code": 0
     },
     {
+      "url": "https://mintme.com/token/{username}",
+      "detections": [
+        {
+          "return": "true",
+          "string": "token-name",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "token/{username}",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Internet",
+      "global_rank": 0,
+      "country": "",
+      "country_code": 0
+    },
+    {
       "url": "https://mix.com/{username}",
       "detections": [
         {
@@ -10217,6 +11280,29 @@
       "country_code": 0
     },
     {
+      "url": "https://modelhub.com/{username}/videos",
+      "detections": [
+        {
+          "return": "true",
+          "string": "modelHeader",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "profilePhotoSection",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Internet",
+      "global_rank": 0,
+      "country": "",
+      "country_code": 0
+    },
+    {
       "url": "https://moikrug.ru/{username}",
       "detections": [
         {
@@ -10257,6 +11343,29 @@
       "country_code": 0
     },
     {
+      "url": "https://mostaql.com/u/{username}",
+      "detections": [
+        {
+          "return": "true",
+          "string": "profile-details",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "profile-name",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Internet",
+      "global_rank": 0,
+      "country": "",
+      "country_code": 0
+    },
+    {
       "url": "https://mouthshut.com/{username}",
       "detections": [
         {
@@ -10280,6 +11389,29 @@
       "country_code": 0
     },
     {
+      "url": "https://mql5.com/es/users/{username}",
+      "detections": [
+        {
+          "return": "true",
+          "string": "user-page",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "users/{username}",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Internet",
+      "global_rank": 0,
+      "country": "",
+      "country_code": 0
+    },
+    {
       "url": "https://mstdn.io/@{username}",
       "detections": [
         {
@@ -10293,6 +11425,29 @@
       "extract": [],
       "type": "Internet",
       "global_rank": 1544682,
+      "country": "",
+      "country_code": 0
+    },
+    {
+      "url": "https://mtgarena.pro/u/{username}",
+      "detections": [
+        {
+          "return": "true",
+          "string": ">Follow<",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "u/{username}",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Internet",
+      "global_rank": 0,
       "country": "",
       "country_code": 0
     },
@@ -10340,6 +11495,52 @@
         {
           "return": "true",
           "string": "username",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Internet",
+      "global_rank": 0,
+      "country": "",
+      "country_code": 0
+    },
+    {
+      "url": "https://musicinafrica.net/fr/users/{username}",
+      "detections": [
+        {
+          "return": "true",
+          "string": "follow-user",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "pane-title",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Internet",
+      "global_rank": 0,
+      "country": "",
+      "country_code": 0
+    },
+    {
+      "url": "https://musictraveler.com/en/users/{username}",
+      "detections": [
+        {
+          "return": "true",
+          "string": "profile-photo",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "profile-header",
           "type": "normal"
         }
       ],
@@ -10746,6 +11947,29 @@
       "implicit": 0,
       "extract": [],
       "type": "Wiki",
+      "global_rank": 0,
+      "country": "",
+      "country_code": 0
+    },
+    {
+      "url": "https://nitrc.org/users/{username}/",
+      "detections": [
+        {
+          "return": "true",
+          "string": "Contact Information",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "User ID:",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Internet",
       "global_rank": 0,
       "country": "",
       "country_code": 0
@@ -11272,6 +12496,29 @@
       "country_code": 0
     },
     {
+      "url": "https://os.mbed.com/users/{username}",
+      "detections": [
+        {
+          "return": "true",
+          "string": "users/{username}",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": ">Profile<",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Internet",
+      "global_rank": 0,
+      "country": "",
+      "country_code": 0
+    },
+    {
       "url": "https://osu.ppy.sh/users/{username}",
       "detections": [
         {
@@ -11324,6 +12571,29 @@
       "extract": [],
       "type": "Internet",
       "global_rank": 3071461,
+      "country": "",
+      "country_code": 0
+    },
+    {
+      "url": "https://oyoy.com/{username}",
+      "detections": [
+        {
+          "return": "true",
+          "string": "page-userprofile",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "profile-info",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Internet",
+      "global_rank": 0,
       "country": "",
       "country_code": 0
     },
@@ -11399,6 +12669,29 @@
       "type": "Computers Electronics and Technology > Web Hosting and Domain Names",
       "global_rank": 2878,
       "country": "US",
+      "country_code": 0
+    },
+    {
+      "url": "https://patch.com/users/{username}",
+      "detections": [
+        {
+          "return": "true",
+          "string": "profile",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "users/{username}",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Internet",
+      "global_rank": 0,
+      "country": "",
       "country_code": 0
     },
     {
@@ -11583,6 +12876,29 @@
       "country_code": 0
     },
     {
+      "url": "https://photoblog.pl/{username}",
+      "detections": [
+        {
+          "return": "true",
+          "string": "user_details",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "user_avatar",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Internet",
+      "global_rank": 0,
+      "country": "",
+      "country_code": 0
+    },
+    {
       "url": "https://php.ru/forum/members/?username={username}",
       "detections": [
         {
@@ -11614,6 +12930,29 @@
       "extract": [],
       "type": "Science and Education > Physics",
       "global_rank": 277348,
+      "country": "",
+      "country_code": 0
+    },
+    {
+      "url": "https://picfair.com/users/{username}",
+      "detections": [
+        {
+          "return": "true",
+          "string": "profile__content",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "profile__content__stats",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Internet",
+      "global_rank": 0,
       "country": "",
       "country_code": 0
     },
@@ -11823,6 +13162,29 @@
       "country_code": 0
     },
     {
+      "url": "https://pocketstars.com/{username}",
+      "detections": [
+        {
+          "return": "true",
+          "string": "Last seen",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "@{username}",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Internet",
+      "global_rank": 0,
+      "country": "",
+      "country_code": 0
+    },
+    {
       "url": "https://pokemonshowdown.com/users/{username}",
       "detections": [
         {
@@ -11940,6 +13302,29 @@
       "type": "Computers Electronics and Technology > Web Hosting and Domain Names",
       "global_rank": 29514,
       "country": "US",
+      "country_code": 0
+    },
+    {
+      "url": "https://poshmark.com/closet/{username}",
+      "detections": [
+        {
+          "return": "true",
+          "string": "user-details",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "@{username}",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Internet",
+      "global_rank": 0,
+      "country": "",
       "country_code": 0
     },
     {
@@ -12360,6 +13745,29 @@
       "country_code": 0
     },
     {
+      "url": "https://queer.af/@{username}",
+      "detections": [
+        {
+          "return": "true",
+          "string": "public-account",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "public-account-bio",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Internet",
+      "global_rank": 0,
+      "country": "",
+      "country_code": 0
+    },
+    {
       "url": "https://quirc.miraheze.org/wiki/User:{username}",
       "detections": [
         {
@@ -12540,6 +13948,29 @@
       "country_code": 0
     },
     {
+      "url": "https://readersfirst.co.uk/users/{username}",
+      "detections": [
+        {
+          "return": "true",
+          "string": "user-photo",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "user-details",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Internet",
+      "global_rank": 0,
+      "country": "",
+      "country_code": 0
+    },
+    {
       "url": "https://realcty.org/wiki/User:{username}",
       "detections": [
         {
@@ -12705,6 +14136,29 @@
       "country_code": 0
     },
     {
+      "url": "https://renderosity.com/users/{username}",
+      "detections": [
+        {
+          "return": "true",
+          "string": "\"Followers\"",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "\"Views\"",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Internet",
+      "global_rank": 0,
+      "country": "",
+      "country_code": 0
+    },
+    {
       "url": "https://repl.it/@{username}",
       "detections": [
         {
@@ -12724,6 +14178,29 @@
       "extract": [],
       "type": "Computers Electronics and Technology > Programming and Developer Software",
       "global_rank": 233718,
+      "country": "",
+      "country_code": 0
+    },
+    {
+      "url": "https://republic.co/@{username}",
+      "detections": [
+        {
+          "return": "true",
+          "string": "user_profiles",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "\"follow\"",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Internet",
+      "global_rank": 0,
       "country": "",
       "country_code": 0
     },
@@ -12927,6 +14404,80 @@
       "country_code": 0
     },
     {
+      "url": "https://rqiim.com/{username}",
+      "detections": [
+        {
+          "return": "true",
+          "string": "my-profile",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "\"name\"",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Internet",
+      "global_rank": 0,
+      "country": "",
+      "country_code": 0
+    },
+    {
+      "url": "https://rrmiran.com/en//members/{username}",
+      "detections": [
+        {
+          "return": "true",
+          "string": ">Views<",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "usrcore-profile",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": ">Views<",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Internet",
+      "global_rank": 0,
+      "country": "",
+      "country_code": 0
+    },
+    {
+      "url": "https://ruby.dating/en/users/{username}",
+      "detections": [
+        {
+          "return": "true",
+          "string": "profile-images",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "\"profile\"",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Internet",
+      "global_rank": 0,
+      "country": "",
+      "country_code": 0
+    },
+    {
       "url": "https://rubygems.org/profiles/{username}",
       "detections": [
         {
@@ -12957,6 +14508,29 @@
       "type": "Computers",
       "global_rank": 49809,
       "country": "US",
+      "country_code": 0
+    },
+    {
+      "url": "https://run-log.com/live/{username}",
+      "detections": [
+        {
+          "return": "true",
+          "string": "username",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "profileitem",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Internet",
+      "global_rank": 0,
+      "country": "",
       "country_code": 0
     },
     {
@@ -13629,6 +15203,29 @@
       "country_code": 0
     },
     {
+      "url": "https://spectrum.chat/users/{username}",
+      "detections": [
+        {
+          "return": "true",
+          "string": "users/{username}",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "@{username}",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Internet",
+      "global_rank": 0,
+      "country": "",
+      "country_code": 0
+    },
+    {
       "url": "https://speedrun.com/user/{username}",
       "detections": [
         {
@@ -13862,6 +15459,29 @@
       "country_code": 0
     },
     {
+      "url": "https://stars.avn.com/{username}",
+      "detections": [
+        {
+          "return": "true",
+          "string": "com/{username}",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "\"profile\"",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Internet",
+      "global_rank": 0,
+      "country": "",
+      "country_code": 0
+    },
+    {
       "url": "https://starwars.wikia.com/User:{username}",
       "detections": [
         {
@@ -13930,6 +15550,29 @@
       "country_code": 0
     },
     {
+      "url": "https://steemcoinpan.com/@{username}",
+      "detections": [
+        {
+          "return": "true",
+          "string": "UserProfile__bio",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "UserProfile__stats",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Internet",
+      "global_rank": 0,
+      "country": "",
+      "country_code": 0
+    },
+    {
       "url": "https://steemit.com/@{username}",
       "detections": [
         {
@@ -13958,6 +15601,29 @@
       "country_code": 0
     },
     {
+      "url": "https://steller.co/{username}",
+      "detections": [
+        {
+          "return": "true",
+          "string": "Username-",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "co/{username}",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Internet",
+      "global_rank": 0,
+      "country": "",
+      "country_code": 0
+    },
+    {
       "url": "https://stereo.com/{username}",
       "detections": [
         {
@@ -13978,6 +15644,29 @@
       "type": "Food and Drink > Restaurants and Delivery",
       "global_rank": 401815,
       "country": "US",
+      "country_code": 0
+    },
+    {
+      "url": "https://storenvy.com/{username}",
+      "detections": [
+        {
+          "return": "true",
+          "string": "profile-info",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "profile-name",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Internet",
+      "global_rank": 0,
+      "country": "",
       "country_code": 0
     },
     {
@@ -14013,6 +15702,29 @@
       "type": "Sports > Sports",
       "global_rank": 879,
       "country": "US",
+      "country_code": 0
+    },
+    {
+      "url": "https://suedtirolnews.it/user/{username}",
+      "detections": [
+        {
+          "return": "true",
+          "string": "profile-meta",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "profile-body",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Internet",
+      "global_rank": 0,
+      "country": "",
       "country_code": 0
     },
     {
@@ -14199,6 +15911,29 @@
       "extract": [],
       "type": "Health > Health Conditions and Concerns",
       "global_rank": 774867,
+      "country": "",
+      "country_code": 0
+    },
+    {
+      "url": "https://tamtam.chat/{username}",
+      "detections": [
+        {
+          "return": "true",
+          "string": "chat_link",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "open_auth_button",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Internet",
+      "global_rank": 0,
       "country": "",
       "country_code": 0
     },
@@ -14470,6 +16205,29 @@
       "country_code": 0
     },
     {
+      "url": "https://thesimsresource.com/members/{username}/",
+      "detections": [
+        {
+          "return": "true",
+          "string": "profile-banner",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "profile-name",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Internet",
+      "global_rank": 0,
+      "country": "",
+      "country_code": 0
+    },
+    {
       "url": "https://theverge.com/users/{username}",
       "detections": [
         {
@@ -14541,6 +16299,52 @@
       "type": "Computers Electronics and Technology > Social Networks and Online Communities",
       "global_rank": 74,
       "country": "US",
+      "country_code": 0
+    },
+    {
+      "url": "https://tise.com/{username}",
+      "detections": [
+        {
+          "return": "true",
+          "string": "com/{username}",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "profile?p={username}",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Internet",
+      "global_rank": 0,
+      "country": "",
+      "country_code": 0
+    },
+    {
+      "url": "https://tiwall.com/u/{username}",
+      "detections": [
+        {
+          "return": "true",
+          "string": "user-image",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "\"user\"",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Internet",
+      "global_rank": 0,
+      "country": "",
       "country_code": 0
     },
     {
@@ -14622,6 +16426,29 @@
       "type": "E-commerce and Shopping > Marketplace",
       "global_rank": 344,
       "country": "ID",
+      "country_code": 0
+    },
+    {
+      "url": "https://tokyvideo.com/user/{username}",
+      "detections": [
+        {
+          "return": "true",
+          "string": "profile-header",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "channel-data",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Internet",
+      "global_rank": 0,
+      "country": "",
       "country_code": 0
     },
     {
@@ -14953,6 +16780,29 @@
       "type": "Computers Electronics and Technology > Computers Electronics and Technology",
       "global_rank": 69875,
       "country": "IN",
+      "country_code": 0
+    },
+    {
+      "url": "https://twpro.jp/{username}",
+      "detections": [
+        {
+          "return": "true",
+          "string": "screen-name",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "user-profile",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Internet",
+      "global_rank": 0,
+      "country": "",
       "country_code": 0
     },
     {
@@ -15358,6 +17208,34 @@
       "type": "Games > Video Games Consoles and Accessories",
       "global_rank": 234637,
       "country": "PK",
+      "country_code": 0
+    },
+    {
+      "url": "https://vidamora.com/profile/{username}",
+      "detections": [
+        {
+          "return": "true",
+          "string": "profile-header",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "about-content",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "currentusername",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Internet",
+      "global_rank": 0,
+      "country": "",
       "country_code": 0
     },
     {
@@ -16732,6 +18610,29 @@
       "country_code": 0
     },
     {
+      "url": "https://xeeders.com/{username}",
+      "detections": [
+        {
+          "return": "true",
+          "string": "profiles_info",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "profiles_banner",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Internet",
+      "global_rank": 0,
+      "country": "",
+      "country_code": 0
+    },
+    {
       "url": "https://xhamster.com/users/{username}",
       "detections": [
         {
@@ -16861,6 +18762,29 @@
       "type": "Adult",
       "global_rank": 40403,
       "country": "US",
+      "country_code": 0
+    },
+    {
+      "url": "https://yazawaj.com/profile/{username}",
+      "detections": [
+        {
+          "return": "true",
+          "string": "profileblock",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "profile/{username}",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Internet",
+      "global_rank": 0,
+      "country": "",
       "country_code": 0
     },
     {
@@ -17154,6 +19078,29 @@
       "type": "Internet",
       "global_rank": 444,
       "country": "US",
+      "country_code": 0
+    },
+    {
+      "url": "https://{username}.gumroad.com/",
+      "detections": [
+        {
+          "return": "true",
+          "string": "profile-picture",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "card__name",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Internet",
+      "global_rank": 0,
+      "country": "",
       "country_code": 0
     },
     {
