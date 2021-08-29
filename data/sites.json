@@ -75,6 +75,11 @@
       "url": "https://8tracks.com/{username}",
       "detections": [
         {
+          "return": "false",
+          "string": "This page has vanished, or perhaps it never even existed...",
+          "type": "ocr"
+        },
+        {
           "return": "true",
           "string": "profile:username",
           "type": "normal"
@@ -9685,6 +9690,28 @@
       "global_rank": 9694,
       "country": "US",
       "country_code": 0
+    },
+    {
+      "url":"https://www.atlassian.com/software/jira?username:{username}",
+      "detections": [
+        {
+          "return": "true",
+          "string": "Issue & Project Tracking Software",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "og:title",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Business and Consumer Services > Business Services",
+      "country":"AU",
+      "country_code":0
     },
     {
       "url": "https://jbzd.com.pl/uzytkownik/{username}",
@@ -19580,3 +19607,4 @@
   ],
   "generic_detection": []
 }
+  
