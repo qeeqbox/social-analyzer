@@ -8802,6 +8802,29 @@
       "country_code": 0
     },
     {
+      "url": "https://hive.blog/@{username}",
+      "detections": [
+        {
+          "return": "true",
+          "string": "UserProfile__stats",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "UserProfile__info",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Internet",
+      "global_rank": 0,
+      "country": "",
+      "country_code": 0
+    },
+    {
       "url": "https://hiveblocks.com/@{username}",
       "detections": [
         {
@@ -10670,6 +10693,29 @@
         {
           "return": "true",
           "string": "id={username}",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Internet",
+      "global_rank": 0,
+      "country": "",
+      "country_code": 0
+    },
+    {
+      "url": "https://mamby.com/u/{username}",
+      "detections": [
+        {
+          "return": "true",
+          "string": "public-profile",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "profile-name",
           "type": "normal"
         }
       ],
@@ -14263,6 +14309,29 @@
       "country_code": 0
     },
     {
+      "url": "https://retalk.com/u/{username}",
+      "detections": [
+        {
+          "return": "true",
+          "string": "page-info",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "page-description",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Internet",
+      "global_rank": 0,
+      "country": "",
+      "country_code": 0
+    },
+    {
       "url": "https://retirewiki.jp/wiki/User:{username}",
       "detections": [
         {
@@ -15055,6 +15124,29 @@
       "type": "Internet",
       "global_rank": 52180,
       "country": "US",
+      "country_code": 0
+    },
+    {
+      "url": "https://social.msdn.microsoft.com/profile/{username}/",
+      "detections": [
+        {
+          "return": "true",
+          "string": "avatar-name",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "\"statistics\"",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Internet",
+      "global_rank": 0,
+      "country": "",
       "country_code": 0
     },
     {
@@ -18554,6 +18646,29 @@
       "implicit": 0,
       "extract": [],
       "type": "Wiki",
+      "global_rank": 0,
+      "country": "",
+      "country_code": 0
+    },
+    {
+      "url": "https://www.zoig.com/profile/{username}",
+      "detections": [
+        {
+          "return": "true",
+          "string": "profile_ovrv",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "Gender: ",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "Internet",
       "global_rank": 0,
       "country": "",
       "country_code": 0
