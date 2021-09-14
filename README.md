@@ -31,7 +31,7 @@ Websites and applications that enable users to create and share content or to pa
 -------------------------------------              ---------------------------------
 ```
 
-## APP
+## APP (Preferred!)
 Standard localhost WEB APP url: http://0.0.0.0:9005/app.html
 
 <img src="https://raw.githubusercontent.com/qeeqbox/social-analyzer/main/readme/intro_fast.gif" style="max-width:768px"/>
