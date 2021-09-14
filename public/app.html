@@ -260,6 +260,7 @@
   #most-common-words-section,
   #words-info-section,
   #stats-section,
+  #metadata-section,
   #custom-search-section,
   #names-origins-section {
     display: none;
@@ -643,6 +644,11 @@
     text-align: right;
   }
 
+  #metadata-table tr td:nth-child(1),
+  #metadata-table tr th:nth-child(1) {
+    width: 50px;
+  }
+
   .div-right-icon {
     float: right;
     font-size: 16px;
@@ -871,6 +877,14 @@
         <div id="force-graph-canvas" class="collapse show">
         </div>
       </div>
+      <div class="box-border-style" id="metadata-section">
+        <div class="div-header">
+          <div class="div-left">Meta</div>
+          <div class="div-right"><i class="div-right-icon fa fa-caret-up"></i></div>
+        </div>
+        <div id="metadata-table" class="collapse show">
+        </div>
+      </div>
       <div class="box-border-style" id="stats-section">
         <div class="div-header">
           <div class="div-left">Stats</div>
@@ -976,6 +990,11 @@
         group: 'Stats',
         value: 'CategoriesStats',
         name: 'Generate stats of categories',
+        disable: false,
+      }, {
+        group: 'Stats',
+        value: 'MetadataStats',
+        name: 'Generate stats of Metadata',
         disable: false,
       },
       {
@@ -1178,6 +1197,8 @@
       $('#logs').html('');
       $('#stats-tables').html('');
       $('#stats-section').hide();
+      $('#metadata-table').html('');
+      $('#metadata-section').hide();
       clearInterval(interval_logs);
     }
 
@@ -1435,18 +1456,31 @@
             }
 
             Object.keys(data.stats).forEach((type_key) => {
-              if (Object.keys(data.stats[type_key]).length > 0) {
-                Object.keys(data.stats[type_key]).forEach((status_key) => {
-                  temp_tr = '';
-                  data.stats[type_key][status_key].forEach((item) => {
-                    temp_tr += `<tr><td>${item[0]}</td><td>%${item[1]}</td></tr>`;
+              if(typeof data.stats[type_key] === "object" && !Array.isArray(data.stats[type_key])){
+                if (Object.keys(data.stats[type_key]).length > 0) {
+                  Object.keys(data.stats[type_key]).forEach((status_key) => {
+                    temp_tr = '';
+                    data.stats[type_key][status_key].forEach((item) => {
+                      temp_tr += `<tr><td>${item[0]}</td><td>%${item[1]}</td></tr>`;
+                    });
+                    if (temp_tr.length > 0) {
+                      $('#stats-tables').last().append(`<table><tr><th>[${status_key} profiles] ${type_key}</th><th>Percentage</th></tr>${temp_tr}</table>`);
+                    }
                   });
-                  if (temp_tr.length > 0) {
-                    $('#stats-tables').last().append(`<table><tr><th>[${status_key} profiles] ${type_key}</th><th>Percentage</th></tr>${temp_tr}</table>`);
-                  }
+                }
+                $('#stats-section').show();
+              }
+              if(typeof data.stats[type_key] === "object" && Array.isArray(data.stats[type_key])){
+                temp_tr = '';
+                data.stats[type_key].forEach((item) => {
+                  temp_tr += `<tr><td>${item[0]}</td><td>${item[1]}</td></tr>`;
                 });
 
-                $('#stats-section').show();
+                if (temp_tr.length > 0) {
+                  $('#metadata-table').last().append(`<table><tr><th>Total</th><th>Metadata string</th></tr>${temp_tr}</table>`);
+                }
+
+                $('#metadata-section').show();
               }
             });
 
@@ -1591,7 +1625,7 @@
       e.preventDefault();
       $('#analyzed-options')[0].selectize.clear();
       $('#analyzed-options')[0].selectize.setValue(['WordInfo', 'MostCommon', 'FindOrigins', 'LookUps', 'CustomSearch', 'FindUserProfilesFast,GetUserProfilesFast', 'ExtractMetadata', 'ExtractPatterns', 'NetworkGraph', 'FindNumbers',
-        'CategoriesStats',
+        'CategoriesStats','MetadataStats',
         'FindSymbols', 'SplitWordsByAlphabet', 'SplitWordsByUpperCase',
       ]);
     });

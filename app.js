@@ -316,9 +316,9 @@ app.post('/analyze_string', async function (req, res, next) {
       }
 
       helper.log_to_file_queue(req.body.uuid, '[Done] Checking user profiles normal')
-      if (req.body.option.includes('CategoriesStats')) {
+      if (req.body.option.includes('CategoriesStats') || req.body.option.includes('MetadataStats')) {
         helper.log_to_file_queue(req.body.uuid, '[Starting] Generate stats')
-        stats_default = await stats.get_stats(user_info_normal.data)
+        stats_default = await stats.get_stats(req,user_info_normal.data)
         helper.log_to_file_queue(req.body.uuid, '[Done] Generate stats')
       }
     }
@@ -490,7 +490,7 @@ app.post('/analyze_string', async function (req, res, next) {
 
     helper.log_to_file_queue(req.body.uuid, '[Finished] Analyzing: ' + req.body.string + ' Task: ' + req.body.uuid)
 
-    /* fs.writeFileSync('./test.json', JSON.stringify({
+     /*fs.writeFileSync('./test.json', JSON.stringify({
       username: username,
       uuid: temp_uuid,
       info,
@@ -505,7 +505,7 @@ app.post('/analyze_string', async function (req, res, next) {
       graph: graph,
       stats: stats_default,
       logs: logs
-    }, null, 2) , 'utf-8'); */
+    }, null, 2) , 'utf-8');*/
 
     res.json({
       username: username,
