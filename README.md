@@ -14,10 +14,8 @@ This project is *"currently used by some law enforcement agencies in countries w
 `Social Analyzer is in a league of its own and is a very impressive tool that I thoroughly recommend for Digital Investigators and OSINT practitioners` - by [Joseph Jones, Founder of Strategy Nord, Unita Insight and OS2INT](https://os2int.com/toolbox/investigating-usernames-with-social-analyzer/)
 
 ## Updates
-- Pending detections are queued for testing
-- Multi-profile search stats logic is queued for testing
-- Multi-profile search for CLI is queued for testing
-- Multi-profile search is finally here (GUI version)! And, most of the public & private modules are compatible with this new search option - E.g. johndoe,janedoe <- any group of usernames separated by commas with no spaces 🔥🔥🔥
+- 🔥 Multi-profile stats and metadata tables
+- 🔥 Multi-profile search is finally here (GUI version)! And, most of the public & private modules are compatible with this new search option - E.g. johndoe,janedoe <- any group of usernames separated by commas with no spaces
 
 ## So·cial Me·di·a
 Websites and applications that enable users to create and share content or to participate in social networking - Oxford Dictionary
@@ -51,7 +49,8 @@ Standard localhost WEB APP url: http://0.0.0.0:9005/app.html
 - Force-directed Graph for Metadata (Needs ExtractPatterns)
 - Search by top ranking, or by country (Alexa Ranking)
 - Profiles stats and static info (Category country)
-- Auto-flirtation to unnecessary output
+- Cross Metadata stats (Added from Qeeqbox osint project)
+- Auto-flirtation to unnecessary output (Enable javascript etc..)
 - Search engine lookup (Google API - optional)
 - Custom search queries (Google API & DuckDuckGo API - optional)
 - Profile screenshot, title, info and website description
