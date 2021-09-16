@@ -14,6 +14,7 @@ This project is *"currently used by some law enforcement agencies in countries w
 `Social Analyzer is in a league of its own and is a very impressive tool that I thoroughly recommend for Digital Investigators and OSINT practitioners` - by [Joseph Jones, Founder of Strategy Nord, Unita Insight and OS2INT](https://os2int.com/toolbox/investigating-usernames-with-social-analyzer/)
 
 ## Updates
+- 🔥 Possible profile\person age option
 - 🔥 Multi-profile stats and metadata tables
 - 🔥 Multi-profile search is finally here (GUI version)! And, most of the public & private modules are compatible with this new search option - E.g. johndoe,janedoe <- any group of usernames separated by commas with no spaces
 
@@ -55,6 +56,7 @@ Standard localhost WEB APP url: http://0.0.0.0:9005/app.html
 - Custom search queries (Google API & DuckDuckGo API - optional)
 - Profile screenshot, title, info and website description
 - Find name origins, name similarity & common words by language
+- Find possible profile\person age (Limited analysis)
 - Custom user-agent, proxy, timeout & implicit wait
 - Python CLI & NodeJS CLI (limited to FindUserProfilesFast option)
 - Grid option for faster checking (limited to docker-compose)
