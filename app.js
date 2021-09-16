@@ -258,6 +258,7 @@ app.post('/analyze_string', async function (req, res, next) {
     unknown: [],
     maybe: []
   }
+  let ages = []
   let names_origins = []
   const words_info = []
   const temp_words = []
@@ -421,6 +422,12 @@ app.post('/analyze_string', async function (req, res, next) {
       await stringAnalysis.find_numbers(req, all_words)
       helper.log_to_file_queue(req.body.uuid, '[Done] Finding Numbers')
     }
+    if (req.body.option.includes('FindAges')) {
+      helper.log_to_file_queue(req.body.uuid, '[Starting] Finding Ages')
+      ages = await stringAnalysis.guess_age_from_string(req)
+      helper.log_to_file_queue(req.body.uuid, '[Done] Finding Ages')
+    }
+
     req.body.string = req.body.string.toLowerCase()
 
     if (req.body.option.includes('ConvertNumbers')) {
@@ -491,26 +498,28 @@ app.post('/analyze_string', async function (req, res, next) {
     helper.log_to_file_queue(req.body.uuid, '[Finished] Analyzing: ' + req.body.string + ' Task: ' + req.body.uuid)
 
      /*fs.writeFileSync('./test.json', JSON.stringify({
-      username: username,
-      uuid: temp_uuid,
-      info,
-      table: all_words,
-      common: temp_words,
-      words_info: words_info,
-      user_info_normal: user_info_normal,
-      user_info_advanced: user_info_advanced,
-      user_info_special: user_info_special,
-      names_origins: names_origins,
-      custom_search: custom_search,
-      graph: graph,
-      stats: stats_default,
-      logs: logs
+     username: username,
+     uuid: temp_uuid,
+     info,
+     ages: ages,
+     table: all_words,
+     common: temp_words,
+     words_info: words_info,
+     user_info_normal: user_info_normal,
+     user_info_advanced: user_info_advanced,
+     user_info_special: user_info_special,
+     names_origins: names_origins,
+     custom_search: custom_search,
+     graph: graph,
+     stats: stats_default,
+     logs: logs
     }, null, 2) , 'utf-8');*/
 
     res.json({
       username: username,
       uuid: temp_uuid,
       info,
+      ages: ages,
       table: all_words,
       common: temp_words,
       words_info: words_info,

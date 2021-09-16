@@ -225,6 +225,53 @@ async function get_maybe_words (req, all_words) {
   }).filter(word => word.length > 1)
 }
 
+async function guess_age_from_string(req) {
+  let results = []
+
+  try {
+    let age_4_numbers = /\d{4}|\d{2}/g
+    let current_year = new Date().getFullYear()
+    while ((match = age_4_numbers.exec(req.body.string)) != null) {
+      let temp_dict = {"found":"","year":"","age":""}
+      let found = 0
+      let year = 0
+      let age = 0
+      temp_dict.found = match[0]
+      found = parseInt(match[0])
+      if (found >= 50 && found <= 99){
+        year = found + 1900
+        age = current_year - year
+        if (age <= 75){
+            temp_dict.year = year.toString()
+            temp_dict.age = age.toString()
+        }
+      }
+      if (found >= 14 && found <= 49){
+        year = current_year - found
+        age = found
+        if (age <= 75){
+            temp_dict.year = year.toString()
+            temp_dict.age = age.toString()
+        }
+      }
+      if (found >= 1950){
+        year = found
+        age = current_year - year
+        if (age <= 75){
+            temp_dict.year = year.toString()
+            temp_dict.age = age.toString()
+        }
+      }
+
+      results.push(temp_dict)
+    }
+
+  } catch (err) {
+  }
+
+  return results
+}
+
 module.exports = {
   get_maybe_words,
   find_symbols,
@@ -235,5 +282,6 @@ module.exports = {
   split_alphabet_case,
   most_common,
   find_other,
-  analyze_string
+  analyze_string,
+  guess_age_from_string
 }
