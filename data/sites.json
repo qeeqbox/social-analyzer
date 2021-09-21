@@ -1345,34 +1345,6 @@
       "country_code": 0
     },
     {
-      "url": "https://bintray.com/{username}",
-      "detections": [
-        {
-          "return": "false",
-          "string": "Page not found",
-          "type": "normal"
-        },
-        {
-          "return": "true",
-          "string": "profile-name",
-          "type": "normal"
-        },
-        {
-          "return": "true",
-          "string": "titlebar-details",
-          "type": "normal"
-        }
-      ],
-      "selected": "false",
-      "timeout": 0,
-      "implicit": 0,
-      "extract": [],
-      "type": "Computers Electronics and Technology > Programming and Developer Software",
-      "global_rank": 47188,
-      "country": "IN",
-      "country_code": 0
-    },
-    {
       "url": "https://biosector01.com/wiki/User:{username}",
       "detections": [
         {
