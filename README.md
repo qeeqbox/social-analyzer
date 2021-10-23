@@ -14,9 +14,8 @@ This project is *"currently used by some law enforcement agencies in countries w
 `Social Analyzer is in a league of its own and is a very impressive tool that I thoroughly recommend for Digital Investigators and OSINT practitioners` - by [Joseph Jones, Founder of Strategy Nord, Unita Insight and OS2INT](https://os2int.com/toolbox/investigating-usernames-with-social-analyzer/)
 
 ## Updates
+- 🔥 Multi-profile search nodejs (cli version)
 - 🔥 Possible profile\person age option
-- 🔥 Multi-profile stats and metadata tables
-- 🔥 Multi-profile search is finally here (GUI version)! And, most of the public & private modules are compatible with this new search option - E.g. johndoe,janedoe <- any group of usernames separated by commas with no spaces
 
 ## So·cial Me·di·a
 Websites and applications that enable users to create and share content or to participate in social networking - Oxford Dictionary
@@ -43,7 +42,7 @@ Standard localhost WEB APP url: http://0.0.0.0:9005/app.html
 ## Features
 - String & name analysis (Permutations and Combinations)
 - Find profile using multiple techniques (HTTPS library & Webdriver)
-- Multi profile search (Used for correlation)
+- Multi profile search (Used for correlation - any combination separated with ,)
 - Multi layers detections (OCR, normal, advanced & special)
 - Visualized profile information using Ixora (Metadata & Patterns)
 - Metadata & Patterns extraction (Added from Qeeqbox osint project)
@@ -86,12 +85,25 @@ npm ci
 npm start
 ```
 
+### Linux (As Node CLI)
+```bash
+sudo apt-get update
+#Depedning on your Linux distro, you may or may not need these 2 lines
+sudo DEBIAN_FRONTEND=noninteractive apt-get install -y software-properties-common
+sudo add-apt-repository ppa:mozillateam/ppa -y
+sudo apt-get install -y firefox-esr tesseract-ocr git nodejs npm
+git clone https://github.com/qeeqbox/social-analyzer.git
+cd social-analyzer
+npm ci
+nodejs app.js --username "johndoe,janedpe" --metadata --top 100
+```
+
 ### Linux (As python package)
 ```bash
 sudo apt-get update
 sudo apt-get install python3 python3-pip
 pip3 install social-analyzer
-social-analyzer --username "johndoe" --metadata --top 100
+social-analyzer --username "johndoe,janedpe" --metadata --top 100
 #or
 python3 -m social-analyzer --username "johndoe" --metadata --top 100
 ```
@@ -103,7 +115,7 @@ sudo apt-get install git python3 python3-pip
 git clone https://github.com/qeeqbox/social-analyzer
 cd social-analyzer
 pip3 install –r requirements.txt
-python3 app.py --username "johndoe" --metadata --top 100
+python3 app.py --username "janedpe" --metadata --top 100
 ```
 
 ### Importing as object (python)
