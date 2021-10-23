@@ -668,7 +668,27 @@ async function check_user_cli (argv) {
     })
   }
 
-  ret = await fastScan.find_username_normal(req)
+  if (req.body.string.includes(',')) {
+    req.body.group = true
+    helper.log_to_file_queue(req.body.uuid, '[Setting] Multiple usernames: ' + req.body.string)
+  } else {
+    req.body.group = false
+    helper.log_to_file_queue(req.body.uuid, '[Setting] Username: ' + req.body.string)
+  }
+
+  if (req.body.group) {
+    const old_string_1 = req.body.string
+    const all_usernames = req.body.string.split(',').map(async item => {
+      req.body.string = item
+      let temp_arr = await fastScan.find_username_normal(req)
+      ret.push(...temp_arr)
+    })
+    await Promise.all(all_usernames)
+    req.body.string = old_string_1
+  } else {
+    ret = await fastScan.find_username_normal(req)
+  }
+
   if (typeof ret === 'undefined' || ret === undefined || ret.length === 0) {
     helper.log_to_file_queue(req.body.uuid, 'User does not exist (try FindUserProfilesSlow or FindUserProfilesSpecial)')
   } else {
