@@ -4,29 +4,6 @@
   },
   "websites_entries": [
     {
-      "url": "https://{username}.bigcartel.com/",
-      "detections": [
-        {
-          "return": "true",
-          "string": "/{username}",
-          "type": "normal"
-        },
-        {
-          "return": "true",
-          "string": "/product",
-          "type": "normal"
-        }
-      ],
-      "selected": "false",
-      "timeout": 0,
-      "implicit": 0,
-      "extract": [],
-      "type": "",
-      "global_rank": 0,
-      "country": "",
-      "country_code": 0
-    },
-    {
       "url": "https://24.wikia.com/wiki/User:{username}",
       "detections": [
         {
@@ -19569,6 +19546,29 @@
       "implicit": 0,
       "extract": [],
       "type": "Internet",
+      "global_rank": 0,
+      "country": "",
+      "country_code": 0
+    },
+    {
+      "url": "https://{username}.bigcartel.com/",
+      "detections": [
+        {
+          "return": "true",
+          "string": "/{username}",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "/product",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "",
       "global_rank": 0,
       "country": "",
       "country_code": 0
