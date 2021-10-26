@@ -606,7 +606,12 @@ class SocialAnalyzer():
                     if temp in site["url"]:
                         site["selected"] = "true"
 
-        self.log.info("[Init] Selected websites: {}".format(len(self.websites_entries)))
+        true_websites = 0
+        for site in self.websites_entries:
+            if site["selected"] == "true":
+                true_websites += 1
+
+        self.log.info("[Init] Selected websites: {}".format(true_websites))
         resutls = self.find_username_normal(req)
 
         for item in resutls:
@@ -747,7 +752,7 @@ class SocialAnalyzer():
 
         ret = {}
         ARGV = None
-        ARG_PARSER = _ArgumentParser(description="Qeeqbox/social-analyzer - API and Web App for analyzing & finding a person's profile across 300+ social media websites (Detections are updated regularly)", usage=SUPPRESS)
+        ARG_PARSER = _ArgumentParser(description="Qeeqbox/social-analyzer - API and Web App for analyzing & finding a person's profile across 900+ social media websites (Detections are updated regularly)", usage=SUPPRESS)
         ARG_PARSER._action_groups.pop()
         ARG_PARSER_OPTIONAL = ARG_PARSER.add_argument_group("Arguments")
         ARG_PARSER_OPTIONAL.add_argument("--username", help="E.g. johndoe, john_doe or johndoe9999", metavar="", default="")
