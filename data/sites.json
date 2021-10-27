@@ -434,6 +434,29 @@
       "country_code": 0
     },
     {
+      "url": "https://alleywatch.com/profile/{username}/",
+      "detections": [
+        {
+          "return": "true",
+          "string": "author-name",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "author-photo",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "",
+      "global_rank": 0,
+      "country": "",
+      "country_code": 0
+    },
+    {
       "url": "https://allmylinks.com/{username}",
       "detections": [
         {
@@ -693,6 +716,29 @@
       "country_code": 0
     },
     {
+      "url": "https://apclips.com/{username}",
+      "detections": [
+        {
+          "return": "true",
+          "string": "about-tab",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "profile-",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "",
+      "global_rank": 0,
+      "country": "",
+      "country_code": 0
+    },
+    {
       "url": "https://apne.co/member/{username}",
       "detections": [
         {
@@ -860,6 +906,29 @@
       "type": "Wiki",
       "global_rank": 4565,
       "country": "US",
+      "country_code": 0
+    },
+    {
+      "url": "https://artfol.me/{username}",
+      "detections": [
+        {
+          "return": "true",
+          "string": "@{username}",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "profile",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "",
+      "global_rank": 0,
+      "country": "",
       "country_code": 0
     },
     {
@@ -2198,6 +2267,29 @@
       "country_code": 0
     },
     {
+      "url": "https://cda.pl/{username}",
+      "detections": [
+        {
+          "return": "true",
+          "string": "pl/{username}",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "my-page",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "",
+      "global_rank": 0,
+      "country": "",
+      "country_code": 0
+    },
+    {
       "url": "https://championat.com/user/{username}",
       "detections": [
         {
@@ -2267,6 +2359,29 @@
       "implicit": 0,
       "extract": [],
       "type": "Internet",
+      "global_rank": 0,
+      "country": "",
+      "country_code": 0
+    },
+    {
+      "url": "https://chaturbate.com/{username}/",
+      "detections": [
+        {
+          "return": "true",
+          "string": "/{username}",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "JPEG_ROOM_IMAGE_URL",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "",
       "global_rank": 0,
       "country": "",
       "country_code": 0
@@ -2732,6 +2847,29 @@
       "type": "Computers Electronics and Technology > Programming and Developer Software",
       "global_rank": 354,
       "country": "IN",
+      "country_code": 0
+    },
+    {
+      "url": "https://coil.com/u/{username}",
+      "detections": [
+        {
+          "return": "true",
+          "string": "UserInfo",
+          "type": "advanced"
+        },
+        {
+          "return": "true",
+          "string": "FollowButton",
+          "type": "advanced"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "",
+      "global_rank": 0,
+      "country": "",
       "country_code": 0
     },
     {
@@ -6012,29 +6150,6 @@
       "detections": [
         {
           "return": "true",
-          "string": ">Follow me<",
-          "type": "normal"
-        },
-        {
-          "return": "true",
-          "string": ">Message me<",
-          "type": "normal"
-        }
-      ],
-      "selected": "false",
-      "timeout": 0,
-      "implicit": 0,
-      "extract": [],
-      "type": "Internet",
-      "global_rank": 0,
-      "country": "",
-      "country_code": 0
-    },
-    {
-      "url": "https://fancentro.com/{username}",
-      "detections": [
-        {
-          "return": "true",
           "string": "/{username}",
           "type": "normal"
         },
@@ -6224,6 +6339,29 @@
       "country_code": 0
     },
     {
+      "url": "https://ffm.bio/{username}",
+      "detections": [
+        {
+          "return": "true",
+          "string": "bio/{username}",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "bio-header",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "",
+      "global_rank": 0,
+      "country": "",
+      "country_code": 0
+    },
+    {
       "url": "https://filmow.com/usuario/{username}",
       "detections": [
         {
@@ -6249,6 +6387,75 @@
       "type": "Arts and Entertainment > TV Movies and Streaming",
       "global_rank": 52179,
       "country": "IN",
+      "country_code": 0
+    },
+    {
+      "url": "https://filmweb.pl/user/{username}",
+      "detections": [
+        {
+          "return": "true",
+          "string": "\"user__head\"",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "posterInfoBox",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "",
+      "global_rank": 0,
+      "country": "",
+      "country_code": 0
+    },
+    {
+      "url": "https://fineartamerica.com/profiles/{username}/shop",
+      "detections": [
+        {
+          "return": "true",
+          "string": "/{username}",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "buttonFollow",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "",
+      "global_rank": 0,
+      "country": "",
+      "country_code": 0
+    },
+    {
+      "url": "https://finmessage.com/{username}",
+      "detections": [
+        {
+          "return": "true",
+          "string": "\"profile-avatar",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "\"profile-header",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "",
+      "global_rank": 0,
+      "country": "",
       "country_code": 0
     },
     {
@@ -7852,6 +8059,29 @@
       "country_code": 0
     },
     {
+      "url": "https://furaffinity.net/user/{username}/",
+      "detections": [
+        {
+          "return": "true",
+          "string": "user-profile",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "page-userpage",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "",
+      "global_rank": 0,
+      "country": "",
+      "country_code": 0
+    },
+    {
       "url": "https://gab.com/{username}",
       "detections": [
         {
@@ -8119,6 +8349,29 @@
       "extract": [],
       "type": "Wiki",
       "global_rank": 2939843,
+      "country": "",
+      "country_code": 0
+    },
+    {
+      "url": "https://genius.com/{username}",
+      "detections": [
+        {
+          "return": "true",
+          "string": "profile_identity",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "profile_header",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "",
+      "global_rank": 0,
       "country": "",
       "country_code": 0
     },
@@ -8403,6 +8656,29 @@
       "country_code": 0
     },
     {
+      "url": "https://glitch.com/@{username}",
+      "detections": [
+        {
+          "return": "true",
+          "string": "profileInfo",
+          "type": "advanced"
+        },
+        {
+          "return": "true",
+          "string": "@{username}",
+          "type": "advanced"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "",
+      "global_rank": 0,
+      "country": "",
+      "country_code": 0
+    },
+    {
       "url": "https://globalgamejam.org/users/{username}",
       "detections": [
         {
@@ -8605,6 +8881,29 @@
       "type": "Jobs and Career > Jobs and Employment",
       "global_rank": 3338,
       "country": "IN",
+      "country_code": 0
+    },
+    {
+      "url": "https://gurushots.com/{username}",
+      "detections": [
+        {
+          "return": "true",
+          "string": "/{username}",
+          "type": "advanced"
+        },
+        {
+          "return": "true",
+          "string": "-profile-",
+          "type": "advanced"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "",
+      "global_rank": 0,
+      "country": "",
       "country_code": 0
     },
     {
@@ -9599,6 +9898,29 @@
       "type": "Internet",
       "global_rank": 27333,
       "country": "IN",
+      "country_code": 0
+    },
+    {
+      "url": "https://indiedb.com/members/{username}/",
+      "detections": [
+        {
+          "return": "true",
+          "string": "headerbox",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "profiledescription",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "",
+      "global_rank": 0,
+      "country": "",
       "country_code": 0
     },
     {
@@ -11482,6 +11804,29 @@
       "country_code": 0
     },
     {
+      "url": "https://minds.com/{username}/",
+      "detections": [
+        {
+          "return": "true",
+          "string": "@{username}",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "Subscribe to @",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "",
+      "global_rank": 0,
+      "country": "",
+      "country_code": 0
+    },
+    {
       "url": "https://minecraft.gamepedia.com/Minecraft_Wiki/User:{username}",
       "detections": [
         {
@@ -11984,6 +12329,29 @@
       "country_code": 0
     },
     {
+      "url": "https://myfigurecollection.net/profile/{username}",
+      "detections": [
+        {
+          "return": "true",
+          "string": "user-object",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "user-status",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "",
+      "global_rank": 0,
+      "country": "",
+      "country_code": 0
+    },
+    {
       "url": "https://mygirlfund.com/public/{username}",
       "detections": [
         {
@@ -11994,6 +12362,29 @@
         {
           "return": "true",
           "string": "photo-count",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "",
+      "global_rank": 0,
+      "country": "",
+      "country_code": 0
+    },
+    {
+      "url": "https://mym.fans/{username}",
+      "detections": [
+        {
+          "return": "true",
+          "string": "profile__header",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "profile__description",
           "type": "normal"
         }
       ],
@@ -12615,6 +13006,29 @@
       "country_code": 0
     },
     {
+      "url": "https://oncyber.io/{username}",
+      "detections": [
+        {
+          "return": "true",
+          "string": "/{username}",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "\"info\"",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "",
+      "global_rank": 0,
+      "country": "",
+      "country_code": 0
+    },
+    {
       "url": "https://onehack.us/u/{username}",
       "detections": [
         {
@@ -12766,6 +13180,29 @@
       "extract": [],
       "type": "Wiki",
       "global_rank": 1000476,
+      "country": "",
+      "country_code": 0
+    },
+    {
+      "url": "https://opensea.io/collection/{username}",
+      "detections": [
+        {
+          "return": "true",
+          "string": "collection:\\",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "/{username}",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "",
+      "global_rank": 0,
       "country": "",
       "country_code": 0
     },
@@ -13027,6 +13464,29 @@
       "type": "Science and Education > Education",
       "global_rank": 175,
       "country": "US",
+      "country_code": 0
+    },
+    {
+      "url": "https://padrim.com.br/{username}",
+      "detections": [
+        {
+          "return": "true",
+          "string": "about-single",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "single-finance",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "",
+      "global_rank": 0,
+      "country": "",
       "country_code": 0
     },
     {
@@ -13680,6 +14140,29 @@
       "country_code": 0
     },
     {
+      "url": "https://portfolio.commishes.com/user/{username}/",
+      "detections": [
+        {
+          "return": "true",
+          "string": "user-profile",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "profile-info",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "",
+      "global_rank": 0,
+      "country": "",
+      "country_code": 0
+    },
+    {
       "url": "https://portlandwiki.org/wiki/User:{username}",
       "detections": [
         {
@@ -14301,6 +14784,29 @@
       "country_code": 0
     },
     {
+      "url": "https://rapidapi.com/user/{username}/",
+      "detections": [
+        {
+          "return": "true",
+          "string": "ProfilePage",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "ProfileAvatar",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "",
+      "global_rank": 0,
+      "country": "",
+      "country_code": 0
+    },
+    {
       "url": "https://rateyourmusic.com/~{username}",
       "detections": [
         {
@@ -14753,6 +15259,29 @@
       "implicit": 0,
       "extract": [],
       "type": "Wiki",
+      "global_rank": 0,
+      "country": "",
+      "country_code": 0
+    },
+    {
+      "url": "https://revealme.com/{username}",
+      "detections": [
+        {
+          "return": "true",
+          "string": "member-profilephoto",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "imgprofile ",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "",
       "global_rank": 0,
       "country": "",
       "country_code": 0
@@ -15638,6 +16167,29 @@
       "country_code": 0
     },
     {
+      "url": "https://society6.com/{username}/all",
+      "detections": [
+        {
+          "return": "true",
+          "string": "statDetail",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "shopName",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "",
+      "global_rank": 0,
+      "country": "",
+      "country_code": 0
+    },
+    {
       "url": "https://soundcloud.com/{username}",
       "detections": [
         {
@@ -15718,6 +16270,29 @@
       "extract": [],
       "type": "Internet",
       "global_rank": 931363,
+      "country": "",
+      "country_code": 0
+    },
+    {
+      "url": "https://spankpay.me/{username}",
+      "detections": [
+        {
+          "return": "true",
+          "string": "me/{username}",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "og:title",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "",
+      "global_rank": 0,
       "country": "",
       "country_code": 0
     },
@@ -15932,6 +16507,29 @@
       "country_code": 0
     },
     {
+      "url": "https://spreadshirt.com/shop/user/{username}/",
+      "detections": [
+        {
+          "return": "true",
+          "string": "designer",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "image-server",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "",
+      "global_rank": 0,
+      "country": "",
+      "country_code": 0
+    },
+    {
       "url": "https://ssbwiki.com/User:{username}",
       "detections": [
         {
@@ -16024,29 +16622,6 @@
       "implicit": 0,
       "extract": [],
       "type": "Internet",
-      "global_rank": 0,
-      "country": "",
-      "country_code": 0
-    },
-    {
-      "url": "https://stars.avn.com/{username}",
-      "detections": [
-        {
-          "return": "true",
-          "string": "/{username}",
-          "type": "normal"
-        },
-        {
-          "return": "true",
-          "string": "og:title",
-          "type": "normal"
-        }
-      ],
-      "selected": "false",
-      "timeout": 0,
-      "implicit": 0,
-      "extract": [],
-      "type": "",
       "global_rank": 0,
       "country": "",
       "country_code": 0
@@ -16362,6 +16937,29 @@
       "implicit": 10,
       "type": "Books",
       "global_rank": 8417023,
+      "country": "",
+      "country_code": 0
+    },
+    {
+      "url": "https://swame.com/{username}",
+      "detections": [
+        {
+          "return": "true",
+          "string": "/{username}",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "profile",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "",
+      "global_rank": 0,
       "country": "",
       "country_code": 0
     },
@@ -16826,6 +17424,29 @@
       "country_code": 0
     },
     {
+      "url": "https://theweedtube.com/user/{username}",
+      "detections": [
+        {
+          "return": "true",
+          "string": "profile_info",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "profileUserName",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "",
+      "global_rank": 0,
+      "country": "",
+      "country_code": 0
+    },
+    {
       "url": "https://thinkwiki.org/wiki/User:{username}",
       "detections": [
         {
@@ -17036,6 +17657,29 @@
       "type": "Wiki",
       "global_rank": 97121,
       "country": "US",
+      "country_code": 0
+    },
+    {
+      "url": "https://tradestories.pt/user/{username}",
+      "detections": [
+        {
+          "return": "true",
+          "string": "/{username}",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "user-info",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "",
+      "global_rank": 0,
+      "country": "",
       "country_code": 0
     },
     {
@@ -19619,6 +20263,29 @@
       "country_code": 0
     },
     {
+      "url": "https://{username}.business.site/",
+      "detections": [
+        {
+          "return": "true",
+          "string": "{username}.",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "og:title",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "",
+      "global_rank": 0,
+      "country": "",
+      "country_code": 0
+    },
+    {
       "url": "https://{username}.carbonmade.com",
       "detections": [
         {
@@ -19644,6 +20311,29 @@
       "type": "Arts and Entertainment > Arts and Entertainment",
       "global_rank": 32792,
       "country": "US",
+      "country_code": 0
+    },
+    {
+      "url": "https://{username}.carrd.co/",
+      "detections": [
+        {
+          "return": "true",
+          "string": "{username}.carrd",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "og:title",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "",
+      "global_rank": 0,
+      "country": "",
       "country_code": 0
     },
     {
@@ -19717,6 +20407,52 @@
       "type": "Internet",
       "global_rank": 444,
       "country": "US",
+      "country_code": 0
+    },
+    {
+      "url": "https://{username}.findrow.com/",
+      "detections": [
+        {
+          "return": "true",
+          "string": "/{username}",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "profile__",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "",
+      "global_rank": 0,
+      "country": "",
+      "country_code": 0
+    },
+    {
+      "url": "https://{username}.gumroad.com",
+      "detections": [
+        {
+          "return": "true",
+          "string": "data-username",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "-profile-",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "",
+      "global_rank": 0,
+      "country": "",
       "country_code": 0
     },
     {
@@ -19893,23 +20629,13 @@
       "url": "https://{username}.newgrounds.com",
       "detections": [
         {
-          "return": "false",
-          "string": "exists in our system",
-          "type": "advanced"
-        },
-        {
-          "return": "false",
-          "string": "exists in our system",
+          "return": "true",
+          "string": "user-header",
           "type": "normal"
         },
         {
           "return": "true",
           "string": "userbody",
-          "type": "normal"
-        },
-        {
-          "return": "true",
-          "string": "realname",
           "type": "normal"
         }
       ],
