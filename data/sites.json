@@ -329,17 +329,16 @@
       "country_code": 0
     },
     {
-      "status": "bad",
       "url": "https://akniga.org/profile/{username}",
       "detections": [
         {
-          "return": "false",
-          "string": "error-code",
+          "return": "true",
+          "string": "user--side",
           "type": "normal"
         },
         {
           "return": "true",
-          "string": "user-info-name",
+          "string": "user-info",
           "type": "normal"
         }
       ],
@@ -347,8 +346,8 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "Arts and Entertainment > Books and Literature",
-      "global_rank": 25959,
+      "type": "",
+      "global_rank": 0,
       "country": "",
       "country_code": 0
     },
@@ -1471,6 +1470,29 @@
       "country_code": 0
     },
     {
+      "url": "https://betalist.com/@{username}",
+      "detections": [
+        {
+          "return": "true",
+          "string": "profile__avatar",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "profile__bio",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "",
+      "global_rank": 0,
+      "country": "",
+      "country_code": 0
+    },
+    {
       "url": "https://betawiki.net/wiki/User:{username}",
       "detections": [
         {
@@ -1908,6 +1930,29 @@
       "country_code": 0
     },
     {
+      "url": "https://brainscale.net/users/{username}",
+      "detections": [
+        {
+          "return": "true",
+          "string": "profile-main",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "Profile Info",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "",
+      "global_rank": 0,
+      "country": "",
+      "country_code": 0
+    },
+    {
       "url": "https://bulbanews.bulbagarden.net/wiki/User:{username}",
       "detections": [
         {
@@ -2290,6 +2335,29 @@
       "country_code": 0
     },
     {
+      "url": "https://ch.tetr.io/u/{username}",
+      "detections": [
+        {
+          "return": "true",
+          "string": "io/user-content",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "profile_avatar",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "",
+      "global_rank": 0,
+      "country": "",
+      "country_code": 0
+    },
+    {
       "url": "https://championat.com/user/{username}",
       "detections": [
         {
@@ -2597,6 +2665,29 @@
       "country_code": 0
     },
     {
+      "url": "https://clubhousedb.com/user/{username}",
+      "detections": [
+        {
+          "return": "true",
+          "string": "/{username}",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "user-page",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "",
+      "global_rank": 0,
+      "country": "",
+      "country_code": 0
+    },
+    {
       "url": "https://cnet.com/profiles/{username}",
       "detections": [
         {
@@ -2861,6 +2952,29 @@
           "return": "true",
           "string": "FollowButton",
           "type": "advanced"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "",
+      "global_rank": 0,
+      "country": "",
+      "country_code": 0
+    },
+    {
+      "url": "https://coinvote.cc/profile/{username}",
+      "detections": [
+        {
+          "return": "true",
+          "string": "coin-column-title",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "MY COINS",
+          "type": "normal"
         }
       ],
       "selected": "false",
@@ -5169,6 +5283,29 @@
       "country_code": 0
     },
     {
+      "url": "https://easyeda.com/{username}",
+      "detections": [
+        {
+          "return": "true",
+          "string": "project-detail",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "user-contact",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "",
+      "global_rank": 0,
+      "country": "",
+      "country_code": 0
+    },
+    {
       "url": "https://ebay.com/usr/{username}",
       "detections": [
         {
@@ -5833,6 +5970,29 @@
       "extract": [],
       "type": "Wiki",
       "global_rank": 468837,
+      "country": "",
+      "country_code": 0
+    },
+    {
+      "url": "https://esportal.com/en/profile/{username}",
+      "detections": [
+        {
+          "return": "true",
+          "string": "profile/{username}",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "og:title",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "",
+      "global_rank": 0,
       "country": "",
       "country_code": 0
     },
@@ -8719,6 +8879,29 @@
       "country_code": 0
     },
     {
+      "url": "https://gloria.tv/{username}",
+      "detections": [
+        {
+          "return": "true",
+          "string": "/{username}",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "portrait",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "",
+      "global_rank": 0,
+      "country": "",
+      "country_code": 0
+    },
+    {
       "url": "https://gmail.com/{username}",
       "detections": [
         {
@@ -9638,7 +9821,7 @@
         },
         {
           "return": "true",
-          "string": "\"nick\":\"{username}\"",
+          "string": "og:title",
           "type": "normal"
         }
       ],
@@ -9646,9 +9829,9 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "Arts and Entertainment > Arts and Entertainment",
-      "global_rank": 26571,
-      "country": "US",
+      "type": "",
+      "global_rank": 0,
+      "country": "",
       "country_code": 0
     },
     {
@@ -10167,6 +10350,29 @@
       "country_code": 0
     },
     {
+      "url": "https://ising.pl/{username}",
+      "detections": [
+        {
+          "return": "true",
+          "string": "profile-photo",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "profile-header",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "",
+      "global_rank": 0,
+      "country": "",
+      "country_code": 0
+    },
+    {
       "url": "https://ismygirl.com/{username}",
       "detections": [
         {
@@ -10283,8 +10489,8 @@
       "url": "https://jbzd.com.pl/uzytkownik/{username}",
       "detections": [
         {
-          "return": "false",
-          "string": "404<",
+          "return": "true",
+          "string": "/{username}",
           "type": "normal"
         },
         {
@@ -10297,9 +10503,9 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "Games > Video Games Consoles and Accessories",
-      "global_rank": 6392,
-      "country": "PL",
+      "type": "",
+      "global_rank": 0,
+      "country": "",
       "country_code": 0
     },
     {
@@ -10579,6 +10785,29 @@
       "type": "Games > Video Games Consoles and Accessories",
       "global_rank": 12718,
       "country": "US",
+      "country_code": 0
+    },
+    {
+      "url": "https://kwejk.pl/uzytkownik/{username}",
+      "detections": [
+        {
+          "return": "true",
+          "string": "/{username}",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "user-profile",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "",
+      "global_rank": 0,
+      "country": "",
       "country_code": 0
     },
     {
@@ -12051,6 +12280,29 @@
       "country_code": 0
     },
     {
+      "url": "https://motherless.com/f/{username}",
+      "detections": [
+        {
+          "return": "true",
+          "string": "f/{username}",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "member-bio",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "",
+      "global_rank": 0,
+      "country": "",
+      "country_code": 0
+    },
+    {
       "url": "https://mouthshut.com/{username}",
       "detections": [
         {
@@ -12724,6 +12976,29 @@
       "implicit": 0,
       "extract": [],
       "type": "Internet",
+      "global_rank": 0,
+      "country": "",
+      "country_code": 0
+    },
+    {
+      "url": "https://nitter.net/{username}",
+      "detections": [
+        {
+          "return": "true",
+          "string": "/{username}",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "profile-card",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "",
       "global_rank": 0,
       "country": "",
       "country_code": 0
@@ -13847,7 +14122,12 @@
       "detections": [
         {
           "return": "true",
-          "string": "data-profile",
+          "string": "profile__header",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "profile__user",
           "type": "normal"
         }
       ],
@@ -13855,8 +14135,8 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "Arts and Entertainment > Humor",
-      "global_rank": 1551,
+      "type": "",
+      "global_rank": 0,
       "country": "",
       "country_code": 0
     },
@@ -14394,6 +14674,29 @@
       "type": "Computers Electronics and Technology > Social Networks and Online Communities",
       "global_rank": 1045,
       "country": "JP",
+      "country_code": 0
+    },
+    {
+      "url": "https://profile.typepad.com/{username}",
+      "detections": [
+        {
+          "return": "true",
+          "string": "user-following",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "follow-label",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "",
+      "global_rank": 0,
+      "country": "",
       "country_code": 0
     },
     {
@@ -15845,6 +16148,29 @@
       "country_code": 0
     },
     {
+      "url": "https://shikimori.one/{username}",
+      "detections": [
+        {
+          "return": "true",
+          "string": "profile-content",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "profile-head",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "",
+      "global_rank": 0,
+      "country": "",
+      "country_code": 0
+    },
+    {
       "url": "https://shitpostbot.com/user/{username}",
       "detections": [],
       "selected": "false",
@@ -15853,6 +16179,29 @@
       "extract": [],
       "type": "Games > Video Games Consoles and Accessories",
       "global_rank": 1164216,
+      "country": "",
+      "country_code": 0
+    },
+    {
+      "url": "https://shopee.co.id/{username}",
+      "detections": [
+        {
+          "return": "true",
+          "string": "section-seller",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "portrait-info",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "",
+      "global_rank": 0,
       "country": "",
       "country_code": 0
     },
@@ -16789,6 +17138,29 @@
       "type": "Food and Drink > Restaurants and Delivery",
       "global_rank": 401815,
       "country": "US",
+      "country_code": 0
+    },
+    {
+      "url": "https://stocktwits.com/{username}",
+      "detections": [
+        {
+          "return": "true",
+          "string": "/{username}",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "(@{username})",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "",
+      "global_rank": 0,
+      "country": "",
       "country_code": 0
     },
     {
@@ -18020,6 +18392,29 @@
       "country_code": 0
     },
     {
+      "url": "https://twunroll.com/{username}",
+      "detections": [
+        {
+          "return": "true",
+          "string": "/{username}",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "article_account",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "",
+      "global_rank": 0,
+      "country": "",
+      "country_code": 0
+    },
+    {
       "url": "https://ubuntu-mate.community/u/{username}",
       "detections": [
         {
@@ -18250,6 +18645,29 @@
       "country_code": 0
     },
     {
+      "url": "https://us.napster.com/members/{username}",
+      "detections": [
+        {
+          "return": "true",
+          "string": "@{username}",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "member-profile",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "",
+      "global_rank": 0,
+      "country": "",
+      "country_code": 0
+    },
+    {
       "url": "https://users.rust-lang.org/u/{username}",
       "detections": [
         {
@@ -18288,7 +18706,12 @@
       "detections": [
         {
           "return": "true",
-          "string": "号会员，加入于",
+          "string": "/{username}",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "avatar",
           "type": "normal"
         }
       ],
@@ -18296,9 +18719,9 @@
       "timeout": 0,
       "implicit": 0,
       "extract": [],
-      "type": "Computers Electronics and Technology > Programming and Developer Software",
-      "global_rank": 4584,
-      "country": "CN",
+      "type": "",
+      "global_rank": 0,
+      "country": "",
       "country_code": 0
     },
     {
@@ -18715,6 +19138,29 @@
       "country_code": 0
     },
     {
+      "url": "https://w.atwiki.jp/{username}",
+      "detections": [
+        {
+          "return": "true",
+          "string": "atwiki-page-info",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "atwiki-list",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "",
+      "global_rank": 0,
+      "country": "",
+      "country_code": 0
+    },
+    {
       "url": "https://wackypedia.risteq.net/User:{username}",
       "detections": [
         {
@@ -18790,6 +19236,29 @@
       "type": "Arts and Entertainment > Books and Literature",
       "global_rank": 705,
       "country": "IN",
+      "country_code": 0
+    },
+    {
+      "url": "https://webflow.com/{username}",
+      "detections": [
+        {
+          "return": "true",
+          "string": "{username}",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "Public Sites by",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "",
+      "global_rank": 0,
+      "country": "",
       "country_code": 0
     },
     {
@@ -19796,6 +20265,213 @@
       "country_code": 0
     },
     {
+      "url": "https://cnblogs.com/{username}",
+      "detections": [
+        {
+          "return": "true",
+          "string": "com/{username}",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "currentBlogApp",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "",
+      "global_rank": 0,
+      "country": "",
+      "country_code": 0
+    },
+    {
+      "url": "https://dcard.tw/@{username}",
+      "detections": [
+        {
+          "return": "true",
+          "string": "@{username}",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "nickname",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "",
+      "global_rank": 0,
+      "country": "",
+      "country_code": 0
+    },
+    {
+      "url": "https://drive2.ru/users/{username}",
+      "detections": [
+        {
+          "return": "true",
+          "string": "c-user__card",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "c-user__stats",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "",
+      "global_rank": 0,
+      "country": "",
+      "country_code": 0
+    },
+    {
+      "url": "https://gamedev.net/{username}/",
+      "detections": [
+        {
+          "return": "true",
+          "string": "aboutTab",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "activityTab",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "",
+      "global_rank": 0,
+      "country": "",
+      "country_code": 0
+    },
+    {
+      "url": "https://garaget.org/{username}",
+      "detections": [
+        {
+          "return": "true",
+          "string": "profile-image",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "profile-body",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "",
+      "global_rank": 0,
+      "country": "",
+      "country_code": 0
+    },
+    {
+      "url": "https://happysocial.it/{username}",
+      "detections": [
+        {
+          "return": "true",
+          "string": "user-avatar",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "profile-container",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "",
+      "global_rank": 0,
+      "country": "",
+      "country_code": 0
+    },
+    {
+      "url": "https://homeone.com.au/member/{username}",
+      "detections": [
+        {
+          "return": "true",
+          "string": "/{username}",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "member-header",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "",
+      "global_rank": 0,
+      "country": "",
+      "country_code": 0
+    },
+    {
+      "url": "https://root-me.org/{username}",
+      "detections": [
+        {
+          "return": "true",
+          "string": "/{username}",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "profil de",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "",
+      "global_rank": 0,
+      "country": "",
+      "country_code": 0
+    },
+    {
+      "url": "https://wykop.pl/ludzie/{username}",
+      "detections": [
+        {
+          "return": "true",
+          "string": "/{username}",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "user-profile",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "",
+      "global_rank": 0,
+      "country": "",
+      "country_code": 0
+    },
+    {
       "url": "https://wykop.pl/ludzie/{username}/",
       "detections": [
         {
@@ -20507,6 +21183,29 @@
       "country_code": 0
     },
     {
+      "url": "https://{username}.home.blog/",
+      "detections": [
+        {
+          "return": "true",
+          "string": "{username}.home",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "og:title",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "",
+      "global_rank": 0,
+      "country": "",
+      "country_code": 0
+    },
+    {
       "url": "https://{username}.itch.io",
       "detections": [
         {
@@ -20613,6 +21312,29 @@
         {
           "return": "true",
           "string": "/{username}",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "",
+      "global_rank": 0,
+      "country": "",
+      "country_code": 0
+    },
+    {
+      "url": "https://{username}.myshopify.com",
+      "detections": [
+        {
+          "return": "true",
+          "string": "{username}.",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "og:title",
           "type": "normal"
         }
       ],
