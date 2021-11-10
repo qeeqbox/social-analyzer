@@ -16,7 +16,7 @@
     "express-async-errors": "3.1.1",
     "follow-redirects": "1.13.0",
     "franc": "^3.1.0",
-    "geckodriver": "1.21.0",
+    "geckodriver": "^2.0.4",
     "generatorics": "1.1.0",
     "html-to-text": "6.0.0",
     "https-proxy-agent": "5.0.0",
