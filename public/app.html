@@ -324,19 +324,19 @@
 
   @keyframes spinner {
     0% {
-      stroke-dasharray: 0 0 80 300;
+      stroke-dasharray: 0 0 300 300;
     }
 
     50% {
-      stroke-dasharray: 0 80 160 300;
+      stroke-dasharray: 0 150 300 300;
     }
 
     75% {
-      stroke-dasharray: 0 160 220 300;
+      stroke-dasharray: 150 150 150 150;
     }
 
     100% {
-      stroke-dasharray: 80 220 300 300;
+      stroke-dasharray: 300 300 150 150;
     }
   }
 
@@ -673,7 +673,7 @@
   <div class="waiting">
     <div class="waiting-box">
       <svg class="hex-spinner" viewBox="0 -5 100 110">
-        <polygon stroke-width="7" stroke="#aa6400" fill-opacity="0" id="hex" points="50 1 95 25 95 75 50 99 5 75 5 25" />
+        <polygon stroke-width="7" stroke="#aa6400" fill-opacity="0" id="hex" points="50 1 95 25 95 75 50 99 5 75 5 25" stroke-linecap="round" stroke-linejoin="round"/>
       </svg>
       <div class="logs" id="logs"></div>
       <div class="logs_cancel" id="cancel_task">Cancel task? <i class="fa fa-window-close"></i></div>
