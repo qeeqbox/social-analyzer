@@ -185,19 +185,21 @@ class SocialAnalyzer():
                     else:
                         print(record.msg)
 
-        if self.logs_dir != '':
-            temp_folder = self.logs_dir
-        else:
-            temp_folder = mkdtemp()
-        if argv.output != "json":
-            self.print_wrapper('[init] Temporary Logs Directory {}'.format(temp_folder))
+        if argv.logs:
+            if self.logs_dir != '':
+                temp_folder = self.logs_dir
+            else:
+                temp_folder = mkdtemp()
+            if argv.output != "json":
+                self.print_wrapper('[init] Temporary Logs Directory {}'.format(temp_folder))
+            if file and uuid:
+                fh = RotatingFileHandler(path.join(temp_folder, uuid))
+                fh.setFormatter(Formatter("%(asctime)s - %(name)s - %(levelname)s - %(message)s"))
+                self.log.addHandler(fh)
+
         self.log.setLevel(DEBUG)
         self.log.addHandler(CustomHandler(argv, sa_object=self))
         addLevelName(self.custom_message, "CUSTOM")
-        if file and uuid:
-            fh = RotatingFileHandler(path.join(temp_folder, uuid))
-            fh.setFormatter(Formatter("%(asctime)s - %(name)s - %(levelname)s - %(message)s"))
-            self.log.addHandler(fh)
 
     def init_detections(self, detections):
         '''
@@ -569,16 +571,12 @@ class SocialAnalyzer():
         if argv.cli:
             self.log.info("[Warning] --cli is not needed and will be removed later on")
 
-        websites = True if "--websites" in " ".join(sargv[1:]) else False
-        top = True if "--top" in " ".join(sargv[1:]) else False
-        countries = True if "--countries" in " ".join(sargv[1:]) else False
-
         for site in self.websites_entries:
             site["selected"] = "false"
 
         if argv.websites == "all":
             list_of_countries = []
-            if countries:
+            if argv.countries != 'all':
                 list_of_countries = argv.countries.split(" ")
                 for site in self.websites_entries:
                     if site["country"] != "" and site["country"].lower() in list_of_countries:
@@ -589,7 +587,7 @@ class SocialAnalyzer():
                 for site in self.websites_entries:
                     site["selected"] = "true"
 
-            if top:
+            if int(argv.top) != 0:
                 sites = ([d for d in self.websites_entries if d.get('selected') == "true"])
                 sites = ([d for d in sites if d.get('global_rank') != 0])
                 sites = sorted(sites, key=lambda x: x['global_rank'])
@@ -723,7 +721,7 @@ class SocialAnalyzer():
             self.print_wrapper("[init] languages.json & sites.json did not load, exiting..")
             exit()
 
-    def run_as_object(self, cli=False, gui=False, logs_dir='', extract=False, filter='good', headers={}, list=False, metadata=False, method='all', mode='fast', options='', output='pretty', profiles='detected', ret=False, silent=False, timeout=0, trim=False, username='', websites='all'):
+    def run_as_object(self, cli=False, gui=False, logs_dir='', logs=False, extract=False, filter='good', headers={}, list=False, metadata=False, method='all', mode='fast', options='', output='pretty', profiles='detected', ret=False, silent=False, timeout=0, trim=False, username='', websites='all', countries='all', top='0'):
         ret = {}
         if logs_dir != '':
             self.logs_dir = logs_dir
@@ -736,6 +734,7 @@ class SocialAnalyzer():
         _l = locals()
         del _l['self']
         ARGV = Namespace(**_l)
+
         if ARGV.list:
             self.setup_logger(argv=ARGV)
             self.list_all_websites()
@@ -764,7 +763,7 @@ class SocialAnalyzer():
         ARG_PARSER_OPTIONAL.add_argument("--filter", help="Filter detected profiles by good, maybe or bad, you can do combine them with comma (good,bad) or use all", metavar="", default="good")
         ARG_PARSER_OPTIONAL.add_argument("--profiles", help="Filter profiles by detected, unknown or failed, you can do combine them with comma (detected,failed) or use all", metavar="", default="detected")
         ARG_PARSER_OPTIONAL.add_argument("--countries", help="select websites by country or countries separated by space as: us br ru", metavar="", default="all")
-        ARG_PARSER_OPTIONAL.add_argument("--top", help="select top websites as 10, 50 etc...[--websites is not needed]", metavar="", default="10")
+        ARG_PARSER_OPTIONAL.add_argument("--top", help="select top websites as 10, 50 etc...[--websites is not needed]", metavar="", default="0")
         ARG_PARSER_OPTIONAL.add_argument("--extract", help="Extract profiles, urls & patterns if possible", action="store_true")
         ARG_PARSER_OPTIONAL.add_argument("--metadata", help="Extract metadata if possible (pypi QeeqBox OSINT)", action="store_true")
         ARG_PARSER_OPTIONAL.add_argument("--trim", help="Trim long strings", action="store_true")
@@ -774,6 +773,7 @@ class SocialAnalyzer():
         ARG_PARSER_LIST.add_argument("--list", help="List all available websites", action="store_true")
         ARG_PARSER_SETTINGS = ARG_PARSER.add_argument_group("Setting")
         ARG_PARSER_SETTINGS.add_argument("--headers", help="Headers as dict", metavar="", default={}, type=loads)
+        ARG_PARSER_SETTINGS.add_argument("--logs", help="Turn logs on or off", action="store_true")
         ARG_PARSER_SETTINGS.add_argument("--logs_dir", help="Change logs directory", metavar="", default="")
         ARG_PARSER_SETTINGS.add_argument("--timeout", help="Change timeout between each request", metavar="", type=int, default=0)
         ARG_PARSER_SETTINGS.add_argument("--silent", help="Disable output to screen", action="store_true")

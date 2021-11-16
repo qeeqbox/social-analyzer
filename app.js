@@ -50,7 +50,7 @@ const argv = require('yargs')
   .describe('profiles', 'filter profiles by detected, unknown or failed, you can do combine them with comma (detected,failed) or use all')
   .default('profiles', 'detected')
   .describe('top', 'select top websites as 10, 50 etc...[--websites is not needed]')
-  .default('top', '25')
+  .default('top', '0')
   .describe('countries', 'select websites by country or countries separated by space as: us br ru')
   .default('countries', 'all')
   .help('help')
@@ -613,16 +613,12 @@ async function check_user_cli (argv) {
     }
   }
 
-  //var websites = Boolean(process.argv.indexOf('--websites') > -1)
-  const top = Boolean(process.argv.indexOf('--top') > -1)
-  const countries = Boolean(process.argv.indexOf('--countries') > -1)
-
   await helper.websites_entries.forEach(async function (value, i) {
     helper.websites_entries[i].selected = 'false'
   })
 
   if (argv.websites === 'all') {
-    if (countries) {
+    if (argv.countries != 'all') {
       let list_of_countries = argv.countries.toLowerCase().split(' ')
       await helper.websites_entries.forEach(async function (value, i) {
         if (helper.websites_entries[i].country.toLowerCase() !== '' && list_of_countries.includes(helper.websites_entries[i].country.toLowerCase())) {
@@ -637,7 +633,7 @@ async function check_user_cli (argv) {
       })
     }
 
-    if (top) {
+    if (argv.top != 0) {
       let websites_entries_filtered = helper.websites_entries.filter((item) => item.selected === 'true')
       websites_entries_filtered = websites_entries_filtered.filter((item) => item.global_rank !== 0)
       websites_entries_filtered.sort(function (a, b) {
