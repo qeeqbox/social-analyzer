@@ -110,9 +110,17 @@ python3 app.py --username "janedpe" --metadata --top 100
 
 ### Importing as object (python)
 ```python
+
+E.g. #1
 from importlib import import_module
 SocialAnalyzer = import_module("social-analyzer").SocialAnalyzer(silent=True)
 results = SocialAnalyzer.run_as_object(username="johndoe",silent=True)
+print(results)
+
+E.g. #2
+from importlib import import_module
+SocialAnalyzer = import_module("social-analyzer").SocialAnalyzer(silent=True)
+results = SocialAnalyzer.run_as_object(username="johndoe,janedoe",silent=True,output="json",filter="good",metadata=False,timeout=10, profiles="detected")
 print(results)
 ```
 
