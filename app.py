@@ -532,8 +532,15 @@ class SocialAnalyzer():
         for i in range(3):
             self.websites_entries[:] = [d for d in self.websites_entries if d.get('selected') == "true"]
             if len(self.websites_entries) > 0:
+                if len(req["body"]["string"].split(',')) > 1:
+                    self.log.info("[Info] usernames: {}".format(", ".join(req["body"]["string"].split(','))))
+                else:
+                    self.log.info("[Info] username: {}".format(req["body"]["string"]))
                 with ThreadPoolExecutor(max_workers=self.workers) as executor:
-                    future_fetch_url = (executor.submit(self.fetch_url, site, req["body"]["string"], req["body"]["options"]) for site in self.websites_entries)
+                    future_fetch_url = []
+                    for site in self.websites_entries:
+                        for username in req["body"]["string"].split(','):
+                            future_fetch_url.append(executor.submit(self.fetch_url, site, username, req["body"]["options"]))
                     for future in as_completed(future_fetch_url):
                         with suppress(Exception):
                             good, site, data = future.result()

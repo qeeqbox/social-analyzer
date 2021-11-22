@@ -12,7 +12,7 @@ setup(
     author_email='gigaqeeq@gmail.com',
     description="API, CLI & Web App for analyzing & finding a person's profile across 300+ social media websites (Detections are updated regularly)",
     long_description=long_description,
-    version='0.36',
+    version='0.37',
     license='AGPL-3.0',
     url='https://github.com/qeeqbox/social-analyzer',
     packages=['social-analyzer'],
