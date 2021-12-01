@@ -583,7 +583,7 @@ class SocialAnalyzer():
 
         if argv.websites == "all":
             list_of_countries = []
-            if argv.countries != 'all':
+            if argv.countries != "all":
                 list_of_countries = argv.countries.split(" ")
                 for site in self.websites_entries:
                     if site["country"] != "" and site["country"].lower() in list_of_countries:
@@ -593,6 +593,15 @@ class SocialAnalyzer():
             else:
                 for site in self.websites_entries:
                     site["selected"] = "true"
+
+            if argv.type != "all":
+                sites = ([d for d in self.websites_entries if d.get('selected') == "true"])
+                if "adult" in argv.type.lower():
+                    for site in self.websites_entries:
+                        if "adult" in site["type"].lower():
+                            site["selected"] = "true"
+                        else:
+                            site["selected"] = "false"
 
             if int(argv.top) != 0:
                 sites = ([d for d in self.websites_entries if d.get('selected') == "true"])
@@ -770,6 +779,7 @@ class SocialAnalyzer():
         ARG_PARSER_OPTIONAL.add_argument("--filter", help="Filter detected profiles by good, maybe or bad, you can do combine them with comma (good,bad) or use all", metavar="", default="good")
         ARG_PARSER_OPTIONAL.add_argument("--profiles", help="Filter profiles by detected, unknown or failed, you can do combine them with comma (detected,failed) or use all", metavar="", default="detected")
         ARG_PARSER_OPTIONAL.add_argument("--countries", help="select websites by country or countries separated by space as: us br ru", metavar="", default="all")
+        ARG_PARSER_OPTIONAL.add_argument("--type", help="Select websites by type (Adult, Music etc)", metavar="", default="detected")
         ARG_PARSER_OPTIONAL.add_argument("--top", help="select top websites as 10, 50 etc...[--websites is not needed]", metavar="", default="0")
         ARG_PARSER_OPTIONAL.add_argument("--extract", help="Extract profiles, urls & patterns if possible", action="store_true")
         ARG_PARSER_OPTIONAL.add_argument("--metadata", help="Extract metadata if possible (pypi QeeqBox OSINT)", action="store_true")
