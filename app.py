@@ -597,11 +597,14 @@ class SocialAnalyzer():
             if argv.type != "all":
                 sites = ([d for d in self.websites_entries if d.get('selected') == "true"])
                 if "adult" in argv.type.lower():
-                    for site in self.websites_entries:
+                    for site in sites:
                         if "adult" in site["type"].lower():
-                            site["selected"] = "true"
-                        else:
-                            site["selected"] = "false"
+                            self.search_and_change(site, {"selected": "pendding"})
+                for site in self.websites_entries:
+                    if site["selected"] == "pendding":
+                        site["selected"] = "true"
+                    else:
+                        site["selected"] = "false"
 
             if int(argv.top) != 0:
                 sites = ([d for d in self.websites_entries if d.get('selected') == "true"])
