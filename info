@@ -9,7 +9,7 @@
  "linux":"pass",
  "windows":"pass",
  "docker":"pass",
- "nsfw":"40",
+ "nsfw":"45",
  "full_scan":"17 workers < 30secs",
  "max_retries":"3",
  "awaiting_verification":"?",
