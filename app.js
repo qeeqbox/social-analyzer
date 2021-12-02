@@ -51,6 +51,8 @@ const argv = require('yargs')
   .default('profiles', 'detected')
   .describe('top', 'select top websites as 10, 50 etc...[--websites is not needed]')
   .default('top', '0')
+  .describe('type', 'Select websites by type (Adult, Music etc)')
+  .default('type', 'all')
   .describe('countries', 'select websites by country or countries separated by space as: us br ru')
   .default('countries', 'all')
   .help('help')
@@ -632,7 +634,25 @@ async function check_user_cli (argv) {
         helper.websites_entries[i].selected = 'true'
       })
     }
+    
+    if (argv.type != 'all') {
+      let websites_entries_filtered = helper.websites_entries.filter((item) => item.selected === 'true')
+      websites_entries_filtered = websites_entries_filtered.filter((item) => item.type.toLowerCase().includes(argv.type.toLowerCase()))
 
+      await websites_entries_filtered.forEach(async function (value, i) {
+        await search_and_change(websites_entries_filtered[i], {
+          selected: 'pendding'
+        })
+      })
+      await helper.websites_entries.forEach(async function (value, i) {
+        if (helper.websites_entries[i].selected === 'pendding') {
+          helper.websites_entries[i].selected = 'true'
+        } else {
+          helper.websites_entries[i].selected = 'false'
+        }
+      })
+    }
+    
     if (argv.top != 0) {
       let websites_entries_filtered = helper.websites_entries.filter((item) => item.selected === 'true')
       websites_entries_filtered = websites_entries_filtered.filter((item) => item.global_rank !== 0)
