@@ -88,8 +88,11 @@ sudo add-apt-repository ppa:mozillateam/ppa -y
 sudo apt-get install -y firefox-esr tesseract-ocr git nodejs npm
 git clone https://github.com/qeeqbox/social-analyzer.git
 cd social-analyzer
-npm ci
+nodejs app.js --username "johndoe"
+#or
 nodejs app.js --username "johndoe,janedoe" --metadata --top 100
+#or
+nodejs app.js --username "johndoe" --type "adult"
 ```
 
 ### Linux (As python package)
@@ -97,9 +100,11 @@ nodejs app.js --username "johndoe,janedoe" --metadata --top 100
 sudo apt-get update
 sudo apt-get install python3 python3-pip
 pip3 install social-analyzer
-social-analyzer --username "johndoe" --metadata --top 100
+python3 -m social-analyzer --username "johndoe"
 #or
 python3 -m social-analyzer --username "johndoe" --metadata --top 100
+#or
+python3 -m social-analyzer --username "johndoe" --type "adult"
 ```
 
 ### Linux (As python script)
@@ -109,19 +114,23 @@ sudo apt-get install git python3 python3-pip
 git clone https://github.com/qeeqbox/social-analyzer
 cd social-analyzer
 pip3 install –r requirements.txt
-python3 app.py --username "janedpe" --metadata --top 100
+python3 app.py --username "janedoe"
+#or
+python3 app.py --username "johndoe" --metadata --top 100
+#or
+python3 app.py --username "johndoe" --type "adult"
 ```
 
 ### Importing as object (python)
 ```python
 
-E.g. #1
+#E.g. #1
 from importlib import import_module
 SocialAnalyzer = import_module("social-analyzer").SocialAnalyzer(silent=True)
 results = SocialAnalyzer.run_as_object(username="johndoe",silent=True)
 print(results)
 
-E.g. #2
+#E.g. #2
 from importlib import import_module
 SocialAnalyzer = import_module("social-analyzer").SocialAnalyzer(silent=True)
 results = SocialAnalyzer.run_as_object(username="johndoe,janedoe",silent=True,output="json",filter="good",metadata=False,timeout=10, profiles="detected")
@@ -146,6 +155,7 @@ Optional Arguments:
   --filter      Filter detected profiles by good, maybe or bad, you can do combine them with comma (good,bad) or use all
   --profiles    Filter profiles by detected, unknown or failed, you can do combine them with comma (detected,failed) or use all
   --countries   select websites by country or countries separated by space as: us br ru
+  --type        Select websites by type (Adult, Music etc)
   --top         select top websites as 10, 50 etc...[--websites is not needed]
   --extract     Extract profiles, urls & patterns if possible
   --metadata    Extract metadata if possible (pypi QeeqBox OSINT)
