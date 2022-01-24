@@ -182,9 +182,10 @@ Setting:
 ## Some News\Articles
 - [INVESTIGATING USERNAMES WITH SOCIAL ANALYZER](https://os2int.com/toolbox/investigating-usernames-with-social-analyzer/#)
 - [Hakin9 - Social-Analyzer](https://hakin9.org/social-analyzer/)
-- [5 Advance Open-Source Intelligence (OSINT) Tools](https://twitter.com/GithubProjects/status/1405754390586085376)
-- [5 Open-Source Intelligence (OSINT) GitHub Repositories For Every Security Analyst (Cyber Security)](https://twitter.com/GithubProjects/status/1395205169617547266)
-- You can use social-analyzer in the [BlackArch](https://blackarch.org/) penetration testing distribution by installing [blackarch-social](https://blackarch.org/social.html)
+- Most advanced OSINT tool for investigating usernames (Open-Source)
+- 5 Advance Open-Source Intelligence (OSINT) Tools
+- 5 Open-Source Intelligence (OSINT) GitHub Repositories For Every Security Analyst (Cyber Security)
+- You can use social-analyzer in the BlackArch penetration testing distribution by installing blackarch-social
 
 ## Disclaimer\Notes
 - Download this project from GitHub and treat it as a security project
