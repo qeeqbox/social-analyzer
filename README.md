@@ -7,11 +7,11 @@ Social Analyzer - API, CLI & Web App for analyzing & finding a person's profile 
 
 The detection modules utilize a rating mechanism based on different detection techniques, which produces a rate value that starts from 0 to 100 (No-Maybe-Yes). This module intended to have fewer false positives, and it's documented in this [Wiki](https://github.com/qeeqbox/social-analyzer/wiki) link.
 
-The analysis and public extracted information from this OSINT tool could help in investigating profiles related to suspicious or malicious activities such as [cyberbullying](https://en.wikipedia.org/wiki/Wikipedia:Cyberbullying), [cybergrooming](https://de.wikipedia.org/wiki/Cyber-Grooming), [cyberstalking](https://en.wikipedia.org/wiki/Cyberstalking), and [spreading misinformation](https://en.wikipedia.org/wiki/Misinformation).
+The analysis and public extracted information from this OSINT tool could help in investigating profiles related to suspicious or malicious activities such as cyberbullying, cybergrooming, cyberstalking, and spreading misinformation.
 
 `Social Analyzer is in a league of its own and is a very impressive tool that I thoroughly recommend for Digital Investigators and OSINT practitioners` - by [Joseph Jones, Founder of Strategy Nord, Unita Insight and OS2INT](https://os2int.com/toolbox/investigating-usernames-with-social-analyzer/)
 
-This project is *"currently used by some law enforcement agencies in countries where resources are limited"*.
+`This project is currently used by some law enforcement agencies in countries where resources are limited`
 
 - [New] Updates queued for testing
 - [Info] Feel free to fork and contribute
@@ -24,7 +24,7 @@ Standard localhost WEB APP url: http://0.0.0.0:9005/app.html
 
 <img src="https://raw.githubusercontent.com/qeeqbox/social-analyzer/main/readme/intro_fast.gif" style="max-width:768px"/>
 
-## CLI
+## CLI 
 <img src="https://raw.githubusercontent.com/qeeqbox/social-analyzer/main/readme/cli.gif" style="max-width:768px"/>
 
 ## Features
@@ -86,6 +86,8 @@ git clone https://github.com/qeeqbox/social-analyzer.git
 cd social-analyzer
 nodejs app.js --username "johndoe"
 #or
+nodejs app.js --username "johndoe,janedoe" --metadata
+#or
 nodejs app.js --username "johndoe,janedoe" --metadata --top 100
 #or
 nodejs app.js --username "johndoe" --type "adult"
@@ -97,6 +99,8 @@ sudo apt-get update
 sudo apt-get install python3 python3-pip
 pip3 install social-analyzer
 python3 -m social-analyzer --username "johndoe"
+#or
+python3 -m social-analyzer --username "johndoe" --metadata
 #or
 python3 -m social-analyzer --username "johndoe" --metadata --top 100
 #or
@@ -111,6 +115,8 @@ git clone https://github.com/qeeqbox/social-analyzer
 cd social-analyzer
 pip3 install –r requirements.txt
 python3 app.py --username "janedoe"
+#or
+python3 app.py --username "johndoe" --metadata
 #or
 python3 app.py --username "johndoe" --metadata --top 100
 #or
