@@ -33,7 +33,7 @@ from tempfile import mkdtemp
 from urllib.parse import unquote, urlparse
 from urllib3.exceptions import InsecureRequestWarning
 from bs4 import BeautifulSoup
-from tld import get_fld
+from tld import get_fld, get_tld
 from requests import get, packages, Session
 from termcolor import colored
 from langdetect import detect
@@ -259,7 +259,13 @@ class SocialAnalyzer():
         else:
             sleep(randint(1, 99) / 100)
 
-        self.log.info("[Checking] " + get_fld(site["url"]))
+        checking_url = None
+        with suppress(Exception):
+            checking_url = get_tld(site["url"],as_object=True).parsed_url.netloc
+        if checking_url == None:
+            checking_url = get_fld(site["url"])
+        self.log.info("[Checking] " + checking_url)
+
         source = ""
 
         detection_level = {
