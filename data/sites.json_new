@@ -15818,6 +15818,30 @@
       "nsfw": "false"
     },
     {
+      "url": "https://qna.habr.com/user/{username}",
+      "detections": [
+        {
+          "return": "true",
+          "string": "header__info",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "header__stats",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "",
+      "global_rank": 0,
+      "country": "",
+      "country_code": 0,
+      "nsfw": "false"
+    },
+    {
       "url": "https://queer.af/@{username}",
       "detections": [
         {
@@ -21659,6 +21683,30 @@
       "nsfw": "false"
     },
     {
+      "url": "https://younow.com/{username}",
+      "detections": [
+        {
+          "return": "true",
+          "string": "profile:username",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "is broadcasting",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "",
+      "global_rank": 0,
+      "country": "",
+      "country_code": 0,
+      "nsfw": "false"
+    },
+    {
       "url": "https://youpic.com/photographer/{username}",
       "detections": [
         {
@@ -21782,6 +21830,30 @@
       "implicit": 0,
       "extract": [],
       "type": "Wiki",
+      "global_rank": 0,
+      "country": "",
+      "country_code": 0,
+      "nsfw": "false"
+    },
+    {
+      "url": "https://zen.yandex.ru/{username}",
+      "detections": [
+        {
+          "return": "true",
+          "string": "/{username}",
+          "type": "normal"
+        },
+        {
+          "return": "true",
+          "string": "og:title",
+          "type": "normal"
+        }
+      ],
+      "selected": "false",
+      "timeout": 0,
+      "implicit": 0,
+      "extract": [],
+      "type": "",
       "global_rank": 0,
       "country": "",
       "country_code": 0,
