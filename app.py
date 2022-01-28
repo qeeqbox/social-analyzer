@@ -261,8 +261,8 @@ class SocialAnalyzer():
 
         checking_url = None
         with suppress(Exception):
-            checking_url = get_tld(site["url"],as_object=True).parsed_url.netloc
-        if checking_url == None:
+            checking_url = get_tld(site["url"], as_object=True).parsed_url.netloc
+        if checking_url is None:
             checking_url = get_fld(site["url"])
         self.log.info("[Checking] " + checking_url)
 
