@@ -1,26 +1,16 @@
-name: publish 
-on: [push]
-jobs:
-  publish:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-      - name: install requirements
-        run: sudo apt-get install curl
-      - name: build and run
-        run: |
-          curl https://raw.githubusercontent.com/qeeqbox/global-scripts/main/auto-checking.sh > auto-checking.sh
-          chmod +x auto-checking.sh
-          ./auto-checking.sh social-analyzer
-      - name: commit changes
-        if: success()
-        run: |
-          git config user.name "qb-auto"
-          git config user.email "qbactions@gmail.com"
-          git add -- . :!auto-checking.sh
-          git commit -m "🤖"
-          git push
-      - name: delete auto-checking.sh
-        if: always()
-        run: |
-          [ -e auto-checking.sh ] && rm -- auto-checking.sh
+
+Welcome to Cloud Shell! Type
+"help" to get started.
+To set your Cloud Platform project in this session use "cloud config set project (PKUVrUT ID]"
+bernard hackwell@cloudshell:~$ docker pull sundowndev/phoneinfoga:latest
+latest: Pulling from sundowndev/phoneinfoga
+ba3557a56615: Pull complete
+34a078c6c131: Pull
+complete
+e78f90fd1d94: Pull complete
+0d3e51b7aa38: Extracting
+13.93MB/106.8MB
+291314361129: Download complete
+d1565f0fd3e7: Download complete
+de24b3a91674: Download complete
+
