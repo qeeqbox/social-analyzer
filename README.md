@@ -13,6 +13,7 @@ The analysis and public extracted information from this OSINT tool could help in
 
 `This project is currently used by some law enforcement agencies in countries where resources are limited`
 
+- [New] Meta nested module is queued for testing   
 - [New] Updates queued for testing
 - [Info] Feel free to fork and contribute
 
