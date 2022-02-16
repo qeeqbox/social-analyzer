@@ -48,6 +48,7 @@ Standard localhost WEB APP url: http://0.0.0.0:9005/app.html
 - Find possible profile\person age (Limited analysis)
 - Custom user-agent, proxy, timeout & implicit wait
 - Python CLI & NodeJS CLI (limited to FindUserProfilesFast option)
+- Screenshots of detected profile (Latest version of Chrome must be installed)
 - Grid option for faster checking (limited to docker-compose)
 - Dump logs to folder or terminal (prettified)
 - Adjust finding\getting profile workers (default 15)
@@ -106,6 +107,8 @@ python3 -m social-analyzer --username "johndoe" --metadata
 python3 -m social-analyzer --username "johndoe" --metadata --top 100
 #or
 python3 -m social-analyzer --username "johndoe" --type "adult"
+#or
+python3 -m social-analyzer --username "johndoe" --websites "car" --logs --screenshots
 ```
 
 ### Linux (As python script)
@@ -122,6 +125,8 @@ python3 app.py --username "johndoe" --metadata
 python3 app.py --username "johndoe" --metadata --top 100
 #or
 python3 app.py --username "johndoe" --type "adult"
+#or
+python3 app.py --username "johndoe" --websites "car" --logs --screenshots
 ```
 
 ### Importing as object (python)
@@ -129,13 +134,13 @@ python3 app.py --username "johndoe" --type "adult"
 
 #E.g. #1
 from importlib import import_module
-SocialAnalyzer = import_module("social-analyzer").SocialAnalyzer(silent=True)
+SocialAnalyzer = import_module("social-analyzer").SocialAnalyzer()
 results = SocialAnalyzer.run_as_object(username="johndoe",silent=True)
 print(results)
 
 #E.g. #2
 from importlib import import_module
-SocialAnalyzer = import_module("social-analyzer").SocialAnalyzer(silent=True)
+SocialAnalyzer = import_module("social-analyzer").SocialAnalyzer()
 results = SocialAnalyzer.run_as_object(username="johndoe,janedoe",silent=True,output="json",filter="good",metadata=False,timeout=10, profiles="detected")
 print(results)
 ```

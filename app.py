@@ -38,11 +38,11 @@ from requests import get, packages, Session
 from termcolor import colored
 from langdetect import detect
 from warnings import filterwarnings
+from galeodes import Galeodes
 
 filterwarnings('ignore', category=RuntimeWarning, module='runpy')
 packages.urllib3.disable_warnings(category=InsecureRequestWarning)
 filterwarnings("ignore", category=UserWarning, module='bs4')
-
 
 class SocialAnalyzer():
     def __init__(self, silent=False):
@@ -66,7 +66,8 @@ class SocialAnalyzer():
         self.ret = False
         self.headers = {"User-Agent": "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:86.0) Gecko/20100101 Firefox/86.0", }
         self.silent = silent
-        self.init_logic()
+        self.screenshots = None
+        self.screenshots_location = None
 
     def delete_keys(self, in_object, keys):
         '''
@@ -185,15 +186,22 @@ class SocialAnalyzer():
                     else:
                         print(record.msg)
 
+        temp_folder = ''
         if argv.logs:
             if self.logs_dir != '':
                 temp_folder = self.logs_dir
             else:
                 temp_folder = mkdtemp()
+
             if argv.output != "json":
                 self.print_wrapper('[init] Temporary Logs Directory {}'.format(temp_folder))
+
             if file and uuid:
-                fh = RotatingFileHandler(path.join(temp_folder, uuid))
+                if argv.screenshots:
+                    self.screenshots = True
+                makedirs(path.join(temp_folder, uuid), exist_ok=True)
+                self.screenshots_location =  path.join(temp_folder, uuid)
+                fh = RotatingFileHandler(path.join(temp_folder, uuid, 'logs'))
                 fh.setFormatter(Formatter("%(asctime)s - %(name)s - %(levelname)s - %(message)s"))
                 self.log.addHandler(fh)
 
@@ -264,6 +272,7 @@ class SocialAnalyzer():
             checking_url = get_tld(site["url"], as_object=True).parsed_url.netloc
         if checking_url is None:
             checking_url = get_fld(site["url"])
+        checking_url = checking_url.replace(".{username}", "").replace("{username}.", "")
         self.log.info("[Checking] " + checking_url)
 
         source = ""
@@ -697,12 +706,35 @@ class SocialAnalyzer():
         if argv.output == "pretty" or argv.output == "":
             if 'detected' in temp_detected:
                 self.log.info("[Detected] {} Profile[s]".format(len(temp_detected['detected'])))
-                self.log.log(self.custom_message, temp_detected['detected'])
             if 'unknown' in temp_detected:
                 self.log.info("[unknown] {} Profile[s]".format(len(temp_detected['unknown'])))
-                self.log.log(self.custom_message, temp_detected['unknown'])
             if 'failed' in temp_detected:
                 self.log.info("[failed] {} Profile[s]".format(len(temp_detected['failed'])))
+
+        if "detected" in temp_detected:
+            if self.screenshots and self.screenshots_location:
+                location = None
+                with suppress(Exception):
+                    self.log.info("[Info] Getting screenshots of {} profiles".format(len([item['link'] for item in temp_detected["detected"]])))
+                with suppress(Exception):
+                    g = Galeodes(browser="chrome",arguments=['--headless',self.headers['User-Agent']],options=None,implicit_wait=5, verbose=False)
+                    results = g.get_pages(urls=[item['link'] for item in temp_detected["detected"]],screenshots=True,number_of_workers=10,format='jpeg',base64=False)
+                    for item in results:
+                        if item['image'] != None:
+                            with suppress(Exception):
+                                file_name = resub(r'[^\w\d-]','_',item['url']) + '.jpeg'
+                                with open(path.join(self.screenshots_location,file_name), 'wb') as f:
+                                    f.write(item['image'])
+                                    location = self.screenshots_location
+                if location:
+                    self.log.info("[Info] Screenshots location {}".format(location))
+
+        if argv.output == "pretty" or argv.output == "":
+            if 'detected' in temp_detected:
+                self.log.log(self.custom_message, temp_detected['detected'])
+            if 'unknown' in temp_detected:
+                self.log.log(self.custom_message, temp_detected['unknown'])
+            if 'failed' in temp_detected:
                 self.log.log(self.custom_message, temp_detected['failed'])
 
         if argv.output == "json":
@@ -746,7 +778,7 @@ class SocialAnalyzer():
             self.print_wrapper("[init] languages.json & sites.json did not load, exiting..")
             exit()
 
-    def run_as_object(self, cli=False, gui=False, logs_dir='', logs=False, extract=False, filter='good', headers={}, list=False, metadata=False, method='all', mode='fast', options='', output='pretty', profiles='detected', ret=False, silent=False, timeout=0, trim=False, username='', websites='all', countries='all', top='0'):
+    def run_as_object(self, cli=False, gui=False, logs_dir='', logs=False, extract=False, filter='good', headers={}, list=False, metadata=False, method='all', mode='fast', options='', output='pretty', profiles='detected', type='all', ret=False, silent=False, timeout=0, trim=False, username='', websites='all', countries='all', top='0',screenshots=False):
         ret = {}
         if logs_dir != '':
             self.logs_dir = logs_dir
@@ -755,6 +787,7 @@ class SocialAnalyzer():
 
         self.timeout = timeout
         self.silent = silent
+        self.init_logic()
 
         _l = locals()
         del _l['self']
@@ -788,13 +821,14 @@ class SocialAnalyzer():
         ARG_PARSER_OPTIONAL.add_argument("--filter", help="Filter detected profiles by good, maybe or bad, you can do combine them with comma (good,bad) or use all", metavar="", default="good")
         ARG_PARSER_OPTIONAL.add_argument("--profiles", help="Filter profiles by detected, unknown or failed, you can do combine them with comma (detected,failed) or use all", metavar="", default="detected")
         ARG_PARSER_OPTIONAL.add_argument("--countries", help="select websites by country or countries separated by space as: us br ru", metavar="", default="all")
-        ARG_PARSER_OPTIONAL.add_argument("--type", help="Select websites by type (Adult, Music etc)", metavar="", default="detected")
+        ARG_PARSER_OPTIONAL.add_argument("--type", help="Select websites by type (Adult, Music etc)", metavar="", default="all")
         ARG_PARSER_OPTIONAL.add_argument("--top", help="select top websites as 10, 50 etc...[--websites is not needed]", metavar="", default="0")
         ARG_PARSER_OPTIONAL.add_argument("--extract", help="Extract profiles, urls & patterns if possible", action="store_true")
         ARG_PARSER_OPTIONAL.add_argument("--metadata", help="Extract metadata if possible (pypi QeeqBox OSINT)", action="store_true")
         ARG_PARSER_OPTIONAL.add_argument("--trim", help="Trim long strings", action="store_true")
         ARG_PARSER_OPTIONAL.add_argument("--gui", help="Reserved for a gui (Not implemented)", action="store_true")
         ARG_PARSER_OPTIONAL.add_argument("--cli", help="Reserved for a cli (Not needed)", action="store_true")
+        ARG_PARSER_OPTIONAL.add_argument("--screenshots", help="Get screenshots from detected profiles (This needs --logs)", action="store_true")
         ARG_PARSER_LIST = ARG_PARSER.add_argument_group("Listing websites & detections")
         ARG_PARSER_LIST.add_argument("--list", help="List all available websites", action="store_true")
         ARG_PARSER_SETTINGS = ARG_PARSER.add_argument_group("Setting")
@@ -803,8 +837,8 @@ class SocialAnalyzer():
         ARG_PARSER_SETTINGS.add_argument("--logs_dir", help="Change logs directory", metavar="", default="")
         ARG_PARSER_SETTINGS.add_argument("--timeout", help="Change timeout between each request", metavar="", type=int, default=0)
         ARG_PARSER_SETTINGS.add_argument("--silent", help="Disable output to screen", action="store_true")
+        
         ARGV = ARG_PARSER.parse_args()
-
         if ARGV.logs_dir != '':
             self.logs_dir = ARGV.logs_dir
         if ARGV.headers != {}:
@@ -812,6 +846,7 @@ class SocialAnalyzer():
 
         self.timeout = ARGV.timeout
         self.silent = ARGV.silent
+        self.init_logic()
 
         if ARGV.list:
             self.setup_logger(argv=ARGV)
@@ -820,7 +855,6 @@ class SocialAnalyzer():
             if ARGV.username != "" and ARGV.websites != "":
                 ret = self.check_user_cli(ARGV)
         return ret
-
 
 def main_logic():
     sa = SocialAnalyzer()

@@ -78,12 +78,15 @@ Running Example (Custom)
     #all websites with metadata, extraction, filter all profiles with all status
     python3 -m social-analyzer --username "johndoe" --websites "all" --metadata --extract --trim --filter "all" --profile "all"
 
+    #Screenshot detected profiles
+    python3 -m social-analyzer --username "johndoe" --websites "cart" --logs --screenshots
+
 Running Example (as object)
 ===========================
 .. code:: bash
 
 	from importlib import import_module
-	SocialAnalyzer = import_module("social-analyzer").SocialAnalyzer(silent=True)
+	SocialAnalyzer = import_module("social-analyzer").SocialAnalyzer()
 	results = SocialAnalyzer.run_as_object(username="johndoe",silent=True)
 	print(results)
 
@@ -92,7 +95,7 @@ Running Example (as object with specific websites, metadata and extraction)
 .. code:: bash
 
 	from importlib import import_module
-	SocialAnalyzer = import_module("social-analyzer").SocialAnalyzer(silent=True)
+	SocialAnalyzer = import_module("social-analyzer").SocialAnalyzer()
 	results = SocialAnalyzer.run_as_object(username="johndoe", websites="youtube pinterest tumblr", metadata=True, extract=True, silent=True)
 	print(results)
 
