@@ -12,7 +12,7 @@
 //  -------------------------------------------------------------
 """
 
-from logging import getLogger, DEBUG, Formatter, Handler, addLevelName
+from logging import getLogger, DEBUG, Formatter, Handler, addLevelName, NullHandler
 from logging.handlers import RotatingFileHandler
 from sys import platform, version_info
 from sys import argv as sargv
@@ -132,7 +132,7 @@ class SocialAnalyzer():
                         return func(*args, **kwargs)
                     except Exception as err:
                         pass
-                        # self.print_wrapper(e)
+                        # self.log.info(e)
                 else:
                     return func(*args, **kwargs)
             return wrapper
@@ -194,9 +194,6 @@ class SocialAnalyzer():
             else:
                 temp_folder = mkdtemp()
 
-            if argv.output != "json":
-                self.print_wrapper('[init] Temporary Logs Directory {}'.format(temp_folder))
-
             if file and uuid:
                 if argv.screenshots:
                     self.screenshots = True
@@ -207,8 +204,16 @@ class SocialAnalyzer():
                 self.log.addHandler(fh)
 
         self.log.setLevel(DEBUG)
-        self.log.addHandler(CustomHandler(argv, sa_object=self))
+
+        if argv.silent:
+            self.log.addHandler(NullHandler())
+        else:
+            self.log.addHandler(CustomHandler(argv, sa_object=self))
+
         addLevelName(self.custom_message, "CUSTOM")
+
+        if argv.logs and argv.output != "json":
+            self.log.info('[init] Temporary Logs Directory {}'.format(temp_folder))
 
     def init_detections(self, detections):
         '''
@@ -590,6 +595,7 @@ class SocialAnalyzer():
 
         req = {"body": {"uuid": str(uuid4()), "string": argv.username, "options": temp_options}}
         self.setup_logger(uuid=req["body"]["uuid"], file=True, argv=argv)
+        self.init_logic()
 
         if argv.cli:
             self.log.info("[Warning] --cli is not needed and will be removed later on")
@@ -739,32 +745,28 @@ class SocialAnalyzer():
                 self.log.log(self.custom_message, temp_detected['failed'])
 
         if argv.output == "json":
-            self.print_wrapper(dumps(temp_detected, sort_keys=True, indent=None))
+            self.log.info(dumps(temp_detected, sort_keys=True, indent=None))
 
         return temp_detected
-
-    def print_wrapper(self, *args, **kwarg):
-        if self.silent == False:
-            print(*args, **kwarg)
 
     def load_file(self, name, path_to_check, url_download):
         ret = None
         try:
             if path.exists(path_to_check) == False:
-                self.print_wrapper("[init] Downloading {} from {}".format(name, url_download))
+                self.log.info("[init] Downloading {} from {}".format(name, url_download))
                 file = get(url_download, allow_redirects=True)
                 with open(path_to_check, 'wb') as f:
                     f.write(file.content)
             if path.exists(path_to_check) == True:
-                self.print_wrapper("[init] {} looks good!".format(name))
+                self.log.info("[init] {} looks good!".format(name))
                 with open(path_to_check, encoding="utf-8") as f:
                     ret = load(f)
         except Exception as e:
-            self.print_wrapper("[!] {} Does not exist! cannot be downloaded...".format(name))
+            self.log.info("[!] {} Does not exist! cannot be downloaded...".format(name))
         return ret
 
     def init_logic(self):
-        self.print_wrapper("[init] Detections are updated very often, make sure to get the most up-to-date ones")
+        self.log.info("[init] Detections are updated very often, make sure to get the most up-to-date ones")
         if platform == "win32":
             system("color")
         makedirs(path.join(path.dirname(__file__), "data"), exist_ok=True)
@@ -774,9 +776,9 @@ class SocialAnalyzer():
         self.shared_detections = self.init_detections("shared_detections")
         self.generic_detection = self.init_detections("generic_detection")
         if self.languages_json is not None and self.sites_dummy is not None:
-            self.print_wrapper("[init] languages.json & sites.json loaded successfully")
+            self.log.info("[init] languages.json & sites.json loaded successfully")
         else:
-            self.print_wrapper("[init] languages.json & sites.json did not load, exiting..")
+            self.log.info("[init] languages.json & sites.json did not load, exiting..")
             exit()
 
     def run_as_object(self, cli=False, gui=False, logs_dir='', logs=False, extract=False, filter='good', headers={}, list=False, metadata=False, method='all', mode='fast', options='', output='pretty', profiles='detected', type='all', ret=False, silent=False, timeout=0, trim=False, username='', websites='all', countries='all', top='0', screenshots=False):
@@ -788,7 +790,6 @@ class SocialAnalyzer():
 
         self.timeout = timeout
         self.silent = silent
-        self.init_logic()
 
         _l = locals()
         del _l['self']
@@ -797,6 +798,7 @@ class SocialAnalyzer():
         if ARGV.list:
             self.setup_logger(argv=ARGV)
             self.list_all_websites()
+            self.init_logic()
         elif ARGV.mode == "fast":
             if ARGV.username != "" and ARGV.websites != "":
                 ret = self.check_user_cli(ARGV)
@@ -847,11 +849,11 @@ class SocialAnalyzer():
 
         self.timeout = ARGV.timeout
         self.silent = ARGV.silent
-        self.init_logic()
 
         if ARGV.list:
             self.setup_logger(argv=ARGV)
             self.list_all_websites()
+            self.init_logic()
         elif ARGV.mode == "fast":
             if ARGV.username != "" and ARGV.websites != "":
                 ret = self.check_user_cli(ARGV)
