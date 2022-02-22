@@ -5,11 +5,11 @@
 
 Social Analyzer - API, CLI & Web App for analyzing & finding a person's profile across +1000 social media \ websites. It includes different analysis and detection modules, and you can choose which modules to use during the investigation process. 
 
-The detection modules utilize a rating mechanism based on different detection techniques, which produces a rate value that starts from 0 to 100 (No-Maybe-Yes). This module intended to have fewer false positives, and it's documented in this [Wiki](https://github.com/qeeqbox/social-analyzer/wiki) link.
+The detection modules utilize a rating mechanism based on different detection techniques, which produces a rate value that starts from 0 to 100 (No-Maybe-Yes). This module intended to have fewer false positives.
 
 The analysis and public extracted information from this OSINT tool could help in investigating profiles related to suspicious or malicious activities such as cyberbullying, cybergrooming, cyberstalking, and spreading misinformation.
 
-`Social Analyzer is in a league of its own and is a very impressive tool that I thoroughly recommend for Digital Investigators and OSINT practitioners` - by [Joseph Jones, Founder of Strategy Nord, Unita Insight and OS2INT](https://os2int.com/toolbox/investigating-usernames-with-social-analyzer/)
+`Social Analyzer is in a league of its own and is a very impressive tool that I thoroughly recommend for Digital Investigators and OSINT practitioners` - by Joseph Jones, Founder of Strategy Nord, Unita Insight and OS2INT
 
 `This project is currently used by some law enforcement agencies in countries where resources are limited`
 
