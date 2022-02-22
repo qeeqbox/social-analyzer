@@ -194,6 +194,7 @@ Setting:
 ## Some News\Articles
 - [INVESTIGATING USERNAMES WITH SOCIAL ANALYZER](https://os2int.com/toolbox/investigating-usernames-with-social-analyzer/#)
 - [Hakin9 - Social-Analyzer](https://hakin9.org/social-analyzer/)
+- [b-son.net](https://blog.b-son.net/2022/02/SocialAnalyzer.html)
 - Most advanced OSINT tool for investigating usernames (Open-Source)
 - 5 Advance Open-Source Intelligence (OSINT) Tools
 - 5 Open-Source Intelligence (OSINT) GitHub Repositories For Every Security Analyst (Cyber Security)
