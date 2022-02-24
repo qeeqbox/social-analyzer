@@ -21,6 +21,7 @@ from time import time, sleep
 from argparse import ArgumentParser, SUPPRESS, Namespace
 from json import load, dumps, loads
 from uuid import uuid4
+from collections.abc import Mapping
 from functools import wraps
 from re import sub as resub
 from re import findall, IGNORECASE
@@ -132,7 +133,7 @@ class SocialAnalyzer():
                         return func(*args, **kwargs)
                     except Exception as err:
                         pass
-                        # self.log.info(e)
+                        # if not self.silent: self.log.info(e)
                 else:
                     return func(*args, **kwargs)
             return wrapper
@@ -163,27 +164,28 @@ class SocialAnalyzer():
                 '''
 
                 if self.argv.output != "json" and self.sa_object.silent == False:
-                    if record.levelname == "CUSTOM":
-                        for item in record.msg:
-                            with suppress(Exception):
-                                if item == record.msg[0]:
+                    if isinstance(record.msg, Mapping):
+                        if "custom" in record.msg:
+                            for item in record.msg["custom"]:
+                                with suppress(Exception):
+                                    if item == record.msg["custom"][0]:
+                                        print("-----------------------")
+                                    for key, value in item.items():
+                                        if key == "metadata" or key == "extracted":
+                                            if (self.argv.metadata and key == "metadata") or (self.argv.extract and key == "extracted"):
+                                                with suppress(Exception):
+                                                    for idx, _item in enumerate(value):
+                                                        empty_string = key + " " + str(idx)
+                                                        empty_string = colored(empty_string.ljust(13, ' '), 'blue') + ": "
+                                                        for _item_key, _item_value in _item.items():
+                                                            if self.argv.trim and _item_key == "content" and len(_item_value) > 50:
+                                                                empty_string += "{} : {} ".format(colored(_item_key, 'blue'), colored(_item_value[:50] + "..", 'yellow'))
+                                                            else:
+                                                                empty_string += "{} : {} ".format(colored(_item_key, 'blue'), colored(_item_value, 'yellow'))
+                                                        print("{}".format(empty_string))
+                                        else:
+                                            print(colored(key.ljust(13, ' '), 'blue'), colored(value, 'yellow'), sep=": ")
                                     print("-----------------------")
-                                for key, value in item.items():
-                                    if key == "metadata" or key == "extracted":
-                                        if (self.argv.metadata and key == "metadata") or (self.argv.extract and key == "extracted"):
-                                            with suppress(Exception):
-                                                for idx, _item in enumerate(value):
-                                                    empty_string = key + " " + str(idx)
-                                                    empty_string = colored(empty_string.ljust(13, ' '), 'blue') + ": "
-                                                    for _item_key, _item_value in _item.items():
-                                                        if self.argv.trim and _item_key == "content" and len(_item_value) > 50:
-                                                            empty_string += "{} : {} ".format(colored(_item_key, 'blue'), colored(_item_value[:50] + "..", 'yellow'))
-                                                        else:
-                                                            empty_string += "{} : {} ".format(colored(_item_key, 'blue'), colored(_item_value, 'yellow'))
-                                                    print("{}".format(empty_string))
-                                    else:
-                                        print(colored(key.ljust(13, ' '), 'blue'), colored(value, 'yellow'), sep=": ")
-                                print("-----------------------")
                     else:
                         print(record.msg)
 
@@ -210,10 +212,8 @@ class SocialAnalyzer():
         else:
             self.log.addHandler(CustomHandler(argv, sa_object=self))
 
-        addLevelName(self.custom_message, "CUSTOM")
-
         if argv.logs and argv.output != "json":
-            self.log.info('[init] Temporary Logs Directory {}'.format(temp_folder))
+            if not self.silent: self.log.info('[init] Temporary Logs Directory {}'.format(temp_folder))
 
     def init_detections(self, detections):
         '''
@@ -261,7 +261,7 @@ class SocialAnalyzer():
             for site in self.websites_entries:
                 temp_value = get_fld(site["url"], fix_protocol=True)
                 temp_value = temp_value.replace(".{username}", "").replace("{username}.", "")
-                self.log.info(temp_value)
+                if not self.silent: self.log.info(temp_value)
 
     def fetch_url(self, site, username, options):
         '''
@@ -279,7 +279,7 @@ class SocialAnalyzer():
         if checking_url is None:
             checking_url = get_fld(site["url"])
         checking_url = checking_url.replace(".{username}", "").replace("{username}.", "")
-        self.log.info("[Checking] " + checking_url)
+        if not self.silent: self.log.info("[Checking] " + checking_url)
 
         source = ""
 
@@ -554,9 +554,9 @@ class SocialAnalyzer():
             self.websites_entries[:] = [d for d in self.websites_entries if d.get('selected') == "true"]
             if len(self.websites_entries) > 0:
                 if len(req["body"]["string"].split(',')) > 1:
-                    self.log.info("[Info] usernames: {}".format(", ".join(req["body"]["string"].split(','))))
+                    if not self.silent: self.log.info("[Info] usernames: {}".format(", ".join(req["body"]["string"].split(','))))
                 else:
-                    self.log.info("[Info] username: {}".format(req["body"]["string"]))
+                    if not self.silent: self.log.info("[Info] username: {}".format(req["body"]["string"]))
                 with ThreadPoolExecutor(max_workers=self.workers) as executor:
                     future_fetch_url = []
                     for site in self.websites_entries:
@@ -569,7 +569,7 @@ class SocialAnalyzer():
                                 self.websites_entries[:] = [d for d in self.websites_entries if d.get('url') != site]
                                 resutls.append(data)
                             else:
-                                self.log.info("[Waiting to retry] " + self.get_website(site))
+                                if not self.silent: self.log.info("[Waiting to retry] " + self.get_website(site))
 
         self.websites_entries[:] = [d for d in self.websites_entries if d.get('selected') == "true"]
         if len(self.websites_entries) > 0:
@@ -598,7 +598,7 @@ class SocialAnalyzer():
         self.init_logic()
 
         if argv.cli:
-            self.log.info("[Warning] --cli is not needed and will be removed later on")
+            if not self.silent: self.log.info("[Warning] --cli is not needed and will be removed later on")
 
         for site in self.websites_entries:
             site["selected"] = "false"
@@ -650,7 +650,7 @@ class SocialAnalyzer():
             if site["selected"] == "true":
                 true_websites += 1
 
-        self.log.info("[Init] Selected websites: {}".format(true_websites))
+        if not self.silent: self.log.info("[Init] Selected websites: {}".format(true_websites))
         resutls = self.find_username_normal(req)
 
         for item in resutls:
@@ -712,17 +712,17 @@ class SocialAnalyzer():
 
         if argv.output == "pretty" or argv.output == "":
             if 'detected' in temp_detected:
-                self.log.info("[Detected] {} Profile[s]".format(len(temp_detected['detected'])))
+                if not self.silent: self.log.info("[Detected] {} Profile[s]".format(len(temp_detected['detected'])))
             if 'unknown' in temp_detected:
-                self.log.info("[unknown] {} Profile[s]".format(len(temp_detected['unknown'])))
+                if not self.silent: self.log.info("[unknown] {} Profile[s]".format(len(temp_detected['unknown'])))
             if 'failed' in temp_detected:
-                self.log.info("[failed] {} Profile[s]".format(len(temp_detected['failed'])))
+                if not self.silent: self.log.info("[failed] {} Profile[s]".format(len(temp_detected['failed'])))
 
         if "detected" in temp_detected:
             if self.screenshots and self.screenshots_location:
                 location = None
                 with suppress(Exception):
-                    self.log.info("[Info] Getting screenshots of {} profiles".format(len([item['link'] for item in temp_detected["detected"]])))
+                    if not self.silent: self.log.info("[Info] Getting screenshots of {} profiles".format(len([item['link'] for item in temp_detected["detected"]])))
                 with suppress(Exception):
                     g = Galeodes(browser="chrome", arguments=['--headless', self.headers['User-Agent']], options=None, implicit_wait=5, verbose=False)
                     results = g.get_pages(urls=[item['link'] for item in temp_detected["detected"]], screenshots=True, number_of_workers=10, format='jpeg', base64=False)
@@ -734,18 +734,18 @@ class SocialAnalyzer():
                                     f.write(item['image'])
                                     location = self.screenshots_location
                 if location:
-                    self.log.info("[Info] Screenshots location {}".format(location))
+                    if not self.silent: self.log.info("[Info] Screenshots location {}".format(location))
 
         if argv.output == "pretty" or argv.output == "":
             if 'detected' in temp_detected:
-                self.log.log(self.custom_message, temp_detected['detected'])
+                if not self.silent: self.log.info({"custom":temp_detected['detected']})
             if 'unknown' in temp_detected:
-                self.log.log(self.custom_message, temp_detected['unknown'])
+                if not self.silent: self.log.info({"custom":temp_detected['unknown']})
             if 'failed' in temp_detected:
-                self.log.log(self.custom_message, temp_detected['failed'])
+                if not self.silent: self.log.info({"custom":temp_detected['failed']})
 
         if argv.output == "json":
-            self.log.info(dumps(temp_detected, sort_keys=True, indent=None))
+            if not self.silent: self.log.info(dumps(temp_detected, sort_keys=True, indent=None))
 
         return temp_detected
 
@@ -753,20 +753,20 @@ class SocialAnalyzer():
         ret = None
         try:
             if path.exists(path_to_check) == False:
-                self.log.info("[init] Downloading {} from {}".format(name, url_download))
+                if not self.silent: self.log.info("[init] Downloading {} from {}".format(name, url_download))
                 file = get(url_download, allow_redirects=True)
                 with open(path_to_check, 'wb') as f:
                     f.write(file.content)
             if path.exists(path_to_check) == True:
-                self.log.info("[init] {} looks good!".format(name))
+                if not self.silent: self.log.info("[init] {} looks good!".format(name))
                 with open(path_to_check, encoding="utf-8") as f:
                     ret = load(f)
         except Exception as e:
-            self.log.info("[!] {} Does not exist! cannot be downloaded...".format(name))
+            if not self.silent: self.log.info("[!] {} Does not exist! cannot be downloaded...".format(name))
         return ret
 
     def init_logic(self):
-        self.log.info("[init] Detections are updated very often, make sure to get the most up-to-date ones")
+        if not self.silent: self.log.info("[init] Detections are updated very often, make sure to get the most up-to-date ones")
         if platform == "win32":
             system("color")
         makedirs(path.join(path.dirname(__file__), "data"), exist_ok=True)
@@ -776,9 +776,9 @@ class SocialAnalyzer():
         self.shared_detections = self.init_detections("shared_detections")
         self.generic_detection = self.init_detections("generic_detection")
         if self.languages_json is not None and self.sites_dummy is not None:
-            self.log.info("[init] languages.json & sites.json loaded successfully")
+            if not self.silent: self.log.info("[init] languages.json & sites.json loaded successfully")
         else:
-            self.log.info("[init] languages.json & sites.json did not load, exiting..")
+            if not self.silent: self.log.info("[init] languages.json & sites.json did not load, exiting..")
             exit()
 
     def run_as_object(self, cli=False, gui=False, logs_dir='', logs=False, extract=False, filter='good', headers={}, list=False, metadata=False, method='all', mode='fast', options='', output='pretty', profiles='detected', type='all', ret=False, silent=False, timeout=0, trim=False, username='', websites='all', countries='all', top='0', screenshots=False):
