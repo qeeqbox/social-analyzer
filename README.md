@@ -8,8 +8,6 @@ The detection modules utilize a rating mechanism based on different detection te
 
 The analysis and public extracted information from this OSINT tool could help in investigating profiles related to suspicious or malicious activities such as cyberbullying, cybergrooming, cyberstalking, and spreading misinformation.
 
-`Social Analyzer is in a league of its own and is a very impressive tool that I thoroughly recommend for Digital Investigators and OSINT practitioners` - by Joseph Jones, Founder of Strategy Nord, Unita Insight and OS2INT
-
 `This project is currently used by some law enforcement agencies in countries where resources are limited`
 
 - [New] Meta nested module is queued for testing   
@@ -191,7 +189,7 @@ Setting:
 - [Console 37](https://console.substack.com/p/console-37)
 
 ## Some News\Articles
-- [INVESTIGATING USERNAMES WITH SOCIAL ANALYZER](https://os2int.com/toolbox/investigating-usernames-with-social-analyzer/#)
+- `Social Analyzer is in a league of its own and is a very impressive tool that I thoroughly recommend for Digital Investigators and OSINT practitioners` - by Joseph Jones, Founder of Strategy Nord, Unita Insight and OS2INT, [INVESTIGATING USERNAMES WITH SOCIAL ANALYZER](https://os2int.com/toolbox/investigating-usernames-with-social-analyzer/#)
 - [Hakin9 - Social-Analyzer](https://hakin9.org/social-analyzer/)
 - [b-son.net](https://blog.b-son.net/2022/02/SocialAnalyzer.html)
 - [esgeeks](https://esgeeks.com/social-analyzer-analizar-perfiles/)
