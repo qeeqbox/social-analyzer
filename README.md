@@ -114,7 +114,7 @@ sudo apt-get update
 sudo apt-get install git python3 python3-pip
 git clone https://github.com/qeeqbox/social-analyzer
 cd social-analyzer
-pip3 install –r requirements.txt
+pip3 install -r requirements.txt
 python3 app.py --username "janedoe"
 #or
 python3 app.py --username "johndoe" --metadata
