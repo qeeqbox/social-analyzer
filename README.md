@@ -18,7 +18,7 @@ The analysis and public extracted information from this OSINT tool could help in
 Websites and applications that enable users to create and share content or to participate in social networking - Oxford Dictionary
 
 ## Structure
-<p align="center"> <img src="https://raw.githubusercontent.com/qeeqbox/social-analyzer/main/readme/structure.png"></p>
+<img src="https://raw.githubusercontent.com/qeeqbox/social-analyzer/main/readme/structure.png">
 
 
 ## APP (Preferred!)
