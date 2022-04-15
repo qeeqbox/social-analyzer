@@ -1,12 +1,11 @@
 <p align="center"> <img src="https://raw.githubusercontent.com/qeeqbox/social-analyzer/main/readme/socialanalyzerlogo_.png"></p>
 
 #
+Social Analyzer - API, CLI, and Web App for analyzing & finding a person's profile across +1000 social media \ websites. It includes different analysis and detection modules, and you can choose which modules to use during the investigation process.
 
-Social Analyzer - API, CLI and Web App for analyzing & finding a person's profile across +1000 social media \ websites. It includes different analysis and detection modules, and you can choose which modules to use during the investigation process. 
+The detection modules utilize a rating mechanism based on different detection techniques, which produces a rate value that starts from 0 to 100 (No-Maybe-Yes). This module is intended to have fewer false positives.
 
-The detection modules utilize a rating mechanism based on different detection techniques, which produces a rate value that starts from 0 to 100 (No-Maybe-Yes). This module intended to have fewer false positives.
-
-The analysis and public extracted information from this OSINT tool could help in investigating profiles related to suspicious or malicious activities such as cyberbullying, cybergrooming, cyberstalking, and spreading misinformation.
+The analysis and public extracted information from this OSINT tool could help investigate profiles related to suspicious or malicious activities such as cyberbullying, cyber grooming, cyberstalking, and spreading misinformation.
 
 `This project is currently used by some law enforcement agencies in countries where resources are limited`
 
@@ -32,13 +31,13 @@ Standard localhost WEB APP url: http://0.0.0.0:9005/app.html
 ## Features
 - String & name analysis (Permutations and Combinations)
 - Find a profile using multiple techniques (HTTPS library & Webdriver)
-- Multi profile search (Used for correlation - any combination separated with ,)
+- Multi profile search (Used for correlation - any combination separated with "," )
 - Multilayers detections (OCR, normal, advanced & special)
 - Visualized profile information using Ixora (Metadata & Patterns)
 - Metadata & Patterns extraction (Added from Qeeqbox OSINT project)
 - Force-directed Graph for Metadata (Needs ExtractPatterns)
-- Search by top-ranking or by country (Alexa Ranking)
-- Search by type (adult, music etc.. - automated websites stats)
+- Search by top ranking or by country (Alexa Ranking)
+- Search by type (adult, music, etc.. - automated websites stats)
 - Profiles stats and static info (Category country)
 - Cross Metadata stats (Added from Qeeqbox OSINT project)
 - Auto-flirtation to unnecessary output (Enable javascript etc..)
@@ -49,13 +48,13 @@ Standard localhost WEB APP url: http://0.0.0.0:9005/app.html
 - Find possible profile\person age (Limited analysis)
 - Custom user-agent, proxy, timeout & implicit wait
 - Python CLI & NodeJS CLI (limited to FindUserProfilesFast option)
-- Screenshots of detected profile (Latest version of Chrome must be installed)
+- Screenshots of detected profile (The latest version of Chrome must be installed)
 - Grid option for faster checking (limited to docker-compose)
 - Dump logs to folder or terminal (prettified)
 - Adjust finding\getting profile workers (default 15)
 - Re-checking option for failed profiles
 - Filter profiles by good, maybe, and bad
-- Save the analysis as JSON file
+- Save the analysis as a JSON file
 - Simplified web interface and CLI
 - And, more!!
 
