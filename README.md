@@ -192,6 +192,7 @@ Setting:
 
 ## Some News\Articles
 - `Social Analyzer is in a league of its own and is a very impressive tool that I thoroughly recommend for Digital Investigators and OSINT practitioners` - by Joseph Jones, Founder of Strategy Nord, Unita Insight and OS2INT, [INVESTIGATING USERNAMES WITH SOCIAL ANALYZER](https://os2int.com/toolbox/investigating-usernames-with-social-analyzer/#)
+- [Advanced OSINT: The Art of Pivoting by hatless1der](https://hatless1der.com/advanced-osint-the-art-of-pivoting/)
 - [Hakin9 - Social-Analyzer](https://hakin9.org/social-analyzer/)
 - [b-son.net](https://blog.b-son.net/2022/02/SocialAnalyzer.html)
 - [esgeeks](https://esgeeks.com/social-analyzer-analizar-perfiles/)
