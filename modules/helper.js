@@ -200,6 +200,12 @@ async function get_url_wrapper_json (url, time = 2) {
           })
         })
       })
+      const timeout = (time !== 0) ? time * 1000 : 5000
+      request.setTimeout(timeout, function() {
+        reject({
+          data: ''
+        })
+      });
       request.on('error', function (e) {
         reject({
           data: ''
