@@ -186,7 +186,7 @@ function get_site_from_url (_url) {
   return temp.replace('nothinghere.', '')
 }
 
-async function get_url_wrapper_json (url, time = 5) {
+async function get_url_wrapper_json (url, time = 2) {
   try {
     const http_promise = new Promise((resolve, reject) => {
       const request = https.get(url, header_options, function (res) {
@@ -219,7 +219,7 @@ async function get_url_wrapper_json (url, time = 5) {
   }
 }
 
-async function get_url_wrapper_text (url, time = 5) {
+async function get_url_wrapper_text (url, time = 2) {
   const response_body = 'error-get-url'
   try {
     const http_promise = new Promise((resolve, reject) => {
@@ -232,6 +232,12 @@ async function get_url_wrapper_text (url, time = 5) {
           resolve(body)
         })
       })
+      const timeout = (time !== 0) ? time * 1000 : 5000
+      request.setTimeout(timeout, function() {
+        reject({
+          data: ''
+        })
+      });
       request.on('error', function (e) {
         reject({
           data: ''
