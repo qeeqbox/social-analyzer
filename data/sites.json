@@ -22744,13 +22744,13 @@
       "name": "mediawiki",
       "detections": [
         {
-          "return": "false",
-          "string": "is not registered",
+          "return": "true",
+          "string": "temp_fix_2022_wiki_value",
           "type": "normal"
         },
         {
           "return": "true",
-          "string": "User:",
+          "string": "temp_fix_2022_wiki_value",
           "type": "normal"
         }
       ]
