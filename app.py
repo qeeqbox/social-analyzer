@@ -762,7 +762,7 @@ class SocialAnalyzer():
 
         if argv.output == "json":
             if not self.silent:
-                self.log.info(dumps(temp_detected, sort_keys=True, indent=None))
+                print(dumps(temp_detected, sort_keys=True, indent=None))
 
         return temp_detected
 
