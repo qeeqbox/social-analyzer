@@ -661,6 +661,9 @@ class SocialAnalyzer():
             self.log.info("[Init] Selected websites: {}".format(true_websites))
         resutls = self.find_username_normal(req)
 
+        if argv.simplify:
+            argv.filter = "good"
+
         for item in resutls:
             if item is not None:
                 if item["method"] == "all":
@@ -690,11 +693,21 @@ class SocialAnalyzer():
             if len(temp_detected["detected"]) == 0:
                 del temp_detected["detected"]
             else:
-                if "all" in argv.profiles or "detected" in argv.profiles:
+                if "all" in argv.profiles or "detected" in argv.profiles or argv.simplify:
                     if argv.filter == "all":
                         pass
                     else:
-                        temp_detected["detected"] = [item for item in temp_detected["detected"] if item['status'] in argv.filter]
+                        if argv.simplify:
+                            temp_list_profiles_simple = []
+                            for item in temp_detected["detected"]:
+                                if float(item['rate'].strip('%')) == 100.0:
+                                    temp_list_profiles_simple.append(item)
+                            temp_detected["detected"].clear()
+                            for item in temp_list_profiles_simple:
+                                item = self.clean_up_item(item, ["link"])
+                                temp_detected["detected"].append(item)
+                        else:
+                            temp_detected["detected"] = [item for item in temp_detected["detected"] if item['status'] in argv.filter]
                     if len(temp_detected["detected"]) > 0:
                         temp_detected["detected"] = sorted(temp_detected["detected"], key=lambda k: float(k['rate'].strip('%')), reverse=True)
                     else:
@@ -748,6 +761,12 @@ class SocialAnalyzer():
                 if location:
                     if not self.silent:
                         self.log.info("[Info] Screenshots location {}".format(location))
+
+        if argv.simplify:
+            if 'unknown' in temp_detected:
+                del temp_detected["unknown"]
+            if 'failed' in temp_detected:
+                del temp_detected["failed"]
 
         if argv.output == "pretty" or argv.output == "":
             if 'detected' in temp_detected:
@@ -804,7 +823,7 @@ class SocialAnalyzer():
                 self.log.info("[init] languages.json & sites.json did not load, exiting..")
             exit()
 
-    def run_as_object(self, cli=False, gui=False, logs_dir='', logs=False, extract=False, filter='good', headers={}, list=False, metadata=False, method='all', mode='fast', options='', output='pretty', profiles='detected', type='all', ret=False, silent=False, timeout=0, trim=False, username='', websites='all', countries='all', top='0', screenshots=False):
+    def run_as_object(self, cli=False, gui=False, logs_dir='', logs=False, extract=False, filter='good', headers={}, list=False, metadata=False, method='all', mode='fast', options='', output='pretty', profiles='detected', type='all', ret=False, silent=False, timeout=0, trim=False, username='', websites='all', countries='all', top='0', screenshots=False, simplify=False):
         ret = {}
         if logs_dir != '':
             self.logs_dir = logs_dir
@@ -855,6 +874,7 @@ class SocialAnalyzer():
         ARG_PARSER_OPTIONAL.add_argument("--gui", help="Reserved for a gui (Not implemented)", action="store_true")
         ARG_PARSER_OPTIONAL.add_argument("--cli", help="Reserved for a cli (Not needed)", action="store_true")
         ARG_PARSER_OPTIONAL.add_argument("--screenshots", help="Get screenshots from detected profiles (This needs --logs)", action="store_true")
+        ARG_PARSER_OPTIONAL.add_argument("--simplify", help="Print the detected profiles only (links)", action="store_true")
         ARG_PARSER_LIST = ARG_PARSER.add_argument_group("Listing websites & detections")
         ARG_PARSER_LIST.add_argument("--list", help="List all available websites", action="store_true")
         ARG_PARSER_SETTINGS = ARG_PARSER.add_argument_group("Setting")
