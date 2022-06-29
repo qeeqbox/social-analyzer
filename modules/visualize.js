@@ -1,9 +1,9 @@
-const ixora = require('ixora').QBIxora
-const helper = require('./helper.js')
+import {QBIxora} from 'ixora'
+import helper from './helper.js'
 
 async function visualize_force_graph (req, detected, type) {
   try {
-    const graph = new ixora('Social-Analyzer', false)
+    const graph = new QBIxora('Social-Analyzer', false)
     const temp_filtered = detected.filter(item => item.status === 'good')
     if (temp_filtered.length > 0) {
       if (req.body.group) {
@@ -83,6 +83,6 @@ async function visualize_force_graph (req, detected, type) {
     }
   }
 }
-module.exports = {
+export default{
   visualize_force_graph
 }

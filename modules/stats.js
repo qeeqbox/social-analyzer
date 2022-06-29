@@ -1,4 +1,4 @@
-const helper = require('./helper.js')
+import helper from './helper.js'
 
 function group_by_value (list, key) {
   return list.reduce(function (x, y) {
@@ -108,6 +108,6 @@ async function get_stats (req, data) {
   return { categories: categories, countries: countries, metadata: metadata}
 }
 
-module.exports = {
+export default{
   get_stats
 }

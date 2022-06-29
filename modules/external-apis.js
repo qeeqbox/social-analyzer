@@ -1,5 +1,5 @@
-const helper = require('./helper.js')
-const async = require('async')
+import helper from './helper.js'
+import async from 'async'
 
 async function get_words_info (all_words, words_info) {
   const temp_added = []
@@ -145,7 +145,7 @@ async function custom_search_ouputs_website (uuid, name, key) {
   })
 }
 
-module.exports = {
+export default{
   check_engines,
   get_words_info,
   custom_search_ouputs

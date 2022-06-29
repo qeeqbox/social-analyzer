@@ -1,7 +1,5 @@
-const helper = require('./helper.js')
-const {
-  createWorker
-} = require('tesseract.js')
+import helper from './helper.js'
+import createWorker from 'tesseract.js'
 
 function merge_dicts (temp_dict) {
   const result = {}
@@ -39,7 +37,6 @@ async function detect (type, uuid, username, options, site, source = '', text_on
   temp_profile.push(val1)
   temp_detected.push(val2)
   detections_count += val3
-  // console.log(temp_profile,merge_dicts(temp_detected),detections_count)
   return [merge_dicts(temp_profile), merge_dicts(temp_detected), detections_count]
 }
 
@@ -130,6 +127,6 @@ async function detect_logic (type, uuid, username, options, site, source = '', t
   return [temp_profile, temp_detected, detections_count]
 }
 
-module.exports = {
+export default{
   detect
 }

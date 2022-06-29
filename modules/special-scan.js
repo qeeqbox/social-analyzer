@@ -1,11 +1,6 @@
-const helper = require('./helper.js')
-const async = require('async')
-const firefox = require('selenium-webdriver/firefox')
-const {
-  Builder,
-  By,
-  Key
-} = require('selenium-webdriver')
+import helper from './helper.js'
+import async from 'async'
+import {Builder,By,Key} from 'selenium-webdriver'
 
 async function find_username_special (req) {
   const time = new Date()
@@ -192,6 +187,6 @@ async function find_username_site_special_google_1 (uuid, username, site) {
   })
 }
 
-module.exports = {
+export default{
   find_username_special
 }

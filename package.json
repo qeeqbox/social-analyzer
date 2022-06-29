@@ -24,6 +24,7 @@
     "langs": "2.0.0",
     "lodash": ">=4.17.21",
     "most-common-words-by-language": "3.0.10",
+    "n": "^8.2.0",
     "prettier": "2.7.1",
     "pretty-error": "4.0.0",
     "sanitize-html": ">=2.7.0",
@@ -48,5 +49,6 @@
     "eslint-plugin-import": "^2.26.0",
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-promise": "^6.0.0"
-  }
+  },
+  "type": "module"
 }

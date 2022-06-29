@@ -1,5 +1,6 @@
-const helper = require('./helper.js')
-const stringSimilarity = require('string-similarity')
+import helper from './helper.js'
+import stringSimilarity from 'string-similarity'
+
 async function find_origins (req) {
   const found = []
   for (const key in helper.parsed_names_origins) {
@@ -73,6 +74,6 @@ async function find_origins (req) {
   return found
 }
 
-module.exports = {
+export default{
   find_origins
 }
