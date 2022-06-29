@@ -7,9 +7,11 @@
 //  -------------------------------------------------------------
 //  contributors list qeeqbox/social-analyzer/graphs/contributors
 //  -------------------------------------------------------------
-
-const argv = require('yargs')
-  .usage('Usage: $0 --username "johndoe" --websites "youtube tiktok"\nUsage: $0 "fast" --username "johndoe"')
+"use strict";
+import yargs from 'yargs'
+import { hideBin } from 'yargs/helpers'
+const yarg_ = yargs(hideBin(process.argv))
+const argv = yarg_.usage('Usage: $0 --username "johndoe" --websites "youtube tiktok"\nUsage: $0 "fast" --username "johndoe"')
   .describe('gui', 'Reserved for a gui')
   .default('gui', false)
   .boolean('gui')
@@ -62,7 +64,8 @@ if (argv.output !== 'json') {
   console.log('[init] Detections are updated very often, make sure to get the most up-to-date ones')
 }
 
-const semver = require('semver')
+import semver from 'semver'
+
 if (semver.satisfies(process.version, '>13 || <13')) {
   if (argv.output !== 'json') {
     console.log('[init] NodeJS Version Check')
@@ -74,29 +77,30 @@ if (semver.satisfies(process.version, '>13 || <13')) {
   process.exit(1)
 }
 
-const express = require('express')
-const fs = require('fs')
-const tokenizer = require('wink-tokenizer')
-const generatorics = require('generatorics')
-const HttpsProxyAgent = require('https-proxy-agent')
-const PrettyError = require('pretty-error')
+import express from 'express'
+import fs from 'fs'
+import tokenizer from 'wink-tokenizer'
+import generatorics from 'generatorics'
+import HttpsProxyAgent from 'https-proxy-agent'
+import PrettyError from 'pretty-error'
+
 const pe = new PrettyError()
-require('express-async-errors')
+import 'express-async-errors'
 //const _tokenizer = tokenizer()
 
 if (!fs.existsSync('logs')) {
   fs.mkdirSync('logs')
 }
 
-const helper = require('./modules/helper.js')
-const fastScan = require('./modules/fast-scan.js')
-const slowScan = require('./modules/slow-scan.js')
-const specialScan = require('./modules/special-scan.js')
-const externalApis = require('./modules/external-apis.js')
-const stringAnalysis = require('./modules/string-analysis.js')
-const nameAnalysis = require('./modules/name-analysis.js')
-const visualize = require('./modules/visualize.js')
-const stats = require('./modules/stats.js')
+import helper from './modules/helper.js'
+import fastScan from './modules/fast-scan.js'
+import slowScan from './modules/slow-scan.js'
+import specialScan from './modules/special-scan.js'
+import externalApis from './modules/external-apis.js'
+import stringAnalysis from './modules/string-analysis.js'
+import nameAnalysis from './modules/name-analysis.js'
+import visualize from './modules/visualize.js'
+import stats from './modules/stats.js'
 
 const app = express()
 app.set('etag', false)

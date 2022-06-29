@@ -1,5 +1,7 @@
-const helper = require('./helper.js')
-const cheerio = require('cheerio')
+import helper from './helper.js'
+import cheerio from 'cheerio'
+
+
 const strings_meta = new RegExp('regionsAllowed|width|height|color|rgba\\(|charset|viewport|refresh|equiv', 'i')
 async function extract_metadata (site, source) {
   try {
@@ -84,7 +86,7 @@ async function extract_patterns (site, source) {
   }
 }
 
-module.exports = {
+export default{
   extract_patterns,
   extract_metadata
 }

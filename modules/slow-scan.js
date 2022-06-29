@@ -1,15 +1,12 @@
-const helper = require('./helper.js')
-const extraction = require('./extraction.js')
-const async = require('async')
-const sanitizeHtml = require('sanitize-html')
-const firefox = require('selenium-webdriver/firefox')
-const {
-  Builder,
-  By,
-  Key
-} = require('selenium-webdriver')
-const path = require('path')
-const engine = require('./engine.js')
+
+import helper from './helper.js'
+import extraction from './extraction.js'
+import async from 'async'
+import sanitizeHtml from 'sanitize-html'
+import firefox from 'selenium-webdriver/firefox.js'
+import {Builder,By,Key} from 'selenium-webdriver'
+import path from 'path'
+import engine from './engine.js'
 
 if (process.platform === 'win32') {
   const package_path = path.join(path.dirname(require.resolve('geckodriver')), '..')
@@ -194,6 +191,6 @@ async function find_username_site (uuid, username, options, site) {
   })
 }
 
-module.exports = {
+export default{
   find_username_advanced
 }

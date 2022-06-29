@@ -54,28 +54,31 @@ const detected_websites = {
 
 const header_options = {
   headers: {
-    'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:100.0) Gecko/20100101 Firefox/100.0'
+    'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:102.0) Gecko/20100101 Firefox/102.0'
   }
 }
 
-const https = require('follow-redirects').https
-const fs = require('fs')
-const url = require('url')
-const franc = require('franc')
-const langs = require('langs')
-const cheerio = require('cheerio')
-const path = require('path')
-const slash = require('slash')
-const colors = require('colors/safe')
-const ixora = require('ixora').QBIxora
 
+import https from 'follow-redirects'
+import fs from 'fs'
+import url from 'url'
+import {franc} from 'franc'
+import langs from 'langs'
+import cheerio from 'cheerio'
+import path from 'path'
+import slash from 'slash'
+import colors from 'colors/safe.js'
+import {QBIxora} from 'ixora'
+import {fileURLToPath} from 'url';
+
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const sites_json_path = slash(path.join(__dirname, '..', 'data', 'sites.json'))
 const names_json_path = slash(path.join(__dirname, '..', 'data', 'names.json'))
 const dict_json_path = slash(path.join(__dirname, '..', 'data', 'dict.json'))
 const countries_json_path = slash(path.join(__dirname, '..', 'data', 'names.json'))
 const public_graph_path = slash(path.join(__dirname, '..', 'public', 'graph.html'))
 
-let temp_ixora = new ixora('Social-Analyzer', false)
+let temp_ixora = new QBIxora('Social-Analyzer', false)
 temp_ixora.save_base_html(public_graph_path)
 temp_ixora = null
 
@@ -189,7 +192,7 @@ function get_site_from_url (_url) {
 async function get_url_wrapper_json (url, time = 2) {
   try {
     const http_promise = new Promise((resolve, reject) => {
-      const request = https.get(url, header_options, function (res) {
+      const request = https.https.get(url, header_options, function (res) {
         let body = ''
         res.on('data', function (chunk) {
           body += chunk
@@ -227,15 +230,16 @@ async function get_url_wrapper_json (url, time = 2) {
 
 async function get_url_wrapper_text (url, time = 2) {
   const response_body = 'error-get-url'
+  const ret = 500
   try {
     const http_promise = new Promise((resolve, reject) => {
-      const request = https.get(url, header_options, function (res) {
+      const request = https.https.get(url, header_options, function (res) {
         let body = ''
         res.on('data', function (chunk) {
           body += chunk
         })
         res.on('end', function () {
-          resolve(body)
+          resolve([res.statusCode,body])
         })
       })
       const timeout = (time !== 0) ? time * 1000 : 5000
@@ -256,11 +260,11 @@ async function get_url_wrapper_text (url, time = 2) {
         })
       })
     })
-    const response_body = await http_promise
-    return response_body
+    const [ret, response_body] = await http_promise
+    return [ret, response_body]
   } catch (err) {
     verbose && console.log(err)
-    return response_body
+    return [ret, response_body]
   }
 }
 
@@ -300,7 +304,7 @@ async function setup_tecert () {
   if (!fs.existsSync('eng.traineddata')) {
     const file = fs.createWriteStream('eng.traineddata')
     const http_promise = new Promise((resolve, reject) => {
-      const request = https.get('https://raw.githubusercontent.com/tesseract-ocr/tessdata/master/eng.traineddata', function (response) {
+      const request = https.https.get('https://raw.githubusercontent.com/tesseract-ocr/tessdata/master/eng.traineddata', function (response) {
         response.pipe(file)
         resolve(1)
         request.setTimeout(12000, function () {
@@ -328,7 +332,7 @@ async function setup_tecert () {
   }
 }
 
-module.exports = {
+export default {
   strings_pages,
   strings_titles,
   top_websites,

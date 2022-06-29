@@ -1,12 +1,10 @@
-const helper = require('./helper.js')
-const extraction = require('./extraction.js')
-const async = require('async')
-const sanitizeHtml = require('sanitize-html')
-const {
-  htmlToText
-} = require('html-to-text')
-const cheerio = require('cheerio')
-const engine = require('./engine.js')
+import helper from './helper.js'
+import extraction from './extraction.js'
+import async from 'async'
+import sanitizeHtml from 'sanitize-html'
+import {convert} from 'html-to-text'
+import cheerio from 'cheerio'
+import engine from './engine.js'
 
 async function find_username_normal (req) {
   helper.log_to_file_queue(req.body.uuid, '[init] Selected websites: ' + helper.websites_entries.filter((item) => item.selected === 'true').length + ' for username: ' + req.body.string)
@@ -87,7 +85,7 @@ async function find_username_site (uuid, username, options, site) {
         if (!options.includes('json')) {
           helper.log_to_file_queue(uuid, '[Checking] ' + helper.get_site_from_url(site.url))
         }
-        const source = await helper.get_url_wrapper_text(site.url.replace('{username}', username))
+        const [ret, source]  = await helper.get_url_wrapper_text(site.url.replace('{username}', username))
         if (source !== 'error-get-url') {
           let title = 'unavailable'
           let language = 'unavailable'
@@ -99,7 +97,8 @@ async function find_username_site (uuid, username, options, site) {
           if (temp_profile.found >= helper.detection_level[helper.detection_level.current].found && detections_count >= helper.detection_level[helper.detection_level.current].count) {
             temp_profile.good = 'true'
           }
-          temp_profile.text = sanitizeHtml(htmlToText(source, {
+
+          temp_profile.text = sanitizeHtml(convert(source, {
             wordwrap: false,
             hideLinkHrefIfSameAsText: true,
             ignoreHref: true,
@@ -108,6 +107,7 @@ async function find_username_site (uuid, username, options, site) {
           if (temp_profile.text === '') {
             temp_profile.text = 'unavailable'
           }
+
 
           try {
             const $ = cheerio.load(source)
@@ -210,6 +210,6 @@ async function find_username_site (uuid, username, options, site) {
   })
 }
 
-module.exports = {
+export default {
   find_username_normal
 }

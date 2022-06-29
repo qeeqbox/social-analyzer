@@ -1,9 +1,6 @@
-const helper = require('./helper.js')
-const {
-  findWord
-} = require('most-common-words-by-language')
-
-const WordsNinjaPack = require('wordsninja')
+import helper from './helper.js'
+import {findWord} from 'most-common-words-by-language'
+import WordsNinjaPack from 'wordsninja'
 const WordsNinja = new WordsNinjaPack()
 
 function most_common1 (all_words, temp_words) {
@@ -272,7 +269,7 @@ async function guess_age_from_string(req) {
   return results
 }
 
-module.exports = {
+export default{
   get_maybe_words,
   find_symbols,
   find_numbers,
