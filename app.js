@@ -7,7 +7,7 @@
 //  -------------------------------------------------------------
 //  contributors list qeeqbox/social-analyzer/graphs/contributors
 //  -------------------------------------------------------------
-"use strict";
+
 import yargs from 'yargs'
 import { hideBin } from 'yargs/helpers'
 const yarg_ = yargs(hideBin(process.argv))
