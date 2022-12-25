@@ -73,6 +73,7 @@ sudo add-apt-repository ppa:mozillateam/ppa -y
 sudo apt-get install -y firefox-esr tesseract-ocr git nodejs npm
 git clone https://github.com/qeeqbox/social-analyzer.git
 cd social-analyzer
+npm install
 npm install loadash
 npm start
 ```
@@ -86,6 +87,8 @@ sudo add-apt-repository ppa:mozillateam/ppa -y
 sudo apt-get install -y firefox-esr tesseract-ocr git nodejs npm
 git clone https://github.com/qeeqbox/social-analyzer.git
 cd social-analyzer
+npm install
+npm install loadash
 nodejs app.js --username "johndoe"
 #or
 nodejs app.js --username "johndoe,janedoe" --metadata
