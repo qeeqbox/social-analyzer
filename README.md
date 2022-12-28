@@ -6,7 +6,7 @@ The detection modules utilize a rating mechanism based on different detection te
 
 The analysis and public extracted information from this OSINT tool could help investigate profiles related to suspicious or malicious activities such as cyberbullying, cyber grooming, cyberstalking, and spreading misinformation.
 
-`This project is currently used by some law enforcement agencies in countries where resources are limited`
+`This project is currently used by some law enforcement agencies in countries where resources are limited - The detection database is different than the one shared here..`
 
 - [New] Works on nodejs v18.4.0
 - [New] Meta nested module is queued for testing   
