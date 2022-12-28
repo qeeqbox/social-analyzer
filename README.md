@@ -8,11 +8,6 @@ The analysis and public extracted information from this OSINT tool could help in
 
 `This project is currently used by some law enforcement agencies in countries where resources are limited - The detection database is different than the one shared here..`
 
-- [New] Works on nodejs v18.4.0
-- [New] Meta nested module is queued for testing   
-- [New] Updates queued for testing
-- [Info] Feel free to fork and contribute
-
 ## So·cial Me·di·a
 Websites and applications that enable users to create and share content or to participate in social networking - Oxford Dictionary
 
