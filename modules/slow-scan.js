@@ -7,6 +7,8 @@ import firefox from 'selenium-webdriver/firefox.js'
 import {Builder,By,Key} from 'selenium-webdriver'
 import path from 'path'
 import engine from './engine.js'
+import { createRequire } from 'module';
+const require = createRequire(import.meta.url);
 
 if (process.platform === 'win32') {
   const package_path = path.join(path.dirname(require.resolve('geckodriver')), '..')
