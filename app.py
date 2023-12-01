@@ -143,8 +143,6 @@ class SocialAnalyzer():
         setup a logger for logs in the temp folder
         '''
 
-
-
         class CustomHandler(Handler):
             '''
             custom stream handler
@@ -195,7 +193,6 @@ class SocialAnalyzer():
                                 print("-----------------------")
                 else:
                     print(record.msg)
-
 
         temp_folder = ''
         if argv.logs:
