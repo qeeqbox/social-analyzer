@@ -559,36 +559,46 @@ class SocialAnalyzer():
 
         resutls = []
 
-        for i in range(3):
+        for _ in range(3):
             self.websites_entries[:] = [d for d in self.websites_entries if d.get('selected') == "true"]
             if len(self.websites_entries) > 0:
                 if len(req["body"]["string"].split(',')) > 1:
                     if not self.silent:
-                        self.log.info("[Info] usernames: {}".format(", ".join(req["body"]["string"].split(','))))
-                else:
-                    if not self.silent:
-                        self.log.info("[Info] username: {}".format(req["body"]["string"]))
+                        self.log.info(
+                            f"""[Info] usernames: {", ".join(req["body"]["string"].split(','))}"""
+                        )
+                elif not self.silent:
+                    self.log.info(f'[Info] username: {req["body"]["string"]}')
                 with ThreadPoolExecutor(max_workers=self.workers) as executor:
                     future_fetch_url = []
                     for site in self.websites_entries:
-                        for username in req["body"]["string"].split(','):
-                            future_fetch_url.append(executor.submit(self.fetch_url, site, username, req["body"]["options"]))
+                        future_fetch_url.extend(
+                            executor.submit(
+                                self.fetch_url,
+                                site,
+                                username,
+                                req["body"]["options"],
+                            )
+                            for username in req["body"]["string"].split(',')
+                        )
                     for future in as_completed(future_fetch_url):
                         with suppress(Exception):
                             good, site, data = future.result()
                             if good:
                                 self.websites_entries[:] = [d for d in self.websites_entries if d.get('url') != site]
                                 resutls.append(data)
-                            else:
-                                if not self.silent:
-                                    self.log.info("[Waiting to retry] " + self.get_website(site))
+                            elif not self.silent:
+                                self.log.info(f"[Waiting to retry] {self.get_website(site)}")
 
         self.websites_entries[:] = [d for d in self.websites_entries if d.get('selected') == "true"]
         if len(self.websites_entries) > 0:
             for site in self.websites_entries:
-                temp_profile = {"link": "",
-                                "method": "failed"}
-                temp_profile["link"] = site["url"].replace("{username}", req["body"]["string"])
+                temp_profile = {
+                    "method": "failed",
+                    "link": site["url"].replace(
+                        "{username}", req["body"]["string"]
+                    ),
+                }
                 resutls.append(temp_profile)
         return resutls
 
