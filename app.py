@@ -106,7 +106,7 @@ class SocialAnalyzer():
         with suppress(Exception):
             lang = detect(text)
             if lang and lang != "":
-                return self.languages_json[lang] + " (Maybe)"
+                return f"{self.languages_json[lang]} (Maybe)"
         return "unavailable"
 
     def get_language_by_parsing(self, source, encoding):
@@ -129,20 +129,21 @@ class SocialAnalyzer():
             @wraps(func)
             def wrapper(*args, **kwargs):
                 if on_off:
-                    try:
+                    with suppress(Exception):
                         return func(*args, **kwargs)
-                    except Exception as err:
-                        pass
-                        # if not self.silent: self.log.info(e)
                 else:
                     return func(*args, **kwargs)
+
             return wrapper
+
         return decorator
 
     def setup_logger(self, uuid=None, file=False, argv=None):
         '''
         setup a logger for logs in the temp folder
         '''
+
+
 
         class CustomHandler(Handler):
             '''
@@ -163,39 +164,42 @@ class SocialAnalyzer():
                 emit, based on user choices
                 '''
 
-                if self.argv.output != "json" and self.sa_object.silent == False:
-                    if isinstance(record.msg, Mapping):
-                        if "custom" in record.msg:
-                            for item in record.msg["custom"]:
-                                with suppress(Exception):
-                                    if item == record.msg["custom"][0]:
-                                        print("-----------------------")
-                                    for key, value in item.items():
-                                        if key == "metadata" or key == "extracted":
-                                            if (self.argv.metadata and key == "metadata") or (self.argv.extract and key == "extracted"):
-                                                with suppress(Exception):
-                                                    for idx, _item in enumerate(value):
-                                                        empty_string = key + " " + str(idx)
-                                                        empty_string = colored(empty_string.ljust(13, ' '), 'blue') + ": "
-                                                        for _item_key, _item_value in _item.items():
-                                                            if self.argv.trim and _item_key == "content" and len(_item_value) > 50:
-                                                                empty_string += "{} : {} ".format(colored(_item_key, 'blue'), colored(_item_value[:50] + "..", 'yellow'))
-                                                            else:
-                                                                empty_string += "{} : {} ".format(colored(_item_key, 'blue'), colored(_item_value, 'yellow'))
-                                                        print("{}".format(empty_string))
-                                        else:
-                                            print(colored(key.ljust(13, ' '), 'blue'), colored(value, 'yellow'), sep=": ")
+                if self.argv.output == "json" or self.sa_object.silent != False:
+                    return
+                if isinstance(record.msg, Mapping):
+                    if "custom" in record.msg:
+                        for item in record.msg["custom"]:
+                            with suppress(Exception):
+                                if item == record.msg["custom"][0]:
                                     print("-----------------------")
-                    else:
-                        print(record.msg)
+                                for key, value in item.items():
+                                    if (
+                                        key == "metadata"
+                                        and self.argv.metadata
+                                        or key != "metadata"
+                                        and key == "extracted"
+                                        and self.argv.extract
+                                    ):
+                                        with suppress(Exception):
+                                            for idx, _item in enumerate(value):
+                                                empty_string = f"{key} {str(idx)}"
+                                                empty_string = colored(empty_string.ljust(13, ' '), 'blue') + ": "
+                                                for _item_key, _item_value in _item.items():
+                                                    if self.argv.trim and _item_key == "content" and len(_item_value) > 50:
+                                                        empty_string += f"""{colored(_item_key, 'blue')} : {colored(f"{_item_value[:50]}..", 'yellow')} """
+                                                    else:
+                                                        empty_string += f"{colored(_item_key, 'blue')} : {colored(_item_value, 'yellow')} "
+                                                print(f"{empty_string}")
+                                    elif key not in ["metadata", "extracted"]:
+                                        print(colored(key.ljust(13, ' '), 'blue'), colored(value, 'yellow'), sep=": ")
+                                print("-----------------------")
+                else:
+                    print(record.msg)
+
 
         temp_folder = ''
         if argv.logs:
-            if self.logs_dir != '':
-                temp_folder = self.logs_dir
-            else:
-                temp_folder = mkdtemp()
-
+            temp_folder = self.logs_dir if self.logs_dir != '' else mkdtemp()
             if file and uuid:
                 if argv.screenshots:
                     self.screenshots = True
@@ -214,7 +218,7 @@ class SocialAnalyzer():
 
         if argv.logs and argv.output != "json":
             if not self.silent:
-                self.log.info('[init] Temporary Logs Directory {}'.format(temp_folder))
+                self.log.info(f'[init] Temporary Logs Directory {temp_folder}')
 
     def init_detections(self, detections):
         '''
@@ -245,8 +249,7 @@ class SocialAnalyzer():
 
     def top_websites(self, top_number):
         with suppress(Exception):
-            top_websites = research(self.top_pattern, top_number)
-            if top_websites:
+            if top_websites := research(self.top_pattern, top_number):
                 sites = ([d for d in self.websites_entries if d.get('global_rank') != 0])
                 sites = sorted(sites, key=lambda x: x['global_rank'])
                 for site in sites[:int(top_websites.group(1))]:
@@ -282,7 +285,7 @@ class SocialAnalyzer():
             checking_url = get_fld(site["url"])
         checking_url = checking_url.replace(".{username}", "").replace("{username}.", "")
         if not self.silent:
-            self.log.info("[Checking] " + checking_url)
+            self.log.info(f"[Checking] {checking_url}")
 
         source = ""
 
@@ -311,7 +314,7 @@ class SocialAnalyzer():
             source = response.text
             content = response.content
             encoding = response.encoding
-            answer = dict((k.lower(), v.lower()) for k, v in response.headers.items())
+            answer = {k.lower(): v.lower() for k, v in response.headers.items()}
             session.close()
             temp_profile = {}
             temp_detected = {}
@@ -324,7 +327,7 @@ class SocialAnalyzer():
 
                 with suppress(Exception):
                     result = urlparse(url)
-                    if result.scheme == "http" or result.scheme == "https":
+                    if result.scheme in ["http", "https"]:
                         return all([result.scheme, result.netloc])
                 return False
 
@@ -441,7 +444,7 @@ class SocialAnalyzer():
                                         temp_matches.append(parsed)
                                         temp_matches_list.append({"name": item["type"], "value": unquote(match)})
 
-                if len(temp_matches_list) > 0:
+                if temp_matches_list:
                     temp_profile["extracted"] = temp_matches_list
 
             temp_profile["text"] = temp_profile["text"].replace("\n", "").replace("\t", "").replace("\r", "").strip()
@@ -466,7 +469,7 @@ class SocialAnalyzer():
             with suppress(Exception):
                 if detections_count != 0:
                     temp_value = round(((temp_profile["found"] / detections_count) * 100), 2)
-                    temp_profile["rate"] = "%" + str(temp_value)
+                    temp_profile["rate"] = f"%{str(temp_value)}"
                     if temp_value >= 100.00:
                         temp_profile["status"] = "good"
                     elif temp_value >= 50.00 and temp_value < 100.00:
@@ -487,14 +490,20 @@ class SocialAnalyzer():
                             temp_mata_item = {}
                             add = True
                             if meta.has_attr("property"):
-                                temp_mata_item.update({"property": meta["property"]})
+                                temp_mata_item["property"] = meta["property"]
                             if meta.has_attr("content"):
                                 if meta["content"].replace("\n", "").replace("\t", "").replace("\r", "").strip() != "":
-                                    temp_mata_item.update({"content": meta["content"].replace("\n", "").replace("\t", "").replace("\r", "").strip()})
+                                    temp_mata_item["content"] = (
+                                        meta["content"]
+                                        .replace("\n", "")
+                                        .replace("\t", "")
+                                        .replace("\r", "")
+                                        .strip()
+                                    )
                             if meta.has_attr("itemprop"):
-                                temp_mata_item.update({"itemprop": meta["itemprop"]})
+                                temp_mata_item["itemprop"] = meta["itemprop"]
                             if meta.has_attr("name"):
-                                temp_mata_item.update({"name": meta["name"]})
+                                temp_mata_item["name"] = meta["name"]
 
                             with suppress(Exception):
                                 if "property" in temp_mata_item:
@@ -516,7 +525,7 @@ class SocialAnalyzer():
                                                 temp_meta_list[i]["content"] += ", " + temp_mata_item["content"]
                                                 add = False
 
-                            if len(temp_mata_item) > 0 and add:
+                            if temp_mata_item and add:
                                 temp_meta_list.append(temp_mata_item)
 
                 if len(temp_meta_list) > 0:
