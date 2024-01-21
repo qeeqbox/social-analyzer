@@ -4,9 +4,12 @@ import extraction from './extraction.js'
 import async from 'async'
 import sanitizeHtml from 'sanitize-html'
 import firefox from 'selenium-webdriver/firefox.js'
-import {Builder,By,Key} from 'selenium-webdriver'
+import {Builder,By} from 'selenium-webdriver'
 import path from 'path'
 import engine from './engine.js'
+import {createRequire} from 'node:module';
+
+const require = createRequire(import.meta.url);
 
 if (process.platform === 'win32') {
   const package_path = path.join(path.dirname(require.resolve('geckodriver')), '..')
