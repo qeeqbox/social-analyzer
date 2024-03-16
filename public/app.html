@@ -17,6 +17,7 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/selectize.js/0.12.6/css/selectize.default.css" />
 <script src="https://code.jquery.com/jquery-2.1.1.js"></script>
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/3.0.9/purify.min.js" integrity="sha512-9+ilAOeXY8qy2bw/h51MmliNNHvdyhTpLIlqDmVpD26z8VjVJsUJtk5rhbDIUvYiD+EpGoAu0xTa7MhZohFQjA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.bundle.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/selectize.js/0.12.6/js/standalone/selectize.js"></script>
 <script src="//unpkg.com/force-graph"></script>
@@ -1247,9 +1248,9 @@
           site.extracted.forEach((extracted, i) => {
             let temp_extracted = '';
             Object.keys(extracted).forEach((key) => {
-              temp_extracted += `${key} : ${extracted[key]} `;
+              temp_extracted += `${DOMPurify.sanitize(key, { USE_PROFILES: { html: false } })} : ${DOMPurify.sanitize(extracted[key], { USE_PROFILES: { html: false } })} `;
             });
-            temp_extracted_all += `<div>Extracted ${i}: ${temp_extracted}</div>`;
+            temp_extracted_all += `<div>Extracted ${DOMPurify.sanitize(i, { USE_PROFILES: { html: false } })}: ${temp_extracted}</div>`;
           });
         }
       } catch (err) {
@@ -1261,9 +1262,9 @@
           site.metadata.forEach((extracted, i) => {
             let temp_metadata = '';
             Object.keys(extracted).forEach((key) => {
-              temp_metadata += `${key} : ${extracted[key]} `;
+              temp_metadata += `${DOMPurify.sanitize(key, { USE_PROFILES: { html: false } })} : ${DOMPurify.sanitize(extracted[key])} `;
             });
-            temp_metadata_all += `<div>Metadata ${i}: ${temp_metadata}</div>`;
+            temp_metadata_all += `<div>Metadata ${DOMPurify.sanitize(i, { USE_PROFILES: { html: false } })}: ${temp_metadata}</div>`;
           });
         }
       } catch (err) {
@@ -1279,12 +1280,12 @@
 
       Object.keys(items).forEach((key) => {
         if (items[key].length > 0) {
-          temp_th += `<th>${key}</th>`;
+          temp_th += `<th>${DOMPurify.sanitize(key, { USE_PROFILES: { html: false } })}</th>`;
           let temp_ul = '';
           items[key].forEach((item) => {
-            temp_ul += `<li>${item}</li>`;
+            temp_ul += `<li>${DOMPurify.sanitize(item, { USE_PROFILES: { html: false } })}</li>`;
           });
-          temp_td += `<td id="selectable"><ul id="${key}-prefix-search-box">${temp_ul}</ul></td>`;
+          temp_td += `<td id="selectable"><ul id="${DOMPurify.sanitize(key, { USE_PROFILES: { html: false } })}-prefix-search-box">${temp_ul}</ul></td>`;
         }
       });
 
@@ -1323,7 +1324,7 @@
             if (data.common.length > 0) {
               temp_tr = '';
               Object.keys(data.common).forEach((item) => {
-                temp_tr += `<tr><td>${data.common[item].word}</td><td>${data.common[item].languages}</td></tr>`;
+                temp_tr += `<tr><td>${DOMPurify.sanitize(data.common[item].word, { USE_PROFILES: { html: false } })}</td><td>${DOMPurify.sanitize(data.common[item].languages, { USE_PROFILES: { html: false } })}</td></tr>`;
               });
 
               $('#most-common-words-table').last().append(`<table><tr><th>word</th><th>languages</th></tr>${temp_tr}</table>`);
@@ -1334,7 +1335,7 @@
               if (data.info.items.length > 0) {
                 temp_tr = '';
                 Object.keys(data.info.items).forEach((item) => {
-                  temp_tr += `<tr><td>${data.info.items[item].title}</td><td>${data.info.items[item].snippet}</td></tr>`;
+                  temp_tr += `<tr><td>${DOMPurify.sanitize(data.info.items[item].title, { USE_PROFILES: { html: false } })}</td><td>${DOMPurify.sanitize(data.info.items[item].snippet, { USE_PROFILES: { html: false } })}</td></tr>`;
                 });
                 $('#lookups-table').last().append(`<table><tr><th>title</th><th>snippet</th></tr>${temp_tr}</table>`);
                 $('#lookups-table').show();
@@ -1344,10 +1345,10 @@
             }
             if (data.words_info.length > 0) {
               data.words_info.forEach((item) => {
-                temp_tr = `<tr><td>${item.word}</td><td>definition</td><td>${item.text}</td></tr>`;
+                temp_tr = `<tr><td>${DOMPurify.sanitize(item.word, { USE_PROFILES: { html: false } })}</td><td>definition</td><td>${DOMPurify.sanitize(item.text, { USE_PROFILES: { html: false } })}</td></tr>`;
                 if (item.results.length > 0) {
                   item.results.forEach((result) => {
-                    temp_tr += `<tr><td>${item.word}</td><td>${result.type}</td><td>${result.text}</td></tr>`;
+                    temp_tr += `<tr><td>${DOMPurify.sanitize(item.word, { USE_PROFILES: { html: false } })}</td><td>${DOMPurify.sanitize(result.type, { USE_PROFILES: { html: false } })}</td><td>${DOMPurify.sanitize(result.text, { USE_PROFILES: { html: false } })}</td></tr>`;
                   });
                 }
                 $('#words-info-tables').last().append(`<table><tr><th>word</th><th>type</th><th>text</th></tr>${temp_tr}</table>`);
@@ -1364,12 +1365,12 @@
                   if (site.found > 0 || site.image !== '') {
                     let temp_image = '';
                     if (site.image !== '') {
-                      temp_image = `<img src=${site.image}>`;
+                      temp_image = `<img src=${DOMPurify.sanitize(site.image, { USE_PROFILES: { html: false } })}>`;
                     }
                     const temp_extract_adv = add_extract(site);
-                    temp_tr += `<div class="user-info-container"><div class="user-info-container-left"><div>Link: <a href="${site.link}">${site.link}</a></div><div>Username: ${site.username}</div><div>Rate: ${site.rate}</div><div>Status: ${site.status
-                }</div><div>Title: ${site.title
-                }</div><div>Language: ${site.language}</div><div>Country: ${site.country}</div><div>Rank: ${site.rank}</div><div>Description: ${site.type}</div><div>Text: ${site.text}</div>${temp_extract_adv
+                    temp_tr += `<div class="user-info-container"><div class="user-info-container-left"><div>Link: <a href="${DOMPurify.sanitize(site.link, { USE_PROFILES: { html: false } })}">${DOMPurify.sanitize(site.link, { USE_PROFILES: { html: false } })}</a></div><div>Username: ${DOMPurify.sanitize(site.username, { USE_PROFILES: { html: false } })}</div><div>Rate: ${DOMPurify.sanitize(site.rate, { USE_PROFILES: { html: false } })}</div><div>Status: ${DOMPurify.sanitize(site.status, { USE_PROFILES: { html: false } })
+                }</div><div>Title: ${DOMPurify.sanitize(site.title)
+                }</div><div>Language: ${DOMPurify.sanitize(site.language, { USE_PROFILES: { html: false } })}</div><div>Country: ${DOMPurify.sanitize(site.country, { USE_PROFILES: { html: false } })}</div><div>Rank: ${DOMPurify.sanitize(site.rank, { USE_PROFILES: { html: false } })}</div><div>Description: ${DOMPurify.sanitize(site.type, { USE_PROFILES: { html: false } })}</div><div>Text: ${DOMPurify.sanitize(site.text, { USE_PROFILES: { html: false } })}</div>${temp_extract_adv
                 }</div><div class="user-info-container-right">${temp_image
                 }</div></div>`;
                   }
@@ -1382,9 +1383,9 @@
                   if (site.found > 0 || site.image !== '') {
                     let temp_image = '';
                     if (site.image !== '') {
-                      temp_image = `<img src=${site.image}>`;
+                      temp_image = `<img src=${DOMPurify.sanitize(site.image, { USE_PROFILES: { html: false } })}>`;
                     }
-                    temp_tr += `<div class="profile-card"><div class="profile-card-text">Link: <a href="${site.link}">${site.link}</a></div>${temp_image} </div>`;
+                    temp_tr += `<div class="profile-card"><div class="profile-card-text">Link: <a href="${DOMPurify.sanitize(site.link, { USE_PROFILES: { html: false } })}">${DOMPurify.sanitize(site.link, { USE_PROFILES: { html: false } })}</a></div>${temp_image} </div>`;
                   }
                 });
 
@@ -1400,31 +1401,31 @@
                 if (site.method === 'all') {
                   if (site.good === 'true') {
                     const temp_extract_normal_all = add_extract(site);
-                    temp_tr += `<div class="user-info-container"><div class="user-info-container-left"><div>Link: <a href="${site.link}">${site.link}</a></div><div>Username: ${site.username}</div><div>Rate: ${site.rate}</div><div>Status: ${site.status
-                }</div><div>Title: ${site.title
-                }</div><div>Language: ${site.language}</div><div>Country: ${site.country}</div><div>Rank: ${site.rank}</div><div>Description: ${site.type}</div><div>Text: ${site.text}</div>${temp_extract_normal_all
+                    temp_tr += `<div class="user-info-container"><div class="user-info-container-left"><div>Link: <a href="${DOMPurify.sanitize(site.link, { USE_PROFILES: { html: false } })}">${DOMPurify.sanitize(site.link, { USE_PROFILES: { html: false } })}</a></div><div>Username: ${DOMPurify.sanitize(site.username, { USE_PROFILES: { html: false } })}</div><div>Rate: ${DOMPurify.sanitize(site.rate, { USE_PROFILES: { html: false } })}</div><div>Status: ${DOMPurify.sanitize(site.status, { USE_PROFILES: { html: false } })
+                    }</div><div>Title: ${DOMPurify.sanitize(site.title, { USE_PROFILES: { html: false } })
+                    }</div><div>Language: ${DOMPurify.sanitize(site.language, { USE_PROFILES: { html: false } })}</div><div>Country: ${DOMPurify.sanitize(site.country, { USE_PROFILES: { html: false } })}</div><div>Rank: ${DOMPurify.sanitize(site.rank, { USE_PROFILES: { html: false } })}</div><div>Description: ${DOMPurify.sanitize(site.type, { USE_PROFILES: { html: false } })}</div><div>Text: ${DOMPurify.sanitize(site.text, { USE_PROFILES: { html: false } })}</div>${temp_extract_normal_all
                 }</div><div class="user-info-container-right"></div></div>`;
                   } else {
-                    temp_tr += `<div class="user-info-container user-info-container-color-unknown"><div class="user-info-container-left"><div>Link: <a href="${site.link}">${site.link}</a></div><div>Username: ${site.username}</div><div>Title: ${site.title
-                }</div><div>Language: ${site.language}</div><div>Country: ${site.country}</div><div>Rank: ${site.rank}</div><div>Description: ${site.type}</div><div>Text: ${site.text
+                    temp_tr += `<div class="user-info-container user-info-container-color-unknown"><div class="user-info-container-left"><div>Link: <a href="${DOMPurify.sanitize(site.link, { USE_PROFILES: { html: false } })}">${DOMPurify.sanitize(site.link, { USE_PROFILES: { html: false } })}</a></div><div>Username: ${DOMPurify.sanitize(site.username, { USE_PROFILES: { html: false } })}</div><div>Title: ${DOMPurify.sanitize(site.title, { USE_PROFILES: { html: false } })
+                    }</div><div>Language: ${DOMPurify.sanitize(site.language, { USE_PROFILES: { html: false } })}</div><div>Country: ${DOMPurify.sanitize(site.country, { USE_PROFILES: { html: false } })}</div><div>Rank: ${DOMPurify.sanitize(site.rank, { USE_PROFILES: { html: false } })}</div><div>Description: ${DOMPurify.sanitize(site.type, { USE_PROFILES: { html: false } })}</div><div>Text: ${DOMPurify.sanitize(site.text, { USE_PROFILES: { html: false } })
                 }</div></div><div class="user-info-container-right"></div></div>`;
                   }
                 } else if (site.method === 'find') {
                   if (site.good === 'true') {
                     const temp_extract_normal_find = add_extract(site);
-                    temp_tr += `<div class="user-info-container"><div class="user-info-container-left"><div>Link: <a href="${site.link}">${site.link}</a></div><div>Username: ${site.username}</div><div>Rate: ${site.rate}</div><div>Status: ${site.status
-                }</div><div>Title: ${site.title
-                }</div><div>Language: ${site.language}</div><div>Country: ${site.country}</div><div>Rank: ${site.rank}</div><div>Description: ${site.type}</div><div>Text: ${site.text}</div>${temp_extract_normal_find
+                    temp_tr += `<div class="user-info-container"><div class="user-info-container-left"><div>Link: <a href="${DOMPurify.sanitize(site.link, { USE_PROFILES: { html: false } })}">${DOMPurify.sanitize(site.link, { USE_PROFILES: { html: false } })}</a></div><div>Username: ${DOMPurify.sanitize(site.username, { USE_PROFILES: { html: false } })}</div><div>Rate: ${DOMPurify.sanitize(site.rate, { USE_PROFILES: { html: false } })}</div><div>Status: ${DOMPurify.sanitize(site.status, { USE_PROFILES: { html: false } })
+                    }</div><div>Title: ${DOMPurify.sanitize(site.title, { USE_PROFILES: { html: false } })
+                    }</div><div>Language: ${DOMPurify.sanitize(site.language, { USE_PROFILES: { html: false } })}</div><div>Country: ${DOMPurify.sanitize(site.country, { USE_PROFILES: { html: false } })}</div><div>Rank: ${DOMPurify.sanitize(site.rank, { USE_PROFILES: { html: false } })}</div><div>Description: ${DOMPurify.sanitize(site.type, { USE_PROFILES: { html: false } })}</div><div>Text: ${DOMPurify.sanitize(site.text, { USE_PROFILES: { html: false } })}</div>${temp_extract_normal_find
                 }</div><div class="user-info-container-right"></div></div>`;
                   }
                 } else if (site.method === 'get') {
-                  temp_tr += `<div class="user-info-container user-info-container-color-unknown"><div class="user-info-container-left"><div>Link: <a href="${site.link}">${site.link}</a></div><div>Username: ${site.username}</div><div>Rate: ${site.rate
-              }</div><div>Status: ${site.status}</div><div>Title: ${site.title
-              }</div><div>Language: ${site.language}</div><div>Country: ${site.country}</div><div>Rank: ${site.rank}</div><div>Description: ${site.type}</div><div>Text: ${site.text
+                  temp_tr += `<div class="user-info-container user-info-container-color-unknown"><div class="user-info-container-left"><div>Link: <a href="${DOMPurify.sanitize(site.link, { USE_PROFILES: { html: false } })}">${DOMPurify.sanitize(site.link, { USE_PROFILES: { html: false } })}</a></div><div>Username: ${DOMPurify.sanitize(site.username, { USE_PROFILES: { html: false } })}</div><div>Rate: ${DOMPurify.sanitize(site.rate, { USE_PROFILES: { html: false } })
+                  }</div><div>Status: ${DOMPurify.sanitize(site.status, { USE_PROFILES: { html: false } })}</div><div>Title: ${DOMPurify.sanitize(site.title, { USE_PROFILES: { html: false } })
+                  }</div><div>Language: ${DOMPurify.sanitize(site.language, { USE_PROFILES: { html: false } })}</div><div>Country: ${DOMPurify.sanitize(site.country, { USE_PROFILES: { html: false } })}</div><div>Rank: ${DOMPurify.sanitize(site.rank, { USE_PROFILES: { html: false } })}</div><div>Description: ${DOMPurify.sanitize(site.type, { USE_PROFILES: { html: false } })}</div><div>Text: ${DOMPurify.sanitize(site.text, { USE_PROFILES: { html: false } })
               }</div></div><div class="user-info-container-right"></div></div>`;
                 } else if (site.method === 'failed') {
-                  temp_tr += `<div class="user-info-container user-info-container-color-failed"><div class="user-info-container-left"><div>Link: <a href="${site.link}">${site.link
-              }</a></div><div>Username: ${site.username}</div></div><div class="user-info-container-right"></div></div>`;
+                  temp_tr += `<div class="user-info-container user-info-container-color-failed"><div class="user-info-container-left"><div>Link: <a href="${DOMPurify.sanitize(site.link, { USE_PROFILES: { html: false } })}">${DOMPurify.sanitize(site.link, { USE_PROFILES: { html: false } })
+                  }</a></div><div>Username: ${DOMPurify.sanitize(site.username, { USE_PROFILES: { html: false } })}</div></div><div class="user-info-container-right"></div></div>`;
                 }
               });
 
@@ -1437,9 +1438,9 @@
               data.user_info_special.data.forEach((site) => {
                 if (site.found > 0) {
                   const temp_image = '';
-                  temp_tr += `<div class="user-info-container"><div class="user-info-container-left"><div>Link: <a href="${site.link}">${site.link}</a></div><div>Username: ${site.username}</div><div>Rate: ${site.rate}</div><div>Status: ${site.status
-              }</div><div>Title: ${site.title
-              }</div><div>Description: ${site.type}</div><div>Text: ${site.text}</div></div><div class="user-info-container-right">${temp_image}</div></div>`;
+                  temp_tr += `<div class="user-info-container"><div class="user-info-container-left"><div>Link: <a href="${DOMPurify.sanitize(site.link, { USE_PROFILES: { html: false } })}">${DOMPurify.sanitize(site.link, { USE_PROFILES: { html: false } })}</a></div><div>Username: ${DOMPurify.sanitize(site.username, { USE_PROFILES: { html: false } })}</div><div>Rate: ${DOMPurify.sanitize(site.rate, { USE_PROFILES: { html: false } })}</div><div>Status: ${DOMPurify.sanitize(site.status, { USE_PROFILES: { html: false } })
+                  }</div><div>Title: ${DOMPurify.sanitize(site.title, { USE_PROFILES: { html: false } })
+                  }</div><div>Description: ${DOMPurify.sanitize(site.type, { USE_PROFILES: { html: false } })}</div><div>Text: ${DOMPurify.sanitize(site.text, { USE_PROFILES: { html: false } })}</div></div><div class="user-info-container-right">${temp_image}</div></div>`;
                 }
               });
 
@@ -1449,8 +1450,8 @@
             if (data.names_origins.length > 0) {
               temp_tr = '';
               Object.keys(data.names_origins).forEach((item) => {
-                temp_tr += `<tr><td>${data.names_origins[item].origin}</td><td>${data.names_origins[item].name}</td><td>${data.names_origins[item].matched}</td><td>${data.names_origins[item].similar}</td><td>${data
-              .names_origins[item].gender}</td></tr>`;
+                temp_tr += `<tr><td>${DOMPurify.sanitize(data.names_origins[item].origin, { USE_PROFILES: { html: false } })}</td><td>${DOMPurify.sanitize(data.names_origins[item].name, { USE_PROFILES: { html: false } })}</td><td>${DOMPurify.sanitize(data.names_origins[item].matched, { USE_PROFILES: { html: false } })}</td><td>${DOMPurify.sanitize(data.names_origins[item].similar, { USE_PROFILES: { html: false } })}</td><td>${DOMPurify.sanitize(data
+                  .names_origins[item].gender, { USE_PROFILES: { html: false } })}</td></tr>`;
               });
               $('#names-origins-table').last().append(`<table><tr><th>origin</th><th>name</th><th>matched</th><th>similar</th><th>gender</th></tr>${temp_tr}</table>`);
               $('#names-origins-section').show();
@@ -1458,7 +1459,7 @@
             if (data.custom_search.length > 0) {
               temp_tr = '';
               Object.keys(data.custom_search).forEach((item) => {
-                temp_tr += `<tr><td>${data.custom_search[item].site}</td><td><a href="${data.custom_search[item].link}">${data.custom_search[item].link}</a></td><td>${data.custom_search[item].snippet}</td></tr>`;
+                temp_tr += `<tr><td>${DOMPurify.sanitize(data.custom_search[item].site, { USE_PROFILES: { html: false } })}</td><td><a href="${DOMPurify.sanitize(data.custom_search[item].link, { USE_PROFILES: { html: false } })}">${DOMPurify.sanitize(data.custom_search[item].link, { USE_PROFILES: { html: false } })}</a></td><td>${DOMPurify.sanitize(data.custom_search[item].snippet, { USE_PROFILES: { html: false } })}</td></tr>`;
               });
               $('#custom-search-table').last().append(`<table><tr><th>site</th><th>link</th><th>snippet</th></tr>${temp_tr}</table>`);
               $('#custom-search-section').show();
@@ -1478,10 +1479,10 @@
                   Object.keys(data.stats[type_key]).forEach((status_key) => {
                     temp_tr = '';
                     data.stats[type_key][status_key].forEach((item) => {
-                      temp_tr += `<tr><td>${item[0]}</td><td>%${item[1]}</td></tr>`;
+                      temp_tr += `<tr><td>${DOMPurify.sanitize(item[0], { USE_PROFILES: { html: false } })}</td><td>%${DOMPurify.sanitize(item[1], { USE_PROFILES: { html: false } })}</td></tr>`;
                     });
                     if (temp_tr.length > 0) {
-                      $('#stats-tables').last().append(`<table><tr><th>[${status_key} profiles] ${type_key}</th><th>Percentage</th></tr>${temp_tr}</table>`);
+                      $('#stats-tables').last().append(`<table><tr><th>[${DOMPurify.sanitize(status_key, { USE_PROFILES: { html: false } })} profiles] ${DOMPurify.sanitize(type_key, { USE_PROFILES: { html: false } })}</th><th>Percentage</th></tr>${temp_tr}</table>`);
                     }
                   });
                   $('#stats-section').show();
@@ -1490,7 +1491,7 @@
               if(typeof data.stats[type_key] === "object" && Array.isArray(data.stats[type_key])){
                 temp_tr = '';
                 data.stats[type_key].forEach((item) => {
-                  temp_tr += `<tr><td>${item[0]}</td><td>${item[1]}</td></tr>`;
+                  temp_tr += `<tr><td>${DOMPurify.sanitize(item[0], { USE_PROFILES: { html: false } })}</td><td>${DOMPurify.sanitize(item[1], { USE_PROFILES: { html: false } })}</td></tr>`;
                 });
 
                 if (temp_tr.length > 0) {
@@ -1504,7 +1505,7 @@
             if(data.ages.length > 0){
               temp_tr = '';
               data.ages.forEach((item) => {
-                temp_tr += `<tr><td>${item.found}</td><td>${item.year}</td><td>${item.age}</td></tr>`;
+                temp_tr += `<tr><td>${DOMPurify.sanitize(item.found, { USE_PROFILES: { html: false } })}</td><td>${DOMPurify.sanitize(item.year, { USE_PROFILES: { html: false } })}</td><td>${DOMPurify.sanitize(item.age, { USE_PROFILES: { html: false } })}</td></tr>`;
               });
 
               if (temp_tr.length > 0) {
@@ -1515,7 +1516,7 @@
             }
 
             if (data.logs.length > 0) {
-              $('#logs-pre').html(`<pre>${data.logs}</pre>`);
+              $('#logs-pre').html(`<pre>${DOMPurify.sanitize(data.logs, { USE_PROFILES: { html: false } })}</pre>`);
               $('#logs-section').show();
             }
 
@@ -1556,7 +1557,7 @@
                 if (site.selected === 'true') {
                   temp_selected = 'checked';
                 }
-                temp_tr += `<li><input type="checkbox" name=url_${site.index} ${temp_selected}><label for=url_${site.index}>${site.url}</label></li>`;
+                temp_tr += `<li><input type="checkbox" name=url_${DOMPurify.sanitize(site.index, { USE_PROFILES: { html: false } })} ${temp_selected}><label for=url_${DOMPurify.sanitize(site.index, { USE_PROFILES: { html: false } })}>${DOMPurify.sanitize(site.url, { USE_PROFILES: { html: false } })}</label></li>`;
               });
 
               $('#detection-options-list').html(temp_tr);
@@ -1610,7 +1611,7 @@
           if (typeof matched !== 'undefined' && matched !== null) {
             $('#detection-options-list input:checkbox').prop('checked', false);
             for (let i = 0; i < matched[1]; i++) {
-              $(`#detection-options-list input:checkbox[name="url_${websites_entries_filtered[i].index}"]`).prop('checked', true);
+                                       $(`#detection-options-list input:checkbox[name="url_${DOMPurify.sanitize(websites_entries_filtered[i].index, { USE_PROFILES: { html: false } })}"]`).prop('checked', true);
             }
           }
         }
