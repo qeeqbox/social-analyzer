@@ -3,7 +3,7 @@ import extraction from './extraction.js'
 import async from 'async'
 import sanitizeHtml from 'sanitize-html'
 import {convert} from 'html-to-text'
-import cheerio from 'cheerio'
+import * as cheerio from 'cheerio'
 import engine from './engine.js'
 
 async function find_username_normal (req) {
