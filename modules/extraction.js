@@ -1,5 +1,5 @@
 import helper from './helper.js'
-import * as cheerio from 'cheerio'
+import cheerio from 'cheerio'
 
 
 const strings_meta = new RegExp('regionsAllowed|width|height|color|rgba\\(|charset|viewport|refresh|equiv', 'i')
