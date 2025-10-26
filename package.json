@@ -12,11 +12,12 @@
     "cheerio": "^1.0.0-rc.11",
     "cli-table": "0.3.11",
     "colors": "1.4.0",
+    "ejs": "^3.1.10",
     "express": "^4.18.1",
     "express-async-errors": "3.1.1",
     "follow-redirects": "^1.15.1",
     "franc": "^6.0.0",
-    "geckodriver": "^3.0.1",
+    "geckodriver": "^4.0.0",
     "generatorics": "1.1.0",
     "html-to-text": "8.2.0",
     "https-proxy-agent": "5.0.1",
@@ -29,7 +30,7 @@
     "pretty-error": "4.0.0",
     "sanitize-html": ">=2.7.0",
     "selenium-webdriver": "4.3.0",
-    "semver": "7.3.7",
+    "semver": "7.5.2",
     "slash": "4.0.0",
     "string-similarity": "4.0.4",
     "tesseract.js": "2.1.5",
@@ -50,5 +51,12 @@
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-promise": "^6.0.0"
   },
-  "type": "module"
+  "type": "module",
+  "overrides": {
+    "ejs": "^3.1.10",
+    "ixora": {
+      "ejs": "^3.1.10"
+    },
+    "tar": "^6.2.1"
+  }
 }
