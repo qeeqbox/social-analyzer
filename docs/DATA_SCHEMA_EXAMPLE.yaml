@@ -1,0 +1,35 @@
+case:
+  id: "case-0001"                # UUID หรือรหัสภายใน
+  title: "สรุปคดีสั้นๆ"
+  status: "open|closed|archived"
+  created_at: "2025-10-01T12:00:00Z"
+  incident_date: "2025-09-30"
+  location:
+    zone: "Zone-12"              # ใช้โซน/เขตแยกแทนพิกัดจุด
+    city: "Bangkok"
+  summary: "สรุปเหตุการณ์"
+  tags: ["robbery","vehicle"]
+  risk_score: 0.0
+
+evidence:
+  - id: "evidence-0001"
+    case_id: "case-0001"
+    type: "cctv|document|photo|audio"
+    description: "คำอธิบายสั้น"
+    stored_blob_ref: "enc_blob_123"
+    metadata:
+      camera_id: "cam-201"
+      timestamp: "2025-09-30T18:23:00Z"
+      bbox: {x: null, y: null, w: null, h: null}
+      image_quality_flags: ["blur","low_light"]
+      object_tags: ["vehicle","backpack"]
+      vehicle_attributes:
+        color: "dark_blue"
+        type: "sedan"
+        plate_read: null    # หากอนุญาตใช้ LPR ให้เก็บที่นี่ พร้อม audit
+      hash: "sha256:..."
+relations:
+  - from: "case-0001"
+    to: "case-0002"
+    type: "linked_by_evidence|same_vehicle|same_zone"
+    confidence: 0.75
