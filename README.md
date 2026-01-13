@@ -9,21 +9,25 @@ The analysis and public extracted information from this OSINT tool could help in
 `This project is currently used by some law enforcement agencies in countries where resources are limited - The detection database is different than the one shared here..`
 
 ## So·cial Me·di·a
+
 Websites and applications that enable users to create and share content or to participate in social networking - Oxford Dictionary
 
 ## Structure
+
 <img src="https://raw.githubusercontent.com/qeeqbox/social-analyzer/main/readme/structure.png">
 
-
 ## APP (Preferred!)
+
 Standard localhost WEB APP url: http://0.0.0.0:9005/app.html
 
 <img src="https://raw.githubusercontent.com/qeeqbox/social-analyzer/main/readme/intro_fast.gif" style="max-width:768px"/>
 
-## CLI 
+## CLI
+
 <img src="https://raw.githubusercontent.com/qeeqbox/social-analyzer/main/readme/cli.gif" style="max-width:768px"/>
 
 ## Features
+
 - String & name analysis (Permutations and Combinations)
 - Find a profile using multiple techniques (HTTPS library & Webdriver)
 - Multi profile search (Used for correlation - any combination separated with "," )
@@ -54,12 +58,15 @@ Standard localhost WEB APP url: http://0.0.0.0:9005/app.html
 - And, more!!
 
 ## Special Detections
+
 - Facebook (Phone number, name, or profile name)
 - Gmail (example@gmail.com)
 - Google (example@example.com)
 
 ## Install & Run
+
 ### Linux (As Node WebApp)
+
 ```bash
 sudo apt-get update
 #Depedning on your Linux distro, you may or may not need these 2 lines
@@ -74,6 +81,7 @@ npm start
 ```
 
 ### Linux (As Node CLI)
+
 ```bash
 sudo apt-get update
 #Depedning on your Linux distro, you may or may not need these 2 lines
@@ -93,6 +101,7 @@ nodejs app.js --username "johndoe" --type "adult"
 ```
 
 ### Linux (As python package)
+
 ```bash
 sudo apt-get update
 sudo apt-get install python3 python3-pip
@@ -109,6 +118,7 @@ python3 -m social-analyzer --username "johndoe" --websites "car" --logs --screen
 ```
 
 ### Linux (As python script)
+
 ```bash
 sudo apt-get update
 sudo apt-get install git python3 python3-pip
@@ -127,6 +137,7 @@ python3 app.py --username "johndoe" --websites "car" --logs --screenshots
 ```
 
 ### Importing as object (python)
+
 ```python
 
 #E.g. #1
@@ -143,10 +154,16 @@ print(results)
 ```
 
 ### Linux, Windows, MacOS, Raspberry pi..
+
 - check this [wiki](https://github.com/qeeqbox/social-analyzer/wiki/install) for all possible installation methods
 - check this [wiki](https://github.com/qeeqbox/social-analyzer/wiki/integration) for integrating social-analyzer with your OSINT tools, feeds, etc...
 
+```markdown
+For detailed setup instructions, see [SETUP.md](SETUP.md)
+```
+
 ## social-analyzer --h
+
 ```
 Required Arguments:
   --username   E.g. johndoe, john_doe or johndoe9999
@@ -179,17 +196,21 @@ Setting:
 ```
 
 ## Open Shell
+
 [![Open in Cloud Shell](https://img.shields.io/static/v1?label=%3E_&message=Open%20in%20Cloud%20Shell&color=3267d6&style=flat-square)](https://ssh.cloud.google.com/cloudshell/editor?cloudshell_git_repo=https://github.com/qeeqbox/social-analyzer&tutorial=README.md) [![Open in repl.it Shell](https://img.shields.io/static/v1?label=%3E_&message=Open%20in%20repl.it%20Shell&color=606c74&style=flat-square)](https://repl.it/github/qeeqbox/social-analyzer)
 
 ## Resources
+
 - DuckDuckGo API, Google API, NodeJS, bootstrap, selectize, jQuery, Wikipedia, font-awesome, selenium-webdriver & tesseract.js
 - Let me know if I missed a reference or resource!
 
 ## Disclaimer\Notes
+
 - Download this project from GitHub and treat it as a security project
 - If you want your website to be excluded from this project list, please reach out to me
 - This tool is meant to be used locally, not as a service (It does not have any Access Control)
 - For issues related to modules that end with -private or under the private group ![](https://raw.githubusercontent.com/qeeqbox/social-analyzer/main/readme/modules.png), reach out directly to me (do not open an issue on GitHub)
 
 ## Other Projects
+
 [![](https://github.com/qeeqbox/.github/blob/main/data/analyzer.png)](https://github.com/qeeqbox/analyzer) [![](https://github.com/qeeqbox/.github/blob/main/data/chameleon.png)](https://github.com/qeeqbox/chameleon) [![](https://github.com/qeeqbox/.github/blob/main/data/honeypots.png)](https://github.com/qeeqbox/honeypots) [![](https://github.com/qeeqbox/.github/blob/main/data/osint.png)](https://github.com/qeeqbox/osint) [![](https://github.com/qeeqbox/.github/blob/main/data/url-sandbox.png)](https://github.com/qeeqbox/url-sandbox) [![](https://github.com/qeeqbox/.github/blob/main/data/mitre-visualizer.png)](https://github.com/qeeqbox/mitre-visualizer) [![](https://github.com/qeeqbox/.github/blob/main/data/woodpecker.png)](https://github.com/qeeqbox/woodpecker) [![](https://github.com/qeeqbox/.github/blob/main/data/docker-images.png)](https://github.com/qeeqbox/docker-images) [![](https://github.com/qeeqbox/.github/blob/main/data/seahorse.png)](https://github.com/qeeqbox/seahorse) [![](https://github.com/qeeqbox/.github/blob/main/data/rhino.png)](https://github.com/qeeqbox/rhino) [![](https://github.com/qeeqbox/.github/blob/main/data/raven.png)](https://github.com/qeeqbox/raven) [![](https://github.com/qeeqbox/.github/blob/main/data/image-analyzer.png)](https://github.com/qeeqbox/image-analyzer)
