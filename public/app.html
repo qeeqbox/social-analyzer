@@ -1367,7 +1367,7 @@
                       temp_image = `<img src=${site.image}>`;
                     }
                     const temp_extract_adv = add_extract(site);
-                    temp_tr += `<div class="user-info-container"><div class="user-info-container-left"><div>Link: <a href="${site.link}">${site.link}</a></div><div>Username: ${site.username}</div><div>Rate: ${site.rate}</div><div>Status: ${site.status
+                    temp_tr += `<div class="user-info-container"><div class="user-info-container-left"><div>Link: <a href="${site.link}" target="_blank">${site.link}</a></div><div>Username: ${site.username}</div><div>Rate: ${site.rate}</div><div>Status: ${site.status
                 }</div><div>Title: ${site.title
                 }</div><div>Language: ${site.language}</div><div>Country: ${site.country}</div><div>Rank: ${site.rank}</div><div>Description: ${site.type}</div><div>Text: ${site.text}</div>${temp_extract_adv
                 }</div><div class="user-info-container-right">${temp_image
@@ -1384,7 +1384,7 @@
                     if (site.image !== '') {
                       temp_image = `<img src=${site.image}>`;
                     }
-                    temp_tr += `<div class="profile-card"><div class="profile-card-text">Link: <a href="${site.link}">${site.link}</a></div>${temp_image} </div>`;
+                    temp_tr += `<div class="profile-card"><div class="profile-card-text">Link: <a href="${site.link}" target="_blank">${site.link}</a></div>${temp_image} </div>`;
                   }
                 });
 
@@ -1400,30 +1400,30 @@
                 if (site.method === 'all') {
                   if (site.good === 'true') {
                     const temp_extract_normal_all = add_extract(site);
-                    temp_tr += `<div class="user-info-container"><div class="user-info-container-left"><div>Link: <a href="${site.link}">${site.link}</a></div><div>Username: ${site.username}</div><div>Rate: ${site.rate}</div><div>Status: ${site.status
+                    temp_tr += `<div class="user-info-container"><div class="user-info-container-left"><div>Link: <a href="${site.link}" target="_blank">${site.link}</a></div><div>Username: ${site.username}</div><div>Rate: ${site.rate}</div><div>Status: ${site.status
                 }</div><div>Title: ${site.title
                 }</div><div>Language: ${site.language}</div><div>Country: ${site.country}</div><div>Rank: ${site.rank}</div><div>Description: ${site.type}</div><div>Text: ${site.text}</div>${temp_extract_normal_all
                 }</div><div class="user-info-container-right"></div></div>`;
                   } else {
-                    temp_tr += `<div class="user-info-container user-info-container-color-unknown"><div class="user-info-container-left"><div>Link: <a href="${site.link}">${site.link}</a></div><div>Username: ${site.username}</div><div>Title: ${site.title
+                    temp_tr += `<div class="user-info-container user-info-container-color-unknown"><div class="user-info-container-left"><div>Link: <a href="${site.link}" target="_blank">${site.link}</a></div><div>Username: ${site.username}</div><div>Title: ${site.title
                 }</div><div>Language: ${site.language}</div><div>Country: ${site.country}</div><div>Rank: ${site.rank}</div><div>Description: ${site.type}</div><div>Text: ${site.text
                 }</div></div><div class="user-info-container-right"></div></div>`;
                   }
                 } else if (site.method === 'find') {
                   if (site.good === 'true') {
                     const temp_extract_normal_find = add_extract(site);
-                    temp_tr += `<div class="user-info-container"><div class="user-info-container-left"><div>Link: <a href="${site.link}">${site.link}</a></div><div>Username: ${site.username}</div><div>Rate: ${site.rate}</div><div>Status: ${site.status
+                    temp_tr += `<div class="user-info-container"><div class="user-info-container-left"><div>Link: <a href="${site.link}" target="_blank">${site.link}</a></div><div>Username: ${site.username}</div><div>Rate: ${site.rate}</div><div>Status: ${site.status
                 }</div><div>Title: ${site.title
                 }</div><div>Language: ${site.language}</div><div>Country: ${site.country}</div><div>Rank: ${site.rank}</div><div>Description: ${site.type}</div><div>Text: ${site.text}</div>${temp_extract_normal_find
                 }</div><div class="user-info-container-right"></div></div>`;
                   }
                 } else if (site.method === 'get') {
-                  temp_tr += `<div class="user-info-container user-info-container-color-unknown"><div class="user-info-container-left"><div>Link: <a href="${site.link}">${site.link}</a></div><div>Username: ${site.username}</div><div>Rate: ${site.rate
+                  temp_tr += `<div class="user-info-container user-info-container-color-unknown"><div class="user-info-container-left"><div>Link: <a href="${site.link}" target="_blank">${site.link}</a></div><div>Username: ${site.username}</div><div>Rate: ${site.rate
               }</div><div>Status: ${site.status}</div><div>Title: ${site.title
               }</div><div>Language: ${site.language}</div><div>Country: ${site.country}</div><div>Rank: ${site.rank}</div><div>Description: ${site.type}</div><div>Text: ${site.text
               }</div></div><div class="user-info-container-right"></div></div>`;
                 } else if (site.method === 'failed') {
-                  temp_tr += `<div class="user-info-container user-info-container-color-failed"><div class="user-info-container-left"><div>Link: <a href="${site.link}">${site.link
+                  temp_tr += `<div class="user-info-container user-info-container-color-failed"><div class="user-info-container-left"><div>Link: <a href="${site.link}" target="_blank">${site.link
               }</a></div><div>Username: ${site.username}</div></div><div class="user-info-container-right"></div></div>`;
                 }
               });
@@ -1437,7 +1437,7 @@
               data.user_info_special.data.forEach((site) => {
                 if (site.found > 0) {
                   const temp_image = '';
-                  temp_tr += `<div class="user-info-container"><div class="user-info-container-left"><div>Link: <a href="${site.link}">${site.link}</a></div><div>Username: ${site.username}</div><div>Rate: ${site.rate}</div><div>Status: ${site.status
+                  temp_tr += `<div class="user-info-container"><div class="user-info-container-left"><div>Link: <a href="${site.link}" target="_blank">${site.link}</a></div><div>Username: ${site.username}</div><div>Rate: ${site.rate}</div><div>Status: ${site.status
               }</div><div>Title: ${site.title
               }</div><div>Description: ${site.type}</div><div>Text: ${site.text}</div></div><div class="user-info-container-right">${temp_image}</div></div>`;
                 }
@@ -1458,7 +1458,7 @@
             if (data.custom_search.length > 0) {
               temp_tr = '';
               Object.keys(data.custom_search).forEach((item) => {
-                temp_tr += `<tr><td>${data.custom_search[item].site}</td><td><a href="${data.custom_search[item].link}">${data.custom_search[item].link}</a></td><td>${data.custom_search[item].snippet}</td></tr>`;
+                temp_tr += `<tr><td>${data.custom_search[item].site}</td><td><a href="${data.custom_search[item].link}" target="_blank">${data.custom_search[item].link}</a></td><td>${data.custom_search[item].snippet}</td></tr>`;
               });
               $('#custom-search-table').last().append(`<table><tr><th>site</th><th>link</th><th>snippet</th></tr>${temp_tr}</table>`);
               $('#custom-search-section').show();
