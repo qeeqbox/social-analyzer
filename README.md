@@ -1,68 +1,67 @@
 <p align="center"> <img src="https://raw.githubusercontent.com/qeeqbox/social-analyzer/main/readme/socialanalyzerlogo_.png"></p>
 
-Social Analyzer - API, CLI, and Web App for analyzing & finding a person's profile across +1000 social media \ websites. It includes different analysis and detection modules, and you can choose which modules to use during the investigation process.
+Social Analyzer — API, CLI และเว็บแอปสำหรับวิเคราะห์และค้นหาโปรไฟล์บุคคลบนโซเชียลมีเดียกว่า 1,000 แห่ง ซึ่งมีโมดูลการวิเคราะห์และการตรวจจับหลายแบบให้เลือกใช้งาน
 
-The detection modules utilize a rating mechanism based on different detection techniques, which produces a rate value that starts from 0 to 100 (No-Maybe-Yes). This module is intended to have fewer false positives.
+ระบบตรวจจับจะใช้กลไกการให้คะแนนที่อาศัยเทคนิคการตรวจจับหลายประเภท ผลลัพธ์เป็นค่าเรตตั้งแต่ 0 ถึง 100 (No-Maybe-Yes) โมดูลนี้ออกแบบมาเพื่อลดผลบวกลวงและเพิ่มความแม่นยำในการตรวจจับ
 
-The analysis and public extracted information from this OSINT tool could help investigate profiles related to suspicious or malicious activities such as cyberbullying, cyber grooming, cyberstalking, and spreading misinformation.
+ข้อมูลวิเคราะห์และข้อมูลสาธารณะที่ดึงจากเครื่องมือ OSINT นี้อาจช่วยการสืบสวนกรณีที่เกี่ยวข้องกับกิจกรรมที่น่าสงสัยหรือเป็นอันตราย เช่น การล่วงละเมิดทางไซเบอร์ การล่อลวง หรือการคุกคามทางอินเทอร์เน็ต
 
-`This project is currently used by some law enforcement agencies in countries where resources are limited - The detection database is different than the one shared here..`
+`โปรเจกต์นี้ถูกใช้งานโดยหน่วยงานบังคับใช้กฎหมายบางแห่งในประเทศที่ทรัพยากรจำกัด — ฐานข้อมูลการตรวจจับที่ใช้โดยหน่วยงานเหล่านั้นแตกต่างจากที่เผยแพร่ในที่สาธารณะนี้`
 
 ## So·cial Me·di·a
-Websites and applications that enable users to create and share content or to participate in social networking - Oxford Dictionary
+เว็บไซต์และแอปพลิเคชันที่ช่วยให้ผู้ใช้สร้างและแชร์เนื้อหาหรือเข้าร่วมเครือข่ายสังคม — นิยามจาก Oxford Dictionary
 
-## Structure
+## โครงสร้าง
 <img src="https://raw.githubusercontent.com/qeeqbox/social-analyzer/main/readme/structure.png">
 
-
-## APP (Preferred!)
-Standard localhost WEB APP url: http://0.0.0.0:9005/app.html
+## แอป (แนะนำ!)
+URL ของเว็บแอปบนเครื่อง: http://0.0.0.0:9005/app.html
 
 <img src="https://raw.githubusercontent.com/qeeqbox/social-analyzer/main/readme/intro_fast.gif" style="max-width:768px"/>
 
-## CLI 
+## CLI
 <img src="https://raw.githubusercontent.com/qeeqbox/social-analyzer/main/readme/cli.gif" style="max-width:768px"/>
 
-## Features
-- String & name analysis (Permutations and Combinations)
-- Find a profile using multiple techniques (HTTPS library & Webdriver)
-- Multi profile search (Used for correlation - any combination separated with "," )
-- Multilayers detections (OCR, normal, advanced & special)
-- Visualized profile information using Ixora (Metadata & Patterns)
-- Metadata & Patterns extraction (Added from Qeeqbox OSINT project)
-- Force-directed Graph for Metadata (Needs ExtractPatterns)
-- Search by top ranking or by country (Alexa Ranking)
-- Search by type (adult, music, etc.. - automated websites stats)
-- Profiles stats and static info (Category country)
-- Cross Metadata stats (Added from Qeeqbox OSINT project)
-- Auto-flirtation to unnecessary output (Enable javascript etc..)
-- Search engine lookup (Google API - optional)
-- Custom search queries (Google API & DuckDuckGo API - optional)
-- Profile screenshot, title, info, and website description
-- Find name origins, name similarity & common words by language
-- Find possible profile\person age (Limited analysis)
-- Custom user-agent, proxy, timeout & implicit wait
-- Python CLI & NodeJS CLI (limited to FindUserProfilesFast option)
-- Screenshots of detected profile (The latest version of Chrome must be installed)
-- Grid option for faster checking (limited to docker-compose)
-- Dump logs to folder or terminal (prettified)
-- Adjust finding\getting profile workers (default 15)
-- Re-checking option for failed profiles
-- Filter profiles by good, maybe, and bad
-- Save the analysis as a JSON file
-- Simplified web interface and CLI
-- And, more!!
+## ฟีเจอร์
+- วิเคราะห์สตริงและชื่อ (การจัดหมู่ Permutations และ Combinations)
+- ค้นหาโปรไฟล์ด้วยเทคนิคหลากหลาย (ไลบรารี HTTPS และ Webdriver)
+- ค้นหาหลายโปรไฟล์พร้อมกัน (ใช้สำหรับการคอร์เรเลชัน — แยกด้วย ",")
+- การตรวจจับแบบหลายชั้น (OCR, ปกติ, ขั้นสูง และพิเศษ)
+- แสดงข้อมูลโปรไฟล์เชิงภาพโดยใช้ Ixora (เมตาดาต้า & รูปแบบ)
+- การสกัดเมตาดาต้าและรูปแบบ (นำมาจาก Qeeqbox OSINT project)
+- กราฟแบบ force-directed สำหรับเมตาดาต้า (ต้องเปิดใช้ ExtractPatterns)
+- ค้นหาตามอันดับสูงสุดหรือแยกตามประเทศ (Alexa Ranking)
+- ค้นหาตามประเภท (เช่น ผู้ใหญ่, ดนตรี ฯลฯ — สถิติอัตโนมัติของเว็บไซต์)
+- สถิติและข้อมูลโปรไฟล์พื้นฐาน (หมวดหมู่ ประเทศ)
+- สถิติข้ามเมตาดาต้า (นำมาจาก Qeeqbox OSINT project)
+- ลดการแสดงผลที่ไม่จำเป็นอัตโนมัติ (เปิดใช้งาน JavaScript เป็นต้น)
+- ค้นหาจากเครื่องมือค้นหา (Google API — ทางเลือก)
+- คำค้นแบบกำหนดเอง (Google API & DuckDuckGo API — ทางเลือก)
+- เก็บภาพหน้าจอของโปรไฟล์ที่ตรวจพบ, title, ข้อมูล และคำอธิบายเว็บไซต์
+- หาต้นกำเนิดชื่อ, ความคล้ายของชื่อ & คำที่ใช้บ่อยตามภาษา
+- ประมาณอายุของบุคคล (การวิเคราะห์จำกัด)
+- กำหนด user-agent, proxy, timeout & implicit wait แบบกำหนดเอง
+- รองรับ Python CLI & NodeJS CLI (จำกัดที่ตัวเลือก FindUserProfilesFast)
+- ต้องติดตั้ง Chrome เวอร์ชันล่าสุดสำหรับการจับภาพหน้าจอ
+- ตัวเลือก grid สำหรับการตรวจสอบที่เร็วขึ้น (จำกัดกับ docker-compose)
+- สามารถบันทึก logs ลงโฟลเดอร์หรือแสดงในเทอร์มินัล (รูปแบบสวยงาม)
+- ปรับจำนวน worker สำหรับการค้นหา/ดึงโปรไฟล์ได้ (ค่าเริ่มต้น 15)
+- ตัวเลือกการตรวจสอบใหม่สำหรับโปรไฟล์ที่ล้มเหลว
+- กรองโปรไฟล์ตาม good, maybe และ bad
+- บันทึกผลการวิเคราะห์เป็นไฟล์ JSON
+- ส่วนติดต่อเว็บและ CLI ที่ใช้งานง่าย
+- และอื่นๆ อีกมากมาย!
 
-## Special Detections
-- Facebook (Phone number, name, or profile name)
+## การตรวจจับพิเศษ
+- Facebook (หมายเลขโทรศัพท์, ชื่อ, หรือชื่อโปรไฟล์)
 - Gmail (example@gmail.com)
 - Google (example@example.com)
 
-## Install & Run
-### Linux (As Node WebApp)
+## ติดตั้งและรัน
+### Linux (ในรูปแบบ Node WebApp)
 ```bash
 sudo apt-get update
-#Depedning on your Linux distro, you may or may not need these 2 lines
+# Depedning on your Linux distro, you may or may not need these 2 lines
 sudo DEBIAN_FRONTEND=noninteractive apt-get install -y software-properties-common
 sudo add-apt-repository ppa:mozillateam/ppa -y
 sudo apt-get install -y firefox-esr tesseract-ocr git nodejs npm
@@ -73,10 +72,10 @@ npm install
 npm start
 ```
 
-### Linux (As Node CLI)
+### Linux (ในรูปแบบ Node CLI)
 ```bash
 sudo apt-get update
-#Depedning on your Linux distro, you may or may not need these 2 lines
+# Depedning on your Linux distro, you may or may not need these 2 lines
 sudo DEBIAN_FRONTEND=noninteractive apt-get install -y software-properties-common
 sudo add-apt-repository ppa:mozillateam/ppa -y
 sudo apt-get install -y firefox-esr tesseract-ocr git nodejs npm
@@ -92,7 +91,7 @@ nodejs app.js --username "johndoe,janedoe" --metadata --top 100
 nodejs app.js --username "johndoe" --type "adult"
 ```
 
-### Linux (As python package)
+### Linux (ในรูปแบบเป็นแพ็กเกจ Python)
 ```bash
 sudo apt-get update
 sudo apt-get install python3 python3-pip
@@ -108,7 +107,7 @@ python3 -m social-analyzer --username "johndoe" --type "adult"
 python3 -m social-analyzer --username "johndoe" --websites "car" --logs --screenshots
 ```
 
-### Linux (As python script)
+### Linux (เป็นสคริปต์ Python)
 ```bash
 sudo apt-get update
 sudo apt-get install git python3 python3-pip
@@ -126,16 +125,15 @@ python3 app.py --username "johndoe" --type "adult"
 python3 app.py --username "johndoe" --websites "car" --logs --screenshots
 ```
 
-### Importing as object (python)
+### การนำเข้าเป็นออบเจ็กต์ (Python)
 ```python
-
-#E.g. #1
+# E.g. #1
 from importlib import import_module
 SocialAnalyzer = import_module("social-analyzer").SocialAnalyzer()
 results = SocialAnalyzer.run_as_object(username="johndoe",silent=True)
 print(results)
 
-#E.g. #2
+# E.g. #2
 from importlib import import_module
 SocialAnalyzer = import_module("social-analyzer").SocialAnalyzer()
 results = SocialAnalyzer.run_as_object(username="johndoe,janedoe",silent=True,output="json",filter="good",metadata=False,timeout=10, profiles="detected")
@@ -143,10 +141,10 @@ print(results)
 ```
 
 ### Linux, Windows, MacOS, Raspberry pi..
-- check this [wiki](https://github.com/qeeqbox/social-analyzer/wiki/install) for all possible installation methods
-- check this [wiki](https://github.com/qeeqbox/social-analyzer/wiki/integration) for integrating social-analyzer with your OSINT tools, feeds, etc...
+- ดูวิธีการติดตั้งเพิ่มเติมได้ที่ [wiki](https://github.com/qeeqbox/social-analyzer/wiki/install)
+- ดูการรวมรวม (integration) กับเครื่องมือ OSINT อื่นๆ ได้ที่ [wiki](https://github.com/qeeqbox/social-analyzer/wiki/integration)
 
-## social-analyzer --h
+## คำสั่งช่วย (social-analyzer --h)
 ```
 Required Arguments:
   --username   E.g. johndoe, john_doe or johndoe9999
@@ -178,18 +176,18 @@ Setting:
   --silent      Disable output to screen
 ```
 
-## Open Shell
-[![Open in Cloud Shell](https://img.shields.io/static/v1?label=%3E_&message=Open%20in%20Cloud%20Shell&color=3267d6&style=flat-square)](https://ssh.cloud.google.com/cloudshell/editor?cloudshell_git_repo=https://github.com/qeeqbox/social-analyzer&tutorial=README.md) [![Open in repl.it Shell](https://img.shields.io/static/v1?label=%3E_&message=Open%20in%20repl.it%20Shell&color=606c74&style=flat-square)](https://repl.it/github/qeeqbox/social-analyzer)
+## เปิด Shell
+[![Open in Cloud Shell](https://img.shields.io/static/v1?label=%3E_&message=Open%20in%20Cloud%20Shell&color=3267d6&style=flat-square)](https://ssh.cloud.google.com/cloudshell/editor?cloudshell_gi[...)
 
-## Resources
+## แหล่งข้อมูล
 - DuckDuckGo API, Google API, NodeJS, bootstrap, selectize, jQuery, Wikipedia, font-awesome, selenium-webdriver & tesseract.js
-- Let me know if I missed a reference or resource!
+- แจ้งผมได้ถ้าผมพลาดการอ้างอิงหรือแหล่งข้อมูลใดๆ!
 
-## Disclaimer\Notes
-- Download this project from GitHub and treat it as a security project
-- If you want your website to be excluded from this project list, please reach out to me
-- This tool is meant to be used locally, not as a service (It does not have any Access Control)
-- For issues related to modules that end with -private or under the private group ![](https://raw.githubusercontent.com/qeeqbox/social-analyzer/main/readme/modules.png), reach out directly to me (do not open an issue on GitHub)
+## ข้อจำกัด/ข้อสังเกต
+- ดาวน์โหลดโปรเจกต์นี้จาก GitHub และถือเป็นโครงการด้านความปลอดภัย
+- หากต้องการให้เว็บไซต์ของคุณถูกยกเว้นจากรายการโปรเจกต์นี้ กรุณาติดต่อเจ้าของโครงการ
+- เครื่องมือนี้ออกแบบให้ใช้งานแบบท้องถิ่น (ไม่ควรใช้เป็นบริการสาธารณะ เนื่องจากไม่มีระบบควบคุมการเข้าถึง)
+- สำหรับปัญหาที่เกี่ยวกับโมดูลที่ลงท้ายด้วย -private หรืออยู่ในกลุ่ม private ![](https://raw.githubusercontent.com/qeeqbox/social-analyzer/main/readme/modules.png), ติดต่อผู้ดูแลโดยตรง [...]
 
-## Other Projects
-[![](https://github.com/qeeqbox/.github/blob/main/data/analyzer.png)](https://github.com/qeeqbox/analyzer) [![](https://github.com/qeeqbox/.github/blob/main/data/chameleon.png)](https://github.com/qeeqbox/chameleon) [![](https://github.com/qeeqbox/.github/blob/main/data/honeypots.png)](https://github.com/qeeqbox/honeypots) [![](https://github.com/qeeqbox/.github/blob/main/data/osint.png)](https://github.com/qeeqbox/osint) [![](https://github.com/qeeqbox/.github/blob/main/data/url-sandbox.png)](https://github.com/qeeqbox/url-sandbox) [![](https://github.com/qeeqbox/.github/blob/main/data/mitre-visualizer.png)](https://github.com/qeeqbox/mitre-visualizer) [![](https://github.com/qeeqbox/.github/blob/main/data/woodpecker.png)](https://github.com/qeeqbox/woodpecker) [![](https://github.com/qeeqbox/.github/blob/main/data/docker-images.png)](https://github.com/qeeqbox/docker-images) [![](https://github.com/qeeqbox/.github/blob/main/data/seahorse.png)](https://github.com/qeeqbox/seahorse) [![](https://github.com/qeeqbox/.github/blob/main/data/rhino.png)](https://github.com/qeeqbox/rhino) [![](https://github.com/qeeqbox/.github/blob/main/data/raven.png)](https://github.com/qeeqbox/raven) [![](https://github.com/qeeqbox/.github/blob/main/data/image-analyzer.png)](https://github.com/qeeqbox/image-analyzer)
+## โปรเจกต์อื่นๆ
+[![](https://github.com/qeeqbox/.github/blob/main/data/analyzer.png)](https://github.com/qeeqbox/analyzer) [![](https://github.com/qeeqbox/.github/blob/main/data/chameleon.png)](https://github.co[...)
