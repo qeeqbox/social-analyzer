@@ -12,10 +12,11 @@
 //  -------------------------------------------------------------
 """
 
-from logging import getLogger, DEBUG, Formatter, Handler, addLevelName, NullHandler
+from logging import getLogger, DEBUG, Formatter, Handler, NullHandler
 from logging.handlers import RotatingFileHandler
 from sys import platform, version_info
 from sys import argv as sargv
+import sys
 from os import path, system, makedirs
 from time import time, sleep
 from argparse import ArgumentParser, SUPPRESS, Namespace
@@ -424,7 +425,11 @@ class SocialAnalyzer():
                 if temp_profile["language"] == "unavailable":
                     temp_profile["language"] = self.get_language_by_guessing(temp_profile["text"])
             with suppress(Exception):
-                temp_profile["title"] = BeautifulSoup(source, "html.parser", from_encoding=encoding).title.string
+                soup_title = BeautifulSoup(source, "html.parser", from_encoding=encoding).title
+                if soup_title and soup_title.string:
+                    temp_profile["title"] = soup_title.string
+                else:
+                    temp_profile["title"] = ""
                 temp_profile["title"] = resub(r"\s\s+", " ", temp_profile["title"])
 
             with suppress(Exception):
@@ -484,40 +489,40 @@ class SocialAnalyzer():
                     for meta in soup.find_all('meta'):
                         if meta not in temp_for_checking and not research(self.strings_meta, str(meta)):
                             temp_for_checking.append(meta)
-                            temp_mata_item = {}
+                            temp_meta_item = {}
                             add = True
                             if meta.has_attr("property"):
-                                temp_mata_item.update({"property": meta["property"]})
+                                temp_meta_item.update({"property": meta["property"]})
                             if meta.has_attr("content"):
                                 if meta["content"].replace("\n", "").replace("\t", "").replace("\r", "").strip() != "":
-                                    temp_mata_item.update({"content": meta["content"].replace("\n", "").replace("\t", "").replace("\r", "").strip()})
+                                    temp_meta_item.update({"content": meta["content"].replace("\n", "").replace("\t", "").replace("\r", "").strip()})
                             if meta.has_attr("itemprop"):
-                                temp_mata_item.update({"itemprop": meta["itemprop"]})
+                                temp_meta_item.update({"itemprop": meta["itemprop"]})
                             if meta.has_attr("name"):
-                                temp_mata_item.update({"name": meta["name"]})
+                                temp_meta_item.update({"name": meta["name"]})
 
                             with suppress(Exception):
-                                if "property" in temp_mata_item:
+                                if "property" in temp_meta_item:
                                     for i, item in enumerate(temp_meta_list.copy()):
                                         if "property" in item:
-                                            if temp_mata_item["property"] == item["property"]:
-                                                temp_meta_list[i]["content"] += ", " + temp_mata_item["content"]
+                                            if temp_meta_item["property"] == item["property"]:
+                                                temp_meta_list[i]["content"] += ", " + temp_meta_item["content"]
                                                 add = False
-                                elif "name" in temp_mata_item:
+                                elif "name" in temp_meta_item:
                                     for i, item in enumerate(temp_meta_list.copy()):
                                         if "name" in item:
-                                            if temp_mata_item["name"] == item["name"]:
-                                                temp_meta_list[i]["content"] += ", " + temp_mata_item["content"]
+                                            if temp_meta_item["name"] == item["name"]:
+                                                temp_meta_list[i]["content"] += ", " + temp_meta_item["content"]
                                                 add = False
-                                elif "itemprop" in temp_mata_item:
+                                elif "itemprop" in temp_meta_item:
                                     for i, item in enumerate(temp_meta_list.copy()):
                                         if "itemprop" in item:
-                                            if temp_mata_item["itemprop"] == item["itemprop"]:
-                                                temp_meta_list[i]["content"] += ", " + temp_mata_item["content"]
+                                            if temp_meta_item["itemprop"] == item["itemprop"]:
+                                                temp_meta_list[i]["content"] += ", " + temp_meta_item["content"]
                                                 add = False
 
-                            if len(temp_mata_item) > 0 and add:
-                                temp_meta_list.append(temp_mata_item)
+                            if len(temp_meta_item) > 0 and add:
+                                temp_meta_list.append(temp_meta_item)
 
                 if len(temp_meta_list) > 0:
                     temp_profile["metadata"] = temp_meta_list
@@ -551,7 +556,7 @@ class SocialAnalyzer():
         main find usernames logic using ThreadPoolExecutor
         '''
 
-        resutls = []
+        results = []
 
         for i in range(3):
             self.websites_entries[:] = [d for d in self.websites_entries if d.get('selected') == "true"]
@@ -572,7 +577,7 @@ class SocialAnalyzer():
                             good, site, data = future.result()
                             if good:
                                 self.websites_entries[:] = [d for d in self.websites_entries if d.get('url') != site]
-                                resutls.append(data)
+                                results.append(data)
                             else:
                                 if not self.silent:
                                     self.log.info("[Waiting to retry] " + self.get_website(site))
@@ -583,8 +588,8 @@ class SocialAnalyzer():
                 temp_profile = {"link": "",
                                 "method": "failed"}
                 temp_profile["link"] = site["url"].replace("{username}", req["body"]["string"])
-                resutls.append(temp_profile)
-        return resutls
+                results.append(temp_profile)
+        return results
 
     def check_user_cli(self, argv):
         '''
@@ -628,9 +633,9 @@ class SocialAnalyzer():
                 if "adult" in argv.type.lower():
                     for site in sites:
                         if "adult" in site["type"].lower():
-                            self.search_and_change(site, {"selected": "pendding"})
+                            self.search_and_change(site, {"selected": "pending"})
                 for site in self.websites_entries:
-                    if site["selected"] == "pendding":
+                    if site["selected"] == "pending":
                         site["selected"] = "true"
                     else:
                         site["selected"] = "false"
@@ -640,9 +645,9 @@ class SocialAnalyzer():
                 sites = ([d for d in sites if d.get('global_rank') != 0])
                 sites = sorted(sites, key=lambda x: x['global_rank'])
                 for site in sites[:int(argv.top)]:
-                    self.search_and_change(site, {"selected": "pendding"})
+                    self.search_and_change(site, {"selected": "pending"})
                 for site in self.websites_entries:
-                    if site["selected"] == "pendding":
+                    if site["selected"] == "pending":
                         site["selected"] = "true"
                     else:
                         site["selected"] = "false"
@@ -659,12 +664,12 @@ class SocialAnalyzer():
 
         if not self.silent:
             self.log.info("[Init] Selected websites: {}".format(true_websites))
-        resutls = self.find_username_normal(req)
+        results = self.find_username_normal(req)
 
         if argv.simplify:
             argv.filter = "good"
 
-        for item in resutls:
+        for item in results:
             if item is not None:
                 if item["method"] == "all":
                     if item["good"] == "true":
@@ -750,8 +755,8 @@ class SocialAnalyzer():
                         self.log.info("[Info] Getting screenshots of {} profiles".format(len([item['link'] for item in temp_detected["detected"]])))
                 with suppress(Exception):
                     g = Galeodes(browser="chrome", arguments=['--headless', self.headers['User-Agent']], options=None, implicit_wait=5, verbose=False)
-                    results = g.get_pages(urls=[item['link'] for item in temp_detected["detected"]], screenshots=True, number_of_workers=10, format='jpeg', base64=False)
-                    for item in results:
+                    results_g = g.get_pages(urls=[item['link'] for item in temp_detected["detected"]], screenshots=True, number_of_workers=10, format='jpeg', base64=False)
+                    for item in results_g:
                         if item['image'] is not None:
                             with suppress(Exception):
                                 file_name = resub(r'[^\w\d-]', '_', item['url']) + '.jpeg'
@@ -821,12 +826,18 @@ class SocialAnalyzer():
         else:
             if not self.silent:
                 self.log.info("[init] languages.json & sites.json did not load, exiting..")
-            exit()
+            sys.exit()
 
-    def run_as_object(self, cli=False, gui=False, logs_dir='', logs=False, extract=False, filter='good', headers={}, list=False, metadata=False, method='all', mode='fast', options='', output='pretty', profiles='detected', type='all', ret=False, silent=False, timeout=0, trim=False, username='', websites='all', countries='all', top='0', screenshots=False, simplify=False):
+    def run_as_object(self, cli=False, gui=False, logs_dir='', logs=False, extract=False, filter='good', headers=None, list=False, metadata=False, method='all', mode='fast', options='', output='pretty', profiles='detected', countries='all', type='all', top=0, screenshots=False, trim=False, simplify=False, timeout=0, silent=False, username='', websites='all'):
+        '''
+        Run analyzer as an object (programmatic use).
+        Parameters mirror CLI options where reasonable.
+        '''
         ret = {}
         if logs_dir != '':
             self.logs_dir = logs_dir
+        if headers is None:
+            headers = {}
         if headers != {}:
             self.headers = headers
 
@@ -854,7 +865,7 @@ class SocialAnalyzer():
 
         ret = {}
         ARGV = None
-        ARG_PARSER = _ArgumentParser(description="Qeeqbox/social-analyzer - API and Web App for analyzing & finding a person's profile across 900+ social media websites (Detections are updated regularly)", usage=SUPPRESS)
+        ARG_PARSER = _ArgumentParser(description="Qeeqbox/social-analyzer - API and Web App for analyzing & finding a person's profile across 900+ social media websites (Detections are updated regularly)")
         ARG_PARSER._action_groups.pop()
         ARG_PARSER_OPTIONAL = ARG_PARSER.add_argument_group("Arguments")
         ARG_PARSER_OPTIONAL.add_argument("--username", help="E.g. johndoe, john_doe or johndoe9999", metavar="", default="")
