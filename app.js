@@ -2,7 +2,7 @@
 //  author        Giga
 //  project       qeeqbox/social-analyzer
 //  email         gigaqeeq@gmail.com
-//  description   app.py (CLI)
+//  description   app.js (CLI)
 //  licensee      AGPL-3.0
 //  -------------------------------------------------------------
 //  contributors list qeeqbox/social-analyzer/graphs/contributors
@@ -645,7 +645,7 @@ async function check_user_cli (argv) {
 
       await websites_entries_filtered.forEach(async function (value, i) {
         await search_and_change(websites_entries_filtered[i], {
-          selected: 'pendding'
+          selected: 'pending'
         })
       })
       await helper.websites_entries.forEach(async function (value, i) {
