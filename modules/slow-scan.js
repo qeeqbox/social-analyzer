@@ -12,8 +12,10 @@ import {createRequire} from 'node:module';
 const require = createRequire(import.meta.url);
 
 if (process.platform === 'win32') {
-  const package_path = path.join(path.dirname(require.resolve('geckodriver')), '..')
-  process.env.PATH = process.env.PATH + ';' + package_path
+  import('./geckodriver-path.cjs').then((geckodriverPath) => {
+    const package_path = path.join(geckodriverPath, '..');
+    process.env.PATH = process.env.PATH + ';' + package_path;
+  });
 }
 
 async function find_username_advanced (req) {
