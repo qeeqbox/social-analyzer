@@ -7,8 +7,10 @@
     "node": ">=20.18.1"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node app.js --gui"
+    "test": "node --test test/node/*.test.js test/node/china-sites.test.js",
+    "start": "node app.js --gui",
+    "start:local": "bash ./scripts/start-local.sh",
+    "sync:wmn": "node app.js --sync-whatsmyname data/imports"
   },
   "dependencies": {
     "async": "3.2.4",

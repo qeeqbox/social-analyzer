@@ -3,7 +3,6 @@ const global_lock = []
 const google_api_key = ''
 const google_api_cs = ''
 const grid_url = ''
-const proxy = ''
 let tecert_file = ''
 
 const detection_level = {
@@ -40,7 +39,10 @@ const profile_template = {
   metadata: '',
   extracted: '',
   good: '',
-  method: ''
+  method: '',
+  aliases: [],
+  discovered_from: '',
+  source_url: ''
 }
 
 const detected_websites = {
@@ -60,6 +62,7 @@ const header_options = {
 
 
 import https from 'follow-redirects'
+import HttpsProxyAgent from 'https-proxy-agent'
 import fs from 'fs'
 import url from 'url'
 import {franc} from 'franc'
@@ -71,11 +74,27 @@ import colors from 'colors/safe.js'
 import {QBIxora} from 'ixora'
 import {fileURLToPath} from 'url';
 
+function resolve_proxy_from_environment () {
+  return process.env.https_proxy || process.env.HTTPS_PROXY || process.env.http_proxy || process.env.HTTP_PROXY || ''
+}
+
+let proxy = resolve_proxy_from_environment()
+
+function sync_proxy_agent () {
+  if (proxy !== '') {
+    header_options.agent = HttpsProxyAgent(proxy)
+  } else if ('agent' in header_options) {
+    delete header_options.agent
+  }
+}
+
+sync_proxy_agent()
+
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const sites_json_path = slash(path.join(__dirname, '..', 'data', 'sites.json'))
 const names_json_path = slash(path.join(__dirname, '..', 'data', 'names.json'))
 const dict_json_path = slash(path.join(__dirname, '..', 'data', 'dict.json'))
-const countries_json_path = slash(path.join(__dirname, '..', 'data', 'names.json'))
+const countries_json_path = slash(path.join(__dirname, '..', 'data', 'countries.json'))
 const public_graph_path = slash(path.join(__dirname, '..', 'public', 'graph.html'))
 
 let temp_ixora = new QBIxora('Social-Analyzer', false)
@@ -86,7 +105,7 @@ const websites_entries = JSON.parse(fs.readFileSync(sites_json_path)).websites_e
 const shared_detections = JSON.parse(fs.readFileSync(sites_json_path)).shared_detections
 const parsed_names_origins = JSON.parse(fs.readFileSync(names_json_path))
 const parsed_json = JSON.parse(fs.readFileSync(dict_json_path))
-const parsed_countries = JSON.parse(fs.readFileSync(names_json_path))
+const parsed_countries = JSON.parse(fs.readFileSync(countries_json_path))
 
 let logs_queue = Promise.resolve()
 
@@ -228,6 +247,65 @@ async function get_url_wrapper_json (url, time = 2) {
   }
 }
 
+async function post_url_wrapper_json (url, payload, time = 2, extra_headers = {}) {
+  try {
+    const body = JSON.stringify(payload)
+    const request_headers = Object.assign({}, header_options.headers, extra_headers, {
+      'Content-Type': 'application/json',
+      'Content-Length': Buffer.byteLength(body)
+    })
+    const request_options = Object.assign({}, header_options, {
+      method: 'POST',
+      headers: request_headers
+    })
+    const http_promise = new Promise((resolve, reject) => {
+      const request = https.https.request(url, request_options, function (res) {
+        let response_body = ''
+        res.on('data', function (chunk) {
+          response_body += chunk
+        })
+        res.on('end', function () {
+          try {
+            resolve({
+              status: res.statusCode,
+              data: JSON.parse(response_body.toString())
+            })
+          } catch (err) {
+            reject({
+              status: res.statusCode,
+              data: ''
+            })
+          }
+        })
+      })
+      const timeout = (time !== 0) ? time * 1000 : 5000
+      request.setTimeout(timeout, function() {
+        reject({
+          status: 500,
+          data: ''
+        })
+      })
+      request.on('error', function () {
+        reject({
+          status: 500,
+          data: ''
+        })
+      })
+      request.on('socket', function (socket) {
+        const timeout = (time !== 0) ? time * 1000 : 5000
+        socket.setTimeout(timeout, function () {
+          request.abort()
+        })
+      })
+      request.write(body)
+      request.end()
+    })
+    return await http_promise
+  } catch (err) {
+    verbose && console.log(err)
+  }
+}
+
 async function get_url_wrapper_text (url, time = 2) {
   const response_body = 'error-get-url'
   const ret = 500
@@ -332,7 +410,7 @@ async function setup_tecert () {
   }
 }
 
-export default {
+const helper = {
   strings_pages,
   strings_titles,
   top_websites,
@@ -356,9 +434,19 @@ export default {
   google_api_cs,
   grid_url,
   header_options,
-  proxy,
+  get proxy () {
+    return proxy
+  },
+  set proxy (value) {
+    proxy = value
+    sync_proxy_agent()
+  },
+  sync_proxy_agent,
   get_site_from_url,
   log_to_file_queue,
   get_url_wrapper_text,
-  get_url_wrapper_json
+  get_url_wrapper_json,
+  post_url_wrapper_json
 }
+
+export default helper

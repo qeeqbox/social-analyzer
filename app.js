@@ -57,6 +57,19 @@ const argv = yarg_.usage('Usage: $0 --username "johndoe" --websites "youtube tik
   .default('type', 'all')
   .describe('countries', 'select websites by country or countries separated by space as: us br ru')
   .default('countries', 'all')
+  .describe('save', 'save CLI results to a .json or .csv file')
+  .default('save', '')
+  .describe('recursive-depth', 'recursively search newly discovered usernames from public profile links')
+  .default('recursive-depth', 0)
+  .number('recursive-depth')
+  .describe('recursive-limit', 'maximum new usernames to follow per recursion pass')
+  .default('recursive-limit', 10)
+  .number('recursive-limit')
+  .describe('doctor', 'check selected sites for captcha, waf, timeout or reachability issues')
+  .default('doctor', false)
+  .boolean('doctor')
+  .describe('sync-whatsmyname', 'download and convert the WhatsMyName dataset into importable JSON files')
+  .default('sync-whatsmyname', '')
   .help('help')
   .argv
 
@@ -79,9 +92,9 @@ if (semver.satisfies(process.version, '>13 || <13')) {
 
 import express from 'express'
 import fs from 'fs'
+import path from 'path'
 import tokenizer from 'wink-tokenizer'
 import generatorics from 'generatorics'
-import HttpsProxyAgent from 'https-proxy-agent'
 import PrettyError from 'pretty-error'
 
 const pe = new PrettyError()
@@ -101,6 +114,11 @@ import stringAnalysis from './modules/string-analysis.js'
 import nameAnalysis from './modules/name-analysis.js'
 import visualize from './modules/visualize.js'
 import stats from './modules/stats.js'
+import { country_matches_filter, normalize_country_filters } from './modules/site-utils.js'
+import { serialize_results_to_csv, serialize_results_to_json } from './modules/export-results.js'
+import { collect_recursive_candidates } from './modules/recursive-search.js'
+import { classify_site_response } from './modules/site-doctor.js'
+import { sync_whatsmyname_dataset } from './modules/wmn-sync.js'
 
 const app = express()
 app.set('etag', false)
@@ -194,14 +212,6 @@ app.post('/save_settings', async function (req, res, next) {
   }
   if (req.body.proxy !== helper.proxy) {
     helper.proxy = req.body.proxy
-  }
-
-  if (helper.proxy !== '') {
-    helper.header_options.agent = HttpsProxyAgent(helper.proxy)
-  } else {
-    if ('agent' in helper.header_options) {
-      delete helper.header_options.agent
-    }
   }
 
   res.json('Done')
@@ -331,14 +341,9 @@ app.post('/analyze_string', async function (req, res, next) {
     }
 
     if (req.body.option.includes('FindUserProfilesSpecial')) {
-      if (!fast) {
-        helper.log_to_file_queue(req.body.uuid, '[Starting] Checking user profiles special')
-        user_info_special.data = await specialScan.find_username_special(req)
-        helper.log_to_file_queue(req.body.uuid, '[Done] Checking user profiles special')
-      } else {
-        helper.log_to_file_queue(req.body.uuid, '[Warning] FindUserProfilesFast with FindUserProfilesSpecial')
-        helper.log_to_file_queue(req.body.uuid, '[Skipping] FindUserProfilesSpecial')
-      }
+      helper.log_to_file_queue(req.body.uuid, '[Starting] Checking user profiles special')
+      user_info_special.data = await specialScan.find_username_special(req)
+      helper.log_to_file_queue(req.body.uuid, '[Done] Checking user profiles special')
     }
 
     if (req.body.option.includes('FindUserProfilesSlow') && fast) {
@@ -594,40 +599,16 @@ function search_and_change (site, _dict) {
   }
 }
 
-async function check_user_cli (argv) {
-  let ret = []
-  const random_string = Math.random().toString(36).substring(2)
-  let temp_options = 'GetUserProfilesFast,FindUserProfilesFast'
-  if (argv.method !== '') {
-    if (argv.method === 'find') {
-      temp_options = ',FindUserProfilesFast,'
-    } else if (argv.method === 'get') {
-      temp_options = ',GetUserProfilesFast,'
-    }
-  }
-  if (argv.extract) {
-    temp_options += ',ExtractPatterns,'
-  }
-  if (argv.metadata) {
-    temp_options += ',ExtractMetadata,'
-  }
-  const req = {
-    body: {
-      uuid: random_string,
-      string: argv.username,
-      option: temp_options + argv.output
-    }
-  }
-
+async function select_sites_for_cli (argv) {
   await helper.websites_entries.forEach(async function (value, i) {
     helper.websites_entries[i].selected = 'false'
   })
 
   if (argv.websites === 'all') {
     if (argv.countries != 'all') {
-      let list_of_countries = argv.countries.toLowerCase().split(' ')
+      const list_of_countries = normalize_country_filters(argv.countries, helper.find_country)
       await helper.websites_entries.forEach(async function (value, i) {
-        if (helper.websites_entries[i].country.toLowerCase() !== '' && list_of_countries.includes(helper.websites_entries[i].country.toLowerCase())) {
+        if (country_matches_filter(helper.websites_entries[i].country, list_of_countries)) {
           helper.websites_entries[i].selected = 'true'
         } else {
           helper.websites_entries[i].selected = 'false'
@@ -638,7 +619,7 @@ async function check_user_cli (argv) {
         helper.websites_entries[i].selected = 'true'
       })
     }
-    
+
     if (argv.type != 'all') {
       let websites_entries_filtered = helper.websites_entries.filter((item) => item.selected === 'true')
       websites_entries_filtered = websites_entries_filtered.filter((item) => item.type.toLowerCase().includes(argv.type.toLowerCase()))
@@ -656,7 +637,7 @@ async function check_user_cli (argv) {
         }
       })
     }
-    
+
     if (argv.top != 0) {
       let websites_entries_filtered = helper.websites_entries.filter((item) => item.selected === 'true')
       websites_entries_filtered = websites_entries_filtered.filter((item) => item.global_rank !== 0)
@@ -687,6 +668,164 @@ async function check_user_cli (argv) {
       }
     })
   }
+}
+
+async function run_cli_scan_for_username (argv, req, username, discovered_from = '') {
+  const old_string = req.body.string
+  req.body.string = username
+  let results = []
+  if (argv.mode === 'slow') {
+    results = await slowScan.find_username_advanced(req)
+  } else if (argv.mode === 'special') {
+    results = await specialScan.find_username_special(req)
+  } else {
+    results = await fastScan.find_username_normal(req)
+    results.push(...await specialScan.find_username_special(req))
+  }
+  req.body.string = old_string
+
+  if (discovered_from !== '') {
+    results = results.map(item => Object.assign({}, item, {
+      discovered_from: discovered_from
+    }))
+  }
+  return results
+}
+
+function dedupe_profiles (profiles) {
+  const seen = new Set()
+  return profiles.filter(item => {
+    const key = [item.username || '', item.link || '', item.method || '', item.discovered_from || ''].join('::')
+    if (seen.has(key)) {
+      return false
+    }
+    seen.add(key)
+    return true
+  })
+}
+
+async function run_recursive_cli_scan (argv, req, initial_results) {
+  if (argv['recursive-depth'] <= 0 || req.body.group) {
+    return []
+  }
+
+  const queried = new Set([req.body.string.toLowerCase()])
+  let frontier = collect_recursive_candidates(initial_results, Array.from(queried)).slice(0, argv['recursive-limit'])
+  const recursive_results = []
+
+  for (let depth = 1; depth <= argv['recursive-depth']; depth++) {
+    if (frontier.length === 0) {
+      break
+    }
+
+    const next_frontier = []
+    for (const candidate of frontier) {
+      const normalized = candidate.username.toLowerCase()
+      if (queried.has(normalized)) {
+        continue
+      }
+      queried.add(normalized)
+      const candidate_results = await run_cli_scan_for_username(argv, req, candidate.username, candidate.discovered_from)
+      recursive_results.push(...candidate_results)
+      const discovered = collect_recursive_candidates(candidate_results, Array.from(queried))
+      discovered.forEach(item => {
+        if (!queried.has(item.username.toLowerCase())) {
+          next_frontier.push(item)
+        }
+      })
+    }
+
+    frontier = dedupe_profiles(next_frontier.map(item => ({
+      username: item.username,
+      link: item.source_url,
+      method: '',
+      discovered_from: item.discovered_from
+    }))).map(item => ({
+      username: item.username,
+      discovered_from: item.discovered_from,
+      source_url: item.link
+    })).slice(0, argv['recursive-limit'])
+  }
+
+  return recursive_results
+}
+
+function save_cli_results (results, output_path) {
+  const absolute_path = path.resolve(output_path)
+  const extension = path.extname(absolute_path).toLowerCase()
+  const serialized = extension === '.csv'
+    ? serialize_results_to_csv(results)
+    : serialize_results_to_json(results)
+  fs.mkdirSync(path.dirname(absolute_path), { recursive: true })
+  fs.writeFileSync(absolute_path, serialized)
+  return absolute_path
+}
+
+async function run_sites_doctor_cli (argv) {
+  await select_sites_for_cli(argv)
+  const probe_username = '__social_analyzer_probe__'
+  const selected_sites = helper.websites_entries.filter(item => item.selected === 'true')
+  const report = []
+
+  for (const site of selected_sites) {
+    const target_url = site.url.replace('{username}', probe_username)
+    const [status_code, response_body] = await helper.get_url_wrapper_text(target_url, site.timeout || 5)
+    const summary = classify_site_response(status_code, response_body)
+    report.push({
+      site: helper.get_site_from_url(site.url),
+      url: target_url,
+      status: summary.status,
+      reason: summary.reason,
+      http_status: status_code
+    })
+  }
+
+  if (argv.output === 'json') {
+    console.log(JSON.stringify(report, null, 2))
+  } else {
+    report.forEach(item => {
+      console.log(`[doctor] ${item.site} -> ${item.status} (${item.reason})`)
+    })
+  }
+
+  if (argv.save !== '') {
+    const saved_path = save_cli_results({ doctor: report }, argv.save)
+    console.log(`[save] ${saved_path}`)
+  }
+}
+
+async function check_user_cli (argv) {
+  let ret = []
+  const random_string = Math.random().toString(36).substring(2)
+  let temp_options = 'GetUserProfilesFast,FindUserProfilesFast,FindUserProfilesSpecial'
+  if (argv.mode === 'slow') {
+    temp_options = ',FindUserProfilesSlow,'
+  } else if (argv.mode === 'special') {
+    temp_options = ',FindUserProfilesSpecial,'
+  } else if (argv.method !== '') {
+    if (argv.method === 'find') {
+      temp_options = ',FindUserProfilesFast,FindUserProfilesSpecial,'
+    } else if (argv.method === 'get') {
+      temp_options = ',GetUserProfilesFast,'
+    } else if (argv.method === 'all') {
+      temp_options = 'GetUserProfilesFast,FindUserProfilesFast,FindUserProfilesSpecial'
+    }
+  }
+  if (argv.extract) {
+    temp_options += ',ExtractPatterns,'
+  }
+  if (argv.metadata) {
+    temp_options += ',ExtractMetadata,'
+  }
+  const req = {
+    body: {
+      uuid: random_string,
+      string: argv.username,
+      option: temp_options + argv.output
+    }
+  }
+
+  await select_sites_for_cli(argv)
 
   if (req.body.string.includes(',')) {
     req.body.group = true
@@ -699,19 +838,37 @@ async function check_user_cli (argv) {
   if (req.body.group) {
     const old_string_1 = req.body.string
     const all_usernames = req.body.string.split(',').map(async item => {
-      req.body.string = item
-      let temp_arr = await fastScan.find_username_normal(req)
+      const temp_arr = await run_cli_scan_for_username(argv, req, item)
       ret.push(...temp_arr)
     })
     await Promise.all(all_usernames)
     req.body.string = old_string_1
   } else {
-    ret = await fastScan.find_username_normal(req)
+    ret = await run_cli_scan_for_username(argv, req, req.body.string)
+    ret.push(...await run_recursive_cli_scan(argv, req, ret))
   }
 
   if (typeof ret === 'undefined' || ret === undefined || ret.length === 0) {
     helper.log_to_file_queue(req.body.uuid, 'User does not exist (try FindUserProfilesSlow or FindUserProfilesSpecial)')
   } else {
+    const special_site_hosts = helper.websites_entries
+      .filter(item => item.selected === 'true' && item.detections.some(detection => detection.type === 'special'))
+      .map(item => helper.get_site_from_url(item.url))
+
+    ret = ret.map(item => {
+      if (!('method' in item) || item.method === '') {
+        item.method = 'find'
+      }
+      return item
+    })
+    if (argv.mode === 'fast' && special_site_hosts.length > 0) {
+      ret = ret.filter(item => {
+        if (!item.link || item.method === 'find') {
+          return true
+        }
+        return !special_site_hosts.includes(helper.get_site_from_url(item.link))
+      })
+    }
     const temp_detected = {
       detected: [],
       unknown: [],
@@ -801,6 +958,11 @@ async function check_user_cli (argv) {
     if (argv.output === 'json') {
       console.log(JSON.stringify(temp_detected, null, 2))
     }
+
+    if (argv.save !== '') {
+      const saved_path = save_cli_results(temp_detected, argv.save)
+      console.log('[save] ' + saved_path)
+    }
   }
 };
 
@@ -828,14 +990,19 @@ if (argv.gui) {
     console.log('Server started at http://%s:%s/app.html', server_host, server_port)
   })
 } else {
-  if (argv.list) {
+  if (argv['sync-whatsmyname'] !== '') {
+    const summary = await sync_whatsmyname_dataset(argv['sync-whatsmyname'])
+    console.log(JSON.stringify(summary, null, 2))
+  } else if (argv.list) {
     list_all_websites()
-  } else if (argv.mode === 'fast') {
+  } else if (argv.doctor) {
+    await run_sites_doctor_cli(argv)
+  } else if (['fast', 'slow', 'special'].includes(argv.mode)) {
     if (argv.cli) {
       console.log('[Warning] --cli is not needed and will be removed later on')
     }
     if (argv.username !== '' && argv.websites !== '') {
-      check_user_cli(argv)
+      await check_user_cli(argv)
     }
   }
 }

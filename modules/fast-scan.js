@@ -5,6 +5,7 @@ import sanitizeHtml from 'sanitize-html'
 import {convert} from 'html-to-text'
 import * as cheerio from 'cheerio'
 import engine from './engine.js'
+import { get_site_request_timeout } from './site-utils.js'
 
 async function find_username_normal (req) {
   helper.log_to_file_queue(req.body.uuid, '[init] Selected websites: ' + helper.websites_entries.filter((item) => item.selected === 'true').length + ' for username: ' + req.body.string)
@@ -85,7 +86,10 @@ async function find_username_site (uuid, username, options, site) {
         if (!options.includes('json')) {
           helper.log_to_file_queue(uuid, '[Checking] ' + helper.get_site_from_url(site.url))
         }
-        const [ret, source]  = await helper.get_url_wrapper_text(site.url.replace('{username}', username))
+        const [ret, source]  = await helper.get_url_wrapper_text(
+          site.url.replace('{username}', username),
+          get_site_request_timeout(site)
+        )
         if (source !== 'error-get-url') {
           let title = 'unavailable'
           let language = 'unavailable'

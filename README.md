@@ -26,10 +26,14 @@ Standard localhost WEB APP url: http://0.0.0.0:9005/app.html
 ## Features
 - String & name analysis (Permutations and Combinations)
 - Find a profile using multiple techniques (HTTPS library & Webdriver)
+- Recursive search for newly discovered usernames from public profile links
 - Multi profile search (Used for correlation - any combination separated with "," )
 - Multilayers detections (OCR, normal, advanced & special)
 - Visualized profile information using Ixora (Metadata & Patterns)
 - Metadata & Patterns extraction (Added from Qeeqbox OSINT project)
+- Export CLI results to JSON or CSV files
+- Site doctor mode for captcha/WAF/timeout diagnostics
+- WhatsMyName dataset sync for importing additional compatible username sites
 - Force-directed Graph for Metadata (Needs ExtractPatterns)
 - Search by top ranking or by country (Alexa Ranking)
 - Search by type (adult, music, etc.. - automated websites stats)
@@ -90,6 +94,16 @@ nodejs app.js --username "johndoe,janedoe" --metadata
 nodejs app.js --username "johndoe,janedoe" --metadata --top 100
 #or
 nodejs app.js --username "johndoe" --type "adult"
+#or
+nodejs app.js --username "johndoe" --save ./results/johndoe.json
+#or
+nodejs app.js --username "johndoe" --save ./results/johndoe.csv
+#or
+nodejs app.js --username "johndoe" --recursive-depth 1
+#or
+nodejs app.js --doctor --countries "cn" --output json
+#or
+nodejs app.js --sync-whatsmyname ./data/imports
 ```
 
 ### Linux (As python package)
@@ -160,6 +174,11 @@ Optional Arguments:
   --filter      Filter detected profiles by good, maybe or bad, you can do combine them with comma (good,bad) or use all
   --profiles    Filter profiles by detected, unknown or failed, you can do combine them with comma (detected,failed) or use all
   --countries   select websites by country or countries separated by space as: us br ru
+  --save        save CLI results to a .json or .csv file
+  --recursive-depth recursively search newly discovered usernames from public profile links
+  --recursive-limit maximum new usernames to follow per recursion pass
+  --doctor      check selected sites for captcha, waf, timeout or reachability issues
+  --sync-whatsmyname download and convert the WhatsMyName dataset into importable JSON files
   --type        Select websites by type (Adult, Music etc)
   --top         select top websites as 10, 50 etc...[--websites is not needed]
   --extract     Extract profiles, urls & patterns if possible
@@ -183,6 +202,7 @@ Setting:
 
 ## Resources
 - DuckDuckGo API, Google API, NodeJS, bootstrap, selectize, jQuery, Wikipedia, font-awesome, selenium-webdriver & tesseract.js
+- [WhatsMyName](https://github.com/WebBreacher/WhatsMyName) dataset is supported as an optional import source. Its `wmn-data.json` file is licensed under CC BY-SA 4.0 and should remain attributed when redistributed.
 - Let me know if I missed a reference or resource!
 
 ## Disclaimer\Notes

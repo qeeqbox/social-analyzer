@@ -21860,25 +21860,37 @@
       "nsfw": "false"
     },
     {
-      "url": "https://zhihu.com/people/{username}",
+      "url": "https://www.zhihu.com/people/{username}",
       "detections": [
         {
-          "return": "false",
-          "string": ">404",
-          "type": "normal"
-        },
-        {
-          "return": "true",
-          "string": "\"users\":{\"",
-          "type": "normal"
+          "function": "special_zhihu_1",
+          "type": "special"
         }
       ],
       "selected": "false",
-      "timeout": 0,
+      "timeout": 8,
       "implicit": 0,
       "extract": [],
       "type": "Computers Electronics and Technology > Social Networks and Online Communities",
       "global_rank": 179,
+      "country": "China",
+      "country_code": 0,
+      "nsfw": "false"
+    },
+    {
+      "url": "https://leetcode.cn/u/{username}/",
+      "detections": [
+        {
+          "function": "special_leetcode_cn_1",
+          "type": "special"
+        }
+      ],
+      "selected": "false",
+      "timeout": 8,
+      "implicit": 0,
+      "extract": [],
+      "type": "Computers Electronics and Technology > Programming and Developer Software",
+      "global_rank": 0,
       "country": "China",
       "country_code": 0,
       "nsfw": "false"

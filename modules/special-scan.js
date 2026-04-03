@@ -1,6 +1,9 @@
 import helper from './helper.js'
 import async from 'async'
 import {Builder,By,Key} from 'selenium-webdriver'
+import firefox from 'selenium-webdriver/firefox.js'
+import { get_site_request_timeout } from './site-utils.js'
+import { extract_username_from_url } from './recursive-search.js'
 
 async function find_username_special (req) {
   const time = new Date()
@@ -20,6 +23,10 @@ async function find_username_special (req) {
             functions.push(find_username_site_special_gmail_1.bind(null, req.body.uuid, req.body.string, site))
           } else if (detection.function === 'special_google_1') {
             functions.push(find_username_site_special_google_1.bind(null, req.body.uuid, req.body.string, site))
+          } else if (detection.function === 'special_leetcode_cn_1') {
+            functions.push(find_username_site_special_leetcode_cn_1.bind(null, req.body.uuid, req.body.string, site))
+          } else if (detection.function === 'special_zhihu_1') {
+            functions.push(find_username_site_special_zhihu_1.bind(null, req.body.uuid, req.body.string, site))
           }
         }
       })
@@ -185,6 +192,109 @@ async function find_username_site_special_google_1 (uuid, username, site) {
       resolve(undefined)
     }
   })
+}
+
+async function find_username_site_special_leetcode_cn_1 (uuid, username, site) {
+  helper.log_to_file_queue(uuid, '[Checking] ' + helper.get_site_from_url(site.url))
+  const timeout = get_site_request_timeout(site, 8)
+  const payload = {
+    operationName: 'getUserProfile',
+    query: 'query getUserProfile($username: String!) { userProfileUserQuestionProgress(userSlug: $username) { numAcceptedQuestions { count difficulty } } userProfilePublicProfile(userSlug: $username) { haveFollowed siteRanking profile { userSlug realName aboutMe asciiCode userAvatar github websites socialAccounts { provider profileUrl } } } }',
+    variables: {
+      username: username
+    }
+  }
+
+  try {
+    const response = await helper.post_url_wrapper_json('https://leetcode.cn/graphql/', payload, timeout)
+    const profile = response && response.data && response.data.data && response.data.data.userProfilePublicProfile
+    if (!profile || !profile.profile) {
+      return undefined
+    }
+
+    const accepted = response.data.data.userProfileUserQuestionProgress && response.data.data.userProfileUserQuestionProgress.numAcceptedQuestions
+      ? response.data.data.userProfileUserQuestionProgress.numAcceptedQuestions.map(item => item.count).reduce((sum, count) => sum + count, 0)
+      : 0
+    const social_accounts = profile.profile.socialAccounts || []
+    const websites = profile.profile.websites || []
+    const alias_urls = []
+    if (profile.profile.github) {
+      alias_urls.push(profile.profile.github)
+    }
+    alias_urls.push(...websites.filter(Boolean))
+    alias_urls.push(...social_accounts.map(item => item.profileUrl).filter(Boolean))
+    const aliases = alias_urls.map(item => extract_username_from_url(item)).filter(Boolean)
+    const temp_profile = Object.assign({}, helper.profile_template)
+    temp_profile.found = 1
+    temp_profile.good = 'true'
+    temp_profile.status = 'good'
+    temp_profile.rate = '%100.00'
+    temp_profile.method = 'find'
+    temp_profile.username = username
+    temp_profile.link = site.url.replace('{username}', username)
+    temp_profile.title = profile.profile.realName || profile.profile.userSlug || username
+    temp_profile.language = 'Chinese'
+    temp_profile.country = site.country
+    temp_profile.rank = profile.siteRanking || 'unavailable'
+    temp_profile.type = site.type
+    temp_profile.image = profile.profile.userAvatar || ''
+    temp_profile.text = [
+      profile.profile.realName,
+      profile.profile.aboutMe,
+      profile.profile.github,
+      accepted > 0 ? 'Accepted: ' + accepted : ''
+    ].filter(Boolean).join(' | ')
+    temp_profile.aliases = Array.from(new Set(aliases))
+    temp_profile.metadata = alias_urls.map(item => ({
+      name: 'link',
+      content: item
+    }))
+    return temp_profile
+  } catch (err) {
+    helper.verbose && console.log(err)
+    return undefined
+  }
+}
+
+async function find_username_site_special_zhihu_1 (uuid, username, site) {
+  helper.log_to_file_queue(uuid, '[Checking] ' + helper.get_site_from_url(site.url))
+  const timeout = get_site_request_timeout(site, 8)
+
+  try {
+    const response = await helper.get_url_wrapper_json(
+      'https://www.zhihu.com/api/v4/members/' + username + '?include=id,url_token,name,headline,answer_count,articles_count,follower_count',
+      timeout
+    )
+    const data = response && response.data
+    if (!data || data.error || !data.url_token) {
+      return undefined
+    }
+
+    const temp_profile = Object.assign({}, helper.profile_template)
+    temp_profile.found = 1
+    temp_profile.good = 'true'
+    temp_profile.status = 'good'
+    temp_profile.rate = '%100.00'
+    temp_profile.method = 'find'
+    temp_profile.username = username
+    temp_profile.link = site.url.replace('{username}', username)
+    temp_profile.title = data.name || data.url_token || username
+    temp_profile.language = 'Chinese'
+    temp_profile.country = site.country
+    temp_profile.rank = 'unavailable'
+    temp_profile.type = site.type
+    temp_profile.image = data.avatar_url || ''
+    temp_profile.text = [
+      data.headline,
+      typeof data.answer_count === 'number' ? 'Answers: ' + data.answer_count : '',
+      typeof data.articles_count === 'number' ? 'Articles: ' + data.articles_count : '',
+      typeof data.follower_count === 'number' ? 'Followers: ' + data.follower_count : ''
+    ].filter(Boolean).join(' | ')
+    return temp_profile
+  } catch (err) {
+    helper.verbose && console.log(err)
+    return undefined
+  }
 }
 
 export default{
