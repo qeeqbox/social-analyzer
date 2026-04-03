@@ -114,11 +114,12 @@ import stringAnalysis from './modules/string-analysis.js'
 import nameAnalysis from './modules/name-analysis.js'
 import visualize from './modules/visualize.js'
 import stats from './modules/stats.js'
-import { country_matches_filter, normalize_country_filters } from './modules/site-utils.js'
 import { serialize_results_to_csv, serialize_results_to_json } from './modules/export-results.js'
 import { collect_recursive_candidates } from './modules/recursive-search.js'
 import { classify_site_response } from './modules/site-doctor.js'
 import { sync_whatsmyname_dataset } from './modules/wmn-sync.js'
+import { apply_site_filters, restore_site_selection, snapshot_site_selection } from './modules/site-selection.js'
+import { build_analysis_summary } from './modules/ui-summary.js'
 
 const app = express()
 app.set('etag', false)
@@ -217,6 +218,104 @@ app.post('/save_settings', async function (req, res, next) {
   res.json('Done')
 })
 
+function normalize_scope_value (value, fallback = 'all') {
+  if (typeof value !== 'string') {
+    return fallback
+  }
+
+  const normalized = value.trim()
+  return normalized === '' ? fallback : normalized
+}
+
+function request_has_custom_scope (body = {}) {
+  return normalize_scope_value(body.websites) !== 'all' || normalize_scope_value(body.countries) !== 'all'
+}
+
+function resolve_scan_mode (body = {}) {
+  const mode = (body.scan_mode || '').toLowerCase()
+  if (['fast', 'slow', 'special'].includes(mode)) {
+    return mode
+  }
+  if ((body.option || '').includes('FindUserProfilesSlow') || (body.option || '').includes('ShowUserProfilesSlow')) {
+    return 'slow'
+  }
+  if ((body.option || '').includes('FindUserProfilesSpecial')) {
+    return 'special'
+  }
+  return 'fast'
+}
+
+async function build_sites_doctor_report () {
+  const probe_username = '__social_analyzer_probe__'
+  const selected_sites = helper.websites_entries.filter((item) => item.selected === 'true')
+  const report = []
+
+  for (const site of selected_sites) {
+    const target_url = site.url.replace('{username}', probe_username)
+    const [status_code, response_body] = await helper.get_url_wrapper_text(target_url, site.timeout || 5)
+    const summary = classify_site_response(status_code, response_body)
+    report.push({
+      site: helper.get_site_from_url(site.url),
+      url: target_url,
+      status: summary.status,
+      reason: summary.reason,
+      http_status: status_code
+    })
+  }
+
+  return report
+}
+
+app.post('/export_results', async function (req, res, next) {
+  const format = (req.body.format || 'json').toLowerCase()
+  const results = req.body.results || {}
+  const serialized = format === 'csv'
+    ? serialize_results_to_csv(results)
+    : serialize_results_to_json(results)
+
+  if (format === 'csv') {
+    res.type('text/csv')
+  } else {
+    res.type('application/json')
+  }
+
+  res.send(serialized)
+})
+
+app.post('/doctor_sites', async function (req, res, next) {
+  const selection_snapshot = snapshot_site_selection(helper.websites_entries)
+
+  try {
+    if (request_has_custom_scope(req.body)) {
+      apply_site_filters(helper.websites_entries, {
+        websites: normalize_scope_value(req.body.websites),
+        countries: normalize_scope_value(req.body.countries),
+        type: 'all',
+        top: 0
+      }, helper.find_country)
+    }
+
+    const report = await build_sites_doctor_report()
+    const totals = report.reduce((accumulator, item) => {
+      accumulator[item.status] = (accumulator[item.status] || 0) + 1
+      return accumulator
+    }, {})
+
+    res.json({
+      summary: Object.assign({
+        total: report.length,
+        ok: 0,
+        blocked: 0,
+        captcha: 0,
+        timeout: 0
+      }, totals),
+      report
+    })
+  } finally {
+    restore_site_selection(helper.websites_entries, selection_snapshot)
+  }
+})
+
 app.get('/generate', async function (req, res, next) {
   const list_of_combinations = []
   if (req.body.option === 'Generate') {
@@ -281,6 +380,7 @@ app.post('/analyze_string', async function (req, res, next) {
   let custom_search = []
   let logs = ''
   let fast = false
+  let recursive_results = []
   let graph = {
     graph: {
       nodes: [],
@@ -302,247 +402,265 @@ app.post('/analyze_string', async function (req, res, next) {
   } else if (req.body.string === null || req.body.string === '') {
     res.json('Error')
   } else {
-    username = req.body.string
-    req.body.uuid = req.body.uuid.replace(/[^a-zA-Z0-9\-]+/g, '')
-    temp_uuid = req.body.uuid
+    const selection_snapshot = snapshot_site_selection(helper.websites_entries)
+    try {
+      const scan_mode = resolve_scan_mode(req.body)
+      const recursive_depth = Number(req.body.recursive_depth || 0)
+      const recursive_limit = Number(req.body.recursive_limit || 10)
 
-    helper.log_to_file_queue(req.body.uuid, '[Setting] Log file name: ' + req.body.uuid)
+      if (request_has_custom_scope(req.body)) {
+        apply_site_filters(helper.websites_entries, {
+          websites: normalize_scope_value(req.body.websites),
+          countries: normalize_scope_value(req.body.countries),
+          type: 'all',
+          top: 0
+        }, helper.find_country)
+      }
 
-    if (req.body.string.includes(',')) {
-      req.body.group = true
-      helper.log_to_file_queue(req.body.uuid, '[Setting] Multiple usernames: ' + req.body.string)
-    } else {
-      req.body.group = false
-      helper.log_to_file_queue(req.body.uuid, '[Setting] Username: ' + req.body.string)
-    }
+      username = req.body.string
+      req.body.uuid = req.body.uuid.replace(/[^a-zA-Z0-9\-]+/g, '')
+      temp_uuid = req.body.uuid
 
-    if (req.body.option.includes('FindUserProfilesFast') || req.body.option.includes('GetUserProfilesFast')) {
-      fast = true
-      helper.log_to_file_queue(req.body.uuid, '[Starting] Checking user profiles normal')
-      if (req.body.group) {
-        const old_string_1 = req.body.string
-        const all_usernames = req.body.string.split(',').map(async item => {
-          req.body.string = item
-          let temp_arr = await fastScan.find_username_normal(req)
-          user_info_normal.data.push(...temp_arr)
-        })
-        await Promise.all(all_usernames)
-        req.body.string = old_string_1
+      helper.log_to_file_queue(req.body.uuid, '[Setting] Log file name: ' + req.body.uuid)
+
+      if (req.body.string.includes(',')) {
+        req.body.group = true
+        helper.log_to_file_queue(req.body.uuid, '[Setting] Multiple usernames: ' + req.body.string)
       } else {
-        user_info_normal.data = await fastScan.find_username_normal(req)
+        req.body.group = false
+        helper.log_to_file_queue(req.body.uuid, '[Setting] Username: ' + req.body.string)
       }
 
-      helper.log_to_file_queue(req.body.uuid, '[Done] Checking user profiles normal')
-      if (req.body.option.includes('CategoriesStats') || req.body.option.includes('MetadataStats')) {
-        helper.log_to_file_queue(req.body.uuid, '[Starting] Generate stats')
-        stats_default = await stats.get_stats(req,user_info_normal.data)
-        helper.log_to_file_queue(req.body.uuid, '[Done] Generate stats')
-      }
-    }
-
-    if (req.body.option.includes('FindUserProfilesSpecial')) {
-      helper.log_to_file_queue(req.body.uuid, '[Starting] Checking user profiles special')
-      user_info_special.data = await specialScan.find_username_special(req)
-      helper.log_to_file_queue(req.body.uuid, '[Done] Checking user profiles special')
-    }
-
-    if (req.body.option.includes('FindUserProfilesSlow') && fast) {
-      helper.log_to_file_queue(req.body.uuid, '[Warning] FindUserProfilesFast with FindUserProfilesSlow')
-      helper.log_to_file_queue(req.body.uuid, '[Skipping] FindUserProfilesSlow')
-    }
-
-    if (req.body.option.includes('ShowUserProfilesSlow') && fast) {
-      helper.log_to_file_queue(req.body.uuid, '[Warning] FindUserProfilesFast with ShowUserProfilesSlow')
-      helper.log_to_file_queue(req.body.uuid, '[Skipping] ShowUserProfilesSlow')
-    }
-
-    if ((req.body.option.includes('FindUserProfilesSlow') && !fast) || (req.body.option.includes('ShowUserProfilesSlow') && !fast)) {
-      if (!req.body.option.includes('FindUserProfilesSlow')) {
-        user_info_advanced.type = 'show'
-      } else if (!req.body.option.includes('ShowUserProfilesSlow')) {
-        user_info_advanced.type = 'noshow'
-      }
-      helper.log_to_file_queue(req.body.uuid, '[Starting] Checking user profiles advanced')
-
-      if (req.body.group) {
-        const old_string_2 = req.body.string
-        const all_usernames = req.body.string.split(',').map(async item => {
-          req.body.string = item
-          const temp_arr = await slowScan.find_username_advanced(req)
-          user_info_advanced.data.push(...temp_arr)
-        })
-        await Promise.all(all_usernames)
-        req.body.string = old_string_2
-      } else {
-        user_info_advanced.data = await slowScan.find_username_advanced(req)
-      }
-
-      helper.log_to_file_queue(req.body.uuid, '[Done] Checking user profiles advanced')
-    }
-
-    if (!req.body.group) {
-      if (req.body.option.includes('LookUps')) {
-        helper.log_to_file_queue(req.body.uuid, '[Starting] Lookup')
-        await externalApis.check_engines(req, info)
-        helper.log_to_file_queue(req.body.uuid, '[Done] Lookup')
-      }
-      if (req.body.option.includes('CustomSearch')) {
-        helper.log_to_file_queue(req.body.uuid, '[Starting] Custom Search')
-        custom_search = await externalApis.custom_search_ouputs(req)
-        helper.log_to_file_queue(req.body.uuid, '[Done] Custom Search')
-      }
-      if (req.body.option.includes("FindOrigins")) {
-        helper.log_to_file_queue(req.body.uuid, "[Starting] Finding Origins")
-        names_origins = await nameAnalysis.find_origins(req);
-        helper.log_to_file_queue(req.body.uuid, "[Done] Finding Origins")
-      }
-    } else {
-      if (req.body.option.includes('FindOrigins')) {
-        const old_string_2 = req.body.string
-        const all_usernames = req.body.string.split(',').map(async item => {
-          helper.log_to_file_queue(req.body.uuid, '[Starting] Finding Origins: ' + item)
-          req.body.string = item
-          const temp_arr = await nameAnalysis.find_origins(req)
-          names_origins.push(...temp_arr)
-          helper.log_to_file_queue(req.body.uuid, '[Done] Finding Origins: ' + item)
-        })
-        await Promise.all(all_usernames)
-        req.body.string = old_string_2
-      }
-
-      await stringAnalysis.split_comma(req, all_words)
-    }
-
-    if (req.body.option.includes('SplitWordsByUpperCase')) {
-      helper.log_to_file_queue(req.body.uuid, '[Starting] Split by UpperCase')
-      await stringAnalysis.split_upper_case(req, all_words)
-      helper.log_to_file_queue(req.body.uuid, '[Done] Split by UpperCase')
-    }
-    if (req.body.option.includes('SplitWordsByAlphabet')) {
-      helper.log_to_file_queue(req.body.uuid, '[Starting] Split by Alphabet')
-      await stringAnalysis.split_alphabet_case(req, all_words)
-      helper.log_to_file_queue(req.body.uuid, '[Done] Split by Alphabet')
-    }
-    if (req.body.option.includes('FindSymbols')) {
-      helper.log_to_file_queue(req.body.uuid, '[Starting] Finding Symbols')
-      await stringAnalysis.find_symbols(req, all_words)
-      helper.log_to_file_queue(req.body.uuid, '[Done] Finding Symbols')
-    }
-    if (req.body.option.includes('FindNumbers')) {
-      helper.log_to_file_queue(req.body.uuid, '[Starting] Finding Numbers')
-      await stringAnalysis.find_numbers(req, all_words)
-      helper.log_to_file_queue(req.body.uuid, '[Done] Finding Numbers')
-    }
-    if (req.body.option.includes('FindAges')) {
-      helper.log_to_file_queue(req.body.uuid, '[Starting] Finding Ages')
-      ages = await stringAnalysis.guess_age_from_string(req)
-      helper.log_to_file_queue(req.body.uuid, '[Done] Finding Ages')
-    }
-
-    req.body.string = req.body.string.toLowerCase()
-
-    if (req.body.option.includes('ConvertNumbers')) {
-      helper.log_to_file_queue(req.body.uuid, '[Starting] Convert Numbers')
-      await stringAnalysis.convert_numbers(req, all_words)
-      helper.log_to_file_queue(req.body.uuid, '[Done] Convert Numbers')
-    }
-
-    if (req.body.option.includes('LookUps') ||
-      req.body.option.includes('WordInfo') ||
-      req.body.option.includes('MostCommon') ||
-      req.body.option.includes('SplitWordsByUpperCase') ||
-      req.body.option.includes('SplitWordsByAlphabet') ||
-      req.body.option.includes('FindSymbols') ||
-      req.body.option.includes('FindNumbers') ||
-      req.body.option.includes('ConvertNumbers')) {
-      await stringAnalysis.get_maybe_words(req, all_words)
-      await stringAnalysis.analyze_string(req, all_words)
-
-      Object.keys(all_words).forEach((key) => (all_words[key].length === 0) && delete all_words[key])
-
-      if (req.body.option.includes('MostCommon')) {
-        await stringAnalysis.most_common(all_words, temp_words)
-      }
-      if (req.body.option.includes('WordInfo')) {
-        await externalApis.get_words_info(all_words, words_info)
-      }
-    } else if (req.body.option.includes('NormalAnalysis@@')) {
-      /*
-      // var maybe_words = WordsNinja.splitSentence(req.body.string);
-      all_words.maybe = maybe_words.filter(function (elem, index, self) {
-        return index === self.indexOf(elem)
-      })
-      list_of_tokens = _tokenizer.tokenize(req.body.string)
-      list_of_tokens.forEach(function (item, index) {
-        if (item.tag in all_words) {
-          all_words[item.tag].push(item.token)
+      if (req.body.option.includes('FindUserProfilesFast') || req.body.option.includes('GetUserProfilesFast') || scan_mode === 'fast') {
+        fast = true
+        helper.log_to_file_queue(req.body.uuid, '[Starting] Checking user profiles normal')
+        if (req.body.group) {
+          const old_string_1 = req.body.string
+          const all_usernames = req.body.string.split(',').map(async item => {
+            req.body.string = item
+            const temp_arr = await fastScan.find_username_normal(req)
+            user_info_normal.data.push(...temp_arr)
+          })
+          await Promise.all(all_usernames)
+          req.body.string = old_string_1
         } else {
-          all_words[item.tag] = []
-          all_words[item.tag].push(item.token)
+          user_info_normal.data = await fastScan.find_username_normal(req)
         }
-      })
 
-      Object.keys(all_words).forEach((key) => (all_words[key].length === 0) && delete all_words[key])
-      */
-    }
+        helper.log_to_file_queue(req.body.uuid, '[Done] Checking user profiles normal')
+        if (req.body.option.includes('CategoriesStats') || req.body.option.includes('MetadataStats')) {
+          helper.log_to_file_queue(req.body.uuid, '[Starting] Generate stats')
+          stats_default = await stats.get_stats(req, user_info_normal.data)
+          helper.log_to_file_queue(req.body.uuid, '[Done] Generate stats')
+        }
+      }
 
-    if (req.body.option.includes('NetworkGraph')) {
-      if ('data' in user_info_normal) {
-        if (user_info_normal.data.length > 0) {
-          if (req.body.option.includes('ExtractMetadata')) {
-            helper.log_to_file_queue(req.body.uuid, '[Starting] Network Graph')
-            graph = await visualize.visualize_force_graph(req, user_info_normal.data, 'fast')
-            helper.log_to_file_queue(req.body.uuid, '[Done] Network Graph')
+      const run_special_scan = req.body.option.includes('FindUserProfilesSpecial') || scan_mode === 'special' || scan_mode === 'fast'
+      if (run_special_scan) {
+        helper.log_to_file_queue(req.body.uuid, '[Starting] Checking user profiles special')
+        user_info_special.data = await specialScan.find_username_special(req)
+        helper.log_to_file_queue(req.body.uuid, '[Done] Checking user profiles special')
+      }
+
+      const wants_slow_find = req.body.option.includes('FindUserProfilesSlow') || scan_mode === 'slow'
+      const wants_slow_show = req.body.option.includes('ShowUserProfilesSlow')
+
+      if (wants_slow_find && fast) {
+        helper.log_to_file_queue(req.body.uuid, '[Warning] FindUserProfilesFast with FindUserProfilesSlow')
+        helper.log_to_file_queue(req.body.uuid, '[Skipping] FindUserProfilesSlow')
+      }
+
+      if (wants_slow_show && fast) {
+        helper.log_to_file_queue(req.body.uuid, '[Warning] FindUserProfilesFast with ShowUserProfilesSlow')
+        helper.log_to_file_queue(req.body.uuid, '[Skipping] ShowUserProfilesSlow')
+      }
+
+      if ((wants_slow_find && !fast) || (wants_slow_show && !fast)) {
+        if (!wants_slow_find) {
+          user_info_advanced.type = 'show'
+        } else if (!wants_slow_show) {
+          user_info_advanced.type = 'noshow'
+        }
+        helper.log_to_file_queue(req.body.uuid, '[Starting] Checking user profiles advanced')
+
+        if (req.body.group) {
+          const old_string_2 = req.body.string
+          const all_usernames = req.body.string.split(',').map(async item => {
+            req.body.string = item
+            const temp_arr = await slowScan.find_username_advanced(req)
+            user_info_advanced.data.push(...temp_arr)
+          })
+          await Promise.all(all_usernames)
+          req.body.string = old_string_2
+        } else {
+          user_info_advanced.data = await slowScan.find_username_advanced(req)
+        }
+
+        helper.log_to_file_queue(req.body.uuid, '[Done] Checking user profiles advanced')
+      }
+
+      if (!req.body.group) {
+        if (req.body.option.includes('LookUps')) {
+          helper.log_to_file_queue(req.body.uuid, '[Starting] Lookup')
+          await externalApis.check_engines(req, info)
+          helper.log_to_file_queue(req.body.uuid, '[Done] Lookup')
+        }
+        if (req.body.option.includes('CustomSearch')) {
+          helper.log_to_file_queue(req.body.uuid, '[Starting] Custom Search')
+          custom_search = await externalApis.custom_search_ouputs(req)
+          helper.log_to_file_queue(req.body.uuid, '[Done] Custom Search')
+        }
+        if (req.body.option.includes('FindOrigins')) {
+          helper.log_to_file_queue(req.body.uuid, '[Starting] Finding Origins')
+          names_origins = await nameAnalysis.find_origins(req)
+          helper.log_to_file_queue(req.body.uuid, '[Done] Finding Origins')
+        }
+      } else {
+        if (req.body.option.includes('FindOrigins')) {
+          const old_string_2 = req.body.string
+          const all_usernames = req.body.string.split(',').map(async item => {
+            helper.log_to_file_queue(req.body.uuid, '[Starting] Finding Origins: ' + item)
+            req.body.string = item
+            const temp_arr = await nameAnalysis.find_origins(req)
+            names_origins.push(...temp_arr)
+            helper.log_to_file_queue(req.body.uuid, '[Done] Finding Origins: ' + item)
+          })
+          await Promise.all(all_usernames)
+          req.body.string = old_string_2
+        }
+
+        await stringAnalysis.split_comma(req, all_words)
+      }
+
+      if (req.body.option.includes('SplitWordsByUpperCase')) {
+        helper.log_to_file_queue(req.body.uuid, '[Starting] Split by UpperCase')
+        await stringAnalysis.split_upper_case(req, all_words)
+        helper.log_to_file_queue(req.body.uuid, '[Done] Split by UpperCase')
+      }
+      if (req.body.option.includes('SplitWordsByAlphabet')) {
+        helper.log_to_file_queue(req.body.uuid, '[Starting] Split by Alphabet')
+        await stringAnalysis.split_alphabet_case(req, all_words)
+        helper.log_to_file_queue(req.body.uuid, '[Done] Split by Alphabet')
+      }
+      if (req.body.option.includes('FindSymbols')) {
+        helper.log_to_file_queue(req.body.uuid, '[Starting] Finding Symbols')
+        await stringAnalysis.find_symbols(req, all_words)
+        helper.log_to_file_queue(req.body.uuid, '[Done] Finding Symbols')
+      }
+      if (req.body.option.includes('FindNumbers')) {
+        helper.log_to_file_queue(req.body.uuid, '[Starting] Finding Numbers')
+        await stringAnalysis.find_numbers(req, all_words)
+        helper.log_to_file_queue(req.body.uuid, '[Done] Finding Numbers')
+      }
+      if (req.body.option.includes('FindAges')) {
+        helper.log_to_file_queue(req.body.uuid, '[Starting] Finding Ages')
+        ages = await stringAnalysis.guess_age_from_string(req)
+        helper.log_to_file_queue(req.body.uuid, '[Done] Finding Ages')
+      }
+
+      req.body.string = req.body.string.toLowerCase()
+
+      if (req.body.option.includes('ConvertNumbers')) {
+        helper.log_to_file_queue(req.body.uuid, '[Starting] Convert Numbers')
+        await stringAnalysis.convert_numbers(req, all_words)
+        helper.log_to_file_queue(req.body.uuid, '[Done] Convert Numbers')
+      }
+
+      if (req.body.option.includes('LookUps') ||
+        req.body.option.includes('WordInfo') ||
+        req.body.option.includes('MostCommon') ||
+        req.body.option.includes('SplitWordsByUpperCase') ||
+        req.body.option.includes('SplitWordsByAlphabet') ||
+        req.body.option.includes('FindSymbols') ||
+        req.body.option.includes('FindNumbers') ||
+        req.body.option.includes('ConvertNumbers')) {
+        await stringAnalysis.get_maybe_words(req, all_words)
+        await stringAnalysis.analyze_string(req, all_words)
+
+        Object.keys(all_words).forEach((key) => (all_words[key].length === 0) && delete all_words[key])
+
+        if (req.body.option.includes('MostCommon')) {
+          await stringAnalysis.most_common(all_words, temp_words)
+        }
+        if (req.body.option.includes('WordInfo')) {
+          await externalApis.get_words_info(all_words, words_info)
+        }
+      } else if (req.body.option.includes('NormalAnalysis@@')) {
+        /*
+        // var maybe_words = WordsNinja.splitSentence(req.body.string);
+        all_words.maybe = maybe_words.filter(function (elem, index, self) {
+          return index === self.indexOf(elem)
+        })
+        list_of_tokens = _tokenizer.tokenize(req.body.string)
+        list_of_tokens.forEach(function (item, index) {
+          if (item.tag in all_words) {
+            all_words[item.tag].push(item.token)
           } else {
-            helper.log_to_file_queue(req.body.uuid, '[Warning] NetworkGraph needs ExtractMetadata')
+            all_words[item.tag] = []
+            all_words[item.tag].push(item.token)
+          }
+        })
+
+        Object.keys(all_words).forEach((key) => (all_words[key].length === 0) && delete all_words[key])
+        */
+      }
+
+      if (req.body.option.includes('NetworkGraph')) {
+        if ('data' in user_info_normal) {
+          if (user_info_normal.data.length > 0) {
+            if (req.body.option.includes('ExtractMetadata')) {
+              helper.log_to_file_queue(req.body.uuid, '[Starting] Network Graph')
+              graph = await visualize.visualize_force_graph(req, user_info_normal.data, 'fast')
+              helper.log_to_file_queue(req.body.uuid, '[Done] Network Graph')
+            } else {
+              helper.log_to_file_queue(req.body.uuid, '[Warning] NetworkGraph needs ExtractMetadata')
+            }
           }
         }
       }
+
+      recursive_results = await run_recursive_cli_scan({
+        mode: scan_mode,
+        'recursive-depth': recursive_depth,
+        'recursive-limit': recursive_limit
+      }, req, [
+        ...user_info_normal.data,
+        ...user_info_advanced.data,
+        ...user_info_special.data
+      ])
+
+      try {
+        logs = fs.readFileSync(helper.get_log_file(req.body.uuid), 'utf8')
+      } catch {
+
+      }
+
+      helper.log_to_file_queue(req.body.uuid, '[Finished] Analyzing: ' + req.body.string + ' Task: ' + req.body.uuid)
+
+      const response_payload = {
+        username: username,
+        uuid: temp_uuid,
+        info,
+        ages: ages,
+        table: all_words,
+        common: temp_words,
+        words_info: words_info,
+        user_info_normal: user_info_normal,
+        user_info_advanced: user_info_advanced,
+        user_info_special: user_info_special,
+        names_origins: names_origins,
+        custom_search: custom_search,
+        recursive_results: recursive_results,
+        graph: graph,
+        stats: stats_default,
+        logs: logs
+      }
+
+      response_payload.summary = build_analysis_summary(response_payload)
+      res.json(response_payload)
+    } finally {
+      restore_site_selection(helper.websites_entries, selection_snapshot)
     }
-
-    try {
-      logs = fs.readFileSync(helper.get_log_file(req.body.uuid), 'utf8')
-    } catch {
-
-    }
-
-    helper.log_to_file_queue(req.body.uuid, '[Finished] Analyzing: ' + req.body.string + ' Task: ' + req.body.uuid)
-
-     /*fs.writeFileSync('./test.json', JSON.stringify({
-     username: username,
-     uuid: temp_uuid,
-     info,
-     ages: ages,
-     table: all_words,
-     common: temp_words,
-     words_info: words_info,
-     user_info_normal: user_info_normal,
-     user_info_advanced: user_info_advanced,
-     user_info_special: user_info_special,
-     names_origins: names_origins,
-     custom_search: custom_search,
-     graph: graph,
-     stats: stats_default,
-     logs: logs
-    }, null, 2) , 'utf-8');*/
-
-    res.json({
-      username: username,
-      uuid: temp_uuid,
-      info,
-      ages: ages,
-      table: all_words,
-      common: temp_words,
-      words_info: words_info,
-      user_info_normal: user_info_normal,
-      user_info_advanced: user_info_advanced,
-      user_info_special: user_info_special,
-      names_origins: names_origins,
-      custom_search: custom_search,
-      graph: graph,
-      stats: stats_default,
-      logs: logs
-    })
   }
 })
 
@@ -590,84 +708,13 @@ function clean_up_item (object, temp_keys_str) {
   return object
 }
 
-function search_and_change (site, _dict) {
-  if (helper.websites_entries.includes(site)) {
-    const item = helper.websites_entries.indexOf(site)
-    if (item !== -1) {
-      helper.websites_entries[item] = Object.assign({}, helper.websites_entries[item], _dict)
-    }
-  }
-}
-
 async function select_sites_for_cli (argv) {
-  await helper.websites_entries.forEach(async function (value, i) {
-    helper.websites_entries[i].selected = 'false'
-  })
-
-  if (argv.websites === 'all') {
-    if (argv.countries != 'all') {
-      const list_of_countries = normalize_country_filters(argv.countries, helper.find_country)
-      await helper.websites_entries.forEach(async function (value, i) {
-        if (country_matches_filter(helper.websites_entries[i].country, list_of_countries)) {
-          helper.websites_entries[i].selected = 'true'
-        } else {
-          helper.websites_entries[i].selected = 'false'
-        }
-      })
-    } else {
-      await helper.websites_entries.forEach(async function (value, i) {
-        helper.websites_entries[i].selected = 'true'
-      })
-    }
-
-    if (argv.type != 'all') {
-      let websites_entries_filtered = helper.websites_entries.filter((item) => item.selected === 'true')
-      websites_entries_filtered = websites_entries_filtered.filter((item) => item.type.toLowerCase().includes(argv.type.toLowerCase()))
-
-      await websites_entries_filtered.forEach(async function (value, i) {
-        await search_and_change(websites_entries_filtered[i], {
-          selected: 'pendding'
-        })
-      })
-      await helper.websites_entries.forEach(async function (value, i) {
-        if (helper.websites_entries[i].selected === 'pendding') {
-          helper.websites_entries[i].selected = 'true'
-        } else {
-          helper.websites_entries[i].selected = 'false'
-        }
-      })
-    }
-
-    if (argv.top != 0) {
-      let websites_entries_filtered = helper.websites_entries.filter((item) => item.selected === 'true')
-      websites_entries_filtered = websites_entries_filtered.filter((item) => item.global_rank !== 0)
-      websites_entries_filtered.sort(function (a, b) {
-        return a.global_rank - b.global_rank
-      })
-      for (let i = 0; i < argv.top; i++) {
-        await search_and_change(websites_entries_filtered[i], {
-          selected: 'pendding'
-        })
-      }
-      await helper.websites_entries.forEach(async function (value, i) {
-        if (helper.websites_entries[i].selected === 'pendding') {
-          helper.websites_entries[i].selected = 'true'
-        } else {
-          helper.websites_entries[i].selected = 'false'
-        }
-      })
-    }
-  } else {
-    await helper.websites_entries.forEach(async function (value, i) {
-      if (argv.websites.length > 0) {
-        await argv.websites.split(' ').forEach(item => {
-          if (helper.websites_entries[i].url.toLowerCase().includes(item.toLowerCase())) {
-            helper.websites_entries[i].selected = 'true'
-          }
-        })
-      }
-    })
-  }
+  apply_site_filters(helper.websites_entries, {
+    websites: argv.websites,
+    countries: argv.countries,
+    type: argv.type,
+    top: argv.top
+  }, helper.find_country)
 }
 
 async function run_cli_scan_for_username (argv, req, username, discovered_from = '') {
@@ -763,22 +810,7 @@ function save_cli_results (results, output_path) {
 
 async function run_sites_doctor_cli (argv) {
   await select_sites_for_cli(argv)
-  const probe_username = '__social_analyzer_probe__'
-  const selected_sites = helper.websites_entries.filter(item => item.selected === 'true')
-  const report = []
-
-  for (const site of selected_sites) {
-    const target_url = site.url.replace('{username}', probe_username)
-    const [status_code, response_body] = await helper.get_url_wrapper_text(target_url, site.timeout || 5)
-    const summary = classify_site_response(status_code, response_body)
-    report.push({
-      site: helper.get_site_from_url(site.url),
-      url: target_url,
-      status: summary.status,
-      reason: summary.reason,
-      http_status: status_code
-    })
-  }
+  const report = await build_sites_doctor_report()
 
   if (argv.output === 'json') {
     console.log(JSON.stringify(report, null, 2))

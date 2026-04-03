@@ -18,6 +18,12 @@ Websites and applications that enable users to create and share content or to pa
 ## APP (Preferred!)
 Standard localhost WEB APP url: http://0.0.0.0:9005/app.html
 
+The Web App now exposes the high-frequency workflow directly:
+- quick presets for fast sweep, China-focused scans, deep pivots, and doctor-only checks
+- inline scope filters for countries or specific websites without changing saved settings
+- summary cards, recursive result view, and one-click JSON / CSV export
+- built-in site doctor panel for captcha / WAF / timeout triage
+
 <img src="https://raw.githubusercontent.com/qeeqbox/social-analyzer/main/readme/intro_fast.gif" style="max-width:768px"/>
 
 ## CLI 

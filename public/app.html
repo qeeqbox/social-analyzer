@@ -63,6 +63,15 @@
     color: #d0d0d0 !important;
   }
 
+  :root {
+    --panel-bg: #2b2c2c;
+    --field-bg: #383939;
+    --accent: #aa6400;
+    --accent-soft: rgba(170, 100, 0, 0.18);
+    --border: #3c3c3c;
+    --muted: #9ea1a1;
+  }
+
   #selectable {
     vertical-align: top;
   }
@@ -162,7 +171,9 @@
     margin-top: 20px;
   }
 
-  input[type="text"] {
+  input[type="text"],
+  input[type="number"],
+  select {
     background-color: #383939 !important;
     -webkit-border-radius: 2px !important;
     border-radius: 2px !important;
@@ -247,6 +258,9 @@
   }
 
   #lookups-section,
+  #summary-section,
+  #doctor-section,
+  #recursive-section,
   #possible-words-section,
   #combinations-section,
   #output-section-1,
@@ -666,6 +680,182 @@
     height: 100%;
     border: none !important;
   }
+
+  .hero-intro {
+    color: var(--muted);
+    margin-bottom: 16px;
+    line-height: 18px;
+  }
+
+  .hero-grid {
+    display: grid;
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    gap: 12px;
+    margin-bottom: 12px;
+  }
+
+  .hero-field {
+    grid-column: span 3;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .hero-field-wide {
+    grid-column: span 6;
+  }
+
+  .hero-field label {
+    margin: 0;
+    color: var(--muted);
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+  }
+
+  .hero-field input,
+  .hero-field select {
+    width: 100%;
+    min-width: 0;
+    height: 36px;
+    font-size: 13px;
+  }
+
+  #string-to-analyze {
+    font-size: 15px;
+    letter-spacing: 0.04em;
+  }
+
+  .preset-bar,
+  .hero-actions,
+  .advanced-toolbar,
+  .summary-grid,
+  .doctor-summary {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .preset-bar {
+    margin-bottom: 14px;
+  }
+
+  .preset-button,
+  .button-primary,
+  .button-subtle {
+    height: 34px !important;
+    padding: 0 12px;
+  }
+
+  .preset-button {
+    background-color: rgba(56, 57, 57, 0.72) !important;
+    border: 1px solid transparent;
+  }
+
+  .preset-button-active,
+  .button-primary {
+    background-color: var(--accent) !important;
+    color: #ffffff !important;
+  }
+
+  .button-subtle {
+    background-color: transparent !important;
+    border: 1px solid var(--border);
+  }
+
+  .inline-note {
+    color: var(--muted);
+    line-height: 18px;
+  }
+
+  .hero-header-right {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 10px;
+  }
+
+  #advanced-controls {
+    width: 100%;
+  }
+
+  #advanced-controls .selectize-control,
+  #advanced-controls .selectize-input {
+    min-width: 100%;
+  }
+
+  .summary-card {
+    min-width: 140px;
+    flex: 1 1 140px;
+    padding: 12px;
+    background: linear-gradient(180deg, rgba(170, 100, 0, 0.14), rgba(43, 44, 44, 0.96));
+    border: 1px solid rgba(170, 100, 0, 0.18);
+    border-radius: 2px;
+  }
+
+  .summary-label {
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-size: 11px;
+  }
+
+  .summary-value {
+    margin-top: 8px;
+    font-size: 24px;
+    line-height: 24px;
+    color: #ffffff;
+  }
+
+  .status-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 74px;
+    padding: 4px 8px;
+    border-radius: 999px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-size: 11px;
+  }
+
+  .status-badge-ok {
+    background-color: rgba(69, 181, 110, 0.18);
+    color: #88d7a2 !important;
+  }
+
+  .status-badge-blocked,
+  .status-badge-captcha {
+    background-color: rgba(187, 77, 77, 0.18);
+    color: #f3a2a2 !important;
+  }
+
+  .status-badge-timeout {
+    background-color: rgba(202, 151, 59, 0.18);
+    color: #f3d78d !important;
+  }
+
+  .settings-summary {
+    color: var(--muted);
+  }
+
+  @media (max-width: 1100px) {
+    .hero-field,
+    .hero-field-wide {
+      grid-column: span 6;
+    }
+  }
+
+  @media (max-width: 760px) {
+    .hero-field,
+    .hero-field-wide {
+      grid-column: span 12;
+    }
+
+    .hero-header-right {
+      justify-content: flex-start;
+    }
+  }
 </style>
 
 <body>
@@ -759,24 +949,85 @@
       </div>
       <div class="box-border-style" id="string-section">
         <div class="div-header">
-          <div class="div-left">Enter Profile Name</div>
-          <div class="div-right"><i id="open-settings" class="fa fa-cog"></i></div>
-        </div>
-        <div class="div-100 collapse show">
-          <input type="text" id="string-to-analyze" placeholder="Joe" />
-          <div class="cell-separator"></div>
-          <div name="analyzed-options" placeholder="Choose some options..." id="analyzed-options" multiple="multiple">
+          <div class="div-left">Mission Control</div>
+          <div class="div-right hero-header-right">
+            <div class="settings-summary" id="settings-summary">Using saved website selection</div>
+            <i id="open-settings" class="fa fa-cog"></i>
           </div>
-          <div class="cell-separator"></div>
-          <div>or</div>
-          <div class="cell-separator"></div>
-          <input type="button" id="fast-options" value="Fast Options" />
-          <div class="cell-separator-line"></div>
-          <input type="button" id="analyze-normal" value="Analyze" />
-          <div class="cell-separator"></div>
-          <input type="button" id="clear-options" value="Clear" />
-          <div class="cell-separator"></div>
-          <input type="button" id="reset-everything" value="Reset" />
+        </div>
+        <div class="hero-intro">
+          Run a focused username sweep, narrow the scope to China or specific sites, then export or diagnose the selected platforms without leaving the page.
+        </div>
+        <div class="hero-grid">
+          <div class="hero-field hero-field-wide">
+            <label for="string-to-analyze">Username / ID</label>
+            <input type="text" id="string-to-analyze" placeholder="johndoe" />
+          </div>
+          <div class="hero-field">
+            <label for="scan-mode">Scan mode</label>
+            <select id="scan-mode">
+              <option value="fast">Fast + special</option>
+              <option value="slow">Slow browser</option>
+              <option value="special">Special only</option>
+            </select>
+          </div>
+          <div class="hero-field">
+            <label for="scope-countries">Countries</label>
+            <input type="text" id="scope-countries" value="all" placeholder="all or cn us" />
+          </div>
+          <div class="hero-field hero-field-wide">
+            <label for="scope-websites">Websites</label>
+            <input type="text" id="scope-websites" value="all" placeholder="all or zhihu.com leetcode.cn" />
+          </div>
+          <div class="hero-field">
+            <label for="recursive-depth">Recursive depth</label>
+            <input type="number" id="recursive-depth" value="0" min="0" max="3" />
+          </div>
+          <div class="hero-field">
+            <label for="recursive-limit">Recursive limit</label>
+            <input type="number" id="recursive-limit" value="10" min="1" max="20" />
+          </div>
+        </div>
+        <div class="preset-bar">
+          <input type="button" class="preset-button preset-button-active" id="preset-fast" value="Quick Sweep" />
+          <input type="button" class="preset-button" id="preset-cn" value="China Focus" />
+          <input type="button" class="preset-button" id="preset-deep" value="Deep Pivot" />
+          <input type="button" class="preset-button" id="preset-doctor" value="Doctor Only" />
+        </div>
+        <div class="hero-actions">
+          <input type="button" class="button-primary" id="analyze-normal" value="Analyze" />
+          <input type="button" id="run-doctor" value="Doctor" />
+          <input type="button" id="fast-options" value="Recommended extras" />
+          <input type="button" id="clear-options" value="Clear extras" />
+          <input type="button" id="reset-everything" value="Reset view" />
+          <input type="button" class="button-subtle" id="toggle-advanced-options" value="Advanced extras" />
+        </div>
+        <div id="advanced-controls" class="collapse">
+          <div class="separator"></div>
+          <div class="advanced-toolbar">
+            <div class="inline-note">Scan mode is controlled above. Use this panel for lookups, graphing and enrichment.</div>
+          </div>
+          <div class="div-100">
+            <div name="analyzed-options" placeholder="Choose some options..." id="analyzed-options" multiple="multiple">
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="box-border-style" id="summary-section">
+        <div class="div-header">
+          <div class="div-left">Summary</div>
+          <div class="div-right"><i class="div-right-icon fa fa-caret-up"></i></div>
+        </div>
+        <div id="summary-cards" class="summary-grid collapse show"></div>
+      </div>
+      <div class="box-border-style" id="doctor-section">
+        <div class="div-header">
+          <div class="div-left">Site Doctor</div>
+          <div class="div-right"><i class="div-right-icon fa fa-caret-up"></i></div>
+        </div>
+        <div id="doctor-content" class="collapse show">
+          <div id="doctor-overview" class="doctor-summary"></div>
+          <div id="doctor-table"></div>
         </div>
       </div>
       <div class="box-border-style" id="lookups-section">
@@ -878,6 +1129,13 @@
         </div>
         <div id="output-table-4" class="collapse show"></div>
       </div>
+      <div class="box-border-style" id="recursive-section">
+        <div class="div-header">
+          <div class="div-left">Recursive Results</div>
+          <div class="div-right"><i class="div-right-icon fa fa-caret-up"></i></div>
+        </div>
+        <div id="recursive-table" class="collapse show"></div>
+      </div>
       <div class="box-border-style" id="force-graph-section">
         <div class="div-header">
           <div class="div-left">Graph</div>
@@ -911,11 +1169,13 @@
       </div>
       <div class="box-border-style" id="save-to-file-section">
         <div class="div-header">
-          <div class="div-left">Save to file as</div>
+          <div class="div-left">Export Results</div>
           <div class="div-right"><i class="div-right-icon fa fa-caret-up"></i></div>
         </div>
         <div class="div-100 collapse show">
           <input type="button" id="download-json" value="JSON" />
+          <div class="cell-separator"></div>
+          <input type="button" id="download-csv" value="CSV" />
         </div>
       </div>
     </div>
@@ -1074,6 +1334,165 @@
     let output_json = {};
     let global_uuid = '';
     let current_settings = [];
+    const scan_option_values = ['FindUserProfilesFast,GetUserProfilesFast', 'FindUserProfilesSlow', 'FindUserProfilesSpecial', 'ShowUserProfilesSlow'];
+    const recommended_enrichment_options = ['WordInfo', 'MostCommon', 'FindOrigins', 'LookUps', 'CustomSearch', 'ExtractMetadata', 'ExtractPatterns', 'NetworkGraph', 'FindNumbers',
+      'CategoriesStats', 'MetadataStats', 'FindAges', 'FindSymbols', 'SplitWordsByAlphabet', 'SplitWordsByUpperCase'];
+    const deep_enrichment_options = ['LookUps', 'CustomSearch', 'FindOrigins', 'ExtractMetadata', 'ExtractPatterns', 'FindNumbers', 'FindAges', 'FindSymbols'];
+
+    function normalize_scope_value(value) {
+      const normalized = (value || '').trim();
+      return normalized === '' ? 'all' : normalized;
+    }
+
+    function get_selected_extra_options() {
+      const list_of_options = [];
+      $('.selectize-input .item').each(function() {
+        const value = $(this).attr('data-value');
+        if (!scan_option_values.includes(value)) {
+          list_of_options.push(value);
+        }
+      });
+      return list_of_options;
+    }
+
+    function build_request_options() {
+      const list_of_options = get_selected_extra_options();
+      const scan_mode = $('#scan-mode').val();
+      if (scan_mode === 'slow') {
+        list_of_options.unshift('FindUserProfilesSlow');
+      } else if (scan_mode === 'special') {
+        list_of_options.unshift('FindUserProfilesSpecial');
+      } else {
+        list_of_options.unshift('GetUserProfilesFast,FindUserProfilesFast');
+      }
+      return list_of_options;
+    }
+
+    function get_download_filename(extension) {
+      const fallback = ($('#string-to-analyze').val() || 'social-analyzer').replace(/[^a-z0-9]+/gi, '_').toLowerCase();
+      const base_name = (((output_json || {}).username) || fallback || 'social-analyzer').replace(/[^a-z0-9]+/gi, '_').toLowerCase();
+      return `${base_name || 'social-analyzer'}.${extension}`;
+    }
+
+    function download_text_file(content, filename, mime_type) {
+      window.URL = window.URL || window.webkitURL;
+      const a = document.createElement('a');
+      a.download = filename;
+      a.innerHTML = 'Download File';
+      a.href = window.URL.createObjectURL(new Blob([content], {
+        type: mime_type,
+      }));
+      a.style.display = 'none';
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+    }
+
+    function set_active_preset(target_id) {
+      $('.preset-button').removeClass('preset-button-active');
+      $(target_id).addClass('preset-button-active');
+    }
+
+    function update_settings_summary(data = current_settings) {
+      if (!data || !Array.isArray(data.websites)) {
+        $('#settings-summary').text('Using saved website selection');
+        return;
+      }
+
+      const selected_count = data.websites.filter((site) => site.selected === 'true').length;
+      $('#settings-summary').text(`${selected_count}/${data.websites.length} saved sites selected`);
+    }
+
+    function apply_preset(preset_name) {
+      const selectize = $('#analyzed-options')[0].selectize;
+      if (preset_name === 'china') {
+        $('#scan-mode').val('fast');
+        $('#scope-countries').val('cn');
+        $('#scope-websites').val('all');
+        $('#recursive-depth').val('1');
+        $('#recursive-limit').val('8');
+        selectize.clear();
+        selectize.setValue(recommended_enrichment_options);
+        set_active_preset('#preset-cn');
+      } else if (preset_name === 'deep') {
+        $('#scan-mode').val('slow');
+        $('#scope-countries').val('all');
+        $('#scope-websites').val('all');
+        $('#recursive-depth').val('1');
+        $('#recursive-limit').val('10');
+        selectize.clear();
+        selectize.setValue(deep_enrichment_options);
+        set_active_preset('#preset-deep');
+      } else if (preset_name === 'doctor') {
+        $('#scan-mode').val('fast');
+        $('#scope-countries').val('all');
+        $('#scope-websites').val('all');
+        $('#recursive-depth').val('0');
+        $('#recursive-limit').val('10');
+        set_active_preset('#preset-doctor');
+      } else {
+        $('#scan-mode').val('fast');
+        $('#scope-countries').val('all');
+        $('#scope-websites').val('all');
+        $('#recursive-depth').val('0');
+        $('#recursive-limit').val('10');
+        selectize.clear();
+        selectize.setValue(recommended_enrichment_options);
+        set_active_preset('#preset-fast');
+      }
+    }
+
+    function render_summary_cards(summary) {
+      const cards = [{
+        label: 'Detected',
+        value: summary.detected || 0
+      }, {
+        label: 'Unknown',
+        value: summary.unknown || 0
+      }, {
+        label: 'Failed',
+        value: summary.failed || 0
+      }, {
+        label: 'Recursive',
+        value: summary.recursive || 0
+      }, {
+        label: 'Sections',
+        value: summary.sections || 0
+      }];
+      const html = cards.map((card) => `<div class="summary-card"><div class="summary-label">${card.label}</div><div class="summary-value">${card.value}</div></div>`).join('');
+      $('#summary-cards').html(html);
+      $('#summary-section').show();
+    }
+
+    function render_recursive_results(recursive_results) {
+      if (!recursive_results || recursive_results.length === 0) {
+        $('#recursive-table').html('');
+        $('#recursive-section').hide();
+        return;
+      }
+
+      let rows = '';
+      recursive_results.forEach((site) => {
+        rows += `<div class="user-info-container"><div class="user-info-container-left"><div>Link: <a href="${site.link}">${site.link}</a></div><div>Username: ${site.username}</div><div>Source: ${site.discovered_from || 'seed'}</div><div>Status: ${site.status || 'n/a'}</div><div>Method: ${site.method || 'find'}</div></div><div class="user-info-container-right"></div></div>`;
+      });
+      $('#recursive-table').html(rows);
+      $('#recursive-section').show();
+    }
+
+    function render_doctor_report(data) {
+      const summary = data.summary || {};
+      const badges = ['ok', 'blocked', 'captcha', 'timeout'].map((status) => {
+        const value = summary[status] || 0;
+        return `<div class="summary-card"><div class="summary-label">${status}</div><div class="summary-value">${value}</div></div>`;
+      }).join('');
+      $('#doctor-overview').html(badges);
+
+      const rows = (data.report || []).map((item) => {
+        return `<tr><td>${item.site}</td><td><span class="status-badge status-badge-${item.status}">${item.status}</span></td><td>${item.reason}</td><td>${item.http_status}</td></tr>`;
+      }).join('');
+      $('#doctor-table').html(`<table><tr><th>site</th><th>status</th><th>reason</th><th>http</th></tr>${rows}</table>`);
+      $('#doctor-section').show();
+    }
 
     function change_analyzed_option(string, key, value) {
       const obj = analyzed_options_options.find((o) => o.value === string);
@@ -1129,20 +1548,26 @@
       }
     }
 
-    function save_to_file_as(output_json) {
+    async function export_results(format) {
+      if (!output_json || Object.keys(output_json).length === 0) {
+        return;
+      }
+
       try {
-        delete output_json.graph;
-        window.URL = window.URL || window.webkitURL;
-        const a = document.createElement('a');
-        a.download = `${output_json.username.replace(/[^a-z0-9 ]/gi, '_').toLowerCase()}.json`;
-        a.innerHTML = 'Download File';
-        a.href = window.URL.createObjectURL(new Blob([JSON.stringify(output_json)], {
-          type: 'application/json',
-        }));
-        a.style.display = 'none';
-        document.body.appendChild(a);
-        a.click();
-        document.body.removeChild(a);
+        await $.ajax({
+          type: 'POST',
+          url: '/export_results',
+          data: JSON.stringify({
+            format,
+            results: output_json,
+          }),
+          contentType: 'application/json',
+          dataType: 'text',
+        }).done((data) => {
+          const extension = format === 'csv' ? 'csv' : 'json';
+          const mime_type = format === 'csv' ? 'text/csv' : 'application/json';
+          download_text_file(data, get_download_filename(extension), mime_type);
+        });
       } catch (err) {
         verbose && console.log(err);
       }
@@ -1180,8 +1605,45 @@
       });
     }
 
+    async function run_doctor() {
+      reset_everything();
+      spinner_on_off(true, 'Checking selected sites');
+      output_json = {};
+      try {
+        await $.ajax({
+          type: 'POST',
+          url: '/doctor_sites',
+          data: JSON.stringify({
+            websites: normalize_scope_value($('#scope-websites').val()),
+            countries: normalize_scope_value($('#scope-countries').val()),
+          }),
+          contentType: 'application/json',
+        }).done((data) => {
+          render_doctor_report(data);
+          render_summary_cards({
+            detected: data.summary.ok || 0,
+            unknown: data.summary.captcha || 0,
+            failed: (data.summary.blocked || 0) + (data.summary.timeout || 0),
+            recursive: 0,
+            sections: data.summary.total || 0,
+          });
+        });
+      } catch (err) {
+        verbose && console.log(err);
+      }
+
+      spinner_on_off(false);
+    }
+
     function reset_everything() {
       // $('#analyzed-options')[0].selectize.clear()
+      $('#summary-section').hide();
+      $('#summary-cards').html('');
+      $('#doctor-section').hide();
+      $('#doctor-overview').html('');
+      $('#doctor-table').html('');
+      $('#recursive-section').hide();
+      $('#recursive-table').html('');
       $('#lookups-checking-info').html('');
       $('#lookups-table').html('');
       $('#lookups-section').hide();
@@ -1216,6 +1678,7 @@
       $('#metadata-section').hide();
       $('#ages-table').html('');
       $('#ages-section').hide();
+      output_json = {};
       clearInterval(interval_logs);
     }
 
@@ -1302,10 +1765,7 @@
       global_uuid = random_string;
       interval_logs = setInterval(get_logs.bind(null, random_string), 1000);
       try {
-        const list_of_options = [];
-        $('.selectize-input .item').each(function() {
-          list_of_options.push($(this).attr('data-value'));
-        });
+        const list_of_options = build_request_options();
 
         await $.ajax({
           type: 'POST',
@@ -1315,11 +1775,17 @@
             group: false,
             option: list_of_options.join(','),
             uuid: random_string,
+            scan_mode: $('#scan-mode').val(),
+            websites: normalize_scope_value($('#scope-websites').val()),
+            countries: normalize_scope_value($('#scope-countries').val()),
+            recursive_depth: $('#recursive-depth').val(),
+            recursive_limit: $('#recursive-limit').val(),
           },
         }).done((data) => {
           if (data !== 'Error') {
             let temp_tr = '';
             output_json = data;
+            render_summary_cards(data.summary || {});
             if (data.common.length > 0) {
               temp_tr = '';
               Object.keys(data.common).forEach((item) => {
@@ -1446,6 +1912,7 @@
               $('#output-table-4').html(temp_tr);
               $('#output-section-4').show();
             }
+            render_recursive_results(data.recursive_results);
             if (data.names_origins.length > 0) {
               temp_tr = '';
               Object.keys(data.names_origins).forEach((item) => {
@@ -1561,9 +2028,11 @@
 
               $('#detection-options-list').html(temp_tr);
             }
+            $('#proxy-string').val(data.proxy);
             $('#user-agent-string').val(data.user_agent);
             $('#google-api-key').val(data.google[0]);
             $('#google-api-cs').val(data.google[1]);
+            update_settings_summary(data);
           }
         });
       } else if (option === 'save_settings') {
@@ -1582,11 +2051,34 @@
             google_cv: $('#google-api-cs').val(),
           },
         }).done((data) => {
-          if (data !== 'Error') {}
+          if (data !== 'Error') {
+            if (Array.isArray(current_settings.websites)) {
+              current_settings.websites = current_settings.websites.map((site) => Object.assign({}, site, {
+                selected: temp_checked.includes(site.index) ? 'true' : 'false'
+              }));
+            }
+            update_settings_summary();
+          }
         });
       }
 
       spinner_on_off(false);
+    }
+
+    async function load_settings_snapshot() {
+      try {
+        await $.ajax({
+          type: 'GET',
+          url: '/get_settings',
+        }).done((data) => {
+          if (data !== 'Error') {
+            current_settings = data;
+            update_settings_summary(data);
+          }
+        });
+      } catch (err) {
+        verbose && console.log(err);
+      }
     }
 
     $('#de-settings-select-all').click((e) => {
@@ -1624,6 +2116,12 @@
       analyze_string();
     });
 
+    $('#run-doctor').click((e) => {
+      e.preventDefault();
+      set_active_preset('#preset-doctor');
+      run_doctor();
+    });
+
     $('.generate').click((e) => {
       e.preventDefault();
       // generate_combinations('Generate');
@@ -1654,15 +2152,18 @@
     $('#fast-options').click((e) => {
       e.preventDefault();
       $('#analyzed-options')[0].selectize.clear();
-      $('#analyzed-options')[0].selectize.setValue(['WordInfo', 'MostCommon', 'FindOrigins', 'LookUps', 'CustomSearch', 'FindUserProfilesFast,GetUserProfilesFast', 'ExtractMetadata', 'ExtractPatterns', 'NetworkGraph', 'FindNumbers',
-        'CategoriesStats','MetadataStats','FindAges',
-        'FindSymbols', 'SplitWordsByAlphabet', 'SplitWordsByUpperCase',
-      ]);
+      $('#analyzed-options')[0].selectize.setValue(recommended_enrichment_options);
+      $('#advanced-controls').collapse('show');
     });
 
     $('#download-json').click((e) => {
       e.preventDefault();
-      save_to_file_as(output_json);
+      export_results('json');
+    });
+
+    $('#download-csv').click((e) => {
+      e.preventDefault();
+      export_results('csv');
     });
 
     $('#cancel_task').click((e) => {
@@ -1672,9 +2173,44 @@
       }
     });
 
+    $('#preset-fast').click((e) => {
+      e.preventDefault();
+      apply_preset('fast');
+    });
+
+    $('#preset-cn').click((e) => {
+      e.preventDefault();
+      apply_preset('china');
+    });
+
+    $('#preset-deep').click((e) => {
+      e.preventDefault();
+      apply_preset('deep');
+    });
+
+    $('#preset-doctor').click((e) => {
+      e.preventDefault();
+      apply_preset('doctor');
+      run_doctor();
+    });
+
+    $('#toggle-advanced-options').click((e) => {
+      e.preventDefault();
+      $('#advanced-controls').collapse('toggle');
+    });
+
+    $('#string-to-analyze, #scope-countries, #scope-websites, #recursive-depth, #recursive-limit').keydown((e) => {
+      if (e.key === 'Enter') {
+        e.preventDefault();
+        analyze_string();
+      }
+    });
+
     $(function() {
+      apply_preset('fast');
+      load_settings_snapshot();
       $('.div-header').click(function() {
-        if (this.innerText !== 'Enter Profile Name') {
+        if ($(this).closest('.box-border-style').attr('id') !== 'string-section') {
           if ($(this).next().hasClass('show')) {
             $(this).find('.div-right-icon').removeClass('fa-caret-up');
             $(this).find('.div-right-icon').addClass('fa-caret-down');
