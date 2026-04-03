@@ -71,6 +71,35 @@ test('apply_site_filters respects explicit website filters', () => {
   assert.deepEqual(sites.map((site) => site.selected), ['false', 'true'])
 })
 
+test('apply_site_filters supports type filters after country selection', () => {
+  const sites = [
+    {
+      url: 'https://www.zhihu.com/people/{username}',
+      selected: 'false',
+      country: 'China',
+      global_rank: 2,
+      type: 'Forum'
+    },
+    {
+      url: 'https://www.douban.com/people/{username}',
+      selected: 'false',
+      country: 'China',
+      global_rank: 10,
+      type: 'Social'
+    }
+  ]
+
+  apply_site_filters(sites, {
+    websites: 'all',
+    countries: 'cn',
+    type: 'social'
+  }, (country) => {
+    return country === 'cn' ? 'China' : ''
+  })
+
+  assert.deepEqual(sites.map((site) => site.selected), ['false', 'true'])
+})
+
 test('snapshot and restore site selection round-trip selected flags', () => {
   const sites = [
     { selected: 'true' },

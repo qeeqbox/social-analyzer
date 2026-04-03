@@ -115,6 +115,7 @@ import nameAnalysis from './modules/name-analysis.js'
 import visualize from './modules/visualize.js'
 import stats from './modules/stats.js'
 import { serialize_results_to_csv, serialize_results_to_json } from './modules/export-results.js'
+import { serialize_results_to_html } from './modules/html-report.js'
 import { collect_recursive_candidates } from './modules/recursive-search.js'
 import { classify_site_response } from './modules/site-doctor.js'
 import { sync_whatsmyname_dataset } from './modules/wmn-sync.js'
@@ -228,7 +229,10 @@ function normalize_scope_value (value, fallback = 'all') {
 }
 
 function request_has_custom_scope (body = {}) {
-  return normalize_scope_value(body.websites) !== 'all' || normalize_scope_value(body.countries) !== 'all'
+  return normalize_scope_value(body.websites) !== 'all' ||
+    normalize_scope_value(body.countries) !== 'all' ||
+    normalize_scope_value(body.type) !== 'all' ||
+    Number(body.top || 0) > 0
 }
 
 function resolve_scan_mode (body = {}) {
@@ -271,10 +275,14 @@ app.post('/export_results', async function (req, res, next) {
   const results = req.body.results || {}
   const serialized = format === 'csv'
     ? serialize_results_to_csv(results)
-    : serialize_results_to_json(results)
+    : format === 'html'
+      ? serialize_results_to_html(results)
+      : serialize_results_to_json(results)
 
   if (format === 'csv') {
     res.type('text/csv')
+  } else if (format === 'html') {
+    res.type('text/html')
   } else {
     res.type('application/json')
   }
@@ -290,8 +298,8 @@ app.post('/doctor_sites', async function (req, res, next) {
       apply_site_filters(helper.websites_entries, {
         websites: normalize_scope_value(req.body.websites),
         countries: normalize_scope_value(req.body.countries),
-        type: 'all',
-        top: 0
+        type: normalize_scope_value(req.body.type),
+        top: Number(req.body.top || 0)
       }, helper.find_country)
     }
 
@@ -412,8 +420,8 @@ app.post('/analyze_string', async function (req, res, next) {
         apply_site_filters(helper.websites_entries, {
           websites: normalize_scope_value(req.body.websites),
           countries: normalize_scope_value(req.body.countries),
-          type: 'all',
-          top: 0
+          type: normalize_scope_value(req.body.type),
+          top: Number(req.body.top || 0)
         }, helper.find_country)
       }
 
@@ -640,6 +648,13 @@ app.post('/analyze_string', async function (req, res, next) {
       const response_payload = {
         username: username,
         uuid: temp_uuid,
+        scope: {
+          mode: scan_mode,
+          countries: normalize_scope_value(req.body.countries),
+          websites: normalize_scope_value(req.body.websites),
+          type: normalize_scope_value(req.body.type),
+          top: String(Number(req.body.top || 0))
+        },
         info,
         ages: ages,
         table: all_words,

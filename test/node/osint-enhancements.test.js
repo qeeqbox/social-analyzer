@@ -14,6 +14,9 @@ import {
   serialize_results_to_json
 } from '../../modules/export-results.js'
 import {
+  serialize_results_to_html
+} from '../../modules/html-report.js'
+import {
   classify_site_response
 } from '../../modules/site-doctor.js'
 
@@ -146,6 +149,36 @@ test('serialize_results_to_json preserves formatted indentation', () => {
 
   assert.match(json, /\n  "detected": \[/)
   assert.match(json, /"username": "octocat"/)
+})
+
+test('serialize_results_to_html renders summary and detected rows', () => {
+  const html = serialize_results_to_html({
+    username: 'octocat',
+    scope: {
+      mode: 'fast',
+      countries: 'all',
+      websites: 'github.com',
+      type: 'all',
+      top: '0'
+    },
+    summary: {
+      detected: 1,
+      unknown: 0,
+      failed: 0,
+      recursive: 0
+    },
+    detected: [
+      {
+        username: 'octocat',
+        link: 'https://github.com/octocat',
+        status: 'good'
+      }
+    ]
+  })
+
+  assert.match(html, /Social Analyzer Report/)
+  assert.match(html, /Detected<strong>1<\/strong>/)
+  assert.match(html, /https:\/\/github\.com\/octocat/)
 })
 
 test('classify_site_response detects captcha, waf, timeouts and normal responses', () => {
