@@ -62,7 +62,7 @@ Standard localhost WEB APP url: http://0.0.0.0:9005/app.html
 ### Linux (As Node WebApp)
 ```bash
 sudo apt-get update
-#Depedning on your Linux distro, you may or may not need these 2 lines
+#Depending on your Linux distro, you may or may not need these 2 lines
 sudo DEBIAN_FRONTEND=noninteractive apt-get install -y software-properties-common
 sudo add-apt-repository ppa:mozillateam/ppa -y
 sudo apt-get install -y firefox-esr tesseract-ocr git nodejs npm
@@ -76,7 +76,7 @@ npm start
 ### Linux (As Node CLI)
 ```bash
 sudo apt-get update
-#Depedning on your Linux distro, you may or may not need these 2 lines
+#Depending on your Linux distro, you may or may not need these 2 lines
 sudo DEBIAN_FRONTEND=noninteractive apt-get install -y software-properties-common
 sudo add-apt-repository ppa:mozillateam/ppa -y
 sudo apt-get install -y firefox-esr tesseract-ocr git nodejs npm
@@ -152,10 +152,10 @@ Required Arguments:
   --username   E.g. johndoe, john_doe or johndoe9999
 
 Optional Arguments:
-  --websites    A website or websites separated by space E.g. youtube, tiktokor tumblr
+  --websites    A website or websites separated by space E.g. youtube, tiktok or tumblr
   --mode        Analysis mode E.g.fast -> FindUserProfilesFast, slow -> FindUserProfilesSlow or special -> FindUserProfilesSpecial
-  --output      Show the output in the following format: json -> json outputfor integration or pretty -> prettify the output
-  --options     Show the following when a profile is found: link, rate, titleor text
+  --output      Show the output in the following format: json -> json output for integration or pretty -> prettify the output
+  --options     Show the following when a profile is found: link, rate, title or text
   --method      find -> show detected profiles, get -> show all profiles regardless detected or not, all -> combine find & get
   --filter      Filter detected profiles by good, maybe or bad, you can do combine them with comma (good,bad) or use all
   --profiles    Filter profiles by detected, unknown or failed, you can do combine them with comma (detected,failed) or use all
