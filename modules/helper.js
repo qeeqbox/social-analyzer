@@ -101,9 +101,16 @@ function get_log_file (uuid) {
 }
 
 function log_to_file_queue (uuid, msg, table = false, argv = undefined) {
+  // Sanitize uuid before using it as part of a file path. Several callers
+  // pass req.body.uuid directly (e.g. /cancel, /analyze_string, fast/slow/
+  // special scans, string-analysis), so an unsanitized value such as
+  // '../foo' would let the request write outside the logs/ directory.
+  // Use the same allow-list get_log_file() applies so both helpers always
+  // resolve to the same path for a given uuid.
+  const _uuid = String(uuid).replace(/[^a-zA-Z0-9\-]+/g, '')
   logs_queue = logs_queue.then(function () {
     return new Promise(function (resolve) {
-      const temp_log_file = slash(path.join('logs', uuid + '_log.txt'))
+      const temp_log_file = slash(path.join('logs', _uuid + '_log.txt'))
       fs.appendFile(temp_log_file, msg + '\n', function (err, data) {
         if (table) {
           msg.forEach((item, index) => {
