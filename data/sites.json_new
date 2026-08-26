@@ -12908,7 +12908,7 @@
         },
         {
           "return": "true",
-          "string": "Tweets & replies",
+          "string": "property=\"profile:username\" content=\"{username}\"",
           "type": "normal"
         }
       ],

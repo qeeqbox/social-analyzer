@@ -5,6 +5,7 @@ import sanitizeHtml from 'sanitize-html'
 import {convert} from 'html-to-text'
 import * as cheerio from 'cheerio'
 import engine from './engine.js'
+import xquikScan from './xquik-scan.js'
 
 async function find_username_normal (req) {
   helper.log_to_file_queue(req.body.uuid, '[init] Selected websites: ' + helper.websites_entries.filter((item) => item.selected === 'true').length + ' for username: ' + req.body.string)
@@ -84,6 +85,21 @@ async function find_username_site (uuid, username, options, site) {
       try {
         if (!options.includes('json')) {
           helper.log_to_file_queue(uuid, '[Checking] ' + helper.get_site_from_url(site.url))
+        }
+        const xquik_profile = await xquikScan.find_username(
+          username,
+          options,
+          site,
+          helper.xquik_api_key,
+          helper.get_url_wrapper_json
+        )
+        if (xquik_profile !== undefined) {
+          resolve({
+            return: 1,
+            site: site,
+            profile: xquik_profile
+          })
+          return
         }
         const [ret, source]  = await helper.get_url_wrapper_text(site.url.replace('{username}', username))
         if (source !== 'error-get-url') {

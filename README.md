@@ -38,6 +38,7 @@ Standard localhost WEB APP url: http://0.0.0.0:9005/app.html
 - Auto-flirtation to unnecessary output (Enable javascript etc..)
 - Search engine lookup (Google API - optional)
 - Custom search queries (Google API & DuckDuckGo API - optional)
+- Exact X/Twitter profile lookup (Xquik API - optional)
 - Profile screenshot, title, info, and website description
 - Find name origins, name similarity & common words by language
 - Find possible profile\person age (Limited analysis)
@@ -91,6 +92,17 @@ nodejs app.js --username "johndoe,janedoe" --metadata --top 100
 #or
 nodejs app.js --username "johndoe" --type "adult"
 ```
+
+For an exact Twitter username lookup, set an optional Xquik API key. Social Analyzer uses the published profile endpoint. It falls back to HTML when the key is absent or the request fails. It never adds the key to results or logs.
+
+```bash
+export XQUIK_API_KEY="xq_your_api_key_here"
+nodejs app.js --username "github" --websites "twitter" --metadata
+```
+
+Profile lookups use Xquik credits. See the [Xquik profile lookup reference](https://docs.xquik.com/api-reference/x/twitter-profile-lookup) for authentication, response fields, errors, and current costs.
+
+Xquik is an independent third-party service. Not affiliated with X Corp. "Twitter" and "X" are trademarks of X Corp.
 
 ### Linux (As python package)
 ```bash
@@ -182,7 +194,7 @@ Setting:
 [![Open in Cloud Shell](https://img.shields.io/static/v1?label=%3E_&message=Open%20in%20Cloud%20Shell&color=3267d6&style=flat-square)](https://ssh.cloud.google.com/cloudshell/editor?cloudshell_git_repo=https://github.com/qeeqbox/social-analyzer&tutorial=README.md) [![Open in repl.it Shell](https://img.shields.io/static/v1?label=%3E_&message=Open%20in%20repl.it%20Shell&color=606c74&style=flat-square)](https://repl.it/github/qeeqbox/social-analyzer)
 
 ## Resources
-- DuckDuckGo API, Google API, NodeJS, bootstrap, selectize, jQuery, Wikipedia, font-awesome, selenium-webdriver & tesseract.js
+- DuckDuckGo API, Google API, Xquik API, NodeJS, bootstrap, selectize, jQuery, Wikipedia, font-awesome, selenium-webdriver & tesseract.js
 - Let me know if I missed a reference or resource!
 
 ## Disclaimer\Notes

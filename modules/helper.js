@@ -2,6 +2,7 @@ const verbose = false
 const global_lock = []
 const google_api_key = ''
 const google_api_cs = ''
+const xquik_api_key = process.env.XQUIK_API_KEY || ''
 const grid_url = ''
 const proxy = ''
 let tecert_file = ''
@@ -189,10 +190,10 @@ function get_site_from_url (_url) {
   return temp.replace('nothinghere.', '')
 }
 
-async function get_url_wrapper_json (url, time = 2) {
+async function get_url_wrapper_json (url, time = 2, request_options = header_options) {
   try {
     const http_promise = new Promise((resolve, reject) => {
-      const request = https.https.get(url, header_options, function (res) {
+      const request = https.https.get(url, request_options, function (res) {
         let body = ''
         res.on('data', function (chunk) {
           body += chunk
@@ -354,6 +355,7 @@ export default {
   global_lock,
   google_api_key,
   google_api_cs,
+  xquik_api_key,
   grid_url,
   header_options,
   proxy,
