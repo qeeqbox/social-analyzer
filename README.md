@@ -58,6 +58,10 @@ Standard localhost WEB APP url: http://0.0.0.0:9005/app.html
 - Gmail (example@gmail.com)
 - Google (example@example.com)
 
+## One-Click Deploy
+
+[![Deploy on RepoCloud](https://d16t0pc4846x52.cloudfront.net/deploylobe.svg)](https://repocloud.io/details/Social%20Analyzer/)
+
 ## Install & Run
 ### Linux (As Node WebApp)
 ```bash
